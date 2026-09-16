@@ -34,6 +34,9 @@ def build_payload(root: Path) -> dict:
     catalog = json.loads((root / "data" / "dishes.json").read_text())
     images_dir = root / "data" / "images"
 
+    stations_path = root / "data" / "stations.json"
+    station_table = json.loads(stations_path.read_text()) if stations_path.exists() else {}
+
     menu_files = sorted((root / "data" / "menus").glob("*.json"))
     days = [json.loads(p.read_text()) for p in menu_files]
     # Only publish the days the source site still covers.
@@ -75,6 +78,7 @@ def build_payload(root: Path) -> dict:
         return f"{dish_id}.{table[key]}"
 
     from bsdm.dishes import dish_id as make_id
+    from bsdm.stations import split as split_service
 
     menus: dict[str, dict] = {}
     hours: dict[str, dict] = {}
@@ -82,13 +86,18 @@ def build_payload(root: Path) -> dict:
     for day in days:
         iso = day["date"]
         as_date = date.fromisoformat(iso)
-        menus[iso] = {
-            hall_id: {
-                meal: [variant_ref(make_id(d["name"]), d) for d in served]
-                for meal, served in meals.items()
-            }
-            for hall_id, meals in day["halls"].items()
-        }
+        # Each service is split into the dishes cooked that day and the counters
+        # that are there every day, so the board can lead with what changed.
+        menus[iso] = {}
+        for hall_id, meals in day["halls"].items():
+            per_meal = {}
+            for meal, served in meals.items():
+                daily, standing = split_service(station_table, hall_id, meal, served)
+                per_meal[meal] = {
+                    "daily": [variant_ref(make_id(d["name"]), d) for d in daily],
+                    "stations": [variant_ref(make_id(d["name"]), d) for d in standing],
+                }
+            menus[iso][hall_id] = per_meal
         hours[iso] = {
             h["id"]: schedule_for(h, as_date)
             for h in config["halls"] if h["active"] and schedule_for(h, as_date)
@@ -96,6 +105,7 @@ def build_payload(root: Path) -> dict:
 
     return {
         "generated_at": datetime.now(TZ).strftime("%b %-d, %Y at %-I:%M %p %Z"),
+        "stations_computed_from": station_table.get("days_analyzed", 0),
         "window": window,
         "halls": [
             {
@@ -141,8 +151,9 @@ def build(root: Path, out: Path) -> dict:
         if stale.name not in used:
             stale.unlink()
 
-    total = sum(len(refs) for day in payload["menus"].values()
-                for meals in day.values() for refs in meals.values())
+    total = sum(len(svc["daily"]) + len(svc["stations"])
+                for day in payload["menus"].values()
+                for meals in day.values() for svc in meals.values())
     return {
         "days": len(payload["window"]),
         "halls": len(payload["halls"]),

@@ -3,7 +3,7 @@
 
   const DATA = JSON.parse(document.getElementById("menu-data").textContent);
   const MEALS = ["Breakfast", "Lunch", "Dinner"];
-  const STORE = "bsdm.prefs.v2";
+  const STORE = "bsdm.prefs.v3";
 
   const DIET = [
     { key: "vegetarian", label: "Vegetarian", cls: "badge-v", short: "VEG" },
@@ -38,13 +38,14 @@
     meal: "Dinner",
     diet: [],
     meatFirst: true,
+    photos: true,
+    stations: true,
     theme: "auto",
   };
 
   function load() {
     try {
-      const saved = JSON.parse(localStorage.getItem(STORE) || "{}");
-      return { ...fallback, ...saved };
+      return { ...fallback, ...JSON.parse(localStorage.getItem(STORE) || "{}") };
     } catch {
       return { ...fallback };
     }
@@ -54,16 +55,14 @@
     try {
       localStorage.setItem(STORE, JSON.stringify(state));
     } catch {
-      /* private browsing, blocked storage -- preferences just don't persist */
+      /* private browsing or blocked storage -- preferences just don't persist */
     }
   }
 
   const state = load();
 
   // A stored date falls out of the rolling 7-day window within a week.
-  if (!DATA.window.includes(state.date)) {
-    state.date = DATA.window.includes(TODAY) ? TODAY : DATA.window[0];
-  }
+  if (!DATA.window.includes(state.date)) state.date = fallback.date;
   state.halls = state.halls.filter((id) => hallById.has(id));
   if (!state.halls.length) state.halls = DATA.defaults.selected.slice();
 
@@ -85,10 +84,9 @@
   };
 
   const dayLabel = (iso) => {
-    const d = new Date(iso + "T12:00:00");
     if (iso === TODAY) return "Today";
     if (iso === TOMORROW) return "Tomorrow";
-    return d.toLocaleDateString(undefined, { weekday: "short" });
+    return new Date(iso + "T12:00:00").toLocaleDateString(undefined, { weekday: "short" });
   };
 
   const dayFull = (iso) =>
@@ -100,12 +98,13 @@
   function resolve(ref) {
     const dot = ref.lastIndexOf(".");
     const id = ref.slice(0, dot);
-    const variant = DATA.dishes[id].v[Number(ref.slice(dot + 1))];
-    return { id, ...DATA.dishes[id], ...variant };
+    return { id, ...DATA.dishes[id], ...DATA.dishes[id].v[Number(ref.slice(dot + 1))] };
   }
 
-  function servedRefs(date, hallId, meal) {
-    return ((DATA.menus[date] || {})[hallId] || {})[meal] || [];
+  const EMPTY = { daily: [], stations: [] };
+
+  function service(date, hallId, meal) {
+    return ((DATA.menus[date] || {})[hallId] || {})[meal] || EMPTY;
   }
 
   /** Meals any selected hall serves that day, in breakfast..dinner order. */
@@ -121,7 +120,7 @@
     return ((DATA.hours[date] || {})[hallId] || {})[meal] || null;
   }
 
-  /** open | soon | shut | null, comparing against the viewer's clock. */
+  /** open | soon | shut | null, compared against the viewer's clock. */
   function serviceStatus(date, span) {
     if (!span || date !== TODAY) return null;
     const now = new Date();
@@ -136,39 +135,11 @@
     return "shut";
   }
 
-  // ---------- rendering ----------
+  function matchesDiet(rec) {
+    return state.diet.every((d) => rec.tags.includes(d));
+  }
 
-  function dishCard(rec, onlyHere) {
-    const card = el("article", {
-      className: "card" + (PROTEIN[rec.category] ? " card-meat" : ""),
-    });
-
-    if (rec.image) {
-      card.append(el("img", {
-        className: "thumb",
-        src: "img/" + rec.image,
-        alt: rec.name,
-        loading: "lazy",
-        decoding: "async",
-        width: 640,
-        height: 640,
-      }));
-    } else {
-      card.append(el("div", {
-        className: "thumb-none",
-        title: rec.placeholder
-          ? "This entry changes daily, so it is deliberately not illustrated."
-          : "No image generated for this dish yet.",
-      }, [
-        el("span", { className: "glyph", textContent: ICONS[rec.icon] || ICONS.plate }),
-        rec.placeholder ? "Varies daily" : "Image pending",
-      ]));
-    }
-
-    const body = el("div", { className: "card-body" }, [
-      el("h3", { className: "dish-name", textContent: rec.name }),
-    ]);
-
+  function badgesFor(rec, onlyHere) {
     const badges = el("div", { className: "badges" });
     if (onlyHere) {
       badges.append(el("span", { className: "badge badge-only", textContent: "ONLY HERE" }));
@@ -184,18 +155,20 @@
         badges.append(el("span", { className: "badge " + d.cls, textContent: d.short }));
       }
     }
-    if (badges.childElementCount) body.append(badges);
+    return badges;
+  }
 
+  function detailsFor(rec) {
+    const out = [];
     if (rec.alg && rec.alg.length) {
       const line = el("p", { className: "allergens" });
       line.append(el("b", { textContent: "Allergens: " }), rec.alg.join(", "));
-      body.append(line);
+      out.push(line);
     }
-
     if (rec.placeholder) {
-      body.append(el("p", {
+      out.push(el("p", {
         className: "placeholder-note",
-        textContent: "Changes daily — ask at the station.",
+        textContent: "Changes daily — ask at the counter.",
       }));
     } else if (rec.ing) {
       const more = el("details", { className: "more" }, [
@@ -208,11 +181,70 @@
           textContent: "Shared equipment with: " + rec.trace.join(", "),
         }));
       }
-      body.append(more);
+      out.push(more);
+    }
+    return out;
+  }
+
+  // ---------- rendering ----------
+
+  /** A dish cooked today. Name leads, so the list is readable before any image loads. */
+  function dishCard(rec, onlyHere) {
+    const card = el("article", {
+      className: "card" + (PROTEIN[rec.category] ? " card-meat" : ""),
+    });
+
+    const head = el("div", { className: "card-head" }, [
+      el("h3", { className: "dish-name", textContent: rec.name }),
+    ]);
+    const badges = badgesFor(rec, onlyHere);
+    if (badges.childElementCount) head.append(badges);
+    card.append(head);
+
+    if (state.photos) {
+      if (rec.image) {
+        card.append(el("img", {
+          className: "thumb",
+          src: "img/" + rec.image,
+          alt: rec.name,
+          loading: "lazy",
+          decoding: "async",
+          width: 1024,
+          height: 576,
+        }));
+      } else {
+        card.append(el("div", {
+          className: "thumb-none",
+          title: rec.placeholder
+            ? "This entry changes daily, so it is deliberately not illustrated."
+            : "No image generated for this dish yet.",
+        }, [
+          el("span", { className: "glyph", textContent: ICONS[rec.icon] || ICONS.plate }),
+          rec.placeholder ? "Varies daily" : "Image pending",
+        ]));
+      }
     }
 
-    card.append(body);
+    const detail = detailsFor(rec);
+    if (detail.length) card.append(el("div", { className: "card-body" }, detail));
     return card;
+  }
+
+  /** A counter that is there every day. Rendered dense: it is not the news. */
+  function stationRow(rec, onlyHere) {
+    const row = el("div", { className: "station" }, [
+      el("span", { className: "station-name", textContent: rec.name }),
+    ]);
+    const badges = badgesFor(rec, onlyHere);
+    if (badges.childElementCount) row.append(badges);
+
+    const detail = detailsFor(rec);
+    if (!detail.length) return row;
+
+    return el("details", { className: "station-wrap" }, [
+      el("summary", {}, [row]),
+      el("div", { className: "station-detail" }, detail),
+    ]);
   }
 
   function render() {
@@ -225,29 +257,27 @@
     const meals = availableMeals(state.date);
     if (meals.length && !meals.includes(state.meal)) state.meal = meals[meals.length - 1];
 
-    // A dish shown by exactly one selected hall is the reason to pick that hall.
+    // A dish shown by exactly one selected hall is the reason to walk there.
+    // Counted over the day's menu only: every hall has a salad bar.
     const spread = new Map();
     for (const hallId of state.halls) {
-      for (const ref of servedRefs(state.date, hallId, state.meal)) {
+      for (const ref of service(state.date, hallId, state.meal).daily) {
         const id = ref.slice(0, ref.lastIndexOf("."));
         spread.set(id, (spread.get(id) || 0) + 1);
       }
     }
 
-    for (const hallId of state.halls) {
-      board.append(column(hallId, spread));
-    }
+    for (const hallId of state.halls) board.append(column(hallId, spread));
 
     renderDigest(spread);
-    document.getElementById("stamp").textContent =
-      `${dayFull(state.date)} · ${state.meal}`;
+    document.getElementById("stamp").textContent = `${dayFull(state.date)} · ${state.meal}`;
     save();
   }
 
   /** How much the selected halls actually differ -- the whole point of comparing. */
   function renderDigest(spread) {
     const node = document.getElementById("digest");
-    const serving = state.halls.filter((h) => servedRefs(state.date, h, state.meal).length);
+    const serving = state.halls.filter((h) => service(state.date, h, state.meal).daily.length);
     if (serving.length < 2) {
       node.replaceChildren();
       return;
@@ -259,11 +289,11 @@
 
     node.replaceChildren(
       el("b", { textContent: String(total) }),
-      ` dishes across ${serving.length} halls · `,
+      ` dishes on today's menu across ${serving.length} halls · `,
       el("b", { textContent: String(everywhere) }),
-      " on every menu · ",
+      " at every one · ",
       el("b", { textContent: String(unique) }),
-      " served at only one.",
+      " at only one.",
     );
     if (unique === 0) {
       node.append(" ", el("span", {
@@ -278,14 +308,12 @@
     const col = el("section", { className: "column" });
     col.style.setProperty("--hall", hall.accent);
 
-    const refs = servedRefs(state.date, hallId, state.meal);
-    let records = refs.map(resolve);
+    const svc = service(state.date, hallId, state.meal);
+    let daily = svc.daily.map(resolve).filter(matchesDiet);
+    const stations = svc.stations.map(resolve).filter(matchesDiet);
 
-    if (state.diet.length) {
-      records = records.filter((r) => state.diet.every((d) => r.tags.includes(d)));
-    }
     if (state.meatFirst) {
-      records = records
+      daily = daily
         .map((r, i) => [r, i])
         .sort((a, b) => (PROTEIN[b[0].category] ? 1 : 0) - (PROTEIN[a[0].category] ? 1 : 0)
           || a[1] - b[1])
@@ -310,19 +338,18 @@
       }));
     }
     if (status) {
-      const label = { open: "Open now", soon: "Opens soon", shut: "Closed" }[status];
-      meta.append(el("span", { className: `pill pill-${status}`, textContent: label }));
+      meta.append(el("span", {
+        className: `pill pill-${status}`,
+        textContent: { open: "Open now", soon: "Opens soon", shut: "Closed" }[status],
+      }));
     }
     meta.append(el("span", {
       className: "count",
-      textContent: `${records.length} ${records.length === 1 ? "item" : "items"}`,
+      textContent: `${daily.length} on the menu`,
     }));
-    const onlyHere = records.filter((r) => spread.get(r.id) === 1).length;
+    const onlyHere = daily.filter((r) => spread.get(r.id) === 1).length;
     if (onlyHere) {
-      meta.append(el("span", {
-        className: "only-count",
-        textContent: `${onlyHere} only here`,
-      }));
+      meta.append(el("span", { className: "only-count", textContent: `${onlyHere} only here` }));
     }
     if (hall.address) {
       meta.append(el("a", {
@@ -336,18 +363,49 @@
     head.append(meta);
     col.append(head);
 
-    if (!refs.length) {
+    if (!svc.daily.length && !svc.stations.length) {
       col.append(el("div", {
         className: "empty",
         textContent: `No ${state.meal.toLowerCase()} service here on ${dayLabel(state.date)}.`,
       }));
-    } else if (!records.length) {
+      return col;
+    }
+
+    if (!daily.length) {
       col.append(el("div", {
         className: "empty",
-        textContent: "Nothing matches the current filters.",
+        textContent: state.diet.length
+          ? "Nothing on today's menu matches the filters."
+          : "Nothing specific listed for today.",
       }));
     } else {
-      for (const rec of records) col.append(dishCard(rec, spread.get(rec.id) === 1));
+      for (const rec of daily) col.append(dishCard(rec, spread.get(rec.id) === 1));
+    }
+
+    if (stations.length) {
+      const wrap = el("section", { className: "stations" });
+      const head = el("div", { className: "stations-head" }, [
+        el("span", { className: "stations-title", textContent: "Always here" }),
+        el("span", { className: "stations-count", textContent: String(stations.length) }),
+      ]);
+      const toggle = el("button", {
+        className: "stations-toggle",
+        type: "button",
+        textContent: state.stations ? "hide" : "show",
+      });
+      toggle.addEventListener("click", () => {
+        state.stations = !state.stations;
+        render();
+      });
+      head.append(toggle);
+      wrap.append(head);
+
+      if (state.stations) {
+        const list = el("div", { className: "station-list" });
+        for (const rec of stations) list.append(stationRow(rec, false));
+        wrap.append(list);
+      }
+      col.append(wrap);
     }
 
     return col;
@@ -370,23 +428,20 @@
   }
 
   function renderControls() {
-    const days = document.getElementById("days");
-    days.replaceChildren(...DATA.window.map((iso) =>
+    document.getElementById("days").replaceChildren(...DATA.window.map((iso) =>
       chip(dayLabel(iso), iso === state.date, () => {
         state.date = iso;
         render();
       }, { sub: iso.slice(5).replace("-", "/") })));
 
     const meals = availableMeals(state.date);
-    const mealBox = document.getElementById("meals");
-    mealBox.replaceChildren(...MEALS.map((m) =>
+    document.getElementById("meals").replaceChildren(...MEALS.map((m) =>
       chip(m, m === state.meal, () => {
         state.meal = m;
         render();
       }, { props: { disabled: !meals.includes(m) } })));
 
-    const halls = document.getElementById("halls");
-    halls.replaceChildren(...DATA.halls.map((h) =>
+    document.getElementById("halls").replaceChildren(...DATA.halls.map((h) =>
       chip(h.short, state.halls.includes(h.id), () => {
         const i = state.halls.indexOf(h.id);
         if (i >= 0) state.halls.splice(i, 1);
@@ -395,8 +450,7 @@
         render();
       }, { className: "chip-hall", accent: h.accent })));
 
-    const diet = document.getElementById("diet");
-    diet.replaceChildren(
+    document.getElementById("diet").replaceChildren(
       ...DIET.map((d) =>
         chip(d.label, state.diet.includes(d.key), () => {
           const i = state.diet.indexOf(d.key);
@@ -408,6 +462,10 @@
         state.meatFirst = !state.meatFirst;
         render();
       }, { className: "chip-ghost" }),
+      chip("Photos", state.photos, () => {
+        state.photos = !state.photos;
+        render();
+      }, { className: "chip-ghost" }),
       chip("Reset", false, () => {
         try {
           localStorage.removeItem(STORE);
@@ -417,8 +475,8 @@
       }, { className: "chip-ghost" }),
     );
 
-    const themeBtn = document.getElementById("theme");
-    themeBtn.textContent = { auto: "◐ Auto", light: "☀ Light", dark: "☾ Dark" }[state.theme];
+    document.getElementById("theme").textContent =
+      { auto: "◐ Auto", light: "☀ Light", dark: "☾ Dark" }[state.theme];
   }
 
   document.getElementById("theme").addEventListener("click", () => {

@@ -36,6 +36,7 @@ ICON_TAGS = {
 @dataclass
 class Dish:
     name: str
+    recipe_id: str = ""  # R&DE's own menu-item id, stable per hall
     description: str = ""
     ingredients: str = ""
     allergens: list[str] = field(default_factory=list)
@@ -168,6 +169,12 @@ def parse_dishes(html: str) -> list[Dish]:
             continue
 
         dish = Dish(name=name, order=i)
+
+        # R&DE tags each row with its own menu-item id. Two halls can run a
+        # station of the same name with different ids, which is how "Panini
+        # Station" at Arrillaga and at Branner are told apart.
+        if fb := li.select_one("[id^='idFeedback_']"):
+            dish.recipe_id = fb["id"].removeprefix("idFeedback_")
 
         if el := li.select_one(".clsLabel_Description"):
             dish.description = _clean(el.get_text())

@@ -20,6 +20,7 @@ sys.path.insert(0, str(ROOT))
 from bsdm import dishes as dishlib  # noqa: E402
 from bsdm import hours as hourslib  # noqa: E402
 from bsdm.scrape import MenuScraper  # noqa: E402
+from bsdm.stations import analyze as analyze_stations  # noqa: E402
 
 TZ = ZoneInfo("America/Los_Angeles")
 CORE_MEALS = ("Breakfast", "Lunch", "Dinner")
@@ -141,6 +142,14 @@ def main() -> int:
                  sum(len(v) for v in payload["halls"].values()))
 
     catalog_path.write_text(json.dumps(catalog, indent=1, ensure_ascii=False, sort_keys=True) + "\n")
+
+    table = analyze_stations(menus_dir)
+    (ROOT / "data" / "stations.json").write_text(
+        json.dumps(table, indent=1, ensure_ascii=False, sort_keys=True) + "\n"
+    )
+    n_stations = sum(len(m["stations"]) for h in table["halls"].values() for m in h.values())
+    log.info("Stations: %d standing counters across %d halls (%d days of history)",
+             n_stations, len(table["halls"]), table["days_analyzed"])
 
     illustratable = sum(1 for e in catalog.values() if not e["placeholder"])
     missing = sum(1 for e in catalog.values() if not e["placeholder"] and not e.get("image"))
