@@ -42,11 +42,13 @@ jobs:
         with:
           path: site
 
-  # ENABLE_PAGES is the kill switch. Unset it to stop publishing without having
-  # to touch these workflows or disconnect the domain.
+  # Publishes unless told not to: setting the repository variable ENABLE_PAGES
+  # to "false" is the kill switch, and leaving it unset is the normal case. It
+  # was the other way round while Pages was still off, which meant the site
+  # could not go live without someone setting a variable by hand.
   deploy:
     needs: build
-    if: vars.ENABLE_PAGES == 'true'
+    if: vars.ENABLE_PAGES != 'false'
     runs-on: ubuntu-latest
     environment:
       name: github-pages

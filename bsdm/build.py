@@ -14,6 +14,10 @@ from zoneinfo import ZoneInfo
 
 TZ = ZoneInfo("America/Los_Angeles")
 
+# The domain the site is served from. Written into the artifact as CNAME on
+# every build; see the note where it is written.
+DOMAIN = "stanford-dining.neilmin.com"
+
 
 def schedule_for(hall: dict, day: date) -> dict:
     """The meal -> [open, close] table this hall runs on `day`."""
@@ -138,6 +142,10 @@ def build(root: Path, out: Path) -> dict:
     out.mkdir(parents=True, exist_ok=True)
     (out / "index.html").write_text(html)
     (out / ".nojekyll").write_text("")
+    # Pages reads the custom domain out of the published artifact, so shipping
+    # CNAME here sets it on every deploy. Keeping it in the build rather than in
+    # the repo root also means the domain cannot drift from what is served.
+    (out / "CNAME").write_text(DOMAIN + "\n")
 
     img_out = out / "img"
     img_out.mkdir(exist_ok=True)
