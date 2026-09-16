@@ -71,6 +71,8 @@ def main() -> int:
     ap.add_argument("--max-priority", type=int, default=2, choices=(0, 1, 2),
                     help="0 meat only, 1 adds other mains, 2 adds sides (default)")
     ap.add_argument("--steps", type=int, help="override step count")
+    ap.add_argument("--free-every", type=int, default=20, metavar="N",
+                    help="release ComfyUI's cached models every N images (0 disables)")
     args = ap.parse_args()
 
     catalog = json.loads(CATALOG.read_text())
@@ -137,6 +139,9 @@ def main() -> int:
             "seed": seed,
             "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         })
+
+        if args.free_every and i % args.free_every == 0 and i < len(pending):
+            client.free()
 
         elapsed = time.monotonic() - started
         eta = (elapsed / i) * (len(pending) - i)

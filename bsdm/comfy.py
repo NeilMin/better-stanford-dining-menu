@@ -148,6 +148,22 @@ class ComfyClient:
         if cfg["sampler"] not in options("KSampler", "sampler_name"):
             raise ComfyError(f"sampler {cfg['sampler']} unavailable")
 
+    def free(self, unload_models: bool = True) -> None:
+        """Ask ComfyUI to drop cached models and release memory.
+
+        Metal allocations are not reflected in RSS, and over a long batch this
+        server accumulates several GB that macOS will eventually kill the run
+        over. Freeing periodically costs one model reload and prevents that.
+        """
+        try:
+            self.session.post(
+                f"{self.base_url}/free",
+                json={"unload_models": unload_models, "free_memory": True},
+                timeout=self.timeout,
+            )
+        except requests.RequestException as exc:
+            log.warning("could not free ComfyUI memory: %s", exc)
+
     def submit(self, workflow: dict) -> str:
         r = self.session.post(
             f"{self.base_url}/prompt",
