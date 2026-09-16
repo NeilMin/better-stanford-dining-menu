@@ -262,6 +262,10 @@ main { max-width: 1800px; margin: 0 auto; padding: 18px 16px 64px; }
 .thumb {
   display: block;
   width: 100%;
+  /* height:auto is load-bearing -- the img carries width/height attributes so the
+     card reserves space before the image loads, and without it those attributes
+     fix the used height and aspect-ratio is ignored. */
+  height: auto;
   /* Generated square, cropped to 4:3 so three columns stay comparable without
      scrolling past one dish at a time. */
   aspect-ratio: 4 / 3;
