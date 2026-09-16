@@ -1,0 +1,50 @@
+name: Daily menu refresh
+
+# R&DE only exposes a rolling seven-day window, so anything not scraped while it
+# is visible is gone for good. This job is the only reason the archive in data/
+# goes back further than a week.
+
+on:
+  schedule:
+    # 06:20 UTC is ~23:20 PT, after R&DE has rolled the window to the next day.
+    - cron: "20 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Scrape the menu window
+        run: uv run python scripts/update.py
+
+      - name: Commit refreshed menus
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then
+            echo "No menu changes."
+          else
+            git commit -m "data: refresh menus for $(date -u +%Y-%m-%d)"
+            git push
+          fi
+
+  # Called, not triggered. A push made with GITHUB_TOKEN deliberately does not
+  # fire `on: push`, so without this the daily scrape would commit new menus and
+  # never publish them.
+  publish:
+    needs: refresh
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/pages.yml

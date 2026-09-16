@@ -1,0 +1,56 @@
+name: Publish site
+
+# Publishing is deliberately separate from scraping: any push that changes the
+# templates, the catalog or the locally generated images should reach the site
+# without waiting for tomorrow's cron, and a failed scrape should never take the
+# published site down with it.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  workflow_call:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # By name, not by SHA. A called workflow checks out the commit that
+          # started the run, and the refresh job commits new menus *after* that
+          # point -- taking the default would publish yesterday's data.
+          ref: main
+
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Build the site
+        run: uv run python scripts/build_site.py
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  # ENABLE_PAGES is the kill switch. Unset it to stop publishing without having
+  # to touch these workflows or disconnect the domain.
+  deploy:
+    needs: build
+    if: vars.ENABLE_PAGES == 'true'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v4
