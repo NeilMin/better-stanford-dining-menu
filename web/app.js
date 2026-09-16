@@ -3,7 +3,7 @@
 
   const DATA = JSON.parse(document.getElementById("menu-data").textContent);
   const MEALS = ["Breakfast", "Lunch", "Dinner"];
-  const STORE = "bsdm.prefs.v1";
+  const STORE = "bsdm.prefs.v2";
 
   const DIET = [
     { key: "vegetarian", label: "Vegetarian", cls: "badge-v", short: "VEG" },
@@ -406,6 +406,13 @@
         })),
       chip("Meat first", state.meatFirst, () => {
         state.meatFirst = !state.meatFirst;
+        render();
+      }, { className: "chip-ghost" }),
+      chip("Reset", false, () => {
+        try {
+          localStorage.removeItem(STORE);
+        } catch { /* storage blocked; the in-memory reset below still applies */ }
+        Object.assign(state, structuredClone(fallback));
         render();
       }, { className: "chip-ghost" }),
     );

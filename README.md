@@ -69,6 +69,22 @@ make hours-diff      # see what moved
 make hours-accept    # record the new baseline
 ```
 
+**Verifying the scrape.** Most halls run a shared cycle menu, so identical menus across
+halls are normal rather than a bug — and that makes a scraper fault hard to spot, because a
+broken location dropdown produces the same symptom. `make verify` re-fetches live and diffs
+against what is stored:
+
+```sh
+make verify
+uv run python scripts/verify.py --day 2026-09-16 --meal Lunch --halls arrillaga,wilbur
+```
+
+Measured over one week of real data (145 hall-services), the discriminating power looks like
+this: **breakfast is one campus-wide menu, identical at every hall, every day.** Lunch and
+dinner return 5–7 distinct menus across 8 halls. Branner is unique in all 8 of its services;
+Arrillaga and Ricker match some other hall in 20 of 21. So dinner is where choosing actually
+matters — which is why it is the default meal.
+
 **Image generation** talks to a local [ComfyUI](https://github.com/comfyanonymous/ComfyUI) over
 HTTP; it never starts or stops the server, and it renders through `PreviewImage` so a bulk run
 leaves nothing behind in a ComfyUI install shared with other projects.

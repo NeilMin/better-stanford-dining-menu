@@ -1,7 +1,7 @@
 # Everything except `images` runs without a GPU, which is what CI relies on.
 PY := uv run python
 
-.PHONY: all update images site serve clean hours-diff hours-accept
+.PHONY: all update images site serve clean hours-diff hours-accept verify
 
 all: update site           ## scrape the week and rebuild the site
 
@@ -13,6 +13,10 @@ images:                    ## draw the dishes still missing pictures (needs loca
 
 site:                      ## render site/ from data/
 	$(PY) scripts/build_site.py
+
+verify:                    ## re-fetch today's dinner live and diff it against data/
+	$(PY) scripts/verify.py --day $$(date +%Y-%m-%d) --meal Dinner \
+	  --halls arrillaga,lakeside,wilbur,stern,florencemoore,ricker,gerhardcasper,branner
 
 catalog:                   ## re-derive data/dishes.json after tuning classification
 	$(PY) scripts/rebuild_catalog.py
