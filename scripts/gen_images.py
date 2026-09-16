@@ -30,6 +30,19 @@ def seed_for(dish_id: str) -> int:
     return int(dish_id[:8], 16)
 
 
+def record_image(dish_id: str, fields: dict) -> None:
+    """Merge one dish's image fields into the catalog on disk.
+
+    A full backfill runs for hours, so the catalog is re-read and rewritten per
+    dish rather than held in memory: rebuild_catalog.py may well reclassify
+    dishes while this is still running, and a wholesale write would silently
+    revert that work.
+    """
+    catalog = json.loads(CATALOG.read_text())
+    catalog.setdefault(dish_id, {}).update(fields)
+    CATALOG.write_text(json.dumps(catalog, indent=1, ensure_ascii=False, sort_keys=True) + "\n")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--url", default=DEFAULT_URL, help="ComfyUI base URL")
@@ -90,15 +103,14 @@ def main() -> int:
             continue
 
         (IMAGES / f"{did}.webp").write_bytes(to_webp(image))
-        entry.update({
+        done += 1
+        # Persisted per image: a multi-hour backfill must survive a Ctrl-C.
+        record_image(did, {
             "image": f"{did}.webp",
             "model": args.model,
             "seed": seed,
             "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         })
-        done += 1
-        # Persist after every image: a 2-hour backfill must survive a Ctrl-C.
-        CATALOG.write_text(json.dumps(catalog, indent=1, ensure_ascii=False, sort_keys=True) + "\n")
 
         elapsed = time.monotonic() - started
         eta = (elapsed / i) * (len(pending) - i)

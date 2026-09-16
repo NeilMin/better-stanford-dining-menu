@@ -149,6 +149,20 @@ body {
 
 main { max-width: 1800px; margin: 0 auto; padding: 18px 16px 64px; }
 
+.digest {
+  margin: 0 0 14px;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+.digest b { color: var(--text); font-weight: 620; }
+.digest .warn { color: var(--cardinal); font-weight: 600; }
+
+.only-count {
+  font-size: 11px;
+  font-weight: 620;
+  color: var(--cardinal);
+}
+
 .board {
   display: grid;
   grid-auto-flow: column;

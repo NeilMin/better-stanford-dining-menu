@@ -238,9 +238,39 @@
       board.append(column(hallId, spread));
     }
 
+    renderDigest(spread);
     document.getElementById("stamp").textContent =
       `${dayFull(state.date)} · ${state.meal}`;
     save();
+  }
+
+  /** How much the selected halls actually differ -- the whole point of comparing. */
+  function renderDigest(spread) {
+    const node = document.getElementById("digest");
+    const serving = state.halls.filter((h) => servedRefs(state.date, h, state.meal).length);
+    if (serving.length < 2) {
+      node.replaceChildren();
+      return;
+    }
+
+    const total = spread.size;
+    const everywhere = [...spread.values()].filter((n) => n === serving.length).length;
+    const unique = [...spread.values()].filter((n) => n === 1).length;
+
+    node.replaceChildren(
+      el("b", { textContent: String(total) }),
+      ` dishes across ${serving.length} halls · `,
+      el("b", { textContent: String(everywhere) }),
+      " on every menu · ",
+      el("b", { textContent: String(unique) }),
+      " served at only one.",
+    );
+    if (unique === 0) {
+      node.append(" ", el("span", {
+        className: "warn",
+        textContent: "These menus are identical — go wherever is closest.",
+      }));
+    }
   }
 
   function column(hallId, spread) {
@@ -287,6 +317,13 @@
       className: "count",
       textContent: `${records.length} ${records.length === 1 ? "item" : "items"}`,
     }));
+    const onlyHere = records.filter((r) => spread.get(r.id) === 1).length;
+    if (onlyHere) {
+      meta.append(el("span", {
+        className: "only-count",
+        textContent: `${onlyHere} only here`,
+      }));
+    }
     if (hall.address) {
       meta.append(el("a", {
         className: "maplink",

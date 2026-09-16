@@ -93,7 +93,9 @@ redeploys daily, so menus stay current with your laptop closed. Images are the e
 they need a local GPU, so you generate them locally and commit them, and the site shows a
 labelled placeholder for any dish whose picture has not landed yet.
 
-Enable Pages (Settings → Pages → Source: GitHub Actions) and the included workflow does the rest.
+Deployment is gated off by default so the repo doesn't accumulate failing runs before you want
+it live. To publish: enable Settings → Pages → Source: GitHub Actions, then set the repository
+variable `ENABLE_PAGES` to `true`. The daily scrape runs either way.
 
 ## Caveats
 

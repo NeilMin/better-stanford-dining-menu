@@ -53,8 +53,12 @@ jobs:
         with:
           path: site
 
+  # Gated so the repo does not show failing runs before Pages is turned on.
+  # To publish: enable Settings -> Pages -> Source: GitHub Actions, then set the
+  # repository variable ENABLE_PAGES to "true".
   deploy:
     needs: refresh
+    if: vars.ENABLE_PAGES == 'true'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
