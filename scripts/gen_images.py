@@ -20,8 +20,9 @@ sys.path.insert(0, str(ROOT))
 
 from PIL import Image  # noqa: E402
 
+from bsdm import dishes as dishlib  # noqa: E402
+from bsdm.catalog import is_stale  # noqa: E402
 from bsdm.comfy import DEFAULT_URL, MODELS, ComfyClient, ComfyError, to_webp  # noqa: E402
-from bsdm.dishes import NEGATIVE_PROMPT  # noqa: E402
 
 IMAGES = ROOT / "data" / "images"
 CATALOG = ROOT / "data" / "dishes.json"
@@ -68,6 +69,8 @@ def main() -> int:
     ap.add_argument("--limit", type=int, help="stop after N images")
     ap.add_argument("--only", help="substring match on the dish name")
     ap.add_argument("--force", action="store_true", help="redraw dishes that already have images")
+    ap.add_argument("--redraw-stale", action="store_true",
+                    help="also redraw images drawn before the current prompt rules")
     ap.add_argument("--max-priority", type=int, default=2, choices=(0, 1, 2),
                     help="0 meat only, 1 adds other mains, 2 adds sides (default)")
     ap.add_argument("--steps", type=int, help="override step count")
@@ -105,7 +108,8 @@ def main() -> int:
         if args.only and args.only.lower() not in entry["name"].lower():
             continue
         path = IMAGES / f"{did}.webp"
-        if path.exists() and entry.get("image") and not args.force and is_current(path):
+        if (path.exists() and entry.get("image") and not args.force
+                and is_current(path) and not (args.redraw_stale and is_stale(entry))):
             continue
         pending.append((did, entry))
 
@@ -123,7 +127,9 @@ def main() -> int:
         seed = seed_for(did)
         try:
             image, secs = client.generate(
-                args.model, entry["prompt"], NEGATIVE_PROMPT, seed, steps=args.steps,
+                args.model, entry["prompt"],
+                entry.get("negative") or dishlib.negative_prompt(entry),
+                seed, steps=args.steps,
             )
         except (ComfyError, OSError) as exc:
             failed += 1
@@ -137,6 +143,7 @@ def main() -> int:
             "image": f"{did}.webp",
             "model": args.model,
             "seed": seed,
+            "prompt_rev": dishlib.PROMPT_REV,
             "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         })
 

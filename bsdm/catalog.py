@@ -73,6 +73,7 @@ def build(menu_dir: Path, station_table: dict, previous: dict | None = None) -> 
         entry["station_only"] = as_daily.get(did, 0) == 0 and as_station.get(did, 0) > 0
         entry["needs_image"] = not entry["placeholder"] and not entry["station_only"]
         entry["prompt"] = dishlib.image_prompt(entry) if entry["needs_image"] else None
+        entry["negative"] = dishlib.negative_prompt(entry) if entry["needs_image"] else None
 
         # 0 is what you pick a hall for, 2 is a side. Menu position is the
         # signal: R&DE lists the day's entrees first.
@@ -90,21 +91,27 @@ def build(menu_dir: Path, station_table: dict, previous: dict | None = None) -> 
         if old := previous.get(did):
             entry["first_seen"] = min(entry["first_seen"], old.get("first_seen", entry["first_seen"]))
             entry["image"] = old.get("image")
-            for key in ("generated_at", "model", "seed"):
+            for key in ("generated_at", "model", "seed", "prompt_rev"):
                 if key in old:
                     entry[key] = old[key]
 
     return catalog
 
 
+def is_stale(entry: dict) -> bool:
+    """An image drawn before the current prompt rules existed."""
+    return bool(entry.get("image")) and entry.get("prompt_rev", 1) < dishlib.PROMPT_REV
+
+
 def summarize(catalog: dict) -> str:
     need = [e for e in catalog.values() if e["needs_image"]]
     missing = [e for e in need if not e.get("image")]
+    stale = [e for e in need if is_stale(e)]
     by_priority = {p: sum(1 for e in missing if e["priority"] == p) for p in (0, 1, 2)}
     return (
         f"{len(catalog)} dishes | {len(need)} want images "
         f"({sum(1 for e in catalog.values() if e['station_only'])} stations and "
         f"{sum(1 for e in catalog.values() if e['placeholder'])} placeholders skipped) | "
         f"{len(missing)} missing: {by_priority[0]} meat, {by_priority[1]} other mains, "
-        f"{by_priority[2]} sides"
+        f"{by_priority[2]} sides | {len(stale)} drawn under older prompt rules"
     )

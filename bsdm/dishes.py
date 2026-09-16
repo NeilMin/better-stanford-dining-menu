@@ -67,10 +67,30 @@ _FLAVORING_RE = re.compile(
     r"(chicken|beef|pork|veal|fish|ham|lobster|clam|shrimp)\s+"
     r"(soup\s+)?(base|stock|broth|bouillon|consomm[e\u00e9]|essence|powder|fat|flavor(ing)?)"
     r"|anchov(y|ies)|fish sauce|oyster sauce|shrimp paste|bonito|dashi"
+    # Condiments named after an animal they do not contain. Left in the prompt,
+    # "A-1 steak sauce" in a vegetable stir-fry puts sliced steak on the plate.
+    r"|(a-?1\s+)?steak sauce|chicken salt"
     r"|worcestershire|lard|gelatin|rennet|natural flavor(ing)?s?"
     r")\b",
     re.I,
 )
+
+# Seasonings, cooking media and thickeners. They belong in a recipe but not in a
+# photograph, and every one of them crowds out an ingredient you could actually
+# see -- the prompt keeps only the first eight.
+_INVISIBLE_RE = re.compile(
+    r"^\s*("
+    r"(kosher |sea |table )?salt|(black |white |ground )?pepper(corn)?s?|sugar|water|ice"
+    # Any oil, however the kitchen spells the blend ("canola/olive oil blend").
+    r"|[\w/ ]*oils?( blend)?|cooking spray|butter spray"
+    r"|corn ?starch|arrowroot|xanthan gum|flour|baking (powder|soda)|yeast|msg"
+    r"|(white |red |rice |apple cider |balsamic )?vinegar|citric acid|lemon juice|lime juice"
+    r"|spices?|seasoning( blend| mix)?|salt and pepper|garlic powder|onion powder"
+    r"|preservatives?|emulsifiers?|food colou?ring"
+    r")\s*$",
+    re.I,
+)
+
 
 _CATEGORY_LABEL = {
     "seafood": "Seafood",
@@ -219,26 +239,29 @@ def _key_ingredients(ingredients: str, limit: int = 12) -> list[str]:
     for ch in text:
         if ch in "([":
             depth += 1
-        elif ch in ")]":
+            continue
+        if ch in ")]":
+            # Dropped, not kept: closing at depth 1 lands back on depth 0, and a
+            # naive "append when depth is 0" leaves "caesar dressing )".
             depth = max(0, depth - 1)
-        elif ch == "," and depth == 0:
+            continue
+        if depth:
+            continue
+        if ch == ",":
             out.append("".join(buf))
             buf = []
             continue
-        if depth == 0:
-            buf.append(ch)
+        buf.append(ch)
     out.append("".join(buf))
 
-    skipped = re.compile(
-        r"^(salt|pepper|black pepper|water|sugar|spices?|seasoning|oil|canola|"
-        r"olive oil|canola/olive oil blend|vegetable oil|natural flavors?|"
-        r"citric acid|xanthan gum|preservatives?)$",
-        re.I,
-    )
     seen, clean = set(), []
     for item in out:
         item = re.sub(r"\s+", " ", item).strip(" .;:-")
-        if not item or len(item) > 40 or skipped.match(item):
+        if not item or len(item) > 40 or _INVISIBLE_RE.match(item):
+            continue
+        # The same rule that stops "oyster sauce" from marking a dish as seafood
+        # has to stop it reaching the prompt, or the picture grows an oyster.
+        if _FLAVORING_RE.search(item):
             continue
         low = item.lower()
         if low in seen:
@@ -279,3 +302,39 @@ NEGATIVE_PROMPT = (
     "lowres, deformed, distorted, oversaturated, cartoon, illustration, "
     "3d render, plastic, fake looking, duplicate plates"
 )
+
+# What each protein looks like on a plate, phrased for the negative prompt.
+_PROTEIN_NEGATIVE = {
+    "seafood": "fish fillet, shrimp, prawns, shellfish",
+    "pork": "pork, bacon, ham, pork belly",
+    "beef": "beef, sliced steak, ground beef",
+    "lamb": "lamb, mutton",
+    "poultry": "chicken, chicken breast, turkey",
+}
+
+
+def negative_prompt(dish) -> str:
+    """The negative prompt for one dish, naming the proteins it must not show.
+
+    SDXL conditions on CLIP, which has no way to represent "no meat" -- a positive
+    prompt saying so is read as a prompt about meat. Steering a protein out of a
+    picture only works from the negative side, so the dish's own classification
+    is turned into the list of things to exclude: everything, for a dish the hall
+    labels vegetarian, and the other four proteins for a dish that has one, which
+    is what stops grilled chicken from being plated as steak.
+    """
+    category = classify(dish)
+    if category in ("vegan", "vegetarian"):
+        exclude = list(_PROTEIN_NEGATIVE.values()) + ["meat"]
+    elif category in _PROTEIN_NEGATIVE:
+        exclude = [v for k, v in _PROTEIN_NEGATIVE.items() if k != category]
+    else:
+        # "other" is genuinely unknown -- a dish with no icon and no protein
+        # keyword may still arrive with meat in it, so nothing is excluded.
+        return NEGATIVE_PROMPT
+    return ", ".join(exclude) + ", " + NEGATIVE_PROMPT
+
+
+# Bumped whenever the prompt rules change, so already-drawn images can be told
+# apart from ones drawn under the current rules and redrawn in priority order.
+PROMPT_REV = 2
