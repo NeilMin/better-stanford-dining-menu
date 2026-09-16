@@ -1,0 +1,216 @@
+{
+  "_source": "https://rde.stanford.edu/dining-hospitality/dining-locations-hours",
+  "_captured": "2026-09-15",
+  "_note": "Hand-transcribed ground truth. The source page is prose, not structured data, so scripts/check_hours.py watches it for changes rather than parsing it. When it reports a diff, re-transcribe this file.",
+  "_schema": {
+    "menu_key": "value submitted to the rdeapps lstLocations dropdown",
+    "schedules": "ordered list; first entry whose date range covers the target date wins. 'days' uses 0=Mon..6=Sun.",
+    "meals": "meal name -> [open, close] in 24h local time"
+  },
+  "halls": [
+    {
+      "id": "arrillaga",
+      "menu_key": "Arrillaga",
+      "name": "Arrillaga Family Dining Commons",
+      "short": "Arrillaga",
+      "address": "489 Arguello Mall, Stanford, CA 94305",
+      "concept": null,
+      "tagline": "Large West Campus commons with late-night service",
+      "active": true,
+      "accent": "#8C1515",
+      "schedules": [
+        {"from": "2026-09-15", "to": "2026-09-15", "label": "NSO Hours", "days": [0,1,2,3,4,5,6],
+         "meals": {"Lunch": ["11:00","14:30"], "Dinner": ["17:00","20:00"]}},
+        {"from": "2026-09-16", "to": "2026-09-17", "label": "NSO Hours", "days": [0,1,2,3,4,5,6],
+         "meals": {"Breakfast": ["07:30","10:00"], "Lunch": ["11:30","14:30"], "Dinner": ["17:00","20:00"]}},
+        {"from": "2026-09-18", "to": null, "label": "Fall Hours", "days": [0,1,2,3,4],
+         "meals": {"Breakfast": ["07:30","10:00"], "Lunch": ["11:00","15:00"], "Dinner": ["17:00","20:30"]}},
+        {"from": "2026-09-18", "to": null, "label": "Fall Hours", "days": [5,6],
+         "meals": {"Lunch": ["09:00","13:30"], "Dinner": ["17:00","20:00"]}}
+      ],
+      "late_night": {"name": "Arrillaga Nights", "days": [3,4,5,6], "hours": ["21:30","02:00"]}
+    },
+    {
+      "id": "lakeside",
+      "menu_key": "Lakeside",
+      "name": "Lakeside Dining",
+      "short": "Lakeside",
+      "address": "326 Santa Teresa St, Stanford, CA 94305",
+      "concept": "Magnolia Southern Dining",
+      "tagline": "Southern cooking: brisket, Nashville hot chicken, gumbo, po'boys",
+      "active": true,
+      "accent": "#B1040E",
+      "schedules": [
+        {"from": "2026-09-15", "to": "2026-09-15", "label": "NSO Hours", "days": [0,1,2,3,4,5,6],
+         "meals": {"Lunch": ["11:00","13:30"], "Dinner": ["18:00","20:00"]}},
+        {"from": "2026-09-16", "to": "2026-09-16", "label": "NSO Hours", "days": [0,1,2,3,4,5,6],
+         "meals": {"Breakfast": ["07:30","09:00"], "Lunch": ["11:30","13:00"], "Dinner": ["17:00","19:00"]}},
+        {"from": "2026-09-17", "to": "2026-09-17", "label": "NSO Hours", "days": [0,1,2,3,4,5,6],
+         "meals": {"Breakfast": ["07:30","09:00"], "Lunch": ["11:30","13:30"], "Dinner": ["17:00","19:00"]}},
+        {"from": "2026-09-18", "to": null, "label": "Fall Hours", "days": [0,1,2,3,4],
+         "meals": {"Breakfast": ["07:30","10:00"], "Lunch": ["11:00","14:00"], "Dinner": ["17:00","20:30"]}},
+        {"from": "2026-09-18", "to": null, "label": "Fall Hours", "days": [5,6],
+         "meals": {"Lunch": ["09:00","13:30"], "Dinner": ["17:00","20:00"]}}
+      ],
+      "late_night": {"name": "Late Night at Lakeside", "days": [6,0,1,2,3], "hours": ["21:30","02:00"]}
+    },
+    {
+      "id": "wilbur",
+      "menu_key": "Wilbur",
+      "name": "Wilbur Dining",
+      "short": "Wilbur",
+      "address": "658 Escondido Rd, Stanford, CA 94305",
+      "concept": "Star Ginger, inspired by Chef Mai Pham",
+      "tagline": "Southeast Asian: Thai curries, Vietnamese noodle soups, grilled meats",
+      "active": true,
+      "accent": "#E98300",
+      "schedules": [
+        {"from": "2026-09-15", "to": "2026-09-15", "label": "NSO Hours", "days": [0,1,2,3,4,5,6],
+         "meals": {"Lunch": ["11:00","13:30"], "Dinner": ["18:00","20:00"]}},
+        {"from": "2026-09-16", "to": "2026-09-16", "label": "NSO Hours", "days": [0,1,2,3,4,5,6],
+         "meals": {"Breakfast": ["07:30","09:00"], "Lunch": ["11:30","13:00"], "Dinner": ["17:00","19:00"]}},
+        {"from": "2026-09-17", "to": "2026-09-17", "label": "NSO Hours", "days": [0,1,2,3,4,5,6],
+         "meals": {"Breakfast": ["07:30","09:00"], "Lunch": ["11:30","13:30"], "Dinner": ["17:00","19:00"]}},
+        {"from": "2026-09-18", "to": null, "label": "Fall Hours", "days": [0,1,2,3,4],
+         "meals": {"Breakfast": ["07:30","10:00"], "Lunch": ["11:00","14:00"], "Dinner": ["17:00","20:00"]}},
+        {"from": "2026-09-18", "to": null, "label": "Fall Hours", "days": [5,6],
+         "meals": {"Lunch": ["09:00","13:30"], "Dinner": ["17:00","20:00"]}}
+      ],
+      "late_night": null
+    },
+    {
+      "id": "stern",
+      "menu_key": "Stern",
+      "name": "Stern Dining",
+      "short": "Stern",
+      "address": "618 Escondido Rd, Stanford, CA 94305",
+      "concept": "Cardinal Sage, inspired by Chef Iliana de la Vega",
+      "tagline": "Modern Oaxacan: slow-marinated meats, house salsas, scratch rice and beans",
+      "active": true,
+      "accent": "#007C92",
+      "schedules": [
+        {"from": "2026-09-15", "to": "2026-09-15", "label": "NSO Hours", "days": [0,1,2,3,4,5,6],
+         "meals": {"Breakfast": ["07:30","10:00"], "Lunch": ["11:00","13:30"], "Dinner": ["17:00","20:00"]}},
+        {"from": "2026-09-16", "to": "2026-09-17", "label": "NSO Hours", "days": [0,1,2,3,4,5,6],
+         "meals": {"Breakfast": ["07:30","09:00"], "Lunch": ["11:00","13:00"], "Dinner": ["17:00","20:00"]}},
+        {"from": "2026-09-18", "to": null, "label": "Fall Hours", "days": [0,1,2,3,4],
+         "meals": {"Breakfast": ["07:30","09:00"], "Lunch": ["11:00","13:30"], "Dinner": ["17:00","20:00"]}},
+        {"from": "2026-09-18", "to": null, "label": "Fall Hours", "days": [5,6],
+         "meals": {"Lunch": ["10:30","13:30"], "Dinner": ["17:00","20:00"]}}
+      ],
+      "late_night": null
+    },
+    {
+      "id": "florencemoore",
+      "menu_key": "FlorenceMoore",
+      "name": "Florence Moore Dining",
+      "short": "FloMo",
+      "address": "436 Mayfield Ave, Stanford, CA 94305",
+      "concept": "Home of our Kosher Kitchen",
+      "tagline": "Campus kosher kitchen",
+      "active": true,
+      "accent": "#6FA287",
+      "schedules": [
+        {"from": "2026-09-15", "to": "2026-09-15", "label": "NSO Hours", "days": [0,1,2,3,4,5,6],
+         "meals": {"Lunch": ["11:00","13:30"], "Dinner": ["18:00","20:00"]}},
+        {"from": "2026-09-16", "to": "2026-09-16", "label": "NSO Hours", "days": [0,1,2,3,4,5,6],
+         "meals": {"Breakfast": ["07:30","09:00"], "Lunch": ["11:30","13:00"], "Dinner": ["17:00","19:00"]}},
+        {"from": "2026-09-17", "to": "2026-09-17", "label": "NSO Hours", "days": [0,1,2,3,4,5,6],
+         "meals": {"Breakfast": ["07:30","09:00"], "Lunch": ["11:30","13:30"], "Dinner": ["17:00","19:00"]}},
+        {"from": "2026-09-18", "to": null, "label": "Fall Hours", "days": [0,1,2,3,4],
+         "meals": {"Breakfast": ["07:30","09:00"], "Lunch": ["11:00","13:30"], "Dinner": ["17:00","20:00"]}},
+        {"from": "2026-09-18", "to": null, "label": "Fall Hours", "days": [5,6],
+         "meals": {"Lunch": ["10:30","13:30"], "Dinner": ["17:00","20:00"]}}
+      ],
+      "late_night": null
+    },
+    {
+      "id": "ricker",
+      "menu_key": "Ricker",
+      "name": "Ricker Dining",
+      "short": "Ricker",
+      "address": "238 Santa Teresa St, Stanford, CA 94305",
+      "concept": null,
+      "tagline": null,
+      "active": true,
+      "accent": "#8F993E",
+      "schedules": [
+        {"from": "2026-09-15", "to": "2026-09-15", "label": "NSO Hours", "days": [0,1,2,3,4,5,6],
+         "meals": {"Lunch": ["11:00","13:30"], "Dinner": ["18:00","20:00"]}},
+        {"from": "2026-09-16", "to": "2026-09-16", "label": "NSO Hours", "days": [0,1,2,3,4,5,6],
+         "meals": {"Breakfast": ["07:30","09:00"], "Lunch": ["11:30","13:00"], "Dinner": ["17:00","19:00"]}},
+        {"from": "2026-09-17", "to": "2026-09-17", "label": "NSO Hours", "days": [0,1,2,3,4,5,6],
+         "meals": {"Breakfast": ["07:30","09:00"], "Lunch": ["11:30","13:30"], "Dinner": ["17:00","19:00"]}},
+        {"from": "2026-09-18", "to": null, "label": "Fall Hours", "days": [0,1,2,3,4],
+         "meals": {"Breakfast": ["07:30","09:00"], "Lunch": ["11:00","13:30"], "Dinner": ["17:00","20:00"]}},
+        {"from": "2026-09-18", "to": null, "label": "Fall Hours", "days": [5,6],
+         "meals": {"Lunch": ["10:30","13:30"], "Dinner": ["17:00","20:00"]}}
+      ],
+      "late_night": null
+    },
+    {
+      "id": "gerhardcasper",
+      "menu_key": "GerhardCasper",
+      "name": "Gerhard Casper Dining Commons",
+      "short": "Casper",
+      "address": "661 Escondido Rd, Stanford, CA 94305",
+      "concept": "Spice Flower Kitchen, inspired by Chef Mai Pham",
+      "tagline": "Asian vegetarian; Jain/Sattvic-guided, no onion, garlic, or root vegetables",
+      "active": true,
+      "accent": "#B26F16",
+      "schedules": [
+        {"from": "2026-09-15", "to": "2026-09-15", "label": "NSO Hours", "days": [0,1,2,3,4,5,6],
+         "meals": {"Lunch": ["11:00","13:30"], "Dinner": ["18:00","20:00"]}},
+        {"from": "2026-09-16", "to": "2026-09-16", "label": "NSO Hours", "days": [0,1,2,3,4,5,6],
+         "meals": {"Lunch": ["11:30","13:00"], "Dinner": ["17:00","19:00"]}},
+        {"from": "2026-09-17", "to": "2026-09-17", "label": "NSO Hours", "days": [0,1,2,3,4,5,6],
+         "meals": {"Lunch": ["11:30","13:30"], "Dinner": ["17:00","19:00"]}},
+        {"from": "2026-09-18", "to": null, "label": "Fall Hours", "days": [0,1,2,3,4],
+         "meals": {"Lunch": ["11:00","13:30"], "Dinner": ["17:00","20:00"]}}
+      ],
+      "late_night": null,
+      "closed_note": "No weekend service listed on the R&DE hours page."
+    },
+    {
+      "id": "branner",
+      "menu_key": "Branner",
+      "name": "Branner Dining",
+      "short": "Branner",
+      "address": "655 Escondido Rd, Stanford, CA 94305",
+      "concept": "Allergen-Friendly Dining",
+      "tagline": "Entire menu free of the nine most common allergens",
+      "active": true,
+      "accent": "#4298B5",
+      "schedules": [
+        {"from": "2026-09-15", "to": "2026-09-15", "label": "NSO Hours", "days": [0,1,2,3,4,5,6],
+         "meals": {"Lunch": ["11:00","13:30"], "Dinner": ["18:00","20:00"]}},
+        {"from": "2026-09-16", "to": "2026-09-16", "label": "NSO Hours", "days": [0,1,2,3,4,5,6],
+         "meals": {"Lunch": ["11:30","13:00"], "Dinner": ["17:00","19:00"]}},
+        {"from": "2026-09-17", "to": "2026-09-17", "label": "NSO Hours", "days": [0,1,2,3,4,5,6],
+         "meals": {"Lunch": ["11:30","13:30"], "Dinner": ["17:00","19:00"]}},
+        {"from": "2026-09-18", "to": null, "label": "Fall Hours", "days": [0,1,2,3,4],
+         "meals": {"Lunch": ["11:00","13:30"], "Dinner": ["17:00","19:00"]}}
+      ],
+      "late_night": null,
+      "closed_note": "No weekend service listed on the R&DE hours page."
+    },
+    {
+      "id": "evgr",
+      "menu_key": "EVGR",
+      "name": "EVGR Dining",
+      "short": "EVGR",
+      "address": null,
+      "concept": null,
+      "tagline": null,
+      "active": false,
+      "accent": "#767676",
+      "schedules": [],
+      "late_night": null,
+      "closed_note": "Present in the menu app's dropdown but absent from the R&DE hours page, and every menu query returns empty. Treated as not currently serving."
+    }
+  ],
+  "defaults": {
+    "selected": ["arrillaga", "wilbur", "florencemoore"],
+    "highlight": "meat"
+  }
+}

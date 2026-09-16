@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stanford Dining, Side by Side</title>
+<meta name="description" content="Compare today's menus across Stanford dining halls, with a picture of every dish.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>&#127869;</text></svg>">
+<style>/*CSS*/</style>
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brandrow">
+      <h1 class="brand">Stanford Dining, <span>Side by Side</span></h1>
+      <span class="stamp" id="stamp"></span>
+      <span class="spacer"></span>
+      <button class="chip chip-ghost" type="button" id="theme">◐ Auto</button>
+    </div>
+    <div class="controls">
+      <div class="group"><span class="group-label">Day</span><span class="group" id="days"></span></div>
+      <div class="group"><span class="group-label">Meal</span><span class="group" id="meals"></span></div>
+    </div>
+    <div class="controls">
+      <div class="group"><span class="group-label">Halls</span><span class="group" id="halls"></span></div>
+    </div>
+    <div class="controls">
+      <div class="group"><span class="group-label">Filter</span><span class="group" id="diet"></span></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="board" id="board"></div>
+</main>
+
+<footer>
+  <p>Menus scraped from the
+    <a href="https://rdeapps.stanford.edu/dininghallmenu/" target="_blank" rel="noopener">R&amp;DE Dining Hall Menu</a>;
+    hours and addresses from
+    <a href="https://rde.stanford.edu/dining-hospitality/dining-locations-hours" target="_blank" rel="noopener">Dining Locations &amp; Hours</a>.
+    Built <span id="built"></span>.</p>
+  <p><strong>Dish photographs are AI-generated from each dish's name and ingredient list.</strong>
+    They illustrate what a dish usually looks like and are not photographs of the food being served.
+    Allergen and ingredient text is reproduced from R&amp;DE and is subject to change without notice —
+    if you have an allergy, confirm at the hall.</p>
+</footer>
+
+<script id="menu-data" type="application/json">/*DATA*/</script>
+<script>/*JS*/</script>
+<script>document.getElementById("built").textContent = JSON.parse(document.getElementById("menu-data").textContent).generated_at;</script>
+</body>
+</html>

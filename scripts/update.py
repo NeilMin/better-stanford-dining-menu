@@ -1,0 +1,168 @@
+#!/usr/bin/env python3
+"""Scrape the rolling menu window into data/menus/ and refresh the dish catalog.
+
+Runs with no GPU and no local services, so it is what CI executes daily.
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+import logging
+import sys
+from datetime import datetime
+from pathlib import Path
+from zoneinfo import ZoneInfo
+
+ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT))
+
+from bsdm import dishes as dishlib  # noqa: E402
+from bsdm import hours as hourslib  # noqa: E402
+from bsdm.scrape import MenuScraper  # noqa: E402
+
+TZ = ZoneInfo("America/Los_Angeles")
+CORE_MEALS = ("Breakfast", "Lunch", "Dinner")
+log = logging.getLogger("update")
+
+
+def load_config() -> dict:
+    return json.loads((ROOT / "config" / "halls.json").read_text())
+
+
+def scheduled_meals(hall: dict, day) -> set[str]:
+    """Meals config/halls.json expects this hall to serve on `day`."""
+    iso = day.isoformat()
+    weekday = day.weekday()
+    for sched in hall.get("schedules", []):
+        if sched["from"] > iso:
+            continue
+        if sched.get("to") and sched["to"] < iso:
+            continue
+        if weekday in sched.get("days", []):
+            return set(sched.get("meals", {}))
+    return set()
+
+
+def main() -> int:
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--delay", type=float, default=0.4, help="seconds between requests")
+    ap.add_argument("--all-meals", action="store_true",
+                    help="probe Brunch on every day, not just as a canary")
+    ap.add_argument("--halls", help="comma-separated hall ids to limit the scrape to")
+    ap.add_argument("--skip-hours", action="store_true")
+    ap.add_argument("--show-hours-diff", action="store_true",
+                    help="print how the R&DE hours page differs from the snapshot and exit")
+    ap.add_argument("--accept-hours", action="store_true",
+                    help="record the current hours page as the new snapshot")
+    ap.add_argument("-v", "--verbose", action="store_true")
+    args = ap.parse_args()
+
+    if args.show_hours_diff:
+        print(hourslib.diff(ROOT / "data" / "hours_snapshot.json") or "(no differences)")
+        return 0
+    if args.accept_hours:
+        hourslib.check(ROOT / "data" / "hours_snapshot.json", update=True)
+        print("Hours snapshot updated.")
+        return 0
+
+    logging.basicConfig(
+        level=logging.DEBUG if args.verbose else logging.INFO,
+        format="%(message)s",
+    )
+
+    config = load_config()
+    halls = [h for h in config["halls"] if h["active"]]
+    if args.halls:
+        wanted = {s.strip() for s in args.halls.split(",")}
+        halls = [h for h in halls if h["id"] in wanted]
+
+    scraper = MenuScraper(delay=args.delay)
+    scraper.prime()
+    days = scraper.available_days()
+    log.info("Window: %s .. %s (%d days), %d halls", days[0], days[-1], len(days), len(halls))
+
+    menus_dir = ROOT / "data" / "menus"
+    menus_dir.mkdir(parents=True, exist_ok=True)
+    now = datetime.now(TZ).isoformat(timespec="seconds")
+
+    catalog_path = ROOT / "data" / "dishes.json"
+    catalog = json.loads(catalog_path.read_text()) if catalog_path.exists() else {}
+
+    total_services = total_dishes = 0
+
+    for day in days:
+        payload = {"date": day.isoformat(), "scraped_at": now, "halls": {}}
+        for hall in halls:
+            expected = scheduled_meals(hall, day)
+            # Always probe the three core meals so a stale schedule can't hide a
+            # service; Brunch is vestigial in the app, so it is only probed on the
+            # first day of the window as a canary.
+            meals = list(CORE_MEALS)
+            if args.all_meals or day == days[0]:
+                meals.append("Brunch")
+            meals += [m for m in expected if m not in meals]
+
+            served = {}
+            for meal in meals:
+                svc = scraper.fetch(hall["menu_key"], day, meal)
+                if not svc.dishes:
+                    if meal in expected:
+                        log.warning("  %s %s %s: scheduled but empty", day, hall["id"], meal)
+                    continue
+                served[meal] = [d.to_dict() for d in svc.dishes]
+                total_services += 1
+                total_dishes += len(svc.dishes)
+
+                for d in svc.dishes:
+                    did = dishlib.dish_id(d.name)
+                    entry = catalog.setdefault(did, {"first_seen": day.isoformat()})
+                    entry.update({
+                        "name": d.name,
+                        "ingredients": d.ingredients,
+                        "tags": d.tags,
+                        "category": dishlib.classify(d),
+                        "placeholder": dishlib.is_placeholder(d),
+                        "icon": dishlib.station_icon(d),
+                        "last_seen": day.isoformat(),
+                    })
+                    entry.setdefault("image", None)
+                    if not entry["placeholder"]:
+                        entry["prompt"] = dishlib.image_prompt(d)
+
+            if served:
+                payload["halls"][hall["id"]] = served
+            log.debug("  %s %s -> %s", day, hall["id"], ",".join(served) or "closed")
+
+        out = menus_dir / f"{day.isoformat()}.json"
+        out.write_text(json.dumps(payload, indent=1, ensure_ascii=False) + "\n")
+        open_halls = len(payload["halls"])
+        log.info("%s  %d halls open, %d services", day, open_halls,
+                 sum(len(v) for v in payload["halls"].values()))
+
+    catalog_path.write_text(json.dumps(catalog, indent=1, ensure_ascii=False, sort_keys=True) + "\n")
+
+    illustratable = sum(1 for e in catalog.values() if not e["placeholder"])
+    missing = sum(1 for e in catalog.values() if not e["placeholder"] and not e.get("image"))
+    log.info("Scraped %d services / %d dish rows", total_services, total_dishes)
+    log.info("Catalog: %d unique dishes, %d illustratable, %d missing images",
+             len(catalog), illustratable, missing)
+
+    if not args.skip_hours:
+        try:
+            result = hourslib.check(ROOT / "data" / "hours_snapshot.json")
+            if result["first_run"]:
+                log.info("Hours snapshot created.")
+            elif result["changed"]:
+                log.warning("!! R&DE hours page CHANGED -- re-check config/halls.json")
+                log.warning("   run: python scripts/update.py --show-hours-diff")
+            else:
+                log.info("Hours page unchanged.")
+        except Exception as exc:  # network flakiness must not fail the menu run
+            log.warning("Hours check failed: %s", exc)
+
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

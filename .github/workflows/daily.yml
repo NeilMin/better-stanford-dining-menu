@@ -1,0 +1,64 @@
+name: Daily menu refresh
+
+on:
+  schedule:
+    # 06:20 UTC is ~23:20 PT, after R&DE has rolled the window to the next day.
+    - cron: "20 6 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Scrape the menu window
+        # Only on the schedule: a push should redeploy what is already committed
+        # rather than spend 200 requests on the R&DE app.
+        if: github.event_name != 'push'
+        run: uv run python scripts/update.py
+
+      - name: Commit refreshed menus
+        if: github.event_name != 'push'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then
+            echo "No menu changes."
+          else
+            git commit -m "data: refresh menus for $(date -u +%Y-%m-%d)"
+            git push
+          fi
+
+      - name: Build the site
+        run: uv run python scripts/build_site.py
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: refresh
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v4
