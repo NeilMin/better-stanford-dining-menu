@@ -18,6 +18,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
+from PIL import Image  # noqa: E402
+
 from bsdm.comfy import DEFAULT_URL, MODELS, ComfyClient, ComfyError, to_webp  # noqa: E402
 from bsdm.dishes import NEGATIVE_PROMPT  # noqa: E402
 
@@ -28,6 +30,22 @@ CATALOG = ROOT / "data" / "dishes.json"
 def seed_for(dish_id: str) -> int:
     """A stable seed per dish, so a regenerated image looks like the old one."""
     return int(dish_id[:8], 16)
+
+
+CARD_RATIO = 16 / 9
+
+
+def is_current(path: Path) -> bool:
+    """Whether an existing image still matches the shape the cards display.
+
+    Changing the card's aspect ratio should redraw the library rather than let
+    the browser centre-crop away half of every older picture.
+    """
+    try:
+        with Image.open(path) as im:
+            return abs(im.width / im.height - CARD_RATIO) < 0.02
+    except OSError:
+        return False
 
 
 def record_image(dish_id: str, fields: dict) -> None:
@@ -50,7 +68,8 @@ def main() -> int:
     ap.add_argument("--limit", type=int, help="stop after N images")
     ap.add_argument("--only", help="substring match on the dish name")
     ap.add_argument("--force", action="store_true", help="redraw dishes that already have images")
-    ap.add_argument("--size", type=int, help="override generation resolution")
+    ap.add_argument("--max-priority", type=int, default=2, choices=(0, 1, 2),
+                    help="0 meat only, 1 adds other mains, 2 adds sides (default)")
     ap.add_argument("--steps", type=int, help="override step count")
     args = ap.parse_args()
 
@@ -69,14 +88,22 @@ def main() -> int:
     client.validate(args.model)
 
     IMAGES.mkdir(parents=True, exist_ok=True)
+    # Meat first, then other mains, then sides; within a tier, whatever R&DE
+    # lists earliest on the menu.
+    def rank(kv):
+        e = kv[1]
+        return (e.get("priority", 2), e.get("min_order", 999), e["name"])
+
     pending = []
-    for did, entry in sorted(catalog.items(), key=lambda kv: kv[1]["name"]):
-        if entry["placeholder"] or not entry.get("prompt"):
+    for did, entry in sorted(catalog.items(), key=rank):
+        if not entry.get("needs_image") or not entry.get("prompt"):
+            continue
+        if entry.get("priority", 2) > args.max_priority:
             continue
         if args.only and args.only.lower() not in entry["name"].lower():
             continue
-        on_disk = (IMAGES / f"{did}.webp").exists()
-        if on_disk and entry.get("image") and not args.force:
+        path = IMAGES / f"{did}.webp"
+        if path.exists() and entry.get("image") and not args.force and is_current(path):
             continue
         pending.append((did, entry))
 
@@ -94,8 +121,7 @@ def main() -> int:
         seed = seed_for(did)
         try:
             image, secs = client.generate(
-                args.model, entry["prompt"], NEGATIVE_PROMPT, seed,
-                size=args.size, steps=args.steps,
+                args.model, entry["prompt"], NEGATIVE_PROMPT, seed, steps=args.steps,
             )
         except (ComfyError, OSError) as exc:
             failed += 1
@@ -114,8 +140,8 @@ def main() -> int:
 
         elapsed = time.monotonic() - started
         eta = (elapsed / i) * (len(pending) - i)
-        print(f"  [{i}/{len(pending)}] {secs:5.1f}s  {entry['name'][:44]:44.44s} "
-              f"eta {eta / 60:.0f}m", flush=True)
+        print(f"  [{i}/{len(pending)}] P{entry.get('priority', 2)} {secs:5.1f}s  "
+              f"{entry['name'][:42]:42.42s} eta {eta / 60:.0f}m", flush=True)
 
     print(f"\nDrew {done}, failed {failed}, in {(time.monotonic() - started) / 60:.1f} min")
     return 1 if failed and not done else 0

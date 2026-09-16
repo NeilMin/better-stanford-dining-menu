@@ -32,7 +32,10 @@ MODELS = {
         "cfg": 5.0,
         "sampler": "dpmpp_2m",
         "scheduler": "karras",
-        "size": 768,
+        # 1344x768 is an SDXL training bucket, and near enough to the 16:9 the
+        # cards display that nothing meaningful is cropped away.
+        "width": 1344,
+        "height": 768,
         "negative": True,
     },
     # Flux.1-schnell, 4-step distilled. Follows long ingredient lists far more
@@ -47,7 +50,8 @@ MODELS = {
         "guidance": 3.5,
         "sampler": "euler",
         "scheduler": "simple",
-        "size": 1024,
+        "width": 1344,
+        "height": 768,
         "negative": False,
     },
 }
@@ -58,9 +62,9 @@ class ComfyError(RuntimeError):
 
 
 def build_workflow(model: str, positive: str, negative: str, seed: int,
-                   size: int | None = None, steps: int | None = None) -> dict:
+                   size: tuple[int, int] | None = None, steps: int | None = None) -> dict:
     cfg = MODELS[model]
-    px = size or cfg["size"]
+    width, height = size or (cfg["width"], cfg["height"])
     n_steps = steps or cfg["steps"]
 
     if model == "sdxl":
@@ -70,7 +74,7 @@ def build_workflow(model: str, positive: str, negative: str, seed: int,
             "2": {"class_type": "CLIPTextEncode", "inputs": {"text": positive, "clip": ["1", 1]}},
             "3": {"class_type": "CLIPTextEncode", "inputs": {"text": negative, "clip": ["1", 1]}},
             "4": {"class_type": "EmptyLatentImage",
-                  "inputs": {"width": px, "height": px, "batch_size": 1}},
+                  "inputs": {"width": width, "height": height, "batch_size": 1}},
             "5": {"class_type": "KSampler",
                   "inputs": {"seed": seed, "steps": n_steps, "cfg": cfg["cfg"],
                              "sampler_name": cfg["sampler"], "scheduler": cfg["scheduler"],
@@ -90,7 +94,7 @@ def build_workflow(model: str, positive: str, negative: str, seed: int,
               "inputs": {"conditioning": ["4", 0], "guidance": cfg["guidance"]}},
         "6": {"class_type": "CLIPTextEncode", "inputs": {"text": "", "clip": ["2", 0]}},
         "7": {"class_type": "EmptySD3LatentImage",
-              "inputs": {"width": px, "height": px, "batch_size": 1}},
+              "inputs": {"width": width, "height": height, "batch_size": 1}},
         "8": {"class_type": "KSampler",
               "inputs": {"seed": seed, "steps": n_steps, "cfg": cfg["cfg"],
                          "sampler_name": cfg["sampler"], "scheduler": cfg["scheduler"],
@@ -184,22 +188,29 @@ class ComfyClient:
         raise ComfyError("workflow produced no image")
 
     def generate(self, model: str, positive: str, negative: str, seed: int,
-                 size: int | None = None, steps: int | None = None) -> tuple[Image.Image, float]:
+                 size: tuple[int, int] | None = None,
+                 steps: int | None = None) -> tuple[Image.Image, float]:
         started = time.monotonic()
         workflow = build_workflow(model, positive, negative, seed, size, steps)
         outputs = self.wait(self.submit(workflow))
         return self.fetch_image(outputs), time.monotonic() - started
 
 
-def to_webp(image: Image.Image, edge: int = 640, quality: int = 80) -> bytes:
-    """Square-crop and compress for the web."""
+def to_webp(image: Image.Image, width: int = 1024, ratio: float = 16 / 9,
+            quality: int = 80) -> bytes:
+    """Crop to the card's aspect ratio and compress for the web."""
     w, h = image.size
-    if w != h:
-        side = min(w, h)
-        image = image.crop(((w - side) // 2, (h - side) // 2,
-                            (w - side) // 2 + side, (h - side) // 2 + side))
-    if image.width != edge:
-        image = image.resize((edge, edge), Image.LANCZOS)
+    if abs(w / h - ratio) > 0.01:
+        if w / h > ratio:                      # too wide: trim the sides
+            new_w = round(h * ratio)
+            left = (w - new_w) // 2
+            image = image.crop((left, 0, left + new_w, h))
+        else:                                  # too tall: trim top and bottom
+            new_h = round(w / ratio)
+            top = (h - new_h) // 2
+            image = image.crop((0, top, w, top + new_h))
+    if image.width != width:
+        image = image.resize((width, round(width / ratio)), Image.LANCZOS)
     buf = io.BytesIO()
     image.save(buf, "WEBP", quality=quality, method=6)
     return buf.getvalue()

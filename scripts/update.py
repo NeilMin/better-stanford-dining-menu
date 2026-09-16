@@ -17,8 +17,8 @@ from zoneinfo import ZoneInfo
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
-from bsdm import dishes as dishlib  # noqa: E402
 from bsdm import hours as hourslib  # noqa: E402
+from bsdm.catalog import build as build_catalog, summarize as summarize_catalog  # noqa: E402
 from bsdm.scrape import MenuScraper  # noqa: E402
 from bsdm.stations import analyze as analyze_stations  # noqa: E402
 
@@ -87,9 +87,6 @@ def main() -> int:
     menus_dir.mkdir(parents=True, exist_ok=True)
     now = datetime.now(TZ).isoformat(timespec="seconds")
 
-    catalog_path = ROOT / "data" / "dishes.json"
-    catalog = json.loads(catalog_path.read_text()) if catalog_path.exists() else {}
-
     total_services = total_dishes = 0
 
     for day in days:
@@ -115,21 +112,6 @@ def main() -> int:
                 total_services += 1
                 total_dishes += len(svc.dishes)
 
-                for d in svc.dishes:
-                    did = dishlib.dish_id(d.name)
-                    entry = catalog.setdefault(did, {"first_seen": day.isoformat()})
-                    entry.update({
-                        "name": d.name,
-                        "ingredients": d.ingredients,
-                        "tags": d.tags,
-                        "category": dishlib.classify(d),
-                        "placeholder": dishlib.is_placeholder(d),
-                        "icon": dishlib.station_icon(d),
-                        "last_seen": day.isoformat(),
-                    })
-                    entry.setdefault("image", None)
-                    if not entry["placeholder"]:
-                        entry["prompt"] = dishlib.image_prompt(d)
 
             if served:
                 payload["halls"][hall["id"]] = served
@@ -141,8 +123,8 @@ def main() -> int:
         log.info("%s  %d halls open, %d services", day, open_halls,
                  sum(len(v) for v in payload["halls"].values()))
 
-    catalog_path.write_text(json.dumps(catalog, indent=1, ensure_ascii=False, sort_keys=True) + "\n")
-
+    # Stations first: which entries are standing counters decides which dishes
+    # need pictures, so the catalog is derived after the table exists.
     table = analyze_stations(menus_dir)
     (ROOT / "data" / "stations.json").write_text(
         json.dumps(table, indent=1, ensure_ascii=False, sort_keys=True) + "\n"
@@ -151,11 +133,15 @@ def main() -> int:
     log.info("Stations: %d standing counters across %d halls (%d days of history)",
              n_stations, len(table["halls"]), table["days_analyzed"])
 
-    illustratable = sum(1 for e in catalog.values() if not e["placeholder"])
-    missing = sum(1 for e in catalog.values() if not e["placeholder"] and not e.get("image"))
+    catalog_path = ROOT / "data" / "dishes.json"
+    previous = json.loads(catalog_path.read_text()) if catalog_path.exists() else {}
+    # Same code path as scripts/rebuild_catalog.py, so scraping and rebuilding
+    # cannot drift apart.
+    catalog = build_catalog(menus_dir, table, previous)
+    catalog_path.write_text(json.dumps(catalog, indent=1, ensure_ascii=False, sort_keys=True) + "\n")
+
     log.info("Scraped %d services / %d dish rows", total_services, total_dishes)
-    log.info("Catalog: %d unique dishes, %d illustratable, %d missing images",
-             len(catalog), illustratable, missing)
+    log.info("%s", summarize_catalog(catalog))
 
     if not args.skip_hours:
         try:

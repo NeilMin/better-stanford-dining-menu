@@ -94,9 +94,31 @@ cd ~/Projects/.shared/comfyui && ./.venv/bin/python main.py --listen 127.0.0.1 -
 make images
 ```
 
-Defaults to RealVisXL V5.0 at 768px/20 steps (~30–45s per image on Apple silicon). Flux.1-schnell
-is wired up as `--model flux` — it follows long ingredient lists more closely but is much heavier.
-Seeds are derived from the dish id, so regenerating a dish reproduces its picture.
+Defaults to **RealVisXL V5.0** at 1344×768 / 20 steps, measured at ~56s per image on an M-series
+Mac. Flux.1-schnell is wired up as `--model flux`, measured on the same machine and dishes at
+**107–154s** — roughly 3× slower for a trade rather than a win: it follows an ingredient list more
+literally (it drew the egg that really is in Magnolia Boil) but composes busier, tighter shots,
+while RealVisXL returns cleaner plated photographs. For a library that has to be redrawn as menus
+rotate, 3× the wall time did not buy 3× the usefulness. Food-specific LoRAs were considered and
+rejected: the SDXL ones on Civitai are either a dark/neon studio style or unrelated, and the good
+Flux ones target Flux.1-dev rather than schnell.
+
+Seeds are derived from the dish id, so regenerating a dish reproduces its picture. An image whose
+aspect ratio no longer matches the card is redrawn automatically, so changing the card shape
+refreshes the library rather than leaving the browser to centre-crop older pictures.
+
+**Priority.** Not every dish is worth a picture. Standing stations render as a dense list with no
+image slot, and placeholder entries are deliberately not illustrated, so both are skipped
+entirely. The rest are drawn meat first, then other main courses, then sides:
+
+```sh
+make images                                  # everything, in priority order
+uv run python scripts/gen_images.py --max-priority 0   # meat only
+uv run python scripts/gen_images.py --max-priority 1   # meat and other mains
+```
+
+A dish counts as a main if R&DE lists it in the first two menu positions, which beats guessing
+from the name — that is what keeps "Plant-Forward Loco Moco & Gravy" out of the sides bucket.
 
 Dishes whose "ingredients" are a placeholder (`chef's choice soup of the day`) are deliberately
 **not** illustrated. Inventing a specific bowl of soup for an entry that changes daily would be

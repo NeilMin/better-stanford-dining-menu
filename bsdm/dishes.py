@@ -206,7 +206,15 @@ def _key_ingredients(ingredients: str, limit: int = 12) -> list[str]:
     (cheddar cheese (milk, cultures), ...)"); only the outer items describe what
     the dish looks like, so nested detail is dropped.
     """
-    text = re.sub(r"\*+[^,]*", "", ingredients or "")
+    # Some entries put an exclusion notice in the ingredients field -- Casper's
+    # no-allium counters list every allium they leave out. Read naively that
+    # becomes "made with onion, shallots, leeks", which is exactly backwards, so
+    # any ** -delimited segment that opens with a negation is dropped.
+    segments = re.split(r"\*\*+", ingredients or "")
+    text = " ".join(
+        seg for seg in segments
+        if not re.match(r"\s*(no|not|contains no|free of|without)\b", seg, re.I)
+    )
     out, depth, buf = [], 0, []
     for ch in text:
         if ch in "([":
