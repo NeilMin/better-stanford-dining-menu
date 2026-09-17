@@ -532,6 +532,19 @@
     }));
   }
 
+  // The logos run from Branner's roundel, taller than it is wide, to Lakeside's
+  // 5:1 wordmark. One height for all of them makes the wordmarks run long and
+  // one width makes the roundels tower, so the height gives way to the aspect
+  // ratio part of the way: a wide logo gets shorter but not so short that its
+  // lettering goes illegible. Capped so no logo pushes into the name.
+  const LOGO = { h: 38, give: 0.45, maxW: 80, maxH: 36 };
+  function logoSize(ratio) {
+    let h = Math.min(LOGO.h / ratio ** LOGO.give, LOGO.maxH);
+    let w = h * ratio;
+    if (w > LOGO.maxW) { w = LOGO.maxW; h = w / ratio; }
+    return [Math.round(w), Math.round(h)];
+  }
+
   function column(hallId, spread) {
     const hall = hallById.get(hallId);
     const col = el("section", { className: "column" });
@@ -552,32 +565,39 @@
     const span = hoursFor(state.date, hallId, state.meal);
     const status = serviceStatus(state.date, span);
 
-    // Appended whether or not this hall has a logo, for the same reason the
-    // dish cards keep an empty badge row: every header lands in the board's
-    // first row, and a missing logo must not drop this hall's name a line
-    // above the ones beside it. R&DE publishes the logos only inside one map
-    // image, so a new hall has none until someone reads its box off that map.
+    // Beside the name rather than above it, so the logo costs no height of its
+    // own. The slot is appended whether or not this hall has a logo: it holds
+    // the header's top line to one height, so a missing logo cannot lift this
+    // hall's hours above the ones beside it. R&DE publishes the logos only
+    // inside one map image, so a new hall has none until someone reads its box
+    // off that map.
     const logo = el("div", { className: "col-logo" });
     if (hall.logo) {
-      logo.append(el("img", {
+      const [w, h] = logoSize(hall.logo.w / hall.logo.h);
+      const img = el("img", {
         src: "logo/" + hall.logo.file,
-        // Decorative: the hall's name is the next line, and reading the logo
+        // Decorative: the hall's name is right beside it, and reading the logo
         // out as well would just say it twice.
         alt: "",
-        width: hall.logo.w,
-        height: hall.logo.h,
+        width: w,
+        height: h,
         decoding: "async",
-      }));
+      });
+      img.style.setProperty("--logo-w", w + "px");
+      img.style.setProperty("--logo-h", h + "px");
+      logo.append(img);
     }
 
-    const head = el("header", { className: "col-head" }, [
-      logo,
+    const title = el("div", { className: "col-title" }, [
       el("h2", { className: "col-name", textContent: hall.short }),
     ]);
     const concept = (state.lang === "zh" && hall.concept_zh) || hall.concept;
     if (concept) {
-      head.append(el("p", { className: "col-concept", textContent: concept }));
+      title.append(el("p", { className: "col-concept", textContent: concept }));
     }
+    const head = el("header", { className: "col-head" }, [
+      el("div", { className: "col-top" }, [title, logo]),
+    ]);
 
     // Inside the header on purpose. The halls share one set of grid rows, so a
     // strip of its own would be a row that only some columns have, and every

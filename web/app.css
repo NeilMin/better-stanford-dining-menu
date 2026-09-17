@@ -281,25 +281,36 @@ main { max-width: 1800px; margin: 0 auto; padding: 16px 16px 64px; }
   flex-direction: column;
 }
 
-/* Reserved whether or not the hall has one, so the names line up across the
-   board even if one hall's logo is missing. The box is sized to what the source
-   can carry: R&DE draws these on one map and nothing bigger exists, so the
-   files are written at 2x this and the page never asks for more. */
-.col-logo {
-  height: 36px;
-  margin-bottom: 9px;
+/* Name on the left, logo on the right, both centred on one line that is at
+   least as tall as the tallest logo -- so with or without a concept line, and
+   with or without a logo, every header's hours start at the same height. */
+.col-top {
   display: flex;
   align-items: center;
+  gap: 12px;
+  min-height: 38px;
+}
+.col-title { flex: 1; min-width: 0; }
+
+/* Sized per logo by logoSize() in app.js, which evens out how much room each
+   one takes. The source caps it: R&DE draws these on one map and nothing
+   bigger exists, so the files are written at 2x the largest size asked for. */
+.col-logo {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .col-logo img {
-  height: 100%;
-  width: auto;
-  max-width: 100%;
-  /* The width/height attributes reserve the box before the file lands; without
-     an explicit width: auto the attribute would win and squash the logo. */
+  display: block;
+  /* The width/height attributes reserve the box before the file lands; the
+     explicit values keep them from fighting the phone-size scale below. */
+  width: var(--logo-w);
+  height: var(--logo-h);
   object-fit: contain;
-  object-position: left center;
+  /* So the dark-mode plate's padding goes around the logo, not into it. */
+  box-sizing: content-box;
 }
 
 /* The logos are cut out of a printed map, so each one arrives on its own patch
@@ -692,7 +703,11 @@ footer a { color: var(--cardinal); }
 
   .board { gap: 12px; scroll-snap-type: x mandatory; }
   .col-head { padding: 10px 12px; }
-  .col-logo { height: 30px; margin-bottom: 7px; }
+  .col-top { min-height: 34px; }
+  .col-logo img {
+    width: calc(var(--logo-w) * .88);
+    height: calc(var(--logo-h) * .88);
+  }
   .digest { font-size: 12.5px; margin-bottom: 10px; }
   .notices { margin-bottom: 10px; }
 }
