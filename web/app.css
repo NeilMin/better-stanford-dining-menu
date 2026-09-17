@@ -1,52 +1,49 @@
+/* Ink on paper. The food photographs carry the colour; the interface stays in
+   greys, with Stanford cardinal as its one accent. The halls' pastels appear
+   only where they are a key -- the bar behind a hall's name, the dot on its
+   chip, the wash behind its special -- the way R&DE's specials poster uses them.
+
+   Every colour is declared once with light-dark(), and the theme switch only
+   picks the color-scheme it resolves against. */
 :root {
-  --cardinal: #8C1515;
-  --cardinal-bright: #B1040E;
-  --bg: #FAF8F5;
-  --surface: #FFFFFF;
-  --surface-2: #F2EEE9;
-  --text: #1C1A17;
-  --text-dim: #6B645C;
-  --line: #E3DCD3;
-  --line-strong: #CFC5B8;
-  --meat: #A3320B;
-  --meat-soft: #FBEDE6;
-  --shadow: 0 1px 2px rgba(28, 26, 23, .05), 0 4px 16px rgba(28, 26, 23, .05);
-  --radius: 14px;
-  --col-min: 316px;
-  --sans: ui-sans-serif, -apple-system, "SF Pro Text", "Segoe UI", Roboto,
-    "Helvetica Neue", sans-serif;
-}
+  color-scheme: light dark;
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #131110;
-    --surface: #1D1A18;
-    --surface-2: #262220;
-    --text: #F0EBE4;
-    --text-dim: #A79E93;
-    --line: #322D29;
-    --line-strong: #453E38;
-    --cardinal: #E05C5C;
-    --cardinal-bright: #F07272;
-    --meat: #F0A080;
-    --meat-soft: #35201A;
-    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 4px 16px rgba(0, 0, 0, .25);
+  --bg: light-dark(#FFFFFF, #121211);
+  --sunk: light-dark(#F4F3EF, #1F1E1C);
+  --thumb: light-dark(#FFFFFF, #383633);
+  --ink: light-dark(#1B1A18, #F3F1EC);
+  --ink-2: light-dark(#5F5C57, #ABA8A1);
+  --ink-3: light-dark(#75726B, #8E8B83);
+  --rule: light-dark(#E7E5E0, #2C2B28);
+  --rule-strong: light-dark(#CFCCC5, #48463F);
+  --cardinal: light-dark(#8C1515, #E8807F);
+  --open: light-dark(#1E7A46, #62CC8F);
+  --soon: light-dark(#9A6200, #E3B04B);
+
+  --serif: "Source Serif 4", "Source Serif Pro", Georgia, "Times New Roman", serif;
+  --sans: "Source Sans 3", "Source Sans Pro", -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", sans-serif;
+  --cjk: "PingFang SC", "Hiragino Sans GB", "Source Han Sans SC", "Noto Sans CJK SC",
+    "Microsoft YaHei";
+
+  --radius: 10px;
+  --gutter: 24px;
+  --page: 1800px;
+  --col-min: 300px;
+  --col-gap: 32px;
+  /* How far a special's panel reaches past its column; see .card-special. */
+  --bleed: 10px;
+}
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"] { color-scheme: dark; }
+
+/* A browser without light-dark() drops every colour above; give it the light page. */
+@supports not (color: light-dark(#000, #fff)) {
+  :root {
+    --bg: #FFFFFF; --sunk: #F4F3EF; --thumb: #FFFFFF; --ink: #1B1A18; --ink-2: #5F5C57;
+    --ink-3: #75726B; --rule: #E7E5E0; --rule-strong: #CFCCC5; --cardinal: #8C1515;
+    --open: #1E7A46; --soon: #9A6200;
   }
-}
-
-:root[data-theme="dark"] {
-  --bg: #131110;
-  --surface: #1D1A18;
-  --surface-2: #262220;
-  --text: #F0EBE4;
-  --text-dim: #A79E93;
-  --line: #322D29;
-  --line-strong: #453E38;
-  --cardinal: #E05C5C;
-  --cardinal-bright: #F07272;
-  --meat: #F0A080;
-  --meat-soft: #35201A;
-  --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 4px 16px rgba(0, 0, 0, .25);
 }
 
 * { box-sizing: border-box; }
@@ -55,180 +52,338 @@ html { -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
   background: var(--bg);
-  color: var(--text);
-  font: 15px/1.5 var(--sans);
+  color: var(--ink);
+  font: 400 16px/1.5 var(--sans);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   overflow-wrap: break-word;
 }
+
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 
 /* The Latin stack carries no CJK faces, so a Chinese page falls back glyph by
    glyph and ends up mixing two type designs inside one dish name. Selected off
    <html lang>, which app.js sets with the language. */
-html:lang(zh) body {
-  font-family: "PingFang SC", "Hiragino Sans GB", "Source Han Sans SC",
-    "Noto Sans CJK SC", "Microsoft YaHei", var(--sans);
+html:lang(zh) body { font-family: var(--cjk), var(--sans); }
+html:lang(zh) :is(.brand, .stamp, .dish-name, .stations-title) {
+  font-family: var(--cjk), var(--serif);
+  letter-spacing: 0;
 }
 
 /* ...but the parts that stay English keep the Latin face. A CJK font's Latin
    glyphs are wider and sit differently, which is conspicuous on the English
    name printed directly under a Chinese one. */
-html:lang(zh) .dish-name-en,
-html:lang(zh) .station-name-en,
-html:lang(zh) .col-name,
-html:lang(zh) .hours { font-family: var(--sans); }
+html:lang(zh) :is(.dish-name-en, .station-name-en, .hours, .special-en, .chip-day .sub) {
+  font-family: var(--sans);
+}
 
 /* Asked for italic CJK a browser synthesises an oblique, which reads as a
-   rendering fault rather than as emphasis. */
-html:lang(zh) .col-concept { font-style: normal; }
+   rendering fault rather than as emphasis. The concept line is a serif italic
+   in English; in Chinese a small Song face reads as faint, so it takes the sans. */
+html:lang(zh) :is(.col-concept, .brand span) { font-style: normal; }
+html:lang(zh) .col-concept { font-family: var(--cjk), var(--sans); font-size: 15px; }
 
-/* Uppercase does nothing to Chinese, and the tracking that suits small English
-   capitals just pushes CJK glyphs apart. */
-html:lang(zh) .group-label,
-html:lang(zh) .pill,
-html:lang(zh) .stations-title,
-html:lang(zh) .thumb-none,
-html:lang(zh) .badge { letter-spacing: 0; }
+/* ---------- top bar ---------- */
 
-/* ---------- chrome ---------- */
-
-.masthead {
+/* One line on a desktop: name, the week, the meal, and the two switches. It is
+   sticky as a whole there; on a phone it comes apart (see the bottom of this
+   file) so that only the day and meal stay pinned. */
+.top {
   position: sticky;
   top: 0;
   z-index: 30;
-  background: color-mix(in srgb, var(--bg) 90%, transparent);
-  backdrop-filter: saturate(160%) blur(14px);
-  border-bottom: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  grid-template-areas: "brand bar tools";
+  align-items: center;
+  gap: 10px 28px;
+  padding: 10px max(var(--gutter), (100% - var(--page)) / 2);
+  background: color-mix(in srgb, var(--bg) 86%, transparent);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--rule);
 }
 
-.masthead-inner {
-  max-width: 1800px;
-  margin: 0 auto;
-  padding: 10px 16px;
+.masthead { display: contents; }
+
+.brand {
+  grid-area: brand;
+  margin: 0;
+  font: 600 19px/1.2 var(--serif);
+  letter-spacing: -.012em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* Two columns, side by side: the favicon, drawn again. */
+.brand::before {
+  content: "";
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  margin-right: 10px;
+  vertical-align: -5px;
+  border-radius: 6px;
+  background:
+    linear-gradient(#fff, #fff) 5.5px 5.5px / 4.8px 11px no-repeat,
+    linear-gradient(rgb(255 255 255 / .62), rgb(255 255 255 / .62)) 11.7px 5.5px / 4.8px 11px no-repeat,
+    #8C1515;
+}
+.brand span { font-weight: 500; font-style: italic; color: var(--cardinal); }
+
+.tools { grid-area: tools; display: flex; justify-content: flex-end; gap: 2px; }
+
+.tool {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 36px;
+  padding: 0 11px;
+  border: 0;
+  border-radius: 8px;
+  background: none;
+  color: var(--ink-2);
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color .15s, color .15s;
+}
+.tool:hover { background: var(--sunk); color: var(--ink); }
+
+/* The contrast mark: half-filled for Auto, empty for Light, full for Dark. */
+.tool-theme::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1.5px solid currentColor;
+  background: linear-gradient(90deg, currentColor 50%, transparent 50%);
+}
+.tool-theme[data-mode="light"]::before { background: none; }
+.tool-theme[data-mode="dark"]::before { background: currentColor; }
+
+.bar {
+  grid-area: bar;
   display: flex;
-  flex-direction: column;
-  gap: 8px;
+  align-items: center;
+  gap: 20px;
 }
 
-.brandrow { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.controls { display: flex; align-items: center; }
+.group { display: flex; align-items: center; gap: 12px; }
 
-.brand { font-size: 17px; font-weight: 640; letter-spacing: -.01em; margin: 0; }
-.brand span { color: var(--cardinal); }
-
-.stamp {
-  font-size: 12.5px;
-  font-weight: 560;
-  color: var(--text);
-  background: var(--surface-2);
-  border: 1px solid var(--line);
-  padding: 3px 9px;
-  border-radius: 999px;
+/* The bar's controls explain themselves; their labels stay for screen readers. */
+.bar .group-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
   white-space: nowrap;
 }
 
-.spacer { flex: 1 1 auto; }
-
-.controls { display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: center; }
-.group { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
-
-.group-label {
-  font-size: 10.5px;
-  font-weight: 620;
-  letter-spacing: .07em;
-  text-transform: uppercase;
-  color: var(--text-dim);
-  margin-right: 2px;
-}
-
-/* ---------- chips ---------- */
+/* ---------- controls ---------- */
 
 .chip {
   appearance: none;
-  border: 1px solid var(--line-strong);
-  background: var(--surface);
-  color: var(--text);
-  font: inherit;
-  font-size: 13px;
-  line-height: 1;
-  padding: 7px 11px;
-  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background: none;
   cursor: pointer;
   white-space: nowrap;
-  transition: background .13s, border-color .13s, color .13s, opacity .13s;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color .15s, color .15s, border-color .15s, box-shadow .15s;
 }
-.chip:hover { border-color: var(--cardinal); }
-.chip[aria-pressed="true"] {
-  background: var(--cardinal);
-  border-color: var(--cardinal);
-  color: #fff;
-  font-weight: 560;
+.chip:disabled { cursor: not-allowed; }
+
+/* The week, as a calendar strip: the day's name over its date. */
+.days { display: flex; gap: 2px; }
+
+.chip-day {
+  flex-direction: column;
+  gap: 1px;
+  min-width: 54px;
+  padding: 5px 9px 6px;
+  border-radius: 10px;
 }
-:root[data-theme="dark"] .chip[aria-pressed="true"] { color: #1A0505; }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .chip[aria-pressed="true"] { color: #1A0505; }
+.chip-day .label { font-size: 12.5px; line-height: 1.2; color: var(--ink-2); }
+.chip-day .sub {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.15;
+  font-variant-numeric: tabular-nums;
 }
-.chip:disabled { opacity: .34; cursor: not-allowed; }
-.chip:focus-visible { outline: 2px solid var(--cardinal-bright); outline-offset: 2px; }
-.chip .sub { font-size: 11px; opacity: .72; margin-left: 5px; }
+.chip-day:hover { background: var(--sunk); }
+.chip-day[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+.chip-day[aria-pressed="true"] .label { color: inherit; opacity: .78; }
+
+/* The meal, as a segmented control. */
+.segmented {
+  display: inline-flex;
+  gap: 2px;
+  padding: 3px;
+  border-radius: 11px;
+  background: var(--sunk);
+}
+
+.chip-seg {
+  height: 36px;
+  padding: 0 17px;
+  border-radius: 8px;
+  color: var(--ink-2);
+  font-size: 15px;
+  font-weight: 500;
+}
+.chip-seg:hover:not(:disabled) { color: var(--ink); }
+.chip-seg[aria-pressed="true"] {
+  background: var(--thumb);
+  color: var(--ink);
+  box-shadow: 0 1px 2px rgb(0 0 0 / .1), 0 0 0 .5px rgb(0 0 0 / .08);
+}
+.chip-seg:disabled { color: var(--ink-3); opacity: .55; }
+
+/* Halls and filters: one row each, labelled in the margin. */
+.chips { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+
+.chips .chip {
+  gap: 8px;
+  height: 36px;
+  padding: 0 13px;
+  border: 1px solid var(--rule-strong);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 500;
+}
+.chips .chip:hover { border-color: var(--ink-3); }
+.chips .chip[aria-pressed="true"] {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--bg);
+}
 
 /* Each hall's colour is the one R&DE gives it on the specials calendar, so the
-   board and the poster on the wall read as one key. They are pastels, drawn to
-   carry dark text: --hall is the fill itself, --hall-tint the wash a card sits
-   on, --hall-ink the same hue dark enough to read as text on white. Declared
-   where --hall is set inline (a column, a chip), since a custom property that
-   uses var() resolves on the element that declares it. */
-.column, .chip-hall {
-  --hall-ink: color-mix(in oklab, var(--hall, var(--cardinal)) 45%, #1C1A17);
-  --hall-tint: color-mix(in srgb, var(--hall, var(--cardinal)) 24%, var(--surface));
-}
-:root[data-theme="dark"] :is(.column, .chip-hall) {
-  --hall-ink: var(--hall, var(--cardinal));
-  --hall-tint: color-mix(in srgb, var(--hall, var(--cardinal)) 13%, var(--surface));
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) :is(.column, .chip-hall) {
-    --hall-ink: var(--hall, var(--cardinal));
-    --hall-tint: color-mix(in srgb, var(--hall, var(--cardinal)) 13%, var(--surface));
-  }
-}
-
-/* A swatch while off, so the colour is learnt before it is ever switched on. */
+   board and the poster on the wall read as one key. The dot stays on when the
+   chip is, so the colour is learnt before the column ever appears. */
 .chip-hall::before {
   content: "";
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  margin-right: 6px;
+  flex: none;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background: var(--hall, var(--cardinal));
-  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--hall-ink) 35%, transparent);
-  vertical-align: 1px;
+  box-shadow: inset 0 0 0 1px rgb(0 0 0 / .14);
 }
-.chip-hall:hover { border-color: var(--hall-ink); }
-.chip-hall[aria-pressed="true"] {
-  background: var(--hall, var(--cardinal));
-  border-color: color-mix(in oklab, var(--hall, var(--cardinal)) 70%, #1C1A17);
-  color: #1C1A17;
+
+/* Sorting and pictures change the view rather than the menu, so they sit a
+   rule apart from the diet filters. */
+.chips .chip-view { position: relative; }
+.chips .chip:not(.chip-view) + .chip-view { margin-left: 13px; }
+.chips .chip:not(.chip-view) + .chip-view::before {
+  content: "";
+  position: absolute;
+  left: -12px;
+  top: 7px;
+  bottom: 7px;
+  width: 1px;
+  background: var(--rule-strong);
 }
-.chip-hall[aria-pressed="true"]::before { display: none; }
-.chip-ghost { border-style: dashed; color: var(--text-dim); }
+
+.chips .chip-reset {
+  padding: 0 8px;
+  border-color: transparent;
+  background: none;
+  color: var(--ink-2);
+  text-decoration: underline;
+  text-decoration-color: var(--rule-strong);
+  text-underline-offset: 4px;
+}
+.chips .chip-reset:hover { border-color: transparent; color: var(--ink); text-decoration-color: currentColor; }
+
+/* ---------- intro ---------- */
+
+.intro {
+  max-width: var(--page);
+  margin: 0 auto;
+  padding: 44px var(--gutter) 0;
+}
+
+/* The one large thing on the page: what you are looking at. */
+.stamp {
+  margin: 0;
+  font: 500 46px/1.08 var(--serif);
+  letter-spacing: -.024em;
+  text-wrap: balance;
+}
+.stamp-day { color: var(--ink-3); }
+
+.digest { margin: 12px 0 0; font-size: 18px; color: var(--ink-2); max-width: 72ch; }
+.digest:empty { display: none; }
+.digest b { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
+.digest .warn { color: var(--cardinal); font-weight: 600; }
+
+.picks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+/* The tour scrolls a stop into view; this keeps it clear of the sticky bar. */
+.picks .group { scroll-margin-top: 150px; }
+
+.picks .group-label {
+  flex: none;
+  width: 52px;
+  font-size: 15px;
+  color: var(--ink-3);
+}
 
 /* ---------- board ---------- */
 
-main { max-width: 1800px; margin: 0 auto; padding: 16px 16px 64px; }
+main { max-width: var(--page); margin: 0 auto; padding: 36px var(--gutter) 88px; }
 
-.digest { margin: 0 0 14px; font-size: 13px; color: var(--text-dim); }
-.digest b { color: var(--text); font-weight: 620; }
-.digest .warn { color: var(--cardinal); font-weight: 600; }
+/* What the calendar says to the whole campus at once -- a Thanksgiving dinner,
+   a winter-break closure -- which belongs above the board, not in one column. */
+.notices { display: flex; flex-direction: column; gap: 8px; margin-bottom: 28px; }
+.notices:empty { display: none; }
+
+.notice {
+  margin: 0;
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  background: var(--sunk);
+  font-size: 15.5px;
+}
+
+.special-tag { margin-right: 8px; font-weight: 600; color: var(--cardinal); }
+
+/* Same rule as a dish name: the Chinese is what you read, the English under it
+   is what matches the sign at the counter. */
+.special-en { display: block; margin-top: 2px; font-size: 13.5px; color: var(--ink-2); }
 
 .board {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: minmax(var(--col-min), 1fr);
-  gap: 10px 16px;
+  column-gap: var(--col-gap);
+  row-gap: 40px;
   align-items: start;
   overflow-x: auto;
   scroll-snap-type: x proximity;
-  padding-bottom: 6px;
+  /* Room for a special's panel to reach past the first and last columns, which
+     the scroller would otherwise clip. */
+  margin: 0 calc(-1 * var(--bleed));
+  padding: var(--bleed) var(--bleed) 12px;
+  scroll-padding-inline: var(--bleed);
+  scrollbar-width: thin;
+  scrollbar-color: var(--rule-strong) transparent;
 }
 
 .column {
@@ -236,7 +391,9 @@ main { max-width: 1800px; margin: 0 auto; padding: 16px 16px 64px; }
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 40px;
+  --wash: light-dark(color-mix(in srgb, var(--hall, var(--cardinal)) 24%, #FFFFFF),
+    color-mix(in srgb, var(--hall, var(--cardinal)) 13%, #1A1918));
 }
 
 /* The board is read across, not down, so the columns share one set of rows:
@@ -268,40 +425,59 @@ main { max-width: 1800px; margin: 0 auto; padding: 16px 16px 64px; }
   /* Not sticky: .board sets overflow-x, which per spec computes overflow-y to
      auto as well, so a sticky child anchors to the board rather than the page
      and lands on top of the first card. */
-  background: var(--surface);
-  border: 1px solid var(--line);
-  /* Only the rule carries the colour, not the card: the logos are cut from a
-     printed map on white paper, and a tinted header would frame each one. */
-  border-top: 6px solid var(--hall, var(--cardinal));
-  border-radius: var(--radius);
-  padding: 11px 13px;
-  box-shadow: var(--shadow);
-  z-index: 5;
   display: flex;
   flex-direction: column;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--ink);
 }
 
-/* Name on the left, logo on the right, both centred on one line that is at
-   least as tall as the tallest logo -- so with or without a concept line, and
-   with or without a logo, every header's hours start at the same height. */
+/* Name on the left, logo on the right, both centred on a first line as tall as
+   the tallest logo, with the concept line hanging below the name -- so with or
+   without a concept line, and with or without a logo, every hall's name sits at
+   the same height and its hours start at the same height too. */
 .col-top {
   display: flex;
-  align-items: center;
-  gap: 12px;
-  min-height: 38px;
+  align-items: flex-start;
+  gap: 14px;
 }
 .col-title { flex: 1; min-width: 0; }
+
+.col-name {
+  margin: 0;
+  font: 600 27px/38px var(--serif);
+  letter-spacing: -.016em;
+}
+/* A bar of the hall's colour under its name: the specials poster prints each
+   hall on a bar of it. An underline rather than a highlight, because a pastel
+   laid behind text reads as text someone has selected. */
+.col-name span {
+  text-decoration: underline 6px var(--hall, var(--cardinal));
+  text-underline-offset: 3px;
+  text-decoration-skip-ink: none;
+}
+
+.col-concept {
+  margin: 4px 0 0;
+  font: italic 400 16px/1.35 var(--serif);
+  color: var(--ink-2);
+}
 
 /* Sized per logo by logoSize() in app.js, which evens out how much room each
    one takes. The source caps it: R&DE draws these on one map and nothing
    bigger exists, so the files are written at 2x the largest size asked for. */
 .col-logo {
   flex: none;
+  min-height: 38px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
 
+/* The logos are cut out of a printed map, so each one arrives on its own patch
+   of white paper. On a light page that is invisible; on a dark one it would read
+   as a bright rectangle stuck to the header, so dark mode turns the accident
+   into a deliberate plate. The padding is there in both themes and pulled back
+   out with a negative margin, so the plate costs no layout of its own. */
 .col-logo img {
   display: block;
   /* The width/height attributes reserve the box before the file lands; the
@@ -309,230 +485,71 @@ main { max-width: 1800px; margin: 0 auto; padding: 16px 16px 64px; }
   width: var(--logo-w);
   height: var(--logo-h);
   object-fit: contain;
-  /* So the dark-mode plate's padding goes around the logo, not into it. */
   box-sizing: content-box;
-}
-
-/* The logos are cut out of a printed map, so each one arrives on its own patch
-   of white paper. On a light card that is invisible; on a dark one it would read
-   as a bright rectangle stuck to the header, so dark mode turns the accident
-   into a deliberate plate -- padded and rounded, pulled back out with a negative
-   margin so it does not move the name below it. */
-:root[data-theme="dark"] .col-logo img {
-  background: #fff;
   padding: 3px 5px;
   margin: -3px -5px;
   border-radius: 5px;
+  background: light-dark(transparent, #FFFFFF);
 }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .col-logo img {
-    background: #fff;
-    padding: 3px 5px;
-    margin: -3px -5px;
-    border-radius: 5px;
-  }
-}
-
-.col-name {
-  margin: 0;
-  font-size: 16.5px;
-  font-weight: 650;
-  letter-spacing: -.012em;
-}
-
-.col-concept { margin: 3px 0 0; font-size: 12.5px; color: var(--text-dim); font-style: italic; }
-
-/* The one thing on the board that is only true tonight, so it is the one thing
-   in the header that carries the hall's own colour. It lives in the header
-   rather than above the first card because the halls share one set of grid
-   rows: a strip only some columns had would push their cards out of line with
-   everyone else's. */
-.special-tag {
-  display: inline-block;
-  margin-right: 6px;
-  font-size: 10px;
-  font-weight: 680;
-  letter-spacing: .07em;
-  text-transform: uppercase;
-  color: var(--hall-ink);
-  vertical-align: 1px;
-}
-
-/* Same rule as a dish name: the Chinese is what you read, the English under it
-   is what matches the sign at the counter. */
-.special-en {
-  display: block;
-  margin-top: 2px;
-  font-size: 11.5px;
-  color: var(--text-dim);
-}
-html:lang(zh) .special-en { font-family: var(--sans); }
-html:lang(zh) .special-tag { letter-spacing: 0; }
-
-/* What the calendar says to the whole campus at once -- a Thanksgiving dinner,
-   a winter-break closure -- which belongs above the board, not in one column. */
-.notices { margin: -6px 0 14px; display: flex; flex-direction: column; gap: 6px; }
-
-.notice {
-  margin: 0;
-  padding: 8px 11px;
-  border-radius: 10px;
-  border: 1px solid var(--line);
-  background: var(--surface);
-  font-size: 13px;
-}
-.notice .special-tag { color: var(--cardinal); }
 
 /* Pushed to the bottom edge: three of the halls have no concept line, and the
-   hours are what you read across the three headers. */
+   hours are what you read across the headers. */
 .col-meta {
   margin-top: auto;
-  padding-top: 8px;
+  padding-top: 12px;
   display: flex;
-  align-items: center;
-  gap: 8px;
+  flex-direction: column;
+  gap: 1px;
+  font-size: 15px;
+  color: var(--ink-2);
+}
+
+.col-when, .col-stats {
+  margin: 0;
+  min-height: 1.5em;
+  display: flex;
   flex-wrap: wrap;
-  font-size: 12.5px;
-  color: var(--text-dim);
+  align-items: baseline;
+  column-gap: 17px;
+}
+.col-when > *, .col-stats > * { position: relative; }
+/* Out of flow, so a link does not underline its own separator. */
+.col-when > * + *::before, .col-stats > * + *::before {
+  content: "·";
+  position: absolute;
+  left: -11px;
+  color: var(--ink-3);
 }
 
-.hours { font-variant-numeric: tabular-nums; }
+.hours { color: var(--ink); font-variant-numeric: tabular-nums; }
 
-.pill {
-  font-size: 10.5px;
-  font-weight: 660;
-  letter-spacing: .05em;
-  text-transform: uppercase;
-  padding: 3px 7px;
-  border-radius: 5px;
-  white-space: nowrap;
+.status {
+  padding-left: 14px;
+  background: radial-gradient(circle at 4px 50%, currentColor 3.5px, transparent 4px) no-repeat;
 }
-.pill-open { background: #E4F3E6; color: #17603A; }
-.pill-soon { background: #FDF0DC; color: #8A5A0B; }
-.pill-shut { background: var(--surface-2); color: var(--text-dim); }
-:root[data-theme="dark"] .pill-open { background: #16301F; color: #7FD9A0; }
-:root[data-theme="dark"] .pill-soon { background: #34280F; color: #EFC276; }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .pill-open { background: #16301F; color: #7FD9A0; }
-  :root:not([data-theme="light"]) .pill-soon { background: #34280F; color: #EFC276; }
+.status-open { color: var(--open); }
+.status-soon { color: var(--soon); }
+.status-shut { color: var(--ink-3); }
+
+.only-count { font-weight: 600; color: var(--cardinal); }
+
+.maplink {
+  color: var(--ink-2);
+  text-decoration: underline;
+  text-decoration-color: var(--rule-strong);
+  text-underline-offset: 3px;
 }
+.maplink:hover { color: var(--ink); text-decoration-color: currentColor; }
+.maplink::after { content: "↗"; display: inline-block; margin-left: 2px; }
 
-.count { font-size: 12px; }
-.only-count { font-size: 11.5px; font-weight: 620; color: var(--cardinal); }
-
-.maplink { color: var(--text-dim); text-decoration: none; border-bottom: 1px dotted var(--line-strong); }
-.maplink:hover { color: var(--cardinal); }
-
-/* ---------- dish cards: name first, then picture ---------- */
+/* ---------- dish cards: picture, then name ---------- */
 
 .card {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow);
+  min-width: 0;
   /* Column, so a card stretched to its row keeps the spare height at the
      bottom as padding instead of spreading it through the content. */
   display: flex;
   flex-direction: column;
-}
-
-.card-meat { border-color: color-mix(in srgb, var(--meat) 42%, var(--line)); }
-/* The name block is washed in the hall's colour, so a card still says whose it
-   is when its column header has scrolled away. A meat dish keeps its own warmth
-   at the top edge, fading into that wash. */
-.card-head { padding: 11px 13px 10px; background: var(--hall-tint); }
-.card-meat .card-head { background: linear-gradient(var(--meat-soft), var(--hall-tint) 85%); }
-
-/* A special is the dish you walk across campus for, so it is the one card that
-   is not quiet: framed in the hall's own colour, with the name block in the
-   fill rather than the wash. Outline, not a thicker border, so the card keeps
-   exactly the size of the cards beside it in the other halls. */
-.card-special {
-  border-color: var(--hall-ink);
-  outline: 2px solid var(--hall-ink);
-  outline-offset: -1px;
-  box-shadow: 0 6px 18px -8px color-mix(in srgb, var(--hall-ink) 55%, transparent), var(--shadow);
-}
-.card-special .card-head,
-.card-special.card-meat .card-head {
-  background: color-mix(in srgb, var(--hall, var(--cardinal)) 55%, var(--surface));
-}
-:root[data-theme="dark"] .card-special .card-head {
-  background: color-mix(in srgb, var(--hall, var(--cardinal)) 26%, var(--surface));
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .card-special .card-head {
-    background: color-mix(in srgb, var(--hall, var(--cardinal)) 26%, var(--surface));
-  }
-}
-.special-note { margin: 0; font-size: 11.5px; line-height: 1.45; color: var(--text-dim); }
-
-.dish-name {
-  margin: 0;
-  font-size: 15px;
-  font-weight: 640;
-  line-height: 1.3;
-  letter-spacing: -.008em;
-}
-
-/* The English name kept under the Chinese one. It is not decoration: it is what
-   you match against the sign at the counter, so it stays readable. */
-.dish-name-en {
-  margin: 2px 0 0;
-  font-size: 11.5px;
-  font-weight: 500;
-  line-height: 1.35;
-  color: var(--text-dim);
-}
-
-/* A row of badges is reserved on every dish card whether or not this dish has
-   any -- the card is empty there, not shorter. Untagged dishes are common
-   enough that without it a column goes out of step with its neighbours every
-   few cards. The dense station rows opt out below. */
-.badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-  margin-top: 7px;
-  min-height: 21px;
-}
-
-.badge {
-  font-size: 10.5px;
-  font-weight: 620;
-  letter-spacing: .03em;
-  padding: 2.5px 6px;
-  border-radius: 5px;
-  background: var(--surface-2);
-  color: var(--text-dim);
-  white-space: nowrap;
-}
-.badge-protein { background: var(--meat-soft); color: var(--meat); }
-.badge-only { background: color-mix(in srgb, var(--cardinal) 13%, transparent); color: var(--cardinal); }
-/* After .badge, which would otherwise repaint it grey. */
-.badge-special {
-  background: var(--hall-ink);
-  color: var(--surface);
-  font-weight: 700;
-  letter-spacing: .06em;
-}
-.badge-gf { background: #EAF0FA; color: #2B4E8C; }
-.badge-v  { background: #E9F4E7; color: #2F6B2B; }
-.badge-vgn{ background: #E2F2EA; color: #146B4C; }
-.badge-halal { background: #F0EDFA; color: #52399B; }
-.badge-kosher{ background: #FAEFE4; color: #8A5320; }
-:root[data-theme="dark"] .badge-gf { background: #16223A; color: #9EBDF0; }
-:root[data-theme="dark"] .badge-v { background: #17290F; color: #A8D89A; }
-:root[data-theme="dark"] .badge-vgn { background: #102C22; color: #85D8B6; }
-:root[data-theme="dark"] .badge-halal { background: #201A38; color: #B5A3EE; }
-:root[data-theme="dark"] .badge-kosher { background: #2D2013; color: #E0B183; }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .badge-gf { background: #16223A; color: #9EBDF0; }
-  :root:not([data-theme="light"]) .badge-v { background: #17290F; color: #A8D89A; }
-  :root:not([data-theme="light"]) .badge-vgn { background: #102C22; color: #85D8B6; }
-  :root:not([data-theme="light"]) .badge-halal { background: #201A38; color: #B5A3EE; }
-  :root:not([data-theme="light"]) .badge-kosher { background: #2D2013; color: #E0B183; }
 }
 
 .thumb {
@@ -546,9 +563,8 @@ html:lang(zh) .special-tag { letter-spacing: 0; }
      compared without paging past one dish at a time. */
   aspect-ratio: 16 / 9;
   object-fit: cover;
-  background: var(--surface-2);
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--sunk);
 }
 
 /* Same box a picture would fill, not a strip: a dish still waiting to be drawn
@@ -558,130 +574,218 @@ html:lang(zh) .special-tag { letter-spacing: 0; }
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 7px;
+  gap: 8px;
   aspect-ratio: 16 / 9;
-  padding: 8px 13px;
+  padding: 8px 14px;
+  border-radius: var(--radius);
+  background: var(--sunk);
+  color: var(--ink-3);
+  font-size: 14px;
   text-align: center;
-  background: repeating-linear-gradient(
-    -45deg, var(--surface-2), var(--surface-2) 9px, transparent 9px, transparent 18px);
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  color: var(--text-dim);
-  font-size: 11px;
-  letter-spacing: .04em;
-  text-transform: uppercase;
+}
+.thumb-none .glyph { font-size: 26px; line-height: 1; filter: grayscale(1); opacity: .5; }
+
+.card-head { padding-top: 14px; }
+
+/* With pictures switched off the board is a list, and a list wants rules
+   between its rows rather than a picture's worth of air. */
+.board:not(:has(.thumb, .thumb-none)) { row-gap: 18px; }
+.board:not(:has(.thumb, .thumb-none)) .column { gap: 18px; }
+.card:not(:has(> .thumb, > .thumb-none)) > .card-head { padding-top: 0; }
+.col-head ~ .card:not(.card-special, :has(> .thumb, > .thumb-none)) {
+  padding-top: 18px;
+  border-top: 1px solid var(--rule);
+}
+.col-head + .card:not(.card-special, :has(> .thumb, > .thumb-none)) { padding-top: 0; border-top: 0; }
+.card-special:not(:has(> .thumb, > .thumb-none)) { padding-top: 14px; }
+
+.dish-name {
+  margin: 0;
+  font: 600 20px/1.25 var(--serif);
+  letter-spacing: -.01em;
+  text-wrap: pretty;
+}
+
+/* The English name kept under the Chinese one. It is not decoration: it is what
+   you match against the sign at the counter, so it stays readable. */
+.dish-name-en {
+  margin: 3px 0 0;
+  font-size: 14px;
+  line-height: 1.35;
+  color: var(--ink-2);
+}
+
+/* A row of tags is reserved on every dish card whether or not this dish has
+   any -- the card is empty there, not shorter. Untagged dishes are common
+   enough that without it a column goes out of step with its neighbours every
+   few cards. The dense station rows opt out below.
+
+   Tags read as a line of text, not a row of coloured lozenges. Only the two
+   that are a reason to walk somewhere are set apart. */
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  row-gap: 4px;
+  min-height: 24px;
+  margin-top: 6px;
+  font-size: 14.5px;
+  line-height: 1.4;
+}
+
+.badge { color: var(--ink-2); white-space: nowrap; }
+.badge + .badge::before { content: "·"; margin: 0 7px; color: var(--ink-3); }
+.badge-protein { color: var(--ink); font-weight: 600; }
+
+.badge-special, .badge-only {
+  margin-right: 9px;
+  padding: 1px 7px;
+  border-radius: 5px;
+  font-size: 13.5px;
   font-weight: 600;
 }
-.thumb-none .glyph { font-size: 30px; line-height: 1; }
-
-/* Reserves the line of allergens and the ingredients toggle: 21px of padding,
-   a 17px allergen line and the 33px toggle block. Half the dishes list no
-   allergens, and that one missing line is exactly what knocks the next column
-   out of step. */
-.card-body {
-  padding: 10px 13px 11px;
-  min-height: 71px;
+.badge-special { background: var(--cardinal); color: var(--bg); }
+.badge-only {
+  color: var(--cardinal);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--cardinal) 50%, transparent);
 }
+.badge-special + .badge::before, .badge-only + .badge::before { content: none; }
 
-.allergens { margin: 0; font-size: 11.5px; line-height: 1.45; color: var(--cardinal); }
-.allergens b { font-weight: 620; }
+/* A special is the dish you walk across campus for, so it is the one card that
+   is not quiet: it sits on a panel washed in its hall's colour. The panel bleeds
+   out past the card by --bleed on every side but the bottom, so the picture
+   stays exactly where the pictures in the other halls are. */
+.card-special {
+  margin: calc(-1 * var(--bleed)) calc(-1 * var(--bleed)) 0;
+  padding: var(--bleed) var(--bleed) 14px;
+  border-radius: calc(var(--radius) + var(--bleed) - 2px);
+  background: var(--wash);
+}
+.card-special .thumb, .card-special .thumb-none { border-radius: calc(var(--radius) - 2px); }
 
-.more { margin-top: 8px; border-top: 1px solid var(--line); padding-top: 7px; }
-.more summary { cursor: pointer; font-size: 11.5px; color: var(--text-dim); list-style: none; }
+.special-note { margin: 0; font-size: 14px; line-height: 1.45; color: var(--ink-2); }
+
+/* Reserves the line of allergens and the ingredients toggle. Half the dishes
+   list no allergens, and that one missing line is exactly what knocks the next
+   column out of step. */
+.card-body { padding-top: 8px; min-height: 66px; }
+
+.allergens { margin: 0; font-size: 14px; line-height: 1.45; color: var(--ink-2); }
+.allergens b { font-weight: 600; color: var(--ink); }
+
+.more { margin-top: 6px; }
+.more summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 2px 0;
+  font-size: 14px;
+  color: var(--ink-2);
+  cursor: pointer;
+  list-style: none;
+}
 .more summary::-webkit-details-marker { display: none; }
-.more summary::before { content: "▸ "; }
-.more[open] summary::before { content: "▾ "; }
-.more summary:hover { color: var(--cardinal); }
-.ingredients { margin: 7px 0 0; font-size: 11.5px; line-height: 1.5; color: var(--text-dim); }
+.more summary::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  margin-left: 1px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: translateY(-1px) rotate(-45deg);
+  transition: transform .15s;
+}
+.more[open] summary::before { transform: translateY(-2px) rotate(45deg); }
+.more summary:hover { color: var(--ink); }
+.ingredients { margin: 6px 0 0; font-size: 14px; line-height: 1.55; color: var(--ink-2); }
 
-.placeholder-note { font-size: 11px; color: var(--text-dim); margin: 0; }
+.placeholder-note { margin: 0; font-size: 14px; color: var(--ink-2); }
 
 /* ---------- standing stations ---------- */
 
-.stations {
-  margin-top: 4px;
-  border: 1px dashed var(--line-strong);
-  border-radius: var(--radius);
-  background: color-mix(in srgb, var(--surface) 55%, transparent);
-}
+.stations { padding-top: 16px; border-top: 1px solid var(--rule); }
 
-.stations-head {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 9px 13px;
-}
+.stations-head { display: flex; align-items: baseline; gap: 8px; }
 
-.stations-title {
-  font-size: 10.5px;
-  font-weight: 680;
-  letter-spacing: .09em;
-  text-transform: uppercase;
-  color: var(--text-dim);
-}
+.stations-title { font: 600 18px/1.25 var(--serif); letter-spacing: -.01em; }
 
-.stations-count {
-  font-size: 10.5px;
-  font-weight: 660;
-  color: var(--text-dim);
-  background: var(--surface-2);
-  border-radius: 999px;
-  padding: 1px 7px;
-}
+.stations-count { font-size: 15px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
 
 .stations-toggle {
-  margin-left: auto;
   appearance: none;
+  margin: 0 -8px 0 auto;
+  padding: 4px 8px;
   border: 0;
+  border-radius: 6px;
   background: none;
-  color: var(--text-dim);
-  font: inherit;
-  font-size: 11.5px;
-  text-decoration: underline;
+  color: var(--ink-2);
+  font-size: 14.5px;
   cursor: pointer;
-  padding: 0;
 }
-.stations-toggle:hover { color: var(--cardinal); }
+.stations-toggle:hover { background: var(--sunk); color: var(--ink); }
 
-.station-list { padding: 0 6px 6px; }
+.station-list { margin-top: 6px; }
+.station-list > * + * { border-top: 1px solid var(--rule); }
 
 .station-wrap > summary { list-style: none; cursor: pointer; }
 .station-wrap > summary::-webkit-details-marker { display: none; }
 
 .station {
   display: flex;
-  align-items: center;
-  gap: 8px;
+  align-items: baseline;
   flex-wrap: wrap;
-  padding: 6px 7px;
-  border-radius: 8px;
+  gap: 2px 10px;
+  padding: 9px 0;
 }
-.station-wrap > summary:hover .station,
-.station-list > .station:hover { background: var(--surface-2); }
+/* The rows that open carry a chevron; the ones that list nothing more do not. */
+.station-wrap > summary .station { padding-right: 22px; position: relative; }
+.station-wrap > summary .station::after {
+  content: "";
+  position: absolute;
+  right: 5px;
+  top: 17px;
+  width: 6px;
+  height: 6px;
+  border-right: 1.5px solid var(--ink-3);
+  border-bottom: 1.5px solid var(--ink-3);
+  transform: rotate(45deg);
+  transition: transform .15s;
+}
+.station-wrap[open] > summary .station::after { transform: translateY(3px) rotate(-135deg); }
+.station-wrap > summary:hover .station-name { text-decoration: underline; text-decoration-color: var(--rule-strong); text-underline-offset: 3px; }
 
-.station-name { font-size: 13px; font-weight: 540; }
-.station-name-en { font-size: 11px; color: var(--text-dim); }
-.station .badges { margin-top: 0; min-height: 0; }
-.station-detail { padding: 2px 7px 9px; }
+.station-name { font-size: 15.5px; font-weight: 500; }
+.station-name-en { font-size: 13.5px; color: var(--ink-2); }
+.station .badges { margin-top: 0; min-height: 0; font-size: 13.5px; }
+.station-detail { padding: 0 0 12px; }
 
 .empty {
-  border: 1px dashed var(--line-strong);
+  padding: 28px 20px;
   border-radius: var(--radius);
-  padding: 22px 16px;
+  background: var(--sunk);
+  color: var(--ink-2);
+  font-size: 15.5px;
   text-align: center;
-  color: var(--text-dim);
-  font-size: 13.5px;
 }
 
 footer {
-  max-width: 1800px;
+  max-width: var(--page);
   margin: 0 auto;
-  padding: 26px 16px 40px;
-  font-size: 12px;
-  color: var(--text-dim);
-  border-top: 1px solid var(--line);
+  padding: 0 var(--gutter) 64px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ink-2);
 }
-footer a { color: var(--cardinal); }
+footer p { max-width: 104ch; margin: 0 0 10px; }
+footer p:first-child { padding-top: 28px; border-top: 1px solid var(--rule); max-width: none; }
+footer strong { font-weight: 600; color: var(--ink); }
+footer a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--rule-strong);
+  text-underline-offset: 3px;
+}
+footer a:hover { text-decoration-color: currentColor; }
 
 /* ---------- first-visit tour ---------- */
 
@@ -692,13 +796,13 @@ footer a { color: var(--cardinal); }
   z-index: 40;
   pointer-events: none;
   border: 2px solid var(--cardinal);
-  border-radius: 18px;
+  border-radius: 14px;
   animation: tour-pulse 1.6s ease-out infinite;
 }
 .tour-ring.tour-glide { transition: left .22s, top .22s, width .22s, height .22s; }
 
 @keyframes tour-pulse {
-  0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--cardinal) 45%, transparent); }
+  0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--cardinal) 40%, transparent); }
   70%, 100% { box-shadow: 0 0 0 9px color-mix(in srgb, var(--cardinal) 0%, transparent); }
 }
 
@@ -706,13 +810,13 @@ footer a { color: var(--cardinal); }
 .tour-tip {
   position: fixed;
   z-index: 41;
-  width: min(300px, calc(100vw - 24px));
-  padding: 12px 14px 10px;
+  width: min(310px, calc(100vw - 24px));
+  padding: 14px 16px 12px;
   border-radius: 12px;
-  background: var(--text);
+  background: var(--ink);
   color: var(--bg);
-  box-shadow: 0 8px 28px rgba(0, 0, 0, .28);
-  font-size: 13.5px;
+  box-shadow: 0 12px 32px rgb(0 0 0 / .24);
+  font-size: 15px;
   line-height: 1.45;
   animation: tour-in .22s ease both;
 }
@@ -723,87 +827,133 @@ footer a { color: var(--cardinal); }
   left: calc(var(--arrow, 50%) - 6px);
   border: 6px solid transparent;
   border-top: 0;
-  border-bottom-color: var(--text);
+  border-bottom-color: var(--ink);
 }
 
 @keyframes tour-in {
   from { opacity: 0; transform: translateY(-4px); }
 }
 
-.tour-title { margin: 0 0 3px; font-size: 14.5px; font-weight: 640; }
-.tour-body { margin: 0; }
+.tour-title { margin: 0 0 4px; font: 600 17px/1.3 var(--serif); }
+html:lang(zh) .tour-title { font-family: var(--cjk), var(--serif); }
+.tour-body { margin: 0; opacity: .86; }
 
-.tour-actions { display: flex; align-items: center; gap: 4px; margin-top: 10px; }
-.tour-count { flex: 1 1 auto; font-size: 11.5px; opacity: .6; font-variant-numeric: tabular-nums; }
+.tour-actions { display: flex; align-items: center; gap: 4px; margin-top: 12px; }
+.tour-count { flex: 1 1 auto; font-size: 13px; opacity: .6; font-variant-numeric: tabular-nums; }
 
 .tour-actions button {
   appearance: none;
-  font: inherit;
-  font-size: 12.5px;
+  font-size: 14px;
   line-height: 1;
-  padding: 6px 12px;
+  padding: 8px 13px;
   border: 0;
-  border-radius: 999px;
+  border-radius: 8px;
   cursor: pointer;
 }
-.tour-skip { background: transparent; color: inherit; opacity: .7; }
+.tour-skip { background: transparent; color: inherit; opacity: .72; }
 .tour-skip:hover { opacity: 1; }
-.tour-next { background: var(--bg); color: var(--text); font-weight: 600; }
+.tour-next { background: var(--bg); color: var(--ink); font-weight: 600; }
 /* Not cardinal: a red ring here would read as a second stop of the tour. */
 .tour-actions button:focus-visible { outline: 2px solid var(--bg); outline-offset: 2px; }
+
+/* ---------- narrower screens ---------- */
+
+/* The bar no longer fits beside the name: the week and the meal drop to a
+   second line, still inside the sticky top. */
+@media (max-width: 1180px) {
+  .top {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas: "brand tools" "bar bar";
+  }
+}
 
 /* ---------- phones ---------- */
 
 @media (max-width: 720px) {
-  :root { --col-min: 84vw; }
+  :root { --gutter: 16px; --col-min: 84vw; --col-gap: 16px; --bleed: 8px; }
 
-  body { font-size: 14.5px; }
-  main { padding: 12px 12px 48px; }
-  .masthead-inner { padding: 7px 12px; gap: 5px; }
-  .group-label { display: none; }
+  body { font-size: 15px; }
 
-  /* Keep the title, date and theme button on one line. The masthead is sticky,
-     so each extra wrapped row costs screen height on every scroll. */
-  .brandrow { flex-wrap: nowrap; gap: 8px; min-width: 0; }
-  .brand {
-    font-size: 14.5px;
-    min-width: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  /* The top comes apart: the name and the switches scroll away with the page,
+     and only the day and the meal stay pinned. `display: contents` is what
+     lets .bar stick to the page rather than to a wrapper as tall as itself. */
+  .top { display: contents; }
+
+  .masthead {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px var(--gutter) 2px;
   }
-  .stamp { font-size: 11.5px; padding: 2px 8px; }
+  .brand { flex: 1 1 auto; min-width: 0; font-size: 17px; }
+  /* Fifteen CJK characters at 17px run into the switches. */
+  html:lang(zh) .brand { font-size: 15px; }
+  .brand::before { width: 20px; height: 20px; margin-right: 8px; vertical-align: -4px;
+    background-position: 5px 5px, 10.6px 5px, 0 0; background-size: 4.4px 10px, 4.4px 10px, auto; }
+  .tools { margin-right: -8px; }
+  .tool { height: 34px; padding: 0 8px; font-size: 14.5px; }
+  /* Icon only: the name of the mode is still the button's accessible name. */
+  .tool-theme { font-size: 0; gap: 0; }
+  .tool-theme::before { width: 15px; height: 15px; }
 
-  /* One scrollable line per control group instead of wrapping to four rows:
-     the masthead is sticky, so every wrapped row is permanently lost height. */
+  .bar {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 8px 0 10px;
+    background: color-mix(in srgb, var(--bg) 86%, transparent);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* One scrollable line per control group instead of wrapping: every wrapped
+     row of a pinned bar is permanently lost height. The edge fades so it reads
+     as scrollable rather than clipped. */
   .controls {
-    flex-wrap: nowrap;
     overflow-x: auto;
     scrollbar-width: none;
-    gap: 6px;
-    padding-bottom: 1px;
-    /* Fade the right edge so it reads as scrollable rather than clipped. */
-    mask-image: linear-gradient(to right, #000 calc(100% - 26px), transparent);
+    padding: 0 var(--gutter);
+    mask-image: linear-gradient(to right, transparent, #000 var(--gutter),
+      #000 calc(100% - 28px), transparent);
   }
   .controls::-webkit-scrollbar { display: none; }
-  .group { flex-wrap: nowrap; }
-  .chip { padding: 6px 10px; font-size: 12.5px; }
+  .group, .chips { flex-wrap: nowrap; }
 
-  .board { gap: 12px; scroll-snap-type: x mandatory; }
-  .col-head { padding: 10px 12px; }
-  .col-top { min-height: 34px; }
+  .controls-meal { overflow: visible; mask-image: none; }
+  .controls-meal .group, .segmented { flex: 1; }
+  .chip-seg { flex: 1; height: 34px; padding: 0 10px; font-size: 14.5px; }
+
+  .chip-day { min-width: 48px; padding: 4px 8px 5px; }
+  .chip-day .label { font-size: 12px; }
+  .chip-day .sub { font-size: 17px; }
+
+  .intro { padding-top: 22px; }
+  .stamp { font-size: 31px; line-height: 1.12; }
+  .digest { margin-top: 8px; font-size: 15.5px; }
+
+  .picks { margin: 20px calc(-1 * var(--gutter)) 0; gap: 8px; }
+  .picks .group-label { display: none; }
+  .chips .chip { height: 34px; padding: 0 11px; font-size: 14.5px; }
+
+  main { padding-top: 24px; padding-bottom: 56px; }
+
+  .board { scroll-snap-type: x mandatory; row-gap: 32px; }
+  .column { gap: 32px; }
+  /* One column is in view at a time here, so there is no neighbour for a
+     special's panel to be level with -- only an empty stretch of colour. */
+  .card-special { align-self: start; }
+  .col-name { font-size: 24px; }
+  .col-concept { font-size: 15px; }
   .col-logo img {
     width: calc(var(--logo-w) * .88);
     height: calc(var(--logo-h) * .88);
   }
-  .digest { font-size: 12.5px; margin-bottom: 10px; }
-  .notices { margin-bottom: 10px; }
-}
-
-/* Below this the title truncates to nonsense; the tab title carries the name and
-   the date is what you actually need in the app. */
-@media (max-width: 430px) {
-  .brand { display: none; }
+  .col-meta { font-size: 14px; }
+  .dish-name { font-size: 18.5px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

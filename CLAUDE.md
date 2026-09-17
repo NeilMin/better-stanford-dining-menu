@@ -183,9 +183,23 @@ JSON block so a dish name cannot close the script tag early.
   `.controls` row scrolls sideways and fades at the edge, which would clip a ring drawn inside it.
   A stop points at a static element from `index.html` (a `.group` wrapper or `#lang`), because
   `render()` replaces the chips inside it on every click.
+- **Colours are declared once, as `light-dark()` pairs on `:root` in `web/app.css`.** The theme
+  button only sets `data-theme`, which picks the `color-scheme` those pairs resolve against. A new
+  colour is a new pair there, not a rule repeated under `[data-theme="dark"]` and the media query.
+  The interface is greys plus cardinal; hall pastels are only a key (name underline, chip dot,
+  the wash behind a special), and the colour on the page is meant to come from the photographs.
+- **On a phone `.top` is `display: contents`.** That is what lets `.bar` (day and meal) stick to
+  the page while the name row scrolls away: a sticky element only sticks inside its parent's
+  box, and the wrapper is exactly as tall as the bar. On a desktop the whole `.top` is sticky.
 - **`.board` sets `overflow-x: auto`, which makes `overflow-y` compute to `auto`.** That makes it
   the scroll container for `position: sticky`, which is why the column headers are deliberately
   not sticky. Re-adding sticky needs a different containment strategy, not just the property.
+  The same scroller clips anything past the first and last column, so `.board` carries a
+  negative margin and matching padding of `--bleed`: that is the room a special's panel reaches
+  out into. Change one and the other.
+- **A dish card leads with its picture,** so the pictures in one row start level across the halls
+  however many lines the names above them would have taken. `dishCard()` appends the thumb before
+  the name block.
 - **The halls share one set of grid rows, so a card's height is not its own.** `.board` declares
   the rows and every `.column` is a `subgrid` spanning them: row 1 is every hall's header, row N
   every hall's Nth card. Three places have to agree. `render()` sets `--rows` from the deepest
@@ -209,6 +223,11 @@ JSON block so a dish name cannot close the script tag early.
   you match against the sign at the counter, so it is styled to stay readable and keeps the Latin
   face — a CJK font's Latin glyphs are conspicuously wider right under a Chinese name. Hall names
   stay English in both languages.
+- **The type is Stanford's own: Source Serif 4 for names and headings, Source Sans 3 for
+  everything else,** from Google Fonts, with platform fallbacks so the page still reads offline.
+  In Chinese the serif roles take the CJK sans rather than a Song face, which is faint at these
+  sizes; `html:lang(zh)` rules put the CJK stack first and hand the English-only lines back to
+  the Latin face.
 
 ## Deployment
 

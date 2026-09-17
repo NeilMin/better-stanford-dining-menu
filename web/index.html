@@ -6,7 +6,12 @@
 <title>Stanford Dining, Side by Side</title>
 <meta name="description" content="Compare today's menus across Stanford dining halls, with a picture of every dish.">
 <meta name="color-scheme" content="light dark">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>&#127869;</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238C1515'/><rect x='8' y='8' width='7' height='16' rx='1.5' fill='%23fff'/><rect x='17' y='8' width='7' height='16' rx='1.5' fill='%23fff' fill-opacity='.62'/></svg>">
+<!-- Stanford's own identity faces. The page reads fine without them: app.css
+     falls back to the platform's serif and sans. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400..700;1,400..600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..600&display=swap">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-CC0T7R8S3C"></script>
 <script>
@@ -21,30 +26,38 @@
 <body>
 <!-- The English text below is what the page says before app.js runs; the script
      rewrites this chrome whenever the language changes. -->
-<header class="masthead">
-  <div class="masthead-inner">
-    <div class="brandrow">
-      <h1 class="brand" id="brand">Stanford Dining, <span>Side by Side</span></h1>
-      <span class="stamp" id="stamp"></span>
-      <span class="spacer"></span>
-      <button class="chip chip-ghost" type="button" id="lang">中文</button>
-      <button class="chip chip-ghost" type="button" id="theme">◐ Auto</button>
+<div class="top">
+  <header class="masthead">
+    <h1 class="brand" id="brand">Stanford Dining, <span>Side by Side</span></h1>
+    <div class="tools">
+      <button class="tool" type="button" id="lang">中文</button>
+      <button class="tool tool-theme" type="button" id="theme">Auto</button>
+    </div>
+  </header>
+  <nav class="bar">
+    <div class="controls controls-day">
+      <div class="group"><span class="group-label" id="lbl-day">Day</span><span class="days" id="days"></span></div>
+    </div>
+    <div class="controls controls-meal">
+      <div class="group"><span class="group-label" id="lbl-meal">Meal</span><span class="segmented" id="meals"></span></div>
+    </div>
+  </nav>
+</div>
+
+<section class="intro">
+  <p class="stamp" id="stamp"></p>
+  <p class="digest" id="digest"></p>
+  <div class="picks">
+    <div class="controls">
+      <div class="group"><span class="group-label" id="lbl-halls">Halls</span><span class="chips" id="halls"></span></div>
     </div>
     <div class="controls">
-      <div class="group"><span class="group-label" id="lbl-day">Day</span><span class="group" id="days"></span></div>
-      <div class="group"><span class="group-label" id="lbl-meal">Meal</span><span class="group" id="meals"></span></div>
-    </div>
-    <div class="controls">
-      <div class="group"><span class="group-label" id="lbl-halls">Halls</span><span class="group" id="halls"></span></div>
-    </div>
-    <div class="controls">
-      <div class="group"><span class="group-label" id="lbl-filter">Filter</span><span class="group" id="diet"></span></div>
+      <div class="group"><span class="group-label" id="lbl-filter">Filter</span><span class="chips" id="diet"></span></div>
     </div>
   </div>
-</header>
+</section>
 
 <main>
-  <p class="digest" id="digest"></p>
   <div class="notices" id="notices"></div>
   <div class="board" id="board"></div>
 </main>

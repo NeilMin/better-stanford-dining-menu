@@ -7,11 +7,11 @@
   const STORE = "bsdm.prefs.v4";
 
   const DIET = [
-    { key: "vegetarian", label: "Vegetarian", zh: "素食", cls: "badge-v", short: "VEG", shortZh: "素" },
-    { key: "vegan", label: "Vegan", zh: "纯素", cls: "badge-vgn", short: "VEGAN", shortZh: "纯素" },
+    { key: "vegetarian", label: "Vegetarian", zh: "素食", cls: "badge-v", short: "Veg", shortZh: "素" },
+    { key: "vegan", label: "Vegan", zh: "纯素", cls: "badge-vgn", short: "Vegan", shortZh: "纯素" },
     { key: "gluten-free", label: "Gluten-free", zh: "无麸质", cls: "badge-gf", short: "GF", shortZh: "无麸质" },
-    { key: "halal", label: "Halal", zh: "清真", cls: "badge-halal", short: "HALAL", shortZh: "清真" },
-    { key: "kosher", label: "Kosher", zh: "犹太洁食", cls: "badge-kosher", short: "KOSHER", shortZh: "洁食" },
+    { key: "halal", label: "Halal", zh: "清真", cls: "badge-halal", short: "Halal", shortZh: "清真" },
+    { key: "kosher", label: "Kosher", zh: "犹太洁食", cls: "badge-kosher", short: "Kosher", shortZh: "洁食" },
   ];
 
   const PROTEIN = {
@@ -24,6 +24,11 @@
   const MEAL_ZH = { Breakfast: "早餐", Lunch: "午餐", Dinner: "晚餐", Brunch: "早午餐" };
 
   // R&DE's allergen codes. Anything not listed shows as it came.
+  const ALLERGEN_EN = {
+    MILK: "Milk", EGG: "Egg", WHEAT: "Wheat", SOY: "Soy", FISH: "Fish", SHELLFISH: "Shellfish",
+    SESAME: "Sesame", COCONUT: "Coconut", PEANUT: "Peanut", TREENUT: "Tree nuts",
+    TRACEALLERGENS: "Trace allergens",
+  };
   const ALLERGEN_ZH = {
     MILK: "乳制品", EGG: "蛋类", WHEAT: "小麦", SOY: "大豆", FISH: "鱼类", SHELLFISH: "甲壳贝类",
     SESAME: "芝麻", COCONUT: "椰子", PEANUT: "花生", TREENUT: "坚果",
@@ -54,24 +59,24 @@
       meal: (m) => m,
       diet: (d) => d.label,
       dietShort: (d) => d.short,
-      protein: (c) => PROTEIN[c].toUpperCase(),
-      onlyHere: "ONLY HERE",
+      protein: (c) => PROTEIN[c],
+      onlyHere: "Only here",
       meatFirst: "Meat first", photos: "Photos", reset: "Reset",
-      theme: (mode) => ({ auto: "◐ Auto", light: "☀ Light", dark: "☾ Dark" }[mode]),
+      theme: (mode) => ({ auto: "Auto", light: "Light", dark: "Dark" }[mode]),
       status: (s) => ({ open: "Open now", soon: "Opens soon", shut: "Closed" }[s]),
       count: (n) => `${n} on the menu`,
       onlyCount: (n) => `${n} only here`,
-      map: "map",
+      map: "Map",
       special: "Special",
-      specialBadge: "★ SPECIAL",
+      specialBadge: "Special",
       specialTip: (meal) => `${meal} special, from R&DE's specials calendar`,
       specialNote: "Limited-time special from R&DE's calendar. No ingredient list published — ask at the counter.",
       alwaysHere: "Always here",
-      toggle: (shown) => (shown ? "hide" : "show"),
+      toggle: (shown) => (shown ? "Hide" : "Show"),
       allergens: "Allergens: ",
-      allergenList: (list) => list.join(", "),
+      allergenList: (list) => list.map((a) => ALLERGEN_EN[a] || a).join(", "),
       ingredients: "Ingredients",
-      traces: (list) => "Shared equipment with: " + list.join(", "),
+      traces: (list) => "Shared equipment with: " + list.map((a) => ALLERGEN_EN[a] || a).join(", "),
       varies: "Changes daily — ask at the counter.",
       variesShort: "Varies daily",
       variesTip: "This entry changes daily, so it is deliberately not illustrated.",
@@ -125,13 +130,13 @@
       protein: (c) => PROTEIN_ZH[c] || PROTEIN[c],
       onlyHere: "只此一家",
       meatFirst: "荤菜靠前", photos: "图片", reset: "重置",
-      theme: (mode) => ({ auto: "◐ 自动", light: "☀ 浅色", dark: "☾ 深色" }[mode]),
+      theme: (mode) => ({ auto: "自动", light: "浅色", dark: "深色" }[mode]),
       status: (s) => ({ open: "供应中", soon: "即将开餐", shut: "休息中" }[s]),
       count: (n) => `共 ${n} 道菜`,
       onlyCount: (n) => `独有 ${n} 道`,
       map: "地图",
       special: "限定",
-      specialBadge: "★ 限定",
+      specialBadge: "限定",
       specialTip: (meal) => `${meal}限定菜品，出自 R&DE 的限定菜日历`,
       specialNote: "R&DE 日历上的限时菜品，未公布配料表——有过敏请到窗口确认。",
       alwaysHere: "常设窗口",
@@ -413,7 +418,9 @@
 
   // ---------- rendering ----------
 
-  /** A dish cooked today. Name leads, so the list is readable before any image loads.
+  /** A dish cooked today. The picture leads, so the pictures in one row start
+   *  level across the halls whatever length the names beneath them run to; the
+   *  box is reserved at its final size, so the name does not jump when it loads.
    *  A special is the same card, marked out: it is the dish you walk over for. */
   function dishCard(rec, onlyHere, special = false) {
     const card = el("article", {
@@ -432,7 +439,6 @@
     // stylesheet, so a dish with no tags keeps the same card as the one beside
     // it in the next hall.
     head.append(badgesFor(rec, onlyHere, special));
-    card.append(head);
 
     if (state.photos) {
       if (rec.image) {
@@ -455,6 +461,7 @@
         ]));
       }
     }
+    card.append(head);
 
     // Likewise: a dish that lists no allergens still gets the body, which
     // reserves that line.
@@ -520,8 +527,11 @@
 
     renderDigest(spread);
     renderNotices();
-    document.getElementById("stamp").textContent =
-      `${dayFull(state.date)} · ${t("meal", state.meal)}`;
+    document.getElementById("stamp").replaceChildren(
+      el("span", { className: "stamp-meal", textContent: t("meal", state.meal) }),
+      " ",
+      el("span", { className: "stamp-day", textContent: dayFull(state.date) }),
+    );
     // A render can switch the language under the tip or resize the row it points at.
     if (tour) drawTour(false);
     save();
@@ -623,8 +633,10 @@
       logo.append(img);
     }
 
+    // The name is underlined in the hall's colour -- the specials poster prints
+    // it on a bar of that colour -- so the board and the poster read as one key.
     const title = el("div", { className: "col-title" }, [
-      el("h2", { className: "col-name", textContent: hall.short }),
+      el("h2", { className: "col-name" }, [el("span", { textContent: hall.short })]),
     ]);
     const concept = (state.lang === "zh" && hall.concept_zh) || hall.concept;
     if (concept) {
@@ -634,29 +646,29 @@
       el("div", { className: "col-top" }, [title, logo]),
     ]);
 
-    const meta = el("div", { className: "col-meta" });
+    // Two lines, each read across the headers: when it serves, then what it has.
+    const when = el("p", { className: "col-when" });
     if (span) {
-      meta.append(el("span", {
+      when.append(el("span", {
         className: "hours",
         textContent: `${fmtTime(span[0])} – ${fmtTime(span[1])}`,
       }));
     }
     if (status) {
-      meta.append(el("span", {
-        className: `pill pill-${status}`,
+      when.append(el("span", {
+        className: `status status-${status}`,
         textContent: t("status", status),
       }));
     }
-    meta.append(el("span", {
-      className: "count",
-      textContent: t("count", specials.length + daily.length),
-    }));
+    const stats = el("p", { className: "col-stats" }, [
+      el("span", { className: "count", textContent: t("count", specials.length + daily.length) }),
+    ]);
     const onlyHere = [...specials, ...daily].filter((r) => spread.get(r.id) === 1).length;
     if (onlyHere) {
-      meta.append(el("span", { className: "only-count", textContent: t("onlyCount", onlyHere) }));
+      stats.append(el("span", { className: "only-count", textContent: t("onlyCount", onlyHere) }));
     }
     if (hall.address) {
-      meta.append(el("a", {
+      stats.append(el("a", {
         className: "maplink",
         href: "https://maps.google.com/?q=" + encodeURIComponent(hall.address),
         target: "_blank",
@@ -664,7 +676,7 @@
         textContent: t("map"),
       }));
     }
-    head.append(meta);
+    head.append(el("div", { className: "col-meta" }, [when, stats]));
     col.append(head);
 
     if (!svc.specials.length && !svc.daily.length && !svc.stations.length) {
@@ -727,7 +739,7 @@
       ...extra.props,
     });
     b.setAttribute("aria-pressed", String(pressed));
-    b.append(label);
+    b.append(el("span", { className: "label", textContent: label }));
     if (extra.sub) b.append(el("span", { className: "sub", textContent: extra.sub }));
     if (extra.accent) b.style.setProperty("--hall", extra.accent);
     b.addEventListener("click", onClick);
@@ -735,18 +747,24 @@
   }
 
   function renderControls() {
+    // A calendar strip: the day's name over its date. The month is in the
+    // headline, and the full date on hover.
     document.getElementById("days").replaceChildren(...DATA.window.map((iso) =>
       chip(dayLabel(iso), iso === state.date, () => {
         state.date = iso;
         render();
-      }, { sub: iso.slice(5).replace("-", "/") })));
+      }, {
+        className: "chip-day",
+        sub: String(Number(iso.slice(8))),
+        props: { title: dayFull(iso) },
+      })));
 
     const meals = availableMeals(state.date);
     document.getElementById("meals").replaceChildren(...MEALS.map((m) =>
       chip(t("meal", m), m === state.meal, () => {
         state.meal = m;
         render();
-      }, { props: { disabled: !meals.includes(m) } })));
+      }, { className: "chip-seg", props: { disabled: !meals.includes(m) } })));
 
     document.getElementById("halls").replaceChildren(...DATA.halls.map((h) =>
       chip(h.short, state.halls.includes(h.id), () => {
@@ -768,21 +786,24 @@
       chip(t("meatFirst"), state.meatFirst, () => {
         state.meatFirst = !state.meatFirst;
         render();
-      }, { className: "chip-ghost" }),
+      }, { className: "chip-view" }),
       chip(t("photos"), state.photos, () => {
         state.photos = !state.photos;
         render();
-      }, { className: "chip-ghost" }),
+      }, { className: "chip-view" }),
       chip(t("reset"), false, () => {
         try {
           localStorage.removeItem(STORE);
         } catch { /* storage blocked; the in-memory reset below still applies */ }
         Object.assign(state, structuredClone(fallback));
         render();
-      }, { className: "chip-ghost" }),
+      }, { className: "chip-reset" }),
     );
 
-    document.getElementById("theme").textContent = t("theme", state.theme);
+    const theme = document.getElementById("theme");
+    theme.textContent = t("theme", state.theme);
+    // Picks the drawn icon in app.css.
+    theme.dataset.mode = state.theme;
   }
 
   /** The text that lives in index.html rather than in a chip: labels, the
