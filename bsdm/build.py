@@ -12,6 +12,7 @@ from datetime import date, datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+from bsdm import logos as logolib
 from bsdm import zh as zhlib
 
 TZ = ZoneInfo("America/Los_Angeles")
@@ -39,6 +40,9 @@ def build_payload(root: Path) -> dict:
     config = json.loads((root / "config" / "halls.json").read_text())
     catalog = json.loads((root / "data" / "dishes.json").read_text())
     images_dir = root / "data" / "images"
+
+    logo_index = logolib.index(root)
+    logo_dir = logolib.out_dir(root)
 
     zh_table = zhlib.load(root)
     # Only the terms the published menus actually use are shipped. The table
@@ -130,6 +134,11 @@ def build_payload(root: Path) -> dict:
         }
         if concept_zh := zhlib.get(zh_table, "halls", h["id"]):
             out["concept_zh"] = concept_zh
+        # A hall with no logo cut yet falls back to its name alone, the same way
+        # a dish with no picture falls back to an icon.
+        entry = logo_index.get(h["id"])
+        if entry and (logo_dir / entry["file"]).exists():
+            out["logo"] = entry
         return out
 
     now = datetime.now(TZ)
@@ -172,6 +181,18 @@ def build(root: Path, out: Path) -> dict:
     # the repo root also means the domain cannot drift from what is served.
     (out / "CNAME").write_text(DOMAIN + "\n")
 
+    logo_out = out / "logo"
+    logo_out.mkdir(exist_ok=True)
+    wanted_logos = {h["logo"]["file"] for h in payload["halls"] if h.get("logo")}
+    for name in wanted_logos:
+        src = logolib.out_dir(root) / name
+        dst = logo_out / name
+        if not dst.exists() or dst.stat().st_mtime < src.stat().st_mtime:
+            shutil.copy2(src, dst)
+    for stale in logo_out.glob("*.webp"):
+        if stale.name not in wanted_logos:
+            stale.unlink()
+
     img_out = out / "img"
     img_out.mkdir(exist_ok=True)
     used = {d["image"] for d in payload["dishes"].values() if d["image"]}
@@ -193,6 +214,7 @@ def build(root: Path, out: Path) -> dict:
         "dishes": len(payload["dishes"]),
         "rows": total,
         "images": len(used),
+        "logos": len(wanted_logos),
         "zh_dishes": sum(1 for d in payload["dishes"].values() if d.get("zh")),
         "zh_terms": len(payload["zh_terms"]),
         "html_kb": (out / "index.html").stat().st_size / 1024,

@@ -1,0 +1,29 @@
+{
+  "_source": "https://rde.stanford.edu/sites/default/files/2026-07/20260730_Dining_Halls_Map.jpg",
+  "_page": "https://rde.stanford.edu/dining-hospitality/dining-locations-hours",
+  "_captured": "2026-09-16",
+  "_note": "Hand-verified crop boxes into the R&DE dining halls map. R&DE does not publish the hall logos as separate files -- not on rde.stanford.edu, not in its sitemap, not in the Wayback index of its file tree -- and the callout boxes on that map are the only place all eight appear together. So each logo is cut out of that one image. The boxes are pixel coordinates into the exact file named above, which is why its digest is recorded: a redrawn map moves every logo at once. scripts/fetch_logos.py does the cutting, and refuses to run against a map it does not recognise.",
+  "sha256": "b2af343e4c1ade18c59aab346c7aff72bca2ad9d9ab4330dd23ac4febe13522f",
+  "map_size": [1920, 680],
+
+  "_render": "Logos are written at 2x the box the page gives them (.col-logo in web/app.css), so they hold up on a retina screen. Height is what normalises the set; the width cap is what stops a 5:1 wordmark like Lakeside from running off the side of a column. Branner's roundel is the one that loses by being normalised on height -- it is taller than it is wide, so it comes out the smallest of the eight. It is also the only round green-and-purple one, which is enough to pick it out of a row.",
+  "render": {
+    "height": 72,
+    "max_width": 240,
+    "sharpen": 0.5,
+    "flatten_above": 224,
+    "flatten_saturation": 26
+  },
+
+  "_boxes": "[x0, y0, x1, y1] in the source map, left/top inclusive, right/bottom exclusive. Trimmed to the logo artwork itself, not to the callout box around it: the callouts are translucent, so their edges carry a wash of whatever the logo was standing on.",
+  "boxes": {
+    "arrillaga": [1120, 272, 1253, 319],
+    "lakeside": [455, 231, 614, 261],
+    "wilbur": [1359, 505, 1481, 557],
+    "stern": [1252, 370, 1335, 449],
+    "florencemoore": [749, 495, 842, 539],
+    "ricker": [112, 129, 216, 190],
+    "gerhardcasper": [1514, 137, 1665, 188],
+    "branner": [1307, 123, 1411, 251]
+  }
+}

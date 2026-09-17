@@ -505,7 +505,26 @@
     const span = hoursFor(state.date, hallId, state.meal);
     const status = serviceStatus(state.date, span);
 
+    // Appended whether or not this hall has a logo, for the same reason the
+    // dish cards keep an empty badge row: every header lands in the board's
+    // first row, and a missing logo must not drop this hall's name a line
+    // above the ones beside it. R&DE publishes the logos only inside one map
+    // image, so a new hall has none until someone reads its box off that map.
+    const logo = el("div", { className: "col-logo" });
+    if (hall.logo) {
+      logo.append(el("img", {
+        src: "logo/" + hall.logo.file,
+        // Decorative: the hall's name is the next line, and reading the logo
+        // out as well would just say it twice.
+        alt: "",
+        width: hall.logo.w,
+        height: hall.logo.h,
+        decoding: "async",
+      }));
+    }
+
     const head = el("header", { className: "col-head" }, [
+      logo,
       el("h2", { className: "col-name", textContent: hall.short }),
     ]);
     const concept = (state.lang === "zh" && hall.concept_zh) || hall.concept;

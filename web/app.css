@@ -244,6 +244,47 @@ main { max-width: 1800px; margin: 0 auto; padding: 16px 16px 64px; }
   flex-direction: column;
 }
 
+/* Reserved whether or not the hall has one, so the names line up across the
+   board even if one hall's logo is missing. The box is sized to what the source
+   can carry: R&DE draws these on one map and nothing bigger exists, so the
+   files are written at 2x this and the page never asks for more. */
+.col-logo {
+  height: 36px;
+  margin-bottom: 9px;
+  display: flex;
+  align-items: center;
+}
+
+.col-logo img {
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  /* The width/height attributes reserve the box before the file lands; without
+     an explicit width: auto the attribute would win and squash the logo. */
+  object-fit: contain;
+  object-position: left center;
+}
+
+/* The logos are cut out of a printed map, so each one arrives on its own patch
+   of white paper. On a light card that is invisible; on a dark one it would read
+   as a bright rectangle stuck to the header, so dark mode turns the accident
+   into a deliberate plate -- padded and rounded, pulled back out with a negative
+   margin so it does not move the name below it. */
+:root[data-theme="dark"] .col-logo img {
+  background: #fff;
+  padding: 3px 5px;
+  margin: -3px -5px;
+  border-radius: 5px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .col-logo img {
+    background: #fff;
+    padding: 3px 5px;
+    margin: -3px -5px;
+    border-radius: 5px;
+  }
+}
+
 .col-name {
   margin: 0;
   font-size: 16.5px;
@@ -559,6 +600,7 @@ footer a { color: var(--cardinal); }
 
   .board { gap: 12px; scroll-snap-type: x mandatory; }
   .col-head { padding: 10px 12px; }
+  .col-logo { height: 30px; margin-bottom: 7px; }
   .digest { font-size: 12.5px; margin-bottom: 10px; }
 }
 
