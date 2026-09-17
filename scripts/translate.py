@@ -56,11 +56,14 @@ RULES = {
 - A term that is a whole sentence is translated as a sentence.""",
 
     "halls": """These are one-line descriptions of a Stanford dining hall's concept, shown under the hall's name on the page.
-- Keep the restaurant concept name and any chef's name in English: "Star Ginger, inspired by Chef Mai Pham" -> Star Ginger，主厨 Mai Pham 出品.""",
+- Keep the restaurant concept name and any chef's name in English: "Star Ginger, inspired by Chef Mai Pham" -> Star Ginger，灵感源自主厨 Mai Pham.
+- Write it the way a Chinese restaurant would describe itself, not word for word. Drop "our", and use the idiomatic shape: "Home of our Kosher Kitchen" -> 犹太洁食（Kosher）厨房之家, not 我们的洁食厨房所在地.
+- A dining hall is 食堂, not 餐厅.""",
 
     "specials": """These are limited-time dinner specials off a dining hall's fortnightly calendar. Unlike a menu name, a special is often a short list of what comes with it.
 - Keep the structure of the original: a list stays a list, separated by Chinese enumeration commas.
-- Translate as food, not as prose: "Jerk Pork Belly, Rasta Pasta, Ripe Fried Plantains" -> 烟熏猪五花、雷鬼意面、香煎熟芭蕉.
+- Translate as food, not as prose: "Jerk Pork Belly, Rasta Pasta, Ripe Fried Plantains" -> 牙买加香辣烤五花肉、牙买加奶油辣味意面（Rasta Pasta）、煎熟大蕉.
+- Use the name a Chinese menu already uses for a foreign dish (玛莎拉咖喱鸡, 叉烧越南法棍) rather than transliterating it or translating its words literally. "Jerk" is a Jamaican spice rub, not smoking; "ginger beer" is a soft drink, 姜汁汽水.
 - Keep a dish's own proper name in English inside Chinese parentheses when the Chinese alone would not identify it: "Poul Nan Sos" -> 海地炖鸡（Poul Nan Sos）.
 - Keep announcements as announcements: "Closed for Winter Break" -> 寒假期间关闭.""",
 }
