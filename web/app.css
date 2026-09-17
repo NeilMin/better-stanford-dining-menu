@@ -189,7 +189,7 @@ main { max-width: 1800px; margin: 0 auto; padding: 16px 16px 64px; }
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: minmax(var(--col-min), 1fr);
-  gap: 16px;
+  gap: 10px 16px;
   align-items: start;
   overflow-x: auto;
   scroll-snap-type: x proximity;
@@ -204,6 +204,31 @@ main { max-width: 1800px; margin: 0 auto; padding: 16px 16px 64px; }
   gap: 10px;
 }
 
+/* The board is read across, not down, so the columns share one set of rows:
+   every hall's header lands in row 1, every hall's first card in row 2, and a
+   row is as tall as the tallest thing in it. The cards are built to one size
+   anyway (see .badges and .card-body); this is what catches the dish whose name
+   or allergen list runs long -- the short card beside it is padded out instead
+   of the long one being clipped. `--rows` is the deepest column; render() sets
+   it. */
+@supports (grid-template-rows: subgrid) {
+  .board { grid-template-rows: repeat(var(--rows, 1), auto); }
+
+  .column {
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: 1 / -1;
+    align-self: stretch;
+  }
+
+  /* Neither of these is a card, so neither is stretched to the row a taller
+     column set. The standing counters also get an explicit row span, from
+     column(): they run from under this hall's last card to the bottom of the
+     board, so an expanded list of counters spends the rows the shorter column
+     was not using instead of inflating a row of dish cards. */
+  .stations, .empty { align-self: start; }
+}
+
 .col-head {
   /* Not sticky: .board sets overflow-x, which per spec computes overflow-y to
      auto as well, so a sticky child anchors to the board rather than the page
@@ -215,6 +240,8 @@ main { max-width: 1800px; margin: 0 auto; padding: 16px 16px 64px; }
   padding: 11px 13px;
   box-shadow: var(--shadow);
   z-index: 5;
+  display: flex;
+  flex-direction: column;
 }
 
 .col-name {
@@ -226,8 +253,11 @@ main { max-width: 1800px; margin: 0 auto; padding: 16px 16px 64px; }
 
 .col-concept { margin: 3px 0 0; font-size: 12.5px; color: var(--text-dim); font-style: italic; }
 
+/* Pushed to the bottom edge: three of the halls have no concept line, and the
+   hours are what you read across the three headers. */
 .col-meta {
-  margin-top: 8px;
+  margin-top: auto;
+  padding-top: 8px;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -271,6 +301,10 @@ main { max-width: 1800px; margin: 0 auto; padding: 16px 16px 64px; }
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow);
+  /* Column, so a card stretched to its row keeps the spare height at the
+     bottom as padding instead of spreading it through the content. */
+  display: flex;
+  flex-direction: column;
 }
 
 .card-meat { border-color: color-mix(in srgb, var(--meat) 42%, var(--line)); }
@@ -296,7 +330,17 @@ main { max-width: 1800px; margin: 0 auto; padding: 16px 16px 64px; }
   color: var(--text-dim);
 }
 
-.badges { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 7px; }
+/* A row of badges is reserved on every dish card whether or not this dish has
+   any -- the card is empty there, not shorter. Untagged dishes are common
+   enough that without it a column goes out of step with its neighbours every
+   few cards. The dense station rows opt out below. */
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 7px;
+  min-height: 21px;
+}
 
 .badge {
   font-size: 10.5px;
@@ -344,11 +388,17 @@ main { max-width: 1800px; margin: 0 auto; padding: 16px 16px 64px; }
   border-bottom: 1px solid var(--line);
 }
 
+/* Same box a picture would fill, not a strip: a dish still waiting to be drawn
+   otherwise leaves its card ~170px shorter than the one beside it. */
 .thumb-none {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 9px;
+  justify-content: center;
+  gap: 7px;
+  aspect-ratio: 16 / 9;
   padding: 8px 13px;
+  text-align: center;
   background: repeating-linear-gradient(
     -45deg, var(--surface-2), var(--surface-2) 9px, transparent 9px, transparent 18px);
   border-top: 1px solid var(--line);
@@ -359,9 +409,16 @@ main { max-width: 1800px; margin: 0 auto; padding: 16px 16px 64px; }
   text-transform: uppercase;
   font-weight: 600;
 }
-.thumb-none .glyph { font-size: 18px; line-height: 1; }
+.thumb-none .glyph { font-size: 30px; line-height: 1; }
 
-.card-body { padding: 10px 13px 11px; }
+/* Reserves the line of allergens and the ingredients toggle: 21px of padding,
+   a 17px allergen line and the 33px toggle block. Half the dishes list no
+   allergens, and that one missing line is exactly what knocks the next column
+   out of step. */
+.card-body {
+  padding: 10px 13px 11px;
+  min-height: 71px;
+}
 
 .allergens { margin: 0; font-size: 11.5px; line-height: 1.45; color: var(--cardinal); }
 .allergens b { font-weight: 620; }
@@ -441,7 +498,7 @@ main { max-width: 1800px; margin: 0 auto; padding: 16px 16px 64px; }
 
 .station-name { font-size: 13px; font-weight: 540; }
 .station-name-en { font-size: 11px; color: var(--text-dim); }
-.station .badges { margin-top: 0; }
+.station .badges { margin-top: 0; min-height: 0; }
 .station-detail { padding: 2px 7px 9px; }
 
 .empty {

@@ -370,8 +370,10 @@
     ]);
     // Bilingual, not translated: the counter's sign still says "Magnolia Boil".
     if (zh) head.append(el("p", { className: "dish-name-en", textContent: rec.name }));
-    const badges = badgesFor(rec, onlyHere);
-    if (badges.childElementCount) head.append(badges);
+    // Appended even when empty: the badge row is reserved space in the
+    // stylesheet, so a dish with no tags keeps the same card as the one beside
+    // it in the next hall.
+    head.append(badgesFor(rec, onlyHere));
     card.append(head);
 
     if (state.photos) {
@@ -396,8 +398,9 @@
       }
     }
 
-    const detail = detailsFor(rec);
-    if (detail.length) card.append(el("div", { className: "card-body" }, detail));
+    // Likewise: a dish that lists no allergens still gets the body, which
+    // reserves that line.
+    card.append(el("div", { className: "card-body" }, detailsFor(rec)));
     return card;
   }
 
@@ -442,6 +445,19 @@
     }
 
     for (const hallId of state.halls) board.append(column(hallId, spread));
+
+    // The columns are laid on the board's own rows so that the slots line up
+    // across the halls (.board, in the stylesheet). The deepest column decides
+    // how many rows there are: one for the header, one per card, and a last one
+    // for the standing counters to run into.
+    let cards = 1;
+    let standing = false;
+    for (const col of board.children) {
+      const tail = col.lastElementChild.classList.contains("stations");
+      if (tail) standing = true;
+      cards = Math.max(cards, col.childElementCount - 1 - (tail ? 1 : 0));
+    }
+    board.style.setProperty("--rows", String(1 + cards + (standing ? 1 : 0)));
 
     renderDigest(spread);
     document.getElementById("stamp").textContent =
@@ -564,6 +580,10 @@
       });
       head.append(toggle);
       wrap.append(head);
+      // Runs from the row under this hall's last card to the bottom of the
+      // board; see .stations in the stylesheet. Read before the block is
+      // appended, so the count is the header plus this hall's cards.
+      wrap.style.gridRow = `${col.childElementCount + 1} / -1`;
 
       if (state.stations) {
         const list = el("div", { className: "station-list" });

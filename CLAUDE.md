@@ -118,6 +118,15 @@ JSON block so a dish name cannot close the script tag early.
 - **`.board` sets `overflow-x: auto`, which makes `overflow-y` compute to `auto`.** That makes it
   the scroll container for `position: sticky`, which is why the column headers are deliberately
   not sticky. Re-adding sticky needs a different containment strategy, not just the property.
+- **The halls share one set of grid rows, so a card's height is not its own.** `.board` declares
+  the rows and every `.column` is a `subgrid` spanning them: row 1 is every hall's header, row N
+  every hall's Nth card. Three places have to agree. `render()` sets `--rows` from the deepest
+  column; `column()` gives the standing counters a `grid-row` ending at `-1`, so an expanded list
+  of counters spends the rows a short column was not using instead of inflating a row of dish
+  cards; and `dishCard()` appends the badge row and the card body *even when they are empty*,
+  because the stylesheet reserves a badge row and an allergen line there. That reserve is what
+  makes the cards equal in the first place — the subgrid only catches the leftovers, a name or an
+  allergen list that runs long.
 - **`<img width/height>` defeats `aspect-ratio`** unless `height: auto` is also set. The
   attributes are load-bearing for layout reservation, so keep both.
 - **User-visible English lives in the `UI` table in `web/app.js`, not in the DOM calls.** Both
