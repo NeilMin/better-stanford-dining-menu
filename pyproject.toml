@@ -7,6 +7,9 @@ dependencies = [
     "requests>=2.31",
     "beautifulsoup4>=4.12",
     "Pillow>=10.0",
+    # Reading the specials calendar means reading where its coloured bars are
+    # drawn, not just its text; see bsdm/specials.py.
+    "PyMuPDF>=1.24",
 ]
 
 [build-system]

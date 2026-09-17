@@ -1,7 +1,7 @@
 # Everything except `images` runs without a GPU, which is what CI relies on.
 PY := uv run python
 
-.PHONY: all update images logos logos-check translate site serve clean \
+.PHONY: all update images logos logos-check specials translate site serve clean \
         hours-diff hours-accept verify catalog
 
 all: update site           ## scrape the week and rebuild the site
@@ -17,6 +17,9 @@ logos:                     ## cut the hall logos out of the R&DE map into data/l
 
 logos-check:               ## has R&DE redrawn the map the logo boxes point into?
 	$(PY) scripts/fetch_logos.py --check
+
+specials:                  ## follow the specials calendar link on the hours page
+	$(PY) scripts/fetch_specials.py
 
 translate:                 ## fill in the missing Chinese (needs the claude CLI)
 	$(PY) scripts/translate.py

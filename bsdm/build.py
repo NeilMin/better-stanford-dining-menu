@@ -13,6 +13,7 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 from bsdm import logos as logolib
+from bsdm import specials as specialslib
 from bsdm import zh as zhlib
 
 TZ = ZoneInfo("America/Los_Angeles")
@@ -49,6 +50,7 @@ def build_payload(root: Path) -> dict:
     # keeps every term ever seen, which over a term's worth of menus is a good
     # deal more than any one week puts on the board.
     zh_terms: dict[str, str] = {}
+    zh_specials: dict[str, str] = {}
 
     stations_path = root / "data" / "stations.json"
     station_table = json.loads(stations_path.read_text()) if stations_path.exists() else {}
@@ -141,6 +143,24 @@ def build_payload(root: Path) -> dict:
             out["logo"] = entry
         return out
 
+    # Specials come off a PDF poster, on their own dates; only the ones that
+    # land in the published window are shipped, and only where the hall actually
+    # has that meal -- the poster's bars run Monday to Friday whether or not a
+    # hall reopened on the Tuesday.
+    specials = {}
+    for iso, day in specialslib.for_window(root, window).items():
+        served = menus.get(iso, {})
+        meal = day["meal"]
+        halls_out = {
+            hall_id: texts for hall_id, texts in day["halls"].items()
+            if served.get(hall_id, {}).get(meal, {}).get("daily")
+        }
+        if halls_out or day["notes"]:
+            specials[iso] = {"meal": meal, "halls": halls_out, "notes": day["notes"]}
+        for text in [*day["notes"], *(t for ts in halls_out.values() for t in ts)]:
+            if text_zh := zhlib.get(zh_table, "specials", text):
+                zh_specials[text] = text_zh
+
     now = datetime.now(TZ)
     return {
         "generated_at": now.strftime("%b %-d, %Y at %-I:%M %p %Z"),
@@ -155,8 +175,10 @@ def build_payload(root: Path) -> dict:
         "defaults": config["defaults"],
         "dishes": dishes,
         "zh_terms": zh_terms,
+        "zh_specials": zh_specials,
         "menus": menus,
         "hours": hours,
+        "specials": specials,
     }
 
 
@@ -215,6 +237,8 @@ def build(root: Path, out: Path) -> dict:
         "rows": total,
         "images": len(used),
         "logos": len(wanted_logos),
+        "specials": sum(len(t) for d in payload["specials"].values()
+                        for t in d["halls"].values()),
         "zh_dishes": sum(1 for d in payload["dishes"].values() if d.get("zh")),
         "zh_terms": len(payload["zh_terms"]),
         "html_kb": (out / "index.html").stat().st_size / 1024,

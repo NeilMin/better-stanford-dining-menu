@@ -57,9 +57,15 @@ RULES = {
 
     "halls": """These are one-line descriptions of a Stanford dining hall's concept, shown under the hall's name on the page.
 - Keep the restaurant concept name and any chef's name in English: "Star Ginger, inspired by Chef Mai Pham" -> Star Ginger，主厨 Mai Pham 出品.""",
+
+    "specials": """These are limited-time dinner specials off a dining hall's fortnightly calendar. Unlike a menu name, a special is often a short list of what comes with it.
+- Keep the structure of the original: a list stays a list, separated by Chinese enumeration commas.
+- Translate as food, not as prose: "Jerk Pork Belly, Rasta Pasta, Ripe Fried Plantains" -> 烟熏猪五花、雷鬼意面、香煎熟芭蕉.
+- Keep a dish's own proper name in English inside Chinese parentheses when the Chinese alone would not identify it: "Poul Nan Sos" -> 海地炖鸡（Poul Nan Sos）.
+- Keep announcements as announcements: "Closed for Winter Break" -> 寒假期间关闭.""",
 }
 
-BATCH = {"dishes": 40, "terms": 120, "halls": 20}
+BATCH = {"dishes": 40, "terms": 120, "halls": 20, "specials": 25}
 
 
 class TranslateError(RuntimeError):
@@ -118,7 +124,7 @@ def main() -> int:
     ap.add_argument("--model", default="sonnet", help="model alias passed to claude (default sonnet)")
     ap.add_argument("--claude-bin", default="claude", help="path to the Claude Code CLI")
     ap.add_argument("--section", choices=sorted(zhlib.SECTIONS), action="append",
-                    help="limit to dish names, ingredient terms or hall concepts")
+                    help="limit to dish names, ingredient terms, hall concepts or specials")
     ap.add_argument("--only", help="substring match on the English source")
     ap.add_argument("--force", action="store_true", help="retranslate what is already done")
     ap.add_argument("--limit", type=int, help="stop after N items per section")
@@ -130,7 +136,7 @@ def main() -> int:
 
     table = zhlib.load(ROOT)
     want = zhlib.wanted(ROOT)
-    sections = args.section or ["dishes", "terms", "halls"]
+    sections = args.section or ["dishes", "terms", "halls", "specials"]
 
     todo: dict[str, dict[str, str]] = {}
     for section in sections:

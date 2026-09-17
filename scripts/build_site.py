@@ -23,7 +23,7 @@ def main() -> int:
         f"Built {args.out}: {stats['days']} days, {stats['halls']} halls, "
         f"{stats['rows']} rows over {stats['dishes']} dishes, "
         f"{stats['images']} images, {stats['logos']} logos, "
-        f"{stats['zh_dishes']} Chinese names and "
+        f"{stats['specials']} specials, {stats['zh_dishes']} Chinese names and "
         f"{stats['zh_terms']} Chinese terms, index.html {stats['html_kb']:.0f} KB"
     )
     return 0

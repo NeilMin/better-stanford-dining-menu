@@ -62,6 +62,8 @@
       count: (n) => `${n} on the menu`,
       onlyCount: (n) => `${n} only here`,
       map: "map",
+      special: "Special",
+      specialTip: (meal) => `${meal} special, from R&DE's specials calendar`,
       alwaysHere: "Always here",
       toggle: (shown) => (shown ? "hide" : "show"),
       allergens: "Allergens: ",
@@ -115,6 +117,8 @@
       count: (n) => `菜单 ${n} 道`,
       onlyCount: (n) => `${n} 道独有`,
       map: "地图",
+      special: "特供",
+      specialTip: (meal) => `${meal}限时特供，来自 R&DE 的特供日历`,
       alwaysHere: "常设窗口",
       toggle: (shown) => (shown ? "收起" : "展开"),
       allergens: "过敏原：",
@@ -278,6 +282,28 @@
   }
 
   const EMPTY = { daily: [], stations: [] };
+
+  /** The specials the poster gives this hall for this date, if any.
+   *
+   *  Guarded on the meal: the calendar is a dinner calendar, and a dinner
+   *  special has no business on the lunch board.
+   */
+  function specialsFor(date, hallId) {
+    const day = DATA.specials[date];
+    if (!day || day.meal !== state.meal) return [];
+    return day.halls[hallId] || [];
+  }
+
+  function noticesFor(date) {
+    const day = DATA.specials[date];
+    if (!day || day.meal !== state.meal) return [];
+    return day.notes || [];
+  }
+
+  /** Chinese for a special, or English if it has not been translated yet. */
+  function zhSpecial(text) {
+    return state.lang === "zh" ? DATA.zh_specials[text] || null : null;
+  }
 
   function service(date, hallId, meal) {
     return ((DATA.menus[date] || {})[hallId] || {})[meal] || EMPTY;
@@ -460,6 +486,7 @@
     board.style.setProperty("--rows", String(1 + cards + (standing ? 1 : 0)));
 
     renderDigest(spread);
+    renderNotices();
     document.getElementById("stamp").textContent =
       `${dayFull(state.date)} · ${t("meal", state.meal)}`;
     save();
@@ -483,6 +510,21 @@
     if (unique === 0) {
       node.append(" ", el("span", { className: "warn", textContent: t("identical") }));
     }
+  }
+
+  /** Whatever the specials calendar says to the whole campus at once. */
+  function renderNotices() {
+    const node = document.getElementById("notices");
+    const notes = noticesFor(state.date);
+    node.replaceChildren(...notes.map((text) => {
+      const zh = zhSpecial(text);
+      const line = el("p", { className: "notice" }, [
+        el("span", { className: "special-tag", textContent: t("special") }),
+        el("span", { textContent: zh || text }),
+      ]);
+      if (zh) line.append(el("span", { className: "special-en", textContent: text }));
+      return line;
+    }));
   }
 
   function column(hallId, spread) {
@@ -530,6 +572,24 @@
     const concept = (state.lang === "zh" && hall.concept_zh) || hall.concept;
     if (concept) {
       head.append(el("p", { className: "col-concept", textContent: concept }));
+    }
+
+    // Inside the header on purpose. The halls share one set of grid rows, so a
+    // strip of its own would be a row that only some columns have, and every
+    // card below it in those columns would fall out of line with the others.
+    for (const text of specialsFor(state.date, hallId)) {
+      const zh = zhSpecial(text);
+      const strip = el("p", {
+        className: "col-special",
+        title: t("specialTip", t("meal", state.meal)),
+      }, [
+        el("span", { className: "special-tag", textContent: t("special") }),
+        el("span", { className: "special-text", textContent: zh || text }),
+      ]);
+      // Same rule as a dish name: the Chinese is what you read, the English is
+      // what matches the sign at the counter.
+      if (zh) strip.append(el("span", { className: "special-en", textContent: text }));
+      head.append(strip);
     }
 
     const meta = el("div", { className: "col-meta" });

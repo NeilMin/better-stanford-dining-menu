@@ -23,10 +23,15 @@ _START = re.compile(r"DINING LOCATIONS\s*&\s*HOURS", re.I)
 _END = re.compile(r"Meet Your Dining Team", re.I)
 
 
-def fetch_hours_text(timeout: int = 30) -> str:
+def fetch_page(timeout: int = 30) -> str:
+    """The hours page itself. Also where bsdm/specials.py finds its link."""
     r = requests.get(HOURS_URL, timeout=timeout, headers={"User-Agent": "Mozilla/5.0"})
     r.raise_for_status()
-    soup = BeautifulSoup(r.text, "html.parser")
+    return r.text
+
+
+def fetch_hours_text(timeout: int = 30, html: str | None = None) -> str:
+    soup = BeautifulSoup(html if html is not None else fetch_page(timeout), "html.parser")
     for tag in soup(["script", "style", "noscript"]):
         tag.decompose()
     text = re.sub(r"\n\s*\n+", "\n", soup.get_text("\n"))
@@ -37,9 +42,9 @@ def fetch_hours_text(timeout: int = 30) -> str:
     return "\n".join(lines[start:end])
 
 
-def check(snapshot_path: Path, update: bool = False) -> dict:
+def check(snapshot_path: Path, update: bool = False, html: str | None = None) -> dict:
     """Compare the live hours section against the stored snapshot."""
-    text = fetch_hours_text()
+    text = fetch_hours_text(html=html)
     digest = hashlib.sha256(text.encode()).hexdigest()
 
     previous = None

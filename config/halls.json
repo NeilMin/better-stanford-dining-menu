@@ -5,12 +5,14 @@
   "_schema": {
     "menu_key": "value submitted to the rdeapps lstLocations dropdown",
     "schedules": "ordered list; first entry whose date range covers the target date wins. 'days' uses 0=Mon..6=Sun.",
-    "meals": "meal name -> [open, close] in 24h local time"
+    "meals": "meal name -> [open, close] in 24h local time",
+    "aliases": "extra names the specials calendar uses for this hall, beyond id/short/name. Matching ignores case and punctuation, so only genuinely different words belong here -- \"AFDC\", \"Casper\", and one recurring typo."
   },
   "halls": [
     {
       "id": "arrillaga",
       "menu_key": "Arrillaga",
+      "aliases": ["AFDC"],
       "name": "Arrillaga Family Dining Commons",
       "short": "Arrillaga",
       "address": "489 Arguello Mall, Stanford, CA 94305",
@@ -57,6 +59,7 @@
     {
       "id": "wilbur",
       "menu_key": "Wilbur",
+      "aliases": ["Wibur"],
       "name": "Wilbur Dining",
       "short": "Wilbur",
       "address": "658 Escondido Rd, Stanford, CA 94305",
@@ -103,6 +106,7 @@
     {
       "id": "florencemoore",
       "menu_key": "FlorenceMoore",
+      "aliases": ["FloMo"],
       "name": "Florence Moore Dining",
       "short": "FloMo",
       "address": "436 Mayfield Ave, Stanford, CA 94305",
@@ -151,6 +155,7 @@
     {
       "id": "gerhardcasper",
       "menu_key": "GerhardCasper",
+      "aliases": ["Casper"],
       "name": "Gerhard Casper Dining Commons",
       "short": "Casper",
       "address": "661 Escondido Rd, Stanford, CA 94305",

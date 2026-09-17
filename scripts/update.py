@@ -20,6 +20,7 @@ sys.path.insert(0, str(ROOT))
 from bsdm import hours as hourslib  # noqa: E402
 from bsdm.catalog import build as build_catalog, summarize as summarize_catalog  # noqa: E402
 from bsdm.scrape import MenuScraper  # noqa: E402
+from bsdm import specials as specialslib  # noqa: E402
 from bsdm.stations import analyze as analyze_stations  # noqa: E402
 from bsdm import zh as zhlib  # noqa: E402
 
@@ -53,6 +54,7 @@ def main() -> int:
                     help="probe Brunch on every day, not just as a canary")
     ap.add_argument("--halls", help="comma-separated hall ids to limit the scrape to")
     ap.add_argument("--skip-hours", action="store_true")
+    ap.add_argument("--skip-specials", action="store_true")
     ap.add_argument("--show-hours-diff", action="store_true",
                     help="print how the R&DE hours page differs from the snapshot and exit")
     ap.add_argument("--accept-hours", action="store_true",
@@ -152,9 +154,18 @@ def main() -> int:
     if untranslated:
         log.info("%d new items to translate -- run: make translate", untranslated)
 
-    if not args.skip_hours:
+    # The hours page is fetched once and read for two things: whether the hours
+    # themselves moved, and which specials calendar it is currently linking to.
+    page = None
+    if not (args.skip_hours and args.skip_specials):
         try:
-            result = hourslib.check(ROOT / "data" / "hours_snapshot.json")
+            page = hourslib.fetch_page()
+        except Exception as exc:  # network flakiness must not fail the menu run
+            log.warning("Could not fetch the hours page: %s", exc)
+
+    if not args.skip_hours and page is not None:
+        try:
+            result = hourslib.check(ROOT / "data" / "hours_snapshot.json", html=page)
             if result["first_run"]:
                 log.info("Hours snapshot created.")
             elif result["changed"]:
@@ -162,8 +173,35 @@ def main() -> int:
                 log.warning("   run: python scripts/update.py --show-hours-diff")
             else:
                 log.info("Hours page unchanged.")
-        except Exception as exc:  # network flakiness must not fail the menu run
+        except Exception as exc:
             log.warning("Hours check failed: %s", exc)
+
+    # Specials live in a PDF poster that is replaced every fortnight and linked
+    # only from that page, so an edition not saved while it is up is gone. A
+    # poster we cannot read is still archived, and still must not cost us the
+    # night's menus.
+    if not args.skip_specials and page is not None:
+        try:
+            result = specialslib.update(ROOT, config, html=page)
+            if not result["url"]:
+                log.info("Specials: no calendar linked from the hours page.")
+            elif result["status"] == "unchanged":
+                log.info("Specials: unchanged (%d entries).", result["entries"])
+            elif result["status"] == "unreadable":
+                log.warning("!! Specials calendar could not be read: %s", result["error"])
+                log.warning("   archived as data/specials/%s -- check the layout by hand:",
+                            result["file"])
+                log.warning("   python scripts/fetch_specials.py --dry-run data/specials/%s",
+                            result["file"])
+            else:
+                log.info("Specials: %s calendar %s..%s, %d entries (%d tied to a hall)",
+                         result["status"], result["from"], result["to"],
+                         result["entries"], result["placed"])
+                if result["unplaced_labels"]:
+                    log.warning("   !! labels matching no hall: %s -- add an alias in "
+                                "config/halls.json", ", ".join(result["unplaced_labels"]))
+        except Exception as exc:
+            log.warning("Specials check failed: %s", exc)
 
     return 0
 

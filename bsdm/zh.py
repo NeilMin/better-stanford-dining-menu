@@ -28,10 +28,11 @@ from pathlib import Path
 _SPLIT = re.compile(r"([,()\[\]])")
 _SEPARATORS = frozenset(",()[]")
 
-# {section: whether entries keep their English alongside}. Terms are keyed by the
-# English itself, so storing it again would be noise; dishes and halls are keyed
-# by id, and the English is what makes the file reviewable by hand.
-SECTIONS = {"dishes": True, "terms": False, "halls": True}
+# {section: whether entries keep their English alongside}. Terms and specials are
+# keyed by the English itself, so storing it again would be noise; dishes and
+# halls are keyed by id, and the English is what makes the file reviewable by
+# hand.
+SECTIONS = {"dishes": True, "terms": False, "halls": True, "specials": False}
 
 
 def norm(term: str) -> str:
@@ -118,7 +119,13 @@ def wanted(root: Path) -> dict[str, dict[str, str]]:
     config = json.loads((root / "config" / "halls.json").read_text())
     halls = {h["id"]: h["concept"] for h in config["halls"] if h.get("concept")}
 
-    return {"dishes": names, "terms": terms, "halls": halls}
+    # Specials are prose, not a list, so they are translated whole like a dish
+    # name. Every calendar ever archived is offered, not just the current one:
+    # they cost a line each, and the same dish comes round again.
+    from bsdm import specials as specialslib
+    specials = {text: text for text in specialslib.texts(root)}
+
+    return {"dishes": names, "terms": terms, "halls": halls, "specials": specials}
 
 
 def missing(root: Path, table: dict | None = None) -> dict[str, dict[str, str]]:
@@ -135,7 +142,7 @@ def summarize(root: Path) -> str:
     want = wanted(root)
     parts = []
     for section, label in (("dishes", "dish names"), ("terms", "ingredient terms"),
-                           ("halls", "hall concepts")):
+                           ("halls", "hall concepts"), ("specials", "specials")):
         total = len(want[section])
         have = sum(1 for k in want[section] if get(table, section, k))
         parts.append(f"{have}/{total} {label}")

@@ -294,6 +294,59 @@ main { max-width: 1800px; margin: 0 auto; padding: 16px 16px 64px; }
 
 .col-concept { margin: 3px 0 0; font-size: 12.5px; color: var(--text-dim); font-style: italic; }
 
+/* The one thing on the board that is only true tonight, so it is the one thing
+   in the header that carries the hall's own colour. It lives in the header
+   rather than above the first card because the halls share one set of grid
+   rows: a strip only some columns had would push their cards out of line with
+   everyone else's. */
+.col-special {
+  margin: 9px 0 0;
+  padding: 7px 9px;
+  border-radius: 9px;
+  border-left: 3px solid var(--hall, var(--cardinal));
+  background: color-mix(in srgb, var(--hall, var(--cardinal)) 9%, var(--surface));
+  font-size: 13px;
+  line-height: 1.42;
+}
+
+.special-tag {
+  display: inline-block;
+  margin-right: 6px;
+  font-size: 10px;
+  font-weight: 680;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--hall, var(--cardinal));
+  vertical-align: 1px;
+}
+
+.special-text { font-weight: 560; }
+
+/* Same rule as a dish name: the Chinese is what you read, the English under it
+   is what matches the sign at the counter. */
+.special-en {
+  display: block;
+  margin-top: 2px;
+  font-size: 11.5px;
+  color: var(--text-dim);
+}
+html:lang(zh) .special-en { font-family: var(--sans); }
+html:lang(zh) .special-tag { letter-spacing: 0; }
+
+/* What the calendar says to the whole campus at once -- a Thanksgiving dinner,
+   a winter-break closure -- which belongs above the board, not in one column. */
+.notices { margin: -6px 0 14px; display: flex; flex-direction: column; gap: 6px; }
+
+.notice {
+  margin: 0;
+  padding: 8px 11px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  font-size: 13px;
+}
+.notice .special-tag { color: var(--cardinal); }
+
 /* Pushed to the bottom edge: three of the halls have no concept line, and the
    hours are what you read across the three headers. */
 .col-meta {
@@ -602,6 +655,7 @@ footer a { color: var(--cardinal); }
   .col-head { padding: 10px 12px; }
   .col-logo { height: 30px; margin-bottom: 7px; }
   .digest { font-size: 12.5px; margin-bottom: 10px; }
+  .notices { margin-bottom: 10px; }
 }
 
 /* Below this the title truncates to nonsense; the tab title carries the name and
