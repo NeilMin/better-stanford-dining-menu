@@ -6,6 +6,7 @@
     "menu_key": "value submitted to the rdeapps lstLocations dropdown",
     "schedules": "ordered list; first entry whose date range covers the target date wins. 'days' uses 0=Mon..6=Sun.",
     "meals": "meal name -> [open, close] in 24h local time",
+    "accent": "the hall's colour on the R&DE dinner specials calendar, read off the PDF's fills (Sept 14-25, 2026 edition). A light pastel by design: text on it stays dark, and app.css derives a darker ink from it where it has to be read on white.",
     "aliases": "extra names the specials calendar uses for this hall, beyond id/short/name. Matching ignores case and punctuation, so only genuinely different words belong here -- \"AFDC\", \"Casper\", and one recurring typo."
   },
   "halls": [
@@ -19,7 +20,7 @@
       "concept": null,
       "tagline": "Large West Campus commons with late-night service",
       "active": true,
-      "accent": "#8C1515",
+      "accent": "#CCCCFF",
       "schedules": [
         {"from": "2026-09-15", "to": "2026-09-15", "label": "NSO Hours", "days": [0,1,2,3,4,5,6],
          "meals": {"Lunch": ["11:00","14:30"], "Dinner": ["17:00","20:00"]}},
@@ -41,7 +42,7 @@
       "concept": "Magnolia Southern Dining",
       "tagline": "Southern cooking: brisket, Nashville hot chicken, gumbo, po'boys",
       "active": true,
-      "accent": "#B1040E",
+      "accent": "#FFC000",
       "schedules": [
         {"from": "2026-09-15", "to": "2026-09-15", "label": "NSO Hours", "days": [0,1,2,3,4,5,6],
          "meals": {"Lunch": ["11:00","13:30"], "Dinner": ["18:00","20:00"]}},
@@ -66,7 +67,7 @@
       "concept": "Star Ginger, inspired by Chef Mai Pham",
       "tagline": "Southeast Asian: Thai curries, Vietnamese noodle soups, grilled meats",
       "active": true,
-      "accent": "#E98300",
+      "accent": "#8EB6F8",
       "schedules": [
         {"from": "2026-09-15", "to": "2026-09-15", "label": "NSO Hours", "days": [0,1,2,3,4,5,6],
          "meals": {"Lunch": ["11:00","13:30"], "Dinner": ["18:00","20:00"]}},
@@ -90,7 +91,7 @@
       "concept": "Cardinal Sage, inspired by Chef Iliana de la Vega",
       "tagline": "Modern Oaxacan: slow-marinated meats, house salsas, scratch rice and beans",
       "active": true,
-      "accent": "#007C92",
+      "accent": "#7ED957",
       "schedules": [
         {"from": "2026-09-15", "to": "2026-09-15", "label": "NSO Hours", "days": [0,1,2,3,4,5,6],
          "meals": {"Breakfast": ["07:30","10:00"], "Lunch": ["11:00","13:30"], "Dinner": ["17:00","20:00"]}},
@@ -113,7 +114,7 @@
       "concept": "Home of our Kosher Kitchen",
       "tagline": "Campus kosher kitchen",
       "active": true,
-      "accent": "#6FA287",
+      "accent": "#F5FF8D",
       "schedules": [
         {"from": "2026-09-15", "to": "2026-09-15", "label": "NSO Hours", "days": [0,1,2,3,4,5,6],
          "meals": {"Lunch": ["11:00","13:30"], "Dinner": ["18:00","20:00"]}},
@@ -137,7 +138,7 @@
       "concept": null,
       "tagline": null,
       "active": true,
-      "accent": "#8F993E",
+      "accent": "#F997AA",
       "schedules": [
         {"from": "2026-09-15", "to": "2026-09-15", "label": "NSO Hours", "days": [0,1,2,3,4,5,6],
          "meals": {"Lunch": ["11:00","13:30"], "Dinner": ["18:00","20:00"]}},
@@ -162,7 +163,7 @@
       "concept": "Spice Flower Kitchen, inspired by Chef Mai Pham",
       "tagline": "Asian vegetarian; Jain/Sattvic-guided, no onion, garlic, or root vegetables",
       "active": true,
-      "accent": "#B26F16",
+      "accent": "#FFCD8C",
       "schedules": [
         {"from": "2026-09-15", "to": "2026-09-15", "label": "NSO Hours", "days": [0,1,2,3,4,5,6],
          "meals": {"Lunch": ["11:00","13:30"], "Dinner": ["18:00","20:00"]}},
@@ -185,7 +186,7 @@
       "concept": "Allergen-Friendly Dining",
       "tagline": "Entire menu free of the nine most common allergens",
       "active": true,
-      "accent": "#4298B5",
+      "accent": "#A5EBD0",
       "schedules": [
         {"from": "2026-09-15", "to": "2026-09-15", "label": "NSO Hours", "days": [0,1,2,3,4,5,6],
          "meals": {"Lunch": ["11:00","13:30"], "Dinner": ["18:00","20:00"]}},

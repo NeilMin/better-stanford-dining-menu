@@ -170,11 +170,46 @@ html:lang(zh) .badge { letter-spacing: 0; }
 .chip:focus-visible { outline: 2px solid var(--cardinal-bright); outline-offset: 2px; }
 .chip .sub { font-size: 11px; opacity: .72; margin-left: 5px; }
 
+/* Each hall's colour is the one R&DE gives it on the specials calendar, so the
+   board and the poster on the wall read as one key. They are pastels, drawn to
+   carry dark text: --hall is the fill itself, --hall-tint the wash a card sits
+   on, --hall-ink the same hue dark enough to read as text on white. Declared
+   where --hall is set inline (a column, a chip), since a custom property that
+   uses var() resolves on the element that declares it. */
+.column, .chip-hall {
+  --hall-ink: color-mix(in oklab, var(--hall, var(--cardinal)) 45%, #1C1A17);
+  --hall-tint: color-mix(in srgb, var(--hall, var(--cardinal)) 24%, var(--surface));
+}
+:root[data-theme="dark"] :is(.column, .chip-hall) {
+  --hall-ink: var(--hall, var(--cardinal));
+  --hall-tint: color-mix(in srgb, var(--hall, var(--cardinal)) 13%, var(--surface));
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) :is(.column, .chip-hall) {
+    --hall-ink: var(--hall, var(--cardinal));
+    --hall-tint: color-mix(in srgb, var(--hall, var(--cardinal)) 13%, var(--surface));
+  }
+}
+
+/* A swatch while off, so the colour is learnt before it is ever switched on. */
+.chip-hall::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 6px;
+  border-radius: 50%;
+  background: var(--hall, var(--cardinal));
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--hall-ink) 35%, transparent);
+  vertical-align: 1px;
+}
+.chip-hall:hover { border-color: var(--hall-ink); }
 .chip-hall[aria-pressed="true"] {
   background: var(--hall, var(--cardinal));
-  border-color: var(--hall, var(--cardinal));
-  color: #fff;
+  border-color: color-mix(in oklab, var(--hall, var(--cardinal)) 70%, #1C1A17);
+  color: #1C1A17;
 }
+.chip-hall[aria-pressed="true"]::before { display: none; }
 .chip-ghost { border-style: dashed; color: var(--text-dim); }
 
 /* ---------- board ---------- */
@@ -235,7 +270,9 @@ main { max-width: 1800px; margin: 0 auto; padding: 16px 16px 64px; }
      and lands on top of the first card. */
   background: var(--surface);
   border: 1px solid var(--line);
-  border-top: 3px solid var(--hall, var(--cardinal));
+  /* Only the rule carries the colour, not the card: the logos are cut from a
+     printed map on white paper, and a tinted header would frame each one. */
+  border-top: 6px solid var(--hall, var(--cardinal));
   border-radius: var(--radius);
   padding: 11px 13px;
   box-shadow: var(--shadow);
@@ -303,8 +340,8 @@ main { max-width: 1800px; margin: 0 auto; padding: 16px 16px 64px; }
   margin: 9px 0 0;
   padding: 7px 9px;
   border-radius: 9px;
-  border-left: 3px solid var(--hall, var(--cardinal));
-  background: color-mix(in srgb, var(--hall, var(--cardinal)) 9%, var(--surface));
+  border-left: 3px solid var(--hall-ink);
+  background: var(--hall-tint);
   font-size: 13px;
   line-height: 1.42;
 }
@@ -316,7 +353,7 @@ main { max-width: 1800px; margin: 0 auto; padding: 16px 16px 64px; }
   font-weight: 680;
   letter-spacing: .07em;
   text-transform: uppercase;
-  color: var(--hall, var(--cardinal));
+  color: var(--hall-ink);
   vertical-align: 1px;
 }
 
@@ -402,9 +439,11 @@ html:lang(zh) .special-tag { letter-spacing: 0; }
 }
 
 .card-meat { border-color: color-mix(in srgb, var(--meat) 42%, var(--line)); }
-.card-meat .card-head { background: linear-gradient(var(--meat-soft), transparent); }
-
-.card-head { padding: 11px 13px 10px; }
+/* The name block is washed in the hall's colour, so a card still says whose it
+   is when its column header has scrolled away. A meat dish keeps its own warmth
+   at the top edge, fading into that wash. */
+.card-head { padding: 11px 13px 10px; background: var(--hall-tint); }
+.card-meat .card-head { background: linear-gradient(var(--meat-soft), var(--hall-tint) 85%); }
 
 .dish-name {
   margin: 0;
