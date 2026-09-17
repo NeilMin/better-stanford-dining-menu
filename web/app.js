@@ -85,6 +85,15 @@
         b(every), " at every one · ", b(unique), " at only one.",
       ],
       identical: "These menus are identical — go wherever is closest.",
+      tourDay: ["Pick a day",
+        "Menus run a week ahead. Tap a day, or use ← → on a keyboard. The page always opens on today."],
+      tourMeal: ["Pick a meal",
+        "Breakfast, lunch or dinner. A greyed-out meal is one none of your halls serve that day."],
+      tourHalls: ["Pick your halls",
+        "Tap a hall to add or drop it; each gets a column, side by side. Your halls, meal, language and theme are remembered."],
+      // 语言 in the title so a Chinese reader spots the stop meant for them.
+      tourLang: ["Language · 语言", "Switch to another language here."],
+      tourNext: "Next", tourDone: "Got it", tourSkip: "Skip",
       footerSrc: (a, built) => [
         "Menus scraped from the ",
         a("https://rdeapps.stanford.edu/dininghallmenu/", "R&DE Dining Hall Menu"),
@@ -144,6 +153,11 @@
         b(every), " 道家家都有 · ", b(unique), " 道仅此一家。",
       ],
       identical: "这几家的菜单完全相同——去离你最近的那家就好。",
+      tourDay: ["选日期", "菜单提前一周公布。点日期切换，电脑上也可以按 ← →。每次打开都从今天开始。"],
+      tourMeal: ["选餐次", "早餐、午餐、晚餐任选。灰掉的餐次是你选的食堂当天都不供应。"],
+      tourHalls: ["选食堂", "点一下添加或移除，每家食堂占一列，并排对比。食堂、餐次、语言和主题都会记住。"],
+      tourLang: ["语言 · Language", "在这里可以切换成其他语言。"],
+      tourNext: "下一步", tourDone: "知道了", tourSkip: "跳过",
       footerSrc: (a, built) => [
         "菜单抓取自 ",
         a("https://rdeapps.stanford.edu/dininghallmenu/", "R&DE 食堂菜单"),
@@ -193,9 +207,13 @@
     lang: "en",
   };
 
+  // The date is the one choice that is not remembered: you open the page to see
+  // what is on today, and a day picked last Tuesday is a stale answer to that.
+  // Older saves still carry one, so it is dropped on the way in as well as out.
   function load() {
     try {
-      return { ...fallback, ...JSON.parse(localStorage.getItem(STORE) || "{}") };
+      const { date, ...saved } = JSON.parse(localStorage.getItem(STORE) || "{}");
+      return { ...fallback, ...saved };
     } catch {
       return { ...fallback };
     }
@@ -203,7 +221,8 @@
 
   function save() {
     try {
-      localStorage.setItem(STORE, JSON.stringify(state));
+      const { date, ...kept } = state;
+      localStorage.setItem(STORE, JSON.stringify(kept));
     } catch {
       /* private browsing or blocked storage -- preferences just don't persist */
     }
@@ -211,8 +230,6 @@
 
   const state = load();
 
-  // A stored date falls out of the rolling 7-day window within a week.
-  if (!DATA.window.includes(state.date)) state.date = fallback.date;
   state.halls = state.halls.filter((id) => hallById.has(id));
   if (!state.halls.length) state.halls = DATA.defaults.selected.slice();
   if (!UI[state.lang]) state.lang = fallback.lang;
@@ -505,6 +522,8 @@
     renderNotices();
     document.getElementById("stamp").textContent =
       `${dayFull(state.date)} · ${t("meal", state.meal)}`;
+    // A render can switch the language under the tip or resize the row it points at.
+    if (tour) drawTour(false);
     save();
   }
 
@@ -794,6 +813,135 @@
     lang.setAttribute("aria-label", t("langLabel"));
   }
 
+  // ---------- first-visit tour ----------
+  //
+  // Four stops, shown once per browser. The flag lives apart from STORE, so
+  // Reset or a STORE bump does not replay the tour to someone who has seen it.
+  //
+  // The ring and the tip are overlays laid over the target, not styles on it:
+  // on a phone each control row is a horizontal scroller with a masked edge,
+  // which would clip a ring drawn on the row's own children.
+  const TOUR_SEEN = "bsdm.tour.v1";
+  const TOUR = [
+    { key: "tourDay", target: () => document.getElementById("days").parentElement },
+    { key: "tourMeal", target: () => document.getElementById("meals").parentElement },
+    { key: "tourHalls", target: () => document.getElementById("halls").parentElement },
+    { key: "tourLang", target: () => document.getElementById("lang") },
+  ];
+  let tour = null;
+
+  function startTour() {
+    try {
+      if (localStorage.getItem(TOUR_SEEN)) return;
+      // Written up front, as on neilmin.github.io: leaving mid-tour counts as seen.
+      localStorage.setItem(TOUR_SEEN, "1");
+    } catch {
+      return; // with nowhere to remember it, it would show on every visit
+    }
+    tour = {
+      step: 0,
+      ring: el("div", { className: "tour-ring" }),
+      tip: el("div", { className: "tour-tip", role: "dialog" }),
+      row: null,
+    };
+    document.body.append(tour.ring, tour.tip);
+    addEventListener("resize", placeTour);
+    // Captured, because a scrolling control row does not bubble its scroll.
+    document.addEventListener("scroll", placeTour, true);
+    drawTour(true);
+    // Only now, so the ring's first placement is a jump rather than a glide in
+    // from the corner.
+    requestAnimationFrame(() => tour && tour.ring.classList.add("tour-glide"));
+  }
+
+  /** Put the phone's scrolled control row back the way the tour found it. */
+  function leaveStep() {
+    if (tour.row) tour.row[0].scrollLeft = tour.row[1];
+    tour.row = null;
+  }
+
+  function stepTour() {
+    leaveStep();
+    tour.step += 1;
+    drawTour(true);
+  }
+
+  function endTour() {
+    leaveStep();
+    tour.ring.remove();
+    tour.tip.remove();
+    tour = null;
+    removeEventListener("resize", placeTour);
+    document.removeEventListener("scroll", placeTour, true);
+  }
+
+  /** Fill the tip for the current stop. `arriving` is false when a render
+   *  redraws it in place, which must neither scroll the row nor move focus. */
+  function drawTour(arriving) {
+    const stop = TOUR[tour.step];
+    const [title, body] = t(stop.key);
+    const last = tour.step === TOUR.length - 1;
+
+    const next = el("button", {
+      type: "button",
+      className: "tour-next",
+      textContent: t(last ? "tourDone" : "tourNext"),
+    });
+    next.addEventListener("click", last ? endTour : stepTour);
+    const actions = el("div", { className: "tour-actions" }, [
+      el("span", { className: "tour-count", textContent: `${tour.step + 1} / ${TOUR.length}` }),
+    ]);
+    if (!last) {
+      const skip = el("button", { type: "button", className: "tour-skip", textContent: t("tourSkip") });
+      skip.addEventListener("click", endTour);
+      actions.append(skip);
+    }
+    actions.append(next);
+
+    tour.tip.setAttribute("aria-label", title);
+    tour.tip.replaceChildren(
+      el("p", { className: "tour-title", textContent: title }),
+      el("p", { className: "tour-body", textContent: body }),
+      actions,
+    );
+
+    if (arriving) {
+      const target = stop.target();
+      const row = target.closest(".controls");
+      if (row) {
+        tour.row = [row, row.scrollLeft];
+        target.scrollIntoView({ block: "nearest", inline: "nearest" });
+      }
+      next.focus({ preventScroll: true });
+    }
+    placeTour();
+  }
+
+  function placeTour() {
+    if (!tour) return;
+    const target = TOUR[tour.step].target();
+    const r = target.getBoundingClientRect();
+    // Ring only the part you can see: on a phone the week runs off the row's edge.
+    const row = target.closest(".controls");
+    const clip = row ? row.getBoundingClientRect() : { left: 0, right: innerWidth };
+    const left = Math.max(r.left, clip.left, 8);
+    const right = Math.min(r.right, clip.right, innerWidth - 8);
+    const pad = 5;
+    Object.assign(tour.ring.style, {
+      left: `${left - pad}px`,
+      top: `${r.top - pad}px`,
+      width: `${right - left + 2 * pad}px`,
+      height: `${r.height + 2 * pad}px`,
+    });
+
+    const w = tour.tip.offsetWidth;
+    const mid = (left + right) / 2;
+    const x = Math.min(Math.max(mid - w / 2, 12), innerWidth - w - 12);
+    tour.tip.style.left = `${x}px`;
+    tour.tip.style.top = `${r.bottom + pad + 10}px`;
+    tour.tip.style.setProperty("--arrow", `${Math.min(Math.max(mid - x, 18), w - 18)}px`);
+  }
+
   document.getElementById("lang").addEventListener("click", () => {
     state.lang = state.lang === "zh" ? "en" : "zh";
     render();
@@ -807,6 +955,10 @@
   // Left/right arrows step through the week.
   document.addEventListener("keydown", (e) => {
     if (e.target.matches("input, textarea, select")) return;
+    if (e.key === "Escape" && tour) {
+      endTour();
+      return;
+    }
     const i = DATA.window.indexOf(state.date);
     if (e.key === "ArrowLeft" && i > 0) {
       state.date = DATA.window[i - 1];
@@ -818,4 +970,6 @@
   });
 
   render();
+  // A beat after the page appears, so the ring reads as something happening.
+  setTimeout(startTour, 450);
 })();

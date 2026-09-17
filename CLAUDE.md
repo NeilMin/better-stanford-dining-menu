@@ -175,6 +175,14 @@ JSON block so a dish name cannot close the script tag early.
 - **Bump `STORE` in `web/app.js`** (currently `bsdm.prefs.v4`) whenever the persisted state shape
   changes. Stale localStorage once looked exactly like a scraper bug, because the MCP browser
   shares the user's Chrome profile.
+- **The date is deliberately not persisted**; everything else in `state` is. `load()` and `save()`
+  both strip it, so old saves that carry one still open on today.
+- **The first-visit tour has its own key, `bsdm.tour.v1`,** set when the tour starts, so Reset and
+  a `STORE` bump do not replay it. To see it again, delete that key. Its ring and tip are
+  `position: fixed` overlays placed over the target, not styles on the target: on a phone each
+  `.controls` row scrolls sideways and fades at the edge, which would clip a ring drawn inside it.
+  A stop points at a static element from `index.html` (a `.group` wrapper or `#lang`), because
+  `render()` replaces the chips inside it on every click.
 - **`.board` sets `overflow-x: auto`, which makes `overflow-y` compute to `auto`.** That makes it
   the scroll container for `position: sticky`, which is why the column headers are deliberately
   not sticky. Re-adding sticky needs a different containment strategy, not just the property.

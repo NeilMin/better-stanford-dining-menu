@@ -683,6 +683,75 @@ footer {
 }
 footer a { color: var(--cardinal); }
 
+/* ---------- first-visit tour ---------- */
+
+/* Laid over the control, not drawn on it; see the tour in app.js. Above the
+   masthead, which the controls live in. */
+.tour-ring {
+  position: fixed;
+  z-index: 40;
+  pointer-events: none;
+  border: 2px solid var(--cardinal);
+  border-radius: 18px;
+  animation: tour-pulse 1.6s ease-out infinite;
+}
+.tour-ring.tour-glide { transition: left .22s, top .22s, width .22s, height .22s; }
+
+@keyframes tour-pulse {
+  0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--cardinal) 45%, transparent); }
+  70%, 100% { box-shadow: 0 0 0 9px color-mix(in srgb, var(--cardinal) 0%, transparent); }
+}
+
+/* Inverted from the page, so it stands off it in either theme. */
+.tour-tip {
+  position: fixed;
+  z-index: 41;
+  width: min(300px, calc(100vw - 24px));
+  padding: 12px 14px 10px;
+  border-radius: 12px;
+  background: var(--text);
+  color: var(--bg);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, .28);
+  font-size: 13.5px;
+  line-height: 1.45;
+  animation: tour-in .22s ease both;
+}
+.tour-tip::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: calc(var(--arrow, 50%) - 6px);
+  border: 6px solid transparent;
+  border-top: 0;
+  border-bottom-color: var(--text);
+}
+
+@keyframes tour-in {
+  from { opacity: 0; transform: translateY(-4px); }
+}
+
+.tour-title { margin: 0 0 3px; font-size: 14.5px; font-weight: 640; }
+.tour-body { margin: 0; }
+
+.tour-actions { display: flex; align-items: center; gap: 4px; margin-top: 10px; }
+.tour-count { flex: 1 1 auto; font-size: 11.5px; opacity: .6; font-variant-numeric: tabular-nums; }
+
+.tour-actions button {
+  appearance: none;
+  font: inherit;
+  font-size: 12.5px;
+  line-height: 1;
+  padding: 6px 12px;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.tour-skip { background: transparent; color: inherit; opacity: .7; }
+.tour-skip:hover { opacity: 1; }
+.tour-next { background: var(--bg); color: var(--text); font-weight: 600; }
+/* Not cardinal: a red ring here would read as a second stop of the tour. */
+.tour-actions button:focus-visible { outline: 2px solid var(--bg); outline-offset: 2px; }
+
 /* ---------- phones ---------- */
 
 @media (max-width: 720px) {
@@ -740,4 +809,5 @@ footer a { color: var(--cardinal); }
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; }
   .board { scroll-behavior: auto; }
+  .tour-ring, .tour-tip { animation: none; }
 }
