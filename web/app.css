@@ -29,8 +29,37 @@
   --radius: 10px;
   --gutter: 24px;
   --page: 1800px;
+  /* --page as a block inside <main> sees it: the page's width less its gutters,
+     or the window's if the window is the narrower of the two. Resolved per
+     element, so it only means this for main's own children. */
+  --limit: min(calc(var(--page) - 2 * var(--gutter)), 100%);
+  /* The width below which a card stops being worth showing at all. --col-cap and
+     --col-floor are both held above it, so it is the one number here that is a
+     judgement rather than arithmetic. */
   --col-min: 300px;
+  /* How wide a column asks to be when the window is not the thing stopping it.
+     It is what the board's own width is built out of: N halls ask for N of
+     these, and a wide enough screen gives them. */
+  --col-max: 360px;
   --col-gap: 32px;
+  /* ...and how wide a column is ever allowed to get, which is a different
+     question with a fixed answer: exactly what it measures with three halls
+     side by side. Three is where the photographs are already as big as they are
+     worth being, so dropping to two or one narrows the board instead of
+     inflating what is left of it. Measured off --limit rather than --page so it
+     is the width three halls really have on this screen, not on an imaginary
+     one -- on a window under --page those two differ, and a lone hall coming out
+     wider than three would be the whole point missed. Never under --col-min: a
+     single hall would then be handed a board too narrow to hold its own column,
+     and it would scroll by the difference. */
+  --col-cap: max(var(--col-min), calc((var(--limit) - 2 * var(--col-gap)) / 3));
+  /* The same bound from underneath: how narrow a column is ever squeezed, which
+     is what it measures with five halls side by side. Five is as many as fit
+     before a card stops being readable, so a sixth is laid out after the fifth
+     at that same width and the board scrolls, rather than every column giving up
+     a few pixels to it. --col-min is still the last word, for a window too
+     narrow for five of anything. */
+  --col-floor: max(var(--col-min), calc((var(--limit) - 4 * var(--col-gap)) / 5));
   /* How far a special's panel reaches past its column; see .card-special. */
   --bleed: 10px;
 }
@@ -347,11 +376,26 @@ html:lang(zh) .col-concept { font-family: var(--cjk), var(--sans); font-size: 15
 
 /* ---------- board ---------- */
 
-main { max-width: var(--page); margin: 0 auto; padding: 36px var(--gutter) 88px; }
+/* The one element that is allowed to be wider than the page. Everything else --
+   the masthead, the title, the chips, the footer -- stays inside --page and does
+   not move, because controls that shift under the cursor when you pick a hall
+   are worse than a board you have to scroll. So <main> itself spans the window
+   and hands the cap back to the blocks inside it: .notices keeps it, .board is
+   the exception. Spanning the window is also what makes `100%` inside .board
+   mean the widest the board can get without pushing the page sideways -- 100vw
+   would have counted the scrollbar and done exactly that. */
+main { margin: 0; padding: 36px var(--gutter) 88px; }
 
 /* What the calendar says to the whole campus at once -- a Thanksgiving dinner,
    a winter-break closure -- which belongs above the board, not in one column. */
-.notices { display: flex; flex-direction: column; gap: 8px; margin-bottom: 28px; }
+.notices {
+  max-width: var(--limit);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 28px;
+}
 .notices:empty { display: none; }
 
 .notice {
@@ -368,18 +412,54 @@ main { max-width: var(--page); margin: 0 auto; padding: 36px var(--gutter) 88px;
    is what matches the sign at the counter. */
 .special-en { display: block; margin-top: 2px; font-size: 13.5px; color: var(--ink-2); }
 
+/* How wide the board is, from what the halls ask for:
+
+     --want   what N columns at --col-max would take: what the board grows to
+              on a screen with the room for it.
+     --full   what N columns at --col-cap would take: as wide as the board is
+              ever allowed to get. Above three halls this is past the page and
+              the page wins, so it only ever bites at one and two.
+     --width  what they get: the page, or --full if that is narrower, then
+              --want, then the window.
+
+   The three cases the clamp produces, narrowest first. Under the page the
+   columns divide the page up, which is where three to five halls sit and is
+   exactly what they did before any of this. Over the page the board is the only
+   thing that breaks out, a column at a time, until the window stops it. Over the
+   window the columns stop at --col-floor and it scrolls sideways, as always.
+
+   One and two halls are the case this is really for: --full holds the columns at
+   the width three of them have, and the board simply ends early rather than
+   blowing one photograph up to the width of the page. */
 .board {
+  --want: calc(var(--cols, 3) * var(--col-max) + (var(--cols, 3) - 1) * var(--col-gap));
+  --full: calc(var(--cols, 3) * var(--col-cap) + (var(--cols, 3) - 1) * var(--col-gap));
+  /* --want is held under --full as well, so that "never wider than three of
+     them" holds outright rather than only while --col-max happens to be the
+     smaller number. The two swap over on a window under about 1200px. */
+  --width: clamp(min(var(--limit), var(--full)), min(var(--want), var(--full)), 100%);
+
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: minmax(var(--col-min), 1fr);
+  grid-auto-columns: minmax(var(--col-floor), 1fr);
   column-gap: var(--col-gap);
   row-gap: 40px;
   align-items: start;
   overflow-x: auto;
   scroll-snap-type: x proximity;
   /* Room for a special's panel to reach past the first and last columns, which
-     the scroller would otherwise clip. */
-  margin: 0 calc(-1 * var(--bleed));
+     the scroller would otherwise clip. It sits outside --width, so the columns
+     themselves still line up with the title: the box is --bleed wider on each
+     side and pulled back out by the same amount. */
+  width: calc(var(--width) + 2 * var(--bleed));
+  /* Where that width sits. Two answers, and `min` picks the right one without
+     having to ask which case we are in: a board wider than the page centres on
+     the window, and a board narrower than it starts on the page's left edge --
+     under the title, not adrift in the middle of the screen. They agree, at
+     three halls, on the same edge. */
+  margin-inline: calc(
+    min((100% - var(--limit)) / 2, (100% - var(--width)) / 2) - var(--bleed)
+  ) 0;
   padding: var(--bleed) var(--bleed) 12px;
   scroll-padding-inline: var(--bleed);
   scrollbar-width: thin;
@@ -870,7 +950,24 @@ html:lang(zh) .tour-title { font-family: var(--cjk), var(--serif); }
 /* ---------- phones ---------- */
 
 @media (max-width: 720px) {
-  :root { --gutter: 16px; --col-min: 84vw; --col-gap: 16px; --bleed: 8px; }
+  /* A column is one fixed width here, 84vw, whatever is selected: the board is
+     read by swiping across it, and a column that changed width with the number
+     of halls would cost you the thing that makes two of them comparable. 84vw
+     rather than the full width so the next hall peeks in at the edge and you can
+     see there is something to swipe to.
+
+     --col-cap is a desktop answer to a desktop problem -- a column inflating to
+     fill a page far wider than it -- and 84vw is already measured against the
+     window, so it is lifted here. Lifting it is also what leaves a single hall
+     the whole screen: with nothing beside it there is nothing to peek at. */
+  :root {
+    --gutter: 16px;
+    --col-min: 84vw;
+    --col-max: 84vw;
+    --col-cap: 100%;
+    --col-gap: 16px;
+    --bleed: 8px;
+  }
 
   body { font-size: 15px; }
 

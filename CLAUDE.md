@@ -197,6 +197,35 @@ JSON block so a dish name cannot close the script tag early.
   The same scroller clips anything past the first and last column, so `.board` carries a
   negative margin and matching padding of `--bleed`: that is the room a special's panel reaches
   out into. Change one and the other.
+- **`.board` is the only thing allowed to be wider than `--page`.** `<main>` spans the window and
+  hands the cap back to `.notices`; the masthead, the title, the chips and the footer keep
+  `--page` and do not move, whatever is selected — controls that shift under the cursor when you
+  pick a hall are worse than a board you have to scroll, which is why `render()` writes `--cols`
+  onto the board and nowhere near the root. `100%` inside `.board` therefore means the window less
+  the gutters, which is what `<main>` spanning the window buys: the ceiling is deliberately not
+  `100vw`, which counts the scrollbar and would push the whole page sideways.
+- **Four column widths, and they answer different questions.** `--col-max` is what a column
+  *asks* for when there is room, so `--want` (N of them) is how far the board grows on a wide
+  screen. The other three are bounds, and two of them are derived from `--limit` rather than
+  written down, so they are what N halls really measure on *this* screen rather than on an
+  imaginary one:
+  - `--col-cap`, the width **three** halls have side by side, is the most a column may ever be.
+    `--full` (N of them) is what holds one or two halls to the size three of them have instead of
+    blowing a single photograph up to the width of the page.
+  - `--col-floor`, the width **five** halls have side by side, is the least it may ever be. A
+    sixth hall is laid out after the fifth at that same width and the board scrolls, rather than
+    every column giving up a few pixels to it. It is the min of the `minmax()`, so the tracks
+    overflow `--width` and the scroller takes over, which is how `--col-min` behaved before it.
+  - `--col-min` is the last word under both, for a window too narrow for the arithmetic to mean
+    anything. It is the one number of the four that is a judgement rather than a derivation.
+
+  `--width` clamps `--want` between `min(--limit, --full)` and the window, and `--want` is itself
+  held under `--full`, so "never wider than three of them" holds outright and not just while
+  `--col-max` happens to be the smaller number.
+- **A board narrower than the page starts on the page's left edge; a wider one centres on the
+  window.** `min()` over the two offsets picks between them with no branch, and they agree at
+  three halls. Centring a short board instead would leave the title and the chips above it
+  hanging off a left edge of their own, which reads as a bug — it was built that way once.
 - **A dish card leads with its picture,** so the pictures in one row start level across the halls
   however many lines the names above them would have taken. `dishCard()` appends the thumb before
   the name block.

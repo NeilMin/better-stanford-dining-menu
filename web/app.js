@@ -525,6 +525,13 @@
     }
     board.style.setProperty("--rows", String(1 + cards + (standing ? 1 : 0)));
 
+    // ...and how many halls are up decides how wide the board asks to be, which
+    // on a wide enough screen is wider than the page (--width, in the
+    // stylesheet). It goes on the board and nowhere else: the top bar, the title
+    // and the chips keep the page's width whatever is selected, because controls
+    // that move when you pick a hall are worse than a board you have to scroll.
+    board.style.setProperty("--cols", String(board.childElementCount));
+
     renderDigest(spread);
     renderNotices();
     document.getElementById("stamp").replaceChildren(
