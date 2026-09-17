@@ -12,6 +12,7 @@ uv sync
 make update        # scrape the rolling 7-day window -> data/menus/, data/stations.json, data/dishes.json
 make catalog       # re-derive data/dishes.json from stored menus, then rebuild the site
 make images        # draw dishes still missing pictures (needs local ComfyUI on :8189)
+make translate     # fill in data/zh.json (needs the claude CLI; never runs in CI)
 make site          # render site/ from data/
 make serve         # build, then preview at http://127.0.0.1:8777
 make verify        # re-fetch today's dinner live and diff it against what is stored
@@ -27,6 +28,7 @@ uv run python scripts/verify.py --fresh-session     # new session per hall, isol
 uv run python scripts/gen_images.py --only bulgogi --force   # redraw one dish
 uv run python scripts/gen_images.py --max-priority 0         # meat only
 uv run python scripts/gen_images.py --redraw-stale           # images drawn under older prompt rules
+uv run python scripts/translate.py --section dishes --batch 30   # retry names after a dropped batch
 ```
 
 ## Pipeline order
@@ -37,6 +39,8 @@ data/menus/*.json  ──stations.analyze()──►  data/stations.json
                    ──────catalog.build()───────────►  data/dishes.json
                                                    │
           gen_images.py ──────────────────────────►  data/images/<dishId>.webp
+                                                   │
+          translate.py ───────────────────────────►  data/zh.json
                                                    │
                           build.build() ───────────►  site/
 ```
@@ -50,6 +54,24 @@ They drifted once — `update.py` kept an inline copy that overwrote `priority`,
 `station_only` and `min_order` on every scrape.
 
 ## Things that will bite you
+
+**`bsdm/zh.py` and `web/app.js` tokenize ingredient strings twice, on purpose.** Python decides
+which terms to send for translation; the browser splits the same string again to reassemble the
+list in Chinese. Same separators (`,()[]`), same key (whitespace collapsed, lowercased). Change
+one and the other goes on asking for terms that were never translated — which shows up as a
+stray English word mid-sentence, not as an error. The split is deliberately structure-free:
+some R&DE strings open a parenthesis they never close.
+
+**`translate.py` merges per batch and never overwrites.** Same discipline as `record_image()`,
+for the same reason: a first run is a couple of dozen model calls over several minutes and has
+to survive a Ctrl-C, and a hand-corrected translation must not be undone by the next run. Use
+`--force` to redo one deliberately. A dropped batch is normal — it just stays missing and the
+next run picks it up.
+
+**`data/zh.json` is generated but committed, and CI never writes it.** Translating needs the
+`claude` CLI, so it happens on a laptop and arrives as a commit, exactly like images. New dishes
+show their English name in Chinese mode until then; `scripts/update.py` prints how many are
+waiting.
 
 **`gen_images.py` must never hold the catalog in memory.** A full backfill runs for hours.
 `record_image()` re-reads `data/dishes.json` and merges only the image fields, because a
@@ -90,7 +112,7 @@ is prose. `make hours-diff` / `make hours-accept` manage the baseline when it ch
 inlines all three into one self-contained `site/index.html`. `</` is escaped as `<\/` inside the
 JSON block so a dish name cannot close the script tag early.
 
-- **Bump `STORE` in `web/app.js`** (currently `bsdm.prefs.v3`) whenever the persisted state shape
+- **Bump `STORE` in `web/app.js`** (currently `bsdm.prefs.v4`) whenever the persisted state shape
   changes. Stale localStorage once looked exactly like a scraper bug, because the MCP browser
   shares the user's Chrome profile.
 - **`.board` sets `overflow-x: auto`, which makes `overflow-y` compute to `auto`.** That makes it
@@ -98,6 +120,14 @@ JSON block so a dish name cannot close the script tag early.
   not sticky. Re-adding sticky needs a different containment strategy, not just the property.
 - **`<img width/height>` defeats `aspect-ratio`** unless `height: auto` is also set. The
   attributes are load-bearing for layout reservation, so keep both.
+- **User-visible English lives in the `UI` table in `web/app.js`, not in the DOM calls.** Both
+  languages are written side by side there so a new string cannot ship in one language only. The
+  English in `web/index.html` is just what the page says before the script runs; `renderChrome()`
+  rewrites all of it.
+- **Chinese mode adds a dish name, it does not replace one.** The English line under it is what
+  you match against the sign at the counter, so it is styled to stay readable and keeps the Latin
+  face — a CJK font's Latin glyphs are conspicuously wider right under a Chinese name. Hall names
+  stay English in both languages.
 
 ## Deployment
 

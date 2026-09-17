@@ -21,6 +21,7 @@ from bsdm import hours as hourslib  # noqa: E402
 from bsdm.catalog import build as build_catalog, summarize as summarize_catalog  # noqa: E402
 from bsdm.scrape import MenuScraper  # noqa: E402
 from bsdm.stations import analyze as analyze_stations  # noqa: E402
+from bsdm import zh as zhlib  # noqa: E402
 
 TZ = ZoneInfo("America/Los_Angeles")
 CORE_MEALS = ("Breakfast", "Lunch", "Dinner")
@@ -142,6 +143,14 @@ def main() -> int:
 
     log.info("Scraped %d services / %d dish rows", total_services, total_dishes)
     log.info("%s", summarize_catalog(catalog))
+
+    # Informational: translating needs the Claude Code CLI, so like image
+    # generation it happens on a laptop and arrives as a commit. CI just says
+    # how much of today's menu is still waiting for one.
+    log.info("%s", zhlib.summarize(ROOT))
+    untranslated = sum(len(v) for v in zhlib.missing(ROOT).values())
+    if untranslated:
+        log.info("%d new items to translate -- run: make translate", untranslated)
 
     if not args.skip_hours:
         try:

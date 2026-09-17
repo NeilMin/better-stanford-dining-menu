@@ -13,6 +13,8 @@
   --shadow: 0 1px 2px rgba(28, 26, 23, .05), 0 4px 16px rgba(28, 26, 23, .05);
   --radius: 14px;
   --col-min: 316px;
+  --sans: ui-sans-serif, -apple-system, "SF Pro Text", "Segoe UI", Roboto,
+    "Helvetica Neue", sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -54,10 +56,38 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font: 15px/1.5 ui-sans-serif, -apple-system, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  font: 15px/1.5 var(--sans);
   -webkit-font-smoothing: antialiased;
   overflow-wrap: break-word;
 }
+
+/* The Latin stack carries no CJK faces, so a Chinese page falls back glyph by
+   glyph and ends up mixing two type designs inside one dish name. Selected off
+   <html lang>, which app.js sets with the language. */
+html:lang(zh) body {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Source Han Sans SC",
+    "Noto Sans CJK SC", "Microsoft YaHei", var(--sans);
+}
+
+/* ...but the parts that stay English keep the Latin face. A CJK font's Latin
+   glyphs are wider and sit differently, which is conspicuous on the English
+   name printed directly under a Chinese one. */
+html:lang(zh) .dish-name-en,
+html:lang(zh) .station-name-en,
+html:lang(zh) .col-name,
+html:lang(zh) .hours { font-family: var(--sans); }
+
+/* Asked for italic CJK a browser synthesises an oblique, which reads as a
+   rendering fault rather than as emphasis. */
+html:lang(zh) .col-concept { font-style: normal; }
+
+/* Uppercase does nothing to Chinese, and the tracking that suits small English
+   capitals just pushes CJK glyphs apart. */
+html:lang(zh) .group-label,
+html:lang(zh) .pill,
+html:lang(zh) .stations-title,
+html:lang(zh) .thumb-none,
+html:lang(zh) .badge { letter-spacing: 0; }
 
 /* ---------- chrome ---------- */
 
@@ -256,6 +286,16 @@ main { max-width: 1800px; margin: 0 auto; padding: 16px 16px 64px; }
   letter-spacing: -.008em;
 }
 
+/* The English name kept under the Chinese one. It is not decoration: it is what
+   you match against the sign at the counter, so it stays readable. */
+.dish-name-en {
+  margin: 2px 0 0;
+  font-size: 11.5px;
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--text-dim);
+}
+
 .badges { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 7px; }
 
 .badge {
@@ -400,6 +440,7 @@ main { max-width: 1800px; margin: 0 auto; padding: 16px 16px 64px; }
 .station-list > .station:hover { background: var(--surface-2); }
 
 .station-name { font-size: 13px; font-weight: 540; }
+.station-name-en { font-size: 11px; color: var(--text-dim); }
 .station .badges { margin-top: 0; }
 .station-detail { padding: 2px 7px 9px; }
 

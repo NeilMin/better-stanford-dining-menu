@@ -24,6 +24,9 @@ This scrapes all of it and puts the halls next to each other, with a picture of 
   open right now.
 - **Allergens as served.** A few dishes differ by hall — Branner runs allergen-free versions of
   the same recipes — so each column shows the allergens for *that* hall's version.
+- **A Chinese mode.** One switch in the masthead. Dish names come up in Chinese *with* the
+  English kept underneath — the sign at the counter still says "Magnolia Boil" — while
+  ingredients, allergens and the interface itself are in Chinese outright.
 
 ## Quick start
 
@@ -31,11 +34,12 @@ This scrapes all of it and puts the halls next to each other, with a picture of 
 uv sync
 make update      # scrape the rolling 7-day window into data/menus/
 make images      # draw the dishes still missing pictures (needs local ComfyUI)
+make translate   # fill in the Chinese still missing (needs the claude CLI)
 make serve       # preview at http://127.0.0.1:8777
 ```
 
-`make update` and `make site` need only network access. `make images` is the one step that
-needs a GPU, which is why it is separate.
+`make update` and `make site` need only network access. `make images` needs a GPU and
+`make translate` needs the Claude Code CLI, which is why both are separate steps.
 
 ## How it fits together
 
@@ -44,6 +48,8 @@ R&DE menu app  ──scripts/update.py──►  data/menus/YYYY-MM-DD.json   (o
                                        data/dishes.json             (dish catalog + image index)
                                               │
 local ComfyUI  ──scripts/gen_images.py────────┤  data/images/<dishId>.webp
+                                              │
+claude CLI     ──scripts/translate.py─────────┤  data/zh.json
                                               │
                  scripts/build_site.py  ──────►  site/index.html + site/img/
 ```
@@ -84,6 +90,28 @@ this: **breakfast is one campus-wide menu, identical at every hall, every day.**
 dinner return 5–7 distinct menus across 8 halls. Branner is unique in all 8 of its services;
 Arrillaga and Ricker match some other hall in 20 of 21. So dinner is where choosing actually
 matters — which is why it is the default meal.
+
+**Chinese is translated once per term, not once per dish.** A week of menus is ~2,600 dish rows
+whose ingredient lists contain only ~870 distinct terms — "salt" accounts for 247 of them — so
+the vocabulary is translated once into `data/zh.json` and the page reassembles each list from it
+in the browser. Wording then cannot drift between two dishes that list the same thing, and a new
+day costs a handful of names plus whichever terms have genuinely never been seen before.
+Ingredient lists are lists, not prose, which is the whole reason this works; dish names are not,
+so those are translated whole.
+
+The engine is the Claude Code CLI in headless mode, so translating costs nothing beyond a
+subscription already in use and needs no API key:
+
+```sh
+make translate                                        # everything missing
+uv run python scripts/translate.py --dry-run          # what would be sent
+uv run python scripts/translate.py --only tofu --force  # redo a few dishes
+```
+
+Like images this runs locally and its output is committed — CI scrapes and publishes but never
+translates — so a brand-new dish shows its English name in Chinese mode until the next local run
+lands. Hall names stay in English throughout: "Arrillaga" is what the building says and what
+anyone you ask will call it.
 
 **Image generation** talks to a local [ComfyUI](https://github.com/comfyanonymous/ComfyUI) over
 HTTP; it never starts or stops the server, and it renders through `PreviewImage` so a bulk run
@@ -147,6 +175,10 @@ The daily scrape runs either way.
   are not pictures of the food being served.
 - **Allergen text is reproduced from R&DE** and is subject to change without notice. If you have
   an allergy, confirm at the hall.
+- **The Chinese is machine-translated**, dish by dish and term by term, and nobody has read all
+  of it. The English is kept on screen next to every dish name partly for that reason. Fixing a
+  bad one is a hand edit in `data/zh.json`; `make translate` never overwrites what is already
+  there.
 - The source app only exposes a rolling 7-day window, so history exists only for days already
   scraped.
 - EVGR appears in the app's dropdown but returns no menu and is absent from the hours page; it is

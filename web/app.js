@@ -3,23 +3,159 @@
 
   const DATA = JSON.parse(document.getElementById("menu-data").textContent);
   const MEALS = ["Breakfast", "Lunch", "Dinner"];
-  const STORE = "bsdm.prefs.v3";
+  // v4 added `lang` to the persisted shape.
+  const STORE = "bsdm.prefs.v4";
 
   const DIET = [
-    { key: "vegetarian", label: "Vegetarian", cls: "badge-v", short: "VEG" },
-    { key: "vegan", label: "Vegan", cls: "badge-vgn", short: "VEGAN" },
-    { key: "gluten-free", label: "Gluten-free", cls: "badge-gf", short: "GF" },
-    { key: "halal", label: "Halal", cls: "badge-halal", short: "HALAL" },
-    { key: "kosher", label: "Kosher", cls: "badge-kosher", short: "KOSHER" },
+    { key: "vegetarian", label: "Vegetarian", zh: "素食", cls: "badge-v", short: "VEG", shortZh: "素" },
+    { key: "vegan", label: "Vegan", zh: "纯素", cls: "badge-vgn", short: "VEGAN", shortZh: "纯素" },
+    { key: "gluten-free", label: "Gluten-free", zh: "无麸质", cls: "badge-gf", short: "GF", shortZh: "无麸质" },
+    { key: "halal", label: "Halal", zh: "清真", cls: "badge-halal", short: "HALAL", shortZh: "清真" },
+    { key: "kosher", label: "Kosher", zh: "洁食", cls: "badge-kosher", short: "KOSHER", shortZh: "洁食" },
   ];
 
   const PROTEIN = {
     beef: "Beef", pork: "Pork", poultry: "Poultry", seafood: "Seafood", lamb: "Lamb",
   };
+  const PROTEIN_ZH = {
+    beef: "牛肉", pork: "猪肉", poultry: "禽肉", seafood: "海鲜", lamb: "羊肉",
+  };
+
+  const MEAL_ZH = { Breakfast: "早餐", Lunch: "午餐", Dinner: "晚餐", Brunch: "早午餐" };
+
+  // R&DE's allergen codes. Anything not listed shows as it came.
+  const ALLERGEN_ZH = {
+    MILK: "奶", EGG: "蛋", WHEAT: "小麦", SOY: "大豆", FISH: "鱼", SHELLFISH: "贝类",
+    SESAME: "芝麻", COCONUT: "椰子", PEANUT: "花生", TREENUT: "坚果",
+    TRACEALLERGENS: "微量过敏原",
+  };
 
   const ICONS = {
     soup: "🍲", grill: "🔥", sandwich: "🥪", salad: "🥗", bread: "🍞",
     pizza: "🍕", dessert: "🍰", pasta: "🍝", plate: "🍽️",
+  };
+
+  // ---------- language ----------
+  //
+  // English is the default because the menus, and the signs at the counters,
+  // are in English. So Chinese mode does not replace a dish name, it adds one:
+  // the Chinese name is what you read, the English line under it is what you
+  // match against the sign. Ingredients, allergens and the interface have no
+  // sign to match against, so those are replaced outright.
+  const UI = {
+    en: {
+      langChip: "中文",
+      langLabel: "切换到中文",
+      docTitle: "Stanford Dining, Side by Side",
+      brandA: "Stanford Dining, ",
+      brandB: "Side by Side",
+      lblDay: "Day", lblMeal: "Meal", lblHalls: "Halls", lblFilter: "Filter",
+      today: "Today", tomorrow: "Tomorrow",
+      meal: (m) => m,
+      diet: (d) => d.label,
+      dietShort: (d) => d.short,
+      protein: (c) => PROTEIN[c].toUpperCase(),
+      onlyHere: "ONLY HERE",
+      meatFirst: "Meat first", photos: "Photos", reset: "Reset",
+      theme: (mode) => ({ auto: "◐ Auto", light: "☀ Light", dark: "☾ Dark" }[mode]),
+      status: (s) => ({ open: "Open now", soon: "Opens soon", shut: "Closed" }[s]),
+      count: (n) => `${n} on the menu`,
+      onlyCount: (n) => `${n} only here`,
+      map: "map",
+      alwaysHere: "Always here",
+      toggle: (shown) => (shown ? "hide" : "show"),
+      allergens: "Allergens: ",
+      allergenList: (list) => list.join(", "),
+      ingredients: "Ingredients",
+      traces: (list) => "Shared equipment with: " + list.join(", "),
+      varies: "Changes daily — ask at the counter.",
+      variesShort: "Varies daily",
+      variesTip: "This entry changes daily, so it is deliberately not illustrated.",
+      pending: "Image pending",
+      pendingTip: "No image generated for this dish yet.",
+      noService: (meal, day) => `No ${meal.toLowerCase()} service here on ${day}.`,
+      noMatch: "Nothing on today's menu matches the filters.",
+      noneListed: "Nothing specific listed for today.",
+      digest: (b, total, halls, every, unique) => [
+        b(total), ` dishes on today's menu across ${halls} halls · `,
+        b(every), " at every one · ", b(unique), " at only one.",
+      ],
+      identical: "These menus are identical — go wherever is closest.",
+      footerSrc: (a, built) => [
+        "Menus scraped from the ",
+        a("https://rdeapps.stanford.edu/dininghallmenu/", "R&DE Dining Hall Menu"),
+        "; hours and addresses from ",
+        a("https://rde.stanford.edu/dining-hospitality/dining-locations-hours",
+          "Dining Locations & Hours"),
+        `. Built ${built}.`,
+      ],
+      footerNote: (strong) => [
+        strong("Dish photographs are AI-generated from each dish's name and ingredient list."),
+        " They illustrate what a dish usually looks like and are not photographs of the food " +
+        "being served. Allergen and ingredient text is reproduced from R&DE and is subject to " +
+        "change without notice — if you have an allergy, confirm at the hall.",
+      ],
+    },
+    zh: {
+      langChip: "English",
+      langLabel: "Switch to English",
+      docTitle: "斯坦福食堂 · 并排比较",
+      brandA: "斯坦福食堂，",
+      brandB: "并排比较",
+      lblDay: "日期", lblMeal: "餐别", lblHalls: "食堂", lblFilter: "筛选",
+      today: "今天", tomorrow: "明天",
+      meal: (m) => MEAL_ZH[m] || m,
+      diet: (d) => d.zh,
+      dietShort: (d) => d.shortZh,
+      protein: (c) => PROTEIN_ZH[c] || PROTEIN[c],
+      onlyHere: "只此一家",
+      meatFirst: "荤菜优先", photos: "图片", reset: "重置",
+      theme: (mode) => ({ auto: "◐ 自动", light: "☀ 浅色", dark: "☾ 深色" }[mode]),
+      status: (s) => ({ open: "供应中", soon: "即将开始", shut: "已结束" }[s]),
+      count: (n) => `菜单 ${n} 道`,
+      onlyCount: (n) => `${n} 道独有`,
+      map: "地图",
+      alwaysHere: "常设窗口",
+      toggle: (shown) => (shown ? "收起" : "展开"),
+      allergens: "过敏原：",
+      allergenList: (list) => list.map((a) => ALLERGEN_ZH[a] || a).join("、"),
+      ingredients: "配料",
+      traces: (list) => "与这些共用设备：" + list.map((a) => ALLERGEN_ZH[a] || a).join("、"),
+      varies: "每天不一样，到窗口问一下。",
+      variesShort: "每日不同",
+      variesTip: "这一项每天都换，所以刻意不配图。",
+      pending: "图片待生成",
+      pendingTip: "这道菜还没有生成图片。",
+      noService: (meal, day) => `${day}这里不供应${MEAL_ZH[meal] || meal}。`,
+      noMatch: "今天没有符合筛选条件的菜。",
+      noneListed: "今天没有列出具体菜品。",
+      digest: (b, total, halls, every, unique) => [
+        `${halls} 家食堂今天一共 `, b(total), " 道菜 · ",
+        b(every), " 道每家都有 · ", b(unique), " 道只此一家。",
+      ],
+      identical: "这几家菜单完全一样——去最近的那家就行。",
+      footerSrc: (a, built) => [
+        "菜单抓取自 ",
+        a("https://rdeapps.stanford.edu/dininghallmenu/", "R&DE 餐厅菜单"),
+        "，营业时间和地址来自 ",
+        a("https://rde.stanford.edu/dining-hospitality/dining-locations-hours",
+          "Dining Locations & Hours"),
+        `。构建于 ${built}。`,
+      ],
+      footerNote: (strong) => [
+        strong("菜品照片由 AI 根据菜名和配料表生成。"),
+        "它们画的是这道菜通常的样子，不是当天出餐的实拍。" +
+        "过敏原和配料信息转载自 R&DE，可能随时变动——如果你对某种食物过敏，请到餐厅当面确认。",
+      ],
+      // Dish names and ingredients are translated offline into data/zh.json;
+      // anything that run has not reached yet stays English on the page.
+    },
+  };
+
+  /** A string from the table for the current language; arguments fill it in. */
+  const t = (key, ...args) => {
+    const value = (UI[state.lang] || UI.en)[key];
+    return typeof value === "function" ? value(...args) : value;
   };
 
   const hallById = new Map(DATA.halls.map((h) => [h.id, h]));
@@ -41,6 +177,7 @@
     photos: true,
     stations: true,
     theme: "auto",
+    lang: "en",
   };
 
   function load() {
@@ -65,6 +202,7 @@
   if (!DATA.window.includes(state.date)) state.date = fallback.date;
   state.halls = state.halls.filter((id) => hallById.has(id));
   if (!state.halls.length) state.halls = DATA.defaults.selected.slice();
+  if (!UI[state.lang]) state.lang = fallback.lang;
 
   // ---------- helpers ----------
 
@@ -76,7 +214,12 @@
     return node;
   };
 
+  const locale = () => (state.lang === "zh" ? "zh-CN" : undefined);
+
   const fmtTime = (hhmm) => {
+    // Chinese dining hours are written on a 24-hour clock, which the stored
+    // "17:00" already is.
+    if (state.lang === "zh") return hhmm.replace(/^0/, "");
     const [h, m] = hhmm.split(":").map(Number);
     const suffix = h < 12 || h === 24 ? "am" : "pm";
     const hour = h % 12 === 0 ? 12 : h % 12;
@@ -84,15 +227,48 @@
   };
 
   const dayLabel = (iso) => {
-    if (iso === TODAY) return "Today";
-    if (iso === TOMORROW) return "Tomorrow";
-    return new Date(iso + "T12:00:00").toLocaleDateString(undefined, { weekday: "short" });
+    if (iso === TODAY) return t("today");
+    if (iso === TOMORROW) return t("tomorrow");
+    return new Date(iso + "T12:00:00").toLocaleDateString(locale(), { weekday: "short" });
   };
 
   const dayFull = (iso) =>
-    new Date(iso + "T12:00:00").toLocaleDateString(undefined, {
+    new Date(iso + "T12:00:00").toLocaleDateString(locale(), {
       weekday: "long", month: "long", day: "numeric",
     });
+
+  // ---------- Chinese ingredient lists ----------
+
+  const ZH_TERMS = new Map(Object.entries(DATA.zh_terms || {}));
+  const ZH_PUNCT = new Map([
+    [",", "、"], ["(", "（"], [")", "）"], ["[", "（"], ["]", "）"],
+  ]);
+
+  /** Rebuild an ingredient list in Chinese, term by term.
+   *
+   * Mirrors bsdm/zh.py, which has to split the same way to know which terms to
+   * offer for translation: same separators, same lookup key. A term the table
+   * has never seen keeps its English, which reads as one stray word in a
+   * Chinese list rather than as a hole in it.
+   */
+  function zhIngredients(text) {
+    let out = "";
+    for (const piece of text.split(/([,()\[\]])/)) {
+      const punct = ZH_PUNCT.get(piece);
+      if (punct !== undefined) {
+        out += punct;
+        continue;
+      }
+      const term = piece.replace(/\s+/g, " ").trim();
+      if (term) out += ZH_TERMS.get(term.toLowerCase()) || term;
+    }
+    return out;
+  }
+
+  const ingredientText = (text) => (state.lang === "zh" ? zhIngredients(text) : text);
+
+  /** The Chinese name to lead a dish with, or null to lead with the English. */
+  const zhName = (rec) => (state.lang === "zh" && rec.zh) || null;
 
   /** Resolve a menu entry ("<dishId>.<variantIndex>") to a display record. */
   function resolve(ref) {
@@ -142,17 +318,17 @@
   function badgesFor(rec, onlyHere) {
     const badges = el("div", { className: "badges" });
     if (onlyHere) {
-      badges.append(el("span", { className: "badge badge-only", textContent: "ONLY HERE" }));
+      badges.append(el("span", { className: "badge badge-only", textContent: t("onlyHere") }));
     }
     if (PROTEIN[rec.category]) {
       badges.append(el("span", {
         className: "badge badge-protein",
-        textContent: PROTEIN[rec.category].toUpperCase(),
+        textContent: t("protein", rec.category),
       }));
     }
     for (const d of DIET) {
       if (rec.tags.includes(d.key)) {
-        badges.append(el("span", { className: "badge " + d.cls, textContent: d.short }));
+        badges.append(el("span", { className: "badge " + d.cls, textContent: t("dietShort", d) }));
       }
     }
     return badges;
@@ -162,24 +338,18 @@
     const out = [];
     if (rec.alg && rec.alg.length) {
       const line = el("p", { className: "allergens" });
-      line.append(el("b", { textContent: "Allergens: " }), rec.alg.join(", "));
+      line.append(el("b", { textContent: t("allergens") }), t("allergenList", rec.alg));
       out.push(line);
     }
     if (rec.placeholder) {
-      out.push(el("p", {
-        className: "placeholder-note",
-        textContent: "Changes daily — ask at the counter.",
-      }));
+      out.push(el("p", { className: "placeholder-note", textContent: t("varies") }));
     } else if (rec.ing) {
       const more = el("details", { className: "more" }, [
-        el("summary", { textContent: "Ingredients" }),
-        el("p", { className: "ingredients", textContent: rec.ing }),
+        el("summary", { textContent: t("ingredients") }),
+        el("p", { className: "ingredients", textContent: ingredientText(rec.ing) }),
       ]);
       if (rec.trace && rec.trace.length) {
-        more.append(el("p", {
-          className: "ingredients",
-          textContent: "Shared equipment with: " + rec.trace.join(", "),
-        }));
+        more.append(el("p", { className: "ingredients", textContent: t("traces", rec.trace) }));
       }
       out.push(more);
     }
@@ -194,9 +364,12 @@
       className: "card" + (PROTEIN[rec.category] ? " card-meat" : ""),
     });
 
+    const zh = zhName(rec);
     const head = el("div", { className: "card-head" }, [
-      el("h3", { className: "dish-name", textContent: rec.name }),
+      el("h3", { className: "dish-name", textContent: zh || rec.name }),
     ]);
+    // Bilingual, not translated: the counter's sign still says "Magnolia Boil".
+    if (zh) head.append(el("p", { className: "dish-name-en", textContent: rec.name }));
     const badges = badgesFor(rec, onlyHere);
     if (badges.childElementCount) head.append(badges);
     card.append(head);
@@ -206,7 +379,7 @@
         card.append(el("img", {
           className: "thumb",
           src: "img/" + rec.image,
-          alt: rec.name,
+          alt: zh || rec.name,
           loading: "lazy",
           decoding: "async",
           width: 1024,
@@ -215,12 +388,10 @@
       } else {
         card.append(el("div", {
           className: "thumb-none",
-          title: rec.placeholder
-            ? "This entry changes daily, so it is deliberately not illustrated."
-            : "No image generated for this dish yet.",
+          title: rec.placeholder ? t("variesTip") : t("pendingTip"),
         }, [
           el("span", { className: "glyph", textContent: ICONS[rec.icon] || ICONS.plate }),
-          rec.placeholder ? "Varies daily" : "Image pending",
+          rec.placeholder ? t("variesShort") : t("pending"),
         ]));
       }
     }
@@ -232,9 +403,11 @@
 
   /** A counter that is there every day. Rendered dense: it is not the news. */
   function stationRow(rec, onlyHere) {
+    const zh = zhName(rec);
     const row = el("div", { className: "station" }, [
-      el("span", { className: "station-name", textContent: rec.name }),
+      el("span", { className: "station-name", textContent: zh || rec.name }),
     ]);
+    if (zh) row.append(el("span", { className: "station-name-en", textContent: rec.name }));
     const badges = badgesFor(rec, onlyHere);
     if (badges.childElementCount) row.append(badges);
 
@@ -249,6 +422,7 @@
 
   function render() {
     document.documentElement.dataset.theme = state.theme;
+    renderChrome();
     renderControls();
 
     const board = document.getElementById("board");
@@ -270,7 +444,8 @@
     for (const hallId of state.halls) board.append(column(hallId, spread));
 
     renderDigest(spread);
-    document.getElementById("stamp").textContent = `${dayFull(state.date)} · ${state.meal}`;
+    document.getElementById("stamp").textContent =
+      `${dayFull(state.date)} · ${t("meal", state.meal)}`;
     save();
   }
 
@@ -287,19 +462,10 @@
     const everywhere = [...spread.values()].filter((n) => n === serving.length).length;
     const unique = [...spread.values()].filter((n) => n === 1).length;
 
-    node.replaceChildren(
-      el("b", { textContent: String(total) }),
-      ` dishes on today's menu across ${serving.length} halls · `,
-      el("b", { textContent: String(everywhere) }),
-      " at every one · ",
-      el("b", { textContent: String(unique) }),
-      " at only one.",
-    );
+    const bold = (n) => el("b", { textContent: String(n) });
+    node.replaceChildren(...t("digest", bold, total, serving.length, everywhere, unique));
     if (unique === 0) {
-      node.append(" ", el("span", {
-        className: "warn",
-        textContent: "These menus are identical — go wherever is closest.",
-      }));
+      node.append(" ", el("span", { className: "warn", textContent: t("identical") }));
     }
   }
 
@@ -326,8 +492,9 @@
     const head = el("header", { className: "col-head" }, [
       el("h2", { className: "col-name", textContent: hall.short }),
     ]);
-    if (hall.concept) {
-      head.append(el("p", { className: "col-concept", textContent: hall.concept }));
+    const concept = (state.lang === "zh" && hall.concept_zh) || hall.concept;
+    if (concept) {
+      head.append(el("p", { className: "col-concept", textContent: concept }));
     }
 
     const meta = el("div", { className: "col-meta" });
@@ -340,16 +507,16 @@
     if (status) {
       meta.append(el("span", {
         className: `pill pill-${status}`,
-        textContent: { open: "Open now", soon: "Opens soon", shut: "Closed" }[status],
+        textContent: t("status", status),
       }));
     }
     meta.append(el("span", {
       className: "count",
-      textContent: `${daily.length} on the menu`,
+      textContent: t("count", daily.length),
     }));
     const onlyHere = daily.filter((r) => spread.get(r.id) === 1).length;
     if (onlyHere) {
-      meta.append(el("span", { className: "only-count", textContent: `${onlyHere} only here` }));
+      meta.append(el("span", { className: "only-count", textContent: t("onlyCount", onlyHere) }));
     }
     if (hall.address) {
       meta.append(el("a", {
@@ -357,7 +524,7 @@
         href: "https://maps.google.com/?q=" + encodeURIComponent(hall.address),
         target: "_blank",
         rel: "noopener",
-        textContent: "map",
+        textContent: t("map"),
       }));
     }
     head.append(meta);
@@ -366,7 +533,7 @@
     if (!svc.daily.length && !svc.stations.length) {
       col.append(el("div", {
         className: "empty",
-        textContent: `No ${state.meal.toLowerCase()} service here on ${dayLabel(state.date)}.`,
+        textContent: t("noService", state.meal, dayLabel(state.date)),
       }));
       return col;
     }
@@ -374,9 +541,7 @@
     if (!daily.length) {
       col.append(el("div", {
         className: "empty",
-        textContent: state.diet.length
-          ? "Nothing on today's menu matches the filters."
-          : "Nothing specific listed for today.",
+        textContent: state.diet.length ? t("noMatch") : t("noneListed"),
       }));
     } else {
       for (const rec of daily) col.append(dishCard(rec, spread.get(rec.id) === 1));
@@ -385,13 +550,13 @@
     if (stations.length) {
       const wrap = el("section", { className: "stations" });
       const head = el("div", { className: "stations-head" }, [
-        el("span", { className: "stations-title", textContent: "Always here" }),
+        el("span", { className: "stations-title", textContent: t("alwaysHere") }),
         el("span", { className: "stations-count", textContent: String(stations.length) }),
       ]);
       const toggle = el("button", {
         className: "stations-toggle",
         type: "button",
-        textContent: state.stations ? "hide" : "show",
+        textContent: t("toggle", state.stations),
       });
       toggle.addEventListener("click", () => {
         state.stations = !state.stations;
@@ -436,7 +601,7 @@
 
     const meals = availableMeals(state.date);
     document.getElementById("meals").replaceChildren(...MEALS.map((m) =>
-      chip(m, m === state.meal, () => {
+      chip(t("meal", m), m === state.meal, () => {
         state.meal = m;
         render();
       }, { props: { disabled: !meals.includes(m) } })));
@@ -452,21 +617,21 @@
 
     document.getElementById("diet").replaceChildren(
       ...DIET.map((d) =>
-        chip(d.label, state.diet.includes(d.key), () => {
+        chip(t("diet", d), state.diet.includes(d.key), () => {
           const i = state.diet.indexOf(d.key);
           if (i >= 0) state.diet.splice(i, 1);
           else state.diet.push(d.key);
           render();
         })),
-      chip("Meat first", state.meatFirst, () => {
+      chip(t("meatFirst"), state.meatFirst, () => {
         state.meatFirst = !state.meatFirst;
         render();
       }, { className: "chip-ghost" }),
-      chip("Photos", state.photos, () => {
+      chip(t("photos"), state.photos, () => {
         state.photos = !state.photos;
         render();
       }, { className: "chip-ghost" }),
-      chip("Reset", false, () => {
+      chip(t("reset"), false, () => {
         try {
           localStorage.removeItem(STORE);
         } catch { /* storage blocked; the in-memory reset below still applies */ }
@@ -475,9 +640,41 @@
       }, { className: "chip-ghost" }),
     );
 
-    document.getElementById("theme").textContent =
-      { auto: "◐ Auto", light: "☀ Light", dark: "☾ Dark" }[state.theme];
+    document.getElementById("theme").textContent = t("theme", state.theme);
   }
+
+  /** The text that lives in index.html rather than in a chip: labels, the
+   *  masthead and the footer. Rebuilt on every render because switching
+   *  language rewrites all of it. */
+  function renderChrome() {
+    // Not just for screen readers: it is what picks the CJK font in app.css.
+    document.documentElement.lang = state.lang === "zh" ? "zh-Hans" : "en";
+    document.title = t("docTitle");
+
+    document.getElementById("brand").replaceChildren(
+      t("brandA"), el("span", { textContent: t("brandB") }));
+
+    for (const [id, key] of [["lbl-day", "lblDay"], ["lbl-meal", "lblMeal"],
+                             ["lbl-halls", "lblHalls"], ["lbl-filter", "lblFilter"]]) {
+      document.getElementById(id).textContent = t(key);
+    }
+
+    const link = (href, text) =>
+      el("a", { href, target: "_blank", rel: "noopener", textContent: text });
+    const built = (state.lang === "zh" && DATA.generated_at_zh) || DATA.generated_at;
+    document.getElementById("foot-src").replaceChildren(...t("footerSrc", link, built));
+    document.getElementById("foot-note").replaceChildren(
+      ...t("footerNote", (text) => el("strong", { textContent: text })));
+
+    const lang = document.getElementById("lang");
+    lang.textContent = t("langChip");
+    lang.setAttribute("aria-label", t("langLabel"));
+  }
+
+  document.getElementById("lang").addEventListener("click", () => {
+    state.lang = state.lang === "zh" ? "en" : "zh";
+    render();
+  });
 
   document.getElementById("theme").addEventListener("click", () => {
     state.theme = { auto: "light", light: "dark", dark: "auto" }[state.theme];

@@ -12,6 +12,8 @@ from datetime import date, datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+from bsdm import zh as zhlib
+
 TZ = ZoneInfo("America/Los_Angeles")
 
 # The domain the site is served from. Written into the artifact as CNAME on
@@ -37,6 +39,12 @@ def build_payload(root: Path) -> dict:
     config = json.loads((root / "config" / "halls.json").read_text())
     catalog = json.loads((root / "data" / "dishes.json").read_text())
     images_dir = root / "data" / "images"
+
+    zh_table = zhlib.load(root)
+    # Only the terms the published menus actually use are shipped. The table
+    # keeps every term ever seen, which over a term's worth of menus is a good
+    # deal more than any one week puts on the board.
+    zh_terms: dict[str, str] = {}
 
     stations_path = root / "data" / "stations.json"
     station_table = json.loads(stations_path.read_text()) if stations_path.exists() else {}
@@ -73,12 +81,20 @@ def build_payload(root: Path) -> dict:
                          and (images_dir / entry["image"]).exists() else None,
                 "v": [],
             })
+            # An untranslated dish keeps its English name in Chinese mode --
+            # translation runs locally and lands a commit later, exactly as
+            # images do.
+            if name_zh := zhlib.get(zh_table, "dishes", dish_id):
+                record["zh"] = name_zh
             record["v"].append({
                 "ing": d["ingredients"],
                 "tags": d["tags"],
                 "alg": d["allergens"],
                 "trace": d["trace_allergens"],
             })
+            for term in zhlib.terms_in(d["ingredients"]):
+                if term_zh := zhlib.get(zh_table, "terms", term):
+                    zh_terms[term] = term_zh
         return f"{dish_id}.{table[key]}"
 
     from bsdm.dishes import dish_id as make_id
@@ -107,20 +123,29 @@ def build_payload(root: Path) -> dict:
             for h in config["halls"] if h["active"] and schedule_for(h, as_date)
         }
 
+    def hall_public(h: dict) -> dict:
+        out = {
+            "id": h["id"], "short": h["short"], "name": h["name"],
+            "concept": h["concept"], "address": h["address"], "accent": h["accent"],
+        }
+        if concept_zh := zhlib.get(zh_table, "halls", h["id"]):
+            out["concept_zh"] = concept_zh
+        return out
+
+    now = datetime.now(TZ)
     return {
-        "generated_at": datetime.now(TZ).strftime("%b %-d, %Y at %-I:%M %p %Z"),
+        "generated_at": now.strftime("%b %-d, %Y at %-I:%M %p %Z"),
+        "generated_at_zh": now.strftime("%Y年%-m月%-d日 %H:%M"),
         "stations_computed_from": station_table.get("days_analyzed", 0),
         "window": window,
         "halls": [
-            {
-                "id": h["id"], "short": h["short"], "name": h["name"],
-                "concept": h["concept"], "address": h["address"], "accent": h["accent"],
-            }
+            hall_public(h)
             for h in config["halls"]
             if h["active"] and any(h["id"] in menus[d] for d in window)
         ],
         "defaults": config["defaults"],
         "dishes": dishes,
+        "zh_terms": zh_terms,
         "menus": menus,
         "hours": hours,
     }
@@ -168,5 +193,7 @@ def build(root: Path, out: Path) -> dict:
         "dishes": len(payload["dishes"]),
         "rows": total,
         "images": len(used),
+        "zh_dishes": sum(1 for d in payload["dishes"].values() if d.get("zh")),
+        "zh_terms": len(payload["zh_terms"]),
         "html_kb": (out / "index.html").stat().st_size / 1024,
     }

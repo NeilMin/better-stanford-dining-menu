@@ -10,23 +10,26 @@
 <style>/*CSS*/</style>
 </head>
 <body>
+<!-- The English text below is what the page says before app.js runs; the script
+     rewrites this chrome whenever the language changes. -->
 <header class="masthead">
   <div class="masthead-inner">
     <div class="brandrow">
-      <h1 class="brand">Stanford Dining, <span>Side by Side</span></h1>
+      <h1 class="brand" id="brand">Stanford Dining, <span>Side by Side</span></h1>
       <span class="stamp" id="stamp"></span>
       <span class="spacer"></span>
+      <button class="chip chip-ghost" type="button" id="lang">中文</button>
       <button class="chip chip-ghost" type="button" id="theme">◐ Auto</button>
     </div>
     <div class="controls">
-      <div class="group"><span class="group-label">Day</span><span class="group" id="days"></span></div>
-      <div class="group"><span class="group-label">Meal</span><span class="group" id="meals"></span></div>
+      <div class="group"><span class="group-label" id="lbl-day">Day</span><span class="group" id="days"></span></div>
+      <div class="group"><span class="group-label" id="lbl-meal">Meal</span><span class="group" id="meals"></span></div>
     </div>
     <div class="controls">
-      <div class="group"><span class="group-label">Halls</span><span class="group" id="halls"></span></div>
+      <div class="group"><span class="group-label" id="lbl-halls">Halls</span><span class="group" id="halls"></span></div>
     </div>
     <div class="controls">
-      <div class="group"><span class="group-label">Filter</span><span class="group" id="diet"></span></div>
+      <div class="group"><span class="group-label" id="lbl-filter">Filter</span><span class="group" id="diet"></span></div>
     </div>
   </div>
 </header>
@@ -37,12 +40,11 @@
 </main>
 
 <footer>
-  <p>Menus scraped from the
+  <p id="foot-src">Menus scraped from the
     <a href="https://rdeapps.stanford.edu/dininghallmenu/" target="_blank" rel="noopener">R&amp;DE Dining Hall Menu</a>;
     hours and addresses from
-    <a href="https://rde.stanford.edu/dining-hospitality/dining-locations-hours" target="_blank" rel="noopener">Dining Locations &amp; Hours</a>.
-    Built <span id="built"></span>.</p>
-  <p><strong>Dish photographs are AI-generated from each dish's name and ingredient list.</strong>
+    <a href="https://rde.stanford.edu/dining-hospitality/dining-locations-hours" target="_blank" rel="noopener">Dining Locations &amp; Hours</a>.</p>
+  <p id="foot-note"><strong>Dish photographs are AI-generated from each dish's name and ingredient list.</strong>
     They illustrate what a dish usually looks like and are not photographs of the food being served.
     Allergen and ingredient text is reproduced from R&amp;DE and is subject to change without notice —
     if you have an allergy, confirm at the hall.</p>
@@ -50,6 +52,5 @@
 
 <script id="menu-data" type="application/json">/*DATA*/</script>
 <script>/*JS*/</script>
-<script>document.getElementById("built").textContent = JSON.parse(document.getElementById("menu-data").textContent).generated_at;</script>
 </body>
 </html>

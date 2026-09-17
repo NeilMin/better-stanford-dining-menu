@@ -1,7 +1,7 @@
 # Everything except `images` runs without a GPU, which is what CI relies on.
 PY := uv run python
 
-.PHONY: all update images site serve clean hours-diff hours-accept verify
+.PHONY: all update images translate site serve clean hours-diff hours-accept verify catalog
 
 all: update site           ## scrape the week and rebuild the site
 
@@ -10,6 +10,9 @@ update:                    ## scrape the rolling 7-day menu window
 
 images:                    ## draw the dishes still missing pictures (needs local ComfyUI)
 	$(PY) scripts/gen_images.py
+
+translate:                 ## fill in the missing Chinese (needs the claude CLI)
+	$(PY) scripts/translate.py
 
 site:                      ## render site/ from data/
 	$(PY) scripts/build_site.py
