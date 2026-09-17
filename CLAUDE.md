@@ -10,13 +10,17 @@ This file covers the invariants that are easy to break and only visible across s
 ```sh
 uv sync
 make update        # scrape the rolling 7-day window -> data/menus/, data/stations.json, data/dishes.json
+                   #   and follow the specials link on the hours page -> data/specials/
 make catalog       # re-derive data/dishes.json from stored menus, then rebuild the site
 make images        # draw dishes still missing pictures (needs local ComfyUI on :8189)
+make logos         # cut the hall logos out of the R&DE map -> data/logos/
+make specials      # fetch the specials calendar on its own
 make translate     # fill in data/zh.json (needs the claude CLI; never runs in CI)
 make site          # render site/ from data/
 make serve         # build, then preview at http://127.0.0.1:8777
 make verify        # re-fetch today's dinner live and diff it against what is stored
 make hours-diff    # show how the R&DE hours page moved; hours-accept records the new baseline
+make logos-check   # has R&DE redrawn the map the logo crop boxes point into?
 ```
 
 There is no test suite. `make verify` is the correctness check that matters: it re-fetches from
@@ -29,6 +33,9 @@ uv run python scripts/gen_images.py --only bulgogi --force   # redraw one dish
 uv run python scripts/gen_images.py --max-priority 0         # meat only
 uv run python scripts/gen_images.py --redraw-stale           # images drawn under older prompt rules
 uv run python scripts/translate.py --section dishes --batch 30   # retry names after a dropped batch
+uv run python scripts/fetch_specials.py --show                   # every calendar on file
+uv run python scripts/fetch_specials.py --dry-run FILE.pdf       # parse a poster, print nothing
+uv run python scripts/fetch_logos.py --contact-sheet /tmp/l.png  # eyeball all eight crops
 ```
 
 ## Pipeline order
@@ -40,10 +47,17 @@ data/menus/*.json  ──stations.analyze()──►  data/stations.json
                                                    │
           gen_images.py ──────────────────────────►  data/images/<dishId>.webp
                                                    │
+          fetch_logos.py ─────────────────────────►  data/logos/<hallId>.webp + index.json
+                                                   │
+          specials.update() ──────────────────────►  data/specials/*.pdf + data/specials.json
+                                                   │
           translate.py ───────────────────────────►  data/zh.json
                                                    │
                           build.build() ───────────►  site/
 ```
+
+Only the first two are ordered with respect to each other. Logos, specials and translations are
+independent inputs that the build folds in if they are there and leaves out if they are not.
 
 **Stations must be analysed before the catalog is built.** Station membership decides
 `needs_image`, because standing counters render as a dense list with no image slot. Building the
@@ -104,7 +118,48 @@ live source, never as a finding on their own.
 response, so requests cannot be parallelised.
 
 **`config/halls.json` is hand-transcribed ground truth**, not parsed output. The R&DE hours page
-is prose. `make hours-diff` / `make hours-accept` manage the baseline when it changes.
+is prose. `make hours-diff` / `make hours-accept` manage the baseline when it changes. Its
+`aliases` field is separate ground truth for one job only: matching the names the specials poster
+uses ("AFDC", "Casper", and "Wibur", which is a typo R&DE keeps re-making). Matching already
+ignores case and punctuation, so only genuinely different words belong there.
+
+**`config/logos.json` is pixel coordinates into one specific JPEG**, which is why its sha256 sits
+next to them. R&DE publishes no per-hall logo files anywhere — the callouts on the dining halls
+map are the only place all eight exist — so the boxes are read off that map by hand. A redraw
+moves all eight at once and would turn the crops into eight rectangles of street, so
+`scripts/fetch_logos.py` refuses to cut against a digest it does not recognise. `--force` is
+there for when you have checked; `--contact-sheet` is how you check.
+
+**Logo geometry is bounded by the source, not by the design.** The map is 1920px wide, so a hall's
+logo is 30-130px tall inside it and nothing better exists. `render.height` in `config/logos.json`
+is therefore *twice* the height the page gives them (`.col-logo`), and the header was sized around
+that rather than the other way round. Normalising on height is also why Branner comes out smallest:
+its roundel is taller than it is wide. Raising `height` past ~80 buys blur, not size.
+
+**A special is not a row of its own.** The halls share one set of grid rows, so `column()` puts the
+specials strip *inside* `.col-head`: a strip that only some columns had would push every card below
+it in those columns out of line with the others. Same reason the empty `.col-logo` box is appended
+even when a hall has no logo.
+
+**The specials poster is read geometrically, and that is not fussiness.** Text order in the PDF is
+meaningless -- one entry's two lines are not adjacent to each other in it, and a note drawn on top
+of a row reads as part of that row. `bsdm/specials.py` groups text by which coloured bar contains
+it, smallest bar winning, and maps the bar's x-extent to dates through the weekday header. Bars are
+told from the grid by the weekend: every background stripe spans the full width, and no special has
+ever run on a Saturday. Five editions spanning a year all parse; check a new one with
+`scripts/fetch_specials.py --dry-run` before assuming a change is a bug.
+
+**The poster and the menu disagree about who is open, and the menu wins.** Bars run Monday to
+Friday even in a week where seven halls reopen on the Tuesday -- the poster says so in a separate
+block drawn over the top. `bsdm/build.py` resolves it by only ever attaching a special to a day the
+scraped menus show that hall serving that meal, and `web/app.js` only shows one when the selected
+meal matches the calendar's. Do not try to derive it from the PDF's z-order.
+
+**An unreadable poster is still archived.** The hours page links one fortnight at a time, so an
+edition nobody fetched while it was up is gone for good -- worse than the menus, which at least
+have a rolling week. `specials.update()` therefore writes the PDF to `data/specials/` before it
+tries to parse it, records the error on the calendar entry, and returns rather than raising:
+`scripts/update.py` logs it and carries on with the night's menus.
 
 ## Frontend
 
@@ -129,6 +184,10 @@ JSON block so a dish name cannot close the script tag early.
   allergen list that runs long.
 - **`<img width/height>` defeats `aspect-ratio`** unless `height: auto` is also set. The
   attributes are load-bearing for layout reservation, so keep both.
+- **The logos are cut off a printed map, so each one arrives on its own patch of white paper.**
+  Invisible on a light card; on a dark one it would read as a bright rectangle stuck to the
+  header, so dark mode turns the accident into a deliberate plate — padded, rounded, and pulled
+  back out with a negative margin so it does not move the name below it.
 - **User-visible English lives in the `UI` table in `web/app.js`, not in the DOM calls.** Both
   languages are written side by side there so a new string cannot ship in one language only. The
   English in `web/index.html` is just what the page says before the script runs; `renderChrome()`
@@ -156,4 +215,7 @@ source: GitHub Actions).
 
 `site/` is build output and is not committed. `data/` is, including images: CI has no GPU, so
 images are generated locally, committed, and pushed. New dishes appear with a placeholder icon
-until that happens.
+until that happens. `data/logos/` and `data/specials/` are committed for the same reason — the
+logos because cutting them needs a hand-verified config, the posters because they are an archive
+of something the source deletes. CI *does* fetch new posters, because `git add data/` picks them
+up; it never re-cuts logos.

@@ -20,6 +20,10 @@ This scrapes all of it and puts the halls next to each other, with a picture of 
   protein called out on the card.
 - **"Only here" badges.** A dish on offer at exactly one of the halls you selected is the
   reason to walk to that one. Every hall has a burger bar; that is not a tiebreaker.
+- **The hall's own logo on its column.** Eight halls, eight marks you already know from the
+  signs — quicker to pick out than eight names in the same typeface.
+- **Tonight's special.** R&DE publishes limited-time specials in a PDF poster that the menu app
+  knows nothing about. It is scraped, read, and put on the hall it belongs to.
 - **Real hours.** Each column shows that hall's hours for the selected meal and whether it is
   open right now.
 - **Allergens as served.** A few dishes differ by hall — Branner runs allergen-free versions of
@@ -32,26 +36,31 @@ This scrapes all of it and puts the halls next to each other, with a picture of 
 
 ```sh
 uv sync
-make update      # scrape the rolling 7-day window into data/menus/
+make update      # scrape the rolling 7-day window into data/menus/, and the specials poster
+make logos       # cut the hall logos out of the R&DE map (once; they rarely change)
 make images      # draw the dishes still missing pictures (needs local ComfyUI)
 make translate   # fill in the Chinese still missing (needs the claude CLI)
 make serve       # preview at http://127.0.0.1:8777
 ```
 
-`make update` and `make site` need only network access. `make images` needs a GPU and
+`make update`, `make logos` and `make site` need only network access. `make images` needs a GPU and
 `make translate` needs the Claude Code CLI, which is why both are separate steps.
 
 ## How it fits together
 
 ```
-R&DE menu app  ──scripts/update.py──►  data/menus/YYYY-MM-DD.json   (one file per day)
-                                       data/dishes.json             (dish catalog + image index)
-                                              │
-local ComfyUI  ──scripts/gen_images.py────────┤  data/images/<dishId>.webp
-                                              │
-claude CLI     ──scripts/translate.py─────────┤  data/zh.json
-                                              │
-                 scripts/build_site.py  ──────►  site/index.html + site/img/
+R&DE menu app  ─┐                          ┌─►  data/menus/YYYY-MM-DD.json  (one file per day)
+                ├── scripts/update.py ─────┼─►  data/dishes.json            (catalog + images)
+R&DE hours page ┘  (and the specials PDF   └─►  data/specials/*.pdf + data/specials.json
+                    it links to)                                │
+R&DE halls map ─── scripts/fetch_logos.py ──►  data/logos/<hallId>.webp
+                                                                │
+local ComfyUI  ─── scripts/gen_images.py ───►  data/images/<dishId>.webp
+                                                                │
+claude CLI     ─── scripts/translate.py ────►  data/zh.json     │
+                                                                │
+                   scripts/build_site.py ───────────────────────►  site/index.html
+                                                                   site/img/ + site/logo/
 ```
 
 **Scraping.** The menu app is ASP.NET WebForms, so a query is a POST carrying `__VIEWSTATE` and
@@ -112,6 +121,49 @@ Like images this runs locally and its output is committed — CI scrapes and pub
 translates — so a brand-new dish shows its English name in Chinese mode until the next local run
 lands. Hall names stay in English throughout: "Arrillaga" is what the building says and what
 anyone you ask will call it.
+
+**Specials are a poster, not an API.** Every fortnight R&DE replaces a PDF calendar of dinner
+specials — the sort of thing that is the entire reason to walk to one hall over another — and
+links it from the hours page under a filename nobody could predict (`Dining Hall Specials
+Calendar_Sept14-25.pdf`, `Dining_Hall_Specials_Calendar_Aug3-14_0.pdf`, `...Calendar_H Frame
+Nov17-28.pdf`). So the link is scraped rather than guessed, and every edition is archived in
+`data/specials/`: the page only ever points at the current one.
+
+Reading it is geometry rather than text order. Each special is a coloured bar drawn across the
+days it runs, with `Hall: dish` on top of it, so the bar's width is the date range and its height
+is what groups the lines of one entry. Text goes to the *smallest* bar containing it, which is
+what stops a note drawn over a row — a Thanksgiving band, a "reopens Tuesday" block — from being
+read as part of the special underneath. Bars are told apart from the grid by the weekend: the
+background stripes run the full width, and no special has ever run on a Saturday.
+
+```sh
+make specials                                                   # fetch and fold in
+uv run python scripts/fetch_specials.py --show                  # what is on file
+uv run python scripts/fetch_specials.py --dry-run data/specials/2026-09-14_*.pdf
+```
+
+The poster's bars span Monday to Friday even where a hall reopens on the Tuesday, so a special is
+only ever shown on a day the scraped menus say that hall is actually serving that meal — and only
+when you are looking at the meal the calendar is for, which so far has always been dinner.
+
+**The hall logos come out of a map.** R&DE publishes no logo files: not on the site, not in its
+sitemap, not in the Wayback index of its file tree. The one place all eight appear is the callout
+boxes on the [dining halls
+map](https://rde.stanford.edu/dining-hospitality/dining-locations-hours), so that is where they
+are cut from — `config/logos.json` holds a hand-verified pixel box per hall, alongside the digest
+of the exact image they were read off, because a redrawn map moves all eight at once:
+
+```sh
+make logos                                                    # cut them
+make logos-check                                              # has the map moved?
+uv run python scripts/fetch_logos.py --contact-sheet /tmp/logos.png
+```
+
+That map is 1920px wide and a logo is 30–130px tall inside it, which is the whole budget: the
+files are written at 2× the box the page gives them and the header is sized to what the source
+can carry, not the other way round. The callouts are slightly translucent, so a crop also carries
+a wash of whatever the logo was standing on; that is flattened to white on the way through, on a
+threshold strict enough to spare Arrillaga's cream roof panel.
 
 **Image generation** talks to a local [ComfyUI](https://github.com/comfyanonymous/ComfyUI) over
 HTTP; it never starts or stops the server, and it renders through `PreviewImage` so a bulk run
@@ -180,7 +232,11 @@ The daily scrape runs either way.
   bad one is a hand edit in `data/zh.json`; `make translate` never overwrites what is already
   there.
 - The source app only exposes a rolling 7-day window, so history exists only for days already
-  scraped.
+  scraped. The specials poster is worse: the hours page links one fortnight at a time, so an
+  edition nobody fetched while it was up is gone. `data/specials/` is the archive.
+- **The hall logos are Stanford's**, cut from R&DE's own map and shown to identify the hall they
+  belong to. They are not licensed for any other use; see Stanford's
+  [trademark policy](https://adminguide.stanford.edu/chapters/guiding-policies-and-principles/conflict-interest/ownership-and-use-stanford-trademarks).
 - EVGR appears in the app's dropdown but returns no menu and is absent from the hours page; it is
   marked inactive.
 
