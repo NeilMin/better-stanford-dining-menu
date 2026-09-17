@@ -1,6 +1,6 @@
 {
  "date": "2026-09-18",
- "scraped_at": "2026-09-16T04:46:04-07:00",
+ "scraped_at": "2026-09-17T04:52:39-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -3051,13 +3051,17 @@
      "order": 7
     },
     {
-     "name": "Burger Bar",
-     "recipe_id": "5964436",
+     "name": "Grilled Cheese & Tomato Basil Soup",
+     "recipe_id": "1222111222",
      "description": "",
-     "ingredients": "",
-     "allergens": [],
+     "ingredients": "Chef's Line gluten-free bread, Daiya sliced cheddar cheese, non allergen plant based butter Tomato, tomato paste, red onion, coconut milk, basil, veg base, salt",
+     "allergens": [
+      "COCONUT"
+     ],
      "trace_allergens": [],
-     "tags": [],
+     "tags": [
+      "vegan"
+     ],
      "order": 8
     },
     {
@@ -4542,31 +4546,6 @@
      "order": 1
     },
     {
-     "name": "Scrambled Eggs",
-     "recipe_id": "3975106",
-     "description": "",
-     "ingredients": "eggs, canola/olive oil blend, salt",
-     "allergens": [
-      "EGG"
-     ],
-     "trace_allergens": [
-      "COCONUT",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
-     ],
-     "tags": [
-      "vegetarian",
-      "halal"
-     ],
-     "order": 2
-    },
-    {
      "name": "Hard Boiled Eggs",
      "recipe_id": "2612705",
      "description": "",
@@ -4580,112 +4559,17 @@
       "vegetarian",
       "halal"
      ],
-     "order": 3
+     "order": 2
     },
     {
-     "name": "Breakfast Burrito",
-     "recipe_id": "3163201",
+     "name": "Bagel Bar",
+     "recipe_id": "4006011-1",
      "description": "",
-     "ingredients": "tortilla, eggs, cheese, black beans, seasonal vegetables, canola/olive oil blend, salt, pepper",
-     "allergens": [
-      "EGG",
-      "MILK",
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "COCONUT",
-      "FISH",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "TREENUTS"
-     ],
-     "tags": [
-      "vegetarian",
-      "halal"
-     ],
-     "order": 4
-    },
-    {
-     "name": "Chicken Apple Sausage",
-     "recipe_id": "7217325",
-     "description": "",
-     "ingredients": "chicken, apples, salt, sugar, dextrose, spices, cultured whey, paprika, soybean oil, sheep casing",
-     "allergens": [
-      "MILK",
-      "SOY"
-     ],
-     "trace_allergens": [
-      "WHEAT"
-     ],
-     "tags": [],
-     "order": 5
-    },
-    {
-     "name": "Breakfast Potatoes",
-     "recipe_id": "3829817",
-     "description": "",
-     "ingredients": "potatoes, onions, oil (canola oil, sunflower seed oil, cotton seed oil, palm oil, corn oil, or soybean oil), salt, disodium dihydrogen pyrophosphate, dextrose",
-     "allergens": [
-      "SOY"
-     ],
+     "ingredients": "assorted fresh bagels, smashed avocado, olive oil, butter, plain and flavored cream cheese, onions, cucumber, tomatoes, everything spice, red pepper flakes, cinnamon, bananas, nut or seed spreads, preserves",
+     "allergens": [],
      "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan",
-      "halal"
-     ],
-     "order": 6
-    },
-    {
-     "name": "Tasty Tofu Scramble",
-     "recipe_id": "3930455",
-     "description": "",
-     "ingredients": "tofu, seasonal vegetables, canola/olive oil blend, salt, pepper, turmeric, garlic",
-     "allergens": [
-      "SOY"
-     ],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "TREENUTS",
-      "WHEAT"
-     ],
-     "tags": [
-      "vegan",
-      "halal"
-     ],
-     "order": 7
-    },
-    {
-     "name": "Buttermilk Pancakes",
-     "recipe_id": "3958551",
-     "description": "",
-     "ingredients": "wheat flour, malted barley flour, enzymes, ascorbic acid, sugar, soy flour, sodium bicarbonate, sodium aluminum phosphate, aluminum sulfate, monocalcium phosphate, canola or soybean oil, dextrose, salt, buttermilk, mono-diglycerides, soy lecithin, eggs",
-     "allergens": [
-      "EGG",
-      "MILK",
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "COCONUT",
-      "FISH",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "TREENUTS"
-     ],
-     "tags": [
-      "vegetarian"
-     ],
-     "order": 8
+     "tags": [],
+     "order": 3
     },
     {
      "name": "Waffles",
@@ -4703,7 +4587,7 @@
       "vegetarian",
       "halal"
      ],
-     "order": 9
+     "order": 4
     },
     {
      "name": "Gluten-Free Waffles",
@@ -4719,7 +4603,7 @@
       "vegan",
       "halal"
      ],
-     "order": 10
+     "order": 5
     },
     {
      "name": "Seasonal Fruit",
@@ -4733,7 +4617,7 @@
       "vegan",
       "halal"
      ],
-     "order": 11
+     "order": 6
     },
     {
      "name": "Assorted Allergy-Friendly Items",
@@ -4746,7 +4630,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 12
+     "order": 7
     }
    ],
    "Lunch": [

@@ -1,6 +1,6 @@
 {
  "date": "2026-09-17",
- "scraped_at": "2026-09-16T04:46:04-07:00",
+ "scraped_at": "2026-09-17T04:52:39-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -240,18 +240,26 @@
      "order": 0
     },
     {
-     "name": "Aji Marinated Crispy Tofu",
-     "recipe_id": "AjiTofu1",
+     "name": "Spicy Aji Panca Tofu",
+     "recipe_id": "AjiPancaTofu1",
      "description": "",
-     "ingredients": "tofu, cornstarch, aji amarillo paste, lime juice, orange juice, garlic, onions, cilantro, cumin, smoked paprika, dried oregano, olive/canola oil blend, salt, black pepper",
+     "ingredients": "tofu, cornstarch, aji panca paste, lime juice, orange juice, garlic, onions, cilantro, cumin, smoked paprika, dried oregano, olive/canola oil blend, salt, black pepper",
      "allergens": [
       "SOY"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "WHEAT"
+     ],
      "tags": [
       "gluten-free",
-      "vegan",
-      "halal"
+      "vegan"
      ],
      "order": 1
     },
@@ -312,10 +320,10 @@
      "order": 5
     },
     {
-     "name": "Aji Amarillo Roasted Potatoes",
-     "recipe_id": "AjiAmaPots1",
+     "name": "Aji Amarillo Sweet Potatoes",
+     "recipe_id": "AjiAmaSwPots1",
      "description": "",
-     "ingredients": "potatoes, aji amarillo paste, garlic, lime juice, cumin, cilantro, olive/canola oil blend, salt, black pepper",
+     "ingredients": "sweet potatoes, aji panka paste, garlic, lime juice, cumin, cilantro, olive/canola oil blend, salt, black pepper",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -3060,8 +3068,8 @@
      "order": 7
     },
     {
-     "name": "Burger Bar",
-     "recipe_id": "5964436",
+     "name": "Hot Dog Bar",
+     "recipe_id": "3998930",
      "description": "",
      "ingredients": "",
      "allergens": [],
@@ -4544,31 +4552,6 @@
      "order": 1
     },
     {
-     "name": "Scrambled Eggs",
-     "recipe_id": "3975106",
-     "description": "",
-     "ingredients": "eggs, canola/olive oil blend, salt",
-     "allergens": [
-      "EGG"
-     ],
-     "trace_allergens": [
-      "COCONUT",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
-     ],
-     "tags": [
-      "vegetarian",
-      "halal"
-     ],
-     "order": 2
-    },
-    {
      "name": "Hard Boiled Eggs",
      "recipe_id": "2612705",
      "description": "",
@@ -4582,101 +4565,17 @@
       "vegetarian",
       "halal"
      ],
-     "order": 3
+     "order": 2
     },
     {
-     "name": "Open Faced Breakfast Sandwich",
-     "recipe_id": "4887015",
+     "name": "Bagel Bar",
+     "recipe_id": "4006011-1",
      "description": "",
-     "ingredients": "english muffin, eggs, spinach, tomato, roasted red salsa (tomatoes, chipotle peppers, adobo sauce, garlic, canola/olive oil blend, salt), salt, pepper",
-     "allergens": [
-      "EGG",
-      "MILK",
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "COCONUT",
-      "FISH",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "TREENUTS"
-     ],
-     "tags": [
-      "vegetarian"
-     ],
-     "order": 4
-    },
-    {
-     "name": "Pork Sausage Link",
-     "recipe_id": "4899163",
-     "description": "",
-     "ingredients": "pork, sea salt, spices, turbinado sugar, sage oil, sage extract, rosemary extract",
+     "ingredients": "assorted fresh bagels, smashed avocado, olive oil, butter, plain and flavored cream cheese, onions, cucumber, tomatoes, everything spice, red pepper flakes, cinnamon, bananas, nut or seed spreads, preserves",
      "allergens": [],
      "trace_allergens": [],
-     "tags": [
-      "gluten-free"
-     ],
-     "order": 5
-    },
-    {
-     "name": "Hash Brown Patty",
-     "recipe_id": "6350846",
-     "description": "",
-     "ingredients": "potatoes, oil (canola oil, corn oil, cottonseed oil, palm oil, soybean oil, or sunflower oil), salt, onion powder, natural flavor, dextrose, disodium dihydrogen pyrophosphate",
-     "allergens": [
-      "SOY"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan",
-      "halal"
-     ],
-     "order": 6
-    },
-    {
-     "name": "Plant Powered \"Eggs”",
-     "recipe_id": "4433739",
-     "description": "",
-     "ingredients": "mung bean protein, canola oil, onion, gellan gum, carrot extractives, natural flavors, turmeric extractives, potassium citrate, salt, soy lecithin, sugar, tapioca syrup, tetrasodium pyrophosphate, transglutaminase, nisin",
-     "allergens": [
-      "SOY"
-     ],
-     "trace_allergens": [
-      "EGG"
-     ],
-     "tags": [
-      "gluten-free",
-      "vegan",
-      "halal"
-     ],
-     "order": 7
-    },
-    {
-     "name": "French Toast",
-     "recipe_id": "3508602",
-     "description": "",
-     "ingredients": "chala bread, eggs, canola/olive oil blend, powdered sugar, cinnamon",
-     "allergens": [
-      "EGG",
-      "MILK",
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "COCONUT",
-      "FISH",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "TREENUTS"
-     ],
-     "tags": [
-      "vegetarian"
-     ],
-     "order": 8
+     "tags": [],
+     "order": 3
     },
     {
      "name": "Waffles",
@@ -4694,7 +4593,7 @@
       "vegetarian",
       "halal"
      ],
-     "order": 9
+     "order": 4
     },
     {
      "name": "Gluten-Free Waffles",
@@ -4710,7 +4609,7 @@
       "vegan",
       "halal"
      ],
-     "order": 10
+     "order": 5
     },
     {
      "name": "Seasonal Fruit",
@@ -4724,7 +4623,7 @@
       "vegan",
       "halal"
      ],
-     "order": 11
+     "order": 6
     },
     {
      "name": "Assorted Allergy-Friendly Items",
@@ -4737,7 +4636,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 12
+     "order": 7
     }
    ],
    "Lunch": [
