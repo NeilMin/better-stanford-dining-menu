@@ -10,6 +10,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
+from bsdm import specials as specialslib  # noqa: E402
 from bsdm.catalog import build, summarize  # noqa: E402
 
 
@@ -19,7 +20,7 @@ def main() -> int:
     stations_path = ROOT / "data" / "stations.json"
     table = json.loads(stations_path.read_text()) if stations_path.exists() else {}
 
-    catalog = build(ROOT / "data" / "menus", table, previous)
+    catalog = build(ROOT / "data" / "menus", table, previous, specialslib.dishes(ROOT))
     path.write_text(json.dumps(catalog, indent=1, ensure_ascii=False, sort_keys=True) + "\n")
 
     moved = sum(1 for k, v in catalog.items()

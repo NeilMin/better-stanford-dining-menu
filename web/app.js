@@ -63,7 +63,9 @@
       onlyCount: (n) => `${n} only here`,
       map: "map",
       special: "Special",
+      specialBadge: "★ SPECIAL",
       specialTip: (meal) => `${meal} special, from R&DE's specials calendar`,
+      specialNote: "Limited-time special from R&DE's calendar. No ingredient list published — ask at the counter.",
       alwaysHere: "Always here",
       toggle: (shown) => (shown ? "hide" : "show"),
       allergens: "Allergens: ",
@@ -120,7 +122,9 @@
       onlyCount: (n) => `${n} 道独有`,
       map: "地图",
       special: "特供",
+      specialBadge: "★ 特供",
       specialTip: (meal) => `${meal}限时特供，来自 R&DE 的特供日历`,
+      specialNote: "R&DE 特供日历上的限时特供，没有公布配料——过敏请到窗口确认。",
       alwaysHere: "常设窗口",
       toggle: (shown) => (shown ? "收起" : "展开"),
       allergens: "过敏原：",
@@ -286,26 +290,21 @@
     return { id, ...DATA.dishes[id], ...DATA.dishes[id].v[Number(ref.slice(dot + 1))] };
   }
 
-  const EMPTY = { daily: [], stations: [] };
+  const EMPTY = { specials: [], daily: [], stations: [] };
 
-  /** The specials the poster gives this hall for this date, if any.
+  /** What the specials calendar says to the whole campus, for this date.
    *
    *  Guarded on the meal: the calendar is a dinner calendar, and a dinner
-   *  special has no business on the lunch board.
+   *  notice has no business on the lunch board. A hall's own specials need no
+   *  guard -- the build files them under the calendar's meal already.
    */
-  function specialsFor(date, hallId) {
-    const day = DATA.specials[date];
-    if (!day || day.meal !== state.meal) return [];
-    return day.halls[hallId] || [];
-  }
-
   function noticesFor(date) {
-    const day = DATA.specials[date];
+    const day = DATA.notices[date];
     if (!day || day.meal !== state.meal) return [];
     return day.notes || [];
   }
 
-  /** Chinese for a special, or English if it has not been translated yet. */
+  /** Chinese for a notice, or English if it has not been translated yet. */
   function zhSpecial(text) {
     return state.lang === "zh" ? DATA.zh_specials[text] || null : null;
   }
@@ -346,8 +345,11 @@
     return state.diet.every((d) => rec.tags.includes(d));
   }
 
-  function badgesFor(rec, onlyHere) {
+  function badgesFor(rec, onlyHere, special = false) {
     const badges = el("div", { className: "badges" });
+    if (special) {
+      badges.append(el("span", { className: "badge badge-special", textContent: t("specialBadge") }));
+    }
     if (onlyHere) {
       badges.append(el("span", { className: "badge badge-only", textContent: t("onlyHere") }));
     }
@@ -365,8 +367,13 @@
     return badges;
   }
 
-  function detailsFor(rec) {
+  function detailsFor(rec, special = false) {
     const out = [];
+    // The poster names the dish and nothing else. Saying so is better than an
+    // empty body that reads as "no allergens".
+    if (special && !rec.ing) {
+      out.push(el("p", { className: "special-note", textContent: t("specialNote") }));
+    }
     if (rec.alg && rec.alg.length) {
       const line = el("p", { className: "allergens" });
       line.append(el("b", { textContent: t("allergens") }), t("allergenList", rec.alg));
@@ -389,11 +396,14 @@
 
   // ---------- rendering ----------
 
-  /** A dish cooked today. Name leads, so the list is readable before any image loads. */
-  function dishCard(rec, onlyHere) {
+  /** A dish cooked today. Name leads, so the list is readable before any image loads.
+   *  A special is the same card, marked out: it is the dish you walk over for. */
+  function dishCard(rec, onlyHere, special = false) {
     const card = el("article", {
-      className: "card" + (PROTEIN[rec.category] ? " card-meat" : ""),
+      className: "card" + (PROTEIN[rec.category] ? " card-meat" : "") +
+        (special ? " card-special" : ""),
     });
+    if (special) card.title = t("specialTip", t("meal", state.meal));
 
     const zh = zhName(rec);
     const head = el("div", { className: "card-head" }, [
@@ -404,7 +414,7 @@
     // Appended even when empty: the badge row is reserved space in the
     // stylesheet, so a dish with no tags keeps the same card as the one beside
     // it in the next hall.
-    head.append(badgesFor(rec, onlyHere));
+    head.append(badgesFor(rec, onlyHere, special));
     card.append(head);
 
     if (state.photos) {
@@ -431,7 +441,7 @@
 
     // Likewise: a dish that lists no allergens still gets the body, which
     // reserves that line.
-    card.append(el("div", { className: "card-body" }, detailsFor(rec)));
+    card.append(el("div", { className: "card-body" }, detailsFor(rec, special)));
     return card;
   }
 
@@ -469,7 +479,8 @@
     // Counted over the day's menu only: every hall has a salad bar.
     const spread = new Map();
     for (const hallId of state.halls) {
-      for (const ref of service(state.date, hallId, state.meal).daily) {
+      const svc = service(state.date, hallId, state.meal);
+      for (const ref of [...svc.specials, ...svc.daily]) {
         const id = ref.slice(0, ref.lastIndexOf("."));
         spread.set(id, (spread.get(id) || 0) + 1);
       }
@@ -500,7 +511,10 @@
   /** How much the selected halls actually differ -- the whole point of comparing. */
   function renderDigest(spread) {
     const node = document.getElementById("digest");
-    const serving = state.halls.filter((h) => service(state.date, h, state.meal).daily.length);
+    const serving = state.halls.filter((h) => {
+      const svc = service(state.date, h, state.meal);
+      return svc.specials.length || svc.daily.length;
+    });
     if (serving.length < 2) {
       node.replaceChildren();
       return;
@@ -551,6 +565,8 @@
     col.style.setProperty("--hall", hall.accent);
 
     const svc = service(state.date, hallId, state.meal);
+    // Specials lead, whatever the sort: meat-first reorders the rest only.
+    const specials = svc.specials.map(resolve).filter(matchesDiet);
     let daily = svc.daily.map(resolve).filter(matchesDiet);
     const stations = svc.stations.map(resolve).filter(matchesDiet);
 
@@ -599,24 +615,6 @@
       el("div", { className: "col-top" }, [title, logo]),
     ]);
 
-    // Inside the header on purpose. The halls share one set of grid rows, so a
-    // strip of its own would be a row that only some columns have, and every
-    // card below it in those columns would fall out of line with the others.
-    for (const text of specialsFor(state.date, hallId)) {
-      const zh = zhSpecial(text);
-      const strip = el("p", {
-        className: "col-special",
-        title: t("specialTip", t("meal", state.meal)),
-      }, [
-        el("span", { className: "special-tag", textContent: t("special") }),
-        el("span", { className: "special-text", textContent: zh || text }),
-      ]);
-      // Same rule as a dish name: the Chinese is what you read, the English is
-      // what matches the sign at the counter.
-      if (zh) strip.append(el("span", { className: "special-en", textContent: text }));
-      head.append(strip);
-    }
-
     const meta = el("div", { className: "col-meta" });
     if (span) {
       meta.append(el("span", {
@@ -632,9 +630,9 @@
     }
     meta.append(el("span", {
       className: "count",
-      textContent: t("count", daily.length),
+      textContent: t("count", specials.length + daily.length),
     }));
-    const onlyHere = daily.filter((r) => spread.get(r.id) === 1).length;
+    const onlyHere = [...specials, ...daily].filter((r) => spread.get(r.id) === 1).length;
     if (onlyHere) {
       meta.append(el("span", { className: "only-count", textContent: t("onlyCount", onlyHere) }));
     }
@@ -650,7 +648,7 @@
     head.append(meta);
     col.append(head);
 
-    if (!svc.daily.length && !svc.stations.length) {
+    if (!svc.specials.length && !svc.daily.length && !svc.stations.length) {
       col.append(el("div", {
         className: "empty",
         textContent: t("noService", state.meal, dayLabel(state.date)),
@@ -658,12 +656,13 @@
       return col;
     }
 
-    if (!daily.length) {
+    if (!specials.length && !daily.length) {
       col.append(el("div", {
         className: "empty",
         textContent: state.diet.length ? t("noMatch") : t("noneListed"),
       }));
     } else {
+      for (const rec of specials) col.append(dishCard(rec, spread.get(rec.id) === 1, true));
       for (const rec of daily) col.append(dishCard(rec, spread.get(rec.id) === 1));
     }
 

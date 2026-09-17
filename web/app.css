@@ -347,16 +347,6 @@ main { max-width: 1800px; margin: 0 auto; padding: 16px 16px 64px; }
    rather than above the first card because the halls share one set of grid
    rows: a strip only some columns had would push their cards out of line with
    everyone else's. */
-.col-special {
-  margin: 9px 0 0;
-  padding: 7px 9px;
-  border-radius: 9px;
-  border-left: 3px solid var(--hall-ink);
-  background: var(--hall-tint);
-  font-size: 13px;
-  line-height: 1.42;
-}
-
 .special-tag {
   display: inline-block;
   margin-right: 6px;
@@ -367,8 +357,6 @@ main { max-width: 1800px; margin: 0 auto; padding: 16px 16px 64px; }
   color: var(--hall-ink);
   vertical-align: 1px;
 }
-
-.special-text { font-weight: 560; }
 
 /* Same rule as a dish name: the Chinese is what you read, the English under it
    is what matches the sign at the counter. */
@@ -456,6 +444,30 @@ html:lang(zh) .special-tag { letter-spacing: 0; }
 .card-head { padding: 11px 13px 10px; background: var(--hall-tint); }
 .card-meat .card-head { background: linear-gradient(var(--meat-soft), var(--hall-tint) 85%); }
 
+/* A special is the dish you walk across campus for, so it is the one card that
+   is not quiet: framed in the hall's own colour, with the name block in the
+   fill rather than the wash. Outline, not a thicker border, so the card keeps
+   exactly the size of the cards beside it in the other halls. */
+.card-special {
+  border-color: var(--hall-ink);
+  outline: 2px solid var(--hall-ink);
+  outline-offset: -1px;
+  box-shadow: 0 6px 18px -8px color-mix(in srgb, var(--hall-ink) 55%, transparent), var(--shadow);
+}
+.card-special .card-head,
+.card-special.card-meat .card-head {
+  background: color-mix(in srgb, var(--hall, var(--cardinal)) 55%, var(--surface));
+}
+:root[data-theme="dark"] .card-special .card-head {
+  background: color-mix(in srgb, var(--hall, var(--cardinal)) 26%, var(--surface));
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .card-special .card-head {
+    background: color-mix(in srgb, var(--hall, var(--cardinal)) 26%, var(--surface));
+  }
+}
+.special-note { margin: 0; font-size: 11.5px; line-height: 1.45; color: var(--text-dim); }
+
 .dish-name {
   margin: 0;
   font-size: 15px;
@@ -498,6 +510,13 @@ html:lang(zh) .special-tag { letter-spacing: 0; }
 }
 .badge-protein { background: var(--meat-soft); color: var(--meat); }
 .badge-only { background: color-mix(in srgb, var(--cardinal) 13%, transparent); color: var(--cardinal); }
+/* After .badge, which would otherwise repaint it grey. */
+.badge-special {
+  background: var(--hall-ink);
+  color: var(--surface);
+  font-weight: 700;
+  letter-spacing: .06em;
+}
 .badge-gf { background: #EAF0FA; color: #2B4E8C; }
 .badge-v  { background: #E9F4E7; color: #2F6B2B; }
 .badge-vgn{ background: #E2F2EA; color: #146B4C; }

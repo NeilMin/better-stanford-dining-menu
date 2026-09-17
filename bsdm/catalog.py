@@ -32,10 +32,14 @@ def _is_minor(name: str) -> bool:
     return bool(_MINOR_RE.search(name))
 
 
-def build(menu_dir: Path, station_table: dict, previous: dict | None = None) -> dict:
-    """Replay every stored menu through the current rules.
+def build(menu_dir: Path, station_table: dict, previous: dict | None = None,
+          specials: list[dict] = ()) -> dict:
+    """Replay every stored menu, and every special on file, through the current rules.
 
     Image fields already earned are carried over, so retuning is free.
+    `specials` is specials.dishes(): the poster gives a name and nothing else,
+    but a special is the dish people walk across campus for, so it is drawn from
+    its name alone -- and before anything else.
     """
     previous = previous or {}
     catalog: dict[str, dict] = {}
@@ -69,6 +73,24 @@ def build(menu_dir: Path, station_table: dict, previous: dict | None = None) -> 
                     else:
                         as_daily[did] = as_daily.get(did, 0) + 1
 
+    for special in specials:
+        did = dishlib.dish_id(special["text"])
+        entry = catalog.get(did)
+        if entry is None:
+            # No ingredient list, which is_placeholder() would read as "changes
+            # daily". It does not: the poster names one dish on fixed dates.
+            dish = {"name": special["text"], "ingredients": "", "tags": []}
+            entry = catalog[did] = {
+                **dish,
+                "first_seen": special["from"], "last_seen": special["to"],
+                "image": None, "min_order": 0,
+                "category": dishlib.classify(dish),
+                "placeholder": False,
+                "icon": dishlib.station_icon(dish),
+            }
+        entry["special"] = True
+        as_daily[did] = as_daily.get(did, 0) + 1
+
     for did, entry in catalog.items():
         entry["station_only"] = as_daily.get(did, 0) == 0 and as_station.get(did, 0) > 0
         entry["needs_image"] = not entry["placeholder"] and not entry["station_only"]
@@ -77,7 +99,7 @@ def build(menu_dir: Path, station_table: dict, previous: dict | None = None) -> 
 
         # 0 is what you pick a hall for, 2 is a side. Menu position is the
         # signal: R&DE lists the day's entrees first.
-        if dishlib.is_meat(entry):
+        if dishlib.is_meat(entry) or entry.get("special"):
             entry["priority"] = 0
         elif entry["min_order"] <= 1:
             # R&DE lists the day's entrees first, which outranks any guess made

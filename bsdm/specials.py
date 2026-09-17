@@ -455,6 +455,25 @@ def for_window(root: Path, window: list[str]) -> dict:
     return out
 
 
+def dishes(root: Path) -> list[dict]:
+    """Every special tied to a hall, as {"text", "from", "to"}, for the catalog.
+
+    A special is served as a dish, so it is drawn like one. Notes -- entries no
+    hall claims -- are announcements, not food, and are left out.
+    """
+    seen: dict[str, dict] = {}
+    for calendar in load(root).get("calendars", []):
+        for entry in calendar.get("entries", []):
+            if not entry.get("halls") or _NOTHING_RE.match(entry["text"]):
+                continue
+            span = seen.setdefault(entry["text"], {
+                "text": entry["text"], "from": entry["from"], "to": entry["to"],
+            })
+            span["from"] = min(span["from"], entry["from"])
+            span["to"] = max(span["to"], entry["to"])
+    return list(seen.values())
+
+
 def texts(root: Path) -> list[str]:
     """Every distinct special and note, for the Chinese layer to translate."""
     seen = {}

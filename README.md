@@ -22,8 +22,9 @@ This scrapes all of it and puts the halls next to each other, with a picture of 
   reason to walk to that one. Every hall has a burger bar; that is not a tiebreaker.
 - **The hall's own logo on its column.** Eight halls, eight marks you already know from the
   signs — quicker to pick out than eight names in the same typeface.
-- **Tonight's special.** R&DE publishes limited-time specials in a PDF poster that the menu app
-  knows nothing about. It is scraped, read, and put on the hall it belongs to.
+- **Tonight's special, first.** R&DE publishes limited-time specials in a PDF poster that the menu
+  app knows nothing about. It is scraped, read, and shown as the first dish of the hall it belongs
+  to — highlighted, with its own picture drawn from the name, since the poster gives nothing else.
 - **Real hours.** Each column shows that hall's hours for the selected meal and whether it is
   open right now.
 - **Allergens as served.** A few dishes differ by hall — Branner runs allergen-free versions of
@@ -144,7 +145,8 @@ uv run python scripts/fetch_specials.py --dry-run data/specials/2026-09-14_*.pdf
 
 The poster's bars span Monday to Friday even where a hall reopens on the Tuesday, so a special is
 only ever shown on a day the scraped menus say that hall is actually serving that meal — and only
-when you are looking at the meal the calendar is for, which so far has always been dinner.
+under the meal the calendar is for, which so far has always been dinner. There it leads the hall's
+column as a dish card of its own.
 
 **The hall logos come out of a map.** R&DE publishes no logo files: not on the site, not in its
 sitemap, not in the Wayback index of its file tree. The one place all eight appear is the callout

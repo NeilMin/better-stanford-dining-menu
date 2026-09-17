@@ -106,12 +106,21 @@ def build_payload(root: Path) -> dict:
     from bsdm.dishes import dish_id as make_id
     from bsdm.stations import split as split_service
 
+    # Specials come off a PDF poster, on their own dates. They are dishes like
+    # any other -- drawn, counted, filtered -- that lead their hall's list. Only
+    # a day the menus show that hall serving the calendar's meal gets one: the
+    # poster's bars run Monday to Friday whether or not a hall reopened on the
+    # Tuesday.
+    poster = specialslib.for_window(root, window)
+
     menus: dict[str, dict] = {}
     hours: dict[str, dict] = {}
+    notices: dict[str, dict] = {}
 
     for day in days:
         iso = day["date"]
         as_date = date.fromisoformat(iso)
+        on_poster = poster.get(iso, {"meal": None, "halls": {}, "notes": []})
         # Each service is split into the dishes cooked that day and the counters
         # that are there every day, so the board can lead with what changed.
         menus[iso] = {}
@@ -119,15 +128,44 @@ def build_payload(root: Path) -> dict:
             per_meal = {}
             for meal, served in meals.items():
                 daily, standing = split_service(station_table, hall_id, meal, served)
+                specials = []
+                if meal == on_poster["meal"] and daily:
+                    listed = {make_id(d["name"]): d for d in served}
+                    for text in on_poster["halls"].get(hall_id, []):
+                        sid = make_id(text)
+                        # A special the menu lists as well keeps the menu's
+                        # ingredients and allergens; the poster has neither.
+                        specials.append(variant_ref(sid, listed.get(sid) or {
+                            "name": text, "ingredients": "", "tags": [],
+                            "allergens": [], "trace_allergens": [],
+                        }))
+                        # The poster's wording is what zh.json translates;
+                        # a menu dish of the same name keeps its own.
+                        record = dishes[sid]
+                        if "zh" not in record and (
+                                text_zh := zhlib.get(zh_table, "specials", text)):
+                            record["zh"] = text_zh
+                # Shown once, as the special, even where the menu lists it too.
+                led = {make_id(text) for text in on_poster["halls"].get(hall_id, [])} \
+                    if specials else set()
                 per_meal[meal] = {
-                    "daily": [variant_ref(make_id(d["name"]), d) for d in daily],
-                    "stations": [variant_ref(make_id(d["name"]), d) for d in standing],
+                    "specials": specials,
+                    "daily": [variant_ref(make_id(d["name"]), d) for d in daily
+                              if make_id(d["name"]) not in led],
+                    "stations": [variant_ref(make_id(d["name"]), d) for d in standing
+                                 if make_id(d["name"]) not in led],
                 }
             menus[iso][hall_id] = per_meal
         hours[iso] = {
             h["id"]: schedule_for(h, as_date)
             for h in config["halls"] if h["active"] and schedule_for(h, as_date)
         }
+        # What the calendar says to the whole campus at once stays a notice.
+        if on_poster["notes"]:
+            notices[iso] = {"meal": on_poster["meal"], "notes": on_poster["notes"]}
+            for text in on_poster["notes"]:
+                if text_zh := zhlib.get(zh_table, "specials", text):
+                    zh_specials[text] = text_zh
 
     def hall_public(h: dict) -> dict:
         out = {
@@ -142,24 +180,6 @@ def build_payload(root: Path) -> dict:
         if entry and (logo_dir / entry["file"]).exists():
             out["logo"] = entry
         return out
-
-    # Specials come off a PDF poster, on their own dates; only the ones that
-    # land in the published window are shipped, and only where the hall actually
-    # has that meal -- the poster's bars run Monday to Friday whether or not a
-    # hall reopened on the Tuesday.
-    specials = {}
-    for iso, day in specialslib.for_window(root, window).items():
-        served = menus.get(iso, {})
-        meal = day["meal"]
-        halls_out = {
-            hall_id: texts for hall_id, texts in day["halls"].items()
-            if served.get(hall_id, {}).get(meal, {}).get("daily")
-        }
-        if halls_out or day["notes"]:
-            specials[iso] = {"meal": meal, "halls": halls_out, "notes": day["notes"]}
-        for text in [*day["notes"], *(t for ts in halls_out.values() for t in ts)]:
-            if text_zh := zhlib.get(zh_table, "specials", text):
-                zh_specials[text] = text_zh
 
     now = datetime.now(TZ)
     return {
@@ -178,7 +198,7 @@ def build_payload(root: Path) -> dict:
         "zh_specials": zh_specials,
         "menus": menus,
         "hours": hours,
-        "specials": specials,
+        "notices": notices,
     }
 
 
@@ -227,7 +247,7 @@ def build(root: Path, out: Path) -> dict:
         if stale.name not in used:
             stale.unlink()
 
-    total = sum(len(svc["daily"]) + len(svc["stations"])
+    total = sum(len(svc["specials"]) + len(svc["daily"]) + len(svc["stations"])
                 for day in payload["menus"].values()
                 for meals in day.values() for svc in meals.values())
     return {
@@ -237,8 +257,8 @@ def build(root: Path, out: Path) -> dict:
         "rows": total,
         "images": len(used),
         "logos": len(wanted_logos),
-        "specials": sum(len(t) for d in payload["specials"].values()
-                        for t in d["halls"].values()),
+        "specials": sum(len(svc["specials"]) for day in payload["menus"].values()
+                        for meals in day.values() for svc in meals.values()),
         "zh_dishes": sum(1 for d in payload["dishes"].values() if d.get("zh")),
         "zh_terms": len(payload["zh_terms"]),
         "html_kb": (out / "index.html").stat().st_size / 1024,

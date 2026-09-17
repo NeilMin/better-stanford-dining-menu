@@ -136,24 +136,6 @@ def main() -> int:
     log.info("Stations: %d standing counters across %d halls (%d days of history)",
              n_stations, len(table["halls"]), table["days_analyzed"])
 
-    catalog_path = ROOT / "data" / "dishes.json"
-    previous = json.loads(catalog_path.read_text()) if catalog_path.exists() else {}
-    # Same code path as scripts/rebuild_catalog.py, so scraping and rebuilding
-    # cannot drift apart.
-    catalog = build_catalog(menus_dir, table, previous)
-    catalog_path.write_text(json.dumps(catalog, indent=1, ensure_ascii=False, sort_keys=True) + "\n")
-
-    log.info("Scraped %d services / %d dish rows", total_services, total_dishes)
-    log.info("%s", summarize_catalog(catalog))
-
-    # Informational: translating needs the Claude Code CLI, so like image
-    # generation it happens on a laptop and arrives as a commit. CI just says
-    # how much of today's menu is still waiting for one.
-    log.info("%s", zhlib.summarize(ROOT))
-    untranslated = sum(len(v) for v in zhlib.missing(ROOT).values())
-    if untranslated:
-        log.info("%d new items to translate -- run: make translate", untranslated)
-
     # The hours page is fetched once and read for two things: whether the hours
     # themselves moved, and which specials calendar it is currently linking to.
     page = None
@@ -202,6 +184,25 @@ def main() -> int:
                                 "config/halls.json", ", ".join(result["unplaced_labels"]))
         except Exception as exc:
             log.warning("Specials check failed: %s", exc)
+
+    catalog_path = ROOT / "data" / "dishes.json"
+    previous = json.loads(catalog_path.read_text()) if catalog_path.exists() else {}
+    # Same code path as scripts/rebuild_catalog.py, so scraping and rebuilding
+    # cannot drift apart. After the specials, which are dishes too: a poster
+    # fetched tonight has to be in the catalog tonight to queue its pictures.
+    catalog = build_catalog(menus_dir, table, previous, specialslib.dishes(ROOT))
+    catalog_path.write_text(json.dumps(catalog, indent=1, ensure_ascii=False, sort_keys=True) + "\n")
+
+    log.info("Scraped %d services / %d dish rows", total_services, total_dishes)
+    log.info("%s", summarize_catalog(catalog))
+
+    # Informational: translating needs the Claude Code CLI, so like image
+    # generation it happens on a laptop and arrives as a commit. CI just says
+    # how much of today's menu is still waiting for one.
+    log.info("%s", zhlib.summarize(ROOT))
+    untranslated = sum(len(v) for v in zhlib.missing(ROOT).values())
+    if untranslated:
+        log.info("%d new items to translate -- run: make translate", untranslated)
 
     return 0
 

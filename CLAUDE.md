@@ -56,8 +56,10 @@ data/menus/*.json  ──stations.analyze()──►  data/stations.json
                           build.build() ───────────►  site/
 ```
 
-Only the first two are ordered with respect to each other. Logos, specials and translations are
-independent inputs that the build folds in if they are there and leaves out if they are not.
+Logos and translations are independent inputs that the build folds in if they are there and
+leaves out if they are not. Specials are not independent of the catalog: **a special is a dish**, so
+`catalog.build()` takes `specials.dishes()` and queues a picture for each, drawn from the name alone
+and at priority 0. That is why `scripts/update.py` rebuilds the catalog *after* fetching the poster.
 
 **Stations must be analysed before the catalog is built.** Station membership decides
 `needs_image`, because standing counters render as a dense list with no image slot. Building the
@@ -136,10 +138,12 @@ is therefore *twice* the height the page gives them (`.col-logo`), and the heade
 that rather than the other way round. Normalising on height is also why Branner comes out smallest:
 its roundel is taller than it is wide. Raising `height` past ~80 buys blur, not size.
 
-**A special is not a row of its own.** The halls share one set of grid rows, so `column()` puts the
-specials strip *inside* `.col-head`: a strip that only some columns had would push every card below
-it in those columns out of line with the others. Same reason the empty `.col-logo` box is appended
-even when a hall has no logo.
+**A special is a card, not a banner.** It was once a strip in the column header, which hid the one
+dish people walk across campus for. Now `bsdm/build.py` gives each service a `specials` list of
+ordinary dish refs next to `daily`, and `column()` renders them first, whatever meat-first does to
+the rest, as a `.card-special`. A dish the menu also lists is shown once, as the special, and keeps
+the menu's ingredients. `catalog.build()` must set `placeholder: False` on them: an empty ingredient
+list is what `is_placeholder()` reads as "changes daily", which would skip the picture.
 
 **The specials poster is read geometrically, and that is not fussiness.** Text order in the PDF is
 meaningless -- one entry's two lines are not adjacent to each other in it, and a note drawn on top
@@ -152,8 +156,9 @@ ever run on a Saturday. Five editions spanning a year all parse; check a new one
 **The poster and the menu disagree about who is open, and the menu wins.** Bars run Monday to
 Friday even in a week where seven halls reopen on the Tuesday -- the poster says so in a separate
 block drawn over the top. `bsdm/build.py` resolves it by only ever attaching a special to a day the
-scraped menus show that hall serving that meal, and `web/app.js` only shows one when the selected
-meal matches the calendar's. Do not try to derive it from the PDF's z-order.
+scraped menus show that hall serving that meal -- filed under the calendar's meal, so the page
+needs no meal guard of its own. Campus-wide notes stay `notices`, checked against the meal in
+`web/app.js`. Do not try to derive it from the PDF's z-order.
 
 **An unreadable poster is still archived.** The hours page links one fortnight at a time, so an
 edition nobody fetched while it was up is gone for good -- worse than the menus, which at least
