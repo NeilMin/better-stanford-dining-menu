@@ -89,7 +89,9 @@
         "; hours and addresses from ",
         a("https://rde.stanford.edu/dining-hospitality/dining-locations-hours",
           "Dining Locations & Hours"),
-        `. Built ${built}.`,
+        `. Built ${built}. `,
+        a("https://github.com/NeilMin/better-stanford-dining-menu", "Source on GitHub"),
+        ".",
       ],
       footerNote: (strong) => [
         strong("Dish photographs are AI-generated from each dish's name and ingredient list."),
@@ -145,6 +147,9 @@
         a("https://rde.stanford.edu/dining-hospitality/dining-locations-hours",
           "Dining Locations & Hours"),
         `。构建于 ${built}。`,
+        "源代码见 ",
+        a("https://github.com/NeilMin/better-stanford-dining-menu", "GitHub"),
+        "。",
       ],
       footerNote: (strong) => [
         strong("菜品照片由 AI 根据菜名和配料表生成。"),
