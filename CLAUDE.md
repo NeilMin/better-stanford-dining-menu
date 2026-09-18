@@ -82,6 +82,13 @@ declared three times over; `today()` is Pacific because the nightly job runs at 
 is 23:20 the previous day in California, and a UTC reading would archive a day still being served
 and leave the board short of it.
 
+**A build with no live day refuses to run; a build where nobody is serving publishes.** They look
+alike and are not: a break is a day whose `halls` are empty and the board should say so, while an
+empty `live/` means the scrape did not run and the answer is to fix the scrape. `build()` used to
+fall back to the newest seven days on file, which turned a broken scraper into a site quietly
+serving last week's dinner — and, worse, replaced a good deploy with it. Never reach backwards for
+data to publish.
+
 **`catalog.build()` accumulates, it does not re-derive.** It reads a window, not the whole
 archive, so anything outside that window survives only through `previous` — the carry-over at the
 bottom of `build()`. `min_order` is merged *above* the rules rather than below them because it is

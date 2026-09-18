@@ -54,12 +54,27 @@ def build_payload(root: Path) -> dict:
     stations_path = root / "data" / "stations.json"
     station_table = json.loads(stations_path.read_text()) if stations_path.exists() else {}
 
-    # Only the live window is read. The filter below still stands, because
+    # Only the live window is read. The filter still stands after it, because
     # live/ is swept by the scrape and a build run the next morning on an
     # unscraped checkout would otherwise publish yesterday as today.
     days = [json.loads(p.read_text()) for p in menuslib.live(root)]
     today = menuslib.today().isoformat()
-    days = [d for d in days if d["date"] >= today] or days[-7:]
+    days = [d for d in days if d["date"] >= today]
+
+    # A day the halls serve nothing is a day with no dishes in it, and it
+    # publishes: over a break the board should say the halls are shut. Having
+    # no day at all is a different thing -- the scrape did not run, or did not
+    # finish -- and the answer to that is to fix the scrape, not to reach back
+    # for the last week that worked and publish it as though it were this one.
+    # This used to fall back to the newest seven days on file, which turned a
+    # broken scraper into a site quietly serving last week's dinner.
+    if not days:
+        raise SystemExit(
+            f"No menus for {today} or later in {menuslib.live_dir(root)}.\n"
+            "Nothing was scraped, so there is nothing to publish: run "
+            "`make update`. Refusing to build rather than replace a good site "
+            "with an empty one."
+        )
     window = [d["date"] for d in days]
 
     halls_by_id = {h["id"]: h for h in config["halls"]}
