@@ -1,8 +1,8 @@
 # Everything except `images` runs without a GPU, which is what CI relies on.
 PY := uv run python
 
-.PHONY: all test update images logos logos-check specials translate site serve clean \
-        hours-diff hours-accept verify catalog
+.PHONY: all test update images images-todo logos logos-check specials translate site serve \
+        clean hours-diff hours-accept verify catalog source-check
 
 all: update site           ## scrape the week and rebuild the site
 
@@ -14,6 +14,9 @@ update:                    ## scrape the rolling 7-day menu window
 
 images:                    ## draw the dishes still missing pictures (needs local ComfyUI)
 	$(PY) scripts/gen_images.py
+
+images-todo:               ## print the dishes still waiting for a picture
+	$(PY) scripts/notify_images.py --dry-run
 
 logos:                     ## cut the hall logos out of the R&DE map into data/logos/
 	$(PY) scripts/fetch_logos.py

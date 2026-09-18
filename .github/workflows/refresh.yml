@@ -11,7 +11,8 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: write   # the night's menus
+  issues: write     # the standing backlog of dishes with no picture
 
 jobs:
   refresh:
@@ -51,6 +52,19 @@ jobs:
       # publish is on its way, so going red costs nothing but the tick.
       - name: Check what the source is offering
         run: uv run python scripts/check_source.py
+
+      # After the source check, and always(), so neither swallows the other: a
+      # failed step stops the ones that follow it, and both of these are here to
+      # say something a person has to act on. Drawing a dish needs a GPU CI does
+      # not have, so this one cannot be fixed by the job -- it keeps a standing
+      # issue instead, and only comments on a night that turned up new dishes.
+      # Nightly mail about a backlog that is twenty dishes deep by nature would
+      # be read exactly as often as a warning in a green log.
+      - name: File the dishes still waiting for a picture
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: uv run python scripts/notify_images.py
 
   # Called, not triggered. A push made with GITHUB_TOKEN deliberately does not
   # fire `on: push`, so without this the daily scrape would commit new menus and

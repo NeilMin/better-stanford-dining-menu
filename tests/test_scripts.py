@@ -22,6 +22,7 @@ update = load_script("update")
 gen_images = load_script("gen_images")
 translate = load_script("translate")
 check_source = load_script("check_source")
+notify_images = load_script("notify_images")
 
 
 class TestScheduledMeals:
@@ -53,6 +54,13 @@ class TestScheduledMeals:
                     date(2026, 9, 20), date(2026, 9, 14)):
             assert update.scheduled_meals(self.HALL, day) == \
                 set(buildlib.schedule_for(self.HALL, day)), day
+
+
+class TestDrawOrder:
+    def test_the_queue_and_the_backlog_are_ordered_by_the_same_rule(self):
+        """gen_images draws in this order and the issue lists in it. One rule."""
+        from bsdm import pending as pendinglib
+        assert gen_images.rank is pendinglib.rank
 
 
 class TestSeed:
@@ -227,6 +235,114 @@ class TestCheckSource:
         project.add_hall("wilbur", menu_key="Wilbur")
         code, out = self.run_in(project, monkeypatch, capsys)
         assert code == 0 and "run scripts/update.py first" in out
+
+
+class TestNotifyImages:
+    """Drawing needs a GPU, so the nightly job can only ask. The whole design is
+    in which of these calls sends mail: a body edit does not, a comment does, and
+    twenty new dishes a night is the normal state of a rotating menu."""
+
+    def run_in(self, project, monkeypatch, capsys, issues=(), **kwargs):
+        """main() with `gh` replaced by a recorder, so no test files an issue."""
+        calls = []
+
+        def fake_gh(*args, stdin=None):
+            calls.append((args, stdin))
+            if args[:2] == ("repo", "view"):
+                return json.dumps({"owner": {"login": "neil"}})
+            if args[:2] == ("issue", "list"):
+                return json.dumps(list(issues))
+            if args[:2] == ("issue", "create"):
+                return "https://github.com/neil/x/issues/7\n"
+            return ""
+
+        monkeypatch.setattr(notify_images, "ROOT", project.root)
+        monkeypatch.setattr(notify_images, "gh", fake_gh)
+        monkeypatch.setattr("sys.argv", ["notify_images.py"] + list(kwargs.get("argv", [])))
+        code = notify_images.main()
+        return code, capsys.readouterr().out, calls
+
+    def waiting(self, project, *names):
+        project.write_catalog({
+            f"{i:02x}": {"name": n, "priority": 0, "min_order": i, "image": None,
+                         "needs_image": True, "first_seen": "2026-09-20"}
+            for i, n in enumerate(names)})
+
+    def verbs(self, calls):
+        return [" ".join(args[:2]) for args, _ in calls]
+
+    def test_the_first_night_files_the_issue_and_assigns_it(self, project, monkeypatch, capsys):
+        self.waiting(project, "Bulgogi")
+        code, out, calls = self.run_in(project, monkeypatch, capsys)
+        assert code == 0 and "issues/7" in out
+        assert "issue create" in self.verbs(calls)
+        body = next(stdin for args, stdin in calls if args[:2] == ("issue", "create"))
+        assert "Bulgogi" in body and "cc @neil" in body
+        assert any("--add-assignee" in args for args, _ in calls), "so GitHub mails the owner"
+
+    def test_a_night_with_nothing_new_edits_the_body_and_says_nothing(self, project,
+                                                                      monkeypatch, capsys):
+        self.waiting(project, "Bulgogi")
+        from bsdm import pending as pendinglib
+        open_issue = {"number": 7, "state": "OPEN",
+                      "body": pendinglib.body(pendinglib.wanted(project.root))}
+        code, out, calls = self.run_in(project, monkeypatch, capsys, issues=[open_issue])
+        assert code == 0 and "nothing new tonight" in out
+        assert "issue edit" in self.verbs(calls)
+        assert "issue comment" not in self.verbs(calls), "an edit sends no mail; that is the point"
+
+    def test_a_dish_the_body_has_never_carried_is_worth_a_comment(self, project,
+                                                                  monkeypatch, capsys):
+        self.waiting(project, "Bulgogi", "Gyro Chicken")
+        open_issue = {"number": 7, "state": "OPEN", "body": "<!-- bsdm:images 00 -->"}
+        code, out, calls = self.run_in(project, monkeypatch, capsys, issues=[open_issue])
+        assert code == 0 and "1 new tonight" in out
+        said = next(stdin for args, stdin in calls if args[:2] == ("issue", "comment"))
+        assert "@neil" in said and "Gyro Chicken" in said
+        assert "Bulgogi" not in said, "it says what arrived, not what is still waiting"
+
+    def test_new_dishes_reopen_an_issue_somebody_closed(self, project, monkeypatch, capsys):
+        self.waiting(project, "Bulgogi")
+        closed = {"number": 7, "state": "CLOSED", "body": ""}
+        code, out, calls = self.run_in(project, monkeypatch, capsys, issues=[closed])
+        assert code == 0 and "Reopened #7" in out
+        assert "issue reopen" in self.verbs(calls)
+
+    def test_an_empty_backlog_closes_the_issue(self, project, monkeypatch, capsys):
+        project.write_catalog({})
+        open_issue = {"number": 7, "state": "OPEN", "body": ""}
+        code, out, calls = self.run_in(project, monkeypatch, capsys, issues=[open_issue])
+        assert code == 0 and "Closed #7" in out
+        assert "issue close" in self.verbs(calls)
+
+    def test_nothing_waiting_and_nothing_filed_is_not_an_issue_to_open(self, project,
+                                                                      monkeypatch, capsys):
+        project.write_catalog({})
+        code, out, calls = self.run_in(project, monkeypatch, capsys)
+        assert code == 0 and "Nothing is waiting" in out
+        assert "issue create" not in self.verbs(calls)
+
+    def test_a_dry_run_touches_nothing(self, project, monkeypatch, capsys):
+        self.waiting(project, "Bulgogi")
+        code, out, calls = self.run_in(project, monkeypatch, capsys, argv=["--dry-run"])
+        assert code == 0 and "Bulgogi" in out and calls == []
+
+    def test_github_being_unreachable_is_the_one_thing_worth_going_red_for(self, project,
+                                                                          monkeypatch, capsys):
+        """A backlog nobody was told about is the failure this exists to prevent.
+
+        It is the last step of the night and runs on always(), so a red here
+        costs the tick and nothing else -- the menus are long committed.
+        """
+        self.waiting(project, "Bulgogi")
+
+        def broken(*args, stdin=None):
+            raise notify_images.GhError("gh: could not authenticate")
+
+        monkeypatch.setattr(notify_images, "ROOT", project.root)
+        monkeypatch.setattr(notify_images, "gh", broken)
+        monkeypatch.setattr("sys.argv", ["notify_images.py"])
+        assert notify_images.main() == 1
 
 
 class TestVerifyStored:

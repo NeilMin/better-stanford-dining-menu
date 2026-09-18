@@ -14,6 +14,7 @@ make update        # scrape the rolling 7-day window -> data/menus/, data/statio
                    #   and follow the specials link on the hours page -> data/specials/
 make catalog       # re-derive data/dishes.json from stored menus, then rebuild the site
 make images        # draw dishes still missing pictures (needs local ComfyUI on :8189)
+make images-todo   # print the dishes still waiting for a picture (what the nightly job files)
 make logos         # cut the hall logos out of the R&DE map -> data/logos/
 make specials      # fetch the specials calendar on its own
 make translate     # fill in data/zh.json (needs the claude CLI; never runs in CI)
@@ -42,6 +43,7 @@ uv run python scripts/verify.py --fresh-session     # new session per hall, isol
 uv run python scripts/gen_images.py --only bulgogi --force   # redraw one dish
 uv run python scripts/gen_images.py --max-priority 0         # meat only
 uv run python scripts/gen_images.py --redraw-stale           # images drawn under older prompt rules
+uv run python scripts/notify_images.py --dry-run             # the backlog issue, printed not filed
 uv run python scripts/translate.py --section dishes --batch 30   # retry names after a dropped batch
 uv run python scripts/fetch_specials.py --show                   # every calendar on file
 uv run python scripts/fetch_specials.py --dry-run FILE.pdf       # parse a poster, print nothing
@@ -136,6 +138,22 @@ next run picks it up.
 `claude` CLI, so it happens on a laptop and arrives as a commit, exactly like images. New dishes
 show their English name in Chinese mode until then; `scripts/update.py` prints how many are
 waiting.
+
+**The picture backlog is an issue, and must not become a red run.** `bsdm/source.py` owns red and
+it means a hall needs a config entry *tonight* or its menus are lost; a dish without a picture is
+what every new dish looks like for its first day or two, around twenty a night. So
+`scripts/notify_images.py` keeps one standing GitHub issue instead: the body is the whole backlog
+rewritten nightly, and a comment — the only part that sends mail, which is why it @-mentions the
+owner — is added solely for ids the body was not already carrying. Those ids live in an HTML
+comment inside the body, so GitHub holds the state and `data/` gains nothing; editing or closing
+the issue by hand is safe, and deleting the marker costs one over-full comment and then heals.
+It runs **after** `check_source.py` and with `if: always()`, because a failed step stops the ones
+below it and neither of those two findings may swallow the other.
+
+**`bsdm/pending.py` asks what the board shows, not what the catalog claims.** A dish counts as
+waiting when `needs_image` is set and there is no image file on disk — the same test
+`bsdm/build.py` makes before it renders a thumb. Reading `entry["image"]` alone would go
+quiet exactly when somebody drew the pictures and forgot to `git add data/images`.
 
 **`gen_images.py` must never hold the catalog in memory.** A full backfill runs for hours.
 `record_image()` re-reads `data/dishes.json` and merges only the image fields, because a

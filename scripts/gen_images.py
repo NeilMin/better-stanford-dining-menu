@@ -23,6 +23,7 @@ from PIL import Image  # noqa: E402
 from bsdm import dishes as dishlib  # noqa: E402
 from bsdm.catalog import is_stale  # noqa: E402
 from bsdm.comfy import DEFAULT_URL, MODELS, ComfyClient, ComfyError, to_webp  # noqa: E402
+from bsdm.pending import rank  # noqa: E402
 
 IMAGES = ROOT / "data" / "images"
 CATALOG = ROOT / "data" / "dishes.json"
@@ -94,11 +95,9 @@ def main() -> int:
 
     IMAGES.mkdir(parents=True, exist_ok=True)
     # Meat first, then other mains, then sides; within a tier, whatever R&DE
-    # lists earliest on the menu.
-    def rank(kv):
-        e = kv[1]
-        return (e.get("priority", 2), e.get("min_order", 999), e["name"])
-
+    # lists earliest on the menu. Shared with bsdm/pending.py, which reports the
+    # backlog to GitHub: a queue and a to-do list of the same queue that disagree
+    # about the order would be read as one of them being wrong.
     pending = []
     for did, entry in sorted(catalog.items(), key=rank):
         if not entry.get("needs_image") or not entry.get("prompt"):

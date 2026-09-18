@@ -243,6 +243,17 @@ redeploys daily, so menus stay current with your laptop closed. Images are the e
 they need a local GPU, so you generate them locally and commit them, and the site shows a
 labelled placeholder for any dish whose picture has not landed yet.
 
+Which means the nightly job has to be able to ask for something it cannot do itself. It keeps
+one standing issue, *Dishes waiting for a picture*: the body is the current backlog, rewritten
+every night, and it comments — mentioning you, so the mail arrives whatever the repo is watched
+at — only on a night that turned up dishes nobody has drawn. Editing the body sends nothing,
+deliberately: twenty new dishes a night is the normal state of a rotating menu, and a nightly
+ping would be read exactly as often as a warning in a green log. The same list, locally:
+
+```sh
+make images-todo
+```
+
 Two workflows: `refresh.yml` runs on the cron, scrapes, commits `data/`, and then *calls*
 `pages.yml`; `pages.yml` builds and deploys, on any push or when called. The call is not
 decoration — a push made with `GITHUB_TOKEN` deliberately does not fire `on: push`, so a
