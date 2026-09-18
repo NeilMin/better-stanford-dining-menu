@@ -9,6 +9,7 @@ This file covers the invariants that are easy to break and only visible across s
 
 ```sh
 uv sync
+make test          # the suite: no network, no GPU, ~2s
 make update        # scrape the rolling 7-day window -> data/menus/, data/stations.json, data/dishes.json
                    #   and follow the specials link on the hours page -> data/specials/
 make catalog       # re-derive data/dishes.json from stored menus, then rebuild the site
@@ -24,10 +25,18 @@ make source-check  # is R&DE offering a hall config/halls.json has never heard o
 make logos-check   # has R&DE redrawn the map the logo crop boxes point into?
 ```
 
-There is no test suite. `make verify` is the correctness check that matters: it re-fetches from
-the live source and diffs against `data/`. Narrow it while iterating:
+`make test` is the suite. It runs in `pages.yml` *before* the build, for the same reason
+`build()` refuses to fall back to last week's menus: the site is published straight off `data/`,
+and a deploy that replaces a good site with a wrong one is worse than a deploy that does not
+happen. The scrape commits `data/` either way, so a red suite costs the tick and nothing else.
+
+`make verify` is the other half and the suite cannot replace it: it re-fetches from the live
+source and diffs against `data/`. Narrow either while iterating:
 
 ```sh
+uv run pytest tests/test_catalog.py -k min_order
+uv run pytest -m "not golden"                    # skip the tests that read committed data/
+uv run pytest -m "not node"                      # skip the ones that shell out to node
 uv run python scripts/verify.py --day 2026-09-16 --meal Lunch --halls arrillaga,wilbur
 uv run python scripts/verify.py --fresh-session     # new session per hall, isolates dropdown faults
 uv run python scripts/gen_images.py --only bulgogi --force   # redraw one dish
@@ -204,6 +213,37 @@ edition nobody fetched while it was up is gone for good -- worse than the menus,
 have a rolling week. `specials.update()` therefore writes the PDF to `data/specials/` before it
 tries to parse it, records the error on the calendar entry, and returns rather than raising:
 `scripts/update.py` logs it and carries on with the night's menus.
+
+## Tests
+
+The suite is organised around the invariants in this file rather than around the modules, because
+that is where the regressions have been. Conventions worth keeping:
+
+**Every module takes a `root`, so a test builds a miniature project instead of mocking a
+filesystem.** `tests/conftest.py` has the `project` fixture: `add_hall`, `write_menu` /
+`archive_menu`, `write_stations`, `write_catalog`, `write_specials`, `write_zh`. Menus go in
+through those two methods and never by writing a path, for the same reason `bsdm/menus.py` exists
+-- live/ and archive/ are one predicate apart and no test should be the second place it is spelled.
+
+**The clock is pinned with `project.set_today(...)`, which patches two modules.** `bsdm/source.py`
+imports the name rather than the module, so patching `bsdm.menus.today` alone leaves it reading the
+real calendar -- which passes today and fails next year.
+
+**No test may open a socket.** An autouse fixture refuses at `socket.connect`. Every fetch in the
+project has an injection point (`html=` on hours and specials, a session on `MenuScraper`, a blob
+on the logo cutter) and the guard is what keeps them used.
+
+**`golden` marks the tests that read committed artefacts** -- the posters in `data/specials/`, the
+menus, the catalog. They are the only check that five separately-written directories still fit
+together, and they are pinned to the window on disk rather than the wall clock so they keep
+testing the data instead of expiring with it. Adding a poster to the archive extends the parser's
+test suite by itself.
+
+**`node` marks the tests that run `web/app.js`.** It is one IIFE that reads the DOM on its first
+line, so `tests/jsbridge.py` slices a declaration out of the file by name and evaluates it alone,
+with what it closes over supplied as a prelude. Brittle on purpose: renaming a function there is a
+failure with a message, not a silent skip. What it is guarding is the tokenizer pair above, which
+has no other way to be checked at all.
 
 ## Frontend
 

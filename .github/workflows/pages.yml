@@ -35,6 +35,15 @@ jobs:
         with:
           enable-cache: true
 
+      # Before the build, not after: the site is published straight off data/,
+      # and the suite is the only thing that checks the committed artefacts
+      # still fit together. Same argument as build() refusing to fall back to
+      # last week's menus -- a deploy that replaces a good site with a wrong
+      # one is worse than a deploy that does not happen. The scrape commits
+      # data/ either way, so nothing is lost by stopping here.
+      - name: Run the tests
+        run: uv run pytest
+
       - name: Build the site
         run: uv run python scripts/build_site.py
 

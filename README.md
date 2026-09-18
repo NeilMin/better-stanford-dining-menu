@@ -37,6 +37,7 @@ This scrapes all of it and puts the halls next to each other, with a picture of 
 
 ```sh
 uv sync
+make test        # the suite: no network, no GPU
 make update      # scrape the rolling 7-day window into data/menus/, and the specials poster
 make logos       # cut the hall logos out of the R&DE map (once; they rarely change)
 make images      # draw the dishes still missing pictures (needs local ComfyUI)
@@ -95,6 +96,21 @@ Instead `scripts/update.py` fingerprints the page and warns when it changes:
 make hours-diff      # see what moved
 # ...edit config/halls.json to match...
 make hours-accept    # record the new baseline
+```
+
+**Tests.** `make test` runs the suite: no network, no GPU, a couple of seconds. It is organised
+around the invariants rather than the modules -- what a bounded window may carry over, what the
+station split decides about pictures, which day counts as today -- because that is where the
+regressions have been. Two parts of it are worth knowing about: the tests marked `golden` build
+the site out of the checkout's own `data/`, which is the only thing that checks five
+separately-written directories still fit together, and the ones marked `node` run functions
+straight out of `web/app.js`, because the Chinese ingredient list is reassembled by a tokenizer
+that has to match `bsdm/zh.py` exactly. The suite runs in CI before the site is built.
+
+```sh
+make test
+uv run pytest tests/test_catalog.py -k min_order
+uv run pytest -m "not golden"
 ```
 
 **Verifying the scrape.** Most halls run a shared cycle menu, so identical menus across

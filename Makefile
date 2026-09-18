@@ -1,10 +1,13 @@
 # Everything except `images` runs without a GPU, which is what CI relies on.
 PY := uv run python
 
-.PHONY: all update images logos logos-check specials translate site serve clean \
+.PHONY: all test update images logos logos-check specials translate site serve clean \
         hours-diff hours-accept verify catalog
 
 all: update site           ## scrape the week and rebuild the site
+
+test:                      ## run the test suite (no network, no GPU, ~2s)
+	uv run pytest
 
 update:                    ## scrape the rolling 7-day menu window
 	$(PY) scripts/update.py
