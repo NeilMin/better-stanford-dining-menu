@@ -20,6 +20,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Iterable
 
+from bsdm import dishes as dishlib
 from bsdm.menus import TZ
 
 # A name recurring on at least this share of a hall's services is standing.
@@ -33,11 +34,6 @@ MIN_SERVICES = 4
 _NAME_RE = re.compile(
     r"\b(bar|station|counter)\b|^(soup|composed salad|assorted |grilled )", re.I
 )
-
-
-def _is_placeholder(dish: dict) -> bool:
-    ing = (dish.get("ingredients") or "").strip()
-    return not ing or bool(re.match(r"^\s*(chef'?s choice|see |ask )", ing, re.I))
 
 
 def analyze(menu_paths: Iterable[Path]) -> dict:
@@ -70,7 +66,7 @@ def analyze(menu_paths: Iterable[Path]) -> dict:
             standing = ratio >= THRESHOLD
         else:
             dish = samples[(hall, meal, name)]
-            standing = bool(_NAME_RE.search(name)) or _is_placeholder(dish)
+            standing = bool(_NAME_RE.search(name)) or dishlib.is_placeholder(dish)
 
         entry = halls.setdefault(hall, {}).setdefault(
             meal, {"services_observed": observed, "stations": {}}

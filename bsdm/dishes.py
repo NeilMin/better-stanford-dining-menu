@@ -129,7 +129,10 @@ def dish_id(name: str) -> str:
 
 def is_placeholder(dish) -> bool:
     """True when the menu gives a station name instead of an actual recipe."""
-    ing = _get(dish)("ingredients", "") or ""
+    # Folded first, like every other read of source text in this module: R&DE
+    # writes both apostrophes, and "Chef’s Choice" left unfolded reads as a
+    # recipe and earns the soup of the day a picture of one specific soup.
+    ing = (_get(dish)("ingredients", "") or "").translate(_SMART_QUOTES)
     return not ing.strip() or bool(_PLACEHOLDER_RE.match(ing))
 
 
