@@ -18,15 +18,24 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
+from bsdm import menus as menuslib  # noqa: E402
 from bsdm.scrape import MenuScraper  # noqa: E402
 
 
 def stored(day: str, hall: str, meal: str) -> list[str]:
-    path = ROOT / "data" / "menus" / f"{day}.json"
-    if not path.exists():
-        return []
-    payload = json.loads(path.read_text())
-    return [d["name"] for d in payload["halls"].get(hall, {}).get(meal, [])]
+    """What data/menus holds for that service, wherever the day now lives.
+
+    Both sides are asked, and in that order: a day is in live/ while the source
+    still covers it and in archive/YYYY/MM/ once it has passed, and --day takes
+    either. Reading one fixed path instead is how this silently reported every
+    hall as DIFFERS with nothing stored.
+    """
+    as_date = date.fromisoformat(day)
+    for path in (menuslib.live_path(ROOT, as_date), menuslib.archive_path(ROOT, as_date)):
+        if path.exists():
+            payload = json.loads(path.read_text())
+            return [d["name"] for d in payload["halls"].get(hall, {}).get(meal, [])]
+    return []
 
 
 def main() -> int:
