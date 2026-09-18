@@ -31,7 +31,8 @@ This scrapes all of it and puts the halls next to each other, with a picture of 
   the same recipes — so each column shows the allergens for *that* hall's version.
 - **A Chinese mode.** One switch in the masthead. Dish names come up in Chinese *with* the
   English kept underneath — the sign at the counter still says "Magnolia Boil" — while
-  ingredients, allergens and the interface itself are in Chinese outright.
+  ingredients, allergens and the interface itself are in Chinese outright. A browser that asks for
+  Chinese opens in it, tour and all; everyone else starts in English.
 
 ## Quick start
 

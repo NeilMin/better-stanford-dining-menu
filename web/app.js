@@ -202,6 +202,21 @@
 
   // ---------- preferences ----------
 
+  // Which language the page opens in is the browser's answer, not ours: a
+  // reader whose browser asks for Chinese first is shown Chinese, everyone
+  // else English -- the tour included, since it reads the same table. It
+  // decides the first visit only; after that the switch is a preference and a
+  // saved one wins. `UI` is the list of languages the page actually speaks, so
+  // a browser asking for a third one falls through to English.
+  function preferredLang() {
+    const asked = navigator.languages?.length ? navigator.languages : [navigator.language];
+    for (const tag of asked) {
+      const base = String(tag || "").toLowerCase().split("-")[0];
+      if (Object.hasOwn(UI, base)) return base;
+    }
+    return "en";
+  }
+
   const fallback = {
     halls: DATA.defaults.selected.slice(),
     date: DATA.window.includes(TODAY) ? TODAY : DATA.window[0],
@@ -211,7 +226,7 @@
     photos: true,
     stations: true,
     theme: "auto",
-    lang: "en",
+    lang: preferredLang(),
   };
 
   // The date is the one choice that is not remembered: you open the page to see

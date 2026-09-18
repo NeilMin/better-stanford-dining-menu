@@ -115,6 +115,24 @@ class TestPureHelpers:
         assert roundel[1] >= square[1] >= wordmark[1], "taller shapes keep more height"
         assert all(w <= 80 and h <= 36 for w, h in got), "nothing pushes into the name"
 
+    def test_the_first_visit_opens_in_the_browsers_language(self, tmp_path):
+        """Chinese for a browser that asks for Chinese first, English for every
+        other answer -- including a browser that asks for a language the page
+        does not speak, and one that offers English ahead of Chinese."""
+        got = call(["preferredLang"],
+                   "return INPUT.map((asked) => { navigator = { languages: asked, "
+                   "language: asked[0] }; return preferredLang(); });",
+                   payload=[["zh-CN", "en-US"],
+                            ["zh-Hans"],
+                            ["ZH"],
+                            ["en-US", "zh-CN"],
+                            ["fr-FR"],
+                            [],
+                            [None]],
+                   prelude="let navigator;\nconst UI = { en: {}, zh: {} };",
+                   tmp_path=tmp_path)
+        assert got == ["zh", "zh", "zh", "en", "en", "en", "en"]
+
     def test_a_dish_matches_a_diet_only_by_carrying_every_tag(self, tmp_path):
         got = call(["matchesDiet"], "return INPUT.map((tags) => matchesDiet({ tags }));",
                    payload=[["vegan", "halal"], ["vegan"], []],

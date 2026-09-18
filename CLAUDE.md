@@ -272,6 +272,11 @@ JSON block so a dish name cannot close the script tag early.
 - **Bump `STORE` in `web/app.js`** (currently `bsdm.prefs.v4`) whenever the persisted state shape
   changes. Stale localStorage once looked exactly like a scraper bug, because the MCP browser
   shares the user's Chrome profile.
+- **The language of a first visit comes from the browser, not from a constant.** `fallback.lang`
+  is `preferredLang()`: the first tag in `navigator.languages` whose primary subtag is one `UI`
+  has a table for, English otherwise. It is a default, so a saved preference still wins on the
+  way back in and the tour inherits it for free (it reads `t()` like everything else). Adding a
+  third language is a new key in `UI` and nothing here.
 - **The date is deliberately not persisted**; everything else in `state` is. `load()` and `save()`
   both strip it, so old saves that carry one still open on today.
 - **The first-visit tour has its own key, `bsdm.tour.v1`,** set when the tour starts, so Reset and
