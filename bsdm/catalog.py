@@ -92,6 +92,22 @@ def build(menu_dir: Path, station_table: dict, previous: dict | None = None,
         as_daily[did] = as_daily.get(did, 0) + 1
 
     for did, entry in catalog.items():
+        # What earlier runs saw is folded in before any rule reads it. The
+        # catalog is built incrementally -- one run sees the live window, not
+        # every menu ever stored -- so a sighting is only ever added to, never
+        # recomputed from what happens to be on disk now. `min_order` in
+        # particular has to be merged *here* rather than below the rules: it is
+        # the menu position that decides priority, and a dish listed first back
+        # in March would otherwise be demoted to a side the week it stops
+        # appearing near the top.
+        if old := previous.get(did):
+            entry["first_seen"] = min(entry["first_seen"], old.get("first_seen", entry["first_seen"]))
+            entry["min_order"] = min(entry["min_order"], old.get("min_order", 999))
+            entry["image"] = old.get("image")
+            for key in ("generated_at", "model", "seed", "prompt_rev"):
+                if key in old:
+                    entry[key] = old[key]
+
         entry["station_only"] = as_daily.get(did, 0) == 0 and as_station.get(did, 0) > 0
         entry["needs_image"] = not entry["placeholder"] and not entry["station_only"]
         entry["prompt"] = dishlib.image_prompt(entry) if entry["needs_image"] else None
@@ -110,12 +126,17 @@ def build(menu_dir: Path, station_table: dict, previous: dict | None = None,
         else:
             entry["priority"] = 1
 
-        if old := previous.get(did):
-            entry["first_seen"] = min(entry["first_seen"], old.get("first_seen", entry["first_seen"]))
-            entry["image"] = old.get("image")
-            for key in ("generated_at", "model", "seed", "prompt_rev"):
-                if key in old:
-                    entry[key] = old[key]
+    # A dish absent from the menus read this run is carried over whole, fields
+    # and all. The catalog is an index of every dish ever seen, not of the ones
+    # on the board this week: the pictures in data/images/ are keyed to it, and
+    # a dish that drops off the menu for a fortnight must not take its picture
+    # out of the index and come back a stranger with an hour of GPU time owing.
+    # Carried over *after* the rules above, never through them -- with no
+    # sighting this run there is nothing to recompute from, and `station_only`
+    # would flip to False and queue a picture for a standing counter.
+    for did, old in previous.items():
+        if did not in catalog:
+            catalog[did] = dict(old)
 
     return catalog
 
