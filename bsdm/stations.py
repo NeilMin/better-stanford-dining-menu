@@ -18,9 +18,9 @@ import json
 import re
 from datetime import datetime
 from pathlib import Path
-from zoneinfo import ZoneInfo
+from typing import Iterable
 
-TZ = ZoneInfo("America/Los_Angeles")
+from bsdm.menus import TZ
 
 # A name recurring on at least this share of a hall's services is standing.
 THRESHOLD = 0.6
@@ -40,13 +40,18 @@ def _is_placeholder(dish: dict) -> bool:
     return not ing or bool(re.match(r"^\s*(chef'?s choice|see |ask )", ing, re.I))
 
 
-def analyze(menu_dir: Path) -> dict:
-    """Build the per-(hall, meal) station table from all menus on disk."""
+def analyze(menu_paths: Iterable[Path]) -> dict:
+    """Build the per-(hall, meal) station table over the menus handed in.
+
+    The caller picks the window -- menus.recent() nightly -- because a standing
+    counter is a claim about what a hall is doing lately, not about everything
+    it ever did.
+    """
     appearances: collections.Counter = collections.Counter()
     services: collections.Counter = collections.Counter()
     samples: dict[tuple[str, str, str], dict] = {}
 
-    files = sorted(menu_dir.glob("*.json"))
+    files = sorted(menu_paths)
     for path in files:
         day = json.loads(path.read_text())
         for hall, meals in day["halls"].items():

@@ -9,6 +9,7 @@ from __future__ import annotations
 import json
 import re
 from pathlib import Path
+from typing import Iterable
 
 from bsdm import dishes as dishlib
 from bsdm import stations as stationlib
@@ -32,9 +33,13 @@ def _is_minor(name: str) -> bool:
     return bool(_MINOR_RE.search(name))
 
 
-def build(menu_dir: Path, station_table: dict, previous: dict | None = None,
+def build(menu_paths: Iterable[Path], station_table: dict, previous: dict | None = None,
           specials: list[dict] = ()) -> dict:
-    """Replay every stored menu, and every special on file, through the current rules.
+    """Replay the menus handed in, and every special on file, through the current rules.
+
+    The caller picks the window -- menus.recent() nightly, menus.history() for a
+    full replay. Whatever is not in it survives through `previous`: see the
+    carry-over at the bottom.
 
     Image fields already earned are carried over, so retuning is free.
     `specials` is specials.dishes(): the poster gives a name and nothing else,
@@ -48,7 +53,7 @@ def build(menu_dir: Path, station_table: dict, previous: dict | None = None,
     as_station: dict[str, int] = {}
     as_daily: dict[str, int] = {}
 
-    for path in sorted(menu_dir.glob("*.json")):
+    for path in sorted(menu_paths):
         day = json.loads(path.read_text())
         for hall, meals in day["halls"].items():
             for meal, served in meals.items():

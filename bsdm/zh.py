@@ -20,6 +20,8 @@ import json
 import re
 from pathlib import Path
 
+from bsdm import menus as menuslib
+
 # The separators an ingredient list is built from, kept in the split so the page
 # can put the list back together with Chinese punctuation. Source text is not
 # always balanced -- a few strings open a parenthesis and never close it, and one
@@ -107,8 +109,11 @@ def wanted(root: Path) -> dict[str, dict[str, str]]:
     catalog = json.loads((root / "data" / "dishes.json").read_text())
     names = {did: entry["name"] for did, entry in catalog.items()}
 
+    # Every menu ever stored, not the live window: a term seen once and never
+    # answered for -- a dropped batch, a run that never happened -- has to stay
+    # on the list, or it silently never gets asked about again.
     terms: dict[str, str] = {}
-    for path in sorted((root / "data" / "menus").glob("*.json")):
+    for path in menuslib.history(root):
         day = json.loads(path.read_text())
         for meals in day["halls"].values():
             for served in meals.values():

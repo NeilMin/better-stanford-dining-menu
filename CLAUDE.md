@@ -41,7 +41,8 @@ uv run python scripts/fetch_logos.py --contact-sheet /tmp/l.png  # eyeball all e
 ## Pipeline order
 
 ```
-data/menus/*.json  ──stations.analyze()──►  data/stations.json
+data/menus/live/ + archive/YYYY/MM/
+                   ──stations.analyze()──►  data/stations.json
                                                    │
                    ──────catalog.build()───────────►  data/dishes.json
                                                    │
@@ -70,6 +71,23 @@ They drifted once — `update.py` kept an inline copy that overwrote `priority`,
 `station_only` and `min_order` on every scrape.
 
 ## Things that will bite you
+
+**`bsdm/menus.py` owns which days a job reads, and the only definition of "today".** `live()` is
+what the board publishes, `recent()` is the bounded window classification is judged over,
+`history()` is every menu ever stored and belongs to explicit replays — `rebuild_catalog.py
+--replay-archive` and the translation table, which has to keep offering a term it saw once and
+never got an answer for. Do not glob `data/menus` directly; the layout is `live/` plus
+`archive/YYYY/MM/` and the predicate that splits them has to stay in one place. `TZ` used to be
+declared three times over; `today()` is Pacific because the nightly job runs at 06:20 UTC, which
+is 23:20 the previous day in California, and a UTC reading would archive a day still being served
+and leave the board short of it.
+
+**`catalog.build()` accumulates, it does not re-derive.** It reads a window, not the whole
+archive, so anything outside that window survives only through `previous` — the carry-over at the
+bottom of `build()`. `min_order` is merged *above* the rules rather than below them because it is
+the menu position that decides `priority`, and taking the minimum over only the window demotes a
+dish that was listed first in March to a side. A dish dropped from the catalog would orphan the
+picture in `data/images/` that is keyed to it and come back a stranger owing an hour of GPU time.
 
 **`bsdm/zh.py` and `web/app.js` tokenize ingredient strings twice, on purpose.** Python decides
 which terms to send for translation; the browser splits the same string again to reassemble the

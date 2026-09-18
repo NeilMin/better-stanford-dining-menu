@@ -50,9 +50,10 @@ make serve       # preview at http://127.0.0.1:8777
 ## How it fits together
 
 ```
-R&DE menu app  ─┐                          ┌─►  data/menus/YYYY-MM-DD.json  (one file per day)
-                ├── scripts/update.py ─────┼─►  data/dishes.json            (catalog + images)
-R&DE hours page ┘  (and the specials PDF   └─►  data/specials/*.pdf + data/specials.json
+R&DE menu app  ─┐                          ┌─►  data/menus/live/YYYY-MM-DD.json   (what ships)
+                ├── scripts/update.py ─────┼─►  data/menus/archive/YYYY/MM/…     (what has passed)
+R&DE hours page ┘  (and the specials PDF   ├─►  data/dishes.json                 (catalog + images)
+                    it links to)           └─►  data/specials/YYYY/MM/*.pdf + data/specials.json
                     it links to)                                │
 R&DE halls map ─── scripts/fetch_logos.py ──►  data/logos/<hallId>.webp
                                                                 │
@@ -63,6 +64,17 @@ claude CLI     ─── scripts/translate.py ────►  data/zh.json     
                    scripts/build_site.py ───────────────────────►  site/index.html
                                                                    site/img/ + site/logo/
 ```
+
+**Live and archive.** R&DE offers today..today+6 and nothing behind it, so a day not scraped
+while it was up is gone and `data/menus/` is the only copy of it that will ever exist. But the
+board shows only what the source still covers. Those two jobs are separated on disk rather than
+in memory: `live/` is the window the site publishes, `archive/YYYY/MM/` is everything that has
+passed, and `bsdm/menus.py` owns both the split and the definition of "today" that draws it —
+Pacific, because that is the day the halls are serving and because the nightly job runs at 23:20
+California time, where a UTC reading would archive a day still being served. Each job then asks
+for the window it wants: the board takes `live()`, classification takes a bounded `recent()`, and
+only an explicit replay walks `history()`. The archive is append-only — the scrape window starts
+at today, so a day that has passed is never rewritten.
 
 **Scraping.** The menu app is ASP.NET WebForms, so a query is a POST carrying `__VIEWSTATE` and
 `__EVENTVALIDATION` harvested from the previous response, not a URL. Tokens rotate per response,

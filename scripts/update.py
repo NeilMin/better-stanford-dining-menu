@@ -18,6 +18,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
 from bsdm import hours as hourslib  # noqa: E402
+from bsdm import menus as menuslib  # noqa: E402
 from bsdm.catalog import build as build_catalog, summarize as summarize_catalog  # noqa: E402
 from bsdm.scrape import MenuScraper  # noqa: E402
 from bsdm import specials as specialslib  # noqa: E402
@@ -86,7 +87,7 @@ def main() -> int:
     days = scraper.available_days()
     log.info("Window: %s .. %s (%d days), %d halls", days[0], days[-1], len(days), len(halls))
 
-    menus_dir = ROOT / "data" / "menus"
+    menus_dir = menuslib.live_dir(ROOT)
     menus_dir.mkdir(parents=True, exist_ok=True)
     now = datetime.now(TZ).isoformat(timespec="seconds")
 
@@ -126,9 +127,16 @@ def main() -> int:
         log.info("%s  %d halls open, %d services", day, open_halls,
                  sum(len(v) for v in payload["halls"].values()))
 
+    # The window has rolled on, so days that have gone by leave live/ before
+    # anything reads it. Nothing written above is a candidate: the scrape starts
+    # at today.
+    if moved := menuslib.archive_past(ROOT):
+        log.info("Archived %d day(s): %s .. %s", len(moved),
+                 moved[0].stem, moved[-1].stem)
+
     # Stations first: which entries are standing counters decides which dishes
     # need pictures, so the catalog is derived after the table exists.
-    table = analyze_stations(menus_dir)
+    table = analyze_stations(menuslib.recent(ROOT))
     (ROOT / "data" / "stations.json").write_text(
         json.dumps(table, indent=1, ensure_ascii=False, sort_keys=True) + "\n"
     )
@@ -190,7 +198,7 @@ def main() -> int:
     # Same code path as scripts/rebuild_catalog.py, so scraping and rebuilding
     # cannot drift apart. After the specials, which are dishes too: a poster
     # fetched tonight has to be in the catalog tonight to queue its pictures.
-    catalog = build_catalog(menus_dir, table, previous, specialslib.dishes(ROOT))
+    catalog = build_catalog(menuslib.recent(ROOT), table, previous, specialslib.dishes(ROOT))
     catalog_path.write_text(json.dumps(catalog, indent=1, ensure_ascii=False, sort_keys=True) + "\n")
 
     log.info("Scraped %d services / %d dish rows", total_services, total_dishes)

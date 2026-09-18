@@ -355,12 +355,21 @@ def save(root: Path, store: dict) -> None:
 
 
 def _archive_name(url: str, parsed: dict | None) -> str:
+    """Where a poster is filed, relative to data/specials/.
+
+    Filed under the fortnight it covers rather than the night it was fetched,
+    in YYYY/MM as the menus are, so that a couple of years of them stays
+    legible in a listing. An edition too reshaped to read has no dates to file
+    it under and goes in undated/ until someone works out what it says.
+    """
     # R&DE sometimes hangs a ?t=<timestamp> cache-buster off these, which is not
     # part of the name of anything.
     base = unquote(url.rsplit("/", 1)[-1]).split("?")[0].removesuffix(".pdf")
     stem = re.sub(r"[^A-Za-z0-9]+", "-", base).strip("-") or "specials"
-    prefix = (parsed or {}).get("from") or "undated"
-    return f"{prefix}_{stem}.pdf"
+    start = (parsed or {}).get("from")
+    if not start:
+        return f"undated/undated_{stem}.pdf"
+    return f"{start[:4]}/{start[5:7]}/{start}_{stem}.pdf"
 
 
 def update(root: Path, config: dict, *, force: bool = False,
@@ -393,8 +402,9 @@ def update(root: Path, config: dict, *, force: bool = False,
     # Archived whichever way it went: the page only ever points at the current
     # fortnight, so an unparsed poster is still the only copy that will exist.
     name = _archive_name(url, parsed)
-    archive_dir(root).mkdir(parents=True, exist_ok=True)
-    (archive_dir(root) / name).write_bytes(blob)
+    out = archive_dir(root) / name
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_bytes(blob)
 
     record = {"url": url, "file": name, "sha256": digest,
               "fetched_at": dt.datetime.now(dt.timezone.utc)

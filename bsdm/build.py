@@ -10,13 +10,12 @@ import json
 import shutil
 from datetime import date, datetime
 from pathlib import Path
-from zoneinfo import ZoneInfo
 
 from bsdm import logos as logolib
+from bsdm import menus as menuslib
 from bsdm import specials as specialslib
 from bsdm import zh as zhlib
-
-TZ = ZoneInfo("America/Los_Angeles")
+from bsdm.menus import TZ
 
 # The domain the site is served from. Written into the artifact as CNAME on
 # every build; see the note where it is written.
@@ -55,10 +54,11 @@ def build_payload(root: Path) -> dict:
     stations_path = root / "data" / "stations.json"
     station_table = json.loads(stations_path.read_text()) if stations_path.exists() else {}
 
-    menu_files = sorted((root / "data" / "menus").glob("*.json"))
-    days = [json.loads(p.read_text()) for p in menu_files]
-    # Only publish the days the source site still covers.
-    today = datetime.now(TZ).date().isoformat()
+    # Only the live window is read. The filter below still stands, because
+    # live/ is swept by the scrape and a build run the next morning on an
+    # unscraped checkout would otherwise publish yesterday as today.
+    days = [json.loads(p.read_text()) for p in menuslib.live(root)]
+    today = menuslib.today().isoformat()
     days = [d for d in days if d["date"] >= today] or days[-7:]
     window = [d["date"] for d in days]
 

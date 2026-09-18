@@ -10,11 +10,12 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
+from bsdm import menus as menuslib  # noqa: E402
 from bsdm.stations import analyze  # noqa: E402
 
 
 def main() -> int:
-    table = analyze(ROOT / "data" / "menus")
+    table = analyze(menuslib.recent(ROOT))
     out = ROOT / "data" / "stations.json"
     out.write_text(json.dumps(table, indent=1, ensure_ascii=False, sort_keys=True) + "\n")
 
