@@ -146,6 +146,24 @@ class TestPureHelpers:
                    tmp_path=tmp_path)
         assert got == [False, True, True, False]
 
+    def test_the_columns_come_out_in_the_order_the_chips_are_in(self, tmp_path):
+        """The board reads state.halls straight through, so the order the halls
+        are picked in must not be the order they are laid out in: a click order
+        puts a hall picked last on the right of the board while its chip sits
+        on the left. Unknown ids drop out on the way."""
+        got = call(["hallOrder"], "return INPUT.map((ids) => hallOrder(ids));",
+                   payload=[["wilbur", "arrillaga"],
+                            ["arrillaga", "wilbur"],
+                            ["wilbur", "gone", "branner"],
+                            []],
+                   prelude="const DATA = { halls: [{ id: 'arrillaga' }, { id: 'branner' }, "
+                           "{ id: 'wilbur' }] };",
+                   tmp_path=tmp_path)
+        assert got == [["arrillaga", "wilbur"],
+                       ["arrillaga", "wilbur"],
+                       ["branner", "wilbur"],
+                       []]
+
     def test_a_dish_matches_a_diet_only_by_carrying_every_tag(self, tmp_path):
         got = call(["matchesDiet"], "return INPUT.map((tags) => matchesDiet({ tags }));",
                    payload=[["vegan", "halal"], ["vegan"], []],

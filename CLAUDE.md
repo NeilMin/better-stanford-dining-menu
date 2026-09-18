@@ -332,6 +332,11 @@ JSON block so a dish name cannot close the script tag early.
   window.** `min()` over the two offsets picks between them with no branch, and they agree at
   three halls. Centring a short board instead would leave the title and the chips above it
   hanging off a left edge of their own, which reads as a bug — it was built that way once.
+- **The columns are in chip order, not in click order.** The board reads `state.halls` straight
+  through, so `hallOrder()` keeps that list sorted by `DATA.halls` — on the way in from storage
+  and again on every toggle — and a hall picked last slots in where its chip sits rather than
+  appearing on the right of the board. Filtering against `DATA.halls` is also what drops a stored
+  id the build no longer publishes, which `render()` would otherwise crash on.
 - **A dish card leads with its picture,** so the pictures in one row start level across the halls
   however many lines the names above them would have taken. `dishCard()` appends the thumb before
   the name block.

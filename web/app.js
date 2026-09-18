@@ -252,13 +252,23 @@
 
   const state = load();
 
-  // The defaults are filtered too, not just the stored selection: over a break
-  // the build publishes a window in which no hall serves anything, and handing
-  // render() a hall id that is not in the data is a crash, not an empty board.
-  state.halls = state.halls.filter((id) => hallById.has(id));
-  if (!state.halls.length) {
-    state.halls = DATA.defaults.selected.filter((id) => hallById.has(id));
-  }
+  // The board lays its columns out in the order state.halls carries and the
+  // chips are laid out in DATA.halls order, so the selection is kept in that
+  // one order rather than in the order it was clicked: a hall picked last
+  // slots its column in where its chip sits, which is what the row of chips
+  // above the board says it will do.
+  //
+  // Unknown ids drop out of the filter for free, and that matters for the
+  // defaults as much as for a stored selection: over a break the build
+  // publishes a window in which no hall serves anything, and handing render()
+  // a hall id that is not in the data is a crash, not an empty board.
+  const hallOrder = (ids) => {
+    const want = new Set(ids);
+    return DATA.halls.filter((h) => want.has(h.id)).map((h) => h.id);
+  };
+
+  state.halls = hallOrder(state.halls);
+  if (!state.halls.length) state.halls = hallOrder(DATA.defaults.selected);
   if (!UI[state.lang]) state.lang = fallback.lang;
 
   // ---------- helpers ----------
@@ -911,10 +921,9 @@
 
     document.getElementById("halls").replaceChildren(...DATA.halls.map((h) =>
       chip(h.short, state.halls.includes(h.id), () => {
-        const i = state.halls.indexOf(h.id);
-        if (i >= 0) state.halls.splice(i, 1);
-        else state.halls.push(h.id);
-        if (!state.halls.length) state.halls.push(h.id);
+        const picked = new Set(state.halls);
+        if (!picked.delete(h.id)) picked.add(h.id);
+        state.halls = hallOrder(picked.size ? picked : [h.id]);
         render();
       }, { className: "chip-hall", accent: h.accent })));
 
