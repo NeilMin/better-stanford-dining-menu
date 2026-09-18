@@ -1,6 +1,6 @@
 {
  "date": "2026-09-20",
- "scraped_at": "2026-09-17T04:52:39-07:00",
+ "scraped_at": "2026-09-18T04:28:20-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -367,7 +367,9 @@
       "TREENUTS",
       "WHEAT"
      ],
-     "tags": [],
+     "tags": [
+      "halal"
+     ],
      "order": 9
     },
     {
@@ -695,7 +697,9 @@
       "TREENUTS",
       "WHEAT"
      ],
-     "tags": [],
+     "tags": [
+      "halal"
+     ],
      "order": 9
     },
     {
@@ -1070,25 +1074,16 @@
    ],
    "Lunch": [
     {
-     "name": "Crispy Cod Fish Tacos",
-     "recipe_id": "5515269",
+     "name": "Chicken Tinga",
+     "recipe_id": "533742",
      "description": "",
-     "ingredients": "battered cod (cod, wheat flour, canola oil, corn flour, whey (milk), sugar, turmeric, paprika, salt, white pepper, black pepper)",
-     "allergens": [
-      "FISH",
-      "MILK",
-      "SOY",
-      "WHEAT"
+     "ingredients": "chicken tinga (chicken, tinga sauce [tomatoes, garlic, chipotle pepper (contains cornstarch), bell peppers, pasilla chili pepper], adobo marinade [canola oil, chili powder, ancho chili powder, onion, garlic, allspice, clove, cumin seed, oregano, salt])",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "halal"
      ],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "TREENUTS"
-     ],
-     "tags": [],
      "order": 0
     },
     {
@@ -1361,33 +1356,30 @@
    ],
    "Dinner": [
     {
-     "name": "German Chicken Schnitzel",
-     "recipe_id": "GerChxSchn1",
+     "name": "Oxtail Stew",
+     "recipe_id": "5834585",
      "description": "",
-     "ingredients": "chicken, flour, eggs, panko, paprika, garlic powder, onion powder, parsley, lemon zest, olive/canola oil blend, salt, black pepper, lemon wedges",
-     "allergens": [
-      "EGG",
-      "WHEAT"
-     ],
+     "ingredients": "oxtail, onion, carrot, celery, tomato, tomato paste, beef broth, marjoram herb, ground clove, cinnamon",
+     "allergens": [],
      "trace_allergens": [],
      "tags": [
-      "halal"
+      "gluten-free"
      ],
      "order": 0
     },
     {
-     "name": "Plant-Forward Schnitzel",
-     "recipe_id": "PlaForSchn1",
+     "name": "Plant-forward Gumbo",
+     "recipe_id": "3604038",
      "description": "",
-     "ingredients": "meatless breaded \"chicken\" cutlet, paprika, garlic powder, onion powder, parsley, lemon zest, olive/canola oil blend, salt, black pepper, lemon wedges",
+     "ingredients": "soy-based strip (soy protein isolate, gluten, yeast extract, sugar, canola oil,salt, ancient grains flour [kamut, amaranth, millet, quinoa], pea protein, carrot fiber, onion powder, paprika, turmeric), canola/olive oil blend, onion, celery, bell peppers, okra, cajun seasoning, gumbo spice, vegetable soup base (contains celery, mushroom), nutritional yeast, soyrizo links (soy protein, soybean oil, paprika, salt, vinegar, color), chickpea flour, vegan oil spread (palm oil, soybean oil, canola oil, and/or olive oil)",
      "allergens": [
-      "EGG",
-      "MILK",
+      "SOY",
       "WHEAT"
      ],
      "trace_allergens": [],
      "tags": [
-      "vegetarian"
+      "vegan",
+      "halal"
      ],
      "order": 1
     },
@@ -1406,58 +1398,82 @@
      "order": 2
     },
     {
-     "name": "Seasonal Vegetable Board",
-     "recipe_id": "4503514",
+     "name": "Braised Southern Greens",
+     "recipe_id": "BSG99",
      "description": "",
-     "ingredients": "artichokes, asparagus, green beans, beets, bok choy, broccoli, broccolini, brussels sprouts, carrots, cauliflower, mushrooms, okra, peas, bell peppers, chile peppers, potatoes, squash, sunchokes, sweet potatoes, tomatillos, or tomatoes, fresh herbs (chives, cilantro, dill, oregano, parsley, rosemary, sage, salt tarragon, or thyme), salt",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan",
-      "halal"
+     "ingredients": "collard green, cajun, garlic, butter, chicken stock, onion, bell pepper, tasso ham",
+     "allergens": [
+      "MILK"
      ],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "SOY",
+      "TREENUTS",
+      "WHEAT"
+     ],
+     "tags": [],
      "order": 3
     },
     {
-     "name": "Braised Red Cabbage",
-     "recipe_id": "BraiRedCabb1",
+     "name": "BBQ Spaghetti",
+     "recipe_id": "BBQ Spaghetti99",
      "description": "",
-     "ingredients": "red cabbage, apples, onions, olive/canola oil blend, apple cider vinegar, vegetable soup base, sugar, bay leaves, whole cloves, juniper berries, allspice, black pepper, salt, fresh parsley",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan",
-      "halal"
+     "ingredients": "chicken, andouille sausage, tomato sauce, bbq sauce, cajun, onion, bell pepper, garlic, thyme, liquid, smoke, brown sugar, cayenne, parsley",
+     "allergens": [
+      "EGG",
+      "MILK",
+      "SOY",
+      "WHEAT",
+      "TRACEALLERGENS"
      ],
+     "trace_allergens": [
+      "COCONUT",
+      "FISH",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "TREENUTS"
+     ],
+     "tags": [],
      "order": 4
     },
     {
-     "name": "Dill Potato Salad",
-     "recipe_id": "5806724-1",
+     "name": "Jollof Rice",
+     "recipe_id": "4150751",
      "description": "",
-     "ingredients": "potato, mayonnaise (soybean oil, egg yolk, distilled vinegar, mustard seed, salt), sweet relish (pickles, sugar, distilled vinegar, salt, xanthan gum, spices, bell pepper, natural flavoring, turmeric), salt, onion, bell pepper, vinegar, parsley, black pepper, potassium sorbate, guar gum, dill",
-     "allergens": [
-      "EGG",
-      "SOY"
-     ],
+     "ingredients": "basmati rice, tomatoes, green peas, onions, carrots, canola/olive oil blend, tomato paste, ginger, garlic, curry powder, cinnamon stick, cardamom seeds, bay leaf, salt",
+     "allergens": [],
      "trace_allergens": [
-      "SESAME"
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "SOY",
+      "TREENUTS",
+      "WHEAT"
      ],
      "tags": [
-      "gluten-free",
-      "vegetarian"
+      "vegan",
+      "halal"
      ],
      "order": 5
     },
     {
-     "name": "Spätzle",
-     "recipe_id": "Spatzle1",
+     "name": "Fire Cornbread",
+     "recipe_id": "4493130",
      "description": "",
-     "ingredients": "water, enriched wheat flour, eggs, enriched durum wheat flour, wheat gluten, salt, turmeric",
+     "ingredients": "cornmeal, flour, buttermilk, milk, eggs, maple syrup, baking powder, baking soda, sugar, salt",
      "allergens": [
       "EGG",
+      "MILK",
       "WHEAT"
      ],
      "trace_allergens": [],
@@ -1468,20 +1484,117 @@
      "order": 6
     },
     {
-     "name": "Ratsherrenpfanne",
-     "recipe_id": "Ratsherr1",
+     "name": "Creamy Mac & Cheese",
+     "recipe_id": "4233582",
      "description": "",
-     "ingredients": "potatoes, mushrooms, carrots, celery, onions, garlic, butter, olive/canola oil blend, beef-style vegetable soup base, heavy cream, Dijon mustard, paprika, marjoram, thyme, parsley, bay leaf, cornstarch, black pepper, salt, fresh lemon juice",
+     "ingredients": "macaroni, cheese sauce (parmesan cheese, white cheddar cheese, fontina cheese, whole milk, butter, flour, dijon mustard, onions, salt, nutmeg, bay leaf)",
+     "allergens": [
+      "MILK",
+      "WHEAT"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "vegetarian",
+      "halal"
+     ],
+     "order": 7
+    },
+    {
+     "name": "Toffee Citrus Candied Yams",
+     "recipe_id": "ToffCitYams1",
+     "description": "",
+     "ingredients": "orange yams, orange juice, lime juice, lemon juice, brown sugar, honey, cinnamon, vanilla extract, butter, salt",
      "allergens": [
       "MILK"
      ],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
+      "vegetarian"
+     ],
+     "order": 8
+    },
+    {
+     "name": "BBQ Bourbon Sticky Ribs",
+     "recipe_id": "BMSR99",
+     "description": "",
+     "ingredients": "Pork, molasses, garlic, onion, ketchup, brown sugar, liquid smoke, mustard, chili flakes, bourbon sauce",
+     "allergens": [
+      "TRACEALLERGENS"
+     ],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "SOY",
+      "TREENUTS",
+      "WHEAT"
+     ],
+     "tags": [],
+     "order": 9
+    },
+    {
+     "name": "BBQ Meatloaf Sandwich",
+     "recipe_id": "BMS99",
+     "description": "",
+     "ingredients": "beef, egg, parmesan, garlic, panko, butter, cheddar, bbq sauce, bread, caramelized onion, mayo",
+     "allergens": [
+      "EGG",
+      "MILK",
+      "SOY",
+      "WHEAT",
+      "TRACEALLERGENS"
+     ],
+     "trace_allergens": [
+      "COCONUT",
+      "FISH",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "TREENUTS"
+     ],
+     "tags": [],
+     "order": 10
+    },
+    {
+     "name": "Peach Cobbler",
+     "recipe_id": "4598273",
+     "description": "",
+     "ingredients": "peaches, sugar, corn starch, lemon juice, unsalted butter, buttermilk biscuit, nutmeg, cinnamon, salt",
+     "allergens": [
+      "EGG",
+      "MILK",
+      "SESAME",
+      "SOY",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "PEANUTS",
+      "TREENUTS"
+     ],
+     "tags": [
       "vegetarian",
       "halal"
      ],
-     "order": 7
+     "order": 11
+    },
+    {
+     "name": "Roasted Vegetable Board",
+     "recipe_id": "3707664",
+     "description": "",
+     "ingredients": "seasonal vegetables, canola/olive oil blend, thyme, oregano leaf, salt",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan",
+      "halal"
+     ],
+     "order": 12
     },
     {
      "name": "Fried Rice Bar",
@@ -1502,7 +1615,7 @@
       "WHEAT"
      ],
      "tags": [],
-     "order": 8
+     "order": 13
     },
     {
      "name": "Soup of the Day",
@@ -1512,7 +1625,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 9
+     "order": 14
     },
     {
      "name": "Assorted Bread",
@@ -1529,7 +1642,7 @@
       "vegan",
       "halal"
      ],
-     "order": 10
+     "order": 15
     },
     {
      "name": "Composed Salad",
@@ -1541,7 +1654,7 @@
      "tags": [
       "halal"
      ],
-     "order": 11
+     "order": 16
     },
     {
      "name": "Performance Bar",
@@ -1551,7 +1664,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 12
+     "order": 17
     },
     {
      "name": "Craveable Grains",
@@ -1565,7 +1678,7 @@
       "vegan",
       "halal"
      ],
-     "order": 13
+     "order": 18
     },
     {
      "name": "Flavor Forward Legumes",
@@ -1579,7 +1692,7 @@
       "vegan",
       "halal"
      ],
-     "order": 14
+     "order": 19
     },
     {
      "name": "Pasta Marinara",
@@ -1597,7 +1710,7 @@
       "vegan",
       "halal"
      ],
-     "order": 15
+     "order": 20
     },
     {
      "name": "Pasta Alfredo",
@@ -1615,7 +1728,7 @@
       "vegetarian",
       "halal"
      ],
-     "order": 16
+     "order": 21
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -1629,7 +1742,7 @@
       "vegan",
       "halal"
      ],
-     "order": 17
+     "order": 22
     }
    ]
   },
@@ -1998,7 +2111,9 @@
       "TREENUTS",
       "WHEAT"
      ],
-     "tags": [],
+     "tags": [
+      "halal"
+     ],
      "order": 9
     },
     {
@@ -2326,7 +2441,9 @@
       "TREENUTS",
       "WHEAT"
      ],
-     "tags": [],
+     "tags": [
+      "halal"
+     ],
      "order": 9
     },
     {
@@ -2854,7 +2971,9 @@
       "TREENUTS",
       "WHEAT"
      ],
-     "tags": [],
+     "tags": [
+      "halal"
+     ],
      "order": 8
     },
     {
@@ -3182,7 +3301,9 @@
       "TREENUTS",
       "WHEAT"
      ],
-     "tags": [],
+     "tags": [
+      "halal"
+     ],
      "order": 9
     },
     {
@@ -3708,7 +3829,9 @@
       "TREENUTS",
       "WHEAT"
      ],
-     "tags": [],
+     "tags": [
+      "halal"
+     ],
      "order": 8
     },
     {
@@ -3950,7 +4073,9 @@
       "TREENUTS",
       "WHEAT"
      ],
-     "tags": [],
+     "tags": [
+      "halal"
+     ],
      "order": 8
     },
     {
@@ -4359,7 +4484,9 @@
       "TREENUTS",
       "WHEAT"
      ],
-     "tags": [],
+     "tags": [
+      "halal"
+     ],
      "order": 9
     },
     {
@@ -4687,7 +4814,9 @@
       "TREENUTS",
       "WHEAT"
      ],
-     "tags": [],
+     "tags": [
+      "halal"
+     ],
      "order": 9
     },
     {
