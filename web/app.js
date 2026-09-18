@@ -85,6 +85,7 @@
       noService: (meal, day) => `No ${meal.toLowerCase()} service here on ${day}.`,
       noMatch: "Nothing on today's menu matches the filters.",
       noneListed: "Nothing specific listed for today.",
+      allShut: "Every dining hall is closed this week.",
       digest: (b, total, halls, every, unique) => [
         b(total), ` dishes on today's menu across ${halls} halls · `,
         b(every), " at every one · ", b(unique), " at only one.",
@@ -153,6 +154,7 @@
       noService: (meal, day) => `${day}本食堂不供应${MEAL_ZH[meal] || meal}。`,
       noMatch: "今日菜单中没有符合筛选条件的菜品。",
       noneListed: "今日未列出具体菜品。",
+      allShut: "本周各食堂均休息。",
       digest: (b, total, halls, every, unique) => [
         `今天 ${halls} 家食堂共 `, b(total), " 道菜 · 其中 ",
         b(every), " 道家家都有 · ", b(unique), " 道仅此一家。",
@@ -235,8 +237,13 @@
 
   const state = load();
 
+  // The defaults are filtered too, not just the stored selection: over a break
+  // the build publishes a window in which no hall serves anything, and handing
+  // render() a hall id that is not in the data is a crash, not an empty board.
   state.halls = state.halls.filter((id) => hallById.has(id));
-  if (!state.halls.length) state.halls = DATA.defaults.selected.slice();
+  if (!state.halls.length) {
+    state.halls = DATA.defaults.selected.filter((id) => hallById.has(id));
+  }
   if (!UI[state.lang]) state.lang = fallback.lang;
 
   // ---------- helpers ----------
@@ -525,12 +532,23 @@
     }
     board.style.setProperty("--rows", String(1 + cards + (standing ? 1 : 0)));
 
+    // No columns at all means no hall served anything anywhere in the published
+    // window -- a closure, not a fault. Said plainly, because a blank board
+    // looks like something went wrong. Counted before the message is appended,
+    // so the row arithmetic above never sees it.
+    const columns = board.childElementCount;
+    if (!columns) {
+      board.append(el("p", { className: "empty", textContent: t("allShut") }));
+    }
+
     // ...and how many halls are up decides how wide the board asks to be, which
     // on a wide enough screen is wider than the page (--width, in the
     // stylesheet). It goes on the board and nowhere else: the top bar, the title
     // and the chips keep the page's width whatever is selected, because controls
     // that move when you pick a hall are worse than a board you have to scroll.
-    board.style.setProperty("--cols", String(board.childElementCount));
+    // A lone message is laid out as three columns would be, so it reads as a
+    // notice across the board rather than one narrow orphaned card.
+    board.style.setProperty("--cols", String(columns || 3));
 
     renderDigest(spread);
     renderNotices();
@@ -782,6 +800,10 @@
         render();
       }, { className: "chip-hall", accent: h.accent })));
 
+    // Nothing to pick over a break. Hide the row rather than leave a label with
+    // an empty line under it, which reads as a control that failed to load.
+    document.getElementById("halls").parentElement.hidden = !DATA.halls.length;
+
     document.getElementById("diet").replaceChildren(
       ...DIET.map((d) =>
         chip(t("diet", d), state.diet.includes(d.key), () => {
@@ -866,8 +888,17 @@
     } catch {
       return; // with nowhere to remember it, it would show on every visit
     }
+    // A stop whose control is not on the page is dropped rather than drawn
+    // over nothing: over a break there are no halls to pick and that row is
+    // hidden. Settled once, here, because DATA does not change under a session.
+    const stops = TOUR.filter((s) => {
+      const node = s.target();
+      return node && node.getClientRects().length;
+    });
+    if (!stops.length) return;
     tour = {
       step: 0,
+      stops,
       ring: el("div", { className: "tour-ring" }),
       tip: el("div", { className: "tour-tip", role: "dialog" }),
       row: null,
@@ -906,9 +937,9 @@
   /** Fill the tip for the current stop. `arriving` is false when a render
    *  redraws it in place, which must neither scroll the row nor move focus. */
   function drawTour(arriving) {
-    const stop = TOUR[tour.step];
+    const stop = tour.stops[tour.step];
     const [title, body] = t(stop.key);
-    const last = tour.step === TOUR.length - 1;
+    const last = tour.step === tour.stops.length - 1;
 
     const next = el("button", {
       type: "button",
@@ -917,7 +948,7 @@
     });
     next.addEventListener("click", last ? endTour : stepTour);
     const actions = el("div", { className: "tour-actions" }, [
-      el("span", { className: "tour-count", textContent: `${tour.step + 1} / ${TOUR.length}` }),
+      el("span", { className: "tour-count", textContent: `${tour.step + 1} / ${tour.stops.length}` }),
     ]);
     if (!last) {
       const skip = el("button", { type: "button", className: "tour-skip", textContent: t("tourSkip") });
@@ -947,7 +978,7 @@
 
   function placeTour() {
     if (!tour) return;
-    const target = TOUR[tour.step].target();
+    const target = tour.stops[tour.step].target();
     const r = target.getBoundingClientRect();
     // Ring only the part you can see: on a phone the week runs off the row's edge.
     const row = target.closest(".controls");

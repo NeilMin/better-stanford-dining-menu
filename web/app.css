@@ -203,6 +203,9 @@ html:lang(zh) .col-concept { font-family: var(--cjk), var(--sans); font-size: 15
 
 .controls { display: flex; align-items: center; }
 .group { display: flex; align-items: center; gap: 12px; }
+/* `display` from a class beats the UA rule behind the hidden attribute, so a
+   row hidden from script needs saying again here. */
+.group[hidden] { display: none; }
 
 /* The bar's controls explain themselves; their labels stay for screen readers. */
 .bar .group-label {
