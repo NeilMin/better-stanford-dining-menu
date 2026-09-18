@@ -294,8 +294,12 @@ JSON block so a dish name cannot close the script tag early.
   the page while the name row scrolls away: a sticky element only sticks inside its parent's
   box, and the wrapper is exactly as tall as the bar. On a desktop the whole `.top` is sticky.
 - **`.board` sets `overflow-x: auto`, which makes `overflow-y` compute to `auto`.** That makes it
-  the scroll container for `position: sticky`, which is why the column headers are deliberately
-  not sticky. Re-adding sticky needs a different containment strategy, not just the property.
+  the scroll container for `position: sticky`, so a sticky column header would anchor to the
+  board rather than to the page and never stick at all. That is why the hall row that stays
+  visible is `.pinned`, a `position: fixed` strip drawn over the board by `syncPins()` and laid
+  on the columns' own measured rects — an overlay, like the tour's ring, so the board's layout
+  and the subgrid rows are untouched by it. It carries only the name and the logo: the hours,
+  the concept line and the counts are read once at the top and not again.
   The same scroller clips anything past the first and last column, so `.board` carries a
   negative margin and matching padding of `--bleed`: that is the room a special's panel reaches
   out into. Change one and the other.

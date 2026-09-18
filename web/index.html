@@ -60,6 +60,10 @@
 <main>
   <div class="notices" id="notices"></div>
   <div class="board" id="board"></div>
+  <!-- Whose column is whose, once the headers have scrolled away. Laid over the
+       board rather than drawn inside it; see .pinned in app.css. It says again
+       what the headers above it say, so it is hidden from screen readers. -->
+  <div class="pinned" id="pinned" aria-hidden="true"></div>
 </main>
 
 <footer>

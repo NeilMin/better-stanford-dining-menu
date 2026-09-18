@@ -133,6 +133,19 @@ class TestPureHelpers:
                    tmp_path=tmp_path)
         assert got == ["zh", "zh", "zh", "en", "en", "en", "en"]
 
+    def test_the_pinned_hall_row_shows_only_while_a_board_is_under_it(self, tmp_path):
+        """It stands in for the headers, so it appears when they have gone under
+        the top bar -- and goes again at the bottom, where a strip left hanging
+        over the footer would be naming columns that are no longer on screen."""
+        got = call(["pinsFit"], "return INPUT.map((a) => pinsFit(...a));",
+                   # line, strip height, where the headers end, where the board does
+                   payload=[[56, 48, 300, 4000],
+                            [56, 48, 56, 4000],
+                            [56, 48, -900, 104],
+                            [56, 48, -900, 90]],
+                   tmp_path=tmp_path)
+        assert got == [False, True, True, False]
+
     def test_a_dish_matches_a_diet_only_by_carrying_every_tag(self, tmp_path):
         got = call(["matchesDiet"], "return INPUT.map((tags) => matchesDiet({ tags }));",
                    payload=[["vegan", "halal"], ["vegan"], []],

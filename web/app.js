@@ -565,6 +565,10 @@
     // notice across the board rather than one narrow orphaned card.
     board.style.setProperty("--cols", String(columns || 3));
 
+    // Drawn again with the board: the strip stands in for these headers once
+    // they have scrolled away.
+    renderPins();
+
     renderDigest(spread);
     renderNotices();
     document.getElementById("stamp").replaceChildren(
@@ -628,10 +632,37 @@
     return [Math.round(w), Math.round(h)];
   }
 
+  /** The hall's logo, in the slot that holds a header's top line to one height.
+   *  The slot is returned whether or not this hall has a logo: with nothing in
+   *  it, it still holds this hall's hours level with the ones beside it. R&DE
+   *  publishes the logos only inside one map image, so a new hall has none
+   *  until someone reads its box off that map. */
+  function hallLogo(hall) {
+    const slot = el("div", { className: "col-logo" });
+    if (!hall.logo) return slot;
+
+    const [w, h] = logoSize(hall.logo.w / hall.logo.h);
+    const img = el("img", {
+      src: "logo/" + hall.logo.file,
+      // Decorative: the hall's name is right beside it, and reading the logo
+      // out as well would just say it twice.
+      alt: "",
+      width: w,
+      height: h,
+      decoding: "async",
+    });
+    img.style.setProperty("--logo-w", w + "px");
+    img.style.setProperty("--logo-h", h + "px");
+    slot.append(img);
+    return slot;
+  }
+
   function column(hallId, spread) {
     const hall = hallById.get(hallId);
     const col = el("section", { className: "column" });
     col.style.setProperty("--hall", hall.accent);
+    // Which hall this column is drawn for, for the pinned row to read back.
+    col.dataset.hall = hallId;
 
     const svc = service(state.date, hallId, state.meal);
     // Specials lead, whatever the sort: meat-first reorders the rest only.
@@ -650,28 +681,8 @@
     const span = hoursFor(state.date, hallId, state.meal);
     const status = serviceStatus(state.date, span);
 
-    // Beside the name rather than above it, so the logo costs no height of its
-    // own. The slot is appended whether or not this hall has a logo: it holds
-    // the header's top line to one height, so a missing logo cannot lift this
-    // hall's hours above the ones beside it. R&DE publishes the logos only
-    // inside one map image, so a new hall has none until someone reads its box
-    // off that map.
-    const logo = el("div", { className: "col-logo" });
-    if (hall.logo) {
-      const [w, h] = logoSize(hall.logo.w / hall.logo.h);
-      const img = el("img", {
-        src: "logo/" + hall.logo.file,
-        // Decorative: the hall's name is right beside it, and reading the logo
-        // out as well would just say it twice.
-        alt: "",
-        width: w,
-        height: h,
-        decoding: "async",
-      });
-      img.style.setProperty("--logo-w", w + "px");
-      img.style.setProperty("--logo-h", h + "px");
-      logo.append(img);
-    }
+    // Beside the name rather than above it, so the logo costs no height of its own.
+    const logo = hallLogo(hall);
 
     // The name is underlined in the hall's colour -- the specials poster prints
     // it on a bar of that colour -- so the board and the poster read as one key.
@@ -769,6 +780,98 @@
 
     return col;
   }
+
+  // ---------- the hall row, pinned ----------
+  //
+  // A few dishes down a column and its header is gone, and with it the one
+  // thing that says which hall you are reading. The header cannot simply be
+  // made sticky -- .board scrolls sideways, which makes it the scrollport a
+  // sticky child would anchor to, not the page -- so the two parts worth
+  // keeping, the name and the logo, are drawn again in a strip laid over the
+  // board. The hours, the concept line and the counts are read once at the top
+  // and not again, which is why the collapsed tile is not a smaller header but
+  // only those two things.
+  //
+  // An overlay, like the tour's ring and for the same reason: the board's own
+  // layout is untouched, so nothing here can knock the columns out of step.
+  // Its tiles are placed from the columns' own measurements rather than from a
+  // second copy of the grid arithmetic, so a sideways scroll, a resize or any
+  // change to how wide a column is comes out right for free.
+
+  const pinned = document.getElementById("pinned");
+  let pinQueued = false;
+
+  const columns = () =>
+    document.getElementById("board").querySelectorAll(":scope > .column");
+
+  /** Whether the strip belongs on screen, from where the page's sticky bottom
+   *  edge is: the headers have gone under it, and the board has not itself
+   *  scrolled past it -- a strip left hanging over the footer names columns
+   *  that are no longer there. */
+  function pinsFit(line, height, headBottom, boardBottom) {
+    return headBottom <= line && boardBottom >= line + height;
+  }
+
+  /** Rebuilt with the board, so the tiles are the columns that are up now. */
+  function renderPins() {
+    pinned.replaceChildren(...[...columns()].map((col) => {
+      const hall = hallById.get(col.dataset.hall);
+      const pin = el("div", { className: "pin" }, [
+        el("p", { className: "pin-name" }, [el("span", { textContent: hall.short })]),
+        hallLogo(hall),
+      ]);
+      pin.style.setProperty("--hall", hall.accent);
+      return pin;
+    }));
+    syncPins();
+  }
+
+  /** Hang the strip off whatever is pinned at the top of the page and lay each
+   *  tile over its column. */
+  function syncPins() {
+    const cols = columns();
+    if (!cols.length) {
+      pinned.classList.remove("is-on");
+      return;
+    }
+
+    // The whole top bar on a desktop; on a phone that bar is display: contents
+    // and has no box of its own, and only the day and meal row stays pinned.
+    // Whichever of the two is really there reaches furthest down the page.
+    const line = Math.max(...[".top", ".bar"].map((sel) => {
+      const node = document.querySelector(sel);
+      return node.getClientRects().length ? node.getBoundingClientRect().bottom : 0;
+    }));
+
+    // Every header is in the board's first row, so one of them answers for all.
+    const head = cols[0].querySelector(".col-head").getBoundingClientRect();
+    const box = document.getElementById("board").getBoundingClientRect();
+    const on = pinsFit(line, pinned.offsetHeight, head.bottom, box.bottom);
+    pinned.classList.toggle("is-on", on);
+    if (!on) return;
+
+    pinned.style.top = `${line}px`;
+    pinned.style.left = `${box.left}px`;
+    pinned.style.width = `${box.width}px`;
+    [...pinned.children].forEach((pin, i) => {
+      const col = cols[i].getBoundingClientRect();
+      pin.style.left = `${col.left - box.left}px`;
+      pin.style.width = `${col.width}px`;
+    });
+  }
+
+  function pinsMoved() {
+    if (pinQueued) return;
+    pinQueued = true;
+    requestAnimationFrame(() => {
+      pinQueued = false;
+      syncPins();
+    });
+  }
+
+  // Captured, because the board scrolling sideways does not bubble its scroll.
+  document.addEventListener("scroll", pinsMoved, { capture: true, passive: true });
+  addEventListener("resize", pinsMoved);
 
   // ---------- controls ----------
 

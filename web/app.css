@@ -625,6 +625,86 @@ main { margin: 0; padding: 36px var(--gutter) 88px; }
 .maplink:hover { color: var(--ink); text-decoration-color: currentColor; }
 .maplink::after { content: "↗"; display: inline-block; margin-left: 2px; }
 
+/* ---------- the hall row, pinned ---------- */
+
+/* A few dishes down and the headers are gone, taking with them the one thing
+   that says whose column this is. The header cannot simply be made sticky:
+   .board sets overflow-x, which computes overflow-y to auto along with it, so a
+   sticky child anchors to the board rather than to the page and never sticks at
+   all. So the part worth keeping -- the name and the logo, not the hours or the
+   counts, which are read once and not again -- is drawn a second time in a strip
+   laid over the board. An overlay, like the tour's ring and for the same reason:
+   the board's own layout does not change, so nothing here can knock the columns
+   out of step with each other.
+
+   Where it sits is measured off the columns themselves, in syncPins(), so the
+   tiles stay over their columns through a sideways scroll or a resize without
+   the grid arithmetic above being spelled out a second time. */
+.pinned {
+  --pin-h: 48px;
+
+  position: fixed;
+  /* Under .top, which it hangs from, and under the tour, which is drawn over
+     everything. */
+  z-index: 20;
+  height: var(--pin-h);
+  overflow: hidden;
+  /* Drawn over the cards, never in the way of them: a swipe across the board on
+     a phone has to reach the board. */
+  pointer-events: none;
+  background: color-mix(in srgb, var(--bg) 86%, transparent);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--rule);
+  /* Away, it is invisible rather than absent: syncPins() measures the strip's
+     height to decide whether it still has a board under it, and display: none
+     has no height to measure. The tile drops back into the header it stands in
+     for rather than fading on the spot. */
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-7px) scale(.97);
+  transform-origin: 50% 0;
+  transition: opacity .18s ease, transform .18s ease, visibility .18s;
+}
+.pinned.is-on { visibility: visible; opacity: 1; transform: none; }
+
+/* Laid on its column: left and width come from what that column measures. */
+.pin {
+  position: absolute;
+  top: 0;
+  height: var(--pin-h);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+/* The header's name, at the size a second line of it can afford. A name too
+   long for its column is cut rather than wrapped: the strip is one line tall. */
+.pin-name {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0;
+  font: 600 19px/1.2 var(--serif);
+  letter-spacing: -.014em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* Thinner than the header's bar, in proportion to the smaller type; still the
+   hall's colour, because that is the key the board and the poster share. */
+.pin-name span {
+  text-decoration: underline 4px var(--hall, var(--cardinal));
+  text-underline-offset: 2px;
+  text-decoration-skip-ink: none;
+}
+
+.pin .col-logo { min-height: 0; }
+.pin .col-logo img {
+  width: calc(var(--logo-w) * .66);
+  height: calc(var(--logo-h) * .66);
+}
+
 /* ---------- dish cards: picture, then name ---------- */
 
 .card {
@@ -1054,6 +1134,13 @@ html:lang(zh) .tour-title { font-family: var(--cjk), var(--serif); }
   }
   .col-meta { font-size: 14px; }
   .dish-name { font-size: 18.5px; }
+
+  .pinned { --pin-h: 42px; }
+  .pin-name { font-size: 17px; }
+  .pin .col-logo img {
+    width: calc(var(--logo-w) * .58);
+    height: calc(var(--logo-h) * .58);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
