@@ -21,6 +21,7 @@ from bsdm import hours as hourslib  # noqa: E402
 from bsdm import menus as menuslib  # noqa: E402
 from bsdm.catalog import build as build_catalog, summarize as summarize_catalog  # noqa: E402
 from bsdm.scrape import MenuScraper  # noqa: E402
+from bsdm import source as sourcelib  # noqa: E402
 from bsdm import specials as specialslib  # noqa: E402
 from bsdm.stations import analyze as analyze_stations  # noqa: E402
 from bsdm import zh as zhlib  # noqa: E402
@@ -170,9 +171,13 @@ def main() -> int:
     # only from that page, so an edition not saved while it is up is gone. A
     # poster we cannot read is still archived, and still must not cost us the
     # night's menus.
+    specials_url: str | None = None
+    specials_checked = False
     if not args.skip_specials and page is not None:
+        specials_checked = True
         try:
             result = specialslib.update(ROOT, config, html=page)
+            specials_url = result["url"]
             if not result["url"]:
                 log.info("Specials: no calendar linked from the hours page.")
             elif result["status"] == "unchanged":
@@ -211,6 +216,23 @@ def main() -> int:
     untranslated = sum(len(v) for v in zhlib.missing(ROOT).values())
     if untranslated:
         log.info("%d new items to translate -- run: make translate", untranslated)
+
+    # What the source was offering tonight, for scripts/check_source.py to read
+    # once the night's data is safely committed. Only written when this run
+    # actually looked: a --skip-specials run must not record "no poster linked"
+    # and have that read as R&DE having dropped it. A partial scrape is the same
+    # argument -- the dropdown was still read in full, so halls are always fair.
+    if not specials_checked:
+        specials_url = sourcelib.load(ROOT).get("specials_url")
+    sourcelib.record(
+        ROOT, halls=scraper.available_halls(),
+        window=[d.isoformat() for d in days],
+        specials_url=specials_url,
+    )
+
+    # Said here too, so a local run shows it. CI is where it has teeth.
+    for item in sourcelib.drift(ROOT, config):
+        log.warning("!! %s", item)
 
     return 0
 

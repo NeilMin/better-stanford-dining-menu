@@ -26,7 +26,10 @@ jobs:
       - name: Scrape the menu window
         run: uv run python scripts/update.py
 
+      # always(), because the night's menus are worth keeping whatever else the
+      # run turns up -- the source holds seven days and no more.
       - name: Commit refreshed menus
+        if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -38,11 +41,26 @@ jobs:
             git push
           fi
 
+      # Last, and on purpose. R&DE adding a dining hall is not something the
+      # scrape can act on -- a hall needs a menu_key, a schedule, aliases, an
+      # address and a crop box, and the dropdown carries one of those -- but it
+      # is something a person has to act on tonight, because the source keeps
+      # seven days and every night that passes is a night of that hall's menus
+      # gone. A warning in a green log is the silence we already had, so the run
+      # goes red and GitHub sends the mail. By here the data is committed and
+      # publish is on its way, so going red costs nothing but the tick.
+      - name: Check what the source is offering
+        run: uv run python scripts/check_source.py
+
   # Called, not triggered. A push made with GITHUB_TOKEN deliberately does not
   # fire `on: push`, so without this the daily scrape would commit new menus and
   # never publish them.
   publish:
     needs: refresh
+    # Publishes even when refresh went red: a red run means somebody has to edit
+    # config, not that today's menus should be withheld. Only a cancellation
+    # stops it.
+    if: ${{ !cancelled() }}
     permissions:
       contents: read
       pages: write

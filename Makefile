@@ -44,5 +44,8 @@ hours-diff:                ## show how the R&DE hours page changed
 hours-accept:              ## record the current hours page as the new baseline
 	$(PY) scripts/update.py --accept-hours
 
+source-check:              ## is R&DE offering a hall config/halls.json has never heard of?
+	$(PY) scripts/check_source.py
+
 clean:
 	rm -rf site

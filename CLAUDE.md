@@ -20,6 +20,7 @@ make site          # render site/ from data/
 make serve         # build, then preview at http://127.0.0.1:8777
 make verify        # re-fetch today's dinner live and diff it against what is stored
 make hours-diff    # show how the R&DE hours page moved; hours-accept records the new baseline
+make source-check  # is R&DE offering a hall config/halls.json has never heard of?
 make logos-check   # has R&DE redrawn the map the logo crop boxes point into?
 ```
 
@@ -71,6 +72,19 @@ They drifted once — `update.py` kept an inline copy that overwrote `priority`,
 `station_only` and `min_order` on every scrape.
 
 ## Things that will bite you
+
+**A hall R&DE adds is not something the scrape can act on, so the nightly run goes red instead.**
+`scripts/update.py` iterates `config/halls.json` and used never to ask the dropdown what else was
+there, which made a new hall completely invisible: no error, CI green, and seven days later its
+menus are gone for good. It cannot be automated — a hall needs a `menu_key`, a schedule, aliases,
+an address and a logo crop box, and the dropdown carries one of those — so `bsdm/source.py` records
+what the source offered and `scripts/check_source.py` fails the job at the very end, after the
+menus are committed and `publish` is on its way. That ordering is the whole design: the finding
+must not cost a night's data, and a warning in a green log is the silence we already had. Which is
+also why `publish` carries `if: ${{ !cancelled() }}` — a red run means somebody edits config, not
+that today's menus are withheld. Measure *unknown* against every hall in config and *missing*
+against the active ones only: EVGR sits in the dropdown while config has it inactive, and a
+dropdown entry is not a hall serving food.
 
 **`bsdm/menus.py` owns which days a job reads, and the only definition of "today".** `live()` is
 what the board publishes, `recent()` is the bounded window classification is judged over,
