@@ -29,9 +29,16 @@ IMAGES = ROOT / "data" / "images"
 CATALOG = ROOT / "data" / "dishes.json"
 
 
-def seed_for(dish_id: str) -> int:
-    """A stable seed per dish, so a regenerated image looks like the old one."""
-    return int(dish_id[:8], 16)
+def seed_for(dish_id: str, entry: dict | None = None) -> int:
+    """A stable seed per dish, so a regenerated image looks like the old one.
+
+    The catalog's own seed wins where it carries one, which is what makes a
+    hand-picked seed stick. Deriving it from the id every time is what drew the
+    picture being replaced, so a --force redraw would faithfully reproduce the
+    bad one, and --redraw-stale would quietly undo the fix a prompt bump later.
+    """
+    stored = (entry or {}).get("seed")
+    return int(dish_id[:8], 16) if stored is None else int(stored)
 
 
 CARD_RATIO = 16 / 9
@@ -75,6 +82,10 @@ def main() -> int:
     ap.add_argument("--max-priority", type=int, default=2, choices=(0, 1, 2),
                     help="0 meat only, 1 adds other mains, 2 adds sides (default)")
     ap.add_argument("--steps", type=int, help="override step count")
+    ap.add_argument("--seed", type=int,
+                    help="draw with this seed rather than the dish's own, and record it. "
+                         "The only way to replace a picture the stable seed would otherwise "
+                         "redraw identically -- use it with --only and --force")
     ap.add_argument("--free-every", type=int, default=20, metavar="N",
                     help="release ComfyUI's cached models every N images (0 disables)")
     args = ap.parse_args()
@@ -123,7 +134,7 @@ def main() -> int:
     done = failed = 0
 
     for i, (did, entry) in enumerate(pending, 1):
-        seed = seed_for(did)
+        seed = args.seed if args.seed is not None else seed_for(did, entry)
         try:
             image, secs = client.generate(
                 args.model, entry["prompt"],

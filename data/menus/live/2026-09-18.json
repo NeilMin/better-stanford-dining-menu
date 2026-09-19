@@ -1,6 +1,6 @@
 {
  "date": "2026-09-18",
- "scraped_at": "2026-09-18T04:28:20-07:00",
+ "scraped_at": "2026-09-18T10:20:26-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -1141,14 +1141,16 @@
      "order": 0
     },
     {
-     "name": "Smoky BBQ Jackfruit & Pinto Bean",
-     "recipe_id": "BBQJackPinto1",
+     "name": "BBQ Glazed Gardein Chick'n",
+     "recipe_id": "650453541",
      "description": "",
-     "ingredients": "jackfruit, pinto beans, tomato sauce, onions, apple cider vinegar, brown sugar, smoked paprika, garlic, chili powder, mustard powder, cumin, olive/canola oil blend, salt, black pepper",
-     "allergens": [],
+     "ingredients": "plant-forward chicken strips, BBQ sauce, garlic, pepper, paprika, salt, onion powder, cayenne pepper, oregano, thyme",
+     "allergens": [
+      "SOY",
+      "WHEAT"
+     ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
       "vegan",
       "halal"
      ],
@@ -1197,10 +1199,10 @@
      "order": 4
     },
     {
-     "name": "Hoppin’ John Black-Eyed Peas & Rice",
-     "recipe_id": "HoppJohnPeaRice1",
+     "name": "Beans and Rice",
+     "recipe_id": "Beans&Rice1",
      "description": "",
-     "ingredients": "rice, black-eyed peas, onions, celery, bell peppers, vegetable soup base, garlic, smoked paprika, dried thyme, crushed red pepper, olive/canola oil blend, salt, black pepper",
+     "ingredients": "beans, rice, salt",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -1211,10 +1213,10 @@
      "order": 5
     },
     {
-     "name": "Cajun Sweet Potato Wedges",
-     "recipe_id": "CajunSweetPots1",
+     "name": "Roasted Potatoes",
+     "recipe_id": "5018531",
      "description": "",
-     "ingredients": "sweet potatoes, olive/canola oil blend, paprika, garlic powder, onion powder, cayenne pepper, dried oregano, dried thyme, salt, black pepper",
+     "ingredients": "potatoes, salt, pepper, canola/olive oil blend",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -1274,25 +1276,15 @@
      "order": 9
     },
     {
-     "name": "Grilled Vegan/Vegetarian",
-     "recipe_id": "13468741",
+     "name": "Carolina Vinegar Slaw",
+     "recipe_id": "CaroSlaw1",
      "description": "",
-     "ingredients": "chef's choice grilled vegan OR vegetarian option",
+     "ingredients": "cabbage, onions, apple cider vinegar, sugar, celery seed, Dijon mustard, olive/canola oil blend, salt, black pepper",
      "allergens": [],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
-     ],
+     "trace_allergens": [],
      "tags": [
-      "halal"
+      "gluten-free",
+      "vegan"
      ],
      "order": 10
     },
@@ -1315,44 +1307,16 @@
      "order": 11
     },
     {
-     "name": "Soup of the Day",
-     "recipe_id": "SoupoftheDay",
+     "name": "Composed Salad",
+     "recipe_id": "123116546",
      "description": "",
-     "ingredients": "chef's choice soup of the day",
+     "ingredients": "chef's choice composed salad",
      "allergens": [],
      "trace_allergens": [],
-     "tags": [],
-     "order": 12
-    },
-    {
-     "name": "Assorted Bread",
-     "recipe_id": "AssortSlicBread1",
-     "description": "",
-     "ingredients": "",
-     "allergens": [
-      "SESAME",
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [],
      "tags": [
-      "vegan",
       "halal"
      ],
-     "order": 13
-    },
-    {
-     "name": "Carolina Vinegar Slaw",
-     "recipe_id": "CaroSlaw1",
-     "description": "",
-     "ingredients": "cabbage, onions, apple cider vinegar, sugar, celery seed, Dijon mustard, olive/canola oil blend, salt, black pepper",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan"
-     ],
-     "order": 14
+     "order": 12
     },
     {
      "name": "Performance Bar",
@@ -1362,7 +1326,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 15
+     "order": 13
     },
     {
      "name": "Craveable Grains",
@@ -1376,7 +1340,7 @@
       "vegan",
       "halal"
      ],
-     "order": 16
+     "order": 14
     },
     {
      "name": "Flavor Forward Legumes",
@@ -1390,7 +1354,7 @@
       "vegan",
       "halal"
      ],
-     "order": 17
+     "order": 15
     },
     {
      "name": "Pasta Alfredo",
@@ -1408,7 +1372,7 @@
       "vegetarian",
       "halal"
      ],
-     "order": 18
+     "order": 16
     },
     {
      "name": "Pasta Marinara",
@@ -1426,7 +1390,7 @@
       "vegan",
       "halal"
      ],
-     "order": 19
+     "order": 17
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -1440,7 +1404,7 @@
       "vegan",
       "halal"
      ],
-     "order": 20
+     "order": 18
     }
    ],
    "Dinner": [
@@ -2981,10 +2945,10 @@
      "order": 2
     },
     {
-     "name": "Seasonal Vegetable Board",
-     "recipe_id": "4503514",
+     "name": "Roasted Seasonal Vegetables",
+     "recipe_id": "3810155",
      "description": "",
-     "ingredients": "artichokes, asparagus, green beans, beets, bok choy, broccoli, broccolini, brussels sprouts, carrots, cauliflower, mushrooms, okra, peas, bell peppers, chile peppers, potatoes, squash, sunchokes, sweet potatoes, tomatillos, or tomatoes, fresh herbs (chives, cilantro, dill, oregano, parsley, rosemary, sage, salt tarragon, or thyme), salt",
+     "ingredients": "seasonal vegetables, canola/olive oil blend, garlic, creole spices (herbs de provence, cumin, cayenne pepper, paprika, pepper, salt)",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -2993,20 +2957,6 @@
       "halal"
      ],
      "order": 3
-    },
-    {
-     "name": "Charred Corn & Okra Succotash",
-     "recipe_id": "CornOkraSucc1",
-     "description": "",
-     "ingredients": "corn, okra, onions, bell peppers, tomatoes, garlic, parsley, olive/canola oil blend, salt, black pepper",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan",
-      "halal"
-     ],
-     "order": 4
     },
     {
      "name": "Hoppin’ John Black-Eyed Peas & Rice",
@@ -3020,13 +2970,13 @@
       "vegan",
       "halal"
      ],
-     "order": 5
+     "order": 4
     },
     {
-     "name": "Cajun Sweet Potato Wedges",
-     "recipe_id": "CajunSweetPots1",
+     "name": "Lemon Herb Roasted Potatoes",
+     "recipe_id": "5412489",
      "description": "",
-     "ingredients": "sweet potatoes, olive/canola oil blend, paprika, garlic powder, onion powder, cayenne pepper, dried oregano, dried thyme, salt, black pepper",
+     "ingredients": "potatoes, lemon juice, thyme, parsley, turmeric, lemon pepper, canola/olive oil blend, garlic, salt, pepper",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -3034,7 +2984,7 @@
       "vegan",
       "halal"
      ],
-     "order": 6
+     "order": 5
     },
     {
      "name": "Brioche Bun",
@@ -3050,7 +3000,7 @@
       "vegan",
       "halal"
      ],
-     "order": 7
+     "order": 6
     },
     {
      "name": "Grilled Cheese & Tomato Basil Soup",
@@ -3064,7 +3014,7 @@
      "tags": [
       "vegan"
      ],
-     "order": 8
+     "order": 7
     },
     {
      "name": "Grilled Chicken",
@@ -3087,7 +3037,7 @@
      "tags": [
       "halal"
      ],
-     "order": 9
+     "order": 8
     },
     {
      "name": "Grilled Vegan/Vegetarian",
@@ -3110,7 +3060,7 @@
      "tags": [
       "halal"
      ],
-     "order": 10
+     "order": 9
     },
     {
      "name": "Handmade Pizza",
@@ -3126,7 +3076,7 @@
       "vegetarian",
       "halal"
      ],
-     "order": 11
+     "order": 10
     },
     {
      "name": "Panini Station",
@@ -3144,17 +3094,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 12
-    },
-    {
-     "name": "Soup of the Day",
-     "recipe_id": "SoupoftheDay",
-     "description": "",
-     "ingredients": "chef's choice soup of the day",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [],
-     "order": 13
+     "order": 11
     },
     {
      "name": "Assorted Bread",
@@ -3171,7 +3111,7 @@
       "vegan",
       "halal"
      ],
-     "order": 14
+     "order": 12
     },
     {
      "name": "Carolina Vinegar Slaw",
@@ -3184,7 +3124,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 15
+     "order": 13
     },
     {
      "name": "Performance Bar",
@@ -3194,7 +3134,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 16
+     "order": 14
     },
     {
      "name": "Craveable Grains",
@@ -3208,7 +3148,7 @@
       "vegan",
       "halal"
      ],
-     "order": 17
+     "order": 15
     },
     {
      "name": "Flavor Forward Legumes",
@@ -3222,7 +3162,7 @@
       "vegan",
       "halal"
      ],
-     "order": 18
+     "order": 16
     },
     {
      "name": "Pasta Alfredo",
@@ -3240,7 +3180,7 @@
       "vegetarian",
       "halal"
      ],
-     "order": 19
+     "order": 17
     },
     {
      "name": "Pasta Marinara",
@@ -3258,7 +3198,7 @@
       "vegan",
       "halal"
      ],
-     "order": 20
+     "order": 18
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -3272,7 +3212,7 @@
       "vegan",
       "halal"
      ],
-     "order": 21
+     "order": 19
     }
    ],
    "Dinner": [
@@ -3978,15 +3918,17 @@
      "order": 5
     },
     {
-     "name": "Cajun Sweet Potato Wedges",
-     "recipe_id": "CajunSweetPots1",
+     "name": "Crispy Potato Wedges",
+     "recipe_id": "CrispPotWedge1",
      "description": "",
-     "ingredients": "sweet potatoes, olive/canola oil blend, paprika, garlic powder, onion powder, cayenne pepper, dried oregano, dried thyme, salt, black pepper",
-     "allergens": [],
+     "ingredients": "potatoes, garlic powder, paprika, onion powder, dried thyme, dried rosemary, cayenne pepper, parmesan cheese, chopped parsley, oil, salt, pepper",
+     "allergens": [
+      "MILK"
+     ],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
-      "vegan",
+      "vegetarian",
       "halal"
      ],
      "order": 6
@@ -5303,14 +5245,15 @@
   "gerhardcasper": {
    "Lunch": [
     {
-     "name": "Carolina Pulled Pork",
-     "recipe_id": "CaroPullPork1",
+     "name": "North Carolina BBQ Chicken",
+     "recipe_id": "6627271",
      "description": "",
-     "ingredients": "pork, apple cider vinegar, onions, brown sugar, mustard powder, crushed red pepper, olive/canola oil blend, salt, black pepper",
+     "ingredients": "chicken, honey, dijon mustard, canola/olive oil blend, apple cider vinegar, brown sugar, salt, pepper, allergy-friendly bbq sauce (molasses, ketchup, liquid smoke, chili powder, ginger, garlic, chipotle pepper, dijon mustard, salt, pepper, apple cider vinegar, lemon juice)",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
-      "gluten-free"
+      "gluten-free",
+      "halal"
      ],
      "order": 0
     },
@@ -5329,10 +5272,10 @@
      "order": 1
     },
     {
-     "name": "Seasonal Steamed Vegetables",
-     "recipe_id": "5561366",
+     "name": "Dirty Rice",
+     "recipe_id": "5581842",
      "description": "",
-     "ingredients": "seasonal vegetables, salt",
+     "ingredients": "rice, vegetable soup base (contains carrots), onion, celery, canola/olive oil blend, oregano, parsley, sage, thyme, bay leaf, garlic, cayenne pepper, salt, pepper",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -5371,10 +5314,10 @@
      "order": 4
     },
     {
-     "name": "Hoppin’ John Black-Eyed Peas & Rice",
-     "recipe_id": "HoppJohnPeaRice1",
+     "name": "White Bean Ragout",
+     "recipe_id": "6025465",
      "description": "",
-     "ingredients": "rice, black-eyed peas, onions, celery, bell peppers, vegetable soup base, garlic, smoked paprika, dried thyme, crushed red pepper, olive/canola oil blend, salt, black pepper",
+     "ingredients": "white beans, vegetarian soup base (contains celery, mushrooms), onion, celery, garlic, tomato, canola/olive oil blend, cumin, coriander seeds, cilantro, chili powder, salt",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
