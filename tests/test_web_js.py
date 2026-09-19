@@ -185,6 +185,70 @@ class TestPureHelpers:
                    prelude=prelude, tmp_path=tmp_path)
         assert got == ["open", "soon", "shut", None, None]
 
+    def test_empty_reason_distinguishes_closed_unserved_and_unreleased(self, tmp_path):
+        """A hall with no menu items can be:
+        1. Closed for the entire day (no scheduled hours at all on that date).
+        2. Open that day, but not serving this meal (no hours for this meal).
+        3. Scheduled to serve this meal (or date unknown), but with no dishes
+           scraped (either unreleased menu or closed)."""
+        prelude = """
+        const TODAY = '2026-09-20';
+        const TOMORROW = '2026-09-21';
+        const state = { lang: 'en' };
+        const locale = () => (state.lang === 'zh' ? 'zh-Hans' : 'en-US');
+        const DATA = {
+          hours: {
+            '2026-09-20': {
+              'arrillaga': { 'Lunch': ['09:00', '13:30'], 'Dinner': ['17:00', '20:00'] },
+            },
+            '2026-09-21': {
+              'arrillaga': { 'Breakfast': ['07:30', '10:00'], 'Lunch': ['11:00', '15:00'], 'Dinner': ['17:00', '20:30'] },
+              'gerhardcasper': { 'Lunch': ['11:00', '13:30'], 'Dinner': ['17:00', '20:00'] },
+              'branner': { 'Dinner': ['17:00', '19:00'] },
+            },
+            '2026-09-22': {
+              'arrillaga': { 'Dinner': ['17:00', '20:00'] },
+            },
+          },
+        };
+        """
+        got_en = call(["MEAL_ZH", "UI", "t", "dayLabel", "emptyReason"],
+                      "return INPUT.map(([d, h, m]) => emptyReason(d, h, m));",
+                      payload=[
+                          ["2026-09-20", "gerhardcasper", "Dinner"],
+                          ["2026-09-20", "arrillaga", "Breakfast"],
+                          ["2026-09-21", "branner", "Dinner"],
+                          ["2026-09-22", "gerhardcasper", "Dinner"],
+                          ["2026-09-25", "arrillaga", "Dinner"],
+                      ],
+                      prelude=prelude, tmp_path=tmp_path)
+        assert got_en == [
+            "Closed today.",
+            "No breakfast service here today.",
+            "Closed, or no menu released yet.",
+            "Closed on Tue.",
+            "Closed, or no menu released yet.",
+        ]
+
+        prelude_zh = prelude.replace("const state = { lang: 'en' };", "const state = { lang: 'zh' };")
+        got_zh = call(["MEAL_ZH", "UI", "t", "dayLabel", "emptyReason"],
+                      "return INPUT.map(([d, h, m]) => emptyReason(d, h, m));",
+                      payload=[
+                          ["2026-09-20", "gerhardcasper", "Dinner"],
+                          ["2026-09-20", "arrillaga", "Breakfast"],
+                          ["2026-09-21", "branner", "Dinner"],
+                          ["2026-09-22", "gerhardcasper", "Dinner"],
+                          ["2026-09-25", "arrillaga", "Dinner"],
+                      ],
+                      prelude=prelude_zh, tmp_path=tmp_path)
+        assert got_zh == [
+            "今天本食堂不营业。",
+            "今天本食堂不供应早餐。",
+            "不营业，或尚未发布菜单。",
+            "周二本食堂不营业。",
+            "不营业，或尚未发布菜单。",
+        ]
+
 
 def test_the_stored_preferences_key_is_versioned(tmp_path):
     """Bumped whenever the persisted shape changes. Stale localStorage once

@@ -82,7 +82,13 @@
       variesTip: "This entry changes daily, so it is deliberately not illustrated.",
       pending: "Image pending",
       pendingTip: "No image generated for this dish yet.",
-      noService: (meal, day) => `No ${meal.toLowerCase()} service here on ${day}.`,
+      noService: (meal, day) => (day === "Today" || day === "Tomorrow"
+        ? `No ${meal.toLowerCase()} service here ${day.toLowerCase()}.`
+        : `No ${meal.toLowerCase()} service here on ${day}.`),
+      closedDay: (day) => (day === "Today" || day === "Tomorrow"
+        ? `Closed ${day.toLowerCase()}.`
+        : `Closed on ${day}.`),
+      unreleased: "Closed, or no menu released yet.",
       noMatch: "Nothing on today's menu matches the filters.",
       noneListed: "Nothing specific listed for today.",
       allShut: "Every dining hall is closed this week.",
@@ -152,6 +158,8 @@
       pending: "图片待生成",
       pendingTip: "这道菜暂时还没有图片。",
       noService: (meal, day) => `${day}本食堂不供应${MEAL_ZH[meal] || meal}。`,
+      closedDay: (day) => `${day}本食堂不营业。`,
+      unreleased: "不营业，或尚未发布菜单。",
       noMatch: "今日菜单中没有符合筛选条件的菜品。",
       noneListed: "今日未列出具体菜品。",
       allShut: "本周各食堂均休息。",
@@ -378,6 +386,25 @@
 
   function hoursFor(date, hallId, meal) {
     return ((DATA.hours[date] || {})[hallId] || {})[meal] || null;
+  }
+
+  /** Explain why a hall's service has no dishes:
+   *  - closed for the entire day (no scheduled hours on that day)
+   *  - closed for this specific meal (scheduled for other meals, but not this one)
+   *  - scheduled to be open (or hours unknown), but no menu scraped yet (unreleased or closed)
+   */
+  function emptyReason(date, hallId, meal) {
+    const dayHours = DATA.hours && DATA.hours[date];
+    if (dayHours) {
+      const hallMeals = dayHours[hallId];
+      if (!hallMeals || Object.keys(hallMeals).length === 0) {
+        return t("closedDay", dayLabel(date));
+      }
+      if (!(meal in hallMeals)) {
+        return t("noService", meal, dayLabel(date));
+      }
+    }
+    return t("unreleased");
   }
 
   /** open | soon | shut | null, compared against the viewer's clock. */
@@ -743,7 +770,7 @@
     if (!svc.specials.length && !svc.daily.length && !svc.stations.length) {
       col.append(el("div", {
         className: "empty",
-        textContent: t("noService", state.meal, dayLabel(state.date)),
+        textContent: emptyReason(state.date, hallId, state.meal),
       }));
       return col;
     }
