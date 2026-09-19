@@ -10,7 +10,7 @@ import argparse
 import json
 import logging
 import sys
-from datetime import datetime
+from datetime import date, datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -20,7 +20,7 @@ sys.path.insert(0, str(ROOT))
 from bsdm import hours as hourslib  # noqa: E402
 from bsdm import menus as menuslib  # noqa: E402
 from bsdm.catalog import build as build_catalog, summarize as summarize_catalog  # noqa: E402
-from bsdm.scrape import MenuScraper  # noqa: E402
+from bsdm.scrape import MenuScraper, Service  # noqa: E402
 from bsdm import source as sourcelib  # noqa: E402
 from bsdm import specials as specialslib  # noqa: E402
 from bsdm.stations import analyze as analyze_stations  # noqa: E402
@@ -47,6 +47,33 @@ def scheduled_meals(hall: dict, day) -> set[str]:
         if weekday in sched.get("days", []):
             return set(sched.get("meals", {}))
     return set()
+
+
+def fetch_service_with_retry(
+    scraper: MenuScraper,
+    hall: dict,
+    day: date,
+    meal: str,
+    expected: set[str],
+    *,
+    delay: float = 0.4,
+    scraper_factory=None,
+) -> tuple[Service, MenuScraper]:
+    """Fetch one service, retrying on empty with a fresh session if the meal is expected."""
+    svc = scraper.fetch(hall["menu_key"], day, meal)
+    if not svc.dishes and meal in expected:
+        log.info("  %s %s %s: expected but empty, retrying with fresh session...",
+                 day, hall["id"], meal)
+        factory = scraper_factory or (lambda: MenuScraper(delay=delay))
+        fresh_scraper = factory()
+        fresh_scraper.prime()
+        fresh_svc = fresh_scraper.fetch(hall["menu_key"], day, meal)
+        if fresh_svc.dishes:
+            log.info("  %s %s %s: recovered %d dishes on retry",
+                     day, hall["id"], meal, len(fresh_svc.dishes))
+            return fresh_svc, fresh_scraper
+        log.warning("  %s %s %s: scheduled but empty (verified)", day, hall["id"], meal)
+    return svc, scraper
 
 
 def main() -> int:
@@ -108,10 +135,10 @@ def main() -> int:
 
             served = {}
             for meal in meals:
-                svc = scraper.fetch(hall["menu_key"], day, meal)
+                svc, scraper = fetch_service_with_retry(
+                    scraper, hall, day, meal, expected, delay=args.delay
+                )
                 if not svc.dishes:
-                    if meal in expected:
-                        log.warning("  %s %s %s: scheduled but empty", day, hall["id"], meal)
                     continue
                 served[meal] = [d.to_dict() for d in svc.dishes]
                 total_services += 1

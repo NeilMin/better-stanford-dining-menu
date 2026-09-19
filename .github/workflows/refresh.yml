@@ -6,8 +6,10 @@ name: Daily menu refresh
 
 on:
   schedule:
-    # 06:20 UTC is ~23:20 PT, after R&DE has rolled the window to the next day.
-    - cron: "20 6 * * *"
+    # Run twice daily:
+    # 08:30 UTC is 01:30 PT, after R&DE has rolled the window to the next day at midnight.
+    # 21:30 UTC is 14:30 PT, after lunch, catching afternoon updates before dinner.
+    - cron: "30 8,21 * * *"
   workflow_dispatch:
 
 permissions:

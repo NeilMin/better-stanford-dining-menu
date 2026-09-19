@@ -56,6 +56,92 @@ class TestScheduledMeals:
                 set(buildlib.schedule_for(self.HALL, day)), day
 
 
+class TestFetchServiceWithRetry:
+    class FakeScraper:
+        def __init__(self, dishes_to_return=()):
+            self.dishes_to_return = list(dishes_to_return)
+            self.fetches = []
+            self.primed = False
+
+        def prime(self):
+            self.primed = True
+
+        def fetch(self, menu_key, day, meal):
+            from bsdm.scrape import Service, Dish
+            self.fetches.append((menu_key, day, meal))
+            dishes = [Dish(name=n) for n in self.dishes_to_return]
+            return Service(menu_key, day.isoformat(), meal, dishes)
+
+    def test_expected_meal_with_dishes_does_not_retry(self):
+        initial_scraper = self.FakeScraper(dishes_to_return=["Pancakes"])
+        created = []
+        hall = {"id": "stern", "menu_key": "Stern"}
+        day = date(2026, 9, 22)
+        meal = "Breakfast"
+        expected = {"Breakfast", "Lunch", "Dinner"}
+
+        svc, scraper = update.fetch_service_with_retry(
+            initial_scraper, hall, day, meal, expected,
+            scraper_factory=lambda: created.append(1),
+        )
+
+        assert [d.name for d in svc.dishes] == ["Pancakes"]
+        assert scraper is initial_scraper
+        assert created == []
+
+    def test_unexpected_meal_empty_does_not_retry(self):
+        initial_scraper = self.FakeScraper(dishes_to_return=[])
+        created = []
+        hall = {"id": "casper", "menu_key": "GerhardCasper"}
+        day = date(2026, 9, 22)
+        meal = "Breakfast"
+        expected = {"Lunch", "Dinner"}
+
+        svc, scraper = update.fetch_service_with_retry(
+            initial_scraper, hall, day, meal, expected,
+            scraper_factory=lambda: created.append(1),
+        )
+
+        assert svc.dishes == []
+        assert scraper is initial_scraper
+        assert created == []
+
+    def test_expected_meal_empty_retries_and_recovers(self):
+        initial_scraper = self.FakeScraper(dishes_to_return=[])
+        fresh_scraper = self.FakeScraper(dishes_to_return=["Roast Chicken"])
+        hall = {"id": "stern", "menu_key": "Stern"}
+        day = date(2026, 9, 22)
+        meal = "Lunch"
+        expected = {"Lunch", "Dinner"}
+
+        svc, scraper = update.fetch_service_with_retry(
+            initial_scraper, hall, day, meal, expected,
+            scraper_factory=lambda: fresh_scraper,
+        )
+
+        assert [d.name for d in svc.dishes] == ["Roast Chicken"]
+        assert scraper is fresh_scraper
+        assert fresh_scraper.primed
+        assert fresh_scraper.fetches == [("Stern", day, "Lunch")]
+
+    def test_expected_meal_empty_retries_and_still_empty(self):
+        initial_scraper = self.FakeScraper(dishes_to_return=[])
+        fresh_scraper = self.FakeScraper(dishes_to_return=[])
+        hall = {"id": "stern", "menu_key": "Stern"}
+        day = date(2026, 9, 22)
+        meal = "Lunch"
+        expected = {"Lunch", "Dinner"}
+
+        svc, scraper = update.fetch_service_with_retry(
+            initial_scraper, hall, day, meal, expected,
+            scraper_factory=lambda: fresh_scraper,
+        )
+
+        assert svc.dishes == []
+        assert scraper is initial_scraper
+        assert fresh_scraper.primed
+
+
 class TestDrawOrder:
     def test_the_queue_and_the_backlog_are_ordered_by_the_same_rule(self):
         """gen_images draws in this order and the issue lists in it. One rule."""
