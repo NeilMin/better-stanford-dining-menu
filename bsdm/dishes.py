@@ -53,7 +53,7 @@ _SECONDARY: dict[str, list[str]] = {
     ],
     "pork": [
         "chorizo", "carnitas", "pepperoni", "salami", "andouille", "kielbasa",
-        "al pastor", "sausage", "bratwurst", "carnita",
+        "al pastor", "sausage", "bratwurst", "carnita", "spam",
     ],
     "lamb": ["gyro", "merguez", "shawarma"],
     "seafood": ["ceviche", "po'boy", "poboy", "gumbo", "chowder"],
@@ -222,7 +222,7 @@ def station_icon(dish) -> str:
     return "plate"
 
 
-def _key_ingredients(ingredients: str, limit: int = 12) -> list[str]:
+def _key_ingredients(ingredients: str, limit: int = 12, dish_name: str = "") -> list[str]:
     """Pull the leading, top-level ingredients out of the menu's ingredient blob.
 
     The source text nests parentheticals several levels deep ("cheese sauce
@@ -238,14 +238,13 @@ def _key_ingredients(ingredients: str, limit: int = 12) -> list[str]:
         seg for seg in segments
         if not re.match(r"\s*(no|not|contains no|free of|without)\b", seg, re.I)
     )
-    out, depth, buf = [], 0, []
+
+    out, buf, depth = [], [], 0
     for ch in text:
-        if ch in "([":
+        if ch in "([{":
             depth += 1
             continue
-        if ch in ")]":
-            # Dropped, not kept: closing at depth 1 lands back on depth 0, and a
-            # naive "append when depth is 0" leaves "caesar dressing )".
+        if ch in ")]}":
             depth = max(0, depth - 1)
             continue
         if depth:
@@ -257,6 +256,7 @@ def _key_ingredients(ingredients: str, limit: int = 12) -> list[str]:
         buf.append(ch)
     out.append("".join(buf))
 
+    is_saffron_dish = bool(re.search(r"\bsaffron\b", dish_name, re.I))
     seen, clean = set(), []
     for item in out:
         item = re.sub(r"\s+", " ", item).strip(" .;:-")
@@ -267,6 +267,11 @@ def _key_ingredients(ingredients: str, limit: int = 12) -> list[str]:
         if _FLAVORING_RE.search(item):
             continue
         low = item.lower()
+        if is_saffron_dish and low in ("dill", "peas", "green peas"):
+            continue
+        if low == "saffron":
+            item = "red saffron threads"
+            low = item.lower()
         if low in seen:
             continue
         seen.add(low)
@@ -276,11 +281,17 @@ def _key_ingredients(ingredients: str, limit: int = 12) -> list[str]:
     return clean
 
 
+def is_bowl(dish) -> bool:
+    """True when the dish is served in a bowl rather than plated flat."""
+    name = _get(dish)("name", "")
+    return bool(re.search(r"\b(bowls?|soups?|chowders?|ramen|pho|bisque)\b", name, re.I))
+
+
 def image_prompt(dish) -> str:
     """Build the positive prompt for one dish."""
     get = _get(dish)
     name = get("name", "")
-    key = _key_ingredients(get("ingredients", ""), limit=8)
+    key = _key_ingredients(get("ingredients", ""), limit=8, dish_name=name)
     tags = _tags(dish)
 
     parts = [f"{name}, a dining hall dish"]
@@ -290,9 +301,12 @@ def image_prompt(dish) -> str:
         parts.append("plant-based, no meat, no dairy")
     elif "vegetarian" in tags:
         parts.append("vegetarian, no meat")
+    if re.search(r"\bmusubi\b", name, re.I):
+        parts.append("a pair of two chopsticks resting beside the bowl")
 
+    vessel = "served in a simple white ceramic bowl" if is_bowl(dish) else "plated on a simple white ceramic plate"
     parts.append(
-        "appetizing food photography, plated on a simple white ceramic plate, "
+        f"appetizing food photography, {vessel}, "
         "overhead three-quarter view, soft natural window light, shallow depth "
         "of field, clean neutral background, sharp focus, high detail"
     )
@@ -301,7 +315,8 @@ def image_prompt(dish) -> str:
 
 NEGATIVE_PROMPT = (
     "text, words, letters, watermark, signature, logo, menu, label, "
-    "hands, people, person, fingers, cutlery clutter, messy, blurry, "
+    "hands, people, person, fingers, cutlery clutter, extra chopsticks, "
+    "three chopsticks, messy, blurry, "
     "lowres, deformed, distorted, oversaturated, cartoon, illustration, "
     "3d render, plastic, fake looking, duplicate plates"
 )
@@ -334,10 +349,17 @@ def negative_prompt(dish) -> str:
     else:
         # "other" is genuinely unknown -- a dish with no icon and no protein
         # keyword may still arrive with meat in it, so nothing is excluded.
+        exclude = []
+
+    name = _get(dish)("name", "")
+    if re.search(r"\bsaffron\b", name, re.I):
+        exclude.extend(["dill", "peas", "green peas", "star anise"])
+
+    if not exclude:
         return NEGATIVE_PROMPT
     return ", ".join(exclude) + ", " + NEGATIVE_PROMPT
 
 
 # Bumped whenever the prompt rules change, so already-drawn images can be told
 # apart from ones drawn under the current rules and redrawn in priority order.
-PROMPT_REV = 2
+PROMPT_REV = 3

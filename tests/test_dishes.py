@@ -64,6 +64,8 @@ class TestClassify:
     def test_a_secondary_keyword_still_lands(self):
         assert dishlib.classify(d("Bulgogi")) == "beef"
         assert dishlib.classify(d("Chorizo Hash")) == "pork"
+        assert dishlib.classify(d("Spam Musubi Bowl")) == "pork"
+        assert dishlib.is_meat(d("Spam Musubi Bowl"))
 
     def test_the_name_outranks_the_ingredients(self):
         assert dishlib.classify(d("Chicken Curry", "coconut milk, beef stock")) == "poultry"
@@ -171,6 +173,26 @@ class TestKeyIngredients:
     def test_says_plant_based_for_a_vegan_dish(self):
         assert "plant-based, no meat, no dairy" in self.prompt_of("tofu", tags=["vegan"])
 
+    def test_saffron_rice_emphasizes_threads_and_drops_obscuring_herbs(self):
+        saffron_dish = d("Saffron Rice", "rice, onions, dill, saffron, canola/olive oil blend, salt", tags=["vegan"])
+        prompt = dishlib.image_prompt(saffron_dish)
+        assert "red saffron threads" in prompt
+        assert "dill" not in prompt
+
+
+class TestVessel:
+    def test_bowl_dishes_detected(self):
+        assert dishlib.is_bowl(d("Spam Musubi Bowl"))
+        assert dishlib.is_bowl(d("Grilled Teriyaki Chicken Protein Bowl"))
+        assert dishlib.is_bowl(d("Tomato Basil Soup"))
+        assert not dishlib.is_bowl(d("Steamed Broccoli"))
+        assert not dishlib.is_bowl(d("Saffron Rice"))
+
+    def test_prompt_uses_bowl_vessel(self):
+        assert "served in a simple white ceramic bowl" in dishlib.image_prompt(d("Spam Musubi Bowl"))
+        assert "a pair of two chopsticks" in dishlib.image_prompt(d("Spam Musubi Bowl"))
+        assert "plated on a simple white ceramic plate" in dishlib.image_prompt(d("Saffron Rice"))
+
 
 class TestNegativePrompt:
     def test_a_dish_never_excludes_its_own_protein(self):
@@ -199,6 +221,16 @@ class TestNegativePrompt:
     def test_the_base_prompt_is_always_there(self):
         for dish in (d("Beef Stew"), d("Salad", tags=["vegan"]), d("Mystery")):
             assert dishlib.NEGATIVE_PROMPT in dishlib.negative_prompt(dish)
+
+    def test_saffron_excludes_interfering_garnishes(self):
+        neg = dishlib.negative_prompt(d("Saffron Rice", tags=["vegan"]))
+        assert "dill" in neg
+        assert "peas" in neg
+        assert "star anise" in neg
+
+    def test_negative_prompt_excludes_extra_chopsticks(self):
+        assert "three chopsticks" in dishlib.NEGATIVE_PROMPT
+        assert "extra chopsticks" in dishlib.NEGATIVE_PROMPT
 
 
 def test_prompt_rev_is_an_integer():
