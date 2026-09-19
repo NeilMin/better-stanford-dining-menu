@@ -279,6 +279,87 @@
   if (!state.halls.length) state.halls = hallOrder(DATA.defaults.selected);
   if (!UI[state.lang]) state.lang = fallback.lang;
 
+  // ---------- analytics ----------
+
+  const isLocalhost = () => {
+    const host = window.location.hostname;
+    return host === "localhost" || host === "127.0.0.1" || host === "0.0.0.0" || host === "";
+  };
+
+  const trackEvent = (name, params = {}) => {
+    if (isLocalhost()) return;
+    window.gtag?.("event", name, params);
+  };
+
+  const setUserProperty = (name, value) => {
+    if (isLocalhost()) return;
+    window.gtag?.("set", "user_properties", { [name]: value });
+  };
+
+  setUserProperty("app_lang", state.lang);
+  trackEvent("filter_snapshot", {
+    selected_halls: state.halls.join(","),
+    hall_count: state.halls.length,
+    meal: state.meal,
+    app_lang: state.lang,
+  });
+
+  const viewedHalls = new Set();
+  const hallTimers = new Map();
+  let lastViewKey = "";
+
+  let hallObserver = null;
+  if (typeof IntersectionObserver !== "undefined") {
+    hallObserver = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        const hallId = entry.target.dataset?.hall;
+        if (!hallId || viewedHalls.has(hallId)) continue;
+
+        const w = entry.boundingClientRect.width;
+        const visibleRatioX = w > 0 ? entry.intersectionRect.width / w : 0;
+        const isFocused = entry.isIntersecting && visibleRatioX >= 0.5 && entry.intersectionRect.height > 80;
+
+        if (isFocused) {
+          if (!hallTimers.has(hallId)) {
+            const timer = setTimeout(() => {
+              hallTimers.delete(hallId);
+              if (!viewedHalls.has(hallId)) {
+                viewedHalls.add(hallId);
+                trackEvent("view_hall", {
+                  hall_id: hallId,
+                  meal: state.meal,
+                });
+              }
+            }, 1500);
+            hallTimers.set(hallId, timer);
+          }
+        } else {
+          if (hallTimers.has(hallId)) {
+            clearTimeout(hallTimers.get(hallId));
+            hallTimers.delete(hallId);
+          }
+        }
+      }
+    }, {
+      threshold: [0, 0.25, 0.5, 0.75, 1.0],
+    });
+  }
+
+  function observeColumns(board) {
+    if (!hallObserver) return;
+    hallObserver.disconnect();
+    for (const timer of hallTimers.values()) clearTimeout(timer);
+    hallTimers.clear();
+    const currentKey = `${state.date}:${state.meal}`;
+    if (currentKey !== lastViewKey) {
+      viewedHalls.clear();
+      lastViewKey = currentKey;
+    }
+    for (const col of board.children) {
+      if (col.dataset?.hall) hallObserver.observe(col);
+    }
+  }
+
   // ---------- helpers ----------
 
   const el = (tag, props = {}, kids = []) => {
@@ -616,6 +697,7 @@
     // A render can switch the language under the tip or resize the row it points at.
     if (tour) drawTour(false);
     save();
+    observeColumns(board);
   }
 
   /** How much the selected halls actually differ -- the whole point of comparing. */
@@ -942,8 +1024,11 @@
     const meals = availableMeals(state.date);
     document.getElementById("meals").replaceChildren(...MEALS.map((m) =>
       chip(t("meal", m), m === state.meal, () => {
-        state.meal = m;
-        render();
+        if (state.meal !== m) {
+          state.meal = m;
+          trackEvent("select_meal", { meal: m });
+          render();
+        }
       }, { className: "chip-seg", props: { disabled: !meals.includes(m) } })));
 
     document.getElementById("halls").replaceChildren(...DATA.halls.map((h) =>
@@ -951,6 +1036,13 @@
         const picked = new Set(state.halls);
         if (!picked.delete(h.id)) picked.add(h.id);
         state.halls = hallOrder(picked.size ? picked : [h.id]);
+        const actuallySelected = state.halls.includes(h.id);
+        trackEvent("toggle_hall_filter", {
+          hall_id: h.id,
+          hall_name: h.short,
+          action: actuallySelected ? "turn_on" : "turn_off",
+          total_selected: state.halls.length,
+        });
         render();
       }, { className: "chip-hall", accent: h.accent })));
 
@@ -962,8 +1054,13 @@
       ...DIET.map((d) =>
         chip(t("diet", d), state.diet.includes(d.key), () => {
           const i = state.diet.indexOf(d.key);
+          const willTurnOn = i < 0;
           if (i >= 0) state.diet.splice(i, 1);
           else state.diet.push(d.key);
+          trackEvent("toggle_diet_filter", {
+            diet: d.key,
+            action: willTurnOn ? "turn_on" : "turn_off",
+          });
           render();
         })),
       chip(t("meatFirst"), state.meatFirst, () => {
@@ -1156,7 +1253,13 @@
   }
 
   document.getElementById("lang").addEventListener("click", () => {
+    const prevLang = state.lang;
     state.lang = state.lang === "zh" ? "en" : "zh";
+    setUserProperty("app_lang", state.lang);
+    trackEvent("toggle_language", {
+      from_lang: prevLang,
+      to_lang: state.lang,
+    });
     render();
   });
 
