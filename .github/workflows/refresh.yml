@@ -29,18 +29,32 @@ jobs:
       - name: Scrape the menu window
         run: uv run python scripts/update.py
 
-      # always(), because the night's menus are worth keeping whatever else the
-      # run turns up -- the source holds seven days and no more.
-      - name: Commit refreshed menus
+      - name: Translate missing menu items
+        continue-on-error: true
+        env:
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+        run: uv run python scripts/translate.py
+
+      - name: Generate pending dish images
+        continue-on-error: true
+        env:
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+        run: uv run python scripts/gen_images.py --limit 8
+
+      # always(), because the night's menus and assets are worth keeping whatever
+      # else the run turns up -- the source holds seven days and no more.
+      - name: Commit refreshed menus and assets
         if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/
           if git diff --cached --quiet; then
-            echo "No menu changes."
+            echo "No menu or asset changes."
           else
-            git commit -m "data: refresh menus for $(date -u +%Y-%m-%d)"
+            git commit -m "data: refresh menus and assets for $(date -u +%Y-%m-%d)"
             git push
           fi
 
