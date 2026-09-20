@@ -1,6 +1,6 @@
 {
  "date": "2026-09-23",
- "scraped_at": "2026-09-20T06:07:00-07:00",
+ "scraped_at": "2026-09-20T16:19:40-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -198,22 +198,6 @@
      "order": 9
     },
     {
-     "name": "Gluten-Free Waffles",
-     "recipe_id": "3800193",
-     "description": "",
-     "ingredients": "white rice flour, degerminated corn flour, cane sugar, soy flour, baking powder, canola oil, salt, natural flavor, xanthan gum",
-     "allergens": [
-      "SOY"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan",
-      "halal"
-     ],
-     "order": 10
-    },
-    {
      "name": "Seasonal Fruit",
      "recipe_id": "3810874",
      "description": "",
@@ -225,7 +209,7 @@
       "vegan",
       "halal"
      ],
-     "order": 11
+     "order": 10
     },
     {
      "name": "Assorted Allergy-Friendly Items",
@@ -238,7 +222,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 12
+     "order": 11
     }
    ],
    "Lunch": [
@@ -1460,18 +1444,17 @@
    ],
    "Dinner": [
     {
-     "name": "Korean Fried Chicken Cutlet",
-     "recipe_id": "KorFriChxCut1",
+     "name": "Hawaiian Teriyaki Short Ribs",
+     "recipe_id": "HawShortRibs1",
      "description": "",
-     "ingredients": "chicken, marinade (garlic, ginger, tamari, sugar, sesame oil, black pepper), dredge (salt, black pepper, garlic powder, onion powder, all-purpose flour, cornstarch, baking powder, eggs, olive/canola oil blend), glaze (gochujang, gochugaru, tamari, sugar, rice vinegar, garlic, ginger, sesame oil, honey, water) toasted sesame seeds, green onions",
+     "ingredients": "beef short ribs, teriyaki sauce (tamari, pineapple juice, brown sugar, ginger, garlic, apple cider vinegar, cornstarch, sesame oil), ginger, green onions, orange juice, orange zest, garlic, jalapeño, toasted sesame seeds, olive/canola oil blend, salt, black pepper",
      "allergens": [
-      "EGG",
       "SESAME",
-      "SOY",
-      "WHEAT"
+      "SOY"
      ],
      "trace_allergens": [],
      "tags": [
+      "gluten-free",
       "halal"
      ],
      "order": 0
@@ -3598,6 +3581,47 @@
       "halal"
      ],
      "order": 20
+    },
+    {
+     "name": "Crispy Cod Fish Tacos",
+     "recipe_id": "5515269",
+     "description": "",
+     "ingredients": "battered cod (cod, wheat flour, canola oil, corn flour, whey (milk), sugar, turmeric, paprika, salt, white pepper, black pepper)",
+     "allergens": [
+      "FISH",
+      "MILK",
+      "SOY",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "TREENUTS"
+     ],
+     "tags": [],
+     "order": 21
+    },
+    {
+     "name": "Cauliflower Tacos",
+     "recipe_id": "4537710",
+     "description": "",
+     "ingredients": "corn tortilla, cauliflower, sesame seeds, pumpkin seeds, tomatillo, onions, serrano chiles, garlic, lettuce, radish, hoja santa leaves, canola/olive oil blend, salt",
+     "allergens": [
+      "SESAME"
+     ],
+     "trace_allergens": [
+      "PEANUTS",
+      "TREENUTS"
+     ],
+     "tags": [
+      "gluten-free",
+      "vegan",
+      "halal"
+     ],
+     "order": 22
     }
    ]
   },

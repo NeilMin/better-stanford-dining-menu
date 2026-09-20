@@ -1,6 +1,6 @@
 {
  "date": "2026-09-21",
- "scraped_at": "2026-09-20T06:07:00-07:00",
+ "scraped_at": "2026-09-20T16:19:40-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -189,22 +189,6 @@
      "order": 9
     },
     {
-     "name": "Gluten-Free Waffles",
-     "recipe_id": "3800193",
-     "description": "",
-     "ingredients": "white rice flour, degerminated corn flour, cane sugar, soy flour, baking powder, canola oil, salt, natural flavor, xanthan gum",
-     "allergens": [
-      "SOY"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan",
-      "halal"
-     ],
-     "order": 10
-    },
-    {
      "name": "Seasonal Fruit",
      "recipe_id": "3810874",
      "description": "",
@@ -216,7 +200,7 @@
       "vegan",
       "halal"
      ],
-     "order": 11
+     "order": 10
     },
     {
      "name": "Assorted Allergy-Friendly Items",
@@ -229,7 +213,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 12
+     "order": 11
     }
    ],
    "Lunch": [
@@ -1101,31 +1085,31 @@
    ],
    "Lunch": [
     {
-     "name": "Greek Chicken Gyro Meat",
-     "recipe_id": "ChxGyroMeat1",
+     "name": "Lemon Herbed Chicken",
+     "recipe_id": "5786837",
      "description": "",
-     "ingredients": "chicken, water, soy protein, nonfat dry milk, salt, spices, garlic, paprika, corn oil, lemon juice",
-     "allergens": [
-      "MILK",
-      "SOY"
-     ],
+     "ingredients": "chicken, canola/olive oil blend, lemon juice, garlic, paprika, parsley, oregano, pepper, salt",
+     "allergens": [],
      "trace_allergens": [],
      "tags": [
+      "gluten-free",
       "halal"
      ],
      "order": 0
     },
     {
-     "name": "Greek-Spiced Chickpea & Eggplant",
-     "recipe_id": "GreekChickEgg1",
+     "name": "Veggie Gyro Plate",
+     "recipe_id": "COV3719382",
      "description": "",
-     "ingredients": "eggplant, chickpeas, onions, tomatoes, garlic, lemon juice, parsley, oregano, cumin, paprika, olive/canola oil blend, salt, black pepper",
-     "allergens": [],
+     "ingredients": "Veggie Gyros (gardein chick'n, bell pepper, onions, tomatoes, garlic, oregano, lemon juice, garlic, canola/olive oil blend, salt, pepper), Sauteed Greens (seasonal leafy greens, canola/olive oil blend, garlic, lemon juice, salt, pepper), Greek Style Pita (whole wheat flour, enriched wheat flour, soybean, canola oil, sugar, salt, baking powder, yeast, blackstrap molasses, calcium propionate, sodium stearoyl lactylate, guar gum, amylase)",
+     "allergens": [
+      "SOY",
+      "WHEAT",
+      "TRACEALLERGENS"
+     ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
-      "vegan",
-      "halal"
+      "vegan"
      ],
      "order": 1
     },
@@ -1555,17 +1539,15 @@
      "order": 10
     },
     {
-     "name": "Creamy Mac & Cheese",
-     "recipe_id": "4233582",
+     "name": "Spicy Green Beans",
+     "recipe_id": "7819461",
      "description": "",
-     "ingredients": "macaroni, cheese sauce (parmesan cheese, white cheddar cheese, fontina cheese, whole milk, butter, flour, dijon mustard, onions, salt, nutmeg, bay leaf)",
-     "allergens": [
-      "MILK",
-      "WHEAT"
-     ],
+     "ingredients": "green beans, olive oil, garlic, red pepper flakes, salt",
+     "allergens": [],
      "trace_allergens": [],
      "tags": [
-      "vegetarian",
+      "gluten-free",
+      "vegan",
       "halal"
      ],
      "order": 11
@@ -3451,6 +3433,63 @@
       "halal"
      ],
      "order": 20
+    },
+    {
+     "name": "Chicken Tinga",
+     "recipe_id": "533742",
+     "description": "",
+     "ingredients": "chicken tinga (chicken, tinga sauce [tomatoes, garlic, chipotle pepper (contains cornstarch), bell peppers, pasilla chili pepper], adobo marinade [canola oil, chili powder, ancho chili powder, onion, garlic, allspice, clove, cumin seed, oregano, salt])",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "halal"
+     ],
+     "order": 21
+    },
+    {
+     "name": "Yellow Spanish Rice",
+     "recipe_id": "3468025",
+     "description": "",
+     "ingredients": "white rice, bell peppers, diced onion, annatto seeds, green peas, vegetable soup base (contains mushrooms, celery), garlic, pepper, salt",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan",
+      "halal"
+     ],
+     "order": 22
+    },
+    {
+     "name": "Pinto Beans",
+     "recipe_id": "PintoBeans1",
+     "description": "",
+     "ingredients": "pinto beans, onions, garlic, olive/canola oil blend, red chili, cumin, coriander, cilantro, salt",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan",
+      "halal"
+     ],
+     "order": 23
+    },
+    {
+     "name": "Plant-Forward “Chick’n” Tinga",
+     "recipe_id": "5921137-1",
+     "description": "",
+     "ingredients": "plant-forward \"chick'n\", onion, bell peppers, tomato puree, canola/olive oil blend, salt, paprika, cayenne pepper, garlic, onion, cumin",
+     "allergens": [
+      "SOY",
+      "WHEAT"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "vegan",
+      "halal"
+     ],
+     "order": 24
     }
    ]
   },

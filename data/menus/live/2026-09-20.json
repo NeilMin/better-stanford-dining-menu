@@ -1,6 +1,6 @@
 {
  "date": "2026-09-20",
- "scraped_at": "2026-09-20T06:07:00-07:00",
+ "scraped_at": "2026-09-20T16:19:40-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -141,40 +141,6 @@
      "order": 8
     },
     {
-     "name": "Waffles",
-     "recipe_id": "3144806",
-     "description": "",
-     "ingredients": "enriched wheat flour, sugar, soybean oil, leavings, buckwheat flour, buttermilk, natural flavors, artificial flavors, wheat bran, rice flour, yellow corn flour, whole oat flour, whey, whole egg, salt, dextrose, wheat starch, natural flavors, artificial flavor, malted barley flour, lactic acid",
-     "allergens": [
-      "EGG",
-      "MILK",
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "vegetarian",
-      "halal"
-     ],
-     "order": 9
-    },
-    {
-     "name": "Gluten-Free Waffles",
-     "recipe_id": "3800193",
-     "description": "",
-     "ingredients": "white rice flour, degerminated corn flour, cane sugar, soy flour, baking powder, canola oil, salt, natural flavor, xanthan gum",
-     "allergens": [
-      "SOY"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan",
-      "halal"
-     ],
-     "order": 10
-    },
-    {
      "name": "Seasonal Fruit",
      "recipe_id": "3810874",
      "description": "",
@@ -186,7 +152,7 @@
       "vegan",
       "halal"
      ],
-     "order": 11
+     "order": 9
     },
     {
      "name": "Assorted Allergy-Friendly Items",
@@ -199,7 +165,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 12
+     "order": 10
     }
    ],
    "Lunch": [
@@ -1087,21 +1053,23 @@
      "order": 0
     },
     {
-     "name": "Artichoke & Shiitake Mushroom Taco Filling",
-     "recipe_id": "5264876",
+     "name": "Sauteed Peppers & Onions",
+     "recipe_id": "5181608",
      "description": "",
-     "ingredients": "breaded artichoke (breaded artichoke [artichoke, breadcrumbs, batter, potato starch, salt, seasoning]), mushroom, guajillo chili, ancho chili, chili de arbol, onions, garlic, tomatoes, cumin seeds, oregano leaf, coriander seeds, clove, vegetable soup base (contains carrots, celery), white vinegar, maple syrup, cilantro, canola/olive oil blend, lime, salt",
+     "ingredients": "bell peppers, onions, soybean oil, canola/olive oil blend",
      "allergens": [
-      "WHEAT"
+      "SOY"
      ],
      "trace_allergens": [
+      "COCONUT",
       "EGG",
+      "FISH",
       "MILK",
       "PEANUTS",
       "SESAME",
       "SHELLFISH",
-      "SOY",
-      "TREENUTS"
+      "TREENUTS",
+      "WHEAT"
      ],
      "tags": [
       "vegan",
@@ -1223,33 +1191,6 @@
      "order": 8
     },
     {
-     "name": "Soup of the Day",
-     "recipe_id": "SoupoftheDay",
-     "description": "",
-     "ingredients": "chef's choice soup of the day",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [],
-     "order": 9
-    },
-    {
-     "name": "Assorted Bread",
-     "recipe_id": "AssortSlicBread1",
-     "description": "",
-     "ingredients": "",
-     "allergens": [
-      "SESAME",
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "vegan",
-      "halal"
-     ],
-     "order": 10
-    },
-    {
      "name": "Baja Lime Cilantro Slaw",
      "recipe_id": "BajaSlaw1",
      "description": "",
@@ -1263,7 +1204,7 @@
       "vegetarian",
       "halal"
      ],
-     "order": 11
+     "order": 9
     },
     {
      "name": "Performance Bar",
@@ -1273,7 +1214,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 12
+     "order": 10
     },
     {
      "name": "Craveable Grains",
@@ -1287,7 +1228,7 @@
       "vegan",
       "halal"
      ],
-     "order": 13
+     "order": 11
     },
     {
      "name": "Flavor Forward Legumes",
@@ -1301,43 +1242,39 @@
       "vegan",
       "halal"
      ],
-     "order": 14
+     "order": 12
     },
     {
-     "name": "Pasta Marinara",
-     "recipe_id": "5095708",
+     "name": "Marinara Sauce",
+     "recipe_id": "3612835",
      "description": "",
-     "ingredients": "pasta, marinara sauce, canola/olive oil blend",
+     "ingredients": "italian tomatoes, diced tomatoes, fresh onions, extra virgin olive oil, garlic, sea salt, oregano, black pepper",
      "allergens": [
-      "SOY",
-      "WHEAT"
+      "SOY"
      ],
-     "trace_allergens": [
-      "EGG"
-     ],
+     "trace_allergens": [],
      "tags": [
+      "gluten-free",
       "vegan",
       "halal"
      ],
-     "order": 15
+     "order": 13
     },
     {
-     "name": "Pasta Alfredo",
-     "recipe_id": "5683556",
+     "name": "Alfredo Sauce",
+     "recipe_id": "5681078",
      "description": "",
-     "ingredients": "pasta, white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, parmesan cheese",
+     "ingredients": "cream, onion, milk powder, butter, parmesan cheese, flour, garlic, nutmeg, onion powder, salt",
      "allergens": [
       "MILK",
       "WHEAT"
      ],
-     "trace_allergens": [
-      "EGG"
-     ],
+     "trace_allergens": [],
      "tags": [
       "vegetarian",
       "halal"
      ],
-     "order": 16
+     "order": 14
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -1351,7 +1288,7 @@
       "vegan",
       "halal"
      ],
-     "order": 17
+     "order": 15
     }
    ],
    "Dinner": [
@@ -4426,23 +4363,14 @@
      "order": 0
     },
     {
-     "name": "Artichoke & Shiitake Mushroom Taco Filling",
-     "recipe_id": "5264876",
+     "name": "Cuban Spiced Black Beans",
+     "recipe_id": "3730766",
      "description": "",
-     "ingredients": "breaded artichoke (breaded artichoke [artichoke, breadcrumbs, batter, potato starch, salt, seasoning]), mushroom, guajillo chili, ancho chili, chili de arbol, onions, garlic, tomatoes, cumin seeds, oregano leaf, coriander seeds, clove, vegetable soup base (contains carrots, celery), white vinegar, maple syrup, cilantro, canola/olive oil blend, lime, salt",
-     "allergens": [
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "EGG",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS"
-     ],
+     "ingredients": "black beans, onions, jalapenos, bay leaf, chili powder, cumin, cayenne pepper, canola/olive oil blend, white pepper, salt",
+     "allergens": [],
+     "trace_allergens": [],
      "tags": [
+      "gluten-free",
       "vegan",
       "halal"
      ],
@@ -4477,19 +4405,16 @@
      "order": 3
     },
     {
-     "name": "Mexican Street Corn",
-     "recipe_id": "7016774",
+     "name": "Flame Roasted Corn",
+     "recipe_id": "3804835",
      "description": "",
-     "ingredients": "corn, butter, cotija cheese, mayonnaise, tajin seasoning, lime juice, salt, pepper",
-     "allergens": [
-      "EGG",
-      "MILK",
-      "SOY"
+     "ingredients": "corn, garlic, canola/olive oil blend, celery, onion, cayenne pepper, black pepper, paprika, salt, cuminseed, herbs de provence",
+     "allergens": [],
+     "trace_allergens": [
+      "WHEAT"
      ],
-     "trace_allergens": [],
      "tags": [
-      "gluten-free",
-      "vegetarian",
+      "vegan",
       "halal"
      ],
      "order": 4
@@ -4509,98 +4434,6 @@
      "order": 5
     },
     {
-     "name": "Seasoned Black Beans",
-     "recipe_id": "5111980",
-     "description": "",
-     "ingredients": "black beans, canola/olive oil blend, salt",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan",
-      "halal"
-     ],
-     "order": 6
-    },
-    {
-     "name": "Chipotle Aioli",
-     "recipe_id": "3426861",
-     "description": "",
-     "ingredients": "mayonnaise, chipotle peppers, lemon juice, red wine vinegar, sherry vinegar, garlic",
-     "allergens": [
-      "EGG",
-      "SOY"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegetarian",
-      "halal"
-     ],
-     "order": 7
-    },
-    {
-     "name": "Panini Station",
-     "recipe_id": "4532805",
-     "description": "",
-     "ingredients": "telera roll, chipotle aioli (soybean oil, eggs, vinegar, egg yolks, lemon juice concentrate, salt, sugar, dried onions, dried garlic, paprika, natural flavor, calcium disodium edta, tomato paste, dried chipotle peppers, distilled vinegar, corn oil, salt, corn starch, onion powder, garlic powder, spices, Lemon juice, garlic, sherry vinegar, red wine vinegar), beef pork salami, cheddar cheese, provolone cheese, vegan pesto sauce, tomatoes, arugula, sundried tomato pesto sauce",
-     "allergens": [
-      "EGG",
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "COCONUT",
-      "MILK",
-      "TREENUTS"
-     ],
-     "tags": [],
-     "order": 8
-    },
-    {
-     "name": "Soup of the Day",
-     "recipe_id": "SoupoftheDay",
-     "description": "",
-     "ingredients": "chef's choice soup of the day",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [],
-     "order": 9
-    },
-    {
-     "name": "Assorted Bread",
-     "recipe_id": "AssortSlicBread1",
-     "description": "",
-     "ingredients": "",
-     "allergens": [
-      "SESAME",
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "vegan",
-      "halal"
-     ],
-     "order": 10
-    },
-    {
-     "name": "Baja Lime Cilantro Slaw",
-     "recipe_id": "BajaSlaw1",
-     "description": "",
-     "ingredients": "cabbage, red cabbage, carrots, cilantro, lime juice, mayonnaise, green onions, sugar, cumin, salt, black pepper",
-     "allergens": [
-      "EGG"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegetarian",
-      "halal"
-     ],
-     "order": 11
-    },
-    {
      "name": "Performance Bar",
      "recipe_id": "4992007",
      "description": "",
@@ -4608,7 +4441,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 12
+     "order": 6
     },
     {
      "name": "Craveable Grains",
@@ -4622,7 +4455,7 @@
       "vegan",
       "halal"
      ],
-     "order": 13
+     "order": 7
     },
     {
      "name": "Flavor Forward Legumes",
@@ -4636,7 +4469,7 @@
       "vegan",
       "halal"
      ],
-     "order": 14
+     "order": 8
     },
     {
      "name": "Pasta Marinara",
@@ -4654,25 +4487,7 @@
       "vegan",
       "halal"
      ],
-     "order": 15
-    },
-    {
-     "name": "Pasta Alfredo",
-     "recipe_id": "5683556",
-     "description": "",
-     "ingredients": "pasta, white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, parmesan cheese",
-     "allergens": [
-      "MILK",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "EGG"
-     ],
-     "tags": [
-      "vegetarian",
-      "halal"
-     ],
-     "order": 16
+     "order": 9
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -4686,7 +4501,7 @@
       "vegan",
       "halal"
      ],
-     "order": 17
+     "order": 10
     }
    ],
    "Dinner": [
