@@ -1,14 +1,16 @@
 #!/usr/bin/env python3
 """Render the dish images that data/dishes.json is still missing.
 
-Needs a local ComfyUI, so this is the one step that cannot run in CI. Images are
-keyed on the dish name, so this is resumable and idempotent: a dish is drawn once
-and then reused across every hall and every week it appears in.
+Supports Cloudflare Workers AI, local ComfyUI, and DuckDuckGo web search
+fallback. Images are keyed on the dish name, so this is resumable and
+idempotent: a dish is drawn once and then reused across every hall and every
+week it appears in.
 """
 
 from __future__ import annotations
 
 import argparse
+import io
 import json
 import sys
 import time
@@ -22,8 +24,11 @@ from PIL import Image  # noqa: E402
 
 from bsdm import dishes as dishlib  # noqa: E402
 from bsdm.catalog import is_stale  # noqa: E402
+from bsdm.cloudflare import CloudflareClient, CloudflareError, CloudflareQuotaError  # noqa: E402
 from bsdm.comfy import DEFAULT_URL, MODELS, ComfyClient, ComfyError, to_webp  # noqa: E402
 from bsdm.pending import rank  # noqa: E402
+from bsdm import web_image  # noqa: E402
+from bsdm.web_image import search_food_image  # noqa: E402
 
 IMAGES = ROOT / "data" / "images"
 CATALOG = ROOT / "data" / "dishes.json"
@@ -38,7 +43,13 @@ def seed_for(dish_id: str, entry: dict | None = None) -> int:
     bad one, and --redraw-stale would quietly undo the fix a prompt bump later.
     """
     stored = (entry or {}).get("seed")
-    return int(dish_id[:8], 16) if stored is None else int(stored)
+    if stored is not None:
+        return int(stored)
+    try:
+        return int(dish_id[:8], 16)
+    except ValueError:
+        import hashlib
+        return int(hashlib.sha256(dish_id.encode()).hexdigest()[:8], 16)
 
 
 CARD_RATIO = 16 / 9
@@ -70,8 +81,37 @@ def record_image(dish_id: str, fields: dict) -> None:
     CATALOG.write_text(json.dumps(catalog, indent=1, ensure_ascii=False, sort_keys=True) + "\n")
 
 
-def main() -> int:
+def generate_with_cloudflare(
+    client: CloudflareClient, prompt: str, negative: str
+) -> tuple[Image.Image, float]:
+    """Generate an image via Cloudflare Workers AI."""
+    started = time.monotonic()
+    raw_bytes = client.generate_image(prompt, negative_prompt=negative)
+    img = Image.open(io.BytesIO(raw_bytes)).convert("RGB")
+    secs = time.monotonic() - started
+    return img, secs
+
+
+def generate_with_search_fallback(dish_name: str) -> tuple[Image.Image | None, float]:
+    """Search DuckDuckGo Images as a fallback when AI generation fails."""
+    started = time.monotonic()
+    data = web_image.search_food_image(dish_name)
+    secs = time.monotonic() - started
+    if not data:
+        return None, secs
+    try:
+        img = Image.open(io.BytesIO(data)).convert("RGB")
+        return img, secs
+    except Exception:
+        return None, secs
+
+
+def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--backend", choices=["auto", "cloudflare", "comfyui"], default="auto",
+                    help="generation backend: auto, cloudflare, or comfyui (default: auto)")
+    ap.add_argument("--search-fallback", action=argparse.BooleanOptionalAction, default=True,
+                    help="fall back to web image search if generation fails (default: True)")
     ap.add_argument("--url", default=DEFAULT_URL, help="ComfyUI base URL")
     ap.add_argument("--model", default="sdxl", choices=sorted(MODELS))
     ap.add_argument("--limit", type=int, help="stop after N images")
@@ -88,22 +128,19 @@ def main() -> int:
                          "redraw identically -- use it with --only and --force")
     ap.add_argument("--free-every", type=int, default=20, metavar="N",
                     help="release ComfyUI's cached models every N images (0 disables)")
-    args = ap.parse_args()
+    args = ap.parse_args(argv)
 
-    catalog = json.loads(CATALOG.read_text())
-    client = ComfyClient(args.url)
+    cf_client = CloudflareClient()
+    comfy_client = ComfyClient(args.url)
 
-    if not client.available():
+    if args.backend == "cloudflare" and not cf_client.is_configured():
         print(
-            f"No ComfyUI at {args.url}.\n"
-            f"Start the shared install with:\n"
-            f"  cd ~/Projects/.shared/comfyui && "
-            f"./.venv/bin/python main.py --listen 127.0.0.1 --port 8189",
+            "Error: Cloudflare backend requested but CF_ACCOUNT_ID and CF_API_TOKEN are not set.",
             file=sys.stderr,
         )
-        return 2
-    client.validate(args.model)
+        return 1
 
+    catalog = json.loads(CATALOG.read_text())
     IMAGES.mkdir(parents=True, exist_ok=True)
     # Meat first, then other mains, then sides; within a tier, whatever R&DE
     # lists earliest on the menu. Shared with bsdm/pending.py, which reports the
@@ -123,27 +160,88 @@ def main() -> int:
             continue
         pending.append((did, entry))
 
-    if args.limit:
+    if args.limit is not None:
         pending = pending[: args.limit]
     if not pending:
         print("Nothing to draw -- every illustratable dish already has an image.")
         return 0
 
-    print(f"Drawing {len(pending)} dishes with {args.model} via {args.url}")
+    if args.backend == "cloudflare":
+        backend = "cloudflare"
+    elif args.backend == "comfyui":
+        if not comfy_client.available():
+            print(
+                f"No ComfyUI at {args.url}.\n"
+                f"Start the shared install with:\n"
+                f"  cd ~/Projects/.shared/comfyui && "
+                f"./.venv/bin/python main.py --listen 127.0.0.1 --port 8189",
+                file=sys.stderr,
+            )
+            return 2
+        comfy_client.validate(args.model)
+        backend = "comfyui"
+    else:  # auto
+        if cf_client.is_configured():
+            backend = "cloudflare"
+        elif comfy_client.available():
+            comfy_client.validate(args.model)
+            backend = "comfyui"
+        else:
+            print(
+                f"No image generation backend available.\n"
+                f"Set CF_ACCOUNT_ID/CF_API_TOKEN for Cloudflare, or start ComfyUI at {args.url}.",
+                file=sys.stderr,
+            )
+            return 2
+
+    if backend == "cloudflare":
+        print(f"Drawing {len(pending)} dishes via Cloudflare Workers AI")
+    else:
+        print(f"Drawing {len(pending)} dishes with {args.model} via {args.url}")
+
     started = time.monotonic()
     done = failed = 0
+    quota_exceeded = False
 
     for i, (did, entry) in enumerate(pending, 1):
         seed = args.seed if args.seed is not None else seed_for(did, entry)
-        try:
-            image, secs = client.generate(
-                args.model, entry["prompt"],
-                entry.get("negative") or dishlib.negative_prompt(entry),
-                seed, steps=args.steps,
-            )
-        except (ComfyError, OSError) as exc:
+        prompt = entry["prompt"]
+        negative = entry.get("negative") or dishlib.negative_prompt(entry)
+        dish_name = entry["name"]
+        image = None
+        secs = 0.0
+        used_model = None
+
+        if backend == "cloudflare":
+            try:
+                image, secs = generate_with_cloudflare(cf_client, prompt, negative)
+                used_model = "cf-sdxl-lightning"
+            except CloudflareQuotaError as exc:
+                print(f"  [{i}/{len(pending)}] Cloudflare quota exceeded: {exc}", file=sys.stderr)
+                quota_exceeded = True
+                break
+            except (CloudflareError, OSError, Exception) as exc:
+                print(f"  [{i}/{len(pending)}] Cloudflare generation failed for {dish_name}: {exc}", file=sys.stderr)
+        elif backend == "comfyui":
+            try:
+                image, secs = comfy_client.generate(
+                    args.model, prompt, negative, seed, steps=args.steps,
+                )
+                used_model = args.model
+            except (ComfyError, OSError, Exception) as exc:
+                print(f"  [{i}/{len(pending)}] ComfyUI generation failed for {dish_name}: {exc}", file=sys.stderr)
+
+        if image is None and args.search_fallback:
+            print(f"  [{i}/{len(pending)}] Attempting search fallback for {dish_name}...", flush=True)
+            fallback_img, fallback_secs = generate_with_search_fallback(dish_name)
+            if fallback_img is not None:
+                image = fallback_img
+                secs = fallback_secs
+                used_model = "web-search"
+
+        if image is None:
             failed += 1
-            print(f"  [{i}/{len(pending)}] FAILED {entry['name']}: {exc}", file=sys.stderr)
+            print(f"  [{i}/{len(pending)}] FAILED {dish_name}", file=sys.stderr)
             continue
 
         (IMAGES / f"{did}.webp").write_bytes(to_webp(image))
@@ -151,21 +249,24 @@ def main() -> int:
         # Persisted per image: a multi-hour backfill must survive a Ctrl-C.
         record_image(did, {
             "image": f"{did}.webp",
-            "model": args.model,
+            "model": used_model,
             "seed": seed,
             "prompt_rev": dishlib.PROMPT_REV,
             "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         })
 
-        if args.free_every and i % args.free_every == 0 and i < len(pending):
-            client.free()
+        if backend == "comfyui" and args.free_every and i % args.free_every == 0 and i < len(pending):
+            comfy_client.free()
 
         elapsed = time.monotonic() - started
         eta = (elapsed / i) * (len(pending) - i)
         print(f"  [{i}/{len(pending)}] P{entry.get('priority', 2)} {secs:5.1f}s  "
-              f"{entry['name'][:42]:42.42s} eta {eta / 60:.0f}m", flush=True)
+              f"{dish_name[:42]:42.42s} [{used_model}] eta {eta / 60:.0f}m", flush=True)
 
     print(f"\nDrew {done}, failed {failed}, in {(time.monotonic() - started) / 60:.1f} min")
+    if quota_exceeded:
+        print("Stopped early due to Cloudflare quota limit; completed images saved.", file=sys.stderr)
+        return 0
     return 1 if failed and not done else 0
 
 
