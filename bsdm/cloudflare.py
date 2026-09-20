@@ -19,7 +19,7 @@ import requests
 log = logging.getLogger(__name__)
 
 CF_BASE_URL = "https://api.cloudflare.com/client/v4/accounts"
-DEFAULT_TRANSLATION_MODEL = "@cf/meta/llama-3.3-70b-instruct"
+DEFAULT_TRANSLATION_MODEL = "@cf/meta/llama-3.3-70b-instruct-fp8-fast"
 DEFAULT_IMAGE_MODEL = "@cf/bytedance/stable-diffusion-xl-lightning"
 
 
