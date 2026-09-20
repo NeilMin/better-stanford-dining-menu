@@ -32,6 +32,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
 from bsdm import zh as zhlib  # noqa: E402
+from bsdm.cloudflare import CloudflareClient, CloudflareError, CloudflareQuotaError  # noqa: E402
 
 SYSTEM = (
     "You translate the menus of a US university dining hall into Simplified "
@@ -121,9 +122,16 @@ def ask(items: list[str], section: str, args) -> dict[str, str]:
     return out
 
 
-def main() -> int:
+def ask_cloudflare(items: list[str], section: str, client: CloudflareClient) -> dict[str, str]:
+    """One model call via Cloudflare Workers AI."""
+    return client.translate(items, section, SYSTEM, RULES[section])
+
+
+def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--backend", choices=["auto", "cloudflare", "claude"], default="auto",
+                    help="translation backend: cloudflare, claude, or auto (default: auto)")
     ap.add_argument("--model", default="sonnet", help="model alias passed to claude (default sonnet)")
     ap.add_argument("--claude-bin", default="claude", help="path to the Claude Code CLI")
     ap.add_argument("--section", choices=sorted(zhlib.SECTIONS), action="append",
@@ -135,7 +143,19 @@ def main() -> int:
     ap.add_argument("--jobs", type=int, default=3, help="model calls in flight at once")
     ap.add_argument("--timeout", type=int, default=240, help="seconds to wait for one call")
     ap.add_argument("--dry-run", action="store_true", help="print what would be sent and stop")
-    args = ap.parse_args()
+    args = ap.parse_args(argv)
+
+    cf_client = CloudflareClient()
+    if args.backend == "cloudflare":
+        if not cf_client.is_configured():
+            print("Error: Cloudflare backend requested but CF_ACCOUNT_ID and CF_API_TOKEN are not set.",
+                  file=sys.stderr)
+            return 1
+        use_cf = True
+    elif args.backend == "auto":
+        use_cf = cf_client.is_configured()
+    else:
+        use_cf = False
 
     table = zhlib.load(ROOT)
     want = zhlib.wanted(ROOT)
@@ -159,9 +179,10 @@ def main() -> int:
         return 0
 
     if args.dry_run:
+        backend_name = "Cloudflare Workers AI" if use_cf else f"claude ({args.model})"
         for section, items in todo.items():
             size = args.batch or BATCH[section]
-            print(f"{section}: {len(items)} items in {-(-len(items) // size)} calls")
+            print(f"{section}: {len(items)} items in {-(-len(items) // size)} calls to {backend_name}")
             for english in list(items.values())[:8]:
                 print(f"  {english}")
             if len(items) > 8:
@@ -170,6 +191,7 @@ def main() -> int:
 
     started = time.monotonic()
     done_count = failed = 0
+    quota_exceeded = False
 
     for section, items in todo.items():
         size = args.batch or BATCH[section]
@@ -180,15 +202,27 @@ def main() -> int:
             by_english.setdefault(english, []).append(key)
         english_list = list(by_english)
         batches = [english_list[i: i + size] for i in range(0, len(english_list), size)]
-        print(f"{section}: {len(items)} missing, {len(batches)} calls to {args.model}")
+        backend_name = "Cloudflare Workers AI" if use_cf else f"claude ({args.model})"
+        print(f"{section}: {len(items)} missing, {len(batches)} calls to {backend_name}")
 
         with ThreadPoolExecutor(max_workers=max(1, args.jobs)) as pool:
-            futures = {pool.submit(ask, batch, section, args): batch for batch in batches}
+            if use_cf:
+                futures = {pool.submit(ask_cloudflare, batch, section, cf_client): batch for batch in batches}
+            else:
+                futures = {pool.submit(ask, batch, section, args): batch for batch in batches}
+
             for n, future in enumerate(as_completed(futures), 1):
                 batch = futures[future]
                 try:
                     answer = future.result()
-                except TranslateError as exc:
+                except CloudflareQuotaError as exc:
+                    print(f"  [{n}/{len(batches)}] Cloudflare quota exceeded: {exc}",
+                          file=sys.stderr)
+                    for f in futures:
+                        f.cancel()
+                    quota_exceeded = True
+                    break
+                except (TranslateError, CloudflareError) as exc:
                     failed += 1
                     print(f"  [{n}/{len(batches)}] FAILED ({len(batch)} items): {exc}",
                           file=sys.stderr)
@@ -207,10 +241,17 @@ def main() -> int:
                 print(f"  [{n}/{len(batches)}] {len(answer)} translated{note}"
                       f"   e.g. {next(iter(answer.items()), ('', ''))[1][:24]}", flush=True)
 
+        if quota_exceeded:
+            print("Stopping translation due to quota limit.", file=sys.stderr)
+            break
+
     print(f"\nTranslated {done_count} items in {(time.monotonic() - started) / 60:.1f} min")
     print(zhlib.summarize(ROOT))
+    if quota_exceeded:
+        return 0
     return 1 if failed and not done_count else 0
 
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
