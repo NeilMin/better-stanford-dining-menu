@@ -120,14 +120,19 @@ class CloudflareClient:
         num_steps: int = 4,
         model: str = DEFAULT_IMAGE_MODEL,
     ) -> bytes:
-        payload: dict[str, Any] = {
-            "prompt": prompt,
-            "num_steps": num_steps,
-            "width": 1024,
-            "height": 576,
-        }
-        if negative_prompt:
-            payload["negative_prompt"] = negative_prompt
+        if "flux" in model:
+            payload: dict[str, Any] = {"prompt": prompt}
+        elif "stable-diffusion-xl-base" in model:
+            payload: dict[str, Any] = {"prompt": prompt, "num_steps": min(num_steps or 20, 20)}
+        else:
+            payload: dict[str, Any] = {
+                "prompt": prompt,
+                "num_steps": num_steps,
+                "width": 1024,
+                "height": 576,
+            }
+            if negative_prompt:
+                payload["negative_prompt"] = negative_prompt
 
         resp = self._run(model, payload, raw_response=True)
         content_type = resp.headers.get("Content-Type", "")
