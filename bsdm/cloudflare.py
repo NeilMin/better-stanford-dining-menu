@@ -77,7 +77,7 @@ class CloudflareClient:
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": prompt},
             ],
-            "max_tokens": 2048,
+            "max_tokens": 4096,
         }
         resp = self._run(model, payload)
         data = resp.json()

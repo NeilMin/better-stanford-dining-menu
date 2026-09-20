@@ -69,7 +69,7 @@ RULES = {
 - Keep announcements as announcements: "Closed for Winter Break" -> 寒假期间关闭.""",
 }
 
-BATCH = {"dishes": 40, "terms": 120, "halls": 20, "specials": 25}
+BATCH = {"dishes": 40, "terms": 40, "halls": 20, "specials": 25}
 
 
 class TranslateError(RuntimeError):
