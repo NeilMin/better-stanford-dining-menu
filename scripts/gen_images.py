@@ -28,7 +28,6 @@ from bsdm.cloudflare import CloudflareClient, CloudflareError, CloudflareQuotaEr
 from bsdm.comfy import DEFAULT_URL, MODELS, ComfyClient, ComfyError, to_webp  # noqa: E402
 from bsdm.pending import rank  # noqa: E402
 from bsdm import web_image  # noqa: E402
-from bsdm.web_image import search_food_image  # noqa: E402
 
 IMAGES = ROOT / "data" / "images"
 CATALOG = ROOT / "data" / "dishes.json"
@@ -101,6 +100,18 @@ def generate_with_search_fallback(dish_name: str) -> tuple[Image.Image | None, f
         return None, secs
     try:
         img = Image.open(io.BytesIO(data)).convert("RGB")
+        w, h = img.size
+        if abs(w / h - CARD_RATIO) > 0.01:
+            if w / h > CARD_RATIO:  # too wide: trim the sides
+                new_w = round(h * CARD_RATIO)
+                left = (w - new_w) // 2
+                img = img.crop((left, 0, left + new_w, h))
+            else:  # too tall: trim top and bottom
+                new_h = round(w / CARD_RATIO)
+                top = (h - new_h) // 2
+                img = img.crop((0, top, w, top + new_h))
+        if img.size != (1024, 576):
+            img = img.resize((1024, 576), Image.LANCZOS)
         return img, secs
     except Exception:
         return None, secs
@@ -219,7 +230,6 @@ def main(argv: list[str] | None = None) -> int:
             except CloudflareQuotaError as exc:
                 print(f"  [{i}/{len(pending)}] Cloudflare quota exceeded: {exc}", file=sys.stderr)
                 quota_exceeded = True
-                break
             except (CloudflareError, OSError, Exception) as exc:
                 print(f"  [{i}/{len(pending)}] Cloudflare generation failed for {dish_name}: {exc}", file=sys.stderr)
         elif backend == "comfyui":
@@ -242,26 +252,28 @@ def main(argv: list[str] | None = None) -> int:
         if image is None:
             failed += 1
             print(f"  [{i}/{len(pending)}] FAILED {dish_name}", file=sys.stderr)
-            continue
+        else:
+            (IMAGES / f"{did}.webp").write_bytes(to_webp(image))
+            done += 1
+            # Persisted per image: a multi-hour backfill must survive a Ctrl-C.
+            record_image(did, {
+                "image": f"{did}.webp",
+                "model": used_model,
+                "seed": seed,
+                "prompt_rev": dishlib.PROMPT_REV,
+                "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+            })
 
-        (IMAGES / f"{did}.webp").write_bytes(to_webp(image))
-        done += 1
-        # Persisted per image: a multi-hour backfill must survive a Ctrl-C.
-        record_image(did, {
-            "image": f"{did}.webp",
-            "model": used_model,
-            "seed": seed,
-            "prompt_rev": dishlib.PROMPT_REV,
-            "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-        })
+            if backend == "comfyui" and args.free_every and i % args.free_every == 0 and i < len(pending):
+                comfy_client.free()
 
-        if backend == "comfyui" and args.free_every and i % args.free_every == 0 and i < len(pending):
-            comfy_client.free()
+            elapsed = time.monotonic() - started
+            eta = (elapsed / i) * (len(pending) - i)
+            print(f"  [{i}/{len(pending)}] P{entry.get('priority', 2)} {secs:5.1f}s  "
+                  f"{dish_name[:42]:42.42s} [{used_model}] eta {eta / 60:.0f}m", flush=True)
 
-        elapsed = time.monotonic() - started
-        eta = (elapsed / i) * (len(pending) - i)
-        print(f"  [{i}/{len(pending)}] P{entry.get('priority', 2)} {secs:5.1f}s  "
-              f"{dish_name[:42]:42.42s} [{used_model}] eta {eta / 60:.0f}m", flush=True)
+        if quota_exceeded:
+            break
 
     print(f"\nDrew {done}, failed {failed}, in {(time.monotonic() - started) / 60:.1f} min")
     if quota_exceeded:

@@ -37,13 +37,26 @@ def test_generate_with_cloudflare_propagates_quota_error():
 @patch("bsdm.web_image.search_food_image")
 def test_generate_with_search_fallback_returns_image(mock_search):
     buf = io.BytesIO()
-    Image.new("RGB", (100, 100), color="yellow").save(buf, format="JPEG")
+    Image.new("RGB", (300, 300), color="yellow").save(buf, format="JPEG")
     mock_search.return_value = buf.getvalue()
 
     img, secs = generate_with_search_fallback("Curry")
     assert isinstance(img, Image.Image)
+    assert img.size == (1024, 576)
+    assert abs(img.width / img.height - 16 / 9) < 0.01
     assert secs >= 0
     mock_search.assert_called_once_with("Curry")
+
+
+@patch("bsdm.web_image.search_food_image")
+def test_generate_with_search_fallback_crops_wide_image(mock_search):
+    buf = io.BytesIO()
+    Image.new("RGB", (1600, 600), color="blue").save(buf, format="JPEG")
+    mock_search.return_value = buf.getvalue()
+
+    img, secs = generate_with_search_fallback("Wide Curry")
+    assert isinstance(img, Image.Image)
+    assert img.size == (1024, 576)
 
 
 @patch("bsdm.web_image.search_food_image")
@@ -178,6 +191,7 @@ def test_main_cloudflare_quota_error_stops_gracefully(mock_gen_project, monkeypa
         raise CloudflareQuotaError("Rate limit 429")
 
     monkeypatch.setattr("scripts.gen_images.generate_with_cloudflare", fake_gen_cf)
+    monkeypatch.setattr("scripts.gen_images.generate_with_search_fallback", lambda d: (None, 0.1))
 
     code = main(["--backend", "cloudflare"])
     assert code == 0  # Clean exit on quota error
@@ -187,6 +201,41 @@ def test_main_cloudflare_quota_error_stops_gracefully(mock_gen_project, monkeypa
     catalog = json.loads((mock_gen_project / "data" / "dishes.json").read_text())
     assert catalog["dish1"]["image"] == "dish1.webp"
     assert catalog["dish2"]["image"] is None
+
+
+def test_main_cloudflare_quota_error_rescued_by_search_fallback(mock_gen_project, monkeypatch, capsys):
+    monkeypatch.setattr("scripts.gen_images.ROOT", mock_gen_project)
+    monkeypatch.setattr("scripts.gen_images.CATALOG", mock_gen_project / "data" / "dishes.json")
+    monkeypatch.setattr("scripts.gen_images.IMAGES", mock_gen_project / "data" / "images")
+
+    mock_cf = MagicMock()
+    mock_cf.is_configured.return_value = True
+    monkeypatch.setattr("scripts.gen_images.CloudflareClient", lambda *a, **kw: mock_cf)
+
+    # Cloudflare immediately raises quota error on dish1
+    mock_gen_cf = MagicMock(side_effect=CloudflareQuotaError("Rate limit 429"))
+    monkeypatch.setattr("scripts.gen_images.generate_with_cloudflare", mock_gen_cf)
+
+    # Search fallback rescues dish1
+    fallback_img = _make_test_image("orange")
+    mock_fallback = MagicMock(return_value=(fallback_img, 0.3))
+    monkeypatch.setattr("scripts.gen_images.generate_with_search_fallback", mock_fallback)
+
+    code = main(["--backend", "cloudflare"])
+    assert code == 0  # Clean exit on quota error
+    err = capsys.readouterr().err
+    assert "quota" in err.lower()
+
+    # Dish 1 was rescued by search fallback
+    catalog = json.loads((mock_gen_project / "data" / "dishes.json").read_text())
+    assert catalog["dish1"]["image"] == "dish1.webp"
+    assert catalog["dish1"]["model"] == "web-search"
+    assert (mock_gen_project / "data" / "images" / "dish1.webp").exists()
+
+    # Dish 2 was NOT attempted because quota_exceeded broke the loop after dish1
+    assert catalog["dish2"]["image"] is None
+    assert mock_gen_cf.call_count == 1
+    assert mock_fallback.call_count == 1
 
 
 def test_main_search_fallback_on_failure(mock_gen_project, monkeypatch):
