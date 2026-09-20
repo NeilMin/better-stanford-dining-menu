@@ -60,6 +60,23 @@ def test_translate_success(mock_post):
     res = client.translate(["Chicken Thigh", "Tofu"], section="dishes", system_prompt="Sys", rules="Rules")
     assert res == {"Chicken Thigh": "鸡腿", "Tofu": "豆腐"}
 
+
+@patch("requests.Session.post")
+def test_translate_dict_response_success(mock_post):
+    mock_resp = MagicMock()
+    mock_resp.status_code = 200
+    mock_resp.json.return_value = {
+        "success": True,
+        "result": {
+            "response": {"Chicken Thigh": "鸡腿", "Tofu": "豆腐"}
+        },
+    }
+    mock_post.return_value = mock_resp
+
+    client = CloudflareClient(account_id="acc123", api_token="tok456")
+    res = client.translate(["Chicken Thigh", "Tofu"], section="dishes", system_prompt="Sys", rules="Rules")
+    assert res == {"Chicken Thigh": "鸡腿", "Tofu": "豆腐"}
+
     # Verify endpoint and headers
     mock_post.assert_called_once()
     args, kwargs = mock_post.call_args

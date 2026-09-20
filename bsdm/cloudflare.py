@@ -87,14 +87,19 @@ class CloudflareClient:
         if not raw_text:
             raise CloudflareError("Empty response from Cloudflare translation")
 
-        match = re.search(r"\{.*\}", raw_text, re.S)
-        if match:
-            raw_text = match.group(0)
+        if isinstance(raw_text, dict):
+            parsed = raw_text
+        elif isinstance(raw_text, str):
+            match = re.search(r"\{.*\}", raw_text, re.S)
+            if match:
+                raw_text = match.group(0)
 
-        try:
-            parsed = json.loads(raw_text)
-        except json.JSONDecodeError as exc:
-            raise CloudflareError(f"Malformed translation JSON: {exc} | raw text: {raw_text[:200]}") from exc
+            try:
+                parsed = json.loads(raw_text)
+            except json.JSONDecodeError as exc:
+                raise CloudflareError(f"Malformed translation JSON: {exc} | raw text: {raw_text[:200]}") from exc
+        else:
+            raise CloudflareError(f"Unexpected response type: {type(raw_text).__name__}")
 
         if not isinstance(parsed, dict):
             raise CloudflareError(f"Expected dict, got {type(parsed).__name__}")
