@@ -287,6 +287,42 @@ def is_bowl(dish) -> bool:
     return bool(re.search(r"\b(bowls?|soups?|chowders?|ramen|pho|bisque)\b", name, re.I))
 
 
+def _hero_protein_phrase(dish) -> str | None:
+    category = classify(dish)
+    if category not in ("pork", "beef", "poultry", "seafood", "lamb"):
+        return None
+    name = (_get(dish)("name", "") or "").lower()
+    if category == "pork":
+        if "bulgogi" in name:
+            return "tender stir-fried thinly sliced pork in sweet savory marinade with scallions"
+        if "carnitas" in name or "al pastor" in name:
+            return "tender shredded seasoned pork with crispy edges"
+        if "bacon" in name:
+            return "crispy browned bacon strips"
+        return "tender cooked pork cuts, succulent meat texture, browned edges"
+    if category == "beef":
+        if "bulgogi" in name:
+            return "tender stir-fried thinly sliced beef in sweet savory marinade with onions and scallions"
+        if "steak" in name:
+            return "juicy sliced seared steak with rich caramelized crust"
+        if "burger" in name:
+            return "juicy grilled beef patty with melted cheese"
+        return "tender cooked beef, succulent meat texture, rich caramelized sear"
+    if category == "poultry":
+        if "roast" in name or "grilled" in name:
+            return "juicy grilled or roasted chicken, golden skin, tender meat texture"
+        if "crispy" in name or "fried" in name:
+            return "crispy golden fried chicken, crunchy coating"
+        if "tikka" in name or "curry" in name:
+            return "tender chicken pieces in rich fragrant spiced sauce"
+        return "tender cooked chicken, succulent poultry texture"
+    if category == "seafood":
+        return "delicate flaky fish fillet or fresh seafood, glistening glaze"
+    if category == "lamb":
+        return "tender seasoned lamb, fragrant spices, succulent meat texture"
+    return None
+
+
 def image_prompt(dish) -> str:
     """Build the positive prompt for one dish."""
     get = _get(dish)
@@ -294,7 +330,9 @@ def image_prompt(dish) -> str:
     key = _key_ingredients(get("ingredients", ""), limit=8, dish_name=name)
     tags = _tags(dish)
 
-    parts = [f"{name}, a dining hall dish"]
+    parts = [name]
+    if hero := _hero_protein_phrase(dish):
+        parts.append(hero)
     if key:
         parts.append("made with " + ", ".join(key))
     if "vegan" in tags:
@@ -307,8 +345,8 @@ def image_prompt(dish) -> str:
     vessel = "served in a simple white ceramic bowl" if is_bowl(dish) else "plated on a simple white ceramic plate"
     parts.append(
         f"appetizing food photography, {vessel}, "
-        "overhead three-quarter view, soft natural window light, shallow depth "
-        "of field, clean neutral background, sharp focus, high detail"
+        "overhead three-quarter view, centered composition with generous empty margin around the plate, "
+        "soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail"
     )
     return ", ".join(parts)
 
@@ -362,4 +400,4 @@ def negative_prompt(dish) -> str:
 
 # Bumped whenever the prompt rules change, so already-drawn images can be told
 # apart from ones drawn under the current rules and redrawn in priority order.
-PROMPT_REV = 3
+PROMPT_REV = 4

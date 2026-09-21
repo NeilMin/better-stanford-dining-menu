@@ -1,10 +1,14 @@
 #!/usr/bin/env python3
 """Render the dish images that data/dishes.json is still missing.
 
-Supports Cloudflare Workers AI, local ComfyUI, and DuckDuckGo web search
-fallback. Images are keyed on the dish name, so this is resumable and
-idempotent: a dish is drawn once and then reused across every hall and every
-week it appears in.
+Multi-tier hybrid image pipeline:
+  Tier 1: Web food photography search (Wikipedia / Pexels) gated by Cloudflare
+          Llama 3.2 Vision judge for authenticity and cooked state.
+  Tier 2: Cloudflare Workers AI FLUX.1-schnell with protein-hardened prompting.
+  Local Master Mode: ComfyUI RealVisXL on port 8189 (overwrites anytime locally).
+
+Images are keyed on the dish name, so this is resumable and idempotent:
+a dish is drawn once and then reused across every hall and every week it appears in.
 """
 
 from __future__ import annotations
@@ -31,16 +35,11 @@ from bsdm import web_image  # noqa: E402
 
 IMAGES = ROOT / "data" / "images"
 CATALOG = ROOT / "data" / "dishes.json"
+CARD_RATIO = 16 / 9
 
 
 def seed_for(dish_id: str, entry: dict | None = None) -> int:
-    """A stable seed per dish, so a regenerated image looks like the old one.
-
-    The catalog's own seed wins where it carries one, which is what makes a
-    hand-picked seed stick. Deriving it from the id every time is what drew the
-    picture being replaced, so a --force redraw would faithfully reproduce the
-    bad one, and --redraw-stale would quietly undo the fix a prompt bump later.
-    """
+    """A stable seed per dish, so a regenerated image looks like the old one."""
     stored = (entry or {}).get("seed")
     if stored is not None:
         return int(stored)
@@ -51,15 +50,8 @@ def seed_for(dish_id: str, entry: dict | None = None) -> int:
         return int(hashlib.sha256(dish_id.encode()).hexdigest()[:8], 16)
 
 
-CARD_RATIO = 16 / 9
-
-
 def is_current(path: Path) -> bool:
-    """Whether an existing image still matches the shape the cards display.
-
-    Changing the card's aspect ratio should redraw the library rather than let
-    the browser centre-crop away half of every older picture.
-    """
+    """Whether an existing image still matches the shape the cards display."""
     try:
         with Image.open(path) as im:
             return abs(im.width / im.height - CARD_RATIO) < 0.02
@@ -68,16 +60,27 @@ def is_current(path: Path) -> bool:
 
 
 def record_image(dish_id: str, fields: dict) -> None:
-    """Merge one dish's image fields into the catalog on disk.
-
-    A full backfill runs for hours, so the catalog is re-read and rewritten per
-    dish rather than held in memory: rebuild_catalog.py may well reclassify
-    dishes while this is still running, and a wholesale write would silently
-    revert that work.
-    """
+    """Merge one dish's image fields into the catalog on disk."""
     catalog = json.loads(CATALOG.read_text())
     catalog.setdefault(dish_id, {}).update(fields)
     CATALOG.write_text(json.dumps(catalog, indent=1, ensure_ascii=False, sort_keys=True) + "\n")
+
+
+def crop_and_resize_to_card(img: Image.Image) -> Image.Image:
+    """Crop and resize an image to 16:9 1024x576 for the card grid."""
+    w, h = img.size
+    if abs(w / h - CARD_RATIO) > 0.01:
+        if w / h > CARD_RATIO:  # too wide: trim the sides
+            new_w = round(h * CARD_RATIO)
+            left = (w - new_w) // 2
+            img = img.crop((left, 0, left + new_w, h))
+        else:  # too tall: trim top and bottom
+            new_h = round(w / CARD_RATIO)
+            top = (h - new_h) // 2
+            img = img.crop((0, top, w, top + new_h))
+    if img.size != (1024, 576):
+        img = img.resize((1024, 576), Image.LANCZOS)
+    return img
 
 
 def generate_with_cloudflare(
@@ -86,43 +89,45 @@ def generate_with_cloudflare(
     """Generate an image via Cloudflare Workers AI."""
     started = time.monotonic()
     raw_bytes = client.generate_image(prompt, negative_prompt=negative)
-    img = Image.open(io.BytesIO(raw_bytes)).convert("RGB")
+    raw_img = Image.open(io.BytesIO(raw_bytes)).convert("RGB")
+    card_img = crop_and_resize_to_card(raw_img)
     secs = time.monotonic() - started
-    return img, secs
+    return card_img, secs
 
 
-def generate_with_search_fallback(dish_name: str) -> tuple[Image.Image | None, float]:
-    """Search DuckDuckGo Images as a fallback when AI generation fails."""
+def generate_with_search(
+    dish_name: str, client: CloudflareClient | None = None, min_score: int = 7
+) -> tuple[Image.Image | None, float]:
+    """Search web food photography and crop to card if approved by VLM quality gate."""
     started = time.monotonic()
-    data = web_image.search_food_image(dish_name)
+    data = web_image.search_food_image(dish_name, client=client, min_score=min_score)
     secs = time.monotonic() - started
     if not data:
         return None, secs
     try:
-        img = Image.open(io.BytesIO(data)).convert("RGB")
-        w, h = img.size
-        if abs(w / h - CARD_RATIO) > 0.01:
-            if w / h > CARD_RATIO:  # too wide: trim the sides
-                new_w = round(h * CARD_RATIO)
-                left = (w - new_w) // 2
-                img = img.crop((left, 0, left + new_w, h))
-            else:  # too tall: trim top and bottom
-                new_h = round(w / CARD_RATIO)
-                top = (h - new_h) // 2
-                img = img.crop((0, top, w, top + new_h))
-        if img.size != (1024, 576):
-            img = img.resize((1024, 576), Image.LANCZOS)
-        return img, secs
+        raw_img = Image.open(io.BytesIO(data)).convert("RGB")
+        return crop_and_resize_to_card(raw_img), secs
     except Exception:
         return None, secs
 
 
+def generate_with_search_fallback(dish_name: str) -> tuple[Image.Image | None, float]:
+    """Search DuckDuckGo / web as an un-gated fallback when generation fails."""
+    return generate_with_search(dish_name, client=None, min_score=0)
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--backend", choices=["auto", "cloudflare", "comfyui"], default="auto",
-                    help="generation backend: auto, cloudflare, or comfyui (default: auto)")
+    ap.add_argument("--backend", choices=["auto", "cloudflare", "comfyui", "search"], default="auto",
+                    help="generation backend: auto, cloudflare, comfyui, or search (default: auto)")
+    ap.add_argument("--search-first", action=argparse.BooleanOptionalAction, default=True,
+                    help="try web food search + VLM judge before AI generation (default: True)")
     ap.add_argument("--search-fallback", action=argparse.BooleanOptionalAction, default=True,
                     help="fall back to web image search if generation fails (default: True)")
+    ap.add_argument("--only-search", action="store_true",
+                    help="only search web food photography (skip AI generation)")
+    ap.add_argument("--only-ai", action="store_true",
+                    help="only use AI generation (skip web search)")
     ap.add_argument("--url", default=DEFAULT_URL, help="ComfyUI base URL")
     ap.add_argument("--model", default="sdxl", choices=sorted(MODELS))
     ap.add_argument("--limit", type=int, help="stop after N images")
@@ -153,10 +158,6 @@ def main(argv: list[str] | None = None) -> int:
 
     catalog = json.loads(CATALOG.read_text())
     IMAGES.mkdir(parents=True, exist_ok=True)
-    # Meat first, then other mains, then sides; within a tier, whatever R&DE
-    # lists earliest on the menu. Shared with bsdm/pending.py, which reports the
-    # backlog to GitHub: a queue and a to-do list of the same queue that disagree
-    # about the order would be read as one of them being wrong.
     pending = []
     for did, entry in sorted(catalog.items(), key=rank):
         if not entry.get("needs_image") or not entry.get("prompt"):
@@ -191,24 +192,23 @@ def main(argv: list[str] | None = None) -> int:
             return 2
         comfy_client.validate(args.model)
         backend = "comfyui"
+    elif args.backend == "search":
+        backend = "search"
     else:  # auto
-        if cf_client.is_configured():
-            backend = "cloudflare"
-        elif comfy_client.available():
+        if comfy_client.available():
             comfy_client.validate(args.model)
             backend = "comfyui"
+        elif cf_client.is_configured():
+            backend = "cloudflare"
         else:
-            print(
-                f"No image generation backend available.\n"
-                f"Set CF_ACCOUNT_ID/CF_API_TOKEN for Cloudflare, or start ComfyUI at {args.url}.",
-                file=sys.stderr,
-            )
-            return 2
+            backend = "search"
 
     if backend == "cloudflare":
-        print(f"Drawing {len(pending)} dishes via Cloudflare Workers AI")
-    else:
+        print(f"Processing {len(pending)} dishes via Cloudflare Workers AI + Web Search (Hybrid Tier)")
+    elif backend == "comfyui":
         print(f"Drawing {len(pending)} dishes with {args.model} via {args.url}")
+    else:
+        print(f"Searching web images for {len(pending)} dishes")
 
     started = time.monotonic()
     done = failed = 0
@@ -223,26 +223,42 @@ def main(argv: list[str] | None = None) -> int:
         secs = 0.0
         used_model = None
 
-        if backend == "cloudflare":
+        # Tier 1: Web Food Search with VLM Quality Gate
+        if not args.only_ai and (backend in ("cloudflare", "search")) and args.search_first:
             try:
-                image, secs = generate_with_cloudflare(cf_client, prompt, negative)
-                used_model = "cf-sdxl-lightning"
-            except CloudflareQuotaError as exc:
-                print(f"  [{i}/{len(pending)}] Cloudflare quota exceeded: {exc}", file=sys.stderr)
-                quota_exceeded = True
-            except (CloudflareError, OSError, Exception) as exc:
-                print(f"  [{i}/{len(pending)}] Cloudflare generation failed for {dish_name}: {exc}", file=sys.stderr)
-        elif backend == "comfyui":
-            try:
-                image, secs = comfy_client.generate(
-                    args.model, prompt, negative, seed, steps=args.steps,
-                )
-                used_model = args.model
-            except (ComfyError, OSError, Exception) as exc:
-                print(f"  [{i}/{len(pending)}] ComfyUI generation failed for {dish_name}: {exc}", file=sys.stderr)
+                vlm_client = cf_client if cf_client.is_configured() else None
+                search_img, search_secs = generate_with_search(dish_name, client=vlm_client, min_score=7)
+                if search_img is not None:
+                    image = search_img
+                    secs = search_secs
+                    used_model = "web-search"
+            except Exception as exc:
+                print(f"  [{i}/{len(pending)}] Web food search error for {dish_name}: {exc}", file=sys.stderr)
 
-        if image is None and args.search_fallback:
-            print(f"  [{i}/{len(pending)}] Attempting search fallback for {dish_name}...", flush=True)
+        # Tier 2: AI Generation
+        if image is None and not args.only_search:
+            if backend == "cloudflare":
+                try:
+                    image, secs = generate_with_cloudflare(cf_client, prompt, negative)
+                    used_model = "cf-flux"
+                except CloudflareQuotaError as exc:
+                    print(f"  [{i}/{len(pending)}] Cloudflare quota exceeded: {exc}", file=sys.stderr)
+                    quota_exceeded = True
+                except (CloudflareError, OSError, Exception) as exc:
+                    print(f"  [{i}/{len(pending)}] Cloudflare generation failed for {dish_name}: {exc}", file=sys.stderr)
+            elif backend == "comfyui":
+                try:
+                    raw_img, secs = comfy_client.generate(
+                        args.model, prompt, negative, seed, steps=args.steps,
+                    )
+                    image = crop_and_resize_to_card(raw_img)
+                    used_model = args.model
+                except (ComfyError, OSError, Exception) as exc:
+                    print(f"  [{i}/{len(pending)}] ComfyUI generation failed for {dish_name}: {exc}", file=sys.stderr)
+
+        # Tier 3: Emergency Fallback
+        if image is None and args.search_fallback and not args.only_ai:
+            print(f"  [{i}/{len(pending)}] Attempting fallback search for {dish_name}...", flush=True)
             fallback_img, fallback_secs = generate_with_search_fallback(dish_name)
             if fallback_img is not None:
                 image = fallback_img
@@ -255,7 +271,6 @@ def main(argv: list[str] | None = None) -> int:
         else:
             (IMAGES / f"{did}.webp").write_bytes(to_webp(image))
             done += 1
-            # Persisted per image: a multi-hour backfill must survive a Ctrl-C.
             record_image(did, {
                 "image": f"{did}.webp",
                 "model": used_model,
@@ -275,7 +290,7 @@ def main(argv: list[str] | None = None) -> int:
         if quota_exceeded:
             break
 
-    print(f"\nDrew {done}, failed {failed}, in {(time.monotonic() - started) / 60:.1f} min")
+    print(f"\nProcessed {done}, failed {failed}, in {(time.monotonic() - started) / 60:.1f} min")
     if quota_exceeded:
         print("Stopped early due to Cloudflare quota limit; completed images saved.", file=sys.stderr)
         return 0

@@ -8,6 +8,7 @@ without requiring local GPU or paid subscriptions.
 from __future__ import annotations
 
 import base64
+import io
 import json
 import logging
 import os
@@ -20,7 +21,8 @@ log = logging.getLogger(__name__)
 
 CF_BASE_URL = "https://api.cloudflare.com/client/v4/accounts"
 DEFAULT_TRANSLATION_MODEL = "@cf/meta/llama-3.3-70b-instruct-fp8-fast"
-DEFAULT_IMAGE_MODEL = "@cf/bytedance/stable-diffusion-xl-lightning"
+DEFAULT_IMAGE_MODEL = "@cf/black-forest-labs/flux-1-schnell"
+DEFAULT_VISION_MODEL = "@cf/meta/llama-3.2-11b-vision-instruct"
 
 
 class CloudflareError(RuntimeError):
@@ -33,8 +35,8 @@ class CloudflareQuotaError(CloudflareError):
 
 class CloudflareClient:
     def __init__(self, account_id: str | None = None, api_token: str | None = None, timeout: int = 60):
-        self.account_id = (account_id or os.getenv("CF_ACCOUNT_ID") or "").strip()
-        self.api_token = (api_token or os.getenv("CF_API_TOKEN") or "").strip()
+        self.account_id = (account_id or os.getenv("CF_ACCOUNT_ID") or "").strip().strip('"').strip("'")
+        self.api_token = (api_token or os.getenv("CF_API_TOKEN") or "").strip().strip('"').strip("'")
         self.timeout = timeout
         self.session = requests.Session()
         if self.api_token:
@@ -122,6 +124,8 @@ class CloudflareClient:
     ) -> bytes:
         if "flux" in model:
             payload: dict[str, Any] = {"prompt": prompt}
+            if num_steps:
+                payload["steps"] = min(max(num_steps, 1), 8)
         elif "stable-diffusion-xl-base" in model:
             payload: dict[str, Any] = {"prompt": prompt, "num_steps": min(num_steps or 20, 20)}
         else:
@@ -148,3 +152,65 @@ class CloudflareClient:
             pass
 
         return resp.content
+
+    def evaluate_image(
+        self,
+        image_bytes: bytes,
+        dish_name: str,
+        model: str = DEFAULT_VISION_MODEL,
+    ) -> dict[str, Any]:
+        """Evaluate a food image candidate for realism, cleanliness, and readiness."""
+        try:
+            from PIL import Image
+            im = Image.open(io.BytesIO(image_bytes)).convert("RGB")
+            im.thumbnail((512, 512))
+            buf = io.BytesIO()
+            im.save(buf, format="JPEG", quality=85)
+            thumb_bytes = buf.getvalue()
+        except Exception as exc:
+            log.warning("Failed to prepare thumbnail for vision eval: %s", exc)
+            return {"valid": False, "score": 0, "reason": "Invalid image bytes"}
+
+        prompt = (
+            f"You are a professional culinary editor. Evaluate this image for the dish '{dish_name}'. "
+            "Check: (1) Is it fully cooked, baked or prepared, ready to eat? (Reject raw dough, uncooked meat, or preparation steps). "
+            "(2) Is it clean and free of watermarks, text overlays, logos, packaging, and people? "
+            "(3) Is it appetizing and accurately represents the dish? "
+            'Reply ONLY with a raw JSON object with keys: "valid" (boolean), "score" (integer 1-10), "reason" (short string).'
+        )
+        payload = {
+            "prompt": prompt,
+            "image": list(thumb_bytes),
+            "max_tokens": 128,
+        }
+        try:
+            resp = self._run(model, payload)
+            data = resp.json()
+            raw_text = data.get("result", {}).get("response", "") if isinstance(data, dict) else ""
+            if isinstance(raw_text, dict):
+                res = raw_text
+            elif isinstance(raw_text, str):
+                match = re.search(r"\{.*\}", raw_text, re.S)
+                if match:
+                    clean_json = (
+                        match.group(0)
+                        .replace("'", '"')
+                        .replace("True", "true")
+                        .replace("False", "false")
+                    )
+                    res = json.loads(clean_json)
+                else:
+                    res = {}
+            else:
+                res = {}
+
+            if isinstance(res, dict) and "valid" in res:
+                return {
+                    "valid": bool(res.get("valid", False)),
+                    "score": int(res.get("score", 0)),
+                    "reason": str(res.get("reason", "")),
+                }
+        except Exception as exc:
+            log.warning("Vision evaluation failed for '%s': %s", dish_name, exc)
+
+        return {"valid": False, "score": 0, "reason": "Evaluation failed"}

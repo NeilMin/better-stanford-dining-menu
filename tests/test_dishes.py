@@ -135,7 +135,9 @@ class TestKeyIngredients:
         return dishlib.image_prompt(d(name, ingredients, tags))
 
     def test_leads_with_the_name(self):
-        assert self.prompt_of("", "Tofu Scramble").startswith("Tofu Scramble, a dining hall dish")
+        prompt = self.prompt_of("", "Tofu Scramble")
+        assert prompt.startswith("Tofu Scramble")
+        assert "a dining hall dish" not in prompt
 
     def test_keeps_the_visible_ingredients(self):
         assert "made with chicken breast, rice" in self.prompt_of("chicken breast, rice")
@@ -178,6 +180,17 @@ class TestKeyIngredients:
         prompt = dishlib.image_prompt(saffron_dish)
         assert "red saffron threads" in prompt
         assert "dill" not in prompt
+
+    def test_pork_bulgogi_anchors_hero_protein(self):
+        pork_bulgogi = d("Pork Bulgogi", "pork, mushroom, onion, kale")
+        prompt = dishlib.image_prompt(pork_bulgogi)
+        assert "tender stir-fried thinly sliced pork in sweet savory marinade with scallions" in prompt
+        assert "centered composition with generous empty margin around the plate" in prompt
+
+    def test_beef_bulgogi_anchors_hero_protein(self):
+        beef_bulgogi = d("Beef Bulgogi", "beef, scallions, onion")
+        prompt = dishlib.image_prompt(beef_bulgogi)
+        assert "tender stir-fried thinly sliced beef in sweet savory marinade with onions and scallions" in prompt
 
 
 class TestVessel:

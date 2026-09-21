@@ -85,7 +85,8 @@ class TestNeedsImage:
             dish("Roast Chicken", "chicken thigh")]}}})
         got = entry_for(catalog, "Roast Chicken")
         assert got["needs_image"]
-        assert got["prompt"].startswith("Roast Chicken, a dining hall dish")
+        assert got["prompt"].startswith("Roast Chicken")
+        assert "a dining hall dish" not in got["prompt"]
         assert "sliced steak" in got["negative"], "the other four proteins are steered out"
 
 
@@ -191,7 +192,8 @@ class TestSpecials:
                                    "to": "2026-09-19"}])
         got = entry_for(catalog, "Jerk Pork Belly")
         assert got["special"] and got["needs_image"] and got["priority"] == 0
-        assert got["prompt"].startswith("Jerk Pork Belly, a dining hall dish")
+        assert got["prompt"].startswith("Jerk Pork Belly")
+        assert "a dining hall dish" not in got["prompt"]
 
     def test_an_empty_ingredient_list_is_not_read_as_changes_daily(self, project):
         """is_placeholder() would say so, and skip the picture. It does not:

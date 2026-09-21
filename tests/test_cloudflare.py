@@ -178,16 +178,33 @@ def test_generate_image_binary_success(mock_post):
     mock_post.return_value = mock_resp
 
     client = CloudflareClient(account_id="acc123", api_token="tok456")
-    img_data = client.generate_image("A bowl of ramen", negative_prompt="blurry", num_steps=8)
+    img_data = client.generate_image("A bowl of ramen", negative_prompt="blurry", num_steps=8, model="@cf/bytedance/stable-diffusion-xl-lightning")
     assert img_data == png_bytes
 
     args, kwargs = mock_post.call_args
-    assert f"https://api.cloudflare.com/client/v4/accounts/acc123/ai/run/{DEFAULT_IMAGE_MODEL}" in args[0]
+    assert "https://api.cloudflare.com/client/v4/accounts/acc123/ai/run/@cf/bytedance/stable-diffusion-xl-lightning" in args[0]
     assert kwargs["json"]["prompt"] == "A bowl of ramen"
     assert kwargs["json"]["negative_prompt"] == "blurry"
     assert kwargs["json"]["num_steps"] == 8
     assert kwargs["json"]["width"] == 1024
     assert kwargs["json"]["height"] == 576
+
+
+@patch("requests.Session.post")
+def test_generate_image_flux_payload(mock_post):
+    mock_resp = MagicMock()
+    mock_resp.status_code = 200
+    mock_resp.headers = {"Content-Type": "image/png"}
+    mock_resp.content = b"fake-flux-png"
+    mock_post.return_value = mock_resp
+
+    client = CloudflareClient(account_id="acc123", api_token="tok456")
+    img_data = client.generate_image("A bowl of ramen", model="@cf/black-forest-labs/flux-1-schnell", num_steps=6)
+    assert img_data == b"fake-flux-png"
+
+    args, kwargs = mock_post.call_args
+    assert "@cf/black-forest-labs/flux-1-schnell" in args[0]
+    assert kwargs["json"] == {"prompt": "A bowl of ramen", "steps": 6}
 
 
 @patch("requests.Session.post")
@@ -238,3 +255,45 @@ def test_network_request_exception(mock_post):
     client = CloudflareClient(account_id="acc123", api_token="tok456")
     with pytest.raises(CloudflareError, match="Cloudflare request failed"):
         client.generate_image("A bowl of ramen")
+
+
+@patch("requests.Session.post")
+def test_evaluate_image_success(mock_post):
+    buf = io.BytesIO()
+    Image.new("RGB", (100, 100), color="blue").save(buf, format="JPEG")
+    fake_img = buf.getvalue()
+
+    mock_resp = MagicMock()
+    mock_resp.status_code = 200
+    mock_resp.json.return_value = {
+        "result": {
+            "response": '{"valid": true, "score": 9, "reason": "Freshly baked pizza"}'
+        }
+    }
+    mock_post.return_value = mock_resp
+
+    client = CloudflareClient(account_id="acc123", api_token="tok456")
+    eval_res = client.evaluate_image(fake_img, "Pizza")
+    assert eval_res["valid"] is True
+    assert eval_res["score"] == 9
+    assert eval_res["reason"] == "Freshly baked pizza"
+
+    args, kwargs = mock_post.call_args
+    assert "@cf/meta/llama-3.2-11b-vision-instruct" in args[0]
+    assert "Pizza" in kwargs["json"]["prompt"]
+    assert isinstance(kwargs["json"]["image"], list)
+
+
+@patch("requests.Session.post")
+def test_evaluate_image_failure_fallback(mock_post):
+    client = CloudflareClient(account_id="acc123", api_token="tok456")
+    # Invalid image bytes
+    res = client.evaluate_image(b"not-an-image", "Pizza")
+    assert res == {"valid": False, "score": 0, "reason": "Invalid image bytes"}
+
+    # Mock server error
+    buf = io.BytesIO()
+    Image.new("RGB", (64, 64)).save(buf, format="JPEG")
+    mock_post.side_effect = requests.RequestException("Timeout")
+    res_err = client.evaluate_image(buf.getvalue(), "Pizza")
+    assert res_err == {"valid": False, "score": 0, "reason": "Evaluation failed"}
