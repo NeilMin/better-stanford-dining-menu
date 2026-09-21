@@ -195,6 +195,20 @@ class TestKeyIngredients:
         prompt = dishlib.image_prompt(beef_bulgogi)
         assert "tender stir-fried thinly sliced beef in sweet savory marinade with onions and scallions" in prompt
 
+    def test_short_ribs_anchors_hero_protein(self):
+        ribs = d("Hawaiian Teriyaki Short Ribs", "beef short ribs, teriyaki sauce, orange juice, green onions")
+        prompt = dishlib.image_prompt(ribs)
+        assert "tender grilled bone-in kalbi beef short ribs with caramelized teriyaki glaze" in prompt
+        assert "orange juice" not in prompt
+
+    def test_tempeh_anchors_hero_cubes(self):
+        tempeh = d("Crispy Korean-Style Tempeh", "tempeh, marinade (garlic), dredge (flour), glaze (gochujang) toasted sesame seeds, green onions", tags=["vegan"])
+        prompt = dishlib.image_prompt(tempeh)
+        assert "crispy bite-sized golden-brown glazed tempeh cubes" in prompt
+        assert "marinade" not in prompt
+        assert "dredge" not in prompt
+        assert "toasted sesame seeds" in prompt
+
 
 class TestVessel:
     def test_bowl_dishes_detected(self):

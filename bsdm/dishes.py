@@ -84,9 +84,9 @@ _INVISIBLE_RE = re.compile(
     # Any oil, however the kitchen spells the blend ("canola/olive oil blend").
     r"|[\w/ ]*oils?( blend)?|cooking spray|butter spray"
     r"|corn ?starch|arrowroot|xanthan gum|flour|baking (powder|soda)|yeast|msg"
-    r"|(white |red |rice |apple cider |balsamic )?vinegar|citric acid|lemon juice|lime juice"
+    r"|(white |red |rice |apple cider |balsamic )?vinegar|citric acid|lemon juice|lime juice|orange juice|pineapple juice"
     r"|spices?|seasoning( blend| mix)?|salt and pepper|garlic powder|onion powder"
-    r"|preservatives?|emulsifiers?|food colou?ring"
+    r"|preservatives?|emulsifiers?|food colou?ring|marinade|dredge|glaze|batter"
     r")\s*$",
     re.I,
 )
@@ -288,6 +288,7 @@ def _key_ingredients(ingredients: str, limit: int = 12, dish_name: str = "") -> 
     seen, clean = set(), []
     for item in out:
         item = re.sub(r"\s+", " ", item).strip(" .;:-")
+        item = re.sub(r"^(marinade|dredge|glaze|batter)\s+", "", item, flags=re.I)
         if not item or len(item) > 40 or _INVISIBLE_RE.match(item):
             continue
         # The same rule that stops "oyster sauce" from marking a dish as seafood
@@ -316,10 +317,12 @@ def is_bowl(dish) -> bool:
 
 
 def _hero_protein_phrase(dish) -> str | None:
+    name = (_get(dish)("name", "") or "").lower()
+    if "tempeh" in name:
+        return "crispy bite-sized golden-brown glazed tempeh cubes, sticky spicy-sweet red gochujang glaze, toasted sesame seeds and chopped scallions"
     category = classify(dish)
     if category not in ("pork", "beef", "poultry", "seafood", "lamb"):
         return None
-    name = (_get(dish)("name", "") or "").lower()
     if category == "pork":
         if "bulgogi" in name:
             return "tender stir-fried thinly sliced pork in sweet savory marinade with scallions"
@@ -331,6 +334,8 @@ def _hero_protein_phrase(dish) -> str | None:
     if category == "beef":
         if "bulgogi" in name:
             return "tender stir-fried thinly sliced beef in sweet savory marinade with onions and scallions"
+        if "short rib" in name or "rib" in name:
+            return "tender grilled bone-in kalbi beef short ribs with caramelized teriyaki glaze"
         if "steak" in name:
             return "juicy sliced seared steak with rich caramelized crust"
         if "burger" in name:
