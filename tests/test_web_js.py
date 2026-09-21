@@ -170,6 +170,56 @@ class TestPureHelpers:
                    prelude="const state = { diet: ['vegan', 'halal'] };", tmp_path=tmp_path)
         assert got == [True, False, False]
 
+    def test_vegetarian_filter_includes_vegan_dishes(self, tmp_path):
+        """Vegan is a strict subset of vegetarian: every vegan dish is vegetarian."""
+        got = call(["matchesDiet"], "return INPUT.map((tags) => matchesDiet({ tags }));",
+                   payload=[["vegan"], ["vegetarian"], ["halal"], []],
+                   prelude="const state = { diet: ['vegetarian'] };", tmp_path=tmp_path)
+        assert got == [True, True, False, False]
+
+    def test_vegan_filter_does_not_match_non_vegan_vegetarian(self, tmp_path):
+        """A vegan cannot eat non-vegan vegetarian food (e.g. eggs/dairy)."""
+        got = call(["matchesDiet"], "return INPUT.map((tags) => matchesDiet({ tags }));",
+                   payload=[["vegan"], ["vegetarian"], []],
+                   prelude="const state = { diet: ['vegan'] };", tmp_path=tmp_path)
+        assert got == [True, False, False]
+
+    def test_vegetarian_and_vegan_both_in_diet_matches_vegan(self, tmp_path):
+        """If both tags are somehow selected, vegan dishes satisfy both requirements."""
+        got = call(["matchesDiet"], "return INPUT.map((tags) => matchesDiet({ tags }));",
+                   payload=[["vegan"], ["vegetarian"], []],
+                   prelude="const state = { diet: ['vegetarian', 'vegan'] };", tmp_path=tmp_path)
+        assert got == [True, False, False]
+
+    def test_vegetarian_with_halal_matches_vegan_halal(self, tmp_path):
+        got = call(["matchesDiet"], "return INPUT.map((tags) => matchesDiet({ tags }));",
+                   payload=[["vegan", "halal"], ["vegetarian", "halal"], ["vegan"], ["halal"]],
+                   prelude="const state = { diet: ['vegetarian', 'halal'] };", tmp_path=tmp_path)
+        assert got == [True, True, False, False]
+
+    def test_station_group_matches_diet_and_filters_subitems(self, tmp_path):
+        prelude = "const state = { diet: ['vegetarian'] };"
+        code = """
+        const group = {
+            isStationGroup: true,
+            items: [
+                { id: '1', tags: ['vegan'] },
+                { id: '2', tags: ['poultry'] },
+                { id: '3', tags: ['vegetarian'] },
+            ],
+        };
+        const matched = matchesDiet(group);
+        return { matched, matchingCount: group.matchingItems.length, matchingIds: group.matchingItems.map(i => i.id) };
+        """
+        got = call(["matchesDiet"], code, prelude=prelude, tmp_path=tmp_path)
+        assert got == {"matched": True, "matchingCount": 2, "matchingIds": ["1", "3"]}
+
+    def test_missing_tags_does_not_crash(self, tmp_path):
+        got = call(["matchesDiet"], "return matchesDiet(INPUT);",
+                   payload={},
+                   prelude="const state = { diet: ['vegetarian'] };", tmp_path=tmp_path)
+        assert got is False
+
     def test_open_soon_and_shut_are_read_off_the_viewers_clock(self, tmp_path):
         """A tab left open overnight must not keep calling yesterday "Today",
         so the comparison is against the browser's own time, not build time."""

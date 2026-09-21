@@ -284,6 +284,11 @@
   state.halls = hallOrder(state.halls);
   if (!state.halls.length) state.halls = hallOrder(DATA.defaults.selected);
   if (!UI[state.lang]) state.lang = fallback.lang;
+  const validDiets = new Set(DIET.map((d) => d.key));
+  state.diet = Array.isArray(state.diet) ? state.diet.filter((d) => validDiets.has(d)) : [];
+  if (state.diet.includes("vegan") && state.diet.includes("vegetarian")) {
+    state.diet = state.diet.filter((d) => d !== "vegetarian");
+  }
 
   // ---------- analytics ----------
 
@@ -525,7 +530,12 @@
       rec.matchingItems = matching;
       return matching.length > 0;
     }
-    return state.diet.every((d) => (rec.tags || []).includes(d));
+    const tags = rec.tags || [];
+    return state.diet.every((d) => (
+      d === "vegetarian"
+        ? (tags.includes("vegetarian") || tags.includes("vegan"))
+        : tags.includes(d)
+    ));
   }
 
   function badgesFor(rec, onlyHere, special = false) {
@@ -542,8 +552,9 @@
         textContent: t("protein", rec.category),
       }));
     }
+    const tags = rec.tags || [];
     for (const d of DIET) {
-      if (rec.tags.includes(d.key)) {
+      if (tags.includes(d.key)) {
         badges.append(el("span", { className: "badge " + d.cls, textContent: t("dietShort", d) }));
       }
     }
@@ -786,16 +797,20 @@
     // A dish shown by exactly one selected hall is the reason to walk there.
     // Counted over the day's menu only: every hall has a salad bar.
     const spread = new Map();
+    const servingHalls = [];
     for (const hallId of state.halls) {
       const svc = service(state.date, hallId, state.meal);
-      for (const ref of [...svc.specials, ...svc.daily]) {
-        const rawRef = typeof ref === "object" && ref !== null && ref.station ? ref.station : ref;
-        const id = rawRef.slice(0, rawRef.lastIndexOf("."));
-        spread.set(id, (spread.get(id) || 0) + 1);
+      const specials = svc.specials.map(resolve).filter(matchesDiet);
+      const daily = svc.daily.map(resolve).filter(matchesDiet);
+      if (specials.length || daily.length) {
+        servingHalls.push(hallId);
+      }
+      for (const rec of [...specials, ...daily]) {
+        spread.set(rec.id, (spread.get(rec.id) || 0) + 1);
       }
     }
 
-    for (const hallId of state.halls) board.append(column(hallId, spread));
+    for (const hallId of state.halls) board.append(column(hallId, spread, servingHalls.length));
 
     // The columns are laid on the board's own rows so that the slots line up
     // across the halls (.board, in the stylesheet). The deepest column decides
@@ -832,7 +847,7 @@
     // they have scrolled away.
     renderPins();
 
-    renderDigest(spread);
+    renderDigest(spread, servingHalls.length);
     renderNotices();
     document.getElementById("stamp").replaceChildren(
       el("span", { className: "stamp-meal", textContent: t("meal", state.meal) }),
@@ -846,23 +861,19 @@
   }
 
   /** How much the selected halls actually differ -- the whole point of comparing. */
-  function renderDigest(spread) {
+  function renderDigest(spread, servingCount) {
     const node = document.getElementById("digest");
-    const serving = state.halls.filter((h) => {
-      const svc = service(state.date, h, state.meal);
-      return svc.specials.length || svc.daily.length;
-    });
-    if (serving.length < 2) {
+    if (servingCount < 2 || spread.size === 0) {
       node.replaceChildren();
       return;
     }
 
     const total = spread.size;
-    const everywhere = [...spread.values()].filter((n) => n === serving.length).length;
+    const everywhere = [...spread.values()].filter((n) => n === servingCount).length;
     const unique = [...spread.values()].filter((n) => n === 1).length;
 
     const bold = (n) => el("b", { textContent: String(n) });
-    node.replaceChildren(...t("digest", bold, total, serving.length, everywhere, unique));
+    node.replaceChildren(...t("digest", bold, total, servingCount, everywhere, unique));
     if (unique === 0) {
       node.append(" ", el("span", { className: "warn", textContent: t("identical") }));
     }
@@ -921,7 +932,7 @@
     return slot;
   }
 
-  function column(hallId, spread) {
+  function column(hallId, spread, servingCount = 0) {
     const hall = hallById.get(hallId);
     const col = el("section", { className: "column" });
     col.style.setProperty("--hall", hall.accent);
@@ -978,7 +989,9 @@
     const stats = el("p", { className: "col-stats" }, [
       el("span", { className: "count", textContent: t("count", specials.length + daily.length) }),
     ]);
-    const onlyHere = [...specials, ...daily].filter((r) => spread.get(r.id) === 1).length;
+    const onlyHere = servingCount >= 2
+      ? [...specials, ...daily].filter((r) => spread.get(r.id) === 1).length
+      : 0;
     if (onlyHere) {
       stats.append(el("span", { className: "only-count", textContent: t("onlyCount", onlyHere) }));
     }
@@ -1002,15 +1015,24 @@
       return col;
     }
 
+    const isUnique = (rec) => servingCount >= 2 && spread.get(rec.id) === 1;
+
     if (!specials.length && !daily.length) {
-      col.append(el("div", {
-        className: "empty",
-        textContent: state.diet.length ? t("noMatch") : t("noneListed"),
-      }));
+      if (!stations.length) {
+        col.append(el("div", {
+          className: "empty",
+          textContent: state.diet.length ? t("noMatch") : t("noneListed"),
+        }));
+      } else if (!state.diet.length) {
+        col.append(el("div", {
+          className: "empty",
+          textContent: t("noneListed"),
+        }));
+      }
     } else {
-      for (const rec of specials) col.append(dishCard(rec, spread.get(rec.id) === 1, true));
+      for (const rec of specials) col.append(dishCard(rec, isUnique(rec), true));
       for (const rec of daily) {
-        col.append(rec.isStationGroup ? stationRow(rec, spread.get(rec.id) === 1) : dishCard(rec, spread.get(rec.id) === 1));
+        col.append(rec.isStationGroup ? stationRow(rec, isUnique(rec)) : dishCard(rec, isUnique(rec)));
       }
     }
 
@@ -1204,8 +1226,18 @@
         chip(t("diet", d), state.diet.includes(d.key), () => {
           const i = state.diet.indexOf(d.key);
           const willTurnOn = i < 0;
-          if (i >= 0) state.diet.splice(i, 1);
-          else state.diet.push(d.key);
+          if (i >= 0) {
+            state.diet.splice(i, 1);
+          } else {
+            if (d.key === "vegan") {
+              const vegIdx = state.diet.indexOf("vegetarian");
+              if (vegIdx >= 0) state.diet.splice(vegIdx, 1);
+            } else if (d.key === "vegetarian") {
+              const vgnIdx = state.diet.indexOf("vegan");
+              if (vgnIdx >= 0) state.diet.splice(vgnIdx, 1);
+            }
+            state.diet.push(d.key);
+          }
           trackEvent("toggle_diet_filter", {
             diet: d.key,
             action: willTurnOn ? "turn_on" : "turn_off",
@@ -1221,10 +1253,11 @@
         render();
       }, { className: "chip-view" }),
       chip(t("reset"), false, () => {
-        try {
-          localStorage.removeItem(STORE);
-        } catch { /* storage blocked; the in-memory reset below still applies */ }
-        Object.assign(state, structuredClone(fallback));
+        state.diet = [];
+        state.meatFirst = fallback.meatFirst;
+        state.photos = fallback.photos;
+        state.halls = fallback.halls.slice();
+        save();
         render();
       }, { className: "chip-reset" }),
     );
