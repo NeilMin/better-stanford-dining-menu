@@ -55,6 +55,20 @@ class TestAnalyze:
         assert stationlib.station_names(table, "wilbur", "Breakfast") == {"Omelette Bar"}
         assert stationlib.station_names(table, "wilbur", "Dinner") == set()
 
+    def test_station_established_in_one_meal_is_standing_in_another_meal_at_the_same_hall(self, project):
+        """A station established at lunch (e.g. Panini Station at Lakeside) remains
+        a standing counter when it appears occasionally at dinner, rather than
+        floating as a daily rotating dish card."""
+        paths = []
+        for i in range(10):
+            paths.append(project.archive_menu(f"2026-09-{i + 1:02d}", {"lakeside": {
+                "Lunch": [dish("Panini Station", "bread, cheese")],
+                "Dinner": ([dish("Panini Station", "bread, cheese")] if i < 2 else []) + [dish(f"Roast {i}", "chicken")],
+            }}))
+        table = stationlib.analyze(paths)
+        assert "Panini Station" in stationlib.station_names(table, "lakeside", "Lunch")
+        assert "Panini Station" in stationlib.station_names(table, "lakeside", "Dinner")
+
     def test_the_threshold_is_a_share_of_that_halls_services(self, project):
         """0.6, and the split is almost perfectly bimodal in practice: a
         standing counter is on 7 of 7, the day's menu on exactly 1."""

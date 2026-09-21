@@ -74,6 +74,20 @@ def analyze(menu_paths: Iterable[Path]) -> dict:
         if standing:
             entry["stations"][name] = round(ratio, 3)
 
+    # A counter established as standing in one meal at a hall (e.g. Panini Station
+    # at Lunch) is also recognized as standing in any other meal at that hall where
+    # it appears, even if offered less frequently at that meal.
+    for hall, meals in halls.items():
+        established = {
+            name for m in meals.values() for name in m.get("stations", {})
+        }
+        for meal, entry in meals.items():
+            for name in established:
+                if (hall, meal, name) in appearances and name not in entry["stations"]:
+                    observed = services[(hall, meal)]
+                    ratio = appearances[(hall, meal, name)] / observed
+                    entry["stations"][name] = round(ratio, 3)
+
     return {
         "computed_at": datetime.now(TZ).isoformat(timespec="seconds"),
         "days_analyzed": len(files),
