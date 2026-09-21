@@ -130,3 +130,43 @@ class TestSplit:
     def test_station_names_is_empty_for_anything_unknown(self):
         assert stationlib.station_names({}, "wilbur", "Dinner") == set()
         assert stationlib.station_names({"halls": {}}, "wilbur", "Lunch") == set()
+
+
+class TestGroupServiceStations:
+    def test_burger_bar_groups_grill_proteins(self):
+        served = [
+            dish("Hot Honey BBQ Chicken", "chicken, honey"),
+            dish("Burger Bar", ""),
+            dish("Grilled Chicken", "chicken, oil"),
+            dish("Grilled Vegan/Vegetarian", "tofu, veggies"),
+            dish("Handmade Pizza", "dough, cheese"),
+        ]
+        grouped = stationlib.group_service_stations(served)
+        assert len(grouped) == 3
+        assert grouped[0]["name"] == "Hot Honey BBQ Chicken"
+        assert grouped[1]["is_group"] is True
+        assert grouped[1]["station"]["name"] == "Burger Bar"
+        assert [c["name"] for c in grouped[1]["items"]] == ["Grilled Chicken", "Grilled Vegan/Vegetarian"]
+        assert grouped[2]["name"] == "Handmade Pizza"
+
+    def test_taco_bar_groups_taco_components(self):
+        served = [
+            dish("Breakfast Taco Bar", ""),
+            dish("Sautéed Chorizo Sausage", "chorizo"),
+            dish("Tater Tots", "potato"),
+            dish("Tasty Tofu Scramble", "tofu"),
+            dish("Buttermilk Pancakes", "flour, milk"),
+        ]
+        grouped = stationlib.group_service_stations(served)
+        assert len(grouped) == 2
+        assert grouped[0]["is_group"] is True
+        assert grouped[0]["station"]["name"] == "Breakfast Taco Bar"
+        assert [c["name"] for c in grouped[0]["items"]] == [
+            "Sautéed Chorizo Sausage", "Tater Tots", "Tasty Tofu Scramble"
+        ]
+        assert grouped[1]["name"] == "Buttermilk Pancakes"
+
+    def test_standalone_dishes_remain_unmodified(self):
+        served = [dish("Pasta", "wheat"), dish("Salad", "lettuce")]
+        grouped = stationlib.group_service_stations(served)
+        assert [d["name"] for d in grouped] == ["Pasta", "Salad"]

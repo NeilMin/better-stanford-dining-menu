@@ -165,11 +165,26 @@ class TestDishesAndVariants:
 class TestStations:
     def test_standing_counters_are_split_off_the_daily_menu(self, site):
         site.write_menu("2026-09-17", {"wilbur": {"Dinner": [
-            dish("Roast Chicken", "chicken"), dish("Burger Bar", "beef")]}})
-        site.write_stations(wilbur={"Dinner": ["Burger Bar"]})
+            dish("Roast Chicken", "chicken"), dish("Panini Station", "bread, cheese")]}})
+        site.write_stations(wilbur={"Dinner": ["Panini Station"]})
         svc = buildlib.build_payload(site.root)["menus"]["2026-09-17"]["wilbur"]["Dinner"]
         assert svc["daily"] == [f"{dish_id('Roast Chicken')}.0"]
-        assert svc["stations"] == [f"{dish_id('Burger Bar')}.0"]
+        assert svc["stations"] == [f"{dish_id('Panini Station')}.0"]
+
+    def test_station_container_groups_items_in_payload(self, site):
+        site.write_menu("2026-09-17", {"wilbur": {"Dinner": [
+            dish("Roast Chicken", "chicken"),
+            dish("Burger Bar", ""),
+            dish("Grilled Chicken", "chicken"),
+            dish("Grilled Vegan/Vegetarian", "tofu"),
+        ]}})
+        site.write_stations(wilbur={"Dinner": ["Burger Bar", "Grilled Chicken", "Grilled Vegan/Vegetarian"]})
+        svc = buildlib.build_payload(site.root)["menus"]["2026-09-17"]["wilbur"]["Dinner"]
+        assert svc["daily"] == [f"{dish_id('Roast Chicken')}.0"]
+        assert svc["stations"] == [{
+            "station": f"{dish_id('Burger Bar')}.0",
+            "items": [f"{dish_id('Grilled Chicken')}.0", f"{dish_id('Grilled Vegan/Vegetarian')}.0"],
+        }]
 
     def test_how_much_history_the_table_was_built_on_is_published(self, site):
         site.write_stations(wilbur={"Dinner": []})

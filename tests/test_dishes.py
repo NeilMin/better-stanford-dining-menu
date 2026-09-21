@@ -92,8 +92,11 @@ class TestClassify:
         "ingredients" are a list of toppings on offer, not a recipe."""
         assert dishlib.classify(d("Salad Bar", "grilled chicken, lettuce, tomato")) == "other"
 
-    def test_but_a_counter_that_names_a_protein_still_reads_as_one(self):
-        assert dishlib.classify(d("Burger Bar", "lettuce, tomato, bun")) == "beef"
+    def test_a_station_container_reads_as_station_not_meat(self):
+        """Burger Bar is a station container, not a single beef dish."""
+        assert dishlib.classify(d("Burger Bar")) == "station"
+        assert dishlib.is_station_container(d("Burger Bar"))
+        assert not dishlib.is_meat(d("Burger Bar"))
 
     def test_unknown_is_unknown_rather_than_guessed(self):
         assert dishlib.classify(d("Craveable Grains", "farro, herbs")) == "other"

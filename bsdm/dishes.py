@@ -100,6 +100,7 @@ _CATEGORY_LABEL = {
     "poultry": "Poultry",
     "vegan": "Vegan",
     "vegetarian": "Vegetarian",
+    "station": "Station",
     "other": "Other",
 }
 
@@ -115,6 +116,28 @@ _STATION_ICON = [
     (re.compile(r"\b(pasta|noodle)\b", re.I), "pasta"),
 ]
 
+_STATION_CONTAINER_RE = re.compile(
+    r"\b(burger bar|hot dog bar|breakfast taco bar|taco bar|baked potato bar|chili bar)\b"
+    r"|allergy friendly burger bar",
+    re.I,
+)
+
+
+def is_station_container(dish) -> bool:
+    """True when an item is a station/assembly counter container (e.g. Burger Bar)
+    rather than a finished, standalone recipe.
+    """
+    get = _get(dish)
+    name = (get("name", "") or "").translate(_SMART_QUOTES).strip()
+    ing = (get("ingredients", "") or "").translate(_SMART_QUOTES).strip()
+    if not name:
+        return False
+    if _STATION_CONTAINER_RE.search(name):
+        return True
+    if not ing and re.search(r"\b(bar|station)\b", name, re.I):
+        return True
+    return False
+
 
 def normalize(name: str) -> str:
     """Fold a dish name to its cache key form."""
@@ -129,6 +152,8 @@ def dish_id(name: str) -> str:
 
 def is_placeholder(dish) -> bool:
     """True when the menu gives a station name instead of an actual recipe."""
+    if is_station_container(dish):
+        return True
     # Folded first, like every other read of source text in this module: R&DE
     # writes both apostrophes, and "Chef’s Choice" left unfolded reads as a
     # recipe and earns the soup of the day a picture of one specific soup.
@@ -186,6 +211,9 @@ def classify(dish) -> str:
     first, so a vegetarian dish named "Chick'n Tenders" is never read as meat.
     Beyond that, the four passes run from most to least reliable evidence.
     """
+    if is_station_container(dish):
+        return "station"
+
     tags = _tags(dish)
     if "vegan" in tags:
         return "vegan"

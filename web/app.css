@@ -103,7 +103,7 @@ html:lang(zh) :is(.brand, .stamp, .dish-name, .stations-title) {
 /* ...but the parts that stay English keep the Latin face. A CJK font's Latin
    glyphs are wider and sit differently, which is conspicuous on the English
    name printed directly under a Chinese one. */
-html:lang(zh) :is(.dish-name-en, .station-name-en, .hours, .special-en, .chip-day .sub) {
+html:lang(zh) :is(.dish-name-en, .station-name-en, .station-subitem-name-en, .hours, .special-en, .chip-day .sub) {
   font-family: var(--sans);
 }
 
@@ -1066,6 +1066,80 @@ dialog.lightbox {
 .station-name-en { font-size: 13.5px; color: var(--ink-2); }
 .station .badges { margin-top: 0; min-height: 0; font-size: 13.5px; }
 .station-detail { padding: 0 0 12px; }
+
+/* ---------- station subitems ---------- */
+
+.station-count-sub {
+  font-size: 13.5px;
+  color: var(--ink-3);
+  font-variant-numeric: tabular-nums;
+}
+
+.station-subitems {
+  margin-top: 6px;
+  padding-left: 12px;
+  border-left: 1.5px solid var(--rule);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.station-subitem {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.station-subitem-head {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 2px 8px;
+}
+
+.station-subitem-name {
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.station-subitem-name-en {
+  font-size: 13px;
+  color: var(--ink-2);
+}
+
+.station-subitem .badges {
+  margin-top: 0;
+  min-height: 0;
+  font-size: 12.5px;
+}
+
+.station-subitem-detail {
+  font-size: 13px;
+  color: var(--ink-2);
+}
+
+.station-subitem-detail .allergens {
+  margin-top: 2px;
+  font-size: 13px;
+}
+
+.station-subitem-detail .more {
+  margin-top: 3px;
+  font-size: 13px;
+}
+
+.station-subitem-detail .ingredients {
+  margin-top: 2px;
+  font-size: 13px;
+}
+
+.column > .station-wrap {
+  padding: 12px 16px;
+  background: var(--bg);
+  border-radius: var(--radius);
+  border: 1px solid var(--rule);
+}
 
 .empty {
   padding: 28px 20px;

@@ -119,7 +119,7 @@ def build_payload(root: Path) -> dict:
         return f"{dish_id}.{table[key]}"
 
     from bsdm.dishes import dish_id as make_id
-    from bsdm.stations import split as split_service
+    from bsdm.stations import split as split_service, group_service_stations
 
     # Specials come off a PDF poster, on their own dates. They are dishes like
     # any other -- drawn, counted, filtered -- that lead their hall's list. Only
@@ -142,7 +142,8 @@ def build_payload(root: Path) -> dict:
         for hall_id, meals in day["halls"].items():
             per_meal = {}
             for meal, served in meals.items():
-                daily, standing = split_service(station_table, hall_id, meal, served)
+                grouped = group_service_stations(served)
+                daily, standing = split_service(station_table, hall_id, meal, grouped)
                 specials = []
                 if meal == on_poster["meal"] and daily:
                     listed = {make_id(d["name"]): d for d in served}
@@ -163,12 +164,27 @@ def build_payload(root: Path) -> dict:
                 # Shown once, as the special, even where the menu lists it too.
                 led = {make_id(text) for text in on_poster["halls"].get(hall_id, [])} \
                     if specials else set()
+
+                def to_ref(item: dict) -> str | dict:
+                    if item.get("is_group"):
+                        s_dish = item["station"]
+                        sid = make_id(s_dish["name"])
+                        s_ref = variant_ref(sid, s_dish)
+                        item_refs = [variant_ref(make_id(c["name"]), c) for c in item.get("items", [])]
+                        return {
+                            "station": s_ref,
+                            "items": item_refs,
+                        }
+                    return variant_ref(make_id(item["name"]), item)
+
+                def item_id(item: dict) -> str:
+                    name = item["station"]["name"] if item.get("is_group") else item["name"]
+                    return make_id(name)
+
                 per_meal[meal] = {
                     "specials": specials,
-                    "daily": [variant_ref(make_id(d["name"]), d) for d in daily
-                              if make_id(d["name"]) not in led],
-                    "stations": [variant_ref(make_id(d["name"]), d) for d in standing
-                                 if make_id(d["name"]) not in led],
+                    "daily": [to_ref(d) for d in daily if item_id(d) not in led],
+                    "stations": [to_ref(d) for d in standing if item_id(d) not in led],
                 }
             menus[iso][hall_id] = per_meal
         hours[iso] = {

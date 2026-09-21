@@ -33,7 +33,7 @@ class TestOrder:
         project.add_hall("wilbur")
         for i in range(7):
             project.archive_menu(f"2026-09-{10 + i:02d}", {"wilbur": {"Dinner": [
-                dish("Burger Bar", "beef patty, bun", order=0),
+                dish("Pasta Marinara", "pasta, tomato sauce", order=0),
                 dish(f"Braised Short Rib {i}", "beef short rib", order=1),
             ]}})
         return project
@@ -42,13 +42,13 @@ class TestOrder:
         paths = menuslib.recent(week.root)
         table = stationlib.analyze(paths)
         catalog = cataloglib.build(paths, table)
-        assert not catalog[dish_id("Burger Bar")]["needs_image"]
+        assert not catalog[dish_id("Pasta Marinara")]["needs_image"]
 
     def test_building_the_catalog_first_queues_a_picture_for_a_counter(self, week):
         """The failure this ordering prevents, spelled out: an empty table is
         exactly what update.py would hand it on the wrong order."""
         catalog = cataloglib.build(menuslib.recent(week.root), {})
-        assert catalog[dish_id("Burger Bar")]["needs_image"], (
+        assert catalog[dish_id("Pasta Marinara")]["needs_image"], (
             "if this ever stops being true the ordering rule can be relaxed")
 
     def test_the_catalog_is_rebuilt_after_the_specials_are_fetched(self, week):
@@ -109,7 +109,10 @@ class TestSyntheticWeek:
     def test_the_counter_is_a_station_not_a_card(self, built):
         _, catalog, payload = built
         svc = payload["menus"]["2026-09-17"]["wilbur"]["Dinner"]
-        assert svc["stations"] == [f"{dish_id('Burger Bar')}.0"]
+        assert svc["stations"] == [{
+            "station": f"{dish_id('Burger Bar')}.0",
+            "items": [],
+        }]
         assert not catalog[dish_id("Burger Bar")]["needs_image"]
 
     def test_the_special_leads_and_is_drawn(self, built):
@@ -136,7 +139,14 @@ def check_refs(payload):
             assert hall_id in {h["id"] for h in payload["halls"]}, f"{day} {hall_id}"
             for meal, service in meals.items():
                 assert set(service) == {"specials", "daily", "stations"}
-                for ref in service["specials"] + service["daily"] + service["stations"]:
+                refs = []
+                for item in service["specials"] + service["daily"] + service["stations"]:
+                    if isinstance(item, dict) and "station" in item:
+                        refs.append(item["station"])
+                        refs.extend(item.get("items", []))
+                    else:
+                        refs.append(item)
+                for ref in refs:
                     did, _, index = ref.rpartition(".")
                     record = payload["dishes"].get(did)
                     assert record, f"{day} {hall_id} {meal}: {ref} is not a dish"

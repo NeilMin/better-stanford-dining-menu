@@ -73,6 +73,8 @@
       specialNote: "Limited-time special from R&DE's calendar. No ingredient list published — ask at the counter.",
       alwaysHere: "Always here",
       toggle: (shown) => (shown ? "Hide" : "Show"),
+      stationBadge: "Station",
+      stationOptions: (n) => `${n} option${n === 1 ? "" : "s"} available`,
       allergens: "Allergens: ",
       allergenList: (list) => list.map((a) => ALLERGEN_EN[a] || a).join(", "),
       ingredients: "Ingredients",
@@ -149,6 +151,8 @@
       specialNote: "R&DE 日历上的限时菜品，未公布配料表——有过敏请到窗口确认。",
       alwaysHere: "常设窗口",
       toggle: (shown) => (shown ? "收起" : "展开"),
+      stationBadge: "自选档口",
+      stationOptions: (n) => `提供 ${n} 款主料选项`,
       allergens: "过敏原：",
       allergenList: (list) => list.map((a) => ALLERGEN_ZH[a] || a).join("、"),
       ingredients: "配料",
@@ -428,8 +432,18 @@
   /** The Chinese name to lead a dish with, or null to lead with the English. */
   const zhName = (rec) => (state.lang === "zh" && rec.zh) || null;
 
-  /** Resolve a menu entry ("<dishId>.<variantIndex>") to a display record. */
+  /** Resolve a menu entry ("<dishId>.<variantIndex>" or { station, items }) to a display record. */
   function resolve(ref) {
+    if (typeof ref === "object" && ref !== null && ref.station) {
+      const station = resolve(ref.station);
+      const items = (ref.items || []).map(resolve);
+      return {
+        ...station,
+        isStationGroup: true,
+        items,
+        matchingItems: items,
+      };
+    }
     const dot = ref.lastIndexOf(".");
     const id = ref.slice(0, dot);
     return { id, ...DATA.dishes[id], ...DATA.dishes[id].v[Number(ref.slice(dot + 1))] };
@@ -506,7 +520,12 @@
   }
 
   function matchesDiet(rec) {
-    return state.diet.every((d) => rec.tags.includes(d));
+    if (rec.isStationGroup) {
+      const matching = (rec.items || []).filter(matchesDiet);
+      rec.matchingItems = matching;
+      return matching.length > 0;
+    }
+    return state.diet.every((d) => (rec.tags || []).includes(d));
   }
 
   function badgesFor(rec, onlyHere, special = false) {
@@ -698,6 +717,47 @@
       el("span", { className: "station-name", textContent: zh || rec.name }),
     ]);
     if (zh) row.append(el("span", { className: "station-name-en", textContent: rec.name }));
+
+    if (rec.isStationGroup) {
+      const items = rec.matchingItems || rec.items || [];
+      if (items.length) {
+        row.append(el("span", {
+          className: "station-count-sub",
+          textContent: `(${items.length})`,
+        }));
+      }
+      const tags = new Set();
+      for (const item of items) {
+        for (const t of (item.tags || [])) tags.add(t);
+      }
+      const badges = badgesFor({ tags: [...tags] }, onlyHere);
+      if (badges.childElementCount) row.append(badges);
+
+      const subList = el("div", { className: "station-subitems" });
+      for (const item of items) {
+        const itemZh = zhName(item);
+        const sub = el("div", { className: "station-subitem" });
+        const head = el("div", { className: "station-subitem-head" }, [
+          el("span", { className: "station-subitem-name", textContent: itemZh || item.name }),
+        ]);
+        if (itemZh) head.append(el("span", { className: "station-subitem-name-en", textContent: item.name }));
+        const itemBadges = badgesFor(item, false);
+        if (itemBadges.childElementCount) head.append(itemBadges);
+        sub.append(head);
+
+        const det = detailsFor(item);
+        if (det.length) {
+          sub.append(el("div", { className: "station-subitem-detail" }, det));
+        }
+        subList.append(sub);
+      }
+
+      return el("details", { className: "station-wrap" }, [
+        el("summary", {}, [row]),
+        el("div", { className: "station-detail" }, [subList]),
+      ]);
+    }
+
     const badges = badgesFor(rec, onlyHere);
     if (badges.childElementCount) row.append(badges);
 
@@ -709,6 +769,8 @@
       el("div", { className: "station-detail" }, detail),
     ]);
   }
+
+  const stationAccordion = stationRow;
 
   function render() {
     document.documentElement.dataset.theme = state.theme;
@@ -727,7 +789,8 @@
     for (const hallId of state.halls) {
       const svc = service(state.date, hallId, state.meal);
       for (const ref of [...svc.specials, ...svc.daily]) {
-        const id = ref.slice(0, ref.lastIndexOf("."));
+        const rawRef = typeof ref === "object" && ref !== null && ref.station ? ref.station : ref;
+        const id = rawRef.slice(0, rawRef.lastIndexOf("."));
         spread.set(id, (spread.get(id) || 0) + 1);
       }
     }
@@ -946,7 +1009,9 @@
       }));
     } else {
       for (const rec of specials) col.append(dishCard(rec, spread.get(rec.id) === 1, true));
-      for (const rec of daily) col.append(dishCard(rec, spread.get(rec.id) === 1));
+      for (const rec of daily) {
+        col.append(rec.isStationGroup ? stationRow(rec, spread.get(rec.id) === 1) : dishCard(rec, spread.get(rec.id) === 1));
+      }
     }
 
     if (stations.length) {
@@ -973,7 +1038,9 @@
 
       if (state.stations) {
         const list = el("div", { className: "station-list" });
-        for (const rec of stations) list.append(stationRow(rec, false));
+        for (const rec of stations) {
+          list.append(stationRow(rec, false));
+        }
         wrap.append(list);
       }
       col.append(wrap);

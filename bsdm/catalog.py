@@ -113,14 +113,17 @@ def build(menu_paths: Iterable[Path], station_table: dict, previous: dict | None
                 if key in old:
                     entry[key] = old[key]
 
+        entry["is_station"] = dishlib.is_station_container(entry)
         entry["station_only"] = as_daily.get(did, 0) == 0 and as_station.get(did, 0) > 0
-        entry["needs_image"] = not entry["placeholder"] and not entry["station_only"]
+        entry["needs_image"] = not entry["placeholder"] and not entry["station_only"] and not entry["is_station"]
         entry["prompt"] = dishlib.image_prompt(entry) if entry["needs_image"] else None
         entry["negative"] = dishlib.negative_prompt(entry) if entry["needs_image"] else None
 
         # 0 is what you pick a hall for, 2 is a side. Menu position is the
         # signal: R&DE lists the day's entrees first.
-        if dishlib.is_meat(entry) or entry.get("special"):
+        if entry["is_station"]:
+            entry["priority"] = 2
+        elif dishlib.is_meat(entry) or entry.get("special"):
             entry["priority"] = 0
         elif entry["min_order"] <= 1:
             # R&DE lists the day's entrees first, which outranks any guess made

@@ -87,9 +87,61 @@ def station_names(table: dict, hall: str, meal: str) -> set[str]:
     return set(table.get("halls", {}).get(hall, {}).get(meal, {}).get("stations", {}))
 
 
+_GRILL_SUB_RE = re.compile(
+    r"^(grilled\b|black bean burger|impossible burger|turkey burger|panko crusted.*grill|halal all-beef hot dog)",
+    re.I,
+)
+_TACO_SUB_RE = re.compile(
+    r"^(saut[eé]ed chorizo|tasty tofu scramble|tater tots)",
+    re.I,
+)
+
+
+def _sub_pattern_for(name: str) -> re.Pattern | None:
+    if re.search(r"\b(burger bar|hot dog bar|chili bar|grill)\b", name, re.I):
+        return _GRILL_SUB_RE
+    if re.search(r"\b(taco bar)\b", name, re.I):
+        return _TACO_SUB_RE
+    return None
+
+
+def group_service_stations(served: list[dict]) -> list[dict]:
+    """Group station containers (e.g. Burger Bar) with their immediate sub-items.
+
+    Returns a new list where station containers are represented as:
+      {"is_group": True, "station": dish, "items": [sub_dish, ...]}
+    and their sub-items are removed from the top-level list.
+    """
+    out: list[dict] = []
+    i = 0
+    while i < len(served):
+        d = served[i]
+        name = d.get("name", "")
+        if dishlib.is_station_container(d):
+            pat = _sub_pattern_for(name)
+            items = []
+            j = i + 1
+            if pat:
+                while j < len(served) and pat.search(served[j].get("name", "")):
+                    items.append(served[j])
+                    j += 1
+            out.append({"is_group": True, "station": d, "items": items})
+            i = j
+        else:
+            out.append(d)
+            i += 1
+    return out
+
+
 def split(table: dict, hall: str, meal: str, served: list[dict]) -> tuple[list, list]:
     """Partition one service's items into (daily menu, standing stations)."""
     stations = station_names(table, hall, meal)
-    daily = [d for d in served if d["name"] not in stations]
-    standing = [d for d in served if d["name"] in stations]
+    daily = []
+    standing = []
+    for d in served:
+        name = d["station"]["name"] if d.get("is_group") else d["name"]
+        if name in stations:
+            standing.append(d)
+        else:
+            daily.append(d)
     return daily, standing
