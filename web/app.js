@@ -82,6 +82,7 @@
       variesTip: "This entry changes daily, so it is deliberately not illustrated.",
       pending: "Image pending",
       pendingTip: "No image generated for this dish yet.",
+      viewLargePhoto: "Click to view full photo",
       noService: (meal, day) => (day === "Today" || day === "Tomorrow"
         ? `No ${meal.toLowerCase()} service here ${day.toLowerCase()}.`
         : `No ${meal.toLowerCase()} service here on ${day}.`),
@@ -157,6 +158,7 @@
       variesTip: "此项每日更换，因此不配图。",
       pending: "图片待生成",
       pendingTip: "这道菜暂时还没有图片。",
+      viewLargePhoto: "点击查看大图",
       noService: (meal, day) => `${day}本食堂不供应${MEAL_ZH[meal] || meal}。`,
       closedDay: (day) => `${day}本食堂不营业。`,
       unreleased: "不营业，或尚未发布菜单。",
@@ -556,6 +558,74 @@
     return out;
   }
 
+  // ---------- lightbox modal ----------
+
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const lightboxClose = document.getElementById("lightbox-close");
+  const lightboxTitle = document.getElementById("lightbox-title");
+  const lightboxSubtitle = document.getElementById("lightbox-subtitle");
+  const lightboxBadges = document.getElementById("lightbox-badges");
+  const lightboxIng = document.getElementById("lightbox-ingredients");
+
+  function openLightbox(rec, onlyHere = false, special = false) {
+    if (!lightbox || !rec.image) return;
+    const zh = zhName(rec);
+    if (lightboxImg) {
+      lightboxImg.src = "img/" + rec.image;
+      lightboxImg.alt = zh || rec.name;
+    }
+    if (lightboxTitle) lightboxTitle.textContent = zh || rec.name;
+    if (lightboxSubtitle) {
+      if (zh) {
+        lightboxSubtitle.textContent = rec.name;
+        lightboxSubtitle.style.display = "";
+      } else {
+        lightboxSubtitle.textContent = "";
+        lightboxSubtitle.style.display = "none";
+      }
+    }
+    if (lightboxBadges) {
+      lightboxBadges.replaceChildren(badgesFor(rec, onlyHere, special));
+    }
+    if (lightboxIng) {
+      if (rec.ing) {
+        lightboxIng.textContent = ingredientText(rec.ing);
+        lightboxIng.style.display = "";
+      } else if (special) {
+        lightboxIng.textContent = t("specialNote");
+        lightboxIng.style.display = "";
+      } else {
+        lightboxIng.textContent = "";
+        lightboxIng.style.display = "none";
+      }
+    }
+    if (typeof lightbox.showModal === "function") {
+      lightbox.showModal();
+    }
+  }
+
+  if (lightbox) {
+    if (lightboxClose) {
+      lightboxClose.addEventListener("click", () => lightbox.close());
+    }
+    if (!("closedBy" in HTMLDialogElement.prototype)) {
+      lightbox.addEventListener("click", (event) => {
+        if (event.target !== lightbox) return;
+        const content = lightbox.querySelector(".lightbox-content");
+        if (!content) return;
+        const rect = content.getBoundingClientRect();
+        const inContent = (
+          rect.top <= event.clientY &&
+          event.clientY <= rect.top + rect.height &&
+          rect.left <= event.clientX &&
+          event.clientX <= rect.left + rect.width
+        );
+        if (!inContent) lightbox.close();
+      });
+    }
+  }
+
   // ---------- rendering ----------
 
   /** A dish cooked today. The picture leads, so the pictures in one row start
@@ -582,7 +652,7 @@
 
     if (state.photos) {
       if (rec.image) {
-        card.append(el("img", {
+        const thumb = el("img", {
           className: "thumb",
           src: "img/" + rec.image,
           alt: zh || rec.name,
@@ -590,7 +660,19 @@
           decoding: "async",
           width: 1024,
           height: 576,
-        }));
+        });
+        thumb.tabIndex = 0;
+        thumb.setAttribute("role", "button");
+        thumb.title = t("viewLargePhoto");
+        thumb.setAttribute("aria-label", (zh || rec.name) + " - " + t("viewLargePhoto"));
+        thumb.addEventListener("click", () => openLightbox(rec, onlyHere, special));
+        thumb.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            openLightbox(rec, onlyHere, special);
+          }
+        });
+        card.append(thumb);
       } else {
         card.append(el("div", {
           className: "thumb-none",

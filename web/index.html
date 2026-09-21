@@ -69,6 +69,21 @@
   <div class="pinned" id="pinned" aria-hidden="true"></div>
 </main>
 
+<dialog id="lightbox" class="lightbox" closedby="any" aria-label="Dish photo preview">
+  <div class="lightbox-content">
+    <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Close">×</button>
+    <div class="lightbox-media">
+      <img id="lightbox-img" class="lightbox-img" alt="" src="">
+    </div>
+    <div class="lightbox-info">
+      <h3 id="lightbox-title" class="lightbox-title"></h3>
+      <p id="lightbox-subtitle" class="lightbox-subtitle"></p>
+      <div id="lightbox-badges" class="lightbox-badges"></div>
+      <p id="lightbox-ingredients" class="lightbox-ingredients"></p>
+    </div>
+  </div>
+</dialog>
+
 <footer>
   <p id="foot-src">Menus scraped from the
     <a href="https://rdeapps.stanford.edu/dininghallmenu/" target="_blank" rel="noopener">R&amp;DE Dining Hall Menu</a>;

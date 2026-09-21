@@ -728,6 +728,11 @@ main { margin: 0; padding: 36px var(--gutter) 88px; }
   object-fit: cover;
   border-radius: var(--radius);
   background: var(--sunk);
+  cursor: zoom-in;
+  transition: filter 0.15s ease;
+}
+.thumb:hover {
+  filter: brightness(1.03);
 }
 
 /* Same box a picture would fill, not a strip: a dish still waiting to be drawn
@@ -747,6 +752,146 @@ main { margin: 0; padding: 36px var(--gutter) 88px; }
   text-align: center;
 }
 .thumb-none .glyph { font-size: 26px; line-height: 1; filter: grayscale(1); opacity: .5; }
+
+/* ---------- lightbox modal ---------- */
+
+.lightbox {
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: auto;
+  width: min(92vw, 680px);
+  max-height: 90vh;
+  overflow: visible;
+  color: var(--ink);
+}
+
+.lightbox::backdrop {
+  background-color: rgba(0, 0, 0, 0);
+  transition:
+    display 0.25s allow-discrete,
+    overlay 0.25s allow-discrete,
+    background-color 0.25s ease-out;
+}
+
+.lightbox[open]::backdrop {
+  background-color: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  @starting-style {
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
+
+.lightbox-content {
+  position: relative;
+  background: var(--paper);
+  border: 1px solid var(--rule-strong);
+  border-radius: calc(var(--radius) * 1.5);
+  overflow: hidden;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+}
+
+.lightbox-media {
+  background: var(--sunk);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  max-height: 60vh;
+}
+
+.lightbox-img {
+  width: 100%;
+  height: 100%;
+  max-height: 60vh;
+  object-fit: contain;
+  display: block;
+}
+
+.lightbox-info {
+  padding: 16px 20px 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.lightbox-title {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 20px;
+  line-height: 1.25;
+  color: var(--ink);
+}
+
+.lightbox-subtitle {
+  margin: -4px 0 0;
+  font-size: 14px;
+  color: var(--ink-3);
+}
+
+.lightbox-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 4px 0;
+}
+
+.lightbox-ingredients {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--ink-2);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.lightbox-close:hover {
+  background: rgba(0, 0, 0, 0.85);
+  transform: scale(1.08);
+}
+
+dialog.lightbox[open] {
+  opacity: 1;
+  transform: scale(1);
+
+  @starting-style {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+}
+
+dialog.lightbox {
+  opacity: 0;
+  transform: scale(0.96);
+  transition-property: opacity, transform, display, overlay;
+  transition-duration: 0.25s;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  transition-behavior: allow-discrete;
+}
 
 .card-head { padding-top: 14px; }
 
