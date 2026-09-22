@@ -248,6 +248,16 @@ class TestKeyIngredients:
         vindaloo = d("Pork Vindaloo", "pork, vindaloo sauce, potatoes")
         assert "tender simmered pork chunks in rich spicy and tangy red vindaloo curry sauce" in dishlib.image_prompt(vindaloo)
 
+    def test_vegetable_lasagna_classified_and_prompted(self):
+        lasagna = d("Vegetable Lasagna", "pasta, mozzarella, spinach, zucchini, mushrooms", tags=[])
+        assert dishlib.classify(lasagna) == "other"
+        prompt = dishlib.image_prompt(lasagna)
+        assert "layers of tender pasta sheets" in prompt
+        assert "vibrant sautéed spinach, mushrooms, zucchini" in prompt
+        negative = dishlib.negative_prompt(lasagna)
+        assert "ground beef" in negative
+        assert "pork" in negative
+
 
 
 class TestVessel:

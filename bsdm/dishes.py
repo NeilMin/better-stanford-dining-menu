@@ -341,6 +341,11 @@ def _hero_protein_phrase(dish) -> str | None:
         )
     if "bourguignon" in name and ("mushroom" in name or "wild mushroom" in name):
         return "rich braised wild mushrooms, cremini and shiitake in a glossy deep red wine sauce with pearl onions, carrots, and fresh thyme"
+    if "lasagna" in name and any(w in name for w in ("vegetable", "veggie", "spinach", "mushroom")):
+        return (
+            "layers of tender pasta sheets filled with creamy ricotta, melted mozzarella, "
+            "vibrant sautéed spinach, mushrooms, zucchini, rich marinara sauce, and golden bubbling cheese crust"
+        )
 
     category = classify(dish)
     if category not in ("pork", "beef", "poultry", "seafood", "lamb"):
@@ -449,7 +454,10 @@ def negative_prompt(dish) -> str:
     is what stops grilled chicken from being plated as steak.
     """
     category = classify(dish)
-    if category in ("vegan", "vegetarian"):
+    name = _get(dish)("name", "")
+    if category in ("vegan", "vegetarian") or (
+        category == "other" and re.search(r"\b(vegetable|veggie|plant-based)\b", name, re.I)
+    ):
         exclude = list(_PROTEIN_NEGATIVE.values()) + ["meat"]
     elif category in _PROTEIN_NEGATIVE:
         exclude = [v for k, v in _PROTEIN_NEGATIVE.items() if k != category]
