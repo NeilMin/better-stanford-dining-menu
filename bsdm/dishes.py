@@ -317,7 +317,7 @@ def _key_ingredients(ingredients: str, limit: int = 12, dish_name: str = "") -> 
 def is_bowl(dish) -> bool:
     """True when the dish is served in a bowl rather than plated flat."""
     name = _get(dish)("name", "")
-    return bool(re.search(r"\b(bowls?|soups?|chowders?|ramen|pho|bisque)\b", name, re.I))
+    return bool(re.search(r"\b(bowls?|soups?|chowders?|ramen|pho|bisque|etouffee|étouffée)\b", name, re.I))
 
 
 def _hero_protein_phrase(dish) -> str | None:
@@ -341,6 +341,19 @@ def _hero_protein_phrase(dish) -> str | None:
         )
     if "bourguignon" in name and ("mushroom" in name or "wild mushroom" in name):
         return "rich braised wild mushrooms, cremini and shiitake in a glossy deep red wine sauce with pearl onions, carrots, and fresh thyme"
+    if "etouffee" in name or "étouffée" in name:
+        if "mushroom" in name:
+            return (
+                "rich savory Louisiana mushroom etouffee with tender sautéed sliced cremini mushrooms "
+                "in a thick glossy golden-brown roux sauce, garnished with finely chopped fresh parsley"
+            )
+    if "zucchini" in name and ("lemon" in name or "herb" in name):
+        return (
+            "tender sautéed green zucchini medallions with golden-brown caramelized sear, "
+            "tender cooked courgette squash with pale tender center and dark green skin, "
+            "tossed with minced garlic and aromatic fresh thyme and oregano herbs, glistening extra virgin olive oil, "
+            "a fresh yellow lemon wedge resting on the side"
+        )
     if "lasagna" in name and any(w in name for w in ("vegetable", "veggie", "spinach", "mushroom")):
         return (
             "layers of tender pasta sheets filled with creamy ricotta, melted mozzarella, "
@@ -430,12 +443,12 @@ NEGATIVE_PROMPT = (
     "hands, people, person, fingers, cutlery clutter, extra chopsticks, "
     "three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, "
     "lowres, deformed, distorted, oversaturated, cartoon, illustration, "
-    "3d render, plastic, fake looking, duplicate plates"
+    "3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast"
 )
 
 # What each protein looks like on a plate, phrased for the negative prompt.
 _PROTEIN_NEGATIVE = {
-    "seafood": "fish fillet, shrimp, prawns, shellfish",
+    "seafood": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster",
     "pork": "pork, bacon, ham, pork belly",
     "beef": "beef, sliced steak, ground beef",
     "lamb": "lamb, mutton",
@@ -469,6 +482,12 @@ def negative_prompt(dish) -> str:
     name = _get(dish)("name", "")
     if re.search(r"\bsaffron\b", name, re.I):
         exclude.extend(["dill", "peas", "green peas", "star anise"])
+    if re.search(r"\bzucchini\b", name, re.I) and re.search(r"\blemon\b", name, re.I):
+        exclude.extend([
+            "sliced lemons", "lemon slices", "lemon wheels", "citrus slices", "lime slices",
+            "citrus pulp", "sliced limes", "cucumbers", "pickles", "yogurt", "tzatziki",
+            "sour cream", "dip", "sauce bowl", "white cream",
+        ])
 
     if not exclude:
         return NEGATIVE_PROMPT

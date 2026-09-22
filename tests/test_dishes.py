@@ -258,6 +258,28 @@ class TestKeyIngredients:
         assert "ground beef" in negative
         assert "pork" in negative
 
+    def test_mushroom_etouffee_hero_and_vessel(self):
+        etouffee = d("Mushroom Etouffee", "mushroom, okra, bell pepper, celery, onion, etouffee sauce", tags=["vegan"])
+        assert dishlib.is_bowl(etouffee)
+        prompt = dishlib.image_prompt(etouffee)
+        assert "rich savory Louisiana mushroom etouffee" in prompt
+        assert "served in a simple white ceramic bowl" in prompt
+        negative = dishlib.negative_prompt(etouffee)
+        assert "crawfish" in negative
+        assert "shrimp" in negative
+        assert "meat" in negative
+
+    def test_lemon_herbed_zucchini_hero_and_negative(self):
+        zucchini = d("Lemon Herbed Zucchini", "zucchini, lemon, olive oil, thyme, oregano, garlic, salt, pepper", tags=["vegan"])
+        prompt = dishlib.image_prompt(zucchini)
+        assert "tender sautéed green zucchini medallions" in prompt
+        assert "plated on a simple white ceramic plate" in prompt
+        negative = dishlib.negative_prompt(zucchini)
+        assert "sliced lemons" in negative
+        assert "tzatziki" in negative
+        assert "yogurt" in negative
+        assert "meat" in negative
+
 
 
 class TestVessel:
