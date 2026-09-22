@@ -354,6 +354,30 @@ def _hero_protein_phrase(dish) -> str | None:
             "tossed with minced garlic and aromatic fresh thyme and oregano herbs, glistening extra virgin olive oil, "
             "a fresh yellow lemon wedge resting on the side"
         )
+    if "lemon herb rice" in name:
+        return (
+            "fluffy aromatic yellow basmati rice tinted golden with turmeric, "
+            "speckled with finely chopped fresh green dill, mint, and parsley, glistening with olive oil and lemon zest"
+        )
+    if "tabouli" in name or "tabbouleh" in name:
+        return (
+            "vibrant fresh Mediterranean tabouli salad loaded with finely chopped fresh parsley and mint, "
+            "tossed with tender bulgur wheat, diced red tomatoes, and cucumbers in lemon olive oil dressing"
+        )
+    if "pickled red onion" in name:
+        return (
+            "vibrant magenta-pink thinly sliced pickled red onion ribbons, glistening in spiced vinegar pickling brine"
+        )
+    if "butternut squash soup" in name:
+        return (
+            "rich velvety smooth creamy golden-orange butternut squash soup, "
+            "garnished with a delicate swirl of cream and fresh herbs"
+        )
+    if "tex-mex salad" in name:
+        return (
+            "crisp colorful chopped Tex-Mex salad with fresh romaine lettuce, black beans, "
+            "sweet golden corn kernels, diced red bell peppers, cherry tomatoes, and fresh cilantro"
+        )
     if "lasagna" in name and any(w in name for w in ("vegetable", "veggie", "spinach", "mushroom")):
         return (
             "layers of tender pasta sheets filled with creamy ricotta, melted mozzarella, "
@@ -488,6 +512,8 @@ def negative_prompt(dish) -> str:
             "citrus pulp", "sliced limes", "cucumbers", "pickles", "yogurt", "tzatziki",
             "sour cream", "dip", "sauce bowl", "white cream",
         ])
+    if re.search(r"\brice\b", name, re.I) and re.search(r"\blemon\b", name, re.I):
+        exclude.extend(["sliced lemons", "lemon wheels", "citrus slices", "whole lemons"])
 
     if not exclude:
         return NEGATIVE_PROMPT

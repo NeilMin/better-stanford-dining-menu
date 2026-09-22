@@ -280,6 +280,14 @@ class TestKeyIngredients:
         assert "yogurt" in negative
         assert "meat" in negative
 
+    def test_lemon_herb_rice_hero_and_negative(self):
+        rice = d("Lemon Herb Rice", "basmati rice, dill, mint, parsley, canola/olive oil blend, turmeric, lemon juice, lemon zest", tags=["vegan"])
+        prompt = dishlib.image_prompt(rice)
+        assert "fluffy aromatic yellow basmati rice" in prompt
+        negative = dishlib.negative_prompt(rice)
+        assert "sliced lemons" in negative
+        assert "meat" in negative
+
 
 
 class TestVessel:
