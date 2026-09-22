@@ -330,6 +330,14 @@ def _hero_protein_phrase(dish) -> str | None:
             return "tender shredded seasoned pork with crispy edges"
         if "bacon" in name:
             return "crispy browned bacon strips"
+        if "spam" in name:
+            if "musubi" in name:
+                return (
+                    "pan-fried caramelized Spam luncheon meat slices with crispy browned edges and sweet soy glaze, "
+                    "a sunny-side-up fried egg with golden yolk, over fluffy steamed white rice, "
+                    "garnished with furikake seasoning, toasted sesame seeds, and fresh sliced green scallions"
+                )
+            return "crispy caramelized pan-fried Spam slices with sweet savory glaze and browned edges"
         return "tender cooked pork cuts, succulent meat texture, browned edges"
     if category == "beef":
         if "bulgogi" in name:

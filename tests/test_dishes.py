@@ -209,6 +209,13 @@ class TestKeyIngredients:
         assert "dredge" not in prompt
         assert "toasted sesame seeds" in prompt
 
+    def test_spam_musubi_anchors_hero_protein(self):
+        spam_bowl = d("Spam Musubi Bowl")
+        prompt = dishlib.image_prompt(spam_bowl)
+        assert "pan-fried caramelized Spam luncheon meat slices" in prompt
+        assert "sweet soy glaze" in prompt
+        assert "steamed white rice" in prompt
+
 
 class TestVessel:
     def test_bowl_dishes_detected(self):
