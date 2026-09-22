@@ -40,7 +40,7 @@ jobs:
         env:
           CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
           CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
-        run: uv run python scripts/gen_images.py --limit 8
+        run: uv run python scripts/gen_images.py --limit 50
 
       # always(), because the night's menus and assets are worth keeping whatever
       # else the run turns up -- the source holds seven days and no more.
