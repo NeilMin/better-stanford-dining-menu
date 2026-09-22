@@ -172,10 +172,17 @@ class CloudflareClient:
             return {"valid": False, "score": 0, "reason": "Invalid image bytes"}
 
         prompt = (
-            f"You are a professional culinary editor. Evaluate this image for the dish '{dish_name}'. "
-            "Check: (1) Is it fully cooked, baked or prepared, ready to eat? (Reject raw dough, uncooked meat, or preparation steps). "
-            "(2) Is it clean and free of watermarks, text overlays, logos, packaging, and people? "
-            "(3) Is it appetizing and accurately represents the dish? "
+            f"You are a culinary magazine photo editor. Evaluate whether this image is suitable for a professional culinary publication for the dish '{dish_name}'.\n"
+            "Strict Rejection Rules (MUST set valid=false and score < 5 if any apply):\n"
+            "1. Domestic/lifestyle snapshot: amateur home-cooking photo, home kitchen counters, dirty stovetops, cooking pots/pans, messy tableware, plastic takeout containers, or half-eaten food.\n"
+            "2. Poor lighting & photography: harsh direct flash, dim yellow incandescent lighting, blurry/grainy focus, or unappetizing color cast.\n"
+            "3. Uncooked / preparation: raw meat, raw dough, unfinished cooking steps, or cutting board prep.\n"
+            "4. Clutter & overlays: visible people/hands, brand logos, watermarks, text, menus, or utensil clutter.\n\n"
+            "Acceptance Criteria (score 8-10):\n"
+            "- Beautiful commercial restaurant or studio plating.\n"
+            "- Crisp, sharp focus with appetizing food styling and balanced natural or soft diffused lighting.\n"
+            "- Clean background with no distracting mess.\n"
+            "- Accurately represents '{dish_name}'.\n\n"
             'Reply ONLY with a raw JSON object with keys: "valid" (boolean), "score" (integer 1-10), "reason" (short string).'
         )
         payload = {

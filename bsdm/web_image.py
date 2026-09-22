@@ -149,11 +149,39 @@ def search_pexels(
     return candidates
 
 
+def search_unsplash(
+    query: str, session: requests.Session, timeout: int = 15
+) -> list[tuple[str, int | None, int | None]]:
+    """Search Unsplash for professional food photography."""
+    url = "https://unsplash.com/napi/search/photos"
+    params = {"query": f"{query} food", "per_page": 5}
+    try:
+        r = session.get(url, params=params, timeout=timeout)
+        r.raise_for_status()
+        data = r.json()
+    except Exception as exc:
+        log.warning("Unsplash search failed for '%s': %s", query, exc)
+        return []
+
+    results = data.get("results", [])
+    candidates: list[tuple[str, int | None, int | None]] = []
+    for item in results:
+        urls = item.get("urls", {})
+        src = urls.get("regular") or urls.get("full") or urls.get("small")
+        if not src:
+            continue
+        w = item.get("width")
+        h = item.get("height")
+        candidates.append((src, w, h))
+    return candidates
+
+
 def search_duckduckgo(
     query: str, session: requests.Session, timeout: int = 15
 ) -> list[tuple[str, int | None, int | None]]:
     """Search DuckDuckGo Images without API key for candidate image URLs."""
-    token_url = f"https://duckduckgo.com/?{urllib.parse.urlencode({'q': f'{query} food dish recipe'})}"
+    search_term = f"{query} restaurant dish gourmet plating food photography"
+    token_url = f"https://duckduckgo.com/?{urllib.parse.urlencode({'q': search_term})}"
     try:
         r = session.get(token_url, timeout=timeout)
         r.raise_for_status()
@@ -168,7 +196,7 @@ def search_duckduckgo(
     vqd = match.group(1)
 
     search_url = (
-        f"https://duckduckgo.com/i.js?l=us-en&o=json&q={urllib.parse.quote(f'{query} food dish recipe')}"
+        f"https://duckduckgo.com/i.js?l=us-en&o=json&q={urllib.parse.quote(search_term)}"
         f"&vqd={vqd}&f=,,,&p=1"
     )
     try:
@@ -194,7 +222,7 @@ def search_duckduckgo(
 def search_food_image(
     dish_name: str,
     client: CloudflareClient | None = None,
-    min_score: int = 7,
+    min_score: int = 8,
     timeout: int = 15,
 ) -> bytes | None:
     """Find a high-quality, authentic food photo for dish_name with optional VLM quality evaluation."""
@@ -204,14 +232,22 @@ def search_food_image(
     query = clean_search_query(dish_name)
 
     candidates: list[tuple[str, int | None, int | None]] = []
-    candidates.extend(search_wikipedia(query, session, timeout=timeout))
 
+    # Tier 1: Professional food photography sources first (Unsplash & Pexels)
     pexels_key = os.getenv("PEXELS_API_KEY")
-    if pexels_key and len(candidates) < 3:
+    if pexels_key:
         candidates.extend(search_pexels(query, session, pexels_key, timeout=timeout))
 
     if not candidates:
+        candidates.extend(search_unsplash(query, session, timeout=timeout))
+
+    # Tier 2: Commercial culinary photography via DuckDuckGo
+    if not candidates:
         candidates.extend(search_duckduckgo(query, session, timeout=timeout))
+
+    # Tier 3: Last resort fallback to Wikipedia (deprioritized due to amateur snapshots)
+    if not candidates:
+        candidates.extend(search_wikipedia(query, session, timeout=timeout))
 
     if not candidates:
         log.info("No candidate images found for '%s' (query='%s')", dish_name, query)

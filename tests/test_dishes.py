@@ -216,6 +216,39 @@ class TestKeyIngredients:
         assert "sweet soy glaze" in prompt
         assert "steamed white rice" in prompt
 
+    def test_plant_forward_tenders_prompt(self):
+        tenders = d(
+            "Plant-Forward Tenders",
+            "wheat flour, soy protein isolate, wheat gluten, vegetable oil, potato starch, corn flour, maltodextrin, salt, yeast extract, spices, garlic powder, onion powder, tapioca starch, cornstarch, tricalcium phosphate, natural flavors, leavening agent, paprika extract color, xanthan gum",
+            tags=["vegan"],
+        )
+        prompt = dishlib.image_prompt(tenders)
+        assert "crispy golden-brown breaded plant-based tenders" in prompt
+        assert "soy protein isolate" not in prompt
+        assert "wheat gluten" not in prompt
+        assert "maltodextrin" not in prompt
+        assert "potato starch" not in prompt
+
+    def test_thai_basil_eggplant_prompt(self):
+        eggplant = d("Thai Basil Eggplant", "eggplant, bell peppers, Thai basil sauce", tags=["vegan"])
+        prompt = dishlib.image_prompt(eggplant)
+        assert "stir-fried tender purple Chinese eggplant slices" in prompt
+        assert "savory garlic Thai basil sauce" in prompt
+
+    def test_bourguignon_tandoori_vindaloo_hero_prompts(self):
+        beef_bourg = d("Beef Bourguignon", "beef, mushrooms, pearl onions, carrots, red wine")
+        assert "tender braised beef chunks in rich glossy red wine sauce" in dishlib.image_prompt(beef_bourg)
+
+        mushroom_bourg = d("Wild Mushroom Bourguignon", "assorted mushrooms, red wine, carrots", tags=["vegan"])
+        assert "rich braised wild mushrooms, cremini and shiitake" in dishlib.image_prompt(mushroom_bourg)
+
+        tandoori = d("Tandoori Style Chicken", "chicken, tandoori marinade, curry sauce")
+        assert "roasted tandoori chicken with vibrant red-orange spice crust" in dishlib.image_prompt(tandoori)
+
+        vindaloo = d("Pork Vindaloo", "pork, vindaloo sauce, potatoes")
+        assert "tender simmered pork chunks in rich spicy and tangy red vindaloo curry sauce" in dishlib.image_prompt(vindaloo)
+
+
 
 class TestVessel:
     def test_bowl_dishes_detected(self):

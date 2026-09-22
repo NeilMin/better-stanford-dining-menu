@@ -87,6 +87,10 @@ _INVISIBLE_RE = re.compile(
     r"|(white |red |rice |apple cider |balsamic )?vinegar|citric acid|lemon juice|lime juice|orange juice|pineapple juice"
     r"|spices?|seasoning( blend| mix)?|salt and pepper|garlic powder|onion powder"
     r"|preservatives?|emulsifiers?|food colou?ring|marinade|dredge|glaze|batter"
+    r"|(soy|pea|wheat) protein( isolate)?|wheat gluten|gluten|vital wheat gluten"
+    r"|(potato|tapioca|corn|modified food) starch|(yellow |white )?corn flour|rice flour|maltodextrin|dextrin"
+    r"|tricalcium phosphate|leavening agent|paprika extract colou?r|extract colou?r"
+    r"|disodium dihydrogen pyrophosphate|sodium bicarbonate|dextrose|cream of tartar|guar gum"
     r")\s*$",
     re.I,
 )
@@ -320,10 +324,30 @@ def _hero_protein_phrase(dish) -> str | None:
     name = (_get(dish)("name", "") or "").lower()
     if "tempeh" in name:
         return "crispy bite-sized golden-brown glazed tempeh cubes, sticky spicy-sweet red gochujang glaze, toasted sesame seeds and chopped scallions"
+    if "tender" in name or "tenders" in name:
+        if any(w in name for w in ("plant", "vegan", "vegetarian", "forward")):
+            return (
+                "crispy golden-brown breaded plant-based tenders with crunchy panko coating, "
+                "tender flaky interior, served with dipping sauce on the side"
+            )
+        return (
+            "crispy golden-brown fried buttermilk chicken tenders with rustic irregular craggy coating, "
+            "crunchy textured exterior and tender juicy white meat interior, served with dipping sauce on the side"
+        )
+    if "thai basil eggplant" in name or ("eggplant" in name and "basil" in name):
+        return (
+            "stir-fried tender purple Chinese eggplant slices with vibrant glossy skin, "
+            "savory garlic Thai basil sauce, fresh green basil leaves, and sliced red bell peppers"
+        )
+    if "bourguignon" in name and ("mushroom" in name or "wild mushroom" in name):
+        return "rich braised wild mushrooms, cremini and shiitake in a glossy deep red wine sauce with pearl onions, carrots, and fresh thyme"
+
     category = classify(dish)
     if category not in ("pork", "beef", "poultry", "seafood", "lamb"):
         return None
     if category == "pork":
+        if "vindaloo" in name:
+            return "tender simmered pork chunks in rich spicy and tangy red vindaloo curry sauce with tender potatoes"
         if "bulgogi" in name:
             return "tender stir-fried thinly sliced pork in sweet savory marinade with scallions"
         if "carnitas" in name or "al pastor" in name:
@@ -340,6 +364,8 @@ def _hero_protein_phrase(dish) -> str | None:
             return "crispy caramelized pan-fried Spam slices with sweet savory glaze and browned edges"
         return "tender cooked pork cuts, succulent meat texture, browned edges"
     if category == "beef":
+        if "bourguignon" in name:
+            return "tender braised beef chunks in rich glossy red wine sauce with pearl onions, sautéed mushrooms, and fresh herbs"
         if "bulgogi" in name:
             return "tender stir-fried thinly sliced beef in sweet savory marinade with onions and scallions"
         if "short rib" in name or "rib" in name:
@@ -350,6 +376,8 @@ def _hero_protein_phrase(dish) -> str | None:
             return "juicy grilled beef patty with melted cheese"
         return "tender cooked beef, succulent meat texture, rich caramelized sear"
     if category == "poultry":
+        if "tandoori" in name:
+            return "roasted tandoori chicken with vibrant red-orange spice crust, charred edges, and aromatic herbs"
         if "roast" in name or "grilled" in name:
             return "juicy grilled or roasted chicken, golden skin, tender meat texture"
         if "crispy" in name or "fried" in name:
@@ -395,7 +423,7 @@ def image_prompt(dish) -> str:
 NEGATIVE_PROMPT = (
     "text, words, letters, watermark, signature, logo, menu, label, "
     "hands, people, person, fingers, cutlery clutter, extra chopsticks, "
-    "three chopsticks, messy, blurry, "
+    "three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, "
     "lowres, deformed, distorted, oversaturated, cartoon, illustration, "
     "3d render, plastic, fake looking, duplicate plates"
 )
@@ -441,4 +469,4 @@ def negative_prompt(dish) -> str:
 
 # Bumped whenever the prompt rules change, so already-drawn images can be told
 # apart from ones drawn under the current rules and redrawn in priority order.
-PROMPT_REV = 4
+PROMPT_REV = 5

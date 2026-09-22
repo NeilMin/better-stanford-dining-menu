@@ -12,6 +12,7 @@ from bsdm.web_image import (
     search_duckduckgo,
     search_food_image,
     search_pexels,
+    search_unsplash,
     search_wikipedia,
 )
 
@@ -106,9 +107,43 @@ def test_search_duckduckgo_success():
     assert results[0] == ("https://example.com/ddg_dish.jpg", 800, 600)
 
 
+def test_search_unsplash_success():
+    session = MagicMock()
+    mock_resp = MagicMock(status_code=200)
+    mock_resp.json.return_value = {
+        "results": [
+            {
+                "width": 1080,
+                "height": 720,
+                "urls": {"regular": "https://example.com/unsplash_taco.jpg"},
+            }
+        ]
+    }
+    session.get.return_value = mock_resp
+
+    results = search_unsplash("Tacos", session)
+    assert len(results) == 1
+    assert results[0] == ("https://example.com/unsplash_taco.jpg", 1080, 720)
+
+
+@patch("bsdm.web_image.search_unsplash")
 @patch("requests.Session.get")
-def test_search_food_image_via_wikipedia(mock_get):
+def test_search_food_image_via_unsplash(mock_get, mock_unsplash):
     fake_img = _make_fake_image(width=800, height=600)
+    mock_unsplash.return_value = [("https://example.com/dish.jpg", 800, 600)]
+    mock_get.return_value = MagicMock(status_code=200, content=fake_img)
+
+    result = search_food_image("Beef Bulgogi")
+    assert result == fake_img
+
+
+@patch("bsdm.web_image.search_unsplash")
+@patch("bsdm.web_image.search_duckduckgo")
+@patch("requests.Session.get")
+def test_search_food_image_via_wikipedia(mock_get, mock_ddg, mock_unsplash):
+    fake_img = _make_fake_image(width=800, height=600)
+    mock_unsplash.return_value = []
+    mock_ddg.return_value = []
 
     # Wikipedia API response
     r_wiki = MagicMock(status_code=200)
@@ -124,29 +159,19 @@ def test_search_food_image_via_wikipedia(mock_get):
     }
     # Image download response
     r_img = MagicMock(status_code=200, content=fake_img)
-
     mock_get.side_effect = [r_wiki, r_img]
 
     result = search_food_image("Beef Bulgogi")
     assert result == fake_img
 
 
+@patch("bsdm.web_image.search_unsplash")
 @patch("requests.Session.get")
-def test_search_food_image_with_vlm_judge_accepts(mock_get):
+def test_search_food_image_with_vlm_judge_accepts(mock_get, mock_unsplash):
     fake_img = _make_fake_image(width=800, height=600)
-
-    r_wiki = MagicMock(status_code=200)
-    r_wiki.json.return_value = {
-        "query": {
-            "pages": {
-                "1": {
-                    "thumbnail": {"source": "https://example.com/dish.jpg", "width": 800, "height": 600},
-                }
-            }
-        }
-    }
+    mock_unsplash.return_value = [("https://example.com/dish.jpg", 800, 600)]
     r_img = MagicMock(status_code=200, content=fake_img)
-    mock_get.side_effect = [r_wiki, r_img]
+    mock_get.return_value = r_img
 
     mock_client = MagicMock()
     mock_client.is_configured.return_value = True
@@ -157,22 +182,13 @@ def test_search_food_image_with_vlm_judge_accepts(mock_get):
     mock_client.evaluate_image.assert_called_once_with(fake_img, "Chicken Tikka Masala")
 
 
+@patch("bsdm.web_image.search_unsplash")
 @patch("requests.Session.get")
-def test_search_food_image_with_vlm_judge_rejects_and_returns_none(mock_get):
+def test_search_food_image_with_vlm_judge_rejects_and_returns_none(mock_get, mock_unsplash):
     fake_img = _make_fake_image(width=800, height=600)
-
-    r_wiki = MagicMock(status_code=200)
-    r_wiki.json.return_value = {
-        "query": {
-            "pages": {
-                "1": {
-                    "thumbnail": {"source": "https://example.com/dish.jpg", "width": 800, "height": 600},
-                }
-            }
-        }
-    }
+    mock_unsplash.return_value = [("https://example.com/dish.jpg", 800, 600)]
     r_img = MagicMock(status_code=200, content=fake_img)
-    mock_get.side_effect = [r_wiki, r_img]
+    mock_get.return_value = r_img
 
     mock_client = MagicMock()
     mock_client.is_configured.return_value = True
@@ -184,13 +200,11 @@ def test_search_food_image_with_vlm_judge_rejects_and_returns_none(mock_get):
     mock_client.evaluate_image.assert_called_once_with(fake_img, "Pepperoni Pizza")
 
 
+@patch("bsdm.web_image.search_unsplash")
 @patch("requests.Session.get")
-def test_search_food_image_falls_back_to_duckduckgo(mock_get):
+def test_search_food_image_falls_back_to_duckduckgo(mock_get, mock_unsplash):
     fake_img = _make_fake_image(width=800, height=600)
-
-    # Wikipedia returns empty
-    r_wiki = MagicMock(status_code=200)
-    r_wiki.json.return_value = {"query": {"pages": {}}}
+    mock_unsplash.return_value = []
 
     # DDG token
     r_ddg_token = MagicMock(status_code=200, text='vqd="12345"')
@@ -202,36 +216,23 @@ def test_search_food_image_falls_back_to_duckduckgo(mock_get):
     # Image download
     r_img = MagicMock(status_code=200, content=fake_img)
 
-    mock_get.side_effect = [r_wiki, r_ddg_token, r_ddg_search, r_img]
+    mock_get.side_effect = [r_ddg_token, r_ddg_search, r_img]
 
     result = search_food_image("Unusual Stanford Specialty")
     assert result == fake_img
 
 
+@patch("bsdm.web_image.search_unsplash")
 @patch("requests.Session.get")
-def test_search_food_image_skips_bad_geometry(mock_get):
-    # Candidate 1: 500x1200 (tall vertical portrait)
-    # Candidate 2: 800x600 (safe)
+def test_search_food_image_skips_bad_geometry(mock_get, mock_unsplash):
     fake_img_good = _make_fake_image(width=800, height=600)
-
-    r_wiki = MagicMock(status_code=200)
-    r_wiki.json.return_value = {
-        "query": {
-            "pages": {
-                "1": {
-                    "index": 1,
-                    "thumbnail": {"source": "https://example.com/tall.jpg", "width": 500, "height": 1200},
-                },
-                "2": {
-                    "index": 2,
-                    "thumbnail": {"source": "https://example.com/good.jpg", "width": 800, "height": 600},
-                },
-            }
-        }
-    }
+    # Candidate 1: 500x1200 (tall vertical portrait), Candidate 2: 800x600 (safe)
+    mock_unsplash.return_value = [
+        ("https://example.com/tall.jpg", 500, 1200),
+        ("https://example.com/good.jpg", 800, 600),
+    ]
     r_good_img = MagicMock(status_code=200, content=fake_img_good)
-    # Only r_wiki and r_good_img should be called, tall.jpg skipped
-    mock_get.side_effect = [r_wiki, r_good_img]
+    mock_get.return_value = r_good_img
 
     result = search_food_image("Pasta")
     assert result == fake_img_good
