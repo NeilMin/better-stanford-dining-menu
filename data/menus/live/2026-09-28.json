@@ -1,6 +1,6 @@
 {
  "date": "2026-09-28",
- "scraped_at": "2026-09-22T16:39:51-07:00",
+ "scraped_at": "2026-09-23T06:44:25-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -1119,32 +1119,78 @@
    ],
    "Lunch": [
     {
-     "name": "Seafood Jambalaya",
-     "recipe_id": "4860996",
+     "name": "Sausage Bar Station",
+     "recipe_id": "6645789",
      "description": "",
-     "ingredients": "shrimp, squid, mussels, andouille sausage, okra, tomato puree, basmati rice, chicken base, garlic, creole spice (herbs de provence, cuminseed, salt, cayenne pepper, pepper, paprika), bell peppers, celery, onion, Worcestershire sauce, thyme, bay leaf, parsley",
-     "allergens": [
-      "EGG",
-      "FISH",
-      "SHELLFISH",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "COCONUT",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SOY",
-      "TREENUTS"
-     ],
+     "ingredients": "beef pork sausage, bratwurst sausage, plant-forward italian hot link, hot dog bun, pretzels, potato hot dog bun, ketchup, dill pickles, pickle relish, sauerkraut, curry powder, smoky aioli sauce",
+     "allergens": [],
+     "trace_allergens": [],
      "tags": [],
      "order": 0
     },
     {
-     "name": "Jambalaya with Fried Okra",
-     "recipe_id": "5310969",
+     "name": "Corn on the Cob with Herb Butter",
+     "recipe_id": "5615448",
      "description": "",
-     "ingredients": "jambalaya (brown rice, bell pepper, butternut squash, tomato, onion, mushroom, celery, okra, canola/olive oil blend, garlic, parsley, salt, pepper, thyme, cumin, cayenne, paprika), fried okra (okra, corn starch, corn meal, fried in canola oil)",
+     "ingredients": "corn, salt, butter, thyme, parsley",
+     "allergens": [
+      "MILK"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegetarian",
+      "halal"
+     ],
+     "order": 1
+    },
+    {
+     "name": "Seasonal Steamed Vegetables",
+     "recipe_id": "5561366",
+     "description": "",
+     "ingredients": "seasonal vegetables, salt",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan",
+      "halal"
+     ],
+     "order": 2
+    },
+    {
+     "name": "Seasonal Vegetable Board",
+     "recipe_id": "4503514",
+     "description": "",
+     "ingredients": "seasonal roasted vegetables with olive/canola oil blend, salt, pepper",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan",
+      "halal"
+     ],
+     "order": 3
+    },
+    {
+     "name": "Creole Succotash",
+     "recipe_id": "USF#7328065",
+     "description": "",
+     "ingredients": "corn, lima beans, bell peppers, onions, tomatoes, celery, garlic, paprika, dried oregano, dried thyme, cayenne pepper, olive/canola oil blend, salt, black pepper",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan",
+      "halal"
+     ],
+     "order": 4
+    },
+    {
+     "name": "Garlic Fries",
+     "recipe_id": "6417374",
+     "description": "",
+     "ingredients": "french fries, garlic, parsley, canola/olive oil blend, canola shortening",
      "allergens": [],
      "trace_allergens": [
       "COCONUT",
@@ -1159,80 +1205,9 @@
       "WHEAT"
      ],
      "tags": [
-      "vegan",
-      "halal"
-     ],
-     "order": 1
-    },
-    {
-     "name": "Slow-Braised Collard Greens",
-     "recipe_id": "5686325",
-     "description": "",
-     "ingredients": "collard greens, vegetable soup base (contains carrots, mushrooms, celery), mustard seeds, onions, apple cider vinegar, canola/olive oil blend",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan",
-      "halal"
-     ],
-     "order": 2
-    },
-    {
-     "name": "Seasonal Steamed Vegetables",
-     "recipe_id": "5561366",
-     "description": "",
-     "ingredients": "seasonal vegetables, salt",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan",
-      "halal"
-     ],
-     "order": 3
-    },
-    {
-     "name": "Seasonal Vegetable Board",
-     "recipe_id": "4503514",
-     "description": "",
-     "ingredients": "seasonal roasted vegetables with olive/canola oil blend, salt, pepper",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan",
-      "halal"
-     ],
-     "order": 4
-    },
-    {
-     "name": "Creole Succotash",
-     "recipe_id": "USF#7328065",
-     "description": "",
-     "ingredients": "corn, lima beans, bell peppers, onions, tomatoes, celery, garlic, paprika, dried oregano, dried thyme, cayenne pepper, olive/canola oil blend, salt, black pepper",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan",
-      "halal"
+      "vegan"
      ],
      "order": 5
-    },
-    {
-     "name": "Steamed Louisiana-Style Rice",
-     "recipe_id": "LouisStyleRice1",
-     "description": "",
-     "ingredients": "long-grain rice, water, onions, celery, bell peppers, garlic, paprika, dried thyme, dried oregano, olive/canola oil blend, salt, black pepper",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan",
-      "halal"
-     ],
-     "order": 6
     },
     {
      "name": "Burger Bar",
@@ -1242,7 +1217,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 7
+     "order": 6
     },
     {
      "name": "Grilled Chicken",
@@ -1265,7 +1240,7 @@
      "tags": [
       "halal"
      ],
-     "order": 8
+     "order": 7
     },
     {
      "name": "Grilled Vegan/Vegetarian",
@@ -1288,7 +1263,7 @@
      "tags": [
       "halal"
      ],
-     "order": 9
+     "order": 8
     },
     {
      "name": "Handmade Pizza",
@@ -1304,7 +1279,7 @@
       "vegetarian",
       "halal"
      ],
-     "order": 10
+     "order": 9
     },
     {
      "name": "Panini Station",
@@ -1322,7 +1297,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 11
+     "order": 10
     },
     {
      "name": "Soup of the Day",
@@ -1332,7 +1307,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 12
+     "order": 11
     },
     {
      "name": "Composed Salad",
@@ -1344,7 +1319,7 @@
      "tags": [
       "halal"
      ],
-     "order": 13
+     "order": 12
     },
     {
      "name": "Performance Bar",
@@ -1354,7 +1329,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 14
+     "order": 13
     },
     {
      "name": "Craveable Grains",
@@ -1368,7 +1343,7 @@
       "vegan",
       "halal"
      ],
-     "order": 15
+     "order": 14
     },
     {
      "name": "Flavor Forward Legumes",
@@ -1382,7 +1357,7 @@
       "vegan",
       "halal"
      ],
-     "order": 16
+     "order": 15
     },
     {
      "name": "Marinara Cheese Ravioli",
@@ -1400,7 +1375,7 @@
       "vegetarian",
       "halal"
      ],
-     "order": 17
+     "order": 16
     },
     {
      "name": "Pesto Sauce",
@@ -1417,7 +1392,7 @@
       "vegetarian",
       "halal"
      ],
-     "order": 18
+     "order": 17
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -1431,7 +1406,7 @@
       "vegan",
       "halal"
      ],
-     "order": 19
+     "order": 18
     }
    ],
    "Dinner": [
