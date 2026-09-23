@@ -3,7 +3,7 @@ from __future__ import annotations
 import logging
 from typing import Any
 
-from bsdm.cloudflare import CloudflareClient
+from bsdm.cloudflare import CloudflareClient, CloudflareQuotaError
 
 log = logging.getLogger(__name__)
 
@@ -37,20 +37,28 @@ def compile_pending(
 
     count = 0
     for did, entry in pending:
+        dish_name = entry.get("name", "Unknown")
         try:
             res = client.compile_dish_prompt(
-                name=entry["name"],
+                name=dish_name,
                 ingredients=entry.get("ingredients", ""),
                 tags=entry.get("tags", []),
                 category=entry.get("category", "other"),
             )
-            entry["prompt"] = res["prompt"]
-            entry["negative"] = res["negative"]
+            compiled_prompt = (res.get("prompt") or "").strip()
+            if not compiled_prompt:
+                log.warning("Empty compiled prompt for '%s'", dish_name)
+                continue
+            entry["prompt"] = compiled_prompt
+            entry["negative"] = (res.get("negative") or "").strip()
             entry["prompt_compiled"] = True
             entry["prompt_compiler_rev"] = COMPILER_REV
             count += 1
-            log.info("Compiled prompt for '%s'", entry["name"])
+            log.info("Compiled prompt for '%s'", dish_name)
+        except CloudflareQuotaError as exc:
+            log.warning("Cloudflare quota exceeded while compiling prompts: %s", exc)
+            break
         except Exception as exc:
-            log.warning("Failed to compile prompt for '%s': %s", entry["name"], exc)
+            log.warning("Failed to compile prompt for '%s': %s", dish_name, exc)
 
     return count

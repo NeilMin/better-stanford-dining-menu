@@ -109,15 +109,23 @@ def build(menu_paths: Iterable[Path], station_table: dict, previous: dict | None
             entry["first_seen"] = min(entry["first_seen"], old.get("first_seen", entry["first_seen"]))
             entry["min_order"] = min(entry["min_order"], old.get("min_order", 999))
             entry["image"] = old.get("image")
-            for key in ("generated_at", "model", "seed", "prompt_rev"):
+            for key in ("generated_at", "model", "seed", "prompt_rev", "prompt_compiled", "prompt_compiler_rev"):
                 if key in old:
                     entry[key] = old[key]
 
         entry["is_station"] = dishlib.is_station_container(entry)
         entry["station_only"] = as_daily.get(did, 0) == 0 and as_station.get(did, 0) > 0
         entry["needs_image"] = not entry["placeholder"] and not entry["station_only"] and not entry["is_station"]
-        entry["prompt"] = dishlib.image_prompt(entry) if entry["needs_image"] else None
-        entry["negative"] = dishlib.negative_prompt(entry) if entry["needs_image"] else None
+        if entry["needs_image"]:
+            if old and old.get("prompt_compiled") and old.get("prompt"):
+                entry["prompt"] = old["prompt"]
+                entry["negative"] = old.get("negative")
+            else:
+                entry["prompt"] = dishlib.image_prompt(entry)
+                entry["negative"] = dishlib.negative_prompt(entry)
+        else:
+            entry["prompt"] = None
+            entry["negative"] = None
 
         # 0 is what you pick a hall for, 2 is a side. Menu position is the
         # signal: R&DE lists the day's entrees first.

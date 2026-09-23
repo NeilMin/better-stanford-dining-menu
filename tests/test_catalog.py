@@ -182,6 +182,29 @@ class TestAccumulation:
                         previous={dishlib.dish_id("Roast Chicken"): {"name": "Roast Chicken"}})
         assert entry_for(catalog, "Roast Chicken")["image"] is None
 
+    def test_compiled_prompt_is_carried_over(self, project):
+        d_raw = dish("Beef Hot Dog", "beef, sorbitol", order=0)
+        did = dishlib.dish_id(d_raw["name"])
+        previous = {
+            did: {
+                "name": "Beef Hot Dog",
+                "ingredients": "beef, sorbitol",
+                "first_seen": "2026-09-10",
+                "min_order": 0,
+                "prompt": "Custom compiled prompt",
+                "negative": "Custom compiled negative",
+                "prompt_compiled": True,
+                "prompt_compiler_rev": 1,
+            }
+        }
+        catalog = build(project, {"2026-09-17": {"wilbur": {"Dinner": [d_raw]}}}, previous=previous)
+        got = entry_for(catalog, "Beef Hot Dog")
+        assert got["prompt"] == "Custom compiled prompt"
+        assert got["negative"] == "Custom compiled negative"
+        assert got["prompt_compiled"] is True
+        assert got["prompt_compiler_rev"] == 1
+
+
 
 class TestSpecials:
     def test_a_special_is_a_dish_drawn_from_its_name_alone(self, project):

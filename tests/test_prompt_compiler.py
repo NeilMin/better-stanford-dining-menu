@@ -1,6 +1,5 @@
-from unittest.mock import MagicMock, patch
 import json
-import pytest
+from unittest.mock import MagicMock, patch
 
 from bsdm.prompt_compiler import COMPILER_REV, compile_pending
 
