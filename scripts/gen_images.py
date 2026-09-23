@@ -16,6 +16,7 @@ from __future__ import annotations
 import argparse
 import io
 import json
+import random
 import sys
 import time
 from datetime import datetime, timezone
@@ -128,6 +129,10 @@ def main(argv: list[str] | None = None) -> int:
                     help="only search web food photography (skip AI generation)")
     ap.add_argument("--only-ai", action="store_true",
                     help="only use AI generation (skip web search)")
+    ap.add_argument("--vlm-gate", action=argparse.BooleanOptionalAction, default=True,
+                    help="evaluate generated image with VLM when Cloudflare is configured (default: True)")
+    ap.add_argument("--max-vlm-retries", type=int, default=3,
+                    help="maximum generation attempts with new seeds if VLM score < 7 (default: 3)")
     ap.add_argument("--url", default=DEFAULT_URL, help="ComfyUI base URL")
     ap.add_argument("--model", default="sdxl", choices=sorted(MODELS))
     ap.add_argument("--limit", type=int, help="stop after N images")
@@ -222,6 +227,8 @@ def main(argv: list[str] | None = None) -> int:
         image = None
         secs = 0.0
         used_model = None
+        vlm_score = None
+        vlm_reason = None
 
         # Tier 1: Web Food Search with VLM Quality Gate
         if not args.only_ai and (backend in ("cloudflare", "search")) and args.search_first:
@@ -237,24 +244,85 @@ def main(argv: list[str] | None = None) -> int:
 
         # Tier 2: AI Generation
         if image is None and not args.only_search:
-            if backend == "cloudflare":
-                try:
-                    image, secs = generate_with_cloudflare(cf_client, prompt, negative)
-                    used_model = "cf-flux"
-                except CloudflareQuotaError as exc:
-                    print(f"  [{i}/{len(pending)}] Cloudflare quota exceeded: {exc}", file=sys.stderr)
-                    quota_exceeded = True
-                except (CloudflareError, OSError, Exception) as exc:
-                    print(f"  [{i}/{len(pending)}] Cloudflare generation failed for {dish_name}: {exc}", file=sys.stderr)
-            elif backend == "comfyui":
-                try:
-                    raw_img, secs = comfy_client.generate(
-                        args.model, prompt, negative, seed, steps=args.steps,
-                    )
-                    image = crop_and_resize_to_card(raw_img)
-                    used_model = args.model
-                except (ComfyError, OSError, Exception) as exc:
-                    print(f"  [{i}/{len(pending)}] ComfyUI generation failed for {dish_name}: {exc}", file=sys.stderr)
+            max_attempts = max(1, args.max_vlm_retries) if (args.vlm_gate and cf_client.is_configured()) else 1
+            best_candidate = None  # (image, seed, score, reason, secs, model)
+            total_secs = 0.0
+
+            for attempt in range(1, max_attempts + 1):
+                attempt_img = None
+                attempt_secs = 0.0
+                attempt_model = None
+
+                if backend == "cloudflare":
+                    try:
+                        attempt_img, attempt_secs = generate_with_cloudflare(cf_client, prompt, negative)
+                        attempt_model = "cf-flux"
+                    except CloudflareQuotaError as exc:
+                        print(f"  [{i}/{len(pending)}] Cloudflare quota exceeded: {exc}", file=sys.stderr)
+                        quota_exceeded = True
+                        break
+                    except (CloudflareError, OSError, Exception) as exc:
+                        print(f"  [{i}/{len(pending)}] Cloudflare generation failed for {dish_name}: {exc}", file=sys.stderr)
+                elif backend == "comfyui":
+                    try:
+                        raw_img, attempt_secs = comfy_client.generate(
+                            args.model, prompt, negative, seed, steps=args.steps,
+                        )
+                        attempt_img = crop_and_resize_to_card(raw_img)
+                        attempt_model = args.model
+                    except (ComfyError, OSError, Exception) as exc:
+                        print(f"  [{i}/{len(pending)}] ComfyUI generation failed for {dish_name}: {exc}", file=sys.stderr)
+
+                total_secs += attempt_secs
+
+                if attempt_img is None:
+                    continue
+
+                if args.vlm_gate and cf_client.is_configured():
+                    thumb_bytes = to_webp(attempt_img)
+                    try:
+                        eval_res = cf_client.evaluate_food_image(thumb_bytes, dish_name=dish_name)
+                    except Exception as exc:
+                        print(f"  [{i}/{len(pending)}] VLM evaluation error for {dish_name}: {exc}", file=sys.stderr)
+                        eval_res = {"valid": False, "score": 0, "reason": f"Evaluation error: {exc}"}
+
+                    if isinstance(eval_res, dict):
+                        valid = bool(eval_res.get("valid", False))
+                        raw_score = eval_res.get("score", 0)
+                        try:
+                            score = int(raw_score)
+                        except (TypeError, ValueError):
+                            score = 0
+                        reason = str(eval_res.get("reason", ""))
+                    else:
+                        valid = True
+                        score = 10
+                        reason = ""
+
+                    if best_candidate is None or score > best_candidate[2]:
+                        best_candidate = (attempt_img, seed, score, reason, total_secs, attempt_model)
+
+                    if valid and score >= 7:
+                        print(f"    [VLM Pass] Score {score}/10: {reason}")
+                        image = attempt_img
+                        secs = total_secs
+                        used_model = attempt_model
+                        vlm_score = score
+                        vlm_reason = reason
+                        break
+                    else:
+                        print(f"    [VLM Retry {attempt}/{max_attempts}] Score {score}/10: {reason}")
+                        if attempt < max_attempts:
+                            seed = random.randint(1, 2**31 - 1)
+                            image = None
+                else:
+                    image = attempt_img
+                    secs = total_secs
+                    used_model = attempt_model
+                    break
+
+            if image is None and best_candidate is not None:
+                image, seed, vlm_score, vlm_reason, secs, used_model = best_candidate
 
         # Tier 3: Emergency Fallback
         if image is None and args.search_fallback and not args.only_ai:
@@ -271,13 +339,18 @@ def main(argv: list[str] | None = None) -> int:
         else:
             (IMAGES / f"{did}.webp").write_bytes(to_webp(image))
             done += 1
-            record_image(did, {
+            record_fields = {
                 "image": f"{did}.webp",
                 "model": used_model,
                 "seed": seed,
                 "prompt_rev": dishlib.PROMPT_REV,
                 "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-            })
+            }
+            if vlm_score is not None:
+                record_fields["vlm_score"] = vlm_score
+            if vlm_reason is not None:
+                record_fields["vlm_reason"] = vlm_reason
+            record_image(did, record_fields)
 
             if backend == "comfyui" and args.free_every and i % args.free_every == 0 and i < len(pending):
                 comfy_client.free()
