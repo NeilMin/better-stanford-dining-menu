@@ -1,6 +1,7 @@
 import base64
 import io
 import json
+import os
 from unittest.mock import MagicMock, patch
 
 import pytest
@@ -297,3 +298,132 @@ def test_evaluate_image_failure_fallback(mock_post):
     mock_post.side_effect = requests.RequestException("Timeout")
     res_err = client.evaluate_image(buf.getvalue(), "Pizza")
     assert res_err == {"valid": False, "score": 0, "reason": "Evaluation failed"}
+
+
+def test_compile_dish_prompt_parses_json():
+    client = CloudflareClient("acc123", "tok456")
+    mock_resp = MagicMock()
+    mock_resp.status_code = 200
+    mock_resp.json.return_value = {
+        "result": {
+            "response": json.dumps({
+                "prompt": "Juicy beef hot dog in a soft bun",
+                "negative": "yellow sludge, plastic",
+            })
+        }
+    }
+    client.session.post = MagicMock(return_value=mock_resp)
+
+    res = client.compile_dish_prompt(
+        name="Beef Hot Dog",
+        ingredients="beef, sorbitol, sodium lactate",
+        tags=["halal"],
+        category="beef",
+    )
+    assert res["prompt"] == "Juicy beef hot dog in a soft bun"
+    assert "yellow sludge" in res["negative"]
+
+
+def test_compile_dish_prompt_dict_response():
+    client = CloudflareClient("acc123", "tok456")
+    mock_resp = MagicMock()
+    mock_resp.status_code = 200
+    mock_resp.json.return_value = {
+        "result": {
+            "response": {
+                "prompt": "Crisp chicken fajita bowl",
+                "negative": "burrito, wrap",
+            }
+        }
+    }
+    client.session.post = MagicMock(return_value=mock_resp)
+
+    res = client.compile_dish_prompt(
+        name="Chicken Fajitas",
+        ingredients="chicken breast, bell peppers, onions",
+        tags=["gluten-free"],
+        category="poultry",
+    )
+    assert res["prompt"] == "Crisp chicken fajita bowl"
+    assert res["negative"] == "burrito, wrap"
+
+
+def test_compile_dish_prompt_markdown_fenced():
+    client = CloudflareClient("acc123", "tok456")
+    mock_resp = MagicMock()
+    mock_resp.status_code = 200
+    mock_resp.json.return_value = {
+        "result": {
+            "response": "```json\n" + json.dumps({
+                "prompt": "Lemon Herb Rice",
+                "negative": "burnt, noodles",
+            }) + "\n```"
+        }
+    }
+    client.session.post = MagicMock(return_value=mock_resp)
+
+    res = client.compile_dish_prompt(
+        name="Lemon Herb Rice",
+        ingredients="rice, lemon juice, parsley",
+    )
+    assert res["prompt"] == "Lemon Herb Rice"
+    assert res["negative"] == "burnt, noodles"
+
+
+def test_compile_dish_prompt_invalid_response_raises():
+    client = CloudflareClient("acc123", "tok456")
+    mock_resp = MagicMock()
+    mock_resp.status_code = 200
+    mock_resp.json.return_value = {
+        "result": {
+            "response": "Not a json response without prompt key"
+        }
+    }
+    client.session.post = MagicMock(return_value=mock_resp)
+
+    with pytest.raises(CloudflareError, match="Failed to compile prompt"):
+        client.compile_dish_prompt(
+            name="Mystery Soup",
+            ingredients="water, salt",
+        )
+
+
+def test_evaluate_food_image_parses_score():
+    client = CloudflareClient("acc123", "tok456")
+    mock_resp = MagicMock()
+    mock_resp.status_code = 200
+    mock_resp.json.return_value = {
+        "result": {
+            "response": '{"valid": true, "score": 9, "reason": "Appetizing plating and crisp focus"}'
+        }
+    }
+    client.session.post = MagicMock(return_value=mock_resp)
+
+    # Fake 10x10 PNG bytes
+    buf = io.BytesIO()
+    Image.new("RGB", (10, 10), "white").save(buf, format="JPEG")
+    res = client.evaluate_food_image(buf.getvalue(), dish_name="Beef Hot Dog")
+    assert res["valid"] is True
+    assert res["score"] == 9
+    assert "Appetizing" in res["reason"]
+
+
+def test_dotenv_fallback(monkeypatch, tmp_path):
+    from bsdm.cloudflare import _load_dotenv
+
+    monkeypatch.delenv("CF_ACCOUNT_ID", raising=False)
+    monkeypatch.delenv("CF_API_TOKEN", raising=False)
+
+    fake_env = tmp_path / ".env"
+    fake_env.write_text('CF_ACCOUNT_ID="env_from_file_id"\nCF_API_TOKEN="env_from_file_tok"\n')
+
+    _load_dotenv(env_path=fake_env)
+    assert os.getenv("CF_ACCOUNT_ID") == "env_from_file_id"
+    assert os.getenv("CF_API_TOKEN") == "env_from_file_tok"
+
+    client = CloudflareClient()
+    assert client.is_configured() is True
+    assert client.account_id == "env_from_file_id"
+    assert client.api_token == "env_from_file_tok"
+
+

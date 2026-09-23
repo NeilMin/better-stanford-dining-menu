@@ -12,6 +12,7 @@ import io
 import json
 import logging
 import os
+from pathlib import Path
 import re
 from typing import Any
 
@@ -25,6 +26,31 @@ DEFAULT_IMAGE_MODEL = "@cf/black-forest-labs/flux-1-schnell"
 DEFAULT_VISION_MODEL = "@cf/meta/llama-3.2-11b-vision-instruct"
 
 
+def _load_dotenv(env_path: Path | str | None = None) -> None:
+    """Load CF credentials from a .env file if not present in os.environ."""
+    if os.getenv("CF_ACCOUNT_ID") and os.getenv("CF_API_TOKEN"):
+        return
+    candidates = [Path(env_path)] if env_path else [
+        Path.cwd() / ".env",
+        Path(__file__).resolve().parent.parent / ".env",
+    ]
+    for p in candidates:
+        if p and p.is_file():
+            try:
+                for line in p.read_text(encoding="utf-8").splitlines():
+                    line = line.strip()
+                    if line and not line.startswith("#") and "=" in line:
+                        k, v = line.split("=", 1)
+                        os.environ.setdefault(k.strip(), v.strip().strip("'\""))
+            except Exception as exc:
+                log.debug("Failed reading %s: %s", p, exc)
+            if os.getenv("CF_ACCOUNT_ID") and os.getenv("CF_API_TOKEN"):
+                break
+
+
+_load_dotenv()
+
+
 class CloudflareError(RuntimeError):
     pass
 
@@ -35,8 +61,11 @@ class CloudflareQuotaError(CloudflareError):
 
 class CloudflareClient:
     def __init__(self, account_id: str | None = None, api_token: str | None = None, timeout: int = 60):
-        self.account_id = (account_id or os.getenv("CF_ACCOUNT_ID") or "").strip().strip('"').strip("'")
-        self.api_token = (api_token or os.getenv("CF_API_TOKEN") or "").strip().strip('"').strip("'")
+        if account_id is None or api_token is None:
+            if not (os.getenv("CF_ACCOUNT_ID") and os.getenv("CF_API_TOKEN")):
+                _load_dotenv()
+        self.account_id = (account_id if account_id is not None else os.getenv("CF_ACCOUNT_ID") or "").strip().strip('"').strip("'")
+        self.api_token = (api_token if api_token is not None else os.getenv("CF_API_TOKEN") or "").strip().strip('"').strip("'")
         self.timeout = timeout
         self.session = requests.Session()
         if self.api_token:
@@ -221,3 +250,72 @@ class CloudflareClient:
             log.warning("Vision evaluation failed for '%s': %s", dish_name, exc)
 
         return {"valid": False, "score": 0, "reason": "Evaluation failed"}
+
+    def compile_dish_prompt(
+        self,
+        name: str,
+        ingredients: str,
+        tags: list[str] | None = None,
+        category: str = "other",
+        model: str = DEFAULT_TRANSLATION_MODEL,
+    ) -> dict[str, str]:
+        tags_str = ", ".join(tags or [])
+        system = (
+            "You are an expert commercial food photography director and culinary stylist. "
+            "Your task is to take a dining hall dish name, category, and raw ingredient list, "
+            "and create a clean, appetizing image generation prompt and targeted negative prompt.\n\n"
+            "Rules:\n"
+            "1. CULINARY ACCURACY: Understand what the dish looks like when served (e.g. Hot Dog is in a bun; Fajitas are sliced seared meat strips with bell peppers and onions; Lasagna has visible pasta sheets and cheese).\n"
+            "2. STRIP CHEMICALS & LIQUIDS: Completely remove food additives, stabilizers, chemical preservatives (sorbitol, sodium lactate, sodium phosphates, hydrolyzed corn protein, gums, starch powders, acids, oils, cooking spray).\n"
+            "3. PHOTOGRAPHY STYLE: Food photography, plated on a simple white ceramic plate (or bowl for soup/stew), overhead three-quarter view, centered composition, generous empty margin around plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail.\n"
+            "4. TARGETED NEGATIVE: Exclude dish-specific pitfalls (e.g. for Hot Dog: corn, yellow sludge, cheese sauce, ridges, tire tread; for Fajitas: burrito, wrap, taco, noodles, soup; for vegan dishes: meat, chicken, beef, pork, seafood).\n"
+            "5. OUTPUT FORMAT: Respond ONLY with a valid JSON object with keys 'prompt' and 'negative'. Do not include markdown codeblocks or explanatory prose."
+        )
+        user_prompt = (
+            f"Dish: {name}\n"
+            f"Category: {category}\n"
+            f"Tags: {tags_str}\n"
+            f"Raw Ingredients: {ingredients}\n"
+        )
+        payload = {
+            "messages": [
+                {"role": "system", "content": system},
+                {"role": "user", "content": user_prompt},
+            ],
+            "max_tokens": 512,
+        }
+        resp = self._run(model, payload)
+        data = resp.json()
+        raw_text = data.get("result", {}).get("response", "") if isinstance(data, dict) else ""
+        if isinstance(raw_text, dict):
+            parsed = raw_text
+            if "prompt" in parsed:
+                return {
+                    "prompt": str(parsed.get("prompt", "")).strip(),
+                    "negative": str(parsed.get("negative", "")).strip(),
+                }
+        elif isinstance(raw_text, str):
+            match = re.search(r"\{.*\}", raw_text, re.S)
+            if match:
+                raw_text = match.group(0)
+            try:
+                parsed = json.loads(raw_text)
+                if isinstance(parsed, dict) and "prompt" in parsed:
+                    return {
+                        "prompt": str(parsed.get("prompt", "")).strip(),
+                        "negative": str(parsed.get("negative", "")).strip(),
+                    }
+            except Exception as exc:
+                log.warning("Failed to parse compile_dish_prompt JSON: %s", exc)
+
+        raise CloudflareError(f"Failed to compile prompt for {name}: {str(raw_text)[:200]}")
+
+    def evaluate_food_image(
+        self,
+        image_bytes: bytes,
+        dish_name: str,
+        model: str = DEFAULT_VISION_MODEL,
+    ) -> dict[str, Any]:
+        """Evaluate a generated food card for visual quality, authenticity, and lack of AI artifacts."""
+        return self.evaluate_image(image_bytes, dish_name=dish_name, model=model)
+
