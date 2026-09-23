@@ -91,6 +91,12 @@ _INVISIBLE_RE = re.compile(
     r"|(potato|tapioca|corn|modified food) starch|(yellow |white )?corn flour|rice flour|maltodextrin|dextrin"
     r"|tricalcium phosphate|leavening agent|paprika extract colou?r|extract colou?r"
     r"|disodium dihydrogen pyrophosphate|sodium bicarbonate|dextrose|cream of tartar|guar gum"
+    r"|(sodium|calcium|potassium|disodium|monocalcium|aluminum)\s+[\w\s]+"
+    r"|sorbitol|sorbic acid|lactic acid|ascorbic acid|fumaric acid|propionic acid|benzoic acid"
+    r"|hydrolyzed\s+[\w\s]*protein"
+    r"|[\w\s]*gum arabic|[\w\s]*cellulose gum|[\w\s]*gellan gum|[\w\s]*konjac gum|locust bean gum"
+    r"|(soy|sunflower)?\s*lecithin|l-cysteine(\s+hydrochloride)?"
+    r"|(spice|rosemary|carrot)\s+extract(ive)?s?|natural flavorings?"
     r")\s*$",
     re.I,
 )
@@ -383,6 +389,26 @@ def _hero_protein_phrase(dish) -> str | None:
             "layers of tender pasta sheets filled with creamy ricotta, melted mozzarella, "
             "vibrant sautéed spinach, mushrooms, zucchini, rich marinara sauce, and golden bubbling cheese crust"
         )
+    if "fajita" in name or "fajitas" in name:
+        if any(w in name for w in ("chicken", "poultry")):
+            return (
+                "tender seasoned grilled chicken breast strips with appetizing charred grill marks, "
+                "tossed with sautéed sliced red and green bell peppers and caramelized onions"
+            )
+        if any(w in name for w in ("beef", "steak", "carne")):
+            return (
+                "tender seasoned grilled beef steak strips with caramelized edges, "
+                "tossed with sautéed sliced red and green bell peppers and caramelized onions"
+            )
+        return (
+            "tender seasoned grilled meat strips with appetizing charred edges, "
+            "tossed with sautéed sliced red and green bell peppers and caramelized onions"
+        )
+    if ("hot dog" in name or "hotdog" in name or "frankfurter" in name) and "bun" not in name:
+        return (
+            "a classic juicy all-beef hot dog nestled in a soft warm bakery bun, "
+            "with a neat swirl of yellow mustard"
+        )
 
     category = classify(dish)
     if category not in ("pork", "beef", "poultry", "seafood", "lamb"):
@@ -514,6 +540,10 @@ def negative_prompt(dish) -> str:
         ])
     if re.search(r"\brice\b", name, re.I) and re.search(r"\blemon\b", name, re.I):
         exclude.extend(["sliced lemons", "lemon wheels", "citrus slices", "whole lemons"])
+    if re.search(r"\bhot\s*dogs?\b", name, re.I) and "bun" not in name.lower():
+        exclude.extend(["ridges", "tire tread", "sliced meat", "shredded meat", "deformed sausage", "second sausage", "double sausage", "split casing", "corn", "corn kernels", "yellow sludge", "cheese sauce", "mayonnaise"])
+    if re.search(r"\bfajitas?\b", name, re.I):
+        exclude.extend(["burrito", "tortilla wrap", "taco", "noodles", "pasta", "soup"])
 
     if not exclude:
         return NEGATIVE_PROMPT
@@ -522,4 +552,4 @@ def negative_prompt(dish) -> str:
 
 # Bumped whenever the prompt rules change, so already-drawn images can be told
 # apart from ones drawn under the current rules and redrawn in priority order.
-PROMPT_REV = 5
+PROMPT_REV = 6

@@ -288,6 +288,39 @@ class TestKeyIngredients:
         assert "sliced lemons" in negative
         assert "meat" in negative
 
+    def test_beef_hot_dog_prompt_and_chemical_filtering(self):
+        hot_dog = d(
+            "Beef Hot Dog",
+            "beef, salt, sorbitol, sodium lactate, natural flavorings, sodium phosphates, "
+            "hydrolyzed corn protein, paprika, sodium diacetate, sodium erythorbate, sodium nitrate",
+            tags=["halal"],
+        )
+        prompt = dishlib.image_prompt(hot_dog)
+        assert "a classic juicy all-beef hot dog" in prompt
+        assert "nestled in a soft warm bakery bun" in prompt
+        assert "with a neat swirl of yellow mustard" in prompt
+        assert "paprika" in prompt
+        for chem in ("sorbitol", "sodium lactate", "sodium phosphates", "hydrolyzed corn protein", "sodium diacetate"):
+            assert chem not in prompt
+        negative = dishlib.negative_prompt(hot_dog)
+        assert "corn" in negative
+        assert "cheese sauce" in negative
+        assert "ridges" in negative
+        assert "deformed sausage" in negative
+
+    def test_chicken_fajitas_prompt_and_negative(self):
+        fajitas = d(
+            "Chicken Fajitas",
+            "grilled chicken, bell peppers, onions, garlic, canola/olive oil blend, salt, chili powder, cumin, oregano",
+            tags=["halal"],
+        )
+        prompt = dishlib.image_prompt(fajitas)
+        assert "tender seasoned grilled chicken breast strips" in prompt
+        assert "sautéed sliced red and green bell peppers" in prompt
+        negative = dishlib.negative_prompt(fajitas)
+        assert "burrito" in negative
+        assert "tortilla wrap" in negative
+
 
 
 class TestVessel:
