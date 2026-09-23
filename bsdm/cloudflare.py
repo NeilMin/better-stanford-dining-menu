@@ -41,14 +41,13 @@ def _load_dotenv(env_path: Path | str | None = None) -> None:
                     line = line.strip()
                     if line and not line.startswith("#") and "=" in line:
                         k, v = line.split("=", 1)
-                        os.environ.setdefault(k.strip(), v.strip().strip("'\""))
+                        k_clean = k.strip()
+                        if k_clean in ("CF_ACCOUNT_ID", "CF_API_TOKEN"):
+                            os.environ.setdefault(k_clean, v.strip().strip("'\""))
             except Exception as exc:
                 log.debug("Failed reading %s: %s", p, exc)
             if os.getenv("CF_ACCOUNT_ID") and os.getenv("CF_API_TOKEN"):
                 break
-
-
-_load_dotenv()
 
 
 class CloudflareError(RuntimeError):
