@@ -1,6 +1,6 @@
 {
  "date": "2026-09-26",
- "scraped_at": "2026-09-24T06:38:33-07:00",
+ "scraped_at": "2026-09-24T16:55:19-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -1229,25 +1229,22 @@
    ],
    "Dinner": [
     {
-     "name": "Fried Catfish",
-     "recipe_id": "6383940",
+     "name": "Curry Chicken",
+     "recipe_id": "4180178",
      "description": "",
-     "ingredients": "catfish, cornmeal, cornstarch, eggs, creole spice mix (salt, herb de provence, cumin, cayenne pepper, pepper, paprika), canola shortening, canola/olive oil blend, salt",
+     "ingredients": "chicken, curry sauce, onion, potato, tomato, lemongrass, Thai chili",
      "allergens": [
-      "EGG",
-      "FISH"
+      "SOY"
      ],
      "trace_allergens": [
       "COCONUT",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
+      "FISH",
+      "SHELLFISH"
      ],
-     "tags": [],
+     "tags": [
+      "gluten-free",
+      "halal"
+     ],
      "order": 0
     },
     {
@@ -3560,11 +3557,13 @@
    ],
    "Dinner": [
     {
-     "name": "Cilantro Lime Salmon",
-     "recipe_id": "CilantroLimeSalmon1",
+     "name": "Creole Rub Chicken",
+     "recipe_id": "3321252",
      "description": "",
-     "ingredients": "salmon, cilantro, lime juice, lime zest, garlic, honey, crushed chili flakes, canola oil, salt, and pepper",
-     "allergens": [],
+     "ingredients": "creole rub chicken (cayenne pepper, black pepper, paprika, cuminseed, salt, herb de provence), molasses sauce (ketchup, apple cider vinegar, black pepper, lemon, liquidsmoke, garlic, molasses, mustard, chipotle pepper, tamari sauce, ginger root, chili powder)",
+     "allergens": [
+      "SOY"
+     ],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
@@ -3573,16 +3572,15 @@
      "order": 0
     },
     {
-     "name": "Coconut Red Curry with Sweet Potato",
-     "recipe_id": "3575285",
+     "name": "Mushroom Etouffee",
+     "recipe_id": "6323160",
      "description": "",
-     "ingredients": "sweet potatoes, canola/olive oil blend, onions, tomatoes, bell peppers, mushrooms, garbanzo beans, cabbage, house-made red curry paste (unsweetened coconut milk, dried red chili, garlic, lemongrass, salt, shallot, galangal, kaffir lime peel, pepper)",
+     "ingredients": "mushroom, okra, bell pepper, garlic, onion, parsley, thyme, canola/olive oil blend, salt, pepper, etouffee sauce (parsley, canola oil, garlic, tomato, cajun seasoning, flour, celery, onion, cayenne pepper, bell pepper, tabasco sauce, pepper)",
      "allergens": [
-      "COCONUT"
+      "WHEAT"
      ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
       "vegan",
       "halal"
      ],
@@ -3617,10 +3615,10 @@
      "order": 3
     },
     {
-     "name": "Pickled Cabbage Slaw",
-     "recipe_id": "5080396",
+     "name": "Seasonal Vegetable Board",
+     "recipe_id": "4503514",
      "description": "",
-     "ingredients": "cole slaw, cilantro, lime juice, salt",
+     "ingredients": "seasonal roasted vegetables with olive/canola oil blend, salt, pepper",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -3631,41 +3629,33 @@
      "order": 4
     },
     {
-     "name": "Thai Basil Eggplant",
-     "recipe_id": "121120010",
+     "name": "Creole Sweet Potato Fries",
+     "recipe_id": "6468837",
      "description": "",
-     "ingredients": "eggplant, bell peppers, oil, Thai basil sauce (onion, garlic, ginger, coconut liquid aminos, Thai basil, maple syrup/sugar, rice vinegar, mushroom seasoning, sambal, corn starch)",
-     "allergens": [
-      "COCONUT"
+     "ingredients": "sweet potatoes, vegetable oil, modified food starch, sugar, salt, dextrin, spices, corn starch, rice flour, garlic powder, onion powder, disodium dihydrogen pyrophosphate, sodium bicarbonate, dried yeast, oleoresin paprika, xanthan gum, natural flavor, creole spices (cumin, cayenne pepper, paprika, herbs de provence, pepper, salt), fried in canola oil",
+     "allergens": [],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "SOY",
+      "TREENUTS",
+      "WHEAT"
      ],
-     "trace_allergens": [],
      "tags": [
-      "gluten-free",
       "vegan"
      ],
      "order": 5
     },
     {
-     "name": "Coconut Rice",
-     "recipe_id": "5218958",
+     "name": "RSK Dirty Rice",
+     "recipe_id": "4375656",
      "description": "",
-     "ingredients": "jasmine rice, unsweetened coconut milk",
-     "allergens": [
-      "COCONUT"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan",
-      "halal"
-     ],
-     "order": 6
-    },
-    {
-     "name": "Rice Noodle",
-     "recipe_id": "2939072",
-     "description": "",
-     "ingredients": "rice flour",
+     "ingredients": "rice, pea protein crumbles (pea protein isolate, canola oil, beef type flavor [yeast extract, maltodextrin, natural flavoring, salt, sunflower oil, onion powder], spices, rice flour, tomato powder, caramel colors, lemon juice concentrate, salt, onion extract, garlic extract), bell peppers, onions, celery, garlic, chili powder, bay leaf, parsley, oregano, thyme, salt, pepper",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -3673,7 +3663,7 @@
       "vegan",
       "halal"
      ],
-     "order": 7
+     "order": 6
     },
     {
      "name": "Grilled Chicken",
@@ -3696,7 +3686,7 @@
      "tags": [
       "halal"
      ],
-     "order": 8
+     "order": 7
     },
     {
      "name": "Soup of the Day",
@@ -3706,7 +3696,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 9
+     "order": 8
     },
     {
      "name": "Assorted Dinner Rolls",
@@ -3725,7 +3715,7 @@
       "vegetarian",
       "halal"
      ],
-     "order": 10
+     "order": 9
     },
     {
      "name": "Composed Salad",
@@ -3737,7 +3727,7 @@
      "tags": [
       "halal"
      ],
-     "order": 11
+     "order": 10
     },
     {
      "name": "Performance Bar",
@@ -3747,7 +3737,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 12
+     "order": 11
     },
     {
      "name": "Craveable Grains",
@@ -3761,7 +3751,7 @@
       "vegan",
       "halal"
      ],
-     "order": 13
+     "order": 12
     },
     {
      "name": "Flavor Forward Legumes",
@@ -3775,7 +3765,7 @@
       "vegan",
       "halal"
      ],
-     "order": 14
+     "order": 13
     },
     {
      "name": "Creamy Pesto",
@@ -3791,7 +3781,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 15
+     "order": 14
     },
     {
      "name": "Pasta Marinara",
@@ -3809,7 +3799,7 @@
       "vegan",
       "halal"
      ],
-     "order": 16
+     "order": 15
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -3823,7 +3813,7 @@
       "vegan",
       "halal"
      ],
-     "order": 17
+     "order": 16
     }
    ]
   },
