@@ -85,7 +85,7 @@ _INVISIBLE_RE = re.compile(
     r"|[\w/ ]*oils?( blend)?|cooking spray|butter spray"
     r"|corn ?starch|arrowroot|xanthan gum|flour|baking (powder|soda)|yeast|msg"
     r"|(white |red |rice |apple cider |balsamic )?vinegar|citric acid|lemon juice|lime juice|orange juice|pineapple juice"
-    r"|spices?|seasoning( blend| mix)?|salt and pepper|garlic powder|onion powder"
+    r"|spices?|seasoning( blend| mix)?|salt and pepper|garlic powder|onion powder|bay (leaves?|leaf)"
     r"|preservatives?|emulsifiers?|food colou?ring|marinade|dredge|glaze|batter"
     r"|(soy|pea|wheat) protein( isolate)?|wheat gluten|gluten|vital wheat gluten"
     r"|(potato|tapioca|corn|modified food) starch|(yellow |white )?corn flour|rice flour|maltodextrin|dextrin"
@@ -323,11 +323,62 @@ def _key_ingredients(ingredients: str, limit: int = 12, dish_name: str = "") -> 
 def is_bowl(dish) -> bool:
     """True when the dish is served in a bowl rather than plated flat."""
     name = _get(dish)("name", "")
-    return bool(re.search(r"\b(bowls?|soups?|chowders?|ramen|pho|bisque|etouffee|étouffée)\b", name, re.I))
+    return bool(
+        re.search(
+            r"\b(bowls?|soups?|chowders?|ramen|pho|bisque|etouffee|étouffée|steamed rice|basmati rice|jasmine rice|green peas?|edamame salad|garlic rice|teriyaki tofu|curried vegetables|curry)\b",
+            name,
+            re.I,
+        )
+        and not re.search(r"\b(fried rice|pilaf|poblano|jollof|dirty|spanish|mexican|lemon|jeweled)\b", name, re.I)
+    )
 
 
 def _hero_protein_phrase(dish) -> str | None:
     name = (_get(dish)("name", "") or "").lower()
+    if "curried vegetables" in name or ("curry" in name and "vegetable" in name):
+        return (
+            "tender simmered sweet potato chunks and green peas thoroughly bathed in rich thick glossy golden-yellow spiced Indian curry gravy, "
+            "aromatic bubbling turmeric curry sauce coating all the vegetables, glistening rich curry stew, garnished with fresh cilantro"
+        )
+    if "teriyaki tofu" in name or ("tofu" in name and "teriyaki" in name):
+        return (
+            "crispy golden-brown pan-seared firm tofu cubes tossed with juicy yellow pineapple chunks and colorful bell peppers "
+            "in glossy sweet-savory dark teriyaki glaze, authentic pan-fried tofu with caramelized exterior, "
+            "sprinkled with toasted white sesame seeds and chopped green scallions"
+        )
+    if "garlic rice" in name:
+        return (
+            "fragrant fluffy steaming cooked rice tossed with savory browned garlic butter, "
+            "tender cooked rice grains glistening with golden butter and loaded with crispy golden-brown fried minced garlic bits, "
+            "lightly garnished with finely minced fresh green chives"
+        )
+    if "edamame salad" in name:
+        return (
+            "vibrant fresh crunchy edamame salad loaded with abundant plump bright green shelled edamame soybeans, "
+            "crisp shredded purple cabbage, julienned orange carrots, and sliced scallions, "
+            "glistening with light sesame dressing, generously sprinkled with toasted sesame seeds"
+        )
+    if "grilled pineapple" in name or ("pineapple" in name and "grilled" in name):
+        return (
+            "thick juicy slices of grilled golden yellow pineapple rings with distinct diagonal caramelized char grill marks, "
+            "glistening sweet caramelized fruit glaze and vibrant juicy pineapple fruit texture, garnished with fresh green mint leaves"
+        )
+    if "green pea" in name or "peas" in name:
+        if "garlic" in name:
+            return (
+                "vibrant bright emerald green sweet garden peas sautéed with fragrant minced garlic, "
+                "tender plump sweet green peas glistening with extra virgin olive oil, lightly speckled with minced garlic and cracked black pepper"
+            )
+    if "basmati rice" in name and not any(w in name for w in ("jeweled", "lemon", "jollof")):
+        return (
+            "fluffy freshly steamed long-grain white basmati rice, steaming hot tender separate cooked rice grains, "
+            "freshly cooked aromatic basmati rice with glistening texture"
+        )
+    if "jasmine rice" in name:
+        return (
+            "fluffy freshly steamed fragrant white jasmine rice, steaming hot tender cooked rice grains, "
+            "freshly prepared aromatic steamed rice"
+        )
     if "tempeh" in name:
         return "crispy bite-sized golden-brown glazed tempeh cubes, sticky spicy-sweet red gochujang glaze, toasted sesame seeds and chopped scallions"
     if "tender" in name or "tenders" in name:
@@ -418,8 +469,14 @@ def _hero_protein_phrase(dish) -> str | None:
             return "tender simmered pork chunks in rich spicy and tangy red vindaloo curry sauce with tender potatoes"
         if "bulgogi" in name:
             return "tender stir-fried thinly sliced pork in sweet savory marinade with scallions"
-        if "carnitas" in name or "al pastor" in name:
-            return "tender shredded seasoned pork with crispy edges"
+        if "carnitas" in name:
+            return (
+                "Mexican pork carnitas, juicy tender shredded and bite-sized pieces of slow-cooked pork shoulder, "
+                "crispy golden-brown caramelized edges, glistening with natural savory juices, authentic Mexican carnitas, "
+                "garnished with fresh chopped cilantro and a fresh lime wedge"
+            )
+        if "al pastor" in name:
+            return "tender thinly sliced Mexican al pastor pork with caramelized edges and citrus chili marinade"
         if "bacon" in name:
             return "crispy browned bacon strips"
         if "spam" in name:
@@ -540,10 +597,60 @@ def negative_prompt(dish) -> str:
         ])
     if re.search(r"\brice\b", name, re.I) and re.search(r"\blemon\b", name, re.I):
         exclude.extend(["sliced lemons", "lemon wheels", "citrus slices", "whole lemons"])
+    if re.search(r"\brice\b", name, re.I) and not re.search(r"\bcarnitas\b", name, re.I):
+        exclude.extend([
+            "raw rice", "uncooked rice", "dry rice grains", "dry grains",
+            "uncooked", "sack of rice", "burlap sack", "grain field", "paddy", "bulk rice",
+        ])
+    if re.search(r"\b(green peas?|peas)\b", name, re.I) and not re.search(r"\bblack[- ]eyed\b", name, re.I):
+        exclude.extend([
+            "cutlery", "fork", "spoon", "knife", "utensils", "brass fork", "silverware",
+            "whole garlic bulbs", "raw garlic", "garlic heads", "garlic bulbs on table",
+            "black-eyed peas", "beans", "white beans", "kidney beans", "chickpeas", "lentils",
+            "pod", "pea pods", "snow peas", "snap peas", "mushy peas", "puree", "soup",
+            "frozen peas", "ice crystals", "raw vegetables",
+        ])
     if re.search(r"\bhot\s*dogs?\b", name, re.I) and "bun" not in name.lower():
         exclude.extend(["ridges", "tire tread", "sliced meat", "shredded meat", "deformed sausage", "second sausage", "double sausage", "split casing", "corn", "corn kernels", "yellow sludge", "cheese sauce", "mayonnaise"])
     if re.search(r"\bfajitas?\b", name, re.I):
         exclude.extend(["burrito", "tortilla wrap", "taco", "noodles", "pasta", "soup"])
+    if re.search(r"\bcarnitas\b", name, re.I) and not re.search(r"\b(taco|nacho|burrito|quesadilla|enchilada)\b", name, re.I):
+        exclude.extend([
+            "breaded", "batter", "fried balls", "beef", "steak", "pot roast", "dark meat",
+            "taco", "taco shell", "tortilla", "wrap", "chips", "rice", "noodles",
+        ])
+    if re.search(r"\b(grilled\s+pineapple|pineapple)\b", name, re.I) and not re.search(r"\b(chicken|pork|beef|fried rice)\b", name, re.I):
+        exclude.extend([
+            "meat", "pork", "pork belly", "beef", "steak", "chicken", "poultry", "fish", "salmon",
+            "cutlet", "ribs", "ham", "bacon", "barbecue sauce", "meat glaze", "waffle grid",
+            "crosshatch scoring", "whole pineapple", "unpeeled pineapple", "pineapple rind on table",
+            "fruit on table", "burnt black",
+        ])
+    if re.search(r"\bedamame\b", name, re.I):
+        exclude.extend([
+            "frying pan", "skillet", "wok", "stovetop", "stir-fry", "cooked vegetables",
+            "ratatouille", "zucchini", "eggplant", "stew", "unshelled edamame", "whole edamame pods",
+            "fuzzy pods", "pod",
+        ])
+    if re.search(r"\b(garlic\s+rice)\b", name, re.I):
+        exclude.extend([
+            "combo plate", "luau plate", "platter", "meat", "roast pork", "kalua pig", "chicken",
+            "shrimp", "fish", "fried fish", "macaroni salad", "sweet potato", "flower", "orchid",
+            "patterned plate", "tribal plate", "side dishes", "feast", "multiple dishes",
+            "green peas", "peas",
+        ])
+    if re.search(r"\btofu\b", name, re.I):
+        exclude.extend([
+            "potato", "potatoes", "sweet potato", "sweet potato cubes", "potato cubes", "potato chunks",
+            "french fries", "cheese cubes", "yellow cheddar", "noodles", "pasta", "shredded cabbage bed",
+            "white sauce base", "puree", "mash",
+        ])
+    if re.search(r"\b(curry|curried)\b", name, re.I):
+        exclude.extend([
+            "clear water", "clear broth", "plain boiled vegetables", "dry vegetables",
+            "dry cubes", "dry vegetables sitting on paste", "watery liquid", "soup without curry",
+            "salad", "raw vegetables",
+        ])
 
     if not exclude:
         return NEGATIVE_PROMPT
@@ -552,4 +659,4 @@ def negative_prompt(dish) -> str:
 
 # Bumped whenever the prompt rules change, so already-drawn images can be told
 # apart from ones drawn under the current rules and redrawn in priority order.
-PROMPT_REV = 6
+PROMPT_REV = 7

@@ -169,8 +169,13 @@ def main(argv: list[str] | None = None) -> int:
             continue
         if entry.get("priority", 2) > args.max_priority:
             continue
-        if args.only and args.only.lower() not in entry["name"].lower():
-            continue
+        if args.only:
+            target = args.only.strip()
+            if target.startswith("="):
+                if entry["name"].strip().lower() != target[1:].strip().lower():
+                    continue
+            elif target.lower() != did.lower() and target.lower() not in entry["name"].lower():
+                continue
         path = IMAGES / f"{did}.webp"
         if (path.exists() and entry.get("image") and not args.force
                 and is_current(path) and not (args.redraw_stale and is_stale(entry))):

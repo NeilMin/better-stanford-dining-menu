@@ -321,6 +321,132 @@ class TestKeyIngredients:
         assert "burrito" in negative
         assert "tortilla wrap" in negative
 
+    def test_carnitas_prompt_and_negative(self):
+        carnitas = d(
+            "Carnitas",
+            "pork, onions, garlic, bay leaf, salt",
+            tags=["gluten-free"],
+        )
+        prompt = dishlib.image_prompt(carnitas)
+        assert "Mexican pork carnitas" in prompt
+        assert "juicy tender shredded and bite-sized pieces" in prompt
+        assert "bay leaf" not in prompt  # bay leaf filtered by _INVISIBLE_RE
+        negative = dishlib.negative_prompt(carnitas)
+        assert "taco shell" in negative
+        assert "tortilla" in negative
+        assert "breaded" in negative
+
+    def test_basmati_rice_prompt_and_negative(self):
+        basmati = d(
+            "Basmati Rice",
+            "basmati rice",
+            tags=["vegan", "gluten-free", "halal"],
+        )
+        prompt = dishlib.image_prompt(basmati)
+        assert "fluffy freshly steamed long-grain white basmati rice" in prompt
+        assert "served in a simple white ceramic bowl" in prompt
+        negative = dishlib.negative_prompt(basmati)
+        assert "raw rice" in negative
+        assert "uncooked rice" in negative
+        assert "dry rice grains" in negative
+
+    def test_garlic_green_peas_prompt_and_negative(self):
+        peas = d(
+            "Garlic Green Peas",
+            "green peas, canola/olive oil blend, garlic, salt, pepper",
+            tags=["vegan", "gluten-free", "halal"],
+        )
+        prompt = dishlib.image_prompt(peas)
+        assert "vibrant bright emerald green sweet garden peas" in prompt
+        assert "served in a simple white ceramic bowl" in prompt
+        negative = dishlib.negative_prompt(peas)
+        assert "black-eyed peas" in negative
+        assert "whole garlic bulbs" in negative
+        assert "cutlery" in negative
+        assert "raw vegetables" in negative
+
+    def test_grilled_pineapple_prompt_and_negative(self):
+        pineapple = d(
+            "Grilled Pineapple",
+            "pineapple, brown sugar, lime juice, ginger, cinnamon, olive/canola oil blend, salt, black pepper",
+            tags=["vegan", "gluten-free", "halal"],
+        )
+        prompt = dishlib.image_prompt(pineapple)
+        assert "thick juicy slices of grilled golden yellow pineapple rings" in prompt
+        assert "distinct diagonal caramelized char grill marks" in prompt
+        negative = dishlib.negative_prompt(pineapple)
+        assert "meat" in negative
+        assert "pork belly" in negative
+        assert "steak" in negative
+        assert "barbecue sauce" in negative
+        assert "whole pineapple" in negative
+
+    def test_edamame_salad_prompt_and_negative(self):
+        salad = d(
+            "Edamame Salad",
+            "edamame, cabbage, carrots, green onions, pineapple, sesame seeds, rice vinegar, tamari, sesame oil, ginger, garlic, sugar, olive/canola oil blend, salt",
+            tags=["vegan", "gluten-free", "halal"],
+        )
+        prompt = dishlib.image_prompt(salad)
+        assert "vibrant fresh crunchy edamame salad" in prompt
+        assert "plump bright green shelled edamame soybeans" in prompt
+        assert "served in a simple white ceramic bowl" in prompt
+        negative = dishlib.negative_prompt(salad)
+        assert "frying pan" in negative
+        assert "ratatouille" in negative
+        assert "stew" in negative
+        assert "unshelled edamame" in negative
+
+    def test_hawaiian_garlic_rice_prompt_and_negative(self):
+        rice = d(
+            "Hawaiian Garlic Rice",
+            "white rice, garlic, butter, green onions, tamari, sesame seeds, olive/canola oil blend, salt, black pepper",
+            tags=["vegetarian", "halal"],
+        )
+        prompt = dishlib.image_prompt(rice)
+        assert "fragrant fluffy steaming cooked rice tossed with savory browned garlic butter" in prompt
+        assert "crispy golden-brown fried minced garlic bits" in prompt
+        assert "served in a simple white ceramic bowl" in prompt
+        negative = dishlib.negative_prompt(rice)
+        assert "combo plate" in negative
+        assert "luau plate" in negative
+        assert "kalua pig" in negative
+        assert "macaroni salad" in negative
+        assert "raw rice" in negative
+
+    def test_island_teriyaki_tofu_prompt_and_negative(self):
+        tofu = d(
+            "Island Teriyaki Tofu",
+            "tofu, pineapple juice, pineapple chunks, sweet potatoes, green/red bell peppers, onions, tamari, brown sugar, ginger, garlic, green onions, cornstarch, rice vinegar, sesame seeds, olive/canola oil blend, salt, black pepper",
+            tags=["vegan", "gluten-free", "halal"],
+        )
+        prompt = dishlib.image_prompt(tofu)
+        assert "crispy golden-brown pan-seared firm tofu cubes" in prompt
+        assert "glossy sweet-savory dark teriyaki glaze" in prompt
+        assert "served in a simple white ceramic bowl" in prompt
+        negative = dishlib.negative_prompt(tofu)
+        assert "potato" in negative
+        assert "sweet potato" in negative
+        assert "potato cubes" in negative
+        assert "cheese cubes" in negative
+
+    def test_curried_vegetables_prompt_and_negative(self):
+        curry = d(
+            "Curried Vegetables",
+            "sweet potatoes, carrots, peas, green onions, curry powder, cilantro, canola/olive oil blend, cayenne pepper, pepper, salt",
+            tags=["vegan", "gluten-free", "halal"],
+        )
+        prompt = dishlib.image_prompt(curry)
+        assert "rich thick glossy golden-yellow spiced Indian curry gravy" in prompt
+        assert "sweet potato chunks and green peas" in prompt
+        assert "served in a simple white ceramic bowl" in prompt
+        negative = dishlib.negative_prompt(curry)
+        assert "clear water" in negative
+        assert "clear broth" in negative
+        assert "plain boiled vegetables" in negative
+
+
+
 
 
 class TestVessel:

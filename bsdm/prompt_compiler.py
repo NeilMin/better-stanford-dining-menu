@@ -26,8 +26,13 @@ def compile_pending(
     for did, entry in catalog.items():
         if not entry.get("needs_image"):
             continue
-        if only and only.lower() not in entry["name"].lower():
-            continue
+        if only:
+            target = only.strip()
+            if target.startswith("="):
+                if entry["name"].strip().lower() != target[1:].strip().lower():
+                    continue
+            elif target.lower() != did.lower() and target.lower() not in entry["name"].lower():
+                continue
         if not force and entry.get("prompt_compiled") and entry.get("prompt_compiler_rev", 0) >= COMPILER_REV:
             continue
         pending.append((did, entry))
