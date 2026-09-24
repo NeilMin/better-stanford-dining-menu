@@ -14,6 +14,8 @@ This file provides high-level guidance for autonomous AI agents and coding assis
 | `bsdm/stations.py` | Standing station detection (recurrence analysis across rolling services). |
 | `bsdm/catalog.py` | Dish index builder, priority assignment, carry-over from previous runs. |
 | `bsdm/dishes.py` | Protein classification, prompt generation, CLIP negative prompt filtering. |
+| `bsdm/prompt_compiler.py` | Batch LLM food photography prompt compiler via Cloudflare Llama 3.3. |
+| `bsdm/cloudflare.py` | Cloudflare Workers AI client (Llama 3.3 70B, Llama 3.2 11B Vision, Flux.1 Schnell). |
 | `bsdm/specials.py` | Canva PDF geometric parser via PyMuPDF for dinner specials. |
 | `bsdm/logos.py` | Cropping hall logos from the campus map JPEG using `config/logos.json`. |
 | `bsdm/hours.py` | Fingerprinting and diffing the R&DE Dining Locations & Hours page. |
@@ -39,6 +41,7 @@ make test           # Unit & golden tests (<2s, no network, no GPU)
 
 # Scrape & Build
 make update         # Scrape 7-day window, update stations, specials, catalog
+make prompts        # Compile structured food prompts via Cloudflare LLM
 make site           # Compile site/
 make serve          # Preview at http://127.0.0.1:8777
 
@@ -57,5 +60,9 @@ make logos-check    # Check if map JPEG sha256 changed
 2. **Never Publish Stale Menus**: If no days in `data/menus/live/` are `>= today` (Pacific time), `bsdm/build.py` must abort with an error rather than falling back.
 3. **Keep Tokenizers in Sync**: Any change to ingredient tokenization in `bsdm/zh.py` must be mirrored identically in `web/app.js:splitIngredients()`.
 4. **ComfyUI Port**: Always target port `8189` for local image generation.
-5. **No Sockets in Tests**: Tests in `tests/` run in sandbox without network; `socket.connect` is intercepted by `tests/conftest.py`.
-6. **Detailed Guidance**: Refer to `GEMINI.md` (for Gemini/Antigravity) and `CLAUDE.md` (for Claude Code) for in-depth design rationales and gotchas.
+5. **Prompt Compilation & VLM Quality Gate**:
+   - Upstream prompt compiler (`scripts/compile_prompts.py`): Compiles structured photography prompts via Cloudflare Llama 3.3 70B into `data/dishes.json`, preserved across catalog rebuilds.
+   - Downstream VLM quality gate (`scripts/gen_images.py`): Evaluates candidate images against dish name using Cloudflare VLM (`--vlm-gate`, score >= 7/10), performing multi-seed retries (up to 3 attempts) on failure.
+   - Graceful fallback: If Cloudflare credentials are unset, prompt compilation skips cleanly and image generation falls back to rule-based prompts without blocking.
+6. **No Sockets in Tests**: Tests in `tests/` run in sandbox without network; `socket.connect` is intercepted by `tests/conftest.py`.
+7. **Detailed Guidance**: Refer to `GEMINI.md` (for Gemini/Antigravity) and `CLAUDE.md` (for Claude Code) for in-depth design rationales and gotchas.

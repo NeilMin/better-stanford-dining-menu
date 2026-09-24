@@ -1,7 +1,7 @@
 # Everything except `images` runs without a GPU, which is what CI relies on.
 PY := uv run python
 
-.PHONY: all test update images images-todo logos logos-check specials translate site serve \
+.PHONY: all test update prompts images images-todo logos logos-check specials translate site serve \
         clean hours-diff hours-accept verify catalog source-check
 
 all: update site           ## scrape the week and rebuild the site
@@ -11,6 +11,9 @@ test:                      ## run the test suite (no network, no GPU, ~2s)
 
 update:                    ## scrape the rolling 7-day menu window
 	$(PY) scripts/update.py
+
+prompts:                   ## compile structured food prompts via Cloudflare LLM
+	$(PY) scripts/compile_prompts.py
 
 images:                    ## draw the dishes still missing pictures (needs local ComfyUI)
 	$(PY) scripts/gen_images.py
