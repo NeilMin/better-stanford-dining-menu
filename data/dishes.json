@@ -1827,7 +1827,7 @@
  "2264c08eede4": {
   "category": "vegan",
   "first_seen": "2026-09-24",
-  "generated_at": "2026-09-18T18:06:32+00:00",
+  "generated_at": "2026-09-24T02:20:23+00:00",
   "icon": "plate",
   "image": "2264c08eede4.webp",
   "ingredients": "sweet potatoes, canola/olive oil blend, onions, tomatoes, bell peppers, mushrooms, garbanzo beans, cabbage, house-made red curry paste (unsweetened coconut milk, dried red chili, garlic, lemongrass, salt, shallot, galangal, kaffir lime peel, pepper)",
@@ -1837,18 +1837,22 @@
   "model": "sdxl",
   "name": "Coconut Red Curry with Sweet Potato",
   "needs_image": true,
-  "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, meat, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
+  "negative": "Exclude any meat, chicken, beef, pork, seafood, dairy products, eggs, honey, refined sugars, gluten, bread, noodles, or any non-vegan ingredients. Avoid any messy or sloppy presentation, and do not include any utensils, garnishes, or toppings that may contain animal products or gluten. Do not show any store-bought or packaged curry paste or sauce, and avoid any oily or greasy appearance. Exclude any dishes with corn, or other unrelated ingredients.",
   "placeholder": false,
   "priority": 1,
-  "prompt": "Coconut Red Curry with Sweet Potato, made with sweet potatoes, onions, tomatoes, bell peppers, mushrooms, garbanzo beans, cabbage, house-made red curry paste, plant-based, no meat, no dairy, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
-  "prompt_rev": 2,
+  "prompt": "A vibrant and appetizing Coconut Red Curry with Sweet Potato, plated on a simple white ceramic bowl, viewed from a soft overhead three-quarter angle with a centered composition and generous empty margin around the bowl. The curry is made with tender sweet potatoes, onions, tomatoes, bell peppers, mushrooms, garbanzo beans, and cabbage, in a rich and creamy unsweetened coconut milk-based red curry sauce, garnished with fresh herbs and a sprinkle of kaffir lime peel. The image is lit with soft natural window light, has a shallow depth of field, and a clean neutral background, with sharp focus and high detail.",
+  "prompt_compiled": true,
+  "prompt_compiler_rev": 1,
+  "prompt_rev": 6,
   "seed": 577028238,
   "station_only": false,
   "tags": [
    "gluten-free",
    "vegan",
    "halal"
-  ]
+  ],
+  "vlm_reason": "Beautiful commercial restaurant or studio plating. Crisp, sharp focus with appetizing food styling and balanced natural or soft diffused lighting. Clean background with no distracting mess. Accurately represents 'Coconut Red Curry with Sweet Potato'.",
+  "vlm_score": 8
  },
  "226787c7be47": {
   "category": "vegan",
@@ -9546,7 +9550,7 @@
  "b133fbce12e0": {
   "category": "seafood",
   "first_seen": "2026-09-24",
-  "generated_at": "2026-09-18T17:29:57+00:00",
+  "generated_at": "2026-09-24T02:19:05+00:00",
   "icon": "plate",
   "image": "b133fbce12e0.webp",
   "ingredients": "salmon, cilantro, lime juice, lime zest, garlic, honey, crushed chili flakes, canola oil, salt, and pepper",
@@ -9556,17 +9560,21 @@
   "model": "sdxl",
   "name": "Cilantro Lime Salmon",
   "needs_image": true,
-  "negative": "pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
+  "negative": "deep-fried salmon, salmon with cheese, salmon with heavy sauces, canola oil drips, visible garlic cloves, chili flakes overpowering the dish, dark or burnt areas on the salmon, busy or patterned background, distracting garnishes, meat or poultry in the scene",
   "placeholder": false,
   "priority": 0,
-  "prompt": "Cilantro Lime Salmon, delicate flaky fish fillet or fresh seafood, glistening glaze, made with salmon, cilantro, lime zest, garlic, honey, crushed chili flakes, and pepper, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
-  "prompt_rev": 2,
+  "prompt": "A plate of grilled salmon fillet, garnished with fresh cilantro leaves and a squeeze of lime juice, with a sprinkle of lime zest on top, served on a simple white ceramic plate, overhead three-quarter view, centered composition, generous empty margin around plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "prompt_compiled": true,
+  "prompt_compiler_rev": 1,
+  "prompt_rev": 6,
   "seed": 2972974030,
   "station_only": false,
   "tags": [
    "gluten-free",
    "halal"
-  ]
+  ],
+  "vlm_reason": "Beautiful commercial restaurant or studio plating. Crisp, sharp focus with appetizing food styling and balanced natural or soft diffused lighting. Clean background with no distracting mess. Accurately represents 'Cilantro Lime Salmon'.",
+  "vlm_score": 9
  },
  "b1c4e9299d6e": {
   "category": "vegan",
