@@ -281,7 +281,11 @@ def test_evaluate_image_success(mock_post):
 
     args, kwargs = mock_post.call_args
     assert "@cf/meta/llama-3.2-11b-vision-instruct" in args[0]
-    assert "Pizza" in kwargs["json"]["prompt"]
+    prompt_text = kwargs["json"]["prompt"]
+    assert "Pizza" in prompt_text
+    assert "CATEGORY MISMATCH" in prompt_text
+    assert "THALI / BANQUET" in prompt_text
+    assert "PROTEIN MISMATCH" in prompt_text
     assert isinstance(kwargs["json"]["image"], list)
 
 

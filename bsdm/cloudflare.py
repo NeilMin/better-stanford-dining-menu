@@ -200,23 +200,25 @@ class CloudflareClient:
             return {"valid": False, "score": 0, "reason": "Invalid image bytes"}
 
         prompt = (
-            f"You are a culinary magazine photo editor. Evaluate whether this image is suitable for a professional culinary publication for the dish '{dish_name}'.\n"
-            "Strict Rejection Rules (MUST set valid=false and score < 5 if any apply):\n"
-            "1. Domestic/lifestyle snapshot: amateur home-cooking photo, home kitchen counters, dirty stovetops, cooking pots/pans, messy tableware, plastic takeout containers, or half-eaten food.\n"
-            "2. Poor lighting & photography: harsh direct flash, dim yellow incandescent lighting, blurry/grainy focus, or unappetizing color cast.\n"
-            "3. Uncooked / preparation: raw meat, raw dough, unfinished cooking steps, or cutting board prep.\n"
-            "4. Clutter & overlays: visible people/hands, brand logos, watermarks, text, menus, or utensil clutter.\n\n"
-            "Acceptance Criteria (score 8-10):\n"
-            "- Beautiful commercial restaurant or studio plating.\n"
-            "- Crisp, sharp focus with appetizing food styling and balanced natural or soft diffused lighting.\n"
-            "- Clean background with no distracting mess.\n"
-            "- Accurately represents '{dish_name}'.\n\n"
+            f"You are an expert culinary photo editor for a dining publication. "
+            f"Critically evaluate whether this candidate image accurately and appetizingly depicts the dish '{dish_name}'.\n\n"
+            "Strict Disqualification Rules (MUST set valid=false and score <= 3 if ANY apply):\n"
+            f"1. WRONG DISH / CATEGORY MISMATCH: The image shows a different food type than '{dish_name}'. "
+            "For example: if the dish is a bread, flatbread, naan, roll, toast, or pastry, the image MUST show that bread/flatbread, NOT a bowl of curry, stew, or soup without bread as the primary subject; "
+            "if the dish is a salad, it must not be a hot meat roast; if the dish is a beverage, it must not be solid food.\n"
+            "2. MULTI-DISH PLATTER / THALI / BANQUET / BUFFET: The image shows a multi-dish sampler, an Indian thali platter with multiple small bowls, a buffet spread, or a banquet feast rather than focusing on the single requested dish.\n"
+            f"3. PROTEIN MISMATCH: If '{dish_name}' specifies chicken, beef, pork, or seafood, the plate must NOT show vegetarian cheese cubes (paneer) or tofu cubes; conversely, a vegetarian/vegan dish must not show meat.\n"
+            "4. AMATEUR SNAPSHOT & POOR LIGHTING: Home-kitchen snapshot, messy dirty stovetops/pans, blurry/grainy focus, harsh direct flash, or sickly unappetizing color casts.\n"
+            "5. CLUTTER & OVERLAYS: Visible hands, people, watermarks, text, menus, brand logos, or excessive cutlery clutter.\n\n"
+            "Acceptance Criteria (score 7-10, valid=true):\n"
+            f"- A single hero dish or bowl, cleanly plated on simple tableware with a clean neutral background.\n"
+            f"- Sharp focus, appetizing commercial food photography lighting, and accurate representation of '{dish_name}'.\n\n"
             'Reply ONLY with a raw JSON object with keys: "valid" (boolean), "score" (integer 1-10), "reason" (short string).'
         )
         payload = {
             "prompt": prompt,
             "image": list(thumb_bytes),
-            "max_tokens": 128,
+            "max_tokens": 256,
         }
         try:
             resp = self._run(model, payload)
