@@ -233,9 +233,22 @@ class CloudflareClient:
                         .replace("True", "true")
                         .replace("False", "false")
                     )
-                    res = json.loads(clean_json)
+                    try:
+                        res = json.loads(clean_json)
+                    except Exception:
+                        res = {}
                 else:
-                    res = {}
+                    valid_m = re.search(r"\bvalid\b[*:\s]+(true|false)", raw_text, re.I)
+                    score_m = re.search(r"\bscore\b[*:\s]+(\d+)", raw_text, re.I)
+                    reason_m = re.search(r"\breason\b[*:\s]+([^\n*]+)", raw_text, re.I)
+                    if valid_m or score_m:
+                        res = {
+                            "valid": valid_m.group(1).lower() == "true" if valid_m else False,
+                            "score": int(score_m.group(1)) if score_m else 0,
+                            "reason": reason_m.group(1).strip() if reason_m else "",
+                        }
+                    else:
+                        res = {}
             else:
                 res = {}
 
