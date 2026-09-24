@@ -158,7 +158,7 @@ def search_pexels(
     """Search Pexels API for food photos (if PEXELS_API_KEY is configured)."""
     url = "https://api.pexels.com/v1/search"
     headers = {"Authorization": api_key}
-    params = {"query": f"{query} food", "per_page": 5}
+    params = {"query": query, "per_page": 5}
     try:
         r = session.get(url, headers=headers, params=params, timeout=timeout)
         r.raise_for_status()
@@ -184,7 +184,7 @@ def search_unsplash(
 ) -> list[tuple[str, int | None, int | None]]:
     """Search Unsplash for professional food photography."""
     url = "https://unsplash.com/napi/search/photos"
-    params = {"query": f"{query} food", "per_page": 5}
+    params = {"query": query, "per_page": 5}
     try:
         r = session.get(url, params=params, timeout=timeout)
         r.raise_for_status()
@@ -210,8 +210,7 @@ def search_duckduckgo(
     query: str, session: requests.Session, timeout: int = 15
 ) -> list[tuple[str, int | None, int | None]]:
     """Search DuckDuckGo Images without API key for candidate image URLs."""
-    search_term = f"{query} restaurant dish gourmet plating food photography"
-    token_url = f"https://duckduckgo.com/?{urllib.parse.urlencode({'q': search_term})}"
+    token_url = f"https://duckduckgo.com/?{urllib.parse.urlencode({'q': query})}"
     try:
         r = session.get(token_url, timeout=timeout)
         r.raise_for_status()
@@ -226,7 +225,7 @@ def search_duckduckgo(
     vqd = match.group(1)
 
     search_url = (
-        f"https://duckduckgo.com/i.js?l=us-en&o=json&q={urllib.parse.quote(search_term)}"
+        f"https://duckduckgo.com/i.js?l=us-en&o=json&q={urllib.parse.quote(query)}"
         f"&vqd={vqd}&f=,,,&p=1"
     )
     try:
@@ -253,9 +252,8 @@ def search_bing(
     query: str, session: requests.Session, timeout: int = 15
 ) -> list[tuple[str, int | None, int | None]]:
     """Search Bing Images without API key for high-resolution culinary food photography."""
-    search_term = f"{query} recipe dish plating food photography"
     url = "https://www.bing.com/images/search"
-    params = {"q": search_term, "form": "HDRSC2", "first": 1}
+    params = {"q": query, "form": "HDRSC2", "first": 1}
     try:
         r = session.get(url, params=params, timeout=timeout)
         r.raise_for_status()
