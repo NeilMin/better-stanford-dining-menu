@@ -47,10 +47,12 @@ RULES = {
 - Keep them short. These are menu names, not descriptions, and they are read in a narrow column.
 - Keep a cuisine or a place when the name turns on it: "Jamaican Jerk Chicken" -> 牙买加烟熏辣鸡.
 - Keep brand names, chef names and Stanford dining hall names in English, inside Chinese parentheses where the English name trails the dish: "Panini Station (Branner)" -> 帕尼尼窗口（Branner）.
-- A name that is a serving station rather than a dish stays one: "Allergen Friendly Pizza Station" -> 无过敏原披萨窗口.""",
+- A name that is a serving station rather than a dish stays one: "Allergen Friendly Pizza Station" -> 无过敏原披萨窗口.
+- "Plant-Forward" or "Plant Powered" means plant-based: translate as "植物基" or "植物肉", NEVER literally as "植物向前" (e.g. "Plant-Forward Tenders" -> 植物基鸡柳).""",
 
     "terms": """These are ingredient-label terms, the kind printed on a packet.
 - Use the everyday word, the one on a supermarket label or in a home kitchen: 面粉, 番茄, 高汤.
+- "Plant-forward" means plant-based: translate as "植物基", NEVER literally as "植物向前" (e.g. "plant-forward chicken strips" -> 植物基鸡肉条).
 - For additives and processing aids use the standard Chinese additive name, and put the English after it in parentheses when the Chinese alone would not be recognised: "BHT" -> BHT（二丁基羟基甲苯）.
 - Keep letter codes and brand names as they are: "A-1 steak sauce", "FD&C yellow no.5".
 - One translation per term, no alternatives, no pinyin, no explanation.

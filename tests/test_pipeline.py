@@ -228,6 +228,10 @@ class TestTheCheckoutsOwnData:
             assert day in payload["window"]
             assert set(halls) <= known
 
+    def test_plant_forward_is_not_translated_literally(self, repo):
+        zh_raw = (repo / "data" / "zh.json").read_text()
+        assert "植物向前" not in zh_raw
+
 
 @pytest.mark.golden
 class TestTheCheckoutsCatalog:
