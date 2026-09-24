@@ -10,6 +10,7 @@ publish turns a broken scraper into a site quietly serving last week's dinner
 from __future__ import annotations
 
 import json
+import re
 from datetime import date
 
 import pytest
@@ -363,6 +364,19 @@ class TestRender:
         buildlib.build(site.root, tmp_path / "site")
         assert (tmp_path / "site" / "CNAME").read_text().strip() == buildlib.DOMAIN
         assert (tmp_path / "site" / ".nojekyll").exists()
+
+    def test_the_link_preview_is_shipped_where_the_page_says_it_is(self, site, tmp_path):
+        """A crawler reads og:image as an absolute URL, so the template spells
+        the domain out. It has to be the one the build writes into CNAME, and the
+        card has to be in the artifact at that path, or every shared link
+        unfurls with a broken picture and nothing anywhere says so."""
+        site.with_web()
+        out = tmp_path / "site"
+        buildlib.build(site.root, out)
+        html = (out / "index.html").read_text()
+        names = re.findall(r'<meta property="og:(?:image|url)" content="([^"]+)"', html)
+        assert names == [f"https://{buildlib.DOMAIN}/", f"https://{buildlib.DOMAIN}/og.jpg"]
+        assert (out / "og.jpg").read_bytes()[:2] == b"\xff\xd8", "a JPEG, as the name says"
 
     def test_only_the_pictures_in_use_are_copied(self, site, tmp_path):
         did = dish_id("Roast Chicken")

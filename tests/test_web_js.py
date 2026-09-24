@@ -309,3 +309,62 @@ def test_the_stored_preferences_key_is_versioned(tmp_path):
 
     match = re.search(r'const STORE = "bsdm\.prefs\.v(\d+)"', APP_JS.read_text())
     assert match and int(match.group(1)) >= 1
+
+
+LINK_PRELUDE = (
+    "const MEALS = ['Breakfast', 'Lunch', 'Dinner'];\n"
+    "const DATA = { window: ['2026-09-24', '2026-09-25'], "
+    "halls: [{ id: 'arrillaga' }, { id: 'florencemoore' }, { id: 'wilbur' }] };"
+)
+
+
+class TestSharedLinks:
+    """A link carries the day, the meal and the halls it was sent from, and a
+    reader who opens one is shown that view without it becoming theirs."""
+
+    def test_a_link_opens_on_the_view_it_was_sent_from(self, tmp_path):
+        """And nothing else: filters, language and theme are the reader's own."""
+        link, view = call(["hallOrder", "readLink", "linkFor"],
+                          "const link = linkFor(INPUT); return [link, readLink(link)];",
+                          payload={"date": "2026-09-25", "meal": "Lunch",
+                                   "halls": ["arrillaga", "wilbur"],
+                                   "diet": ["vegan"], "lang": "zh", "theme": "dark"},
+                          prelude=LINK_PRELUDE, tmp_path=tmp_path)
+        assert link == "?d=2026-09-25&m=lunch&h=arrillaga,wilbur", "short enough to read in a chat"
+        assert view == {"date": "2026-09-25", "meal": "Lunch", "halls": ["arrillaga", "wilbur"]}
+
+    def test_what_the_page_cannot_show_is_dropped(self, tmp_path):
+        """A day that has left the window falls back to today rather than to an
+        empty board; a hall the build no longer publishes would crash render()."""
+        got = call(["hallOrder", "readLink"], "return INPUT.map((q) => readLink(q));",
+                   payload=["?d=2026-09-01&m=dinner&h=wilbur",
+                            "?d=2026-09-24&m=brunch&h=gone",
+                            "?m=DINNER&h=wilbur,arrillaga,wilbur",
+                            "?utm_source=wechat",
+                            ""],
+                   prelude=LINK_PRELUDE, tmp_path=tmp_path)
+        assert got == [{"meal": "Dinner", "halls": ["wilbur"]},
+                       {"date": "2026-09-24"},
+                       {"meal": "Dinner", "halls": ["arrillaga", "wilbur"]},
+                       {},
+                       {}]
+
+    def test_a_friends_link_does_not_overwrite_your_halls(self, tmp_path):
+        """What a link put on screen is written back as what you had, key by
+        key, until you touch that control yourself. The date is never kept."""
+        got = call(["save"],
+                   "return INPUT.map((keys) => { borrowed.clear(); "
+                   "keys.forEach((k) => borrowed.add(k)); save(); return SAVED.prefs; });",
+                   payload=[["meal", "halls"], ["meal"], []],
+                   prelude=(
+                       "const STORE = 'prefs'; const SAVED = {};\n"
+                       "const localStorage = { setItem: (k, v) => { SAVED[k] = JSON.parse(v); } };\n"
+                       "const state = { date: '2026-09-25', meal: 'Lunch', halls: ['wilbur'], lang: 'zh' };\n"
+                       "const own = { meal: 'Dinner', halls: ['arrillaga', 'florencemoore'] };\n"
+                       "const borrowed = new Set();"),
+                   tmp_path=tmp_path)
+        assert got == [
+            {"meal": "Dinner", "halls": ["arrillaga", "florencemoore"], "lang": "zh"},
+            {"meal": "Dinner", "halls": ["wilbur"], "lang": "zh"},
+            {"meal": "Lunch", "halls": ["wilbur"], "lang": "zh"},
+        ]

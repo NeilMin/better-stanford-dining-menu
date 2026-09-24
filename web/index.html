@@ -6,6 +6,20 @@
 <title>Stanford Dining, Side by Side</title>
 <meta name="description" content="Compare today's menus across Stanford dining halls, with a picture of every dish.">
 <meta name="color-scheme" content="light dark">
+<!-- What a chat app shows for a pasted link. The page is static, so every link
+     gets this one card whatever view it carries; the line that goes with a
+     shared link is what says which. The domain is build.DOMAIN's, and a test
+     holds the two together. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stanford Dining, Side by Side">
+<meta property="og:title" content="Stanford Dining, Side by Side">
+<meta property="og:description" content="Compare today's menus across Stanford dining halls, with a picture of every dish.">
+<meta property="og:url" content="https://stanford-dining.neilmin.com/">
+<meta property="og:image" content="https://stanford-dining.neilmin.com/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Three Stanford dining halls side by side, with a picture of each dish.">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%238C1515'/><rect x='8' y='8' width='7' height='16' rx='1.5' fill='%23fff'/><rect x='17' y='8' width='7' height='16' rx='1.5' fill='%23fff' fill-opacity='.62'/></svg>">
 <!-- Stanford's own identity faces. The page reads fine without them: app.css
      falls back to the platform's serif and sans. -->
@@ -48,7 +62,13 @@
 </div>
 
 <section class="intro">
-  <p class="stamp" id="stamp"></p>
+  <div class="headline">
+    <p class="stamp" id="stamp"></p>
+    <button class="share" type="button" id="share">
+      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 9.5V1.75M5.25 4.25 8 1.5l2.75 2.75M5.5 6.5H4.5A1.5 1.5 0 0 0 3 8v5.5A1.5 1.5 0 0 0 4.5 15h7a1.5 1.5 0 0 0 1.5-1.5V8a1.5 1.5 0 0 0-1.5-1.5h-1"/></svg>
+      <span id="share-label">Share</span>
+    </button>
+  </div>
   <p class="digest" id="digest"></p>
   <div class="picks">
     <div class="controls">
@@ -83,6 +103,8 @@
     </div>
   </div>
 </dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <footer>
   <p id="foot-src">Menus scraped from the

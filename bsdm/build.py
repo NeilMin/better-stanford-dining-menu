@@ -253,6 +253,9 @@ def build(root: Path, out: Path) -> dict:
     # CNAME here sets it on every deploy. Keeping it in the build rather than in
     # the repo root also means the domain cannot drift from what is served.
     (out / "CNAME").write_text(DOMAIN + "\n")
+    # The link-preview card, named by absolute URL in index.html's og:image.
+    # Composed once by hand from the logos and a few dishes, not per build.
+    shutil.copy2(web / "og.jpg", out / "og.jpg")
 
     logo_out = out / "logo"
     logo_out.mkdir(exist_ok=True)

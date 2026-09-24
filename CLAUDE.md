@@ -279,6 +279,17 @@ JSON block so a dish name cannot close the script tag early.
   third language is a new key in `UI` and nothing here.
 - **The date is deliberately not persisted**; everything else in `state` is. `load()` and `save()`
   both strip it, so old saves that carry one still open on today.
+- **A shared link is shown, not adopted.** The share button beside the headline sends
+  `?d=&m=&h=` — the day, the meal and the halls, never a preference — and `readLink()` drops
+  whatever the build does not publish. The halls and the meal are remembered, so a friend's
+  link must not overwrite yours: they go into `borrowed`, `save()` writes `own` back for each,
+  and a key leaves `borrowed` only when its own control is clicked (hall chip, meal chip,
+  Reset). A new control that sets a borrowed key has to do the same. The query is cleared on
+  arrival, which keeps the date unremembered through a reload or a bookmark.
+- **`web/og.jpg` is the link-preview card, composed once by hand** from the logos and a few
+  dish pictures. The page is static, so every link unfurls with the same one; the line the
+  button sends with the link is what says which view it is. `og:image` is an absolute URL on
+  `build.DOMAIN`, and a test holds the two together.
 - **The first-visit tour has its own key, `bsdm.tour.v1`,** set when the tour starts, so Reset and
   a `STORE` bump do not replay it. To see it again, delete that key. Its ring and tip are
   `position: fixed` overlays placed over the target, not styles on the target: on a phone each

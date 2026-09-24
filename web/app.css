@@ -355,6 +355,68 @@ html:lang(zh) .col-concept { font-family: var(--cjk), var(--sans); font-size: 15
 }
 .stamp-day { color: var(--ink-3); }
 
+/* The headline is the name of what gets shared, so the button sits on its
+   line -- at the far end, where it stays put while the day's name beside it
+   changes length. Pulled down onto the middle of the first line of type. */
+.headline { display: flex; align-items: flex-start; gap: 16px; }
+.headline .stamp { flex: 1 1 auto; min-width: 0; }
+
+.share {
+  appearance: none;
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 36px;
+  margin-top: 7px;
+  padding: 0 13px 0 11px;
+  border: 1px solid var(--rule-strong);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+  transition: border-color .15s;
+}
+.share:hover { border-color: var(--ink-3); }
+.share svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Says the link was copied. Drawn like the tour's tip, at the foot of the
+   screen where a thumb is not covering it. */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: calc(24px + env(safe-area-inset-bottom));
+  z-index: 50;
+  max-width: min(440px, calc(100vw - 32px));
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: var(--ink);
+  color: var(--bg);
+  box-shadow: 0 12px 32px rgb(0 0 0 / .24);
+  font-size: 15px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+  user-select: all;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 8px);
+  transition: opacity .18s, transform .18s;
+}
+.toast:empty { display: none; }
+.toast-on { opacity: 1; pointer-events: auto; transform: translate(-50%, 0); }
+
 .digest { margin: 12px 0 0; font-size: 18px; color: var(--ink-2); max-width: 72ch; }
 .digest:empty { display: none; }
 .digest b { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
@@ -1332,6 +1394,14 @@ html:lang(zh) .tour-title { font-family: var(--cjk), var(--serif); }
 
   .intro { padding-top: 22px; }
   .stamp { font-size: 31px; line-height: 1.12; }
+  /* Icon only, like the theme switch, so the headline keeps the width it had;
+     the label is still the button's accessible name. And a Chinese headline
+     that does wrap breaks at its space, not between 9月24 and 日. */
+  .headline { gap: 12px; }
+  .share { width: 34px; height: 34px; margin-top: 1px; padding: 0; justify-content: center;
+    font-size: 0; gap: 0; }
+  .share svg { width: 17px; height: 17px; }
+  html:lang(zh) .stamp { word-break: keep-all; }
   .digest { margin-top: 8px; font-size: 15.5px; }
 
   .picks { margin: 20px calc(-1 * var(--gutter)) 0; gap: 8px; }

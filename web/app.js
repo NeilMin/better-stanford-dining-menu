@@ -100,6 +100,14 @@
         b(every), " at every one · ", b(unique), " at only one.",
       ],
       identical: "These menus are identical — go wherever is closest.",
+      share: "Share",
+      shareTip: "Share this day, meal and these halls",
+      shareWhen: (meal, day) => `${day.toLocaleDateString(undefined, { weekday: "long" })} ` +
+        `${meal.toLowerCase()}, ${day.toLocaleDateString(undefined, { month: "short", day: "numeric" })}`,
+      shareHalls: (n) => `${n} halls`,
+      shareSpecial: (hall, dish) => `Special at ${hall}: ${dish}`,
+      shareOnly: (n) => `${n} dish${n === 1 ? "" : "es"} at only one of them`,
+      copied: "Link copied — paste it into a chat",
       tourDay: ["Pick a day",
         "Menus run a week ahead. Tap a day, or use ← → on a keyboard. The page always opens on today."],
       tourMeal: ["Pick a meal",
@@ -174,6 +182,14 @@
         b(every), " 道家家都有 · ", b(unique), " 道仅此一家。",
       ],
       identical: "这几家的菜单完全相同——去离你最近的那家就好。",
+      share: "分享",
+      shareTip: "分享当前的日期、餐次和食堂",
+      shareWhen: (meal, day) => `${day.toLocaleDateString("zh-CN", { month: "long", day: "numeric" })}` +
+        `（${day.toLocaleDateString("zh-CN", { weekday: "short" })}）${meal}`,
+      shareHalls: (n) => `${n} 家食堂`,
+      shareSpecial: (hall, dish) => `${hall} 限定：${dish}`,
+      shareOnly: (n) => `${n} 道菜仅此一家`,
+      copied: "链接已复制，粘贴到聊天里发送",
       tourDay: ["选日期", "菜单提前一周公布。点日期切换，电脑上也可以按 ← →。每次打开都从今天开始。"],
       tourMeal: ["选餐次", "早餐、午餐、晚餐任选。灰掉的餐次是你选的食堂当天都不供应。"],
       tourHalls: ["选食堂", "点一下添加或移除，每家食堂占一列，并排对比。食堂、餐次、语言和主题都会记住。"],
@@ -258,6 +274,8 @@
   function save() {
     try {
       const { date, ...kept } = state;
+      // What a shared link put on screen is shown, not adopted (see readLink).
+      for (const key of borrowed) kept[key] = own[key];
       localStorage.setItem(STORE, JSON.stringify(kept));
     } catch {
       /* private browsing or blocked storage -- preferences just don't persist */
@@ -368,6 +386,61 @@
     }
     for (const col of board.children) {
       if (col.dataset?.hall) hallObserver.observe(col);
+    }
+  }
+
+  // ---------- shared links ----------
+  //
+  // A link carries the view it was sent from -- the day, the meal, the halls --
+  // and nothing that is a preference: filters, meat-first, photos, language and
+  // theme stay the reader's own. The date is written out rather than "today",
+  // because Thursday's dinner in a group chat still means Thursday when it is
+  // read on Friday; one that has left the window falls back to today.
+
+  /** The part of the view a query string can set; anything unknown is dropped. */
+  function readLink(query) {
+    const params = new URLSearchParams(query);
+    const view = {};
+    const date = params.get("d");
+    if (DATA.window.includes(date)) view.date = date;
+    const meal = MEALS.find((m) => m.toLowerCase() === (params.get("m") || "").toLowerCase());
+    if (meal) view.meal = meal;
+    const halls = hallOrder((params.get("h") || "").split(","));
+    if (halls.length) view.halls = halls;
+    return view;
+  }
+
+  function linkFor(view) {
+    return `?d=${view.date}&m=${view.meal.toLowerCase()}` +
+      `&h=${view.halls.map(encodeURIComponent).join(",")}`;
+  }
+
+  // Your halls and your meal are remembered, and a friend's link must not
+  // overwrite them: until you touch that control yourself, save() writes back
+  // what you had. The query is cleared on arrival, so a reload or a bookmark
+  // does not pin the page to one day -- the date is never remembered either.
+  const own = { meal: state.meal, halls: state.halls };
+  const borrowed = new Set();
+  {
+    const query = new URLSearchParams(location.search);
+    const arrived = readLink(query);
+    if (Object.keys(arrived).length) {
+      Object.assign(state, arrived);
+      for (const key of ["meal", "halls"]) if (key in arrived) borrowed.add(key);
+      trackEvent("open_shared_link", {
+        meal: state.meal,
+        hall_count: state.halls.length,
+        on_its_day: "date" in arrived,
+      });
+    }
+    if (["d", "m", "h"].some((k) => query.has(k))) {
+      for (const k of ["d", "m", "h"]) query.delete(k);
+      const rest = query.toString();
+      try {
+        history.replaceState(history.state, "", location.pathname + (rest ? "?" + rest : "") + location.hash);
+      } catch {
+        /* opened from disk, where some browsers refuse it -- the link just stays */
+      }
     }
   }
 
@@ -794,21 +867,7 @@
     const meals = availableMeals(state.date);
     if (meals.length && !meals.includes(state.meal)) state.meal = meals[meals.length - 1];
 
-    // A dish shown by exactly one selected hall is the reason to walk there.
-    // Counted over the day's menu only: every hall has a salad bar.
-    const spread = new Map();
-    const servingHalls = [];
-    for (const hallId of state.halls) {
-      const svc = service(state.date, hallId, state.meal);
-      const specials = svc.specials.map(resolve).filter(matchesDiet);
-      const daily = svc.daily.map(resolve).filter(matchesDiet);
-      if (specials.length || daily.length) {
-        servingHalls.push(hallId);
-      }
-      for (const rec of [...specials, ...daily]) {
-        spread.set(rec.id, (spread.get(rec.id) || 0) + 1);
-      }
-    }
+    const { spread, serving: servingHalls } = tally(matchesDiet);
 
     for (const hallId of state.halls) board.append(column(hallId, spread, servingHalls.length));
 
@@ -858,6 +917,22 @@
     if (tour) drawTour(false);
     save();
     observeColumns(board);
+  }
+
+  /** How many of the selected halls serve each dish that passes `keep`, and
+   *  which halls serve anything at all. A dish shown by exactly one of them is
+   *  the reason to walk there. Counted over the day's menu only: every hall has
+   *  a salad bar. */
+  function tally(keep) {
+    const spread = new Map();
+    const serving = [];
+    for (const hallId of state.halls) {
+      const svc = service(state.date, hallId, state.meal);
+      const dishes = [...svc.specials, ...svc.daily].map(resolve).filter(keep);
+      if (dishes.length) serving.push(hallId);
+      for (const rec of dishes) spread.set(rec.id, (spread.get(rec.id) || 0) + 1);
+    }
+    return { spread, serving };
   }
 
   /** How much the selected halls actually differ -- the whole point of comparing. */
@@ -1197,6 +1272,7 @@
       chip(t("meal", m), m === state.meal, () => {
         if (state.meal !== m) {
           state.meal = m;
+          borrowed.delete("meal");
           trackEvent("select_meal", { meal: m });
           render();
         }
@@ -1207,6 +1283,7 @@
         const picked = new Set(state.halls);
         if (!picked.delete(h.id)) picked.add(h.id);
         state.halls = hallOrder(picked.size ? picked : [h.id]);
+        borrowed.delete("halls");
         const actuallySelected = state.halls.includes(h.id);
         trackEvent("toggle_hall_filter", {
           hall_id: h.id,
@@ -1257,6 +1334,7 @@
         state.meatFirst = fallback.meatFirst;
         state.photos = fallback.photos;
         state.halls = fallback.halls.slice();
+        borrowed.delete("halls");
         save();
         render();
       }, { className: "chip-reset" }),
@@ -1294,6 +1372,9 @@
     const lang = document.getElementById("lang");
     lang.textContent = t("langChip");
     lang.setAttribute("aria-label", t("langLabel"));
+
+    document.getElementById("share-label").textContent = t("share");
+    document.getElementById("share").title = t("shareTip");
   }
 
   // ---------- first-visit tour ----------
@@ -1433,6 +1514,86 @@
     tour.tip.style.top = `${r.bottom + pad + 10}px`;
     tour.tip.style.setProperty("--arrow", `${Math.min(Math.max(mid - x, 18), w - 18)}px`);
   }
+
+  // ---------- sharing ----------
+  //
+  // The button sits beside the headline because the headline is the name of
+  // what gets shared: this day, this meal, these halls (see readLink). A phone
+  // gets its own share sheet; anything without one gets the line and the link
+  // on the clipboard. So does WeChat's browser, where much of this is headed:
+  // its share is the ··· menu, which sends the page as it was opened.
+
+  /** What goes with the link: enough that the chat learns something without opening it. */
+  function shareLine() {
+    const name = (id) => hallById.get(id).short;
+    const parts = [
+      t("shareWhen", t("meal", state.meal), new Date(state.date + "T12:00:00")),
+      state.halls.length > 4 ? t("shareHalls", state.halls.length) : state.halls.map(name).join(" vs "),
+    ];
+    const at = state.halls.find((id) => service(state.date, id, state.meal).specials.length);
+    if (at) {
+      const rec = resolve(service(state.date, at, state.meal).specials[0]);
+      parts.push(t("shareSpecial", name(at), zhName(rec) || rec.name));
+    } else {
+      // Over the whole menu, not the sharer's diet: the reader brings their own.
+      const { spread, serving } = tally(() => true);
+      const unique = [...spread.values()].filter((n) => n === 1).length;
+      if (serving.length > 1 && unique) parts.push(t("shareOnly", unique));
+    }
+    return parts.filter(Boolean).join(" · ");
+  }
+
+  async function copy(text) {
+    try {
+      await navigator.clipboard.writeText(text);
+      return true;
+    } catch {
+      // Older in-app browsers have no async clipboard, or refuse it.
+      const area = el("textarea", { value: text, readOnly: true });
+      area.style.cssText = "position: fixed; top: 0; opacity: 0;";
+      document.body.append(area);
+      area.select();
+      let done = false;
+      try {
+        done = document.execCommand("copy");
+      } catch {
+        /* nothing left to try */
+      }
+      area.remove();
+      return done;
+    }
+  }
+
+  const toast = document.getElementById("toast");
+  let toastTimer = 0;
+
+  /** A line at the foot of the screen that goes away by itself. A link that
+   *  could not be copied stays long enough to be copied by hand. */
+  function say(text, linger = 2600) {
+    toast.textContent = text;
+    toast.classList.add("toast-on");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove("toast-on"), linger);
+  }
+
+  document.getElementById("share").addEventListener("click", async () => {
+    const url = new URL(linkFor(state), location.href).href;
+    const text = shareLine();
+    const stats = { meal: state.meal, hall_count: state.halls.length };
+    if (navigator.share && !/MicroMessenger/i.test(navigator.userAgent)) {
+      try {
+        await navigator.share({ title: t("docTitle"), text, url });
+        trackEvent("share", { method: "sheet", ...stats });
+        return;
+      } catch (e) {
+        if (e.name === "AbortError") return; // the sheet was dismissed
+      }
+    }
+    const copied = await copy(`${text}\n${url}`);
+    trackEvent("share", { method: copied ? "copy" : "failed", ...stats });
+    if (copied) say(t("copied"));
+    else say(url, 12000);
+  });
 
   document.getElementById("lang").addEventListener("click", () => {
     const prevLang = state.lang;
