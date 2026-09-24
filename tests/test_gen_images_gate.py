@@ -1,14 +1,10 @@
-import io
 import json
-from unittest.mock import MagicMock, patch
+from unittest.mock import MagicMock
 from PIL import Image
 import pytest
 
 from bsdm.cloudflare import CloudflareClient
-from scripts.gen_images import (
-    crop_and_resize_to_card,
-    main,
-)
+from scripts.gen_images import main
 
 
 def _make_test_image(color: str = "red", size: tuple[int, int] = (1024, 576)) -> Image.Image:
