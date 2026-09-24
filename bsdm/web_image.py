@@ -1,8 +1,11 @@
 from __future__ import annotations
 
+import html
 import io
+import json
 import logging
 import os
+from pathlib import Path
 import re
 import urllib.parse
 from typing import TYPE_CHECKING
@@ -16,6 +19,33 @@ if TYPE_CHECKING:
 log = logging.getLogger(__name__)
 
 USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko)"
+
+
+def _load_dotenv(env_path: Path | str | None = None) -> None:
+    """Load API credentials from a .env file if not present in os.environ."""
+    if "PYTEST_CURRENT_TEST" in os.environ and not env_path:
+        return
+    if os.getenv("GOOGLE_API_KEY") and os.getenv("GOOGLE_CSE_ID"):
+        return
+    candidates = [Path(env_path)] if env_path else [
+        Path.cwd() / ".env",
+        Path(__file__).resolve().parent.parent / ".env",
+    ]
+    for p in candidates:
+        if p and p.is_file():
+            try:
+                for line in p.read_text(encoding="utf-8").splitlines():
+                    line = line.strip()
+                    if line and not line.startswith("#") and "=" in line:
+                        k, v = line.split("=", 1)
+                        k_clean = k.strip()
+                        if k_clean in ("GOOGLE_API_KEY", "GOOGLE_CSE_ID", "PEXELS_API_KEY"):
+                            if k_clean not in os.environ:
+                                os.environ[k_clean] = v.strip().strip("\"'")
+                return
+            except Exception:
+                pass
+
 
 
 def clean_search_query(dish_name: str) -> str:
@@ -219,13 +249,85 @@ def search_duckduckgo(
     return candidates
 
 
+def search_bing(
+    query: str, session: requests.Session, timeout: int = 15
+) -> list[tuple[str, int | None, int | None]]:
+    """Search Bing Images without API key for high-resolution culinary food photography."""
+    search_term = f"{query} recipe dish plating food photography"
+    url = "https://www.bing.com/images/search"
+    params = {"q": search_term, "form": "HDRSC2", "first": 1}
+    try:
+        r = session.get(url, params=params, timeout=timeout)
+        r.raise_for_status()
+    except Exception as exc:
+        log.warning("Bing image search request failed for '%s': %s", query, exc)
+        return []
+
+    m_matches = re.findall(r'm="({.*?})"', r.text)
+    candidates: list[tuple[str, int | None, int | None]] = []
+    for m in m_matches:
+        try:
+            data = json.loads(html.unescape(m))
+            img_url = data.get("murl")
+            if not img_url or _BAD_FILENAME_RE.search(img_url):
+                continue
+            candidates.append((img_url, None, None))
+            if len(candidates) >= 10:
+                break
+        except Exception:
+            continue
+    return candidates
+
+
+def search_google_custom_search(
+    query: str,
+    session: requests.Session,
+    api_key: str,
+    cse_id: str,
+    timeout: int = 15,
+) -> list[tuple[str, int | None, int | None]]:
+    """Search Google Custom Search JSON API for high-resolution dish photos."""
+    url = "https://customsearch.googleapis.com/customsearch/v1"
+    params = {
+        "key": api_key,
+        "cx": cse_id,
+        "q": query,
+        "searchType": "image",
+        "imgType": "photo",
+        "num": 8,
+        "safe": "active",
+    }
+    try:
+        r = session.get(url, params=params, timeout=timeout)
+        r.raise_for_status()
+        data = r.json()
+    except Exception as exc:
+        log.warning("Google Custom Search API request failed for '%s': %s", query, exc)
+        return []
+
+    items = data.get("items", [])
+    candidates: list[tuple[str, int | None, int | None]] = []
+    for item in items:
+        img_url = item.get("link")
+        if not img_url:
+            continue
+        if _BAD_FILENAME_RE.search(img_url):
+            continue
+        img_info = item.get("image", {})
+        w = img_info.get("width")
+        h = img_info.get("height")
+        candidates.append((img_url, w, h))
+    return candidates
+
+
 def search_food_image(
     dish_name: str,
     client: CloudflareClient | None = None,
-    min_score: int = 8,
+    min_score: int = 7,
     timeout: int = 15,
 ) -> bytes | None:
     """Find a high-quality, authentic food photo for dish_name with optional VLM quality evaluation."""
+    _load_dotenv()
     session = requests.Session()
     session.headers.update({"User-Agent": USER_AGENT})
 
@@ -233,19 +335,30 @@ def search_food_image(
 
     candidates: list[tuple[str, int | None, int | None]] = []
 
-    # Tier 1: Professional food photography sources first (Unsplash & Pexels)
-    pexels_key = os.getenv("PEXELS_API_KEY")
-    if pexels_key:
-        candidates.extend(search_pexels(query, session, pexels_key, timeout=timeout))
+    # Tier 0: Google Custom Search API (if grandfathered account configured)
+    google_key = os.getenv("GOOGLE_API_KEY")
+    google_cx = os.getenv("GOOGLE_CSE_ID")
+    if google_key and google_cx:
+        candidates.extend(search_google_custom_search(query, session, google_key, google_cx, timeout=timeout))
+
+    # Tier 1: Bing Images (high-resolution commercial culinary photography from recipe sites)
+    if not candidates:
+        candidates.extend(search_bing(query, session, timeout=timeout))
+
+    # Tier 2: Professional stock photo sources first (Unsplash & Pexels)
+    if not candidates:
+        pexels_key = os.getenv("PEXELS_API_KEY")
+        if pexels_key:
+            candidates.extend(search_pexels(query, session, pexels_key, timeout=timeout))
 
     if not candidates:
         candidates.extend(search_unsplash(query, session, timeout=timeout))
 
-    # Tier 2: Commercial culinary photography via DuckDuckGo
+    # Tier 3: Commercial culinary photography via DuckDuckGo (legacy fallback)
     if not candidates:
         candidates.extend(search_duckduckgo(query, session, timeout=timeout))
 
-    # Tier 3: Last resort fallback to Wikipedia (deprioritized due to amateur snapshots)
+    # Tier 4: Last resort fallback to Wikipedia (deprioritized due to amateur snapshots)
     if not candidates:
         candidates.extend(search_wikipedia(query, session, timeout=timeout))
 
@@ -273,7 +386,8 @@ def search_food_image(
                 continue
 
             if client is not None and client.is_configured():
-                eval_res = client.evaluate_image(r.content, dish_name)
+                eval_fn = getattr(client, "evaluate_food_image", client.evaluate_image)
+                eval_res = eval_fn(r.content, dish_name)
                 score = eval_res.get("score", 0)
                 valid = eval_res.get("valid", False)
                 reason = eval_res.get("reason", "")
