@@ -75,8 +75,13 @@ def test_audit_web_search_vlm_score(mock_data_dir):
         
     assert fixed["1"].get("image") is None
     assert fixed["1"].get("needs_image") is True
+    assert "model" not in fixed["1"]
+    assert "vlm_score" not in fixed["1"]
+    
     assert fixed["2"].get("image") is None
     assert fixed["2"].get("needs_image") is True
+    assert "model" not in fixed["2"]
+    
     assert fixed["3"].get("image") == "3.webp"
 
 def test_audit_rice_dish_heuristics(mock_data_dir):

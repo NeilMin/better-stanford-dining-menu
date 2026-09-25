@@ -101,10 +101,10 @@ def main():
             if args.fix:
                 dish["image"] = None
                 dish["needs_image"] = True
+                dish.pop("model", None)
                 dish.pop("generated_at", None)
-                if "model" in dish and dish["model"] == "web-search":
-                    # Remove web-search specific stuff so it re-generates cleanly
-                    pass
+                dish.pop("vlm_score", None)
+                dish.pop("vlm_reason", None)
                 fixed_count += 1
                 
     if args.fix and fixed_count > 0:
