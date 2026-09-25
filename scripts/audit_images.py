@@ -109,7 +109,7 @@ def main():
                 
     if args.fix and fixed_count > 0:
         with open(dishes_path, "w", encoding="utf-8") as f:
-            json.dump(dishes, f, indent=1, sort_keys=True)
+            json.dump(dishes, f, indent=1, ensure_ascii=False, sort_keys=True)
             # Add trailing newline like the original file might have
             f.write("\n")
         print(f"Fixed {fixed_count} dishes by clearing image references.")
