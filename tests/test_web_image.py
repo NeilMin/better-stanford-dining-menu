@@ -137,7 +137,7 @@ def test_search_food_image_via_unsplash(mock_get, mock_unsplash, mock_bing):
     mock_unsplash.return_value = [("https://example.com/dish.jpg", 800, 600)]
     mock_get.return_value = MagicMock(status_code=200, content=fake_img)
 
-    result = search_food_image("Beef Bulgogi")
+    result = search_food_image("Beef Bulgogi", require_vlm=False)
     assert result == fake_img
 
 
@@ -167,7 +167,7 @@ def test_search_food_image_via_wikipedia(mock_get, mock_ddg, mock_unsplash, mock
     r_img = MagicMock(status_code=200, content=fake_img)
     mock_get.side_effect = [r_wiki, r_img]
 
-    result = search_food_image("Beef Bulgogi")
+    result = search_food_image("Beef Bulgogi", require_vlm=False)
     assert result == fake_img
 
 
@@ -230,7 +230,7 @@ def test_search_food_image_falls_back_to_duckduckgo(mock_get, mock_unsplash, moc
 
     mock_get.side_effect = [r_ddg_token, r_ddg_search, r_img]
 
-    result = search_food_image("Unusual Stanford Specialty")
+    result = search_food_image("Unusual Stanford Specialty", require_vlm=False)
     assert result == fake_img
 
 
@@ -248,7 +248,7 @@ def test_search_food_image_skips_bad_geometry(mock_get, mock_unsplash, mock_bing
     r_good_img = MagicMock(status_code=200, content=fake_img_good)
     mock_get.return_value = r_good_img
 
-    result = search_food_image("Pasta")
+    result = search_food_image("Pasta", require_vlm=False)
     assert result == fake_img_good
 
 
@@ -297,7 +297,7 @@ def test_search_food_image_prioritizes_google(mock_get, mock_google, monkeypatch
     r_img = MagicMock(status_code=200, content=fake_img)
     mock_get.return_value = r_img
 
-    result = search_food_image("Cilantro Lime Salmon")
+    result = search_food_image("Cilantro Lime Salmon", require_vlm=False)
     assert result == fake_img
     mock_google.assert_called_once()
 
@@ -334,8 +334,28 @@ def test_search_food_image_uses_bing_by_default(mock_get, mock_bing):
     r_img = MagicMock(status_code=200, content=fake_img)
     mock_get.return_value = r_img
 
-    result = search_food_image("Cilantro Lime Salmon")
+    result = search_food_image("Cilantro Lime Salmon", require_vlm=False)
     assert result == fake_img
     mock_bing.assert_called_once()
 
 
+
+@patch("bsdm.web_image.search_bing")
+@patch("requests.Session.get")
+def test_search_food_image_without_client_and_require_vlm_returns_none(mock_get, mock_bing):
+    fake_img = _make_fake_image(width=800, height=600)
+    mock_bing.return_value = [("https://example.com/bing_dish.jpg", 800, 600)]
+    mock_get.return_value = MagicMock(status_code=200, content=fake_img)
+
+    result = search_food_image("Basmati Rice", client=None, require_vlm=True)
+    assert result is None
+
+@patch("bsdm.web_image.search_bing")
+@patch("requests.Session.get")
+def test_search_food_image_with_require_vlm_false_returns_candidate(mock_get, mock_bing):
+    fake_img = _make_fake_image(width=800, height=600)
+    mock_bing.return_value = [("https://example.com/bing_dish.jpg", 800, 600)]
+    mock_get.return_value = MagicMock(status_code=200, content=fake_img)
+
+    result = search_food_image("Basmati Rice", client=None, require_vlm=False)
+    assert result == fake_img
