@@ -544,3 +544,43 @@ def test_invisible_spices_excluded_from_hero():
     assert "star anise" not in p
     assert "cinnamon stick" not in p
     assert "cardamom pod" not in p
+
+
+def test_gyro_meat_hero_protein_phrase_and_ingredient_filtering():
+    dish = d(
+        "Beef & Lamb Gyro Meat",
+        "Halal Beef, Water, Bread Crumbs, Salt, Yeast, Sugar, Halal Lamb, Corn Flour, Wheat Flour, Rye Flour, Garlic, Onion Powder, Soy Protein Concentrate",
+        tags=["halal"],
+    )
+    prompt = dishlib.image_prompt(dish)
+    assert "thinly sliced tender seasoned Greek gyro meat strips" in prompt
+    assert "Halal Beef" in prompt
+    assert "Halal Lamb" in prompt
+    assert "Bread Crumbs" not in prompt
+    assert "Wheat Flour" not in prompt
+    assert "Rye Flour" not in prompt
+    assert "Soy Protein Concentrate" not in prompt
+
+
+def test_multi_protein_dishes_do_not_exclude_present_proteins():
+    dish = d(
+        "Beef & Lamb Gyro Meat",
+        "Halal Beef, Halal Lamb, Garlic",
+        tags=["halal"],
+    )
+    negative = dishlib.negative_prompt(dish)
+    assert "lamb" not in negative
+    assert "mutton" not in negative
+    assert "pork" in negative
+    assert "chicken" in negative
+    assert "fish" in negative
+
+
+def test_gyro_meat_negative_exclusions():
+    dish = d("Beef & Lamb Gyro Meat")
+    negative = dishlib.negative_prompt(dish)
+    assert "pita bread" in negative
+    assert "skewers" in negative
+    assert "cutlery" in negative
+    assert "minced meat" in negative
+

@@ -83,11 +83,12 @@ _INVISIBLE_RE = re.compile(
     r"(kosher |sea |table )?salt|(black |white |ground )?pepper(corn)?s?|sugar|water|ice"
     # Any oil, however the kitchen spells the blend ("canola/olive oil blend").
     r"|[\w/ ]*oils?( blend)?|cooking spray|butter spray"
-    r"|corn ?starch|arrowroot|xanthan gum|flour|baking (powder|soda)|yeast|msg"
+    r"|breadcrumbs?|bread crumbs?|panko( breadcrumbs?)?"
+    r"|corn ?starch|arrowroot|xanthan gum|[\w\s]*flour|baking (powder|soda)|yeast|msg"
     r"|(white |red |rice |apple cider |balsamic )?vinegar|citric acid|lemon juice|lime juice|orange juice|pineapple juice"
     r"|spices?|seasoning( blend| mix)?|salt and pepper|garlic powder|onion powder|bay (leaves?|leaf)"
     r"|preservatives?|emulsifiers?|food colou?ring|marinade|dredge|glaze|batter"
-    r"|(soy|pea|wheat) protein( isolate)?|wheat gluten|gluten|vital wheat gluten"
+    r"|(soy|pea|wheat) protein(\s+(isolate|concentrate))?|wheat gluten|gluten|vital wheat gluten"
     r"|(potato|tapioca|corn|modified food) starch|(yellow |white )?corn flour|rice flour|maltodextrin|dextrin"
     r"|tricalcium phosphate|leavening agent|paprika extract colou?r|extract colou?r"
     r"|disodium dihydrogen pyrophosphate|sodium bicarbonate|dextrose|cream of tartar|guar gum"
@@ -335,6 +336,21 @@ def is_bowl(dish) -> bool:
 
 def _hero_protein_phrase(dish) -> str | None:
     name = (_get(dish)("name", "") or "").lower()
+    if "gyro" in name:
+        if any(w in name for w in ("chicken", "poultry")):
+            return (
+                "tender juicy sliced Greek chicken gyro meat strips with golden-brown caramelized edges, "
+                "seasoned with oregano, garlic, and lemon herbs"
+            )
+        if any(w in name for w in ("veggie", "plant", "vegan", "vegetarian")):
+            return (
+                "seasoned plant-based gyro strips with caramelized seared edges, "
+                "seasoned with Mediterranean herbs and spices"
+            )
+        return (
+            "thinly sliced tender seasoned Greek gyro meat strips, succulent roasted beef and lamb shavings "
+            "with caramelized browned edges and savory Mediterranean spices, authentic gyro meat slices"
+        )
     if "curried vegetables" in name:
         return (
             "tender simmered sweet potato chunks and green peas thoroughly bathed in rich thick glossy golden-yellow spiced Indian curry gravy, "
@@ -576,16 +592,39 @@ def negative_prompt(dish) -> str:
     """
     category = classify(dish)
     name = _get(dish)("name", "")
+    ing_text = _top_level_ingredients(_get(dish)("ingredients", "") or "")
+    combined_text = f"{name} {ing_text}".lower()
+
+    # Never exclude proteins that are explicitly mentioned in the dish name or top ingredients
+    present_categories = set()
+    for cat, kws in _PRIMARY.items():
+        if any(re.search(rf"\b{re.escape(kw)}", combined_text) for kw in kws):
+            present_categories.add(cat)
+
     if category in ("vegan", "vegetarian") or (
         category == "other" and re.search(r"\b(vegetable|veggie|plant-based)\b", name, re.I)
     ):
         exclude = list(_PROTEIN_NEGATIVE.values()) + ["meat"]
     elif category in _PROTEIN_NEGATIVE:
-        exclude = [v for k, v in _PROTEIN_NEGATIVE.items() if k != category]
+        exclude = [v for k, v in _PROTEIN_NEGATIVE.items() if k != category and k not in present_categories]
     else:
         # "other" is genuinely unknown -- a dish with no icon and no protein
         # keyword may still arrive with meat in it, so nothing is excluded.
         exclude = []
+
+    if re.search(r"\bgyro\b", name, re.I):
+        if "meat" in name.lower():
+            exclude.extend([
+                "pita bread", "pita pocket", "flatbread", "tortilla", "wrap", "sandwich", "burger", "bun",
+                "skewers", "kebab", "shish kebab", "meat on sticks", "skewered meat",
+                "ground meat", "minced meat", "meatballs", "dough", "raw dough",
+                "cutlery", "fork", "knife", "spoon", "silverware", "utensils",
+            ])
+        else:
+            exclude.extend([
+                "skewers", "kebab", "shish kebab", "meat on sticks",
+                "ground meat", "minced meat", "cutlery", "fork", "knife",
+            ])
 
     name = _get(dish)("name", "")
     if re.search(r"\b(rice|basmati|jasmine|grain|quinoa|pilaf)\b", name, re.I):
@@ -673,4 +712,4 @@ def negative_prompt(dish) -> str:
 
 # Bumped whenever the prompt rules change, so already-drawn images can be told
 # apart from ones drawn under the current rules and redrawn in priority order.
-PROMPT_REV = 7
+PROMPT_REV = 8
