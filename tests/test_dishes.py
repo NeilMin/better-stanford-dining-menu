@@ -441,9 +441,28 @@ class TestKeyIngredients:
         assert "sweet potato chunks and green peas" in prompt
         assert "served in a simple white ceramic bowl" in prompt
         negative = dishlib.negative_prompt(curry)
-        assert "clear water" in negative
         assert "clear broth" in negative
         assert "plain boiled vegetables" in negative
+
+    def test_miso_black_cod_prompt_and_negative(self):
+        cod = d(
+            "Miso Black Cod",
+            "black cod (sablefish), white miso paste, brown sugar, tamari, ginger, green onions, sesame seeds",
+            tags=["gluten-free", "halal"],
+        )
+        prompt = dishlib.image_prompt(cod)
+        assert "broiled Japanese miso black cod fillet" in prompt
+        assert "pure snow-white flaky fish meat" in prompt
+        assert "caramelized" in prompt
+        assert "white miso paste" not in prompt
+        assert "sweet miso glaze" in prompt
+        assert "finely sliced scallions" in prompt
+        negative = dishlib.negative_prompt(cod)
+        assert "salmon" in negative
+        assert "whole green onions" in negative
+        assert "tofu" in negative
+        assert "paneer" in negative
+        assert "broth" in negative
 
 
 

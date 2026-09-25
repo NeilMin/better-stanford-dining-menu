@@ -80,7 +80,7 @@ _FLAVORING_RE = re.compile(
 # see -- the prompt keeps only the first eight.
 _INVISIBLE_RE = re.compile(
     r"^\s*("
-    r"(kosher |sea |table )?salt|(black |white |ground )?pepper(corn)?s?|sugar|water|ice"
+    r"(kosher |sea |table )?salt|(black |white |ground )?pepper(corn)?s?|(brown |white |granulated |powdered )?sugar|water|ice"
     # Any oil, however the kitchen spells the blend ("canola/olive oil blend").
     r"|[\w/ ]*oils?( blend)?|cooking spray|butter spray"
     r"|breadcrumbs?|bread crumbs?|panko( breadcrumbs?)?"
@@ -296,6 +296,7 @@ def _key_ingredients(ingredients: str, limit: int = 12, dish_name: str = "") -> 
     out.append("".join(buf))
 
     is_saffron_dish = bool(re.search(r"\bsaffron\b", dish_name, re.I))
+    is_black_cod = bool(re.search(r"\b(black\s+cod|miso\s+cod)\b", dish_name, re.I))
     seen, clean = set(), []
     for item in out:
         item = re.sub(r"\s+", " ", item).strip(" .;:-")
@@ -311,6 +312,12 @@ def _key_ingredients(ingredients: str, limit: int = 12, dish_name: str = "") -> 
             continue
         if low == "saffron":
             item = "red saffron threads"
+            low = item.lower()
+        if low in ("white miso paste", "miso paste", "red miso paste"):
+            item = "sweet miso glaze"
+            low = item.lower()
+        if is_black_cod and low in ("green onions", "green onion", "scallions", "scallion"):
+            item = "finely sliced scallions"
             low = item.lower()
         if low in seen:
             continue
@@ -367,6 +374,13 @@ def _hero_protein_phrase(dish) -> str | None:
             "fragrant fluffy steaming cooked rice tossed with savory browned garlic butter, "
             "tender cooked rice grains glistening with golden butter and loaded with crispy golden-brown fried minced garlic bits, "
             "lightly garnished with finely minced fresh green chives"
+        )
+    if "black cod" in name or ("miso" in name and "cod" in name):
+        return (
+            "broiled Japanese miso black cod fillet, Nobu style saikyo yaki sablefish, "
+            "thick fish fillet with glistening caramelized deep golden-brown charred sweet miso glaze on top, "
+            "pure snow-white flaky fish meat with visible delicate juicy layers, dark crisp skin, "
+            "elegant restaurant plating"
         )
     if "edamame salad" in name:
         return (
@@ -705,6 +719,16 @@ def negative_prompt(dish) -> str:
             "salad", "raw vegetables",
         ])
 
+    if re.search(r"\b(black\s+cod|miso\s+cod)\b", name, re.I):
+        exclude.extend([
+            "salmon", "pink salmon", "orange salmon", "salmon fillet", "pink fish", "orange fish", "trout",
+            "tofu", "bean curd", "tofu cube", "paneer", "white block",
+            "whole green onions", "green onion stalks", "green onion stems", "scallion bundle", "scallion pile",
+            "green beans", "asparagus", "vegetable pile", "vegetable heap", "raw greens", "leafy greens",
+            "soup", "stew", "broth", "gravy", "watery sauce", "swimming in sauce", "sauce pool",
+            "raw fish", "sashimi", "sushi", "noodles", "rice bowl",
+        ])
+
     if not exclude:
         return NEGATIVE_PROMPT
     return ", ".join(exclude) + ", " + NEGATIVE_PROMPT
@@ -712,4 +736,4 @@ def negative_prompt(dish) -> str:
 
 # Bumped whenever the prompt rules change, so already-drawn images can be told
 # apart from ones drawn under the current rules and redrawn in priority order.
-PROMPT_REV = 8
+PROMPT_REV = 9
