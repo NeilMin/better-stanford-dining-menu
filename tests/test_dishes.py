@@ -506,3 +506,41 @@ def test_prompt_rev_is_an_integer():
     """Bumped whenever the prompt rules change; --redraw-stale compares against
     it, so a string or a float would quietly stop selecting anything."""
     assert isinstance(dishlib.PROMPT_REV, int) and dishlib.PROMPT_REV >= 1
+
+def test_grain_heuristics_cooked_and_negative_raw():
+    entry = {"name": "Jasmine Rice", "category": "vegan", "ingredients": "jasmine rice, water"}
+    p = dishlib.image_prompt(entry)
+    neg = dishlib.negative_prompt(entry)
+    assert "steamed fluffy cooked" in p
+    assert "raw rice" in neg
+    assert "uncooked rice" in neg
+    assert "dry rice grains" in neg
+
+def test_curry_heuristics_turmeric_gravy_and_negative_clear():
+    entry = {"name": "Vegetable Curry", "category": "vegan", "ingredients": "carrots, peas, curry powder"}
+    p = dishlib.image_prompt(entry)
+    neg = dishlib.negative_prompt(entry)
+    assert "thick golden-yellow turmeric curry gravy" in p
+    assert "clear water" in neg
+    assert "watery soup" in neg
+
+def test_tofu_heuristics_crispy_edges_and_potato_exclusion():
+    entry = {"name": "Teriyaki Tofu", "category": "vegan", "ingredients": "tofu, sweet potatoes, teriyaki sauce"}
+    p = dishlib.image_prompt(entry)
+    neg = dishlib.negative_prompt(entry)
+    assert "crispy golden pan-seared" in p
+    assert "sweet potato" in neg or "potato" in neg
+
+def test_grilled_fruit_heuristics_exclude_meat():
+    entry = {"name": "Grilled Peaches", "category": "vegan", "ingredients": "peaches, brown sugar"}
+    neg = dishlib.negative_prompt(entry)
+    assert "meat" in neg
+    assert "steak" in neg
+    assert "pork" in neg
+
+def test_invisible_spices_excluded_from_hero():
+    entry = {"name": "Spiced Lentils", "category": "vegan", "ingredients": "lentils, star anise, cinnamon stick, bay leaf, cardamom pod"}
+    p = dishlib.image_prompt(entry)
+    assert "star anise" not in p
+    assert "cinnamon stick" not in p
+    assert "cardamom pod" not in p
