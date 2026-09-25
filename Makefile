@@ -56,5 +56,8 @@ hours-accept:              ## record the current hours page as the new baseline
 source-check:              ## is R&DE offering a hall config/halls.json has never heard of?
 	$(PY) scripts/check_source.py
 
+audit-images:              ## automated dish image and prompt heuristic auditor
+	$(PY) scripts/audit_images.py
+
 clean:
 	rm -rf site
