@@ -96,7 +96,7 @@ _INVISIBLE_RE = re.compile(
     r"|hydrolyzed\s+[\w\s]*protein"
     r"|[\w\s]*gum arabic|[\w\s]*cellulose gum|[\w\s]*gellan gum|[\w\s]*konjac gum|locust bean gum"
     r"|(soy|sunflower)?\s*lecithin|l-cysteine(\s+hydrochloride)?"
-    r"|(spice|rosemary|carrot)\s+extract(ive)?s?|natural flavorings?"
+    r"|(spice|rosemary|carrot)\s+extract(ive)?s?|natural flavorings?|star\s+anise|cinnamon\s+sticks?|whole\s+cloves?|cardamom\s+pods?|lemongrass\s+stalks?"
     r")\s*$",
     re.I,
 )
@@ -335,12 +335,12 @@ def is_bowl(dish) -> bool:
 
 def _hero_protein_phrase(dish) -> str | None:
     name = (_get(dish)("name", "") or "").lower()
-    if "curried vegetables" in name or ("curry" in name and "vegetable" in name):
+    if "curried vegetables" in name:
         return (
             "tender simmered sweet potato chunks and green peas thoroughly bathed in rich thick glossy golden-yellow spiced Indian curry gravy, "
             "aromatic bubbling turmeric curry sauce coating all the vegetables, glistening rich curry stew, garnished with fresh cilantro"
         )
-    if "teriyaki tofu" in name or ("tofu" in name and "teriyaki" in name):
+    if "island teriyaki tofu" in name:
         return (
             "crispy golden-brown pan-seared firm tofu cubes tossed with juicy yellow pineapple chunks and colorful bell peppers "
             "in glossy sweet-savory dark teriyaki glaze, authentic pan-fried tofu with caramelized exterior, "
@@ -373,11 +373,6 @@ def _hero_protein_phrase(dish) -> str | None:
         return (
             "fluffy freshly steamed long-grain white basmati rice, steaming hot tender separate cooked rice grains, "
             "freshly cooked aromatic basmati rice with glistening texture"
-        )
-    if "jasmine rice" in name:
-        return (
-            "fluffy freshly steamed fragrant white jasmine rice, steaming hot tender cooked rice grains, "
-            "freshly prepared aromatic steamed rice"
         )
     if "tempeh" in name:
         return "crispy bite-sized golden-brown glazed tempeh cubes, sticky spicy-sweet red gochujang glaze, toasted sesame seeds and chopped scallions"
@@ -463,6 +458,12 @@ def _hero_protein_phrase(dish) -> str | None:
 
     category = classify(dish)
     if category not in ("pork", "beef", "poultry", "seafood", "lamb"):
+        if re.search(r"\b(rice|basmati|jasmine|pilaf|quinoa|polenta|couscous|risotto)\b", name, re.I):
+            return "steamed fluffy cooked rice grains, glistening and tender, served warm in a ceramic bowl"
+        if re.search(r"\b(curry|curried|tikka|masala|korma|vindaloo)\b", name, re.I):
+            return "thoroughly simmered in rich thick golden-yellow turmeric curry gravy coating all vegetables and ingredients"
+        if re.search(r"\b(tofu|tempeh|seitan|plant-based)\b", name, re.I):
+            return "crispy golden pan-seared firm tofu cubes with tender curd interior"
         return None
     if category == "pork":
         if "vindaloo" in name:
@@ -587,6 +588,19 @@ def negative_prompt(dish) -> str:
         exclude = []
 
     name = _get(dish)("name", "")
+    if re.search(r"\b(rice|basmati|jasmine|grain|quinoa|pilaf)\b", name, re.I):
+        exclude.extend(["raw rice", "uncooked rice", "dry rice grains", "raw grains", "sack of rice", "paddy", "field"])
+    if re.search(r"\b(curry|curried|tikka|masala|korma)\b", name, re.I):
+        exclude.extend(["clear water", "clear broth", "watery soup", "plain boiled vegetables", "dry un-sauced vegetables"])
+    
+    ingredients = _get(dish)("ingredients", "")
+    if re.search(r"\b(tofu|tempeh)\b", name, re.I) and re.search(r"\b(sweet potato|potato|yam)\b", ingredients, re.I):
+        exclude.extend(["potato", "potatoes", "sweet potato", "starchy chunks", "potato cubes", "french fries", "cheese cubes"])
+        
+    if (re.search(r"\b(grilled|roasted|charred|bbq)\b", name, re.I) and
+        (_get(dish)("category") in ("vegan", "vegetarian") or re.search(r"\b(pineapple|peach|apple|watermelon|fruit)\b", name, re.I))):
+        exclude.extend(["meat", "pork", "steak", "beef", "poultry", "chicken", "ribs", "bacon", "ham", "sausage", "barbecue meat", "meat cuts"])
+
     if re.search(r"\bsaffron\b", name, re.I):
         exclude.extend(["dill", "peas", "green peas", "star anise"])
     if re.search(r"\bzucchini\b", name, re.I) and re.search(r"\blemon\b", name, re.I):

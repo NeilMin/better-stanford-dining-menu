@@ -97,11 +97,11 @@ def generate_with_cloudflare(
 
 
 def generate_with_search(
-    dish_name: str, client: CloudflareClient | None = None, min_score: int = 7
+    dish_name: str, client: CloudflareClient | None = None, min_score: int = 7, require_vlm: bool = True
 ) -> tuple[Image.Image | None, float]:
     """Search web food photography and crop to card if approved by VLM quality gate."""
     started = time.monotonic()
-    data = web_image.search_food_image(dish_name, client=client, min_score=min_score)
+    data = web_image.search_food_image(dish_name, client=client, min_score=min_score, require_vlm=require_vlm)
     secs = time.monotonic() - started
     if not data:
         return None, secs
@@ -112,17 +112,17 @@ def generate_with_search(
         return None, secs
 
 
-def generate_with_search_fallback(dish_name: str) -> tuple[Image.Image | None, float]:
-    """Search DuckDuckGo / web as an un-gated fallback when generation fails."""
-    return generate_with_search(dish_name, client=None, min_score=0)
+def generate_with_search_fallback(dish_name: str, client: CloudflareClient | None = None) -> tuple[Image.Image | None, float]:
+    """Search web only if VLM can verify candidate."""
+    return generate_with_search(dish_name, client=client, min_score=7, require_vlm=True)
 
 
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--backend", choices=["auto", "cloudflare", "comfyui", "search"], default="auto",
                     help="generation backend: auto, cloudflare, comfyui, or search (default: auto)")
-    ap.add_argument("--search-first", action=argparse.BooleanOptionalAction, default=True,
-                    help="try web food search + VLM judge before AI generation (default: True)")
+    ap.add_argument("--search-first", action=argparse.BooleanOptionalAction, default=False,
+                    help="try web food search + VLM judge before AI generation (default: False)")
     ap.add_argument("--search-fallback", action=argparse.BooleanOptionalAction, default=True,
                     help="fall back to web image search if generation fails (default: True)")
     ap.add_argument("--only-search", action="store_true",
@@ -332,7 +332,8 @@ def main(argv: list[str] | None = None) -> int:
         # Tier 3: Emergency Fallback
         if image is None and args.search_fallback and not args.only_ai:
             print(f"  [{i}/{len(pending)}] Attempting fallback search for {dish_name}...", flush=True)
-            fallback_img, fallback_secs = generate_with_search_fallback(dish_name)
+            vlm_client = cf_client if cf_client.is_configured() else None
+            fallback_img, fallback_secs = generate_with_search_fallback(dish_name, client=vlm_client)
             if fallback_img is not None:
                 image = fallback_img
                 secs = fallback_secs

@@ -322,6 +322,7 @@ def search_food_image(
     dish_name: str,
     client: CloudflareClient | None = None,
     min_score: int = 7,
+    require_vlm: bool = True,
     timeout: int = 15,
 ) -> bytes | None:
     """Find a high-quality, authentic food photo for dish_name with optional VLM quality evaluation."""
@@ -395,6 +396,10 @@ def search_food_image(
                 else:
                     log.info("VLM rejected candidate for '%s': valid=%s, score=%d (%s)", dish_name, valid, score, reason)
                     continue
+            elif require_vlm:
+                # Without configured VLM to inspect image contents, reject candidate to prevent unvetted errors
+                log.warning("Skipping unverified candidate for '%s' because VLM evaluation is required", dish_name)
+                continue
             else:
                 return r.content
 
