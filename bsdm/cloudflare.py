@@ -22,6 +22,9 @@ log = logging.getLogger(__name__)
 CF_BASE_URL = "https://api.cloudflare.com/client/v4/accounts"
 DEFAULT_TRANSLATION_MODEL = "@cf/meta/llama-3.3-70b-instruct-fp8-fast"
 DEFAULT_IMAGE_MODEL = "@cf/black-forest-labs/flux-1-schnell"
+# FLUX.2 [klein] 4B: about 100 neurons a picture at 1344x768, so the free 10,000
+# a day buy roughly a hundred -- the only free generator that fits a night.
+KLEIN_MODEL = "@cf/black-forest-labs/flux-2-klein-4b"
 
 
 def _load_dotenv(env_path: Path | str | None = None) -> None:
@@ -71,12 +74,18 @@ class CloudflareClient:
     def is_configured(self) -> bool:
         return bool(self.account_id and self.api_token)
 
-    def _run(self, model: str, payload: dict[str, Any], raw_response: bool = False) -> requests.Response:
+    def _run(self, model: str, payload: dict[str, Any], raw_response: bool = False,
+             form: bool = False) -> requests.Response:
         if not self.is_configured():
             raise CloudflareError("Cloudflare account_id and api_token are required")
         url = f"{CF_BASE_URL}/{self.account_id}/ai/run/{model}"
         try:
-            resp = self.session.post(url, json=payload, timeout=self.timeout)
+            if form:
+                # FLUX.2 takes multipart/form-data even when there is nothing to upload.
+                resp = self.session.post(url, files={k: (None, str(v)) for k, v in payload.items()},
+                                         timeout=self.timeout)
+            else:
+                resp = self.session.post(url, json=payload, timeout=self.timeout)
         except requests.RequestException as exc:
             raise CloudflareError(f"Cloudflare request failed: {exc}") from exc
 
@@ -147,8 +156,17 @@ class CloudflareClient:
         negative_prompt: str = "",
         num_steps: int = 4,
         model: str = DEFAULT_IMAGE_MODEL,
+        seed: int | None = None,
     ) -> bytes:
-        if "flux" in model:
+        form = False
+        if "flux-2" in model:
+            # Distilled to a fixed step count and takes no negative prompt; the
+            # size is SDXL's 16:9 bucket, the same the laptop draws at.
+            payload: dict[str, Any] = {"prompt": prompt, "width": 1344, "height": 768}
+            if seed is not None:
+                payload["seed"] = seed % 2**31
+            form = True
+        elif "flux" in model:
             payload: dict[str, Any] = {"prompt": prompt}
             if num_steps:
                 payload["steps"] = min(max(num_steps, 1), 8)
@@ -164,7 +182,7 @@ class CloudflareClient:
             if negative_prompt:
                 payload["negative_prompt"] = negative_prompt
 
-        resp = self._run(model, payload, raw_response=True)
+        resp = self._run(model, payload, raw_response=True, form=form)
         content_type = resp.headers.get("Content-Type", "")
         if "image" in content_type:
             return resp.content

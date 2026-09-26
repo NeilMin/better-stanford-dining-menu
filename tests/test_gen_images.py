@@ -5,7 +5,7 @@ from unittest.mock import MagicMock
 import pytest
 from PIL import Image
 
-from bsdm.cloudflare import CloudflareClient, CloudflareQuotaError
+from bsdm.cloudflare import KLEIN_MODEL, CloudflareClient, CloudflareQuotaError
 from scripts import gen_images
 from scripts.gen_images import crop_and_resize_to_card, generate_with_cloudflare, main
 
@@ -38,7 +38,8 @@ def test_generate_with_cloudflare_returns_card_image():
     assert isinstance(img, Image.Image)
     assert img.size == (1024, 576)
     assert secs >= 0
-    client.generate_image.assert_called_once_with("Ramen prompt", negative_prompt="neg prompt")
+    client.generate_image.assert_called_once_with("Ramen prompt", negative_prompt="neg prompt",
+                                                  model=KLEIN_MODEL, seed=None)
 
 
 def test_generate_with_cloudflare_propagates_quota_error():
@@ -90,7 +91,7 @@ def test_auto_draws_with_cloudflare_when_comfyui_is_down(proj, monkeypatch, fake
 
     assert main(["--limit", "1"]) == 0
     assert drawn.call_count == 1
-    assert json.loads((root / "data" / "dishes.json").read_text())["dish1"]["model"] == "cf-flux"
+    assert json.loads((root / "data" / "dishes.json").read_text())["dish1"]["model"] == "cf-klein"
 
 
 def test_a_spent_cloudflare_quota_stops_the_run_cleanly(proj, monkeypatch, fake_llm):

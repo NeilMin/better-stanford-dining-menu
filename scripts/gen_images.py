@@ -39,7 +39,7 @@ from bsdm import brief as brieflib  # noqa: E402
 from bsdm import dishes as dishlib  # noqa: E402
 from bsdm import judge  # noqa: E402
 from bsdm.catalog import is_stale  # noqa: E402
-from bsdm.cloudflare import CloudflareClient, CloudflareError, CloudflareQuotaError  # noqa: E402
+from bsdm.cloudflare import KLEIN_MODEL, CloudflareClient, CloudflareError, CloudflareQuotaError  # noqa: E402
 from bsdm.comfy import DEFAULT_URL, MODELS, ComfyClient, ComfyError, to_webp  # noqa: E402
 from bsdm.llm import LLMError, Unavailable  # noqa: E402
 from bsdm.llm import pick as pick_llm  # noqa: E402
@@ -113,11 +113,12 @@ def crop_and_resize_to_card(img: Image.Image) -> Image.Image:
 
 
 def generate_with_cloudflare(
-    client: CloudflareClient, prompt: str, negative: str
+    client: CloudflareClient, prompt: str, negative: str,
+    seed: int | None = None, model: str = KLEIN_MODEL,
 ) -> tuple[Image.Image, float]:
     """Generate an image via Cloudflare Workers AI."""
     started = time.monotonic()
-    raw_bytes = client.generate_image(prompt, negative_prompt=negative)
+    raw_bytes = client.generate_image(prompt, negative_prompt=negative, model=model, seed=seed)
     raw_img = Image.open(io.BytesIO(raw_bytes)).convert("RGB")
     card_img = crop_and_resize_to_card(raw_img)
     secs = time.monotonic() - started
@@ -134,6 +135,8 @@ def main(argv: list[str] | None = None) -> int:
                     help="auto uses ComfyUI when it is up, else Cloudflare (default: auto)")
     ap.add_argument("--url", default=DEFAULT_URL, help="ComfyUI base URL")
     ap.add_argument("--model", default="sdxl", choices=sorted(MODELS))
+    ap.add_argument("--cf-model", default=KLEIN_MODEL,
+                    help=f"Workers AI model for --backend cloudflare (default {KLEIN_MODEL})")
     ap.add_argument("--llm", choices=["auto", "claude", "gemini"], default="auto",
                     help="who writes briefs and judges pictures: the claude CLI where it is "
                          "installed, else Gemini's free tier with GEMINI_API_KEY (default: auto)")
@@ -219,7 +222,8 @@ def main(argv: list[str] | None = None) -> int:
     else:
         print("Nothing to draw with: no ComfyUI and no Cloudflare credentials.", file=sys.stderr)
         return 2
-    model_name = args.model if backend == "comfyui" else "cf-flux"
+    model_name = args.model if backend == "comfyui" else (
+        "cf-klein" if "klein" in args.cf_model else "cf-" + args.cf_model.rsplit("/", 1)[-1])
 
     llm = pick_llm(args.llm, args.llm_model)
     if not llm.available():
@@ -242,7 +246,7 @@ def main(argv: list[str] | None = None) -> int:
                 raise
             return crop_and_resize_to_card(raw), secs
         try:
-            return generate_with_cloudflare(cf, positive, negative)
+            return generate_with_cloudflare(cf, positive, negative, seed=seed, model=args.cf_model)
         except CloudflareQuotaError as exc:
             raise Stop(f"Cloudflare quota: {exc}")
 

@@ -10,6 +10,7 @@ from PIL import Image
 
 from bsdm.cloudflare import (
     CloudflareClient,
+    KLEIN_MODEL,
     CloudflareError,
     CloudflareQuotaError,
     DEFAULT_IMAGE_MODEL,
@@ -277,3 +278,19 @@ def test_dotenv_fallback(monkeypatch, tmp_path):
     assert client.api_token == "env_from_file_tok"
 
 
+
+
+def test_flux2_is_sent_as_a_form_with_size_and_seed():
+    client = CloudflareClient("acc123", "tok456")
+    resp = MagicMock(status_code=200, headers={"Content-Type": "application/json"})
+    resp.json.return_value = {"result": {"image": base64.b64encode(b"png-bytes").decode()}}
+    client.session.post = MagicMock(return_value=resp)
+
+    out = client.generate_image("a bowl of pho", negative_prompt="ignored", model=KLEIN_MODEL, seed=2**33 + 5)
+    assert out == b"png-bytes"
+    kwargs = client.session.post.call_args.kwargs
+    assert "json" not in kwargs
+    assert kwargs["files"]["prompt"] == (None, "a bowl of pho")
+    assert kwargs["files"]["width"] == (None, "1344") and kwargs["files"]["height"] == (None, "768")
+    assert kwargs["files"]["seed"] == (None, "5")
+    assert "negative_prompt" not in kwargs["files"]
