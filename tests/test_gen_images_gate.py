@@ -176,3 +176,38 @@ def test_a_current_brief_is_reused_not_rewritten(setup):
     setup.llm.verdicts.append(PASS)
     run()
     assert [kind for kind, _ in setup.llm.calls] == ["judge"]
+
+
+def _with_old_picture(setup, **fields):
+    old = setup.image("aaaa0001")
+    Image.new("RGB", (1024, 576), "blue").save(old, format="WEBP")
+    catalog = setup.catalog()
+    catalog["aaaa0001"].update(image="aaaa0001.webp", **fields)
+    (setup.root / "data" / "dishes.json").write_text(json.dumps(catalog))
+    return old, old.read_bytes()
+
+
+def test_audit_keeps_an_old_picture_that_passes_and_draws_nothing(setup):
+    old, before = _with_old_picture(setup)
+    setup.llm.briefs.append(BRIEF)
+    setup.llm.verdicts.append(PASS)
+    assert run("--audit") == 0
+    assert setup.drawn == []
+    assert old.read_bytes() == before
+    assert setup.catalog()["aaaa0001"]["judge"]["seen"] == "roast chicken on a plate"
+
+
+def test_audit_redraws_an_old_picture_that_fails(setup):
+    old, before = _with_old_picture(setup)
+    setup.llm.briefs.append(BRIEF)
+    setup.llm.verdicts += [FAIL, PASS]
+    run("--audit")
+    assert len(setup.drawn) == 1
+    assert old.read_bytes() != before
+    assert setup.catalog()["aaaa0001"]["judge"]["seen"] == "roast chicken on a plate"
+
+
+def test_audit_leaves_a_picture_a_judge_has_already_passed(setup):
+    _with_old_picture(setup, judge={"judge": "fake", "seen": "chicken", "at": "x"})
+    assert run("--audit") == 0
+    assert setup.llm.calls == [] and setup.drawn == []

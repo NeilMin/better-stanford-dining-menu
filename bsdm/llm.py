@@ -135,7 +135,9 @@ class ClaudeCLI:
 
 
 GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
-DEFAULT_GEMINI_MODEL = "gemini-2.5-flash"
+# The moving alias, not a version: versions are retired for new keys within a
+# year (gemini-2.5-flash already was, by 2026-09), and this runs unattended.
+DEFAULT_GEMINI_MODEL = "gemini-flash-latest"
 
 
 def _setting(name: str) -> str:
@@ -168,6 +170,7 @@ class Gemini:
     sent to improve its products, which for pictures of dining hall food is no
     price at all. A per-minute limit is waited out, as the 429 asks; one that
     will not clear within a minute is the daily quota, and that is Unavailable.
+    An overloaded model (503) is retried with backoff, then also Unavailable.
     The key travels in a header, never in the URL, so it cannot end up in a log.
     """
 
@@ -212,6 +215,13 @@ class Gemini:
                     time.sleep(wait + 1)
                     continue
                 raise Unavailable(f"Gemini quota: {r.text[:300]}")
+            if r.status_code in (500, 502, 503, 504):
+                # "Experiencing high demand" -- usually gone in a minute. If it is
+                # not, nothing tonight will fare better, which is Unavailable.
+                if attempt < self.retries:
+                    time.sleep(10 * 3 ** attempt)
+                    continue
+                raise Unavailable(f"Gemini overloaded ({r.status_code}): {r.text[:200]}")
             if r.status_code in (401, 403):
                 raise Unavailable(f"Gemini refused the key ({r.status_code}): {r.text[:200]}")
             if r.status_code != 200:

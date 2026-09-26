@@ -189,3 +189,17 @@ def test_auto_prefers_the_claude_cli_then_gemini(monkeypatch):
     assert isinstance(llmlib.pick("auto"), llmlib.Gemini)
     monkeypatch.delenv("GEMINI_API_KEY")
     assert isinstance(llmlib.pick("auto"), ClaudeCLI), "with neither, report the CLI as missing"
+
+
+def test_gemini_retries_an_overload_then_gives_up_for_the_night(monkeypatch):
+    slept = []
+    monkeypatch.setattr(llmlib.time, "sleep", slept.append)
+    assert llmlib.Gemini(key="k", session=FakeSession((503, {}), answer("ok"))).ask("x") == "ok"
+    with pytest.raises(Unavailable):
+        llmlib.Gemini(key="k", session=FakeSession(*[(503, {})] * 4)).ask("x")
+    assert slept == [10, 10, 30, 90]
+
+
+def test_gemini_defaults_to_the_moving_alias():
+    """Versions are retired for new keys; the site runs unattended for years."""
+    assert llmlib.Gemini(key="k").model.endswith("-latest")

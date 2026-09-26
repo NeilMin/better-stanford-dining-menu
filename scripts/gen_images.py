@@ -141,6 +141,9 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--force", action="store_true", help="redraw dishes that already have images")
     ap.add_argument("--redraw-stale", action="store_true",
                     help="also redraw images drawn before the current prompt rules")
+    ap.add_argument("--audit", action="store_true",
+                    help="judge the pictures no judge has seen; redraw only those that fail, "
+                         "and replace one only with a picture that passes")
     ap.add_argument("--max-priority", type=int, default=2, choices=(0, 1, 2),
                     help="0 meat only, 1 adds other mains, 2 adds sides (default)")
     ap.add_argument("--steps", type=int, help="override step count")
@@ -149,6 +152,8 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--free-every", type=int, default=20, metavar="N",
                     help="release ComfyUI's cached models every N images (0 disables)")
     args = ap.parse_args(argv)
+    if args.audit and not args.judge:
+        ap.error("--audit needs the judge")
 
     catalog = json.loads(CATALOG.read_text())
     IMAGES.mkdir(parents=True, exist_ok=True)
@@ -166,7 +171,8 @@ def main(argv: list[str] | None = None) -> int:
             elif target.lower() != did.lower() and target.lower() not in entry["name"].lower():
                 continue
         path = IMAGES / f"{did}.webp"
-        if (path.exists() and entry.get("image") and not args.force
+        unjudged = args.audit and path.exists() and entry.get("image") and "judge" not in entry
+        if (path.exists() and entry.get("image") and not args.force and not unjudged
                 and is_current(path) and not (args.redraw_stale and is_stale(entry))):
             continue
         pending.append((did, entry))
@@ -228,7 +234,7 @@ def main(argv: list[str] | None = None) -> int:
     print(f"Drawing {len(pending)} dishes with {model_name}"
           + (f", judged by {llm.name}" if args.judge else ", unjudged"))
     started = time.monotonic()
-    done = rejected = 0
+    done = rejected = passed = 0
     drawn = 0
     briefs = brieflib.load(ROOT)
 
@@ -251,6 +257,27 @@ def main(argv: list[str] | None = None) -> int:
             kept = None
             verdicts: list[dict] = []
             secs = 0.0
+
+            # A picture drawn before there was a judge is asked first. Most pass,
+            # and redrawing a picture that is right would only trade it for another.
+            existing = IMAGES / f"{did}.webp"
+            if args.audit and entry.get("image") and existing.exists() and "judge" not in entry:
+                try:
+                    verdict = judge.inspect(existing.read_bytes(), brief, llm)
+                except Unavailable:
+                    raise
+                except LLMError as exc:
+                    print(f"{tag} judge failed on the existing picture: {exc}", file=sys.stderr)
+                    continue
+                if verdict["pass"]:
+                    passed += 1
+                    record_image(did, {"judge": {k: verdict[k] for k in ("judge", "seen", "at")},
+                                       "brief_rev": brief["rev"]}, drop=_STALE_FIELDS)
+                    print(f"{tag} existing picture passes", flush=True)
+                    continue
+                verdicts.append(verdict)
+                why = "; ".join(f"{f['q']} {f['got']}" for f in verdict["failed"])
+                print(f"{tag} existing picture fails: {verdict['seen'][:60]} -- {why[:120]}")
             for version in range(args.revisions + 1 if args.judge else 1):
                 if version:
                     try:
@@ -334,7 +361,9 @@ def main(argv: list[str] | None = None) -> int:
     except (Stop, Unavailable) as exc:
         print(f"\nStopped: {exc}", file=sys.stderr)
 
-    print(f"\nKept {done}, not drawn {rejected}, in {(time.monotonic() - started) / 60:.1f} min")
+    print(f"\nKept {done}, not drawn {rejected}"
+          + (f", existing pictures passed {passed}" if args.audit else "")
+          + f", in {(time.monotonic() - started) / 60:.1f} min")
     return 0
 
 
