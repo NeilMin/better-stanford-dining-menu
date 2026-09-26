@@ -135,9 +135,12 @@ class ClaudeCLI:
 
 
 GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
-# The moving alias, not a version: versions are retired for new keys within a
-# year (gemini-2.5-flash already was, by 2026-09), and this runs unattended.
-DEFAULT_GEMINI_MODEL = "gemini-flash-latest"
+# Gemma, not Gemini Flash: Flash's free tier is 20 requests a day per model,
+# and a night of new dishes needs a hundred. Gemma 4 26B (a mixture of experts,
+# answers in seconds) judged the eval set as well as Claude Sonnet did. It is a
+# version, not an alias -- if Google retires it the calls fail as Unavailable and
+# nothing unchecked is published; set GEMINI_MODEL to its successor.
+DEFAULT_GEMINI_MODEL = "gemma-4-26b-a4b-it"
 
 
 def _setting(name: str) -> str:
@@ -195,8 +198,13 @@ class Gemini:
         parts = [{"inline_data": {"mime_type": "image/jpeg", "data": base64.b64encode(jpeg(img)).decode()}}
                  for img in images]
         parts.append({"text": prompt})
-        body = {"contents": [{"role": "user", "parts": parts}],
-                "generationConfig": {"responseMimeType": "application/json", "temperature": 0}}
+        config = {"temperature": 0, "maxOutputTokens": 2048}
+        # JSON mode sends Gemma into a loop that only ends when the server hangs
+        # up at 60s; asked plainly it answers in seconds, and parse_json() takes
+        # the fence off. Gemini proper handles JSON mode fine.
+        if not self.model.startswith("gemma"):
+            config["responseMimeType"] = "application/json"
+        body = {"contents": [{"role": "user", "parts": parts}], "generationConfig": config}
         if system:
             body["systemInstruction"] = {"parts": [{"text": system}]}
 
@@ -205,6 +213,10 @@ class Gemini:
                 r = self.session.post(GEMINI_URL.format(model=self.model), json=body, timeout=self.timeout,
                                       headers={"x-goog-api-key": self.key})
             except requests.RequestException as exc:
+                # A dropped connection is as passing as an overload.
+                if attempt < self.retries:
+                    time.sleep(10 * 3 ** attempt)
+                    continue
                 raise LLMError(f"Gemini request failed: {exc}")
             if r.status_code == 429:
                 try:

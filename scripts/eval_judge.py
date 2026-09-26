@@ -77,13 +77,16 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--sample", type=int, default=0, help="also judge N unreviewed current pictures")
     ap.add_argument("--only", help="substring of the dish name")
     ap.add_argument("--rewrite", action="store_true", help="write the briefs afresh")
+    ap.add_argument("--brief-root", type=Path, default=ROOT,
+                    help="project root whose data/briefs.json to read and write -- point it at a "
+                         "scratch directory to try another brief writer without touching the real one")
     ap.add_argument("--workers", type=int, default=4)
     ap.add_argument("--out", type=Path, help="write every verdict here as JSON")
     args = ap.parse_args(argv)
 
     llm = pick(args.llm, args.model)
     catalog = json.loads((ROOT / "data" / "dishes.json").read_text())
-    briefs = brieflib.load(ROOT)
+    briefs = brieflib.load(args.brief_root)
     lock = threading.Lock()
 
     cases = []  # (kind, dish id, label, picture)
@@ -108,7 +111,7 @@ def main(argv: list[str] | None = None) -> int:
         b = brieflib.write(catalog[did], llm)
         with lock:  # record() re-reads and rewrites the file
             briefs[did] = b
-            brieflib.record(ROOT, did, b)
+            brieflib.record(args.brief_root, did, b)
         return b
 
     # Briefs first, one per dish, so no two cases race to write the same one.

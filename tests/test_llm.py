@@ -8,6 +8,7 @@ import json
 import subprocess
 
 import pytest
+import requests
 from PIL import Image
 
 from bsdm import llm as llmlib
@@ -147,6 +148,7 @@ def test_gemini_sends_the_picture_inline_and_the_key_in_a_header():
     assert text == {"text": "what is this?"}
     assert post["json"]["systemInstruction"] == {"parts": [{"text": "be brief"}]}
     assert post["json"]["generationConfig"]["responseMimeType"] == "application/json"
+    assert post["json"]["generationConfig"]["maxOutputTokens"] > 0
 
 
 def test_gemini_waits_out_a_per_minute_limit(monkeypatch):
@@ -200,6 +202,27 @@ def test_gemini_retries_an_overload_then_gives_up_for_the_night(monkeypatch):
     assert slept == [10, 10, 30, 90]
 
 
-def test_gemini_defaults_to_the_moving_alias():
-    """Versions are retired for new keys; the site runs unattended for years."""
-    assert llmlib.Gemini(key="k").model.endswith("-latest")
+def test_gemma_is_asked_plainly_not_in_json_mode():
+    """JSON mode sends Gemma 4 into a loop the server ends at 60s."""
+    session = FakeSession(answer('```json\n{"ok": true}\n```'))
+    g = llmlib.Gemini(model="gemma-4-26b-a4b-it", key="k", session=session)
+    assert llmlib.parse_json(g.ask("x")) == {"ok": True}
+    assert "responseMimeType" not in session.posts[0]["json"]["generationConfig"]
+
+
+def test_the_default_is_a_model_with_a_free_tier_big_enough_for_a_night():
+    """Gemini Flash's free tier is 20 requests a day."""
+    assert llmlib.Gemini(key="k").model.startswith("gemma")
+
+
+def test_gemini_retries_a_dropped_connection(monkeypatch):
+    monkeypatch.setattr(llmlib.time, "sleep", lambda s: None)
+
+    class Flaky(FakeSession):
+        def post(self, *a, **kw):
+            if not self.posts:
+                self.posts.append("dropped")
+                raise requests.ConnectionError("Remote end closed connection without response")
+            return super().post(*a, **kw)
+
+    assert llmlib.Gemini(key="k", session=Flaky(answer("ok"))).ask("x") == "ok"
