@@ -31,7 +31,7 @@ sys.path.insert(0, str(ROOT))
 
 from bsdm import brief as brieflib  # noqa: E402
 from bsdm import judge  # noqa: E402
-from bsdm.llm import ClaudeCLI, LLMError  # noqa: E402
+from bsdm.llm import LLMError, pick  # noqa: E402
 
 # Commits that redrew named dishes after their pictures were rejected by eye.
 # Library-wide redraws (a prompt-rule bump, a model change) are left out: those
@@ -71,6 +71,8 @@ def rejected_pictures() -> list[tuple[str, str, bytes]]:
 
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--llm", choices=["auto", "claude", "gemini"], default="auto",
+                    help="the claude CLI where installed, else Gemini (default: auto)")
     ap.add_argument("--model", default="sonnet", help="claude model alias (default sonnet)")
     ap.add_argument("--sample", type=int, default=0, help="also judge N unreviewed current pictures")
     ap.add_argument("--only", help="substring of the dish name")
@@ -79,7 +81,7 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--out", type=Path, help="write every verdict here as JSON")
     args = ap.parse_args(argv)
 
-    llm = ClaudeCLI(model=args.model)
+    llm = pick(args.llm, args.model)
     catalog = json.loads((ROOT / "data" / "dishes.json").read_text())
     briefs = brieflib.load(ROOT)
     lock = threading.Lock()

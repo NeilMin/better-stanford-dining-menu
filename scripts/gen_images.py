@@ -41,7 +41,8 @@ from bsdm import judge  # noqa: E402
 from bsdm.catalog import is_stale  # noqa: E402
 from bsdm.cloudflare import CloudflareClient, CloudflareError, CloudflareQuotaError  # noqa: E402
 from bsdm.comfy import DEFAULT_URL, MODELS, ComfyClient, ComfyError, to_webp  # noqa: E402
-from bsdm.llm import ClaudeCLI, LLMError, Unavailable  # noqa: E402
+from bsdm.llm import LLMError, Unavailable  # noqa: E402
+from bsdm.llm import pick as pick_llm  # noqa: E402
 from bsdm.pending import rank  # noqa: E402
 
 IMAGES = ROOT / "data" / "images"
@@ -122,8 +123,11 @@ def main(argv: list[str] | None = None) -> int:
                     help="auto uses ComfyUI when it is up, else Cloudflare (default: auto)")
     ap.add_argument("--url", default=DEFAULT_URL, help="ComfyUI base URL")
     ap.add_argument("--model", default="sdxl", choices=sorted(MODELS))
+    ap.add_argument("--llm", choices=["auto", "claude", "gemini"], default="auto",
+                    help="who writes briefs and judges pictures: the claude CLI where it is "
+                         "installed, else Gemini's free tier with GEMINI_API_KEY (default: auto)")
     ap.add_argument("--llm-model", default="sonnet",
-                    help="claude model alias that writes briefs and judges pictures (default sonnet)")
+                    help="claude model alias, when the claude CLI is used (default sonnet)")
     ap.add_argument("--judge", action=argparse.BooleanOptionalAction, default=True,
                     help="only keep pictures that pass the brief's checks (default: on). "
                          "--no-judge draws once and keeps it, for when you will look yourself")
@@ -196,13 +200,14 @@ def main(argv: list[str] | None = None) -> int:
         return 2
     model_name = args.model if backend == "comfyui" else "cf-flux"
 
-    llm = ClaudeCLI(model=args.llm_model)
+    llm = pick_llm(args.llm, args.llm_model)
     if not llm.available():
         if args.judge:
             # Without a judge nothing drawn tonight could be kept, so drawing
             # would spend the GPU on pictures destined for the bin.
-            print(f"No {llm.bin} CLI to write briefs and judge pictures; nothing drawn. "
-                  "(--no-judge draws with the rule-based prompts.)", file=sys.stderr)
+            print("Nothing to write briefs and judge pictures -- no claude CLI and no "
+                  "GEMINI_API_KEY; nothing drawn. (--no-judge draws with the rule-based prompts.)",
+                  file=sys.stderr)
             return 2
         llm = None
 

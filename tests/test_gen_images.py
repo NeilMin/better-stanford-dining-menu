@@ -65,7 +65,7 @@ def proj(tmp_path, monkeypatch, fake_llm):
     monkeypatch.setattr(gen_images, "ROOT", root)
     monkeypatch.setattr(gen_images, "CATALOG", root / "data" / "dishes.json")
     monkeypatch.setattr(gen_images, "IMAGES", root / "data" / "images")
-    monkeypatch.setattr(gen_images, "ClaudeCLI", lambda *a, **kw: fake_llm)
+    monkeypatch.setattr(gen_images, "pick_llm", lambda *a, **kw: fake_llm)
 
     comfy = MagicMock()
     comfy.available.return_value = False

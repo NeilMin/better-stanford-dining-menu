@@ -107,3 +107,85 @@ def test_parse_json_tolerates_a_fence_and_a_preamble():
         parse_json("no json here")
     with pytest.raises(LLMError):
         parse_json("[1, 2]")
+
+
+class FakeSession:
+    """Answers Gemini posts from a queue of (status, body) and records them."""
+
+    def __init__(self, *replies):
+        self.replies = list(replies)
+        self.posts = []
+
+    def post(self, url, json=None, timeout=None, headers=None):
+        self.posts.append({"url": url, "json": json, "headers": headers})
+        status, body = self.replies.pop(0)
+        resp = type("R", (), {})()
+        resp.status_code, resp.text = status, str(body)
+        resp.json = lambda: body
+        return resp
+
+
+def answer(text):
+    return (200, {"candidates": [{"content": {"parts": [{"text": text}]}, "finishReason": "STOP"}]})
+
+
+def quota(delay=None):
+    details = [{"@type": "type.googleapis.com/google.rpc.RetryInfo", "retryDelay": delay}] if delay else []
+    return (429, {"error": {"code": 429, "details": details}})
+
+
+def test_gemini_sends_the_picture_inline_and_the_key_in_a_header():
+    session = FakeSession(answer('{"ok": true}'))
+    g = llmlib.Gemini(model="gemini-test", key="secret", session=session)
+    assert g.ask("what is this?", images=[png()], system="be brief") == '{"ok": true}'
+
+    post = session.posts[0]
+    assert "gemini-test:generateContent" in post["url"] and "secret" not in post["url"]
+    assert post["headers"] == {"x-goog-api-key": "secret"}
+    image, text = post["json"]["contents"][0]["parts"]
+    assert image["inline_data"]["mime_type"] == "image/jpeg"
+    assert text == {"text": "what is this?"}
+    assert post["json"]["systemInstruction"] == {"parts": [{"text": "be brief"}]}
+    assert post["json"]["generationConfig"]["responseMimeType"] == "application/json"
+
+
+def test_gemini_waits_out_a_per_minute_limit(monkeypatch):
+    slept = []
+    monkeypatch.setattr(llmlib.time, "sleep", slept.append)
+    session = FakeSession(quota("12s"), answer("fine"))
+    assert llmlib.Gemini(key="k", session=session).ask("x") == "fine"
+    assert slept == [13.0]
+
+
+def test_gemini_out_of_daily_quota_is_unavailable(monkeypatch):
+    monkeypatch.setattr(llmlib.time, "sleep", lambda s: None)
+    with pytest.raises(Unavailable):
+        llmlib.Gemini(key="k", session=FakeSession(quota())).ask("x")
+    with pytest.raises(Unavailable):
+        llmlib.Gemini(key="k", session=FakeSession(quota("3600s"))).ask("x")
+
+
+def test_gemini_with_a_bad_key_or_none_is_unavailable():
+    with pytest.raises(Unavailable):
+        llmlib.Gemini(key="k", session=FakeSession((403, {"error": "denied"}))).ask("x")
+    g = llmlib.Gemini(key="", session=FakeSession())
+    assert not g.available()
+    with pytest.raises(Unavailable):
+        g.ask("x")
+
+
+def test_gemini_with_nothing_to_say_is_an_error_for_that_call():
+    blocked = (200, {"candidates": [], "promptFeedback": {"blockReason": "OTHER"}})
+    with pytest.raises(LLMError) as err:
+        llmlib.Gemini(key="k", session=FakeSession(blocked)).ask("x")
+    assert not isinstance(err.value, Unavailable)
+
+
+def test_auto_prefers_the_claude_cli_then_gemini(monkeypatch):
+    monkeypatch.setenv("GEMINI_API_KEY", "k")
+    monkeypatch.setattr(llmlib.shutil, "which", lambda b: "/usr/bin/claude")
+    assert isinstance(llmlib.pick("auto"), ClaudeCLI)
+    monkeypatch.setattr(llmlib.shutil, "which", lambda b: None)
+    assert isinstance(llmlib.pick("auto"), llmlib.Gemini)
+    monkeypatch.delenv("GEMINI_API_KEY")
+    assert isinstance(llmlib.pick("auto"), ClaudeCLI), "with neither, report the CLI as missing"

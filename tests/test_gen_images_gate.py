@@ -58,7 +58,7 @@ def setup(tmp_path, monkeypatch, fake_llm):
     cf = MagicMock()
     cf.is_configured.return_value = False
     monkeypatch.setattr(gen_images, "CloudflareClient", lambda *a, **kw: cf)
-    monkeypatch.setattr(gen_images, "ClaudeCLI", lambda *a, **kw: fake_llm)
+    monkeypatch.setattr(gen_images, "pick_llm", lambda *a, **kw: fake_llm)
 
     class Setup:
         pass
@@ -147,13 +147,13 @@ def test_a_spent_subscription_stops_the_run_and_keeps_nothing_unjudged(setup):
 
 
 def test_without_the_claude_cli_nothing_is_drawn(setup, monkeypatch):
-    monkeypatch.setattr(gen_images, "ClaudeCLI", lambda *a, **kw: type(setup.llm)(available=False))
+    monkeypatch.setattr(gen_images, "pick_llm", lambda *a, **kw: type(setup.llm)(available=False))
     assert run() == 2
     assert setup.drawn == []
 
 
 def test_no_judge_without_claude_draws_once_from_the_rule_prompt(setup, monkeypatch):
-    monkeypatch.setattr(gen_images, "ClaudeCLI", lambda *a, **kw: type(setup.llm)(available=False))
+    monkeypatch.setattr(gen_images, "pick_llm", lambda *a, **kw: type(setup.llm)(available=False))
     assert run("--no-judge") == 0
     assert [d["positive"] for d in setup.drawn] == ["rule-based roast chicken prompt"]
     entry = setup.catalog()["aaaa0001"]

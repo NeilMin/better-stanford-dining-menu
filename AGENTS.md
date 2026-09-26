@@ -18,7 +18,7 @@ This file covers the invariants that are easy to break and only visible across s
 | `bsdm/dishes.py` | Protein classification, prompt generation, CLIP negative prompt filtering. |
 | `bsdm/brief.py` | Per-dish visual brief (what the picture must show, plus yes/no checks), written once by an LLM into `data/briefs.json`. |
 | `bsdm/judge.py` | Asks a brief's checks of a drawn picture, blind; a picture is kept only if it passes. |
-| `bsdm/llm.py` | The model behind briefs and judging: the `claude` CLI in headless mode, images passed inline. |
+| `bsdm/llm.py` | The model behind briefs and judging: the `claude` CLI on the laptop, Gemini's free tier (`GEMINI_API_KEY`) where there is no CLI. |
 | `bsdm/cloudflare.py` | Cloudflare Workers AI client (Llama 3.3 70B translation, Flux.1 Schnell images). |
 | `bsdm/specials.py` | Canva PDF geometric parser via PyMuPDF for dinner specials. |
 | `bsdm/logos.py` | Cropping hall logos from the campus map JPEG using `config/logos.json`. |
@@ -204,6 +204,14 @@ placeholder icon and gets a `rejected` record. The gate this replaced kept the h
 of three failures and, when Cloudflare's quota ran out mid-run, switched itself off and kept
 whatever it had; a "Beef Souvlaki" it had itself scored 3/10 went up that way. A wrong picture
 is worse than the icon, for the same reason `build()` will not publish last week's menus.
+
+**Briefs and judging cost nothing, and have to stay that way.** `bsdm/llm.py` offers two
+backends behind one `ask(prompt, images)`: the `claude` CLI (a subscription already paid for,
+on the laptop) and the Gemini API's free tier (`GEMINI_API_KEY`, a free AI Studio key, for CI).
+`--llm auto` takes the CLI where it is installed. Nothing paid belongs here: the site is meant to
+run unattended for years on free tiers, and a backend that goes away must degrade to the
+placeholder icon, never to an unchecked picture. GitHub Models, the obvious free choice in 2025,
+was retired on 2026-07-30.
 
 **The dish knowledge lives in the brief, not in `dishes.py`.** SDXL does not know what gyro meat
 or miso black cod looks like, and for two weeks a person supplied it one regex at a time — the
