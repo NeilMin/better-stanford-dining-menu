@@ -1,5 +1,5 @@
 {
- "date": "2026-10-01",
+ "date": "2026-10-02",
  "scraped_at": "2026-09-26T06:15:22-07:00",
  "halls": {
   "arrillaga": {
@@ -70,10 +70,10 @@
      "order": 3
     },
     {
-     "name": "Open Faced Breakfast Sandwich",
-     "recipe_id": "4887015",
+     "name": "Breakfast Burrito",
+     "recipe_id": "3163201",
      "description": "",
-     "ingredients": "english muffin, eggs, spinach, tomato, roasted red salsa (tomatoes, chipotle peppers, adobo sauce, garlic, canola/olive oil blend, salt), salt, pepper",
+     "ingredients": "tortilla, eggs, cheese, black beans, seasonal vegetables, canola/olive oil blend, salt, pepper",
      "allergens": [
       "EGG",
       "MILK",
@@ -89,27 +89,31 @@
       "TREENUTS"
      ],
      "tags": [
-      "vegetarian"
+      "vegetarian",
+      "halal"
      ],
      "order": 4
     },
     {
-     "name": "Pork Sausage Link",
-     "recipe_id": "4899163",
+     "name": "Chicken Apple Sausage",
+     "recipe_id": "7217325",
      "description": "",
-     "ingredients": "pork, sea salt, spices, turbinado sugar, sage oil, sage extract, rosemary extract",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free"
+     "ingredients": "chicken, apples, salt, sugar, dextrose, spices, cultured whey, paprika, soybean oil, sheep casing",
+     "allergens": [
+      "MILK",
+      "SOY"
      ],
+     "trace_allergens": [
+      "WHEAT"
+     ],
+     "tags": [],
      "order": 5
     },
     {
-     "name": "Hash Brown Patty",
-     "recipe_id": "6350846",
+     "name": "Breakfast Potatoes",
+     "recipe_id": "3829817",
      "description": "",
-     "ingredients": "potatoes, oil (canola oil, corn oil, cottonseed oil, palm oil, soybean oil, or sunflower oil), salt, onion powder, natural flavor, dextrose, disodium dihydrogen pyrophosphate",
+     "ingredients": "potatoes, onions, oil (canola oil, sunflower seed oil, cotton seed oil, palm oil, corn oil, or soybean oil), salt, disodium dihydrogen pyrophosphate, dextrose",
      "allergens": [
       "SOY"
      ],
@@ -122,28 +126,35 @@
      "order": 6
     },
     {
-     "name": "Plant Powered \"Eggs”",
-     "recipe_id": "4433739",
+     "name": "Tasty Tofu Scramble",
+     "recipe_id": "3930455",
      "description": "",
-     "ingredients": "mung bean protein, canola oil, onion, gellan gum, carrot extractives, natural flavors, turmeric extractives, potassium citrate, salt, soy lecithin, sugar, tapioca syrup, tetrasodium pyrophosphate, transglutaminase, nisin",
+     "ingredients": "tofu, seasonal vegetables, canola/olive oil blend, salt, pepper, turmeric, garlic",
      "allergens": [
       "SOY"
      ],
      "trace_allergens": [
-      "EGG"
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "TREENUTS",
+      "WHEAT"
      ],
      "tags": [
-      "gluten-free",
       "vegan",
       "halal"
      ],
      "order": 7
     },
     {
-     "name": "French Toast",
-     "recipe_id": "3508602",
+     "name": "Buttermilk Pancakes",
+     "recipe_id": "3958551",
      "description": "",
-     "ingredients": "chala bread, eggs, canola/olive oil blend, powdered sugar, cinnamon",
+     "ingredients": "wheat flour, malted barley flour, enzymes, ascorbic acid, sugar, soy flour, sodium bicarbonate, sodium aluminum phosphate, aluminum sulfate, monocalcium phosphate, canola or soybean oil, dextrose, salt, buttermilk, mono-diglycerides, soy lecithin, eggs",
      "allergens": [
       "EGG",
       "MILK",
@@ -211,45 +222,57 @@
    ],
    "Lunch": [
     {
-     "name": "Japanese Chicken Teriyaki",
-     "recipe_id": "JapChxTeriyaki1",
+     "name": "Thai Green Curry Chicken",
+     "recipe_id": "ThaiGrnCurChx1",
      "description": "",
-     "ingredients": "chicken, tamari, mirin, sugar, ginger, green onions, olive/canola oil blend, salt",
+     "ingredients": "chicken, coconut milk, Thai eggplant, bamboo shoots, onions, bell peppers, garlic, ginger, fish sauce, sugar, lime juice, thai basil, olive/canola oil blend, salt, green curry paste (green chiles, lemongrass, shallots, garlic, ginger, cilantro stems, dried makrut lime, cumin, coriander, white pepper, fish sauce, salt, olive/canola oil blend)",
      "allergens": [
-      "SOY"
+      "COCONUT",
+      "FISH"
      ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free"
+      "gluten-free",
+      "halal"
      ],
      "order": 0
     },
     {
-     "name": "Agedashi-Style Tofu",
-     "recipe_id": "AgedashiTofu1",
+     "name": "Thai Red Curry Tempeh",
+     "recipe_id": "ThaiRedCurTemp1",
      "description": "",
-     "ingredients": "tofu, potato starch, water, tamari, mirin, kombu, mushroom seasoning, ginger, green onions, olive/canola oil blend, salt",
+     "ingredients": "tempeh, coconut milk, pumpkin, Thai red chiles, lemongrass, shallots, garlic, ginger, cilantro stems, dried makrut lime, cumin, coriander, white pepper, mushroom seasoning, sugar, lime juice, thai basil, olive/canola oil blend, salt",
      "allergens": [
+      "COCONUT",
+      "SHELLFISH",
       "SOY"
      ],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
-      "vegan"
+      "vegan",
+      "halal"
      ],
      "order": 1
     },
     {
-     "name": "Simmered Kabocha Squash",
-     "recipe_id": "SimmKoboSqua1",
+     "name": "Thai Stir-Fried Garlic Green Beans",
+     "recipe_id": "ThaiGrnBnGar1",
      "description": "",
-     "ingredients": "kabocha squash, water, tamari, mirin, sugar, kombu, mushroom seasoning, ginger, olive/canola oil blend, salt",
+     "ingredients": "green beans, garlic, Thai chiles, tamari, mushroom seasoning, sugar, vegetarian oyster sauce, lime juice, olive/canola oil blend, salt, black pepper",
      "allergens": [
       "SOY"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "WHEAT"
+     ],
      "tags": [
-      "gluten-free",
       "vegan"
      ],
      "order": 2
@@ -283,26 +306,26 @@
      "order": 4
     },
     {
-     "name": "Goma-ae Spinach with Sesame",
-     "recipe_id": "GomaSpinSes1",
+     "name": "Roasted Thai Eggplant",
+     "recipe_id": "RstThaiEggplant1",
      "description": "",
-     "ingredients": "spinach, sesame seeds, tamari, sugar, mirin, rice vinegar, sesame oil, ginger, salt",
+     "ingredients": "eggplant, garlic, ginger, tamari, lime juice, vegetarian oyster sauce, Thai red curry paste, cilantro, olive/canola oil blend, salt",
      "allergens": [
-      "SESAME",
+      "SHELLFISH",
       "SOY"
      ],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
-      "vegan"
+      "halal"
      ],
      "order": 5
     },
     {
-     "name": "Steamed Japanese Rice",
-     "recipe_id": "SteaJapanRice1",
+     "name": "Steamed Jasmine Rice",
+     "recipe_id": "5134594",
      "description": "",
-     "ingredients": "Japanese short-grain rice, water",
+     "ingredients": "jasmine rice, water, salt",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -313,26 +336,19 @@
      "order": 6
     },
     {
-     "name": "Vegetable Yakisoba",
-     "recipe_id": "5545292",
+     "name": "Thai Pineapple Fried Rice",
+     "recipe_id": "ThaiPineFryRice1",
      "description": "",
-     "ingredients": "ramen noodles, cabbage, carrots, onions, vegetarian oyster sauce, A-1 steak sauce, ketchup, pickled ginger, mushrooms, mayonnaise, furikake seasoning (nori seaweed, sesame seeds, salt, sugar, korean red pepper, mushroom seasoning)",
+     "ingredients": "jasmine rice, pineapple, eggs, onions, bell peppers, carrots, garlic, ginger, tamari, mushroom seasoning, sugar, curry powder, green onions, cilantro, olive/canola oil blend, salt, black pepper",
      "allergens": [
       "EGG",
-      "SESAME",
-      "SOY",
-      "WHEAT"
+      "SOY"
      ],
-     "trace_allergens": [
-      "COCONUT",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SHELLFISH",
-      "TREENUTS"
-     ],
+     "trace_allergens": [],
      "tags": [
-      "vegetarian"
+      "gluten-free",
+      "vegetarian",
+      "halal"
      ],
      "order": 7
     },
@@ -487,24 +503,6 @@
      "order": 17
     },
     {
-     "name": "Pasta Marinara",
-     "recipe_id": "5095708",
-     "description": "",
-     "ingredients": "pasta, marinara sauce, canola/olive oil blend",
-     "allergens": [
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "EGG"
-     ],
-     "tags": [
-      "vegan",
-      "halal"
-     ],
-     "order": 18
-    },
-    {
      "name": "Pasta Alfredo",
      "recipe_id": "5683556",
      "description": "",
@@ -518,6 +516,24 @@
      ],
      "tags": [
       "vegetarian",
+      "halal"
+     ],
+     "order": 18
+    },
+    {
+     "name": "Pasta Marinara",
+     "recipe_id": "5095708",
+     "description": "",
+     "ingredients": "pasta, marinara sauce, canola/olive oil blend",
+     "allergens": [
+      "SOY",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "EGG"
+     ],
+     "tags": [
+      "vegan",
       "halal"
      ],
      "order": 19
@@ -539,30 +555,35 @@
    ],
    "Dinner": [
     {
-     "name": "Braised Beef Poutine (Topping)",
-     "recipe_id": "BraisBeefPoutine1",
+     "name": "Chicken Parmesan",
+     "recipe_id": "4383016",
      "description": "",
-     "ingredients": "beef, beef soup base, onions, garlic, tomato paste, Worcestershire sauce, thyme, rosemary, olive/canola oil blend, salt, black pepper",
+     "ingredients": "chicken, italian seasoning, garlic powder, eggs, milk, breadcrumbs, flour, mozzarella cheese, parmesan cheese, canola/olive oil blend, garlic powder, italian seasoning, salt, marinara sauce",
      "allergens": [
-      "FISH"
+      "EGG",
+      "MILK",
+      "SOY",
+      "WHEAT"
      ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
       "halal"
      ],
      "order": 0
     },
     {
-     "name": "Wild Mushroom & Lentil Poutine",
-     "recipe_id": "MushLentilPout1",
+     "name": "Eggplant Parmesan",
+     "recipe_id": "4464496",
      "description": "",
-     "ingredients": "brown lentils, wild mushrooms, onions, garlic, vegetable soup base, tomato paste, thyme, rosemary, mushroom seasoning, olive/canola oil blend, salt, black pepper",
-     "allergens": [],
+     "ingredients": "eggplant, mushrooms, onions, marinara sauce, bread crumbs, mozzarella cheese, parmesan cheese, canola/olive oil blend, oregano, pepper",
+     "allergens": [
+      "MILK",
+      "SOY",
+      "WHEAT"
+     ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
-      "vegan",
+      "vegetarian",
       "halal"
      ],
      "order": 1
@@ -596,10 +617,24 @@
      "order": 3
     },
     {
-     "name": "Buttered Green Beans with Shallots",
-     "recipe_id": "ButterGrnBeanShal1",
+     "name": "Roasted Squash",
+     "recipe_id": "3571714",
      "description": "",
-     "ingredients": "green beans, butter, shallots, garlic, parsley, lemon juice, olive/canola oil blend, salt, black pepper",
+     "ingredients": "zucchini, squash, olive oil, thyme, salt, pepper",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan",
+      "halal"
+     ],
+     "order": 4
+    },
+    {
+     "name": "Broccoli Rabe with Garlic & Lemon",
+     "recipe_id": "RoatBrocRabe1",
+     "description": "",
+     "ingredients": "broccoli rabe, garlic, lemon juice, lemon zest, parmesan cheese, red pepper flakes, olive/canola oil blend, salt, black pepper",
      "allergens": [
       "MILK"
      ],
@@ -609,82 +644,32 @@
       "vegetarian",
       "halal"
      ],
-     "order": 4
-    },
-    {
-     "name": "Maple Roasted Root Vegetables",
-     "recipe_id": "MapRoastVeg1",
-     "description": "",
-     "ingredients": "root vegetables (carrots, parsnips, sweet potatoes, yukon gold or russet potatoes, red onions), maple syrup, thyme, rosemary, garlic, olive/canola oil blend, salt, black pepper",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan",
-      "halal"
-     ],
      "order": 5
     },
     {
-     "name": "Wild Rice Pilaf with Cranberries",
-     "recipe_id": "4153424",
+     "name": "Assorted Dinner Rolls",
+     "recipe_id": "5344600",
      "description": "",
-     "ingredients": "brown rice, wild rice, cranberries, onions, carrot, vegetable soup base, apple cider vinegar, shallots, white wine vinegar, salt",
-     "allergens": [],
-     "trace_allergens": [],
+     "ingredients": "unbleached wheat flour, malted barley flour, sour culture, salt, yeast, sesame seeds, amaranth, poppy seeds, whole wheat flour, dark rye flour, malt powder, honey, extra virgin olive oil, semolina, wheat germ",
+     "allergens": [
+      "SESAME",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "SOY",
+      "TREENUTS"
+     ],
      "tags": [
-      "gluten-free",
-      "vegan",
+      "vegetarian",
       "halal"
      ],
      "order": 6
     },
     {
-     "name": "Steak-Cut Fries",
-     "recipe_id": "StkCutFri1",
+     "name": "Rosemary Garlic White Bean Stew",
+     "recipe_id": "RoseWhiteStew1",
      "description": "",
-     "ingredients": "potatoes, vegetable oil, salt",
-     "allergens": [
-      "TRACEALLERGENS"
-     ],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
-     ],
-     "tags": [
-      "vegan"
-     ],
-     "order": 7
-    },
-    {
-     "name": "Canadian-Style Coleslaw",
-     "recipe_id": "CanadaSlaw1",
-     "description": "",
-     "ingredients": "green cabbage, carrots, mayonnaise, onions, sugar, apple cider vinegar, celery seeds, dijon mustard, salt, black pepper",
-     "allergens": [
-      "EGG",
-      "SOY"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegetarian"
-     ],
-     "order": 8
-    },
-    {
-     "name": "Mushroom Gravy",
-     "recipe_id": "3104786",
-     "description": "",
-     "ingredients": "mushrooms, onions, garlic, canola/olive oil blend, balsamic vinegar, vegetarian soup base (contains celery, carrots), cornstarch, beet sugar, parsley, salt",
+     "ingredients": "white beans, stewed tomatoes, onions, carrots, celery, garlic, vegetable base, rosemary, bay leaf, crushed red pepper flakes, oil, salt, and pepper",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -692,21 +677,22 @@
       "vegan",
       "halal"
      ],
-     "order": 9
+     "order": 7
     },
     {
-     "name": "Quebec-Style Cheese Curds",
-     "recipe_id": "PoutCheeseCurds1",
+     "name": "Garlic Herb Spaghetti",
+     "recipe_id": "GarHerbSpaghetti1",
      "description": "",
-     "ingredients": "pasteurized milk, cream, vinegar, enzymes",
+     "ingredients": "spaghetti, garlic, parsley, basil, lemon juice, red pepper flakes, olive/canola oil blend, salt, black pepper",
      "allergens": [
-      "MILK"
+      "WHEAT"
      ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free"
+      "vegan",
+      "halal"
      ],
-     "order": 10
+     "order": 8
     },
     {
      "name": "Burger Bar",
@@ -716,7 +702,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 11
+     "order": 9
     },
     {
      "name": "Grilled Chicken",
@@ -731,7 +717,7 @@
       "gluten-free",
       "halal"
      ],
-     "order": 12
+     "order": 10
     },
     {
      "name": "Grilled Vegan/Vegetarian",
@@ -754,7 +740,7 @@
      "tags": [
       "halal"
      ],
-     "order": 13
+     "order": 11
     },
     {
      "name": "Soup of the Day",
@@ -764,7 +750,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 14
+     "order": 12
     },
     {
      "name": "Assorted Dinner Rolls",
@@ -783,7 +769,7 @@
       "vegetarian",
       "halal"
      ],
-     "order": 15
+     "order": 13
     },
     {
      "name": "Composed Salad",
@@ -795,7 +781,7 @@
      "tags": [
       "halal"
      ],
-     "order": 16
+     "order": 14
     },
     {
      "name": "Performance Bar",
@@ -805,7 +791,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 17
+     "order": 15
     },
     {
      "name": "Craveable Grains",
@@ -819,7 +805,7 @@
       "vegan",
       "halal"
      ],
-     "order": 18
+     "order": 16
     },
     {
      "name": "Flavor Forward Legumes",
@@ -833,7 +819,7 @@
       "vegan",
       "halal"
      ],
-     "order": 19
+     "order": 17
     },
     {
      "name": "Pasta Alfredo",
@@ -851,7 +837,7 @@
       "vegetarian",
       "halal"
      ],
-     "order": 20
+     "order": 18
     },
     {
      "name": "Pasta Marinara",
@@ -869,7 +855,7 @@
       "vegan",
       "halal"
      ],
-     "order": 21
+     "order": 19
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -883,7 +869,7 @@
       "vegan",
       "halal"
      ],
-     "order": 22
+     "order": 20
     }
    ]
   },
@@ -955,10 +941,10 @@
      "order": 3
     },
     {
-     "name": "Open Faced Breakfast Sandwich",
-     "recipe_id": "4887015",
+     "name": "Breakfast Burrito",
+     "recipe_id": "3163201",
      "description": "",
-     "ingredients": "english muffin, eggs, spinach, tomato, roasted red salsa (tomatoes, chipotle peppers, adobo sauce, garlic, canola/olive oil blend, salt), salt, pepper",
+     "ingredients": "tortilla, eggs, cheese, black beans, seasonal vegetables, canola/olive oil blend, salt, pepper",
      "allergens": [
       "EGG",
       "MILK",
@@ -974,27 +960,31 @@
       "TREENUTS"
      ],
      "tags": [
-      "vegetarian"
+      "vegetarian",
+      "halal"
      ],
      "order": 4
     },
     {
-     "name": "Pork Sausage Link",
-     "recipe_id": "4899163",
+     "name": "Chicken Apple Sausage",
+     "recipe_id": "7217325",
      "description": "",
-     "ingredients": "pork, sea salt, spices, turbinado sugar, sage oil, sage extract, rosemary extract",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free"
+     "ingredients": "chicken, apples, salt, sugar, dextrose, spices, cultured whey, paprika, soybean oil, sheep casing",
+     "allergens": [
+      "MILK",
+      "SOY"
      ],
+     "trace_allergens": [
+      "WHEAT"
+     ],
+     "tags": [],
      "order": 5
     },
     {
-     "name": "Hash Brown Patty",
-     "recipe_id": "6350846",
+     "name": "Breakfast Potatoes",
+     "recipe_id": "3829817",
      "description": "",
-     "ingredients": "potatoes, oil (canola oil, corn oil, cottonseed oil, palm oil, soybean oil, or sunflower oil), salt, onion powder, natural flavor, dextrose, disodium dihydrogen pyrophosphate",
+     "ingredients": "potatoes, onions, oil (canola oil, sunflower seed oil, cotton seed oil, palm oil, corn oil, or soybean oil), salt, disodium dihydrogen pyrophosphate, dextrose",
      "allergens": [
       "SOY"
      ],
@@ -1007,28 +997,35 @@
      "order": 6
     },
     {
-     "name": "Plant Powered \"Eggs”",
-     "recipe_id": "4433739",
+     "name": "Tasty Tofu Scramble",
+     "recipe_id": "3930455",
      "description": "",
-     "ingredients": "mung bean protein, canola oil, onion, gellan gum, carrot extractives, natural flavors, turmeric extractives, potassium citrate, salt, soy lecithin, sugar, tapioca syrup, tetrasodium pyrophosphate, transglutaminase, nisin",
+     "ingredients": "tofu, seasonal vegetables, canola/olive oil blend, salt, pepper, turmeric, garlic",
      "allergens": [
       "SOY"
      ],
      "trace_allergens": [
-      "EGG"
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "TREENUTS",
+      "WHEAT"
      ],
      "tags": [
-      "gluten-free",
       "vegan",
       "halal"
      ],
      "order": 7
     },
     {
-     "name": "French Toast",
-     "recipe_id": "3508602",
+     "name": "Buttermilk Pancakes",
+     "recipe_id": "3958551",
      "description": "",
-     "ingredients": "chala bread, eggs, canola/olive oil blend, powdered sugar, cinnamon",
+     "ingredients": "wheat flour, malted barley flour, enzymes, ascorbic acid, sugar, soy flour, sodium bicarbonate, sodium aluminum phosphate, aluminum sulfate, monocalcium phosphate, canola or soybean oil, dextrose, salt, buttermilk, mono-diglycerides, soy lecithin, eggs",
      "allergens": [
       "EGG",
       "MILK",
@@ -1112,45 +1109,57 @@
    ],
    "Lunch": [
     {
-     "name": "Japanese Chicken Teriyaki",
-     "recipe_id": "JapChxTeriyaki1",
+     "name": "Thai Green Curry Chicken",
+     "recipe_id": "ThaiGrnCurChx1",
      "description": "",
-     "ingredients": "chicken, tamari, mirin, sugar, ginger, green onions, olive/canola oil blend, salt",
+     "ingredients": "chicken, coconut milk, Thai eggplant, bamboo shoots, onions, bell peppers, garlic, ginger, fish sauce, sugar, lime juice, thai basil, olive/canola oil blend, salt, green curry paste (green chiles, lemongrass, shallots, garlic, ginger, cilantro stems, dried makrut lime, cumin, coriander, white pepper, fish sauce, salt, olive/canola oil blend)",
      "allergens": [
-      "SOY"
+      "COCONUT",
+      "FISH"
      ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free"
+      "gluten-free",
+      "halal"
      ],
      "order": 0
     },
     {
-     "name": "Agedashi-Style Tofu",
-     "recipe_id": "AgedashiTofu1",
+     "name": "Thai Red Curry Tempeh",
+     "recipe_id": "ThaiRedCurTemp1",
      "description": "",
-     "ingredients": "tofu, potato starch, water, tamari, mirin, kombu, mushroom seasoning, ginger, green onions, olive/canola oil blend, salt",
+     "ingredients": "tempeh, coconut milk, pumpkin, Thai red chiles, lemongrass, shallots, garlic, ginger, cilantro stems, dried makrut lime, cumin, coriander, white pepper, mushroom seasoning, sugar, lime juice, thai basil, olive/canola oil blend, salt",
      "allergens": [
+      "COCONUT",
+      "SHELLFISH",
       "SOY"
      ],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
-      "vegan"
+      "vegan",
+      "halal"
      ],
      "order": 1
     },
     {
-     "name": "Simmered Kabocha Squash",
-     "recipe_id": "SimmKoboSqua1",
+     "name": "Thai Stir-Fried Garlic Green Beans",
+     "recipe_id": "ThaiGrnBnGar1",
      "description": "",
-     "ingredients": "kabocha squash, water, tamari, mirin, sugar, kombu, mushroom seasoning, ginger, olive/canola oil blend, salt",
+     "ingredients": "green beans, garlic, Thai chiles, tamari, mushroom seasoning, sugar, vegetarian oyster sauce, lime juice, olive/canola oil blend, salt, black pepper",
      "allergens": [
       "SOY"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "WHEAT"
+     ],
      "tags": [
-      "gluten-free",
       "vegan"
      ],
      "order": 2
@@ -1184,10 +1193,10 @@
      "order": 4
     },
     {
-     "name": "Steamed Japanese Rice",
-     "recipe_id": "SteaJapanRice1",
+     "name": "Steamed Jasmine Rice",
+     "recipe_id": "5134594",
      "description": "",
-     "ingredients": "Japanese short-grain rice, water",
+     "ingredients": "jasmine rice, water, salt",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -1198,29 +1207,13 @@
      "order": 5
     },
     {
-     "name": "Grilled Cajun Steak Protein Bowl",
-     "recipe_id": "GSPB99",
+     "name": "Baked Potato Bar",
+     "recipe_id": "6827028",
      "description": "",
-     "ingredients": "beef, cajun spice, sweet potato, kale, garlic, onion, bell pepper,",
-     "allergens": [
-      "TRACEALLERGENS"
-     ],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
-     ],
-     "tags": [
-      "gluten-free",
-      "halal"
-     ],
+     "ingredients": "",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [],
      "order": 6
     },
     {
@@ -1270,26 +1263,24 @@
      "order": 8
     },
     {
-     "name": "Cheese Quesadilla",
-     "recipe_id": "5193745",
+     "name": "Tomato Soup with Grilled Cheese",
+     "recipe_id": "5218597-1",
      "description": "",
-     "ingredients": "flour tortilla, cheese, salt, pepper, canola/olive oil blend",
+     "ingredients": "texas toast, tomato soup, american cheese, cheddar cheese, unsalted butter, onions, canola/olive oil blend",
      "allergens": [
       "MILK",
       "SOY",
       "WHEAT"
      ],
      "trace_allergens": [
-      "COCONUT",
       "EGG",
-      "FISH",
       "PEANUTS",
       "SESAME",
-      "SHELLFISH",
       "TREENUTS"
      ],
      "tags": [
-      "vegetarian"
+      "vegetarian",
+      "halal"
      ],
      "order": 9
     },
@@ -1372,24 +1363,6 @@
      "order": 15
     },
     {
-     "name": "Pasta Marinara",
-     "recipe_id": "5095708",
-     "description": "",
-     "ingredients": "pasta, marinara sauce, canola/olive oil blend",
-     "allergens": [
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "EGG"
-     ],
-     "tags": [
-      "vegan",
-      "halal"
-     ],
-     "order": 16
-    },
-    {
      "name": "Pasta Alfredo",
      "recipe_id": "5683556",
      "description": "",
@@ -1403,6 +1376,24 @@
      ],
      "tags": [
       "vegetarian",
+      "halal"
+     ],
+     "order": 16
+    },
+    {
+     "name": "Pasta Marinara",
+     "recipe_id": "5095708",
+     "description": "",
+     "ingredients": "pasta, marinara sauce, canola/olive oil blend",
+     "allergens": [
+      "SOY",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "EGG"
+     ],
+     "tags": [
+      "vegan",
       "halal"
      ],
      "order": 17
@@ -1424,30 +1415,35 @@
    ],
    "Dinner": [
     {
-     "name": "Braised Beef Poutine (Topping)",
-     "recipe_id": "BraisBeefPoutine1",
+     "name": "Chicken Parmesan",
+     "recipe_id": "4383016",
      "description": "",
-     "ingredients": "beef, beef soup base, onions, garlic, tomato paste, Worcestershire sauce, thyme, rosemary, olive/canola oil blend, salt, black pepper",
+     "ingredients": "chicken, italian seasoning, garlic powder, eggs, milk, breadcrumbs, flour, mozzarella cheese, parmesan cheese, canola/olive oil blend, garlic powder, italian seasoning, salt, marinara sauce",
      "allergens": [
-      "FISH"
+      "EGG",
+      "MILK",
+      "SOY",
+      "WHEAT"
      ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
       "halal"
      ],
      "order": 0
     },
     {
-     "name": "Wild Mushroom & Lentil Poutine",
-     "recipe_id": "MushLentilPout1",
+     "name": "Eggplant Parmesan",
+     "recipe_id": "4464496",
      "description": "",
-     "ingredients": "brown lentils, wild mushrooms, onions, garlic, vegetable soup base, tomato paste, thyme, rosemary, mushroom seasoning, olive/canola oil blend, salt, black pepper",
-     "allergens": [],
+     "ingredients": "eggplant, mushrooms, onions, marinara sauce, bread crumbs, mozzarella cheese, parmesan cheese, canola/olive oil blend, oregano, pepper",
+     "allergens": [
+      "MILK",
+      "SOY",
+      "WHEAT"
+     ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
-      "vegan",
+      "vegetarian",
       "halal"
      ],
      "order": 1
@@ -1481,35 +1477,57 @@
      "order": 3
     },
     {
-     "name": "Steak-Cut Fries",
-     "recipe_id": "StkCutFri1",
+     "name": "Assorted Dinner Rolls",
+     "recipe_id": "5344600",
      "description": "",
-     "ingredients": "potatoes, vegetable oil, salt",
+     "ingredients": "unbleached wheat flour, malted barley flour, sour culture, salt, yeast, sesame seeds, amaranth, poppy seeds, whole wheat flour, dark rye flour, malt powder, honey, extra virgin olive oil, semolina, wheat germ",
      "allergens": [
-      "TRACEALLERGENS"
-     ],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
       "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
       "WHEAT"
      ],
+     "trace_allergens": [
+      "SOY",
+      "TREENUTS"
+     ],
      "tags": [
-      "vegan"
+      "vegetarian",
+      "halal"
      ],
      "order": 4
     },
     {
-     "name": "Mushroom Gravy",
-     "recipe_id": "3104786",
+     "name": "Garlic Herb Spaghetti",
+     "recipe_id": "GarHerbSpaghetti1",
      "description": "",
-     "ingredients": "mushrooms, onions, garlic, canola/olive oil blend, balsamic vinegar, vegetarian soup base (contains celery, carrots), cornstarch, beet sugar, parsley, salt",
+     "ingredients": "spaghetti, garlic, parsley, basil, lemon juice, red pepper flakes, olive/canola oil blend, salt, black pepper",
+     "allergens": [
+      "WHEAT"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "vegan",
+      "halal"
+     ],
+     "order": 5
+    },
+    {
+     "name": "Smothered Steak and Gravy",
+     "recipe_id": "4813871",
+     "description": "",
+     "ingredients": "beef (HALAL), mushroom, butter, shallot, thyme, demi glace sauce (veal stock, water, veal bones, carrots, celery, onions, tomato paste, parsley, garlic, rosemary, thyme, peppercorns, bay leaves, modified food starch, beef stock, beef fat, salt, tomato powder, yeast extract, gelatin, caramel color, onion, beet, artificial wine flavor, garlic, mushroom), cream, crispy fried onions (onions, palm oil, wheat flour, dextrose, salt), salt",
+     "allergens": [
+      "MILK",
+      "WHEAT"
+     ],
+     "trace_allergens": [],
+     "tags": [],
+     "order": 6
+    },
+    {
+     "name": "Roasted Potatoes",
+     "recipe_id": "5018531",
+     "description": "",
+     "ingredients": "potatoes, salt, pepper, canola/olive oil blend",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -1517,48 +1535,13 @@
       "vegan",
       "halal"
      ],
-     "order": 5
-    },
-    {
-     "name": "San Francisco Cioppino",
-     "recipe_id": "5371070",
-     "description": "",
-     "ingredients": "clams, mussels, calamari, shrimp, onion, celery, garlic, bell peppers, fennel, tomatoes, clam juice, cioppino sauce (fennel, red pepper flake, tomatoes, tomato paste, white wine vinegar, bay leaf, parsley, oregano, pepper, clam paste, bell pepper, canola/olive oil blend, salt, garlic)",
-     "allergens": [
-      "FISH",
-      "MILK",
-      "SHELLFISH",
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "halal"
-     ],
-     "order": 6
-    },
-    {
-     "name": "Pasta with Garlic & Lemon",
-     "recipe_id": "5334229",
-     "description": "",
-     "ingredients": "pasta, garlic, canola/olive oil blend, herbs, lemon juice, salt",
-     "allergens": [
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "EGG"
-     ],
-     "tags": [
-      "vegan",
-      "halal"
-     ],
      "order": 7
     },
     {
-     "name": "Seasonal Steamed Vegetables",
-     "recipe_id": "5561366",
+     "name": "Spicy Green Beans",
+     "recipe_id": "7819461",
      "description": "",
-     "ingredients": "seasonal vegetables, salt",
+     "ingredients": "green beans, olive oil, garlic, red pepper flakes, salt",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -1569,18 +1552,17 @@
      "order": 8
     },
     {
-     "name": "Garlic Bread",
-     "recipe_id": "5398769",
+     "name": "Honey Butter Biscuit",
+     "recipe_id": "5930228",
      "description": "",
-     "ingredients": "french baguette, unsalted butter, garlic, parsley",
+     "ingredients": "buttermilk biscuit (enriched bleached flour, shortening [palm oil, monoglycerides, diglycerides, polysorbate 60], buttermilk powder, sugar, baking powder, salt), honey, butter",
      "allergens": [
       "MILK",
       "WHEAT"
      ],
      "trace_allergens": [
       "EGG",
-      "SOY",
-      "TREENUTS"
+      "SESAME"
      ],
      "tags": [
       "vegetarian"
@@ -1786,10 +1768,10 @@
      "order": 3
     },
     {
-     "name": "Open Faced Breakfast Sandwich",
-     "recipe_id": "4887015",
+     "name": "Breakfast Burrito",
+     "recipe_id": "3163201",
      "description": "",
-     "ingredients": "english muffin, eggs, spinach, tomato, roasted red salsa (tomatoes, chipotle peppers, adobo sauce, garlic, canola/olive oil blend, salt), salt, pepper",
+     "ingredients": "tortilla, eggs, cheese, black beans, seasonal vegetables, canola/olive oil blend, salt, pepper",
      "allergens": [
       "EGG",
       "MILK",
@@ -1805,27 +1787,31 @@
       "TREENUTS"
      ],
      "tags": [
-      "vegetarian"
+      "vegetarian",
+      "halal"
      ],
      "order": 4
     },
     {
-     "name": "Pork Sausage Link",
-     "recipe_id": "4899163",
+     "name": "Chicken Apple Sausage",
+     "recipe_id": "7217325",
      "description": "",
-     "ingredients": "pork, sea salt, spices, turbinado sugar, sage oil, sage extract, rosemary extract",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free"
+     "ingredients": "chicken, apples, salt, sugar, dextrose, spices, cultured whey, paprika, soybean oil, sheep casing",
+     "allergens": [
+      "MILK",
+      "SOY"
      ],
+     "trace_allergens": [
+      "WHEAT"
+     ],
+     "tags": [],
      "order": 5
     },
     {
-     "name": "Hash Brown Patty",
-     "recipe_id": "6350846",
+     "name": "Breakfast Potatoes",
+     "recipe_id": "3829817",
      "description": "",
-     "ingredients": "potatoes, oil (canola oil, corn oil, cottonseed oil, palm oil, soybean oil, or sunflower oil), salt, onion powder, natural flavor, dextrose, disodium dihydrogen pyrophosphate",
+     "ingredients": "potatoes, onions, oil (canola oil, sunflower seed oil, cotton seed oil, palm oil, corn oil, or soybean oil), salt, disodium dihydrogen pyrophosphate, dextrose",
      "allergens": [
       "SOY"
      ],
@@ -1838,28 +1824,35 @@
      "order": 6
     },
     {
-     "name": "Plant Powered \"Eggs”",
-     "recipe_id": "4433739",
+     "name": "Tasty Tofu Scramble",
+     "recipe_id": "3930455",
      "description": "",
-     "ingredients": "mung bean protein, canola oil, onion, gellan gum, carrot extractives, natural flavors, turmeric extractives, potassium citrate, salt, soy lecithin, sugar, tapioca syrup, tetrasodium pyrophosphate, transglutaminase, nisin",
+     "ingredients": "tofu, seasonal vegetables, canola/olive oil blend, salt, pepper, turmeric, garlic",
      "allergens": [
       "SOY"
      ],
      "trace_allergens": [
-      "EGG"
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "TREENUTS",
+      "WHEAT"
      ],
      "tags": [
-      "gluten-free",
       "vegan",
       "halal"
      ],
      "order": 7
     },
     {
-     "name": "French Toast",
-     "recipe_id": "3508602",
+     "name": "Buttermilk Pancakes",
+     "recipe_id": "3958551",
      "description": "",
-     "ingredients": "chala bread, eggs, canola/olive oil blend, powdered sugar, cinnamon",
+     "ingredients": "wheat flour, malted barley flour, enzymes, ascorbic acid, sugar, soy flour, sodium bicarbonate, sodium aluminum phosphate, aluminum sulfate, monocalcium phosphate, canola or soybean oil, dextrose, salt, buttermilk, mono-diglycerides, soy lecithin, eggs",
      "allergens": [
       "EGG",
       "MILK",
@@ -1943,45 +1936,57 @@
    ],
    "Lunch": [
     {
-     "name": "Japanese Chicken Teriyaki",
-     "recipe_id": "JapChxTeriyaki1",
+     "name": "Thai Green Curry Chicken",
+     "recipe_id": "ThaiGrnCurChx1",
      "description": "",
-     "ingredients": "chicken, tamari, mirin, sugar, ginger, green onions, olive/canola oil blend, salt",
+     "ingredients": "chicken, coconut milk, Thai eggplant, bamboo shoots, onions, bell peppers, garlic, ginger, fish sauce, sugar, lime juice, thai basil, olive/canola oil blend, salt, green curry paste (green chiles, lemongrass, shallots, garlic, ginger, cilantro stems, dried makrut lime, cumin, coriander, white pepper, fish sauce, salt, olive/canola oil blend)",
      "allergens": [
-      "SOY"
+      "COCONUT",
+      "FISH"
      ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free"
+      "gluten-free",
+      "halal"
      ],
      "order": 0
     },
     {
-     "name": "Agedashi-Style Tofu",
-     "recipe_id": "AgedashiTofu1",
+     "name": "Thai Red Curry Tempeh",
+     "recipe_id": "ThaiRedCurTemp1",
      "description": "",
-     "ingredients": "tofu, potato starch, water, tamari, mirin, kombu, mushroom seasoning, ginger, green onions, olive/canola oil blend, salt",
+     "ingredients": "tempeh, coconut milk, pumpkin, Thai red chiles, lemongrass, shallots, garlic, ginger, cilantro stems, dried makrut lime, cumin, coriander, white pepper, mushroom seasoning, sugar, lime juice, thai basil, olive/canola oil blend, salt",
      "allergens": [
+      "COCONUT",
+      "SHELLFISH",
       "SOY"
      ],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
-      "vegan"
+      "vegan",
+      "halal"
      ],
      "order": 1
     },
     {
-     "name": "Simmered Kabocha Squash",
-     "recipe_id": "SimmKoboSqua1",
+     "name": "Thai Stir-Fried Garlic Green Beans",
+     "recipe_id": "ThaiGrnBnGar1",
      "description": "",
-     "ingredients": "kabocha squash, water, tamari, mirin, sugar, kombu, mushroom seasoning, ginger, olive/canola oil blend, salt",
+     "ingredients": "green beans, garlic, Thai chiles, tamari, mushroom seasoning, sugar, vegetarian oyster sauce, lime juice, olive/canola oil blend, salt, black pepper",
      "allergens": [
       "SOY"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "WHEAT"
+     ],
      "tags": [
-      "gluten-free",
       "vegan"
      ],
      "order": 2
@@ -2015,26 +2020,26 @@
      "order": 4
     },
     {
-     "name": "Goma-ae Spinach with Sesame",
-     "recipe_id": "GomaSpinSes1",
+     "name": "Roasted Thai Eggplant",
+     "recipe_id": "RstThaiEggplant1",
      "description": "",
-     "ingredients": "spinach, sesame seeds, tamari, sugar, mirin, rice vinegar, sesame oil, ginger, salt",
+     "ingredients": "eggplant, garlic, ginger, tamari, lime juice, vegetarian oyster sauce, Thai red curry paste, cilantro, olive/canola oil blend, salt",
      "allergens": [
-      "SESAME",
+      "SHELLFISH",
       "SOY"
      ],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
-      "vegan"
+      "halal"
      ],
      "order": 5
     },
     {
-     "name": "Steamed Japanese Rice",
-     "recipe_id": "SteaJapanRice1",
+     "name": "Steamed Jasmine Rice",
+     "recipe_id": "5134594",
      "description": "",
-     "ingredients": "Japanese short-grain rice, water",
+     "ingredients": "jasmine rice, water, salt",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -2045,26 +2050,19 @@
      "order": 6
     },
     {
-     "name": "Vegetable Yakisoba",
-     "recipe_id": "5545292",
+     "name": "Thai Pineapple Fried Rice",
+     "recipe_id": "ThaiPineFryRice1",
      "description": "",
-     "ingredients": "ramen noodles, cabbage, carrots, onions, vegetarian oyster sauce, A-1 steak sauce, ketchup, pickled ginger, mushrooms, mayonnaise, furikake seasoning (nori seaweed, sesame seeds, salt, sugar, korean red pepper, mushroom seasoning)",
+     "ingredients": "jasmine rice, pineapple, eggs, onions, bell peppers, carrots, garlic, ginger, tamari, mushroom seasoning, sugar, curry powder, green onions, cilantro, olive/canola oil blend, salt, black pepper",
      "allergens": [
       "EGG",
-      "SESAME",
-      "SOY",
-      "WHEAT"
+      "SOY"
      ],
-     "trace_allergens": [
-      "COCONUT",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SHELLFISH",
-      "TREENUTS"
-     ],
+     "trace_allergens": [],
      "tags": [
-      "vegetarian"
+      "gluten-free",
+      "vegetarian",
+      "halal"
      ],
      "order": 7
     },
@@ -2219,24 +2217,6 @@
      "order": 17
     },
     {
-     "name": "Pasta Marinara",
-     "recipe_id": "5095708",
-     "description": "",
-     "ingredients": "pasta, marinara sauce, canola/olive oil blend",
-     "allergens": [
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "EGG"
-     ],
-     "tags": [
-      "vegan",
-      "halal"
-     ],
-     "order": 18
-    },
-    {
      "name": "Pasta Alfredo",
      "recipe_id": "5683556",
      "description": "",
@@ -2250,6 +2230,24 @@
      ],
      "tags": [
       "vegetarian",
+      "halal"
+     ],
+     "order": 18
+    },
+    {
+     "name": "Pasta Marinara",
+     "recipe_id": "5095708",
+     "description": "",
+     "ingredients": "pasta, marinara sauce, canola/olive oil blend",
+     "allergens": [
+      "SOY",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "EGG"
+     ],
+     "tags": [
+      "vegan",
       "halal"
      ],
      "order": 19
@@ -2271,30 +2269,35 @@
    ],
    "Dinner": [
     {
-     "name": "Braised Beef Poutine (Topping)",
-     "recipe_id": "BraisBeefPoutine1",
+     "name": "Chicken Parmesan",
+     "recipe_id": "4383016",
      "description": "",
-     "ingredients": "beef, beef soup base, onions, garlic, tomato paste, Worcestershire sauce, thyme, rosemary, olive/canola oil blend, salt, black pepper",
+     "ingredients": "chicken, italian seasoning, garlic powder, eggs, milk, breadcrumbs, flour, mozzarella cheese, parmesan cheese, canola/olive oil blend, garlic powder, italian seasoning, salt, marinara sauce",
      "allergens": [
-      "FISH"
+      "EGG",
+      "MILK",
+      "SOY",
+      "WHEAT"
      ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
       "halal"
      ],
      "order": 0
     },
     {
-     "name": "Wild Mushroom & Lentil Poutine",
-     "recipe_id": "MushLentilPout1",
+     "name": "Eggplant Parmesan",
+     "recipe_id": "4464496",
      "description": "",
-     "ingredients": "brown lentils, wild mushrooms, onions, garlic, vegetable soup base, tomato paste, thyme, rosemary, mushroom seasoning, olive/canola oil blend, salt, black pepper",
-     "allergens": [],
+     "ingredients": "eggplant, mushrooms, onions, marinara sauce, bread crumbs, mozzarella cheese, parmesan cheese, canola/olive oil blend, oregano, pepper",
+     "allergens": [
+      "MILK",
+      "SOY",
+      "WHEAT"
+     ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
-      "vegan",
+      "vegetarian",
       "halal"
      ],
      "order": 1
@@ -2328,10 +2331,24 @@
      "order": 3
     },
     {
-     "name": "Buttered Green Beans with Shallots",
-     "recipe_id": "ButterGrnBeanShal1",
+     "name": "Roasted Squash",
+     "recipe_id": "3571714",
      "description": "",
-     "ingredients": "green beans, butter, shallots, garlic, parsley, lemon juice, olive/canola oil blend, salt, black pepper",
+     "ingredients": "zucchini, squash, olive oil, thyme, salt, pepper",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan",
+      "halal"
+     ],
+     "order": 4
+    },
+    {
+     "name": "Broccoli Rabe with Garlic & Lemon",
+     "recipe_id": "RoatBrocRabe1",
+     "description": "",
+     "ingredients": "broccoli rabe, garlic, lemon juice, lemon zest, parmesan cheese, red pepper flakes, olive/canola oil blend, salt, black pepper",
      "allergens": [
       "MILK"
      ],
@@ -2341,82 +2358,32 @@
       "vegetarian",
       "halal"
      ],
-     "order": 4
-    },
-    {
-     "name": "Maple Roasted Root Vegetables",
-     "recipe_id": "MapRoastVeg1",
-     "description": "",
-     "ingredients": "root vegetables (carrots, parsnips, sweet potatoes, yukon gold or russet potatoes, red onions), maple syrup, thyme, rosemary, garlic, olive/canola oil blend, salt, black pepper",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan",
-      "halal"
-     ],
      "order": 5
     },
     {
-     "name": "Wild Rice Pilaf with Cranberries",
-     "recipe_id": "4153424",
+     "name": "Assorted Dinner Rolls",
+     "recipe_id": "5344600",
      "description": "",
-     "ingredients": "brown rice, wild rice, cranberries, onions, carrot, vegetable soup base, apple cider vinegar, shallots, white wine vinegar, salt",
-     "allergens": [],
-     "trace_allergens": [],
+     "ingredients": "unbleached wheat flour, malted barley flour, sour culture, salt, yeast, sesame seeds, amaranth, poppy seeds, whole wheat flour, dark rye flour, malt powder, honey, extra virgin olive oil, semolina, wheat germ",
+     "allergens": [
+      "SESAME",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "SOY",
+      "TREENUTS"
+     ],
      "tags": [
-      "gluten-free",
-      "vegan",
+      "vegetarian",
       "halal"
      ],
      "order": 6
     },
     {
-     "name": "Steak-Cut Fries",
-     "recipe_id": "StkCutFri1",
+     "name": "Rosemary Garlic White Bean Stew",
+     "recipe_id": "RoseWhiteStew1",
      "description": "",
-     "ingredients": "potatoes, vegetable oil, salt",
-     "allergens": [
-      "TRACEALLERGENS"
-     ],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
-     ],
-     "tags": [
-      "vegan"
-     ],
-     "order": 7
-    },
-    {
-     "name": "Canadian-Style Coleslaw",
-     "recipe_id": "CanadaSlaw1",
-     "description": "",
-     "ingredients": "green cabbage, carrots, mayonnaise, onions, sugar, apple cider vinegar, celery seeds, dijon mustard, salt, black pepper",
-     "allergens": [
-      "EGG",
-      "SOY"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegetarian"
-     ],
-     "order": 8
-    },
-    {
-     "name": "Mushroom Gravy",
-     "recipe_id": "3104786",
-     "description": "",
-     "ingredients": "mushrooms, onions, garlic, canola/olive oil blend, balsamic vinegar, vegetarian soup base (contains celery, carrots), cornstarch, beet sugar, parsley, salt",
+     "ingredients": "white beans, stewed tomatoes, onions, carrots, celery, garlic, vegetable base, rosemary, bay leaf, crushed red pepper flakes, oil, salt, and pepper",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -2424,21 +2391,22 @@
       "vegan",
       "halal"
      ],
-     "order": 9
+     "order": 7
     },
     {
-     "name": "Quebec-Style Cheese Curds",
-     "recipe_id": "PoutCheeseCurds1",
+     "name": "Garlic Herb Spaghetti",
+     "recipe_id": "GarHerbSpaghetti1",
      "description": "",
-     "ingredients": "pasteurized milk, cream, vinegar, enzymes",
+     "ingredients": "spaghetti, garlic, parsley, basil, lemon juice, red pepper flakes, olive/canola oil blend, salt, black pepper",
      "allergens": [
-      "MILK"
+      "WHEAT"
      ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free"
+      "vegan",
+      "halal"
      ],
-     "order": 10
+     "order": 8
     },
     {
      "name": "Burger Bar",
@@ -2448,7 +2416,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 11
+     "order": 9
     },
     {
      "name": "Grilled Chicken",
@@ -2463,7 +2431,7 @@
       "gluten-free",
       "halal"
      ],
-     "order": 12
+     "order": 10
     },
     {
      "name": "Grilled Vegan/Vegetarian",
@@ -2486,7 +2454,7 @@
      "tags": [
       "halal"
      ],
-     "order": 13
+     "order": 11
     },
     {
      "name": "Soup of the Day",
@@ -2496,7 +2464,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 14
+     "order": 12
     },
     {
      "name": "Assorted Dinner Rolls",
@@ -2515,7 +2483,7 @@
       "vegetarian",
       "halal"
      ],
-     "order": 15
+     "order": 13
     },
     {
      "name": "Composed Salad",
@@ -2527,7 +2495,7 @@
      "tags": [
       "halal"
      ],
-     "order": 16
+     "order": 14
     },
     {
      "name": "Performance Bar",
@@ -2537,7 +2505,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 17
+     "order": 15
     },
     {
      "name": "Craveable Grains",
@@ -2551,7 +2519,7 @@
       "vegan",
       "halal"
      ],
-     "order": 18
+     "order": 16
     },
     {
      "name": "Flavor Forward Legumes",
@@ -2565,7 +2533,7 @@
       "vegan",
       "halal"
      ],
-     "order": 19
+     "order": 17
     },
     {
      "name": "Pasta Alfredo",
@@ -2583,7 +2551,7 @@
       "vegetarian",
       "halal"
      ],
-     "order": 20
+     "order": 18
     },
     {
      "name": "Pasta Marinara",
@@ -2601,7 +2569,7 @@
       "vegan",
       "halal"
      ],
-     "order": 21
+     "order": 19
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -2615,7 +2583,7 @@
       "vegan",
       "halal"
      ],
-     "order": 22
+     "order": 20
     }
    ]
   },
@@ -2671,24 +2639,16 @@
      "order": 2
     },
     {
-     "name": "Ham Scramble",
-     "recipe_id": "5716738",
+     "name": "Turkey Power Scramble",
+     "recipe_id": "4679596",
      "description": "",
-     "ingredients": "eggs, seasonal vegetables, ham, salt, pepper",
+     "ingredients": "eggs, turkey, seasonal vegetables, cheese, canola/olive oil blend, salt",
      "allergens": [
-      "EGG"
-     ],
-     "trace_allergens": [
-      "COCONUT",
-      "FISH",
+      "EGG",
       "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
+      "TRACEALLERGENS"
      ],
+     "trace_allergens": [],
      "tags": [],
      "order": 3
     },
@@ -2709,10 +2669,10 @@
      "order": 4
     },
     {
-     "name": "Open Faced Breakfast Sandwich",
-     "recipe_id": "4887015",
+     "name": "Breakfast Burrito",
+     "recipe_id": "3163201",
      "description": "",
-     "ingredients": "english muffin, eggs, spinach, tomato, roasted red salsa (tomatoes, chipotle peppers, adobo sauce, garlic, canola/olive oil blend, salt), salt, pepper",
+     "ingredients": "tortilla, eggs, cheese, black beans, seasonal vegetables, canola/olive oil blend, salt, pepper",
      "allergens": [
       "EGG",
       "MILK",
@@ -2728,51 +2688,28 @@
       "TREENUTS"
      ],
      "tags": [
-      "vegetarian"
+      "vegetarian",
+      "halal"
      ],
      "order": 5
     },
     {
-     "name": "Pork Sausage Link",
-     "recipe_id": "4559016",
+     "name": "Turkey Sausage Patty",
+     "recipe_id": "5961158",
      "description": "",
-     "ingredients": "pork, water, salt, dextrose, spices, sodium phosphates, bht, citric acid",
+     "ingredients": "turkey, salt, dextrose, spice, spice extractives, hydrolyzed corn protein, citric acid, rosemary extract, calcium lactate",
      "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free"
+     "trace_allergens": [
+      "WHEAT"
      ],
+     "tags": [],
      "order": 6
     },
     {
-     "name": "Farmstyle Potatoes",
-     "recipe_id": "5559134",
+     "name": "Country Potatoes",
+     "recipe_id": "7756491",
      "description": "",
-     "ingredients": "potatoes, peppers, onions, garlic, canola/olive oil blend, salt, pepper, paprika, coriander, cumin, cayenne pepper",
-     "allergens": [],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
-     ],
-     "tags": [
-      "vegan",
-      "halal"
-     ],
-     "order": 7
-    },
-    {
-     "name": "Tofu Sofritas",
-     "recipe_id": "5519388",
-     "description": "",
-     "ingredients": "tofu, salt, pepper, canola/olive oil blend, sofrito sauce (fire roasted tomatoes, onions, pasilla chili, paprika, green chili, tomato puree, garlic, canola/olive oil blend, salt, pepper)",
+     "ingredients": "potatoes, vegetable oil, canola oil, palm oil, soybean oil, sunflower oil, disodium dihydrogen pyrophosphate, dextrose",
      "allergens": [
       "SOY"
      ],
@@ -2782,13 +2719,31 @@
       "vegan",
       "halal"
      ],
+     "order": 7
+    },
+    {
+     "name": "Scrambled Soyrizo & Plant Powered \"Eggs\"",
+     "recipe_id": "8513560",
+     "description": "",
+     "ingredients": "textured soy protein, soybean oil, paprika, sea salt, distilled white vinegar, cultured dextrose, maltodextrin, caramel color, spices, dried red pepper, garlic powder, plant powered \"eggs\" (mung bean protein, canola oil, onion, gellan gum, carrot extractives, natural flavors, turmeric extractives, potassium citrate, salt, soy lecithin, sugar, tapioca syrup, tetrasodium pyrophosphate, transglutaminase, nisin)",
+     "allergens": [
+      "SOY"
+     ],
+     "trace_allergens": [
+      "EGG"
+     ],
+     "tags": [
+      "gluten-free",
+      "vegan",
+      "halal"
+     ],
      "order": 8
     },
     {
-     "name": "French Toast",
-     "recipe_id": "3508602",
+     "name": "Blueberry Pancakes",
+     "recipe_id": "5490171",
      "description": "",
-     "ingredients": "chala bread, eggs, canola/olive oil blend, powdered sugar, cinnamon",
+     "ingredients": "buttermilk pancake mix (wheat flour, malted barley flour, enzymes, sugar, soy flour, sodium bicarbonate, sodium aluminum phosphate, aluminum sulfate, monocalcium phosphate, canola or soybean oil, dextrose, salt, buttermilk, mono-diglycerides, soy lecithin, eggs), canola/olive oil blend, blueberries",
      "allergens": [
       "EGG",
       "MILK",
@@ -2811,45 +2766,57 @@
    ],
    "Lunch": [
     {
-     "name": "Japanese Chicken Teriyaki",
-     "recipe_id": "JapChxTeriyaki1",
+     "name": "Thai Green Curry Chicken",
+     "recipe_id": "ThaiGrnCurChx1",
      "description": "",
-     "ingredients": "chicken, tamari, mirin, sugar, ginger, green onions, olive/canola oil blend, salt",
+     "ingredients": "chicken, coconut milk, Thai eggplant, bamboo shoots, onions, bell peppers, garlic, ginger, fish sauce, sugar, lime juice, thai basil, olive/canola oil blend, salt, green curry paste (green chiles, lemongrass, shallots, garlic, ginger, cilantro stems, dried makrut lime, cumin, coriander, white pepper, fish sauce, salt, olive/canola oil blend)",
      "allergens": [
-      "SOY"
+      "COCONUT",
+      "FISH"
      ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free"
+      "gluten-free",
+      "halal"
      ],
      "order": 0
     },
     {
-     "name": "Agedashi-Style Tofu",
-     "recipe_id": "AgedashiTofu1",
+     "name": "Thai Red Curry Tempeh",
+     "recipe_id": "ThaiRedCurTemp1",
      "description": "",
-     "ingredients": "tofu, potato starch, water, tamari, mirin, kombu, mushroom seasoning, ginger, green onions, olive/canola oil blend, salt",
+     "ingredients": "tempeh, coconut milk, pumpkin, Thai red chiles, lemongrass, shallots, garlic, ginger, cilantro stems, dried makrut lime, cumin, coriander, white pepper, mushroom seasoning, sugar, lime juice, thai basil, olive/canola oil blend, salt",
      "allergens": [
+      "COCONUT",
+      "SHELLFISH",
       "SOY"
      ],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
-      "vegan"
+      "vegan",
+      "halal"
      ],
      "order": 1
     },
     {
-     "name": "Simmered Kabocha Squash",
-     "recipe_id": "SimmKoboSqua1",
+     "name": "Thai Stir-Fried Garlic Green Beans",
+     "recipe_id": "ThaiGrnBnGar1",
      "description": "",
-     "ingredients": "kabocha squash, water, tamari, mirin, sugar, kombu, mushroom seasoning, ginger, olive/canola oil blend, salt",
+     "ingredients": "green beans, garlic, Thai chiles, tamari, mushroom seasoning, sugar, vegetarian oyster sauce, lime juice, olive/canola oil blend, salt, black pepper",
      "allergens": [
       "SOY"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "WHEAT"
+     ],
      "tags": [
-      "gluten-free",
       "vegan"
      ],
      "order": 2
@@ -2883,26 +2850,26 @@
      "order": 4
     },
     {
-     "name": "Goma-ae Spinach with Sesame",
-     "recipe_id": "GomaSpinSes1",
+     "name": "Roasted Thai Eggplant",
+     "recipe_id": "RstThaiEggplant1",
      "description": "",
-     "ingredients": "spinach, sesame seeds, tamari, sugar, mirin, rice vinegar, sesame oil, ginger, salt",
+     "ingredients": "eggplant, garlic, ginger, tamari, lime juice, vegetarian oyster sauce, Thai red curry paste, cilantro, olive/canola oil blend, salt",
      "allergens": [
-      "SESAME",
+      "SHELLFISH",
       "SOY"
      ],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
-      "vegan"
+      "halal"
      ],
      "order": 5
     },
     {
-     "name": "Steamed Japanese Rice",
-     "recipe_id": "SteaJapanRice1",
+     "name": "Steamed Jasmine Rice",
+     "recipe_id": "5134594",
      "description": "",
-     "ingredients": "Japanese short-grain rice, water",
+     "ingredients": "jasmine rice, water, salt",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -2913,26 +2880,19 @@
      "order": 6
     },
     {
-     "name": "Vegetable Yakisoba",
-     "recipe_id": "5545292",
+     "name": "Thai Pineapple Fried Rice",
+     "recipe_id": "ThaiPineFryRice1",
      "description": "",
-     "ingredients": "ramen noodles, cabbage, carrots, onions, vegetarian oyster sauce, A-1 steak sauce, ketchup, pickled ginger, mushrooms, mayonnaise, furikake seasoning (nori seaweed, sesame seeds, salt, sugar, korean red pepper, mushroom seasoning)",
+     "ingredients": "jasmine rice, pineapple, eggs, onions, bell peppers, carrots, garlic, ginger, tamari, mushroom seasoning, sugar, curry powder, green onions, cilantro, olive/canola oil blend, salt, black pepper",
      "allergens": [
       "EGG",
-      "SESAME",
-      "SOY",
-      "WHEAT"
+      "SOY"
      ],
-     "trace_allergens": [
-      "COCONUT",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SHELLFISH",
-      "TREENUTS"
-     ],
+     "trace_allergens": [],
      "tags": [
-      "vegetarian"
+      "gluten-free",
+      "vegetarian",
+      "halal"
      ],
      "order": 7
     },
@@ -3087,24 +3047,6 @@
      "order": 17
     },
     {
-     "name": "Pasta Marinara",
-     "recipe_id": "5095708",
-     "description": "",
-     "ingredients": "pasta, marinara sauce, canola/olive oil blend",
-     "allergens": [
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "EGG"
-     ],
-     "tags": [
-      "vegan",
-      "halal"
-     ],
-     "order": 18
-    },
-    {
      "name": "Pasta Alfredo",
      "recipe_id": "5683556",
      "description": "",
@@ -3118,6 +3060,24 @@
      ],
      "tags": [
       "vegetarian",
+      "halal"
+     ],
+     "order": 18
+    },
+    {
+     "name": "Pasta Marinara",
+     "recipe_id": "5095708",
+     "description": "",
+     "ingredients": "pasta, marinara sauce, canola/olive oil blend",
+     "allergens": [
+      "SOY",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "EGG"
+     ],
+     "tags": [
+      "vegan",
       "halal"
      ],
      "order": 19
@@ -3139,30 +3099,35 @@
    ],
    "Dinner": [
     {
-     "name": "Braised Beef Poutine (Topping)",
-     "recipe_id": "BraisBeefPoutine1",
+     "name": "Chicken Parmesan",
+     "recipe_id": "4383016",
      "description": "",
-     "ingredients": "beef, beef soup base, onions, garlic, tomato paste, Worcestershire sauce, thyme, rosemary, olive/canola oil blend, salt, black pepper",
+     "ingredients": "chicken, italian seasoning, garlic powder, eggs, milk, breadcrumbs, flour, mozzarella cheese, parmesan cheese, canola/olive oil blend, garlic powder, italian seasoning, salt, marinara sauce",
      "allergens": [
-      "FISH"
+      "EGG",
+      "MILK",
+      "SOY",
+      "WHEAT"
      ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
       "halal"
      ],
      "order": 0
     },
     {
-     "name": "Wild Mushroom & Lentil Poutine",
-     "recipe_id": "MushLentilPout1",
+     "name": "Eggplant Parmesan",
+     "recipe_id": "4464496",
      "description": "",
-     "ingredients": "brown lentils, wild mushrooms, onions, garlic, vegetable soup base, tomato paste, thyme, rosemary, mushroom seasoning, olive/canola oil blend, salt, black pepper",
-     "allergens": [],
+     "ingredients": "eggplant, mushrooms, onions, marinara sauce, bread crumbs, mozzarella cheese, parmesan cheese, canola/olive oil blend, oregano, pepper",
+     "allergens": [
+      "MILK",
+      "SOY",
+      "WHEAT"
+     ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
-      "vegan",
+      "vegetarian",
       "halal"
      ],
      "order": 1
@@ -3196,10 +3161,24 @@
      "order": 3
     },
     {
-     "name": "Buttered Green Beans with Shallots",
-     "recipe_id": "ButterGrnBeanShal1",
+     "name": "Roasted Squash",
+     "recipe_id": "3571714",
      "description": "",
-     "ingredients": "green beans, butter, shallots, garlic, parsley, lemon juice, olive/canola oil blend, salt, black pepper",
+     "ingredients": "zucchini, squash, olive oil, thyme, salt, pepper",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan",
+      "halal"
+     ],
+     "order": 4
+    },
+    {
+     "name": "Broccoli Rabe with Garlic & Lemon",
+     "recipe_id": "RoatBrocRabe1",
+     "description": "",
+     "ingredients": "broccoli rabe, garlic, lemon juice, lemon zest, parmesan cheese, red pepper flakes, olive/canola oil blend, salt, black pepper",
      "allergens": [
       "MILK"
      ],
@@ -3209,82 +3188,32 @@
       "vegetarian",
       "halal"
      ],
-     "order": 4
-    },
-    {
-     "name": "Maple Roasted Root Vegetables",
-     "recipe_id": "MapRoastVeg1",
-     "description": "",
-     "ingredients": "root vegetables (carrots, parsnips, sweet potatoes, yukon gold or russet potatoes, red onions), maple syrup, thyme, rosemary, garlic, olive/canola oil blend, salt, black pepper",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan",
-      "halal"
-     ],
      "order": 5
     },
     {
-     "name": "Wild Rice Pilaf with Cranberries",
-     "recipe_id": "4153424",
+     "name": "Assorted Dinner Rolls",
+     "recipe_id": "5344600",
      "description": "",
-     "ingredients": "brown rice, wild rice, cranberries, onions, carrot, vegetable soup base, apple cider vinegar, shallots, white wine vinegar, salt",
-     "allergens": [],
-     "trace_allergens": [],
+     "ingredients": "unbleached wheat flour, malted barley flour, sour culture, salt, yeast, sesame seeds, amaranth, poppy seeds, whole wheat flour, dark rye flour, malt powder, honey, extra virgin olive oil, semolina, wheat germ",
+     "allergens": [
+      "SESAME",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "SOY",
+      "TREENUTS"
+     ],
      "tags": [
-      "gluten-free",
-      "vegan",
+      "vegetarian",
       "halal"
      ],
      "order": 6
     },
     {
-     "name": "Steak-Cut Fries",
-     "recipe_id": "StkCutFri1",
+     "name": "Rosemary Garlic White Bean Stew",
+     "recipe_id": "RoseWhiteStew1",
      "description": "",
-     "ingredients": "potatoes, vegetable oil, salt",
-     "allergens": [
-      "TRACEALLERGENS"
-     ],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
-     ],
-     "tags": [
-      "vegan"
-     ],
-     "order": 7
-    },
-    {
-     "name": "Canadian-Style Coleslaw",
-     "recipe_id": "CanadaSlaw1",
-     "description": "",
-     "ingredients": "green cabbage, carrots, mayonnaise, onions, sugar, apple cider vinegar, celery seeds, dijon mustard, salt, black pepper",
-     "allergens": [
-      "EGG",
-      "SOY"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegetarian"
-     ],
-     "order": 8
-    },
-    {
-     "name": "Mushroom Gravy",
-     "recipe_id": "3104786",
-     "description": "",
-     "ingredients": "mushrooms, onions, garlic, canola/olive oil blend, balsamic vinegar, vegetarian soup base (contains celery, carrots), cornstarch, beet sugar, parsley, salt",
+     "ingredients": "white beans, stewed tomatoes, onions, carrots, celery, garlic, vegetable base, rosemary, bay leaf, crushed red pepper flakes, oil, salt, and pepper",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -3292,21 +3221,22 @@
       "vegan",
       "halal"
      ],
-     "order": 9
+     "order": 7
     },
     {
-     "name": "Quebec-Style Cheese Curds",
-     "recipe_id": "PoutCheeseCurds1",
+     "name": "Garlic Herb Spaghetti",
+     "recipe_id": "GarHerbSpaghetti1",
      "description": "",
-     "ingredients": "pasteurized milk, cream, vinegar, enzymes",
+     "ingredients": "spaghetti, garlic, parsley, basil, lemon juice, red pepper flakes, olive/canola oil blend, salt, black pepper",
      "allergens": [
-      "MILK"
+      "WHEAT"
      ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free"
+      "vegan",
+      "halal"
      ],
-     "order": 10
+     "order": 8
     },
     {
      "name": "Burger Bar",
@@ -3316,7 +3246,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 11
+     "order": 9
     },
     {
      "name": "Grilled Chicken",
@@ -3331,7 +3261,7 @@
       "gluten-free",
       "halal"
      ],
-     "order": 12
+     "order": 10
     },
     {
      "name": "Grilled Vegan/Vegetarian",
@@ -3354,7 +3284,7 @@
      "tags": [
       "halal"
      ],
-     "order": 13
+     "order": 11
     },
     {
      "name": "Soup of the Day",
@@ -3364,7 +3294,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 14
+     "order": 12
     },
     {
      "name": "Assorted Dinner Rolls",
@@ -3383,7 +3313,7 @@
       "vegetarian",
       "halal"
      ],
-     "order": 15
+     "order": 13
     },
     {
      "name": "Composed Salad",
@@ -3395,7 +3325,7 @@
      "tags": [
       "halal"
      ],
-     "order": 16
+     "order": 14
     },
     {
      "name": "Performance Bar",
@@ -3405,7 +3335,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 17
+     "order": 15
     },
     {
      "name": "Craveable Grains",
@@ -3419,7 +3349,7 @@
       "vegan",
       "halal"
      ],
-     "order": 18
+     "order": 16
     },
     {
      "name": "Flavor Forward Legumes",
@@ -3433,7 +3363,7 @@
       "vegan",
       "halal"
      ],
-     "order": 19
+     "order": 17
     },
     {
      "name": "Pasta Alfredo",
@@ -3451,7 +3381,7 @@
       "vegetarian",
       "halal"
      ],
-     "order": 20
+     "order": 18
     },
     {
      "name": "Pasta Marinara",
@@ -3469,7 +3399,7 @@
       "vegan",
       "halal"
      ],
-     "order": 21
+     "order": 19
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -3483,7 +3413,7 @@
       "vegan",
       "halal"
      ],
-     "order": 22
+     "order": 20
     }
    ]
   },
@@ -3593,55 +3523,57 @@
    ],
    "Lunch": [
     {
-     "name": "Beef Teriyaki & Noodle Bowl",
-     "recipe_id": "COV4469856",
+     "name": "Thai Green Curry Chicken",
+     "recipe_id": "ThaiGrnCurChx1",
      "description": "",
-     "ingredients": "Teriyaki Beef (beef strips, teriyaki marinade [tamari, alcohol-free mirin, garlic, chili powder, canola/olive oil blend], teriyaki glaze[tamari, sugar, canola/olive oil blend, cornstarch]), Sauteed Vegetables, Yakisoba Noodles (ramen noodles, cabbage, carrots, onions, vegetarian oyster sauce, A-1 steak sauce, ketchup, pickled ginger, mushrooms, mayonnaise, furikake seasoning), eggrolls (fried in canola oil)",
+     "ingredients": "chicken, coconut milk, Thai eggplant, bamboo shoots, onions, bell peppers, garlic, ginger, fish sauce, sugar, lime juice, thai basil, olive/canola oil blend, salt, green curry paste (green chiles, lemongrass, shallots, garlic, ginger, cilantro stems, dried makrut lime, cumin, coriander, white pepper, fish sauce, salt, olive/canola oil blend)",
      "allergens": [
-      "EGG",
-      "SESAME",
-      "SOY",
-      "WHEAT",
-      "TRACEALLERGENS"
-     ],
-     "trace_allergens": [
       "COCONUT",
-      "FISH",
-      "MILK",
-      "SHELLFISH",
-      "TREENUTS"
+      "FISH"
      ],
+     "trace_allergens": [],
      "tags": [
+      "gluten-free",
       "halal"
      ],
      "order": 0
     },
     {
-     "name": "Agedashi-Style Tofu",
-     "recipe_id": "AgedashiTofu1",
+     "name": "Thai Red Curry Tempeh",
+     "recipe_id": "ThaiRedCurTemp1",
      "description": "",
-     "ingredients": "tofu, potato starch, water, tamari, mirin, kombu, mushroom seasoning, ginger, green onions, olive/canola oil blend, salt",
+     "ingredients": "tempeh, coconut milk, pumpkin, Thai red chiles, lemongrass, shallots, garlic, ginger, cilantro stems, dried makrut lime, cumin, coriander, white pepper, mushroom seasoning, sugar, lime juice, thai basil, olive/canola oil blend, salt",
      "allergens": [
+      "COCONUT",
+      "SHELLFISH",
       "SOY"
      ],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
-      "vegan"
+      "vegan",
+      "halal"
      ],
      "order": 1
     },
     {
-     "name": "Simmered Kabocha Squash",
-     "recipe_id": "SimmKoboSqua1",
+     "name": "Thai Stir-Fried Garlic Green Beans",
+     "recipe_id": "ThaiGrnBnGar1",
      "description": "",
-     "ingredients": "kabocha squash, water, tamari, mirin, sugar, kombu, mushroom seasoning, ginger, olive/canola oil blend, salt",
+     "ingredients": "green beans, garlic, Thai chiles, tamari, mushroom seasoning, sugar, vegetarian oyster sauce, lime juice, olive/canola oil blend, salt, black pepper",
      "allergens": [
       "SOY"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "WHEAT"
+     ],
      "tags": [
-      "gluten-free",
       "vegan"
      ],
      "order": 2
@@ -3675,26 +3607,26 @@
      "order": 4
     },
     {
-     "name": "Goma-ae Spinach with Sesame",
-     "recipe_id": "GomaSpinSes1",
+     "name": "Roasted Thai Eggplant",
+     "recipe_id": "RstThaiEggplant1",
      "description": "",
-     "ingredients": "spinach, sesame seeds, tamari, sugar, mirin, rice vinegar, sesame oil, ginger, salt",
+     "ingredients": "eggplant, garlic, ginger, tamari, lime juice, vegetarian oyster sauce, Thai red curry paste, cilantro, olive/canola oil blend, salt",
      "allergens": [
-      "SESAME",
+      "SHELLFISH",
       "SOY"
      ],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
-      "vegan"
+      "halal"
      ],
      "order": 5
     },
     {
-     "name": "Steamed Japanese Rice",
-     "recipe_id": "SteaJapanRice1",
+     "name": "Steamed Jasmine Rice",
+     "recipe_id": "5134594",
      "description": "",
-     "ingredients": "Japanese short-grain rice, water",
+     "ingredients": "jasmine rice, water, salt",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -3705,26 +3637,19 @@
      "order": 6
     },
     {
-     "name": "Vegetable Yakisoba",
-     "recipe_id": "5545292",
+     "name": "Thai Pineapple Fried Rice",
+     "recipe_id": "ThaiPineFryRice1",
      "description": "",
-     "ingredients": "ramen noodles, cabbage, carrots, onions, vegetarian oyster sauce, A-1 steak sauce, ketchup, pickled ginger, mushrooms, mayonnaise, furikake seasoning (nori seaweed, sesame seeds, salt, sugar, korean red pepper, mushroom seasoning)",
+     "ingredients": "jasmine rice, pineapple, eggs, onions, bell peppers, carrots, garlic, ginger, tamari, mushroom seasoning, sugar, curry powder, green onions, cilantro, olive/canola oil blend, salt, black pepper",
      "allergens": [
       "EGG",
-      "SESAME",
-      "SOY",
-      "WHEAT"
+      "SOY"
      ],
-     "trace_allergens": [
-      "COCONUT",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SHELLFISH",
-      "TREENUTS"
-     ],
+     "trace_allergens": [],
      "tags": [
-      "vegetarian"
+      "gluten-free",
+      "vegetarian",
+      "halal"
      ],
      "order": 7
     },
@@ -3879,24 +3804,6 @@
      "order": 17
     },
     {
-     "name": "Pasta Marinara",
-     "recipe_id": "5095708",
-     "description": "",
-     "ingredients": "pasta, marinara sauce, canola/olive oil blend",
-     "allergens": [
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "EGG"
-     ],
-     "tags": [
-      "vegan",
-      "halal"
-     ],
-     "order": 18
-    },
-    {
      "name": "Pasta Alfredo",
      "recipe_id": "5683556",
      "description": "",
@@ -3910,6 +3817,24 @@
      ],
      "tags": [
       "vegetarian",
+      "halal"
+     ],
+     "order": 18
+    },
+    {
+     "name": "Pasta Marinara",
+     "recipe_id": "5095708",
+     "description": "",
+     "ingredients": "pasta, marinara sauce, canola/olive oil blend",
+     "allergens": [
+      "SOY",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "EGG"
+     ],
+     "tags": [
+      "vegan",
       "halal"
      ],
      "order": 19
@@ -3931,30 +3856,35 @@
    ],
    "Dinner": [
     {
-     "name": "Braised Beef Poutine (Topping)",
-     "recipe_id": "BraisBeefPoutine1",
+     "name": "Chicken Parmesan",
+     "recipe_id": "4383016",
      "description": "",
-     "ingredients": "beef, beef soup base, onions, garlic, tomato paste, Worcestershire sauce, thyme, rosemary, olive/canola oil blend, salt, black pepper",
+     "ingredients": "chicken, italian seasoning, garlic powder, eggs, milk, breadcrumbs, flour, mozzarella cheese, parmesan cheese, canola/olive oil blend, garlic powder, italian seasoning, salt, marinara sauce",
      "allergens": [
-      "FISH"
+      "EGG",
+      "MILK",
+      "SOY",
+      "WHEAT"
      ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
       "halal"
      ],
      "order": 0
     },
     {
-     "name": "Wild Mushroom & Lentil Poutine",
-     "recipe_id": "MushLentilPout1",
+     "name": "Eggplant Parmesan",
+     "recipe_id": "4464496",
      "description": "",
-     "ingredients": "brown lentils, wild mushrooms, onions, garlic, vegetable soup base, tomato paste, thyme, rosemary, mushroom seasoning, olive/canola oil blend, salt, black pepper",
-     "allergens": [],
+     "ingredients": "eggplant, mushrooms, onions, marinara sauce, bread crumbs, mozzarella cheese, parmesan cheese, canola/olive oil blend, oregano, pepper",
+     "allergens": [
+      "MILK",
+      "SOY",
+      "WHEAT"
+     ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
-      "vegan",
+      "vegetarian",
       "halal"
      ],
      "order": 1
@@ -3988,10 +3918,24 @@
      "order": 3
     },
     {
-     "name": "Buttered Green Beans with Shallots",
-     "recipe_id": "ButterGrnBeanShal1",
+     "name": "Roasted Squash",
+     "recipe_id": "3571714",
      "description": "",
-     "ingredients": "green beans, butter, shallots, garlic, parsley, lemon juice, olive/canola oil blend, salt, black pepper",
+     "ingredients": "zucchini, squash, olive oil, thyme, salt, pepper",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan",
+      "halal"
+     ],
+     "order": 4
+    },
+    {
+     "name": "Broccoli Rabe with Garlic & Lemon",
+     "recipe_id": "RoatBrocRabe1",
+     "description": "",
+     "ingredients": "broccoli rabe, garlic, lemon juice, lemon zest, parmesan cheese, red pepper flakes, olive/canola oil blend, salt, black pepper",
      "allergens": [
       "MILK"
      ],
@@ -4001,82 +3945,32 @@
       "vegetarian",
       "halal"
      ],
-     "order": 4
-    },
-    {
-     "name": "Maple Roasted Root Vegetables",
-     "recipe_id": "MapRoastVeg1",
-     "description": "",
-     "ingredients": "root vegetables (carrots, parsnips, sweet potatoes, yukon gold or russet potatoes, red onions), maple syrup, thyme, rosemary, garlic, olive/canola oil blend, salt, black pepper",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan",
-      "halal"
-     ],
      "order": 5
     },
     {
-     "name": "Wild Rice Pilaf with Cranberries",
-     "recipe_id": "4153424",
+     "name": "Assorted Dinner Rolls",
+     "recipe_id": "5344600",
      "description": "",
-     "ingredients": "brown rice, wild rice, cranberries, onions, carrot, vegetable soup base, apple cider vinegar, shallots, white wine vinegar, salt",
-     "allergens": [],
-     "trace_allergens": [],
+     "ingredients": "unbleached wheat flour, malted barley flour, sour culture, salt, yeast, sesame seeds, amaranth, poppy seeds, whole wheat flour, dark rye flour, malt powder, honey, extra virgin olive oil, semolina, wheat germ",
+     "allergens": [
+      "SESAME",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "SOY",
+      "TREENUTS"
+     ],
      "tags": [
-      "gluten-free",
-      "vegan",
+      "vegetarian",
       "halal"
      ],
      "order": 6
     },
     {
-     "name": "Steak-Cut Fries",
-     "recipe_id": "StkCutFri1",
+     "name": "Rosemary Garlic White Bean Stew",
+     "recipe_id": "RoseWhiteStew1",
      "description": "",
-     "ingredients": "potatoes, vegetable oil, salt",
-     "allergens": [
-      "TRACEALLERGENS"
-     ],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
-     ],
-     "tags": [
-      "vegan"
-     ],
-     "order": 7
-    },
-    {
-     "name": "Canadian-Style Coleslaw",
-     "recipe_id": "CanadaSlaw1",
-     "description": "",
-     "ingredients": "green cabbage, carrots, mayonnaise, onions, sugar, apple cider vinegar, celery seeds, dijon mustard, salt, black pepper",
-     "allergens": [
-      "EGG",
-      "SOY"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegetarian"
-     ],
-     "order": 8
-    },
-    {
-     "name": "Mushroom Gravy",
-     "recipe_id": "3104786",
-     "description": "",
-     "ingredients": "mushrooms, onions, garlic, canola/olive oil blend, balsamic vinegar, vegetarian soup base (contains celery, carrots), cornstarch, beet sugar, parsley, salt",
+     "ingredients": "white beans, stewed tomatoes, onions, carrots, celery, garlic, vegetable base, rosemary, bay leaf, crushed red pepper flakes, oil, salt, and pepper",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -4084,21 +3978,22 @@
       "vegan",
       "halal"
      ],
-     "order": 9
+     "order": 7
     },
     {
-     "name": "Quebec-Style Cheese Curds",
-     "recipe_id": "PoutCheeseCurds1",
+     "name": "Garlic Herb Spaghetti",
+     "recipe_id": "GarHerbSpaghetti1",
      "description": "",
-     "ingredients": "pasteurized milk, cream, vinegar, enzymes",
+     "ingredients": "spaghetti, garlic, parsley, basil, lemon juice, red pepper flakes, olive/canola oil blend, salt, black pepper",
      "allergens": [
-      "MILK"
+      "WHEAT"
      ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free"
+      "vegan",
+      "halal"
      ],
-     "order": 10
+     "order": 8
     },
     {
      "name": "Burger Bar",
@@ -4108,7 +4003,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 11
+     "order": 9
     },
     {
      "name": "Grilled Chicken",
@@ -4123,7 +4018,7 @@
       "gluten-free",
       "halal"
      ],
-     "order": 12
+     "order": 10
     },
     {
      "name": "Grilled Vegan/Vegetarian",
@@ -4146,7 +4041,7 @@
      "tags": [
       "halal"
      ],
-     "order": 13
+     "order": 11
     },
     {
      "name": "Soup of the Day",
@@ -4156,7 +4051,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 14
+     "order": 12
     },
     {
      "name": "Assorted Dinner Rolls",
@@ -4175,7 +4070,7 @@
       "vegetarian",
       "halal"
      ],
-     "order": 15
+     "order": 13
     },
     {
      "name": "Composed Salad",
@@ -4187,7 +4082,7 @@
      "tags": [
       "halal"
      ],
-     "order": 16
+     "order": 14
     },
     {
      "name": "Performance Bar",
@@ -4197,7 +4092,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 17
+     "order": 15
     },
     {
      "name": "Craveable Grains",
@@ -4211,7 +4106,7 @@
       "vegan",
       "halal"
      ],
-     "order": 18
+     "order": 16
     },
     {
      "name": "Flavor Forward Legumes",
@@ -4225,7 +4120,7 @@
       "vegan",
       "halal"
      ],
-     "order": 19
+     "order": 17
     },
     {
      "name": "Pasta Alfredo",
@@ -4243,7 +4138,7 @@
       "vegetarian",
       "halal"
      ],
-     "order": 20
+     "order": 18
     },
     {
      "name": "Pasta Marinara",
@@ -4261,7 +4156,7 @@
       "vegan",
       "halal"
      ],
-     "order": 21
+     "order": 19
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -4275,7 +4170,7 @@
       "vegan",
       "halal"
      ],
-     "order": 22
+     "order": 20
     }
    ]
   },
@@ -4322,6 +4217,22 @@
      "order": 2
     },
     {
+     "name": "Avocado Toast",
+     "recipe_id": "Avocado Toast",
+     "description": "",
+     "ingredients": "Fresh Avocado , Olive Oil, Lemon Juice, Everything Bagel Seasoning (Garlic, Poppy Seed, Salt, Onion, Sesame Seed, Sunflower Oil, White or Wheat Toast",
+     "allergens": [
+      "EGG",
+      "MILK",
+      "SESAME",
+      "WHEAT",
+      "TRACEALLERGENS"
+     ],
+     "trace_allergens": [],
+     "tags": [],
+     "order": 3
+    },
+    {
      "name": "Waffles",
      "recipe_id": "3144806",
      "description": "",
@@ -4337,7 +4248,7 @@
       "vegetarian",
       "halal"
      ],
-     "order": 3
+     "order": 4
     },
     {
      "name": "Gluten-Free Waffles",
@@ -4353,7 +4264,7 @@
       "vegan",
       "halal"
      ],
-     "order": 4
+     "order": 5
     },
     {
      "name": "Seasonal Fruit",
@@ -4367,7 +4278,7 @@
       "vegan",
       "halal"
      ],
-     "order": 5
+     "order": 6
     },
     {
      "name": "Assorted Allergy-Friendly Items",
@@ -4380,7 +4291,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 6
+     "order": 7
     },
     {
      "name": "Chef's Choice Smoothie",
@@ -4396,50 +4307,62 @@
       "vegetarian",
       "halal"
      ],
-     "order": 7
+     "order": 8
     }
    ],
    "Lunch": [
     {
-     "name": "Japanese Chicken Teriyaki",
-     "recipe_id": "JapChxTeriyaki1",
+     "name": "Thai Green Curry Chicken",
+     "recipe_id": "ThaiGrnCurChx1",
      "description": "",
-     "ingredients": "chicken, tamari, mirin, sugar, ginger, green onions, olive/canola oil blend, salt",
+     "ingredients": "chicken, coconut milk, Thai eggplant, bamboo shoots, onions, bell peppers, garlic, ginger, fish sauce, sugar, lime juice, thai basil, olive/canola oil blend, salt, green curry paste (green chiles, lemongrass, shallots, garlic, ginger, cilantro stems, dried makrut lime, cumin, coriander, white pepper, fish sauce, salt, olive/canola oil blend)",
      "allergens": [
-      "SOY"
+      "COCONUT",
+      "FISH"
      ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free"
+      "gluten-free",
+      "halal"
      ],
      "order": 0
     },
     {
-     "name": "Agedashi-Style Tofu",
-     "recipe_id": "AgedashiTofu1",
+     "name": "Thai Red Curry Tempeh",
+     "recipe_id": "ThaiRedCurTemp1",
      "description": "",
-     "ingredients": "tofu, potato starch, water, tamari, mirin, kombu, mushroom seasoning, ginger, green onions, olive/canola oil blend, salt",
+     "ingredients": "tempeh, coconut milk, pumpkin, Thai red chiles, lemongrass, shallots, garlic, ginger, cilantro stems, dried makrut lime, cumin, coriander, white pepper, mushroom seasoning, sugar, lime juice, thai basil, olive/canola oil blend, salt",
      "allergens": [
+      "COCONUT",
+      "SHELLFISH",
       "SOY"
      ],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
-      "vegan"
+      "vegan",
+      "halal"
      ],
      "order": 1
     },
     {
-     "name": "Simmered Kabocha Squash",
-     "recipe_id": "SimmKoboSqua1",
+     "name": "Thai Stir-Fried Garlic Green Beans",
+     "recipe_id": "ThaiGrnBnGar1",
      "description": "",
-     "ingredients": "kabocha squash, water, tamari, mirin, sugar, kombu, mushroom seasoning, ginger, olive/canola oil blend, salt",
+     "ingredients": "green beans, garlic, Thai chiles, tamari, mushroom seasoning, sugar, vegetarian oyster sauce, lime juice, olive/canola oil blend, salt, black pepper",
      "allergens": [
       "SOY"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "WHEAT"
+     ],
      "tags": [
-      "gluten-free",
       "vegan"
      ],
      "order": 2
@@ -4473,26 +4396,26 @@
      "order": 4
     },
     {
-     "name": "Goma-ae Spinach with Sesame",
-     "recipe_id": "GomaSpinSes1",
+     "name": "Roasted Thai Eggplant",
+     "recipe_id": "RstThaiEggplant1",
      "description": "",
-     "ingredients": "spinach, sesame seeds, tamari, sugar, mirin, rice vinegar, sesame oil, ginger, salt",
+     "ingredients": "eggplant, garlic, ginger, tamari, lime juice, vegetarian oyster sauce, Thai red curry paste, cilantro, olive/canola oil blend, salt",
      "allergens": [
-      "SESAME",
+      "SHELLFISH",
       "SOY"
      ],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
-      "vegan"
+      "halal"
      ],
      "order": 5
     },
     {
-     "name": "Steamed Japanese Rice",
-     "recipe_id": "SteaJapanRice1",
+     "name": "Steamed Jasmine Rice",
+     "recipe_id": "5134594",
      "description": "",
-     "ingredients": "Japanese short-grain rice, water",
+     "ingredients": "jasmine rice, water, salt",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -4503,26 +4426,19 @@
      "order": 6
     },
     {
-     "name": "Vegetable Yakisoba",
-     "recipe_id": "5545292",
+     "name": "Thai Pineapple Fried Rice",
+     "recipe_id": "ThaiPineFryRice1",
      "description": "",
-     "ingredients": "ramen noodles, cabbage, carrots, onions, vegetarian oyster sauce, A-1 steak sauce, ketchup, pickled ginger, mushrooms, mayonnaise, furikake seasoning (nori seaweed, sesame seeds, salt, sugar, korean red pepper, mushroom seasoning)",
+     "ingredients": "jasmine rice, pineapple, eggs, onions, bell peppers, carrots, garlic, ginger, tamari, mushroom seasoning, sugar, curry powder, green onions, cilantro, olive/canola oil blend, salt, black pepper",
      "allergens": [
       "EGG",
-      "SESAME",
-      "SOY",
-      "WHEAT"
+      "SOY"
      ],
-     "trace_allergens": [
-      "COCONUT",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SHELLFISH",
-      "TREENUTS"
-     ],
+     "trace_allergens": [],
      "tags": [
-      "vegetarian"
+      "gluten-free",
+      "vegetarian",
+      "halal"
      ],
      "order": 7
     },
@@ -4628,46 +4544,42 @@
      "order": 14
     },
     {
-     "name": "Pasta Marinara",
-     "recipe_id": "5095708",
+     "name": "Alfredo Tortellini Verdura",
+     "recipe_id": "3669312",
      "description": "",
-     "ingredients": "pasta, marinara sauce, canola/olive oil blend",
+     "ingredients": "tortellini, spinach, tomato, basil, parmesan cheese, butternut squash, garlic, salt, pepper, alfredo sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt)",
      "allergens": [
+      "EGG",
+      "MILK",
       "SOY",
       "WHEAT"
      ],
-     "trace_allergens": [
-      "EGG"
-     ],
-     "tags": [
-      "vegan",
-      "halal"
-     ],
+     "trace_allergens": [],
+     "tags": [],
      "order": 15
     }
    ],
    "Dinner": [
     {
-     "name": "Braised Beef Poutine (Topping)",
-     "recipe_id": "BraisBeefPoutine1",
+     "name": "Pork Carnitas",
+     "recipe_id": "4496035",
      "description": "",
-     "ingredients": "beef, beef soup base, onions, garlic, tomato paste, Worcestershire sauce, thyme, rosemary, olive/canola oil blend, salt, black pepper",
-     "allergens": [
-      "FISH"
-     ],
+     "ingredients": "pork carnitas (pork, garlic, bay leaf, canola oil, salt), orange juice, oranges, onions, garlic, bay leaf, sugar, salt",
+     "allergens": [],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
-      "halal"
+      "gluten-free"
      ],
      "order": 0
     },
     {
-     "name": "Wild Mushroom & Lentil Poutine",
-     "recipe_id": "MushLentilPout1",
+     "name": "Tofu Sofritas",
+     "recipe_id": "5519388",
      "description": "",
-     "ingredients": "brown lentils, wild mushrooms, onions, garlic, vegetable soup base, tomato paste, thyme, rosemary, mushroom seasoning, olive/canola oil blend, salt, black pepper",
-     "allergens": [],
+     "ingredients": "tofu, salt, pepper, canola/olive oil blend, sofrito sauce (fire roasted tomatoes, onions, pasilla chili, paprika, green chili, tomato puree, garlic, canola/olive oil blend, salt, pepper)",
+     "allergens": [
+      "SOY"
+     ],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
@@ -4705,10 +4617,24 @@
      "order": 3
     },
     {
-     "name": "Buttered Green Beans with Shallots",
-     "recipe_id": "ButterGrnBeanShal1",
+     "name": "Roasted Squash",
+     "recipe_id": "3571714",
      "description": "",
-     "ingredients": "green beans, butter, shallots, garlic, parsley, lemon juice, olive/canola oil blend, salt, black pepper",
+     "ingredients": "zucchini, squash, olive oil, thyme, salt, pepper",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan",
+      "halal"
+     ],
+     "order": 4
+    },
+    {
+     "name": "Broccoli Rabe with Garlic & Lemon",
+     "recipe_id": "RoatBrocRabe1",
+     "description": "",
+     "ingredients": "broccoli rabe, garlic, lemon juice, lemon zest, parmesan cheese, red pepper flakes, olive/canola oil blend, salt, black pepper",
      "allergens": [
       "MILK"
      ],
@@ -4718,82 +4644,29 @@
       "vegetarian",
       "halal"
      ],
-     "order": 4
-    },
-    {
-     "name": "Maple Roasted Root Vegetables",
-     "recipe_id": "MapRoastVeg1",
-     "description": "",
-     "ingredients": "root vegetables (carrots, parsnips, sweet potatoes, yukon gold or russet potatoes, red onions), maple syrup, thyme, rosemary, garlic, olive/canola oil blend, salt, black pepper",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan",
-      "halal"
-     ],
      "order": 5
     },
     {
-     "name": "Wild Rice Pilaf with Cranberries",
-     "recipe_id": "4153424",
+     "name": "Flour Tortilla",
+     "recipe_id": "5778499",
      "description": "",
-     "ingredients": "brown rice, wild rice, cranberries, onions, carrot, vegetable soup base, apple cider vinegar, shallots, white wine vinegar, salt",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan",
-      "halal"
-     ],
-     "order": 6
-    },
-    {
-     "name": "Steak-Cut Fries",
-     "recipe_id": "StkCutFri1",
-     "description": "",
-     "ingredients": "potatoes, vegetable oil, salt",
+     "ingredients": "wheat flour, palm shortening, salt, sodium bicarbonate, mono glycerides, diglycerides, corn starch, sodium acid pyrophosphate, monocalcium phosphate, guar gum, fumaric acid, sodium metabisulfite.",
      "allergens": [
-      "TRACEALLERGENS"
+      "WHEAT"
      ],
      "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
+      "SOY"
      ],
      "tags": [
       "vegan"
      ],
-     "order": 7
+     "order": 6
     },
     {
-     "name": "Canadian-Style Coleslaw",
-     "recipe_id": "CanadaSlaw1",
+     "name": "Arroz a la Mexicana",
+     "recipe_id": "5514294",
      "description": "",
-     "ingredients": "green cabbage, carrots, mayonnaise, onions, sugar, apple cider vinegar, celery seeds, dijon mustard, salt, black pepper",
-     "allergens": [
-      "EGG",
-      "SOY"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegetarian"
-     ],
-     "order": 8
-    },
-    {
-     "name": "Mushroom Gravy",
-     "recipe_id": "3104786",
-     "description": "",
-     "ingredients": "mushrooms, onions, garlic, canola/olive oil blend, balsamic vinegar, vegetarian soup base (contains celery, carrots), cornstarch, beet sugar, parsley, salt",
+     "ingredients": "jasmine rice, onions, tomatoes, corn, carrots, serrano chili, garlic, clove spice, canola/olive oil blend, bay leaf, salt, pepper",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -4801,31 +4674,36 @@
       "vegan",
       "halal"
      ],
-     "order": 9
+     "order": 7
     },
     {
-     "name": "Quebec-Style Cheese Curds",
-     "recipe_id": "PoutCheeseCurds1",
+     "name": "Garlic Herb Spaghetti",
+     "recipe_id": "GarHerbSpaghetti1",
      "description": "",
-     "ingredients": "pasteurized milk, cream, vinegar, enzymes",
+     "ingredients": "spaghetti, garlic, parsley, basil, lemon juice, red pepper flakes, olive/canola oil blend, salt, black pepper",
      "allergens": [
-      "MILK"
+      "WHEAT"
      ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free"
+      "vegan",
+      "halal"
      ],
-     "order": 10
+     "order": 8
     },
     {
-     "name": "Soup of the Day",
-     "recipe_id": "SoupoftheDay",
+     "name": "Hearty Minestrone",
+     "recipe_id": "4633186",
      "description": "",
-     "ingredients": "chef's choice soup of the day",
-     "allergens": [],
+     "ingredients": "tomato puree, diced tomatoes in tomato juice, potatoes, kidney beans, carrots, green beans, celery, garbanzo beans, zucchini, peas, spinach, pasta, modified food starch, salt, parmesan cheese, gelatin, yeast extract, flour, flavoring, beef stock, spices, corn oil, canola oil, garlic, disodium inosinate, disodium guanylate, dextrose",
+     "allergens": [
+      "EGG",
+      "MILK",
+      "WHEAT"
+     ],
      "trace_allergens": [],
      "tags": [],
-     "order": 11
+     "order": 9
     },
     {
      "name": "Assorted Dinner Rolls",
@@ -4844,31 +4722,19 @@
       "vegetarian",
       "halal"
      ],
-     "order": 12
+     "order": 10
     },
     {
-     "name": "Garden Fresh Salad",
-     "recipe_id": "5482634",
+     "name": "Composed Salad",
+     "recipe_id": "123116546",
      "description": "",
-     "ingredients": "romaine lettuce, green onions, tomatoes, carrots, ranch dressing (soybean oil, vinegar, buttermilk, sugar, egg yolks, salt, food starch, whey, xanthan gum, garlic, onions, spice)",
-     "allergens": [
-      "EGG",
-      "MILK",
-      "SOY"
-     ],
-     "trace_allergens": [
-      "COCONUT",
-      "FISH",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "TREENUTS",
-      "WHEAT"
-     ],
+     "ingredients": "chef's choice composed salad",
+     "allergens": [],
+     "trace_allergens": [],
      "tags": [
-      "vegetarian"
+      "halal"
      ],
-     "order": 13
+     "order": 11
     },
     {
      "name": "Performance Bar",
@@ -4878,7 +4744,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 14
+     "order": 12
     },
     {
      "name": "Craveable Grains",
@@ -4892,7 +4758,7 @@
       "vegan",
       "halal"
      ],
-     "order": 15
+     "order": 13
     },
     {
      "name": "Flavor Forward Legumes",
@@ -4906,23 +4772,21 @@
       "vegan",
       "halal"
      ],
-     "order": 16
+     "order": 14
     },
     {
-     "name": "Cacciatore Pasta",
-     "recipe_id": "S6745026",
+     "name": "Tri Color Cheese Tortellini",
+     "recipe_id": "6188353",
      "description": "",
-     "ingredients": "Cacciatore Pasta (pasta, baby spinach, parsley, tomato, olive oil, garlic, red pepper flakes, cacciatore sauce[tomato sauce, carrots, celery, onions, mushrooms, garlic, tomato paste, tomatoes, capers, red wine vinegar, balsamic vinegar, brown sugar, canola/olive oil blend, black pepper, oregano, red pepper flakes, basil]), Roasted Seasonal Vegetable",
+     "ingredients": "enriched semolina flour, romano cheese (cow's milk, sheep's milk), ricotta cheese, wheat flour, parmesan cheese, pasteurized eggs, corn starch, salt, paprika oleoresin, asiago cheese, spinach powder, garlic powder, spices, onion powder, fontina cheese, xanthan gum, locust bean gum, guar gum, beta carotene",
      "allergens": [
+      "EGG",
+      "MILK",
       "WHEAT"
      ],
-     "trace_allergens": [
-      "EGG"
-     ],
-     "tags": [
-      "vegan"
-     ],
-     "order": 17
+     "trace_allergens": [],
+     "tags": [],
+     "order": 15
     }
    ]
   },
@@ -4994,10 +4858,10 @@
      "order": 3
     },
     {
-     "name": "Open Faced Breakfast Sandwich",
-     "recipe_id": "4887015",
+     "name": "Breakfast Burrito",
+     "recipe_id": "3163201",
      "description": "",
-     "ingredients": "english muffin, eggs, spinach, tomato, roasted red salsa (tomatoes, chipotle peppers, adobo sauce, garlic, canola/olive oil blend, salt), salt, pepper",
+     "ingredients": "tortilla, eggs, cheese, black beans, seasonal vegetables, canola/olive oil blend, salt, pepper",
      "allergens": [
       "EGG",
       "MILK",
@@ -5013,27 +4877,31 @@
       "TREENUTS"
      ],
      "tags": [
-      "vegetarian"
+      "vegetarian",
+      "halal"
      ],
      "order": 4
     },
     {
-     "name": "Pork Sausage Link",
-     "recipe_id": "4899163",
+     "name": "Chicken Apple Sausage",
+     "recipe_id": "7217325",
      "description": "",
-     "ingredients": "pork, sea salt, spices, turbinado sugar, sage oil, sage extract, rosemary extract",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free"
+     "ingredients": "chicken, apples, salt, sugar, dextrose, spices, cultured whey, paprika, soybean oil, sheep casing",
+     "allergens": [
+      "MILK",
+      "SOY"
      ],
+     "trace_allergens": [
+      "WHEAT"
+     ],
+     "tags": [],
      "order": 5
     },
     {
-     "name": "Hash Brown Patty",
-     "recipe_id": "6350846",
+     "name": "Breakfast Potatoes",
+     "recipe_id": "3829817",
      "description": "",
-     "ingredients": "potatoes, oil (canola oil, corn oil, cottonseed oil, palm oil, soybean oil, or sunflower oil), salt, onion powder, natural flavor, dextrose, disodium dihydrogen pyrophosphate",
+     "ingredients": "potatoes, onions, oil (canola oil, sunflower seed oil, cotton seed oil, palm oil, corn oil, or soybean oil), salt, disodium dihydrogen pyrophosphate, dextrose",
      "allergens": [
       "SOY"
      ],
@@ -5046,28 +4914,35 @@
      "order": 6
     },
     {
-     "name": "Plant Powered \"Eggs”",
-     "recipe_id": "4433739",
+     "name": "Tasty Tofu Scramble",
+     "recipe_id": "3930455",
      "description": "",
-     "ingredients": "mung bean protein, canola oil, onion, gellan gum, carrot extractives, natural flavors, turmeric extractives, potassium citrate, salt, soy lecithin, sugar, tapioca syrup, tetrasodium pyrophosphate, transglutaminase, nisin",
+     "ingredients": "tofu, seasonal vegetables, canola/olive oil blend, salt, pepper, turmeric, garlic",
      "allergens": [
       "SOY"
      ],
      "trace_allergens": [
-      "EGG"
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "TREENUTS",
+      "WHEAT"
      ],
      "tags": [
-      "gluten-free",
       "vegan",
       "halal"
      ],
      "order": 7
     },
     {
-     "name": "French Toast",
-     "recipe_id": "3508602",
+     "name": "Buttermilk Pancakes",
+     "recipe_id": "3958551",
      "description": "",
-     "ingredients": "chala bread, eggs, canola/olive oil blend, powdered sugar, cinnamon",
+     "ingredients": "wheat flour, malted barley flour, enzymes, ascorbic acid, sugar, soy flour, sodium bicarbonate, sodium aluminum phosphate, aluminum sulfate, monocalcium phosphate, canola or soybean oil, dextrose, salt, buttermilk, mono-diglycerides, soy lecithin, eggs",
      "allergens": [
       "EGG",
       "MILK",
@@ -5151,31 +5026,36 @@
    ],
    "Lunch": [
     {
-     "name": "Japanese Chicken Teriyaki",
-     "recipe_id": "JapChxTeriyaki1",
+     "name": "Thai Green Curry Chicken",
+     "recipe_id": "ThaiGrnCurChx1",
      "description": "",
-     "ingredients": "chicken, tamari, mirin, sugar, ginger, green onions, olive/canola oil blend, salt",
+     "ingredients": "chicken, coconut milk, Thai eggplant, bamboo shoots, onions, bell peppers, garlic, ginger, fish sauce, sugar, lime juice, thai basil, olive/canola oil blend, salt, green curry paste (green chiles, lemongrass, shallots, garlic, ginger, cilantro stems, dried makrut lime, cumin, coriander, white pepper, fish sauce, salt, olive/canola oil blend)",
      "allergens": [
-      "SOY"
+      "COCONUT",
+      "FISH"
      ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free"
+      "gluten-free",
+      "halal"
      ],
      "order": 0
     },
     {
-     "name": "Agedashi-Style Tofu",
-     "recipe_id": "AgedashiTofu1",
+     "name": "Thai Red Curry Tempeh",
+     "recipe_id": "ThaiRedCurTemp1",
      "description": "",
-     "ingredients": "tofu, potato starch, water, tamari, mirin, kombu, mushroom seasoning, ginger, green onions, olive/canola oil blend, salt",
+     "ingredients": "tempeh, coconut milk, pumpkin, Thai red chiles, lemongrass, shallots, garlic, ginger, cilantro stems, dried makrut lime, cumin, coriander, white pepper, mushroom seasoning, sugar, lime juice, thai basil, olive/canola oil blend, salt",
      "allergens": [
+      "COCONUT",
+      "SHELLFISH",
       "SOY"
      ],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
-      "vegan"
+      "vegan",
+      "halal"
      ],
      "order": 1
     },
@@ -5194,60 +5074,45 @@
      "order": 2
     },
     {
-     "name": "Spring Rolls",
-     "recipe_id": "5587308",
+     "name": "Steamed Jasmine Rice",
+     "recipe_id": "5134594",
      "description": "",
-     "ingredients": "enriched flour, calcium propionate, malted barley flour, cabbage, celery, carrots, bok choy, enriched durum flour, ferrous sulfate, thiamine mononitrate, water chestnuts, bamboo shoots, salt, modified food starch, canola oil, sugar, spice, garlic, wheat gluten, toasted sesame oil, dried onion, maltodextrin, natural flavor, disodium inosinate, disodium guanylate, eggs, sesame oil, cornstarch, fried in soybean oil",
-     "allergens": [
-      "EGG",
-      "SESAME",
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "COCONUT",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SHELLFISH",
-      "TREENUTS"
-     ],
+     "ingredients": "jasmine rice, water, salt",
+     "allergens": [],
+     "trace_allergens": [],
      "tags": [
-      "vegetarian",
+      "gluten-free",
+      "vegan",
       "halal"
      ],
      "order": 3
     },
     {
-     "name": "Vegetable Yakisoba",
-     "recipe_id": "5545292",
+     "name": "Vegetable Pad Thai with Tofu",
+     "recipe_id": "sesame, soy",
      "description": "",
-     "ingredients": "ramen noodles, cabbage, carrots, onions, vegetarian oyster sauce, A-1 steak sauce, ketchup, pickled ginger, mushrooms, mayonnaise, furikake seasoning (nori seaweed, sesame seeds, salt, sugar, korean red pepper, mushroom seasoning)",
+     "ingredients": "rice noodles, tofu, green onions, snap peas, shiitake mushrooms, sesame oil, pad thai sauce (ketchup, tamari, garlic, chili garlic sauce, tamarind puree, brown sugar)",
      "allergens": [
-      "EGG",
       "SESAME",
       "SOY",
-      "WHEAT"
+      "TRACEALLERGENS"
      ],
-     "trace_allergens": [
-      "COCONUT",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SHELLFISH",
-      "TREENUTS"
-     ],
+     "trace_allergens": [],
      "tags": [
-      "vegetarian"
+      "halal"
      ],
      "order": 4
     },
     {
-     "name": "Burger Bar",
-     "recipe_id": "5964436",
+     "name": "Corn Dogs",
+     "recipe_id": "5217692",
      "description": "",
-     "ingredients": "",
-     "allergens": [],
+     "ingredients": "pork, beef, salt, corn syrup, spices, potassium lactate, sodium phosphate, flavorings, sodium diacetate, sodium erythorbate, sodium nitrite, enriched flour, sugar, yellow corn flour, enriched yellow corn meal, soy flour, leavening, soybean oil, salt, eggs, potato flour, honey, artificial flavor, fried in soybean oil",
+     "allergens": [
+      "EGG",
+      "SOY",
+      "WHEAT"
+     ],
      "trace_allergens": [],
      "tags": [],
      "order": 5
@@ -5276,40 +5141,34 @@
      "order": 6
     },
     {
-     "name": "Impossible Burger",
-     "recipe_id": "4764885",
+     "name": "Black Bean Burger",
+     "recipe_id": "5677116",
      "description": "",
-     "ingredients": "textured wheat protein, coconut oil, potato protein, natural flavors, soy, yeast extract, salt, konjac gum, xanthan gum, soy protein isolate",
+     "ingredients": "black beans, brown rice, onions, corn oil, canola oil, corn, soy flour, tomatoes, onion powder, wheat gluten, eggs, bulgur wheat, green chiles, calcium caseinate milk, cornstarch, spices, tomato powder, tomato juice, salt, garlic powder, natural flavor, soy sauce powder, jalapeno peppers, onion concentrate, gum arabic, carrot concentrate, citric acid, xanthan gum",
      "allergens": [
-      "COCONUT",
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "SESAME"
-     ],
-     "tags": [
-      "vegan",
-      "halal"
-     ],
-     "order": 7
-    },
-    {
-     "name": "Pesto Chicken Pizza",
-     "recipe_id": "4438693",
-     "description": "",
-     "ingredients": "pizza dough, chicken breast, pesto sauce, mozzarella cheese, parmesan cheese, canola/olive oil blend, salt, pepper",
-     "allergens": [
+      "EGG",
       "MILK",
       "SOY",
       "WHEAT"
      ],
-     "trace_allergens": [
-      "EGG",
-      "SESAME"
-     ],
+     "trace_allergens": [],
      "tags": [
-      "halal"
+      "vegetarian"
+     ],
+     "order": 7
+    },
+    {
+     "name": "Caprese Focaccia Pizza",
+     "recipe_id": "5386973",
+     "description": "",
+     "ingredients": "focaccia, tomatoes, mozzarella cheese, basil, olive oil, salt",
+     "allergens": [
+      "MILK",
+      "WHEAT"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "vegetarian"
      ],
      "order": 8
     },
@@ -5332,34 +5191,35 @@
      "order": 9
     },
     {
-     "name": "Chicken Noodle Soup",
-     "recipe_id": "MollyChxNoodleSoup1",
+     "name": "Miso Soup",
+     "recipe_id": "3902989",
      "description": "",
-     "ingredients": "chicken stock, chicken meat, carrots, celery, enriched egg noodles, peas, onions, modified food starch, bleached enriched flour, salt, chicken fat, yeast extract, sugar, chicken meat including chicken juices, maltodextrin, water, vegetables (celery, onions, carrots), dehydrated whey (milk), garlic, soy protein isolate, spices, turmeric, cornstarch, beta carotene, dehydrated chicken, citric acid",
+     "ingredients": "vegetable soup base, onions, swiss chard, white miso, tofu",
      "allergens": [
-      "EGG",
-      "MILK",
-      "SOY",
-      "WHEAT"
+      "SOY"
      ],
      "trace_allergens": [],
-     "tags": [],
+     "tags": [
+      "gluten-free",
+      "vegan",
+      "halal"
+     ],
      "order": 10
     },
     {
-     "name": "Mediterranean Salad",
-     "recipe_id": "5536250",
+     "name": "Southwestern Ranch Salad",
+     "recipe_id": "4041962",
      "description": "",
-     "ingredients": "romaine lettuce, cucumber, tomato, feta cheese, red onion, kalamata olive, oregano, salt, pepper, italian dressing (soybean oil, distilled vinegar, high fructose corn syrup, corn syrup, salt, garlic, corn syrup solids, xanthan gum, lemon juice concentrate, spice, red bell pepper, paprika, fd&c yellow no.5, fd&c yellow No.6)",
+     "ingredients": "romaine lettuce, black beans, corn, black olives, cherry tomatoes, bell peppers, corn tortilla chips, cheese, cilantro, ranch dressing (soybean oil, vinegar, buttermilk, sugar, egg yolks, salt, food starch, whey, xanthan gum, garlic, onions, spice)",
      "allergens": [
+      "EGG",
       "MILK",
       "SOY"
      ],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
-      "vegetarian",
-      "halal"
+      "vegetarian"
      ],
      "order": 11
     },
@@ -5402,19 +5262,19 @@
      "order": 14
     },
     {
-     "name": "Pasta Marinara",
-     "recipe_id": "5095708",
+     "name": "Pasta Alfredo",
+     "recipe_id": "5683556",
      "description": "",
-     "ingredients": "pasta, marinara sauce, canola/olive oil blend",
+     "ingredients": "pasta, white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, parmesan cheese",
      "allergens": [
-      "SOY",
+      "MILK",
       "WHEAT"
      ],
      "trace_allergens": [
       "EGG"
      ],
      "tags": [
-      "vegan",
+      "vegetarian",
       "halal"
      ],
      "order": 15
@@ -5436,30 +5296,35 @@
    ],
    "Dinner": [
     {
-     "name": "Braised Beef Poutine (Topping)",
-     "recipe_id": "BraisBeefPoutine1",
+     "name": "Chicken Parmesan",
+     "recipe_id": "4383016",
      "description": "",
-     "ingredients": "beef, beef soup base, onions, garlic, tomato paste, Worcestershire sauce, thyme, rosemary, olive/canola oil blend, salt, black pepper",
+     "ingredients": "chicken, italian seasoning, garlic powder, eggs, milk, breadcrumbs, flour, mozzarella cheese, parmesan cheese, canola/olive oil blend, garlic powder, italian seasoning, salt, marinara sauce",
      "allergens": [
-      "FISH"
+      "EGG",
+      "MILK",
+      "SOY",
+      "WHEAT"
      ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
       "halal"
      ],
      "order": 0
     },
     {
-     "name": "Wild Mushroom & Lentil Poutine",
-     "recipe_id": "MushLentilPout1",
+     "name": "Eggplant Parmesan",
+     "recipe_id": "4464496",
      "description": "",
-     "ingredients": "brown lentils, wild mushrooms, onions, garlic, vegetable soup base, tomato paste, thyme, rosemary, mushroom seasoning, olive/canola oil blend, salt, black pepper",
-     "allergens": [],
+     "ingredients": "eggplant, mushrooms, onions, marinara sauce, bread crumbs, mozzarella cheese, parmesan cheese, canola/olive oil blend, oregano, pepper",
+     "allergens": [
+      "MILK",
+      "SOY",
+      "WHEAT"
+     ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
-      "vegan",
+      "vegetarian",
       "halal"
      ],
      "order": 1
@@ -5479,10 +5344,24 @@
      "order": 2
     },
     {
-     "name": "Buttered Green Beans with Shallots",
-     "recipe_id": "ButterGrnBeanShal1",
+     "name": "Roasted Squash",
+     "recipe_id": "3571714",
      "description": "",
-     "ingredients": "green beans, butter, shallots, garlic, parsley, lemon juice, olive/canola oil blend, salt, black pepper",
+     "ingredients": "zucchini, squash, olive oil, thyme, salt, pepper",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan",
+      "halal"
+     ],
+     "order": 3
+    },
+    {
+     "name": "Broccoli Rabe with Garlic & Lemon",
+     "recipe_id": "RoatBrocRabe1",
+     "description": "",
+     "ingredients": "broccoli rabe, garlic, lemon juice, lemon zest, parmesan cheese, red pepper flakes, olive/canola oil blend, salt, black pepper",
      "allergens": [
       "MILK"
      ],
@@ -5492,68 +5371,32 @@
       "vegetarian",
       "halal"
      ],
-     "order": 3
-    },
-    {
-     "name": "Maple Roasted Root Vegetables",
-     "recipe_id": "MapRoastVeg1",
-     "description": "",
-     "ingredients": "root vegetables (carrots, parsnips, sweet potatoes, yukon gold or russet potatoes, red onions), maple syrup, thyme, rosemary, garlic, olive/canola oil blend, salt, black pepper",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan",
-      "halal"
-     ],
      "order": 4
     },
     {
-     "name": "Steak-Cut Fries",
-     "recipe_id": "StkCutFri1",
+     "name": "Assorted Dinner Rolls",
+     "recipe_id": "5344600",
      "description": "",
-     "ingredients": "potatoes, vegetable oil, salt",
+     "ingredients": "unbleached wheat flour, malted barley flour, sour culture, salt, yeast, sesame seeds, amaranth, poppy seeds, whole wheat flour, dark rye flour, malt powder, honey, extra virgin olive oil, semolina, wheat germ",
      "allergens": [
-      "TRACEALLERGENS"
-     ],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
       "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
       "WHEAT"
      ],
+     "trace_allergens": [
+      "SOY",
+      "TREENUTS"
+     ],
      "tags": [
-      "vegan"
+      "vegetarian",
+      "halal"
      ],
      "order": 5
     },
     {
-     "name": "Canadian-Style Coleslaw",
-     "recipe_id": "CanadaSlaw1",
+     "name": "Rosemary Garlic White Bean Stew",
+     "recipe_id": "RoseWhiteStew1",
      "description": "",
-     "ingredients": "green cabbage, carrots, mayonnaise, onions, sugar, apple cider vinegar, celery seeds, dijon mustard, salt, black pepper",
-     "allergens": [
-      "EGG",
-      "SOY"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegetarian"
-     ],
-     "order": 6
-    },
-    {
-     "name": "Mushroom Gravy",
-     "recipe_id": "3104786",
-     "description": "",
-     "ingredients": "mushrooms, onions, garlic, canola/olive oil blend, balsamic vinegar, vegetarian soup base (contains celery, carrots), cornstarch, beet sugar, parsley, salt",
+     "ingredients": "white beans, stewed tomatoes, onions, carrots, celery, garlic, vegetable base, rosemary, bay leaf, crushed red pepper flakes, oil, salt, and pepper",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -5561,21 +5404,22 @@
       "vegan",
       "halal"
      ],
-     "order": 7
+     "order": 6
     },
     {
-     "name": "Quebec-Style Cheese Curds",
-     "recipe_id": "PoutCheeseCurds1",
+     "name": "Lemon Parmesan Orzo",
+     "recipe_id": "LPOrzo17",
      "description": "",
-     "ingredients": "pasteurized milk, cream, vinegar, enzymes",
+     "ingredients": "Orzo, Lemon Juice, Parsley, Parmesan Cheese, Vegetable Base, Garlic, Olive oil, Salt, Black Pepper.",
      "allergens": [
       "MILK"
      ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free"
+      "gluten-free",
+      "halal"
      ],
-     "order": 8
+     "order": 7
     },
     {
      "name": "Grilled Chicken",
@@ -5590,7 +5434,7 @@
       "gluten-free",
       "halal"
      ],
-     "order": 9
+     "order": 8
     },
     {
      "name": "Grilled Vegan/Vegetarian",
@@ -5613,7 +5457,7 @@
      "tags": [
       "halal"
      ],
-     "order": 10
+     "order": 9
     },
     {
      "name": "Soup of the Day",
@@ -5623,7 +5467,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 11
+     "order": 10
     },
     {
      "name": "Assorted Dinner Rolls",
@@ -5642,7 +5486,7 @@
       "vegetarian",
       "halal"
      ],
-     "order": 12
+     "order": 11
     },
     {
      "name": "Composed Salad",
@@ -5654,7 +5498,7 @@
      "tags": [
       "halal"
      ],
-     "order": 13
+     "order": 12
     },
     {
      "name": "Performance Bar",
@@ -5664,7 +5508,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 14
+     "order": 13
     },
     {
      "name": "Craveable Grains",
@@ -5678,7 +5522,7 @@
       "vegan",
       "halal"
      ],
-     "order": 15
+     "order": 14
     },
     {
      "name": "Flavor Forward Legumes",
@@ -5692,7 +5536,7 @@
       "vegan",
       "halal"
      ],
-     "order": 16
+     "order": 15
     },
     {
      "name": "Pasta Alfredo",
@@ -5710,7 +5554,7 @@
       "vegetarian",
       "halal"
      ],
-     "order": 17
+     "order": 16
     },
     {
      "name": "Pasta Marinara",
@@ -5728,7 +5572,7 @@
       "vegan",
       "halal"
      ],
-     "order": 18
+     "order": 17
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -5742,46 +5586,44 @@
       "vegan",
       "halal"
      ],
-     "order": 19
+     "order": 18
     }
    ]
   },
   "branner": {
    "Lunch": [
     {
-     "name": "Char Siu Pork",
-     "recipe_id": "21221230",
+     "name": "Braised Beef Tibs",
+     "recipe_id": "5603165",
      "description": "",
-     "ingredients": "pork, coconut liquid aminos, tomato paste, Chinese 5 spice, ginger, garlic, maple syrup/brown sugar",
-     "allergens": [
-      "COCONUT"
-     ],
+     "ingredients": "beef, berbere spice (coriander seed, ginger, fenugreek, all spice, clove, red pepper flakes, paprika, spanish paprika, hungarian paprika, salt, pepper), bell pepper, onion",
+     "allergens": [],
      "trace_allergens": [],
      "tags": [
-      "gluten-free"
+      "gluten-free",
+      "halal"
      ],
      "order": 0
     },
     {
-     "name": "Char Siu Mushroom",
-     "recipe_id": "111133220",
+     "name": "Lentil Stew with Berbere Spices",
+     "recipe_id": "5619912",
      "description": "",
-     "ingredients": "mushrooms, coconut liquid aminos, tomato paste, Chinese 5 spice, ginger, garlic, maple syrup/brown sugar",
-     "allergens": [
-      "COCONUT"
-     ],
+     "ingredients": "lentils, berebere spice (fenugreek, chiles, paprika, salt, ginger, onion powder, cardamom, coriander, nutmeg, garlic powder, cloves, cinnamon, allspice)",
+     "allergens": [],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
-      "vegan"
+      "vegan",
+      "halal"
      ],
      "order": 1
     },
     {
-     "name": "Garlic Rice",
-     "recipe_id": "5121297-1",
+     "name": "Spinach Rice Pilaf",
+     "recipe_id": "5080677-1",
      "description": "",
-     "ingredients": "rice, garlic, canola/olive oil blend",
+     "ingredients": "jasmine rice, spinach, garlic, onion, canola/olive oil blend, salt",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -5844,11 +5686,13 @@
      "order": 6
     },
     {
-     "name": "Nacho Bar",
-     "recipe_id": "1231112243",
+     "name": "Allergen Friendly Pizza Station",
+     "recipe_id": "10100011110",
      "description": "",
-     "ingredients": "fried corn tortilla, toppings variety (meat protein, black beans, salsa, allergen free cheese sauce, jalapenos, cilantro, black olives, green onions, pickled onions)",
-     "allergens": [],
+     "ingredients": "Meat Pizza of the Day Vegetable Pizza of the Day",
+     "allergens": [
+      "COCONUT"
+     ],
      "trace_allergens": [],
      "tags": [
       "gluten-free"
@@ -5870,25 +5714,26 @@
    ],
    "Dinner": [
     {
-     "name": "Kimchi Braised Pork",
-     "recipe_id": "121130",
+     "name": "Italian Style Beef Stew",
+     "recipe_id": "ItalianBeefStew1",
      "description": "",
-     "ingredients": "pork, oil ginger, garlic, gochujang paste, liquid coconut aminos, beef base, kimchi, brown sugar, salt, pepper",
-     "allergens": [
-      "COCONUT"
-     ],
+     "ingredients": "beef, carrots, bell peppers, tomatoes, onions, garlic, beef base, Italian seasoning, cornstarch, salt, pepper",
+     "allergens": [],
      "trace_allergens": [],
      "tags": [
-      "gluten-free"
+      "gluten-free",
+      "halal"
      ],
      "order": 0
     },
     {
-     "name": "Chickpea Afritada Stew",
-     "recipe_id": "11223312330",
+     "name": "Eggplant Parmesan",
+     "recipe_id": "1212110",
      "description": "",
-     "ingredients": "oil, onion, garlic, tomatoes, tomato paste, basil, bay leaf, veg base, nutritional yeast, salt, pepper, potatoes, carrots, red bell pepper, sugar, chickpeas",
-     "allergens": [],
+     "ingredients": "eggplant, Italian seasoning, garlic powder, oat milk, apple cider vinegar, GF breadcrumbs, garbanzo flour, daiya cheese, nutritional yeast, marinara sauce",
+     "allergens": [
+      "COCONUT"
+     ],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
@@ -5897,16 +5742,15 @@
      "order": 1
     },
     {
-     "name": "Garlic Rice",
-     "recipe_id": "5121297-1",
+     "name": "Creamy Mashed Potatoes",
+     "recipe_id": "111001",
      "description": "",
-     "ingredients": "rice, garlic, canola/olive oil blend",
+     "ingredients": "potatoes, oil, oat milk, non allergen vegan butter, garlic, salt",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
-      "vegan",
-      "halal"
+      "vegan"
      ],
      "order": 2
     },
@@ -5968,16 +5812,16 @@
      "order": 6
     },
     {
-     "name": "Allergen Friendly Pizza Station",
-     "recipe_id": "10100011110",
+     "name": "Grilled Cheese & Tomato Basil Soup",
+     "recipe_id": "1222111222",
      "description": "",
-     "ingredients": "Meat Pizza of the Day Vegetable Pizza of the Day",
+     "ingredients": "Chef's Line gluten-free bread, Daiya sliced cheddar cheese, non allergen plant based butter Tomato, tomato paste, red onion, coconut milk, basil, veg base, salt",
      "allergens": [
       "COCONUT"
      ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free"
+      "vegan"
      ],
      "order": 7
     },
