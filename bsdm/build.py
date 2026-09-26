@@ -253,6 +253,17 @@ def build(root: Path, out: Path) -> dict:
     # CNAME here sets it on every deploy. Keeping it in the build rather than in
     # the repo root also means the domain cannot drift from what is served.
     (out / "CNAME").write_text(DOMAIN + "\n")
+    # robots.txt is read per host, so neilmin.com's does not speak for this one.
+    # The sitemap is what points a crawler here at all; lastmod is the build's
+    # own day, because the menu on the page is new every night.
+    (out / "robots.txt").write_text(
+        f"User-agent: *\nAllow: /\n\nSitemap: https://{DOMAIN}/sitemap.xml\n")
+    (out / "sitemap.xml").write_text(
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        f"  <url><loc>https://{DOMAIN}/</loc>"
+        f"<lastmod>{menuslib.today().isoformat()}</lastmod></url>\n"
+        "</urlset>\n")
     # The link-preview card, named by absolute URL in index.html's og:image.
     # Composed once by hand from the logos and a few dishes, not per build.
     shutil.copy2(web / "og.jpg", out / "og.jpg")

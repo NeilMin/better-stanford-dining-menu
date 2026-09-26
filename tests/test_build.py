@@ -378,6 +378,22 @@ class TestRender:
         assert names == [f"https://{buildlib.DOMAIN}/", f"https://{buildlib.DOMAIN}/og.jpg"]
         assert (out / "og.jpg").read_bytes()[:2] == b"\xff\xd8", "a JPEG, as the name says"
 
+    def test_crawlers_are_pointed_at_the_one_page_on_this_host(self, site, tmp_path):
+        """robots.txt is per host, so the personal site's does not cover this
+        one. The canonical, the sitemap and robots.txt all name the domain the
+        build writes into CNAME, or Search Console files the page under a URL
+        nothing serves."""
+        site.with_web()
+        out = tmp_path / "site"
+        buildlib.build(site.root, out)
+        home = f"https://{buildlib.DOMAIN}/"
+        html = (out / "index.html").read_text()
+        assert re.findall(r'<link rel="canonical" href="([^"]+)"', html) == [home]
+        assert f"Sitemap: {home}sitemap.xml" in (out / "robots.txt").read_text()
+        sitemap = (out / "sitemap.xml").read_text()
+        assert re.findall(r"<loc>([^<]+)</loc>", sitemap) == [home]
+        assert "<lastmod>2026-09-17</lastmod>" in sitemap
+
     def test_only_the_pictures_in_use_are_copied(self, site, tmp_path):
         did = dish_id("Roast Chicken")
         site.write_catalog({did: {"name": "Roast Chicken", "image": f"{did}.webp"}})
