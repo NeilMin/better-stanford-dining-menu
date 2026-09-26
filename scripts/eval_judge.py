@@ -73,6 +73,8 @@ def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--llm", choices=["auto", "claude", "gemini"], default="auto",
                     help="the claude CLI where installed, else Gemini (default: auto)")
+    ap.add_argument("--judge-llm", choices=["auto", "claude", "gemini"],
+                    help="who judges, if not the same as --llm (which then only writes briefs)")
     ap.add_argument("--model", default="sonnet", help="claude model alias (default sonnet)")
     ap.add_argument("--sample", type=int, default=0, help="also judge N unreviewed current pictures")
     ap.add_argument("--only", help="substring of the dish name")
@@ -84,7 +86,8 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--out", type=Path, help="write every verdict here as JSON")
     args = ap.parse_args(argv)
 
-    llm = pick(args.llm, args.model)
+    llm = pick(args.llm, args.model, role="brief")
+    judge_llm = pick(args.judge_llm or args.llm, args.model, role="judge")
     catalog = json.loads((ROOT / "data" / "dishes.json").read_text())
     briefs = brieflib.load(args.brief_root)
     lock = threading.Lock()
@@ -126,7 +129,7 @@ def main(argv: list[str] | None = None) -> int:
         b = briefs.get(did)
         if not b:
             return case, None
-        return case, _try(judge.inspect, blob, b, llm)
+        return case, _try(judge.inspect, blob, b, judge_llm)
 
     results = []
     with ThreadPoolExecutor(args.workers) as ex:

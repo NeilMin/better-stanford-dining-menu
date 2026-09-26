@@ -260,18 +260,67 @@ class Gemini:
         return text
 
 
-def pick(which: str = "auto", claude_model: str = "sonnet"):
-    """The backend to use: the claude CLI where it is installed, else Gemini.
+# Who writes briefs on the Gemini API, best first. A brief is where the dish
+# knowledge lives, and Gemma 4 26B -- a fine judge -- wrote briefs that said
+# souvlaki is not on skewers. Flash knows food far better, but its free tier is
+# 20 requests a day *per model*, so the Flash versions are tried in turn, then
+# the bigger Gemma. Each is dropped for the night when it runs out.
+BRIEF_MODELS = ("gemini-flash-latest", "gemini-3.7-flash", "gemini-3.6-flash", "gemini-3.5-flash",
+                "gemma-4-31b-it", DEFAULT_GEMINI_MODEL)
 
+
+class Chain:
+    """Backends tried in order; one that is Unavailable is skipped from then on."""
+
+    def __init__(self, backends):
+        self.backends = list(backends)
+        self._out: set[int] = set()
+        self._last = None
+
+    @property
+    def name(self) -> str:
+        if self._last is not None:
+            return self._last.name
+        live = [b for b in self.backends if id(b) not in self._out and b.available()]
+        return live[0].name if live else "none"
+
+    def available(self) -> bool:
+        return any(id(b) not in self._out and b.available() for b in self.backends)
+
+    def ask(self, prompt: str, images: Sequence[bytes] = (), system: str = "") -> str:
+        for backend in self.backends:
+            if id(backend) in self._out or not backend.available():
+                continue
+            try:
+                answer = backend.ask(prompt, images=images, system=system)
+            except Unavailable:
+                self._out.add(id(backend))
+                continue
+            self._last = backend
+            return answer
+        raise Unavailable("every model in the chain is out for the night")
+
+
+def pick(which: str = "auto", claude_model: str = "sonnet", role: str = "judge"):
+    """The backend to use: the claude CLI where it is installed, else the Gemini API.
+
+    On the Gemini API the brief writer is the Flash-then-Gemma chain and the
+    judge is Gemma alone, whose free tier is big enough for a night of pictures.
     Returns one whether or not it is available; the caller asks, so it can say
     what is missing.
     """
     claude = ClaudeCLI(model=claude_model)
+
+    def gemini():
+        if role == "brief":
+            return Chain(Gemini(model=m) for m in BRIEF_MODELS)
+        return Gemini()
+
     if which == "claude":
         return claude
     if which == "gemini":
-        return Gemini()
+        return gemini()
     if claude.available():
         return claude
-    gemini = Gemini()
-    return gemini if gemini.available() else claude
+    g = gemini()
+    return g if g.available() else claude

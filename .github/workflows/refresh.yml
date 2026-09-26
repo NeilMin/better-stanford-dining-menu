@@ -28,19 +28,28 @@ jobs:
       - name: Scrape the menu window
         run: uv run python scripts/update.py
 
+      # Gemma on the Gemini API's free tier. Deliberately not given the
+      # Cloudflare secrets: its free neurons are the only free image generator
+      # there is, and translation used to spend them before a picture was drawn.
       - name: Translate missing menu items
         continue-on-error: true
         env:
-          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
-          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: uv run python scripts/translate.py
 
-      - name: Generate pending dish images
+      # Everything here is free and nothing unchecked is kept: Gemini Flash
+      # (then Gemma) writes each new dish's brief, FLUX.2 [klein] on
+      # Cloudflare's free tier draws it, and Gemma judges every picture against
+      # the brief. A dish no picture passes for keeps its placeholder, and is
+      # left alone after three runs. Running out of either allowance stops the
+      # step cleanly; tomorrow's picks up where it left off.
+      - name: Draw pending dish images
         continue-on-error: true
         env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
           CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
-        run: uv run python scripts/gen_images.py --limit 50
+        run: uv run python scripts/gen_images.py --backend cloudflare --llm gemini --limit 40
 
       # always(), because the night's menus and assets are worth keeping whatever
       # else the run turns up -- the source holds seven days and no more.

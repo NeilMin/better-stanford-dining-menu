@@ -138,8 +138,12 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--cf-model", default=KLEIN_MODEL,
                     help=f"Workers AI model for --backend cloudflare (default {KLEIN_MODEL})")
     ap.add_argument("--llm", choices=["auto", "claude", "gemini"], default="auto",
-                    help="who writes briefs and judges pictures: the claude CLI where it is "
-                         "installed, else Gemini's free tier with GEMINI_API_KEY (default: auto)")
+                    help="who writes briefs (and judges, unless --judge-llm says otherwise): the "
+                         "claude CLI where it is installed, else the Gemini API's free tier with "
+                         "GEMINI_API_KEY -- Flash models in turn for briefs, Gemma for judging "
+                         "(default: auto)")
+    ap.add_argument("--judge-llm", choices=["auto", "claude", "gemini"],
+                    help="who judges pictures, if not the same as --llm")
     ap.add_argument("--llm-model", default="sonnet",
                     help="claude model alias, when the claude CLI is used (default sonnet)")
     ap.add_argument("--judge", action=argparse.BooleanOptionalAction, default=True,
@@ -225,7 +229,10 @@ def main(argv: list[str] | None = None) -> int:
     model_name = args.model if backend == "comfyui" else (
         "cf-klein" if "klein" in args.cf_model else "cf-" + args.cf_model.rsplit("/", 1)[-1])
 
-    llm = pick_llm(args.llm, args.llm_model)
+    llm = pick_llm(args.llm, args.llm_model, role="brief")
+    judge_llm = pick_llm(args.judge_llm or args.llm, args.llm_model, role="judge")
+    if args.judge and not judge_llm.available():
+        llm = judge_llm  # report the judge as the thing missing
     if not llm.available():
         if args.judge:
             # Without a judge nothing drawn tonight could be kept, so drawing
@@ -251,7 +258,7 @@ def main(argv: list[str] | None = None) -> int:
             raise Stop(f"Cloudflare quota: {exc}")
 
     print(f"Drawing {len(pending)} dishes with {model_name}"
-          + (f", judged by {llm.name}" if args.judge else ", unjudged"))
+          + (f", briefs by {llm.name}, judged by {judge_llm.name}" if args.judge else ", unjudged"))
     started = time.monotonic()
     done = rejected = passed = 0
     drawn = 0
@@ -282,7 +289,7 @@ def main(argv: list[str] | None = None) -> int:
             existing = IMAGES / f"{did}.webp"
             if args.audit and entry.get("image") and existing.exists() and "judge" not in entry:
                 try:
-                    verdict = judge.inspect(existing.read_bytes(), brief, llm)
+                    verdict = judge.inspect(existing.read_bytes(), brief, judge_llm)
                 except Unavailable:
                     raise
                 except LLMError as exc:
@@ -329,7 +336,7 @@ def main(argv: list[str] | None = None) -> int:
                         kept = (image, seed, None)
                         break
                     try:
-                        verdict = judge.inspect(to_webp(image), brief, llm)
+                        verdict = judge.inspect(to_webp(image), brief, judge_llm)
                     except Unavailable:
                         raise
                     except LLMError as exc:

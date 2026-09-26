@@ -235,3 +235,46 @@ def test_thinking_is_only_turned_down_when_asked():
     first, second = (p["json"]["generationConfig"] for p in session.posts)
     assert "thinkingConfig" not in first
     assert second["thinkingConfig"] == {"thinkingLevel": "minimal"}
+
+
+class Scripted:
+    def __init__(self, name, *answers, available=True):
+        self.name, self.answers, self._available = name, list(answers), available
+
+    def available(self):
+        return self._available
+
+    def ask(self, prompt, images=(), system=""):
+        a = self.answers.pop(0)
+        if isinstance(a, Exception):
+            raise a
+        return a
+
+
+def test_a_chain_moves_on_when_a_model_runs_out_and_remembers():
+    first = Scripted("flash", Unavailable("20 a day"))
+    second = Scripted("gemma", "one", "two")
+    chain = llmlib.Chain([first, second])
+    assert chain.ask("x") == "one" and chain.name == "gemma"
+    assert chain.ask("y") == "two", "asked the spent model again"
+
+
+def test_a_chain_passes_ordinary_errors_through():
+    chain = llmlib.Chain([Scripted("flash", LLMError("garbled")), Scripted("gemma", "fine")])
+    with pytest.raises(LLMError):
+        chain.ask("x")
+
+
+def test_a_chain_with_nothing_left_is_unavailable():
+    chain = llmlib.Chain([Scripted("flash", Unavailable("out")), Scripted("gemma", available=False)])
+    with pytest.raises(Unavailable):
+        chain.ask("x")
+    assert not chain.available()
+
+
+def test_on_the_gemini_api_briefs_come_from_the_chain_and_judging_from_gemma(monkeypatch):
+    monkeypatch.setenv("GEMINI_API_KEY", "k")
+    monkeypatch.setattr(llmlib.shutil, "which", lambda b: None)
+    brief = llmlib.pick("auto", role="brief")
+    assert isinstance(brief, llmlib.Chain) and brief.backends[0].model.startswith("gemini")
+    assert llmlib.pick("auto", role="judge").model.startswith("gemma")

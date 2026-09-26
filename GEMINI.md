@@ -95,7 +95,7 @@ uv run python scripts/fetch_specials.py --show
 - **Prompt Rev**: Bump `bsdm/dishes.py:PROMPT_REV` whenever prompt generation rules change, allowing `--redraw-stale` to selectively refresh older images.
 - **SDXL Prompting Rules**: Positive prompts **cannot** use phrases like "no meat" (CLIP lacks negation and interprets this as a prompt about meat). Protein exclusions are strictly placed in `bsdm/dishes.py:negative_prompt()`.
 - **Flavoring Exclusion**: `_FLAVORING_RE` in `bsdm/dishes.py` prevents condiments like "chicken soup base" or "A-1 steak sauce" from turning vegetable dishes into meat classifications or drawing meat on the plate.
-- **Image Backlog Reporting**: CI cannot run ComfyUI. `scripts/notify_images.py` manages a standing GitHub issue (`Dishes waiting for a picture`), only commenting when newly discovered dishes need pictures.
+- **Everything Free**: CI draws with FLUX.2 [klein] on Cloudflare's free tier, writes briefs with a chain of Gemini Flash models then Gemma (Flash's free tier is 20 requests/day per model), and judges and translates with Gemma 4 26B -- all on the free `GEMINI_API_KEY`. The laptop uses ComfyUI RealVisXL and the `claude` CLI. RealVisXL on a free GitHub runner was measured at 29-31 min/picture and ruled out. Nothing paid, ever; a backend that disappears must degrade to the placeholder icon.
 
 ### Specials Poster
 - **Geometric Parsing via PyMuPDF**: Canva PDF text stream order is non-linear. `bsdm/specials.py` reads geometry: coloured rectangles define date ranges, text belongs to the smallest enclosing bounding box.

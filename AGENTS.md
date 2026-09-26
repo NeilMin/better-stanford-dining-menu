@@ -32,7 +32,7 @@ This file covers the invariants that are easy to break and only visible across s
 | `data/` | Scraped menus (`live/`, `archive/`), `dishes.json`, `stations.json`, `zh.json`, images, and logos. |
 | `web/` | Web template (`index.html`), vanilla JS application (`app.js`), and responsive styles (`app.css`). |
 | `tests/` | Pytest test suite, mock fixtures (`conftest.py`), and JS bridge tests (`test_web_js.py`). |
-| `.github/workflows/` | CI/CD workflows: `refresh.yml` (nightly scraper & issue filer), `pages.yml` (deploy to GitHub Pages). |
+| `.github/workflows/` | `refresh.yml` (scrape, translate, draw and judge new dishes, twice a day), `pages.yml` (test, build, deploy to GitHub Pages). |
 
 ## Commands
 
@@ -172,16 +172,12 @@ next run picks it up.
 show their English name in Chinese mode until then; `scripts/update.py` prints how many are
 waiting.
 
-**The picture backlog is an issue, and must not become a red run.** `bsdm/source.py` owns red and
-it means a hall needs a config entry *tonight* or its menus are lost; a dish without a picture is
-what every new dish looks like for its first day or two, around twenty a night. So
-`scripts/notify_images.py` keeps one standing GitHub issue instead: the body is the whole backlog
-rewritten nightly, and a comment — the only part that sends mail, which is why it @-mentions the
-owner — is added solely for ids the body was not already carrying. Those ids live in an HTML
-comment inside the body, so GitHub holds the state and `data/` gains nothing; editing or closing
-the issue by hand is safe, and deleting the marker costs one over-full comment and then heals.
-It runs **after** `check_source.py` and with `if: always()`, because a failed step stops the ones
-below it and neither of those two findings may swallow the other.
+**The picture backlog must not become a red run.** `bsdm/source.py` owns red and it means a hall
+needs a config entry *tonight* or its menus are lost; a dish without a picture is what a new dish
+looks like until the nightly draw reaches it. `scripts/notify_images.py` can keep one standing
+GitHub issue for the backlog (body rewritten nightly, the ids in an HTML comment so GitHub holds
+the state), but it is not wired into `refresh.yml` any more: the owner asked not to be mailed, and
+`make images-todo` prints the same list on demand.
 
 **`bsdm/pending.py` asks what the board shows, not what the catalog claims.** A dish counts as
 waiting when `needs_image` is set and there is no image file on disk — the same test
@@ -205,13 +201,26 @@ of three failures and, when Cloudflare's quota ran out mid-run, switched itself 
 whatever it had; a "Beef Souvlaki" it had itself scored 3/10 went up that way. A wrong picture
 is worse than the icon, for the same reason `build()` will not publish last week's menus.
 
-**Briefs and judging cost nothing, and have to stay that way.** `bsdm/llm.py` offers two
-backends behind one `ask(prompt, images)`: the `claude` CLI (a subscription already paid for,
-on the laptop) and the Gemini API's free tier (`GEMINI_API_KEY`, a free AI Studio key, for CI).
-`--llm auto` takes the CLI where it is installed. Nothing paid belongs here: the site is meant to
-run unattended for years on free tiers, and a backend that goes away must degrade to the
-placeholder icon, never to an unchecked picture. GitHub Models, the obvious free choice in 2025,
-was retired on 2026-07-30.
+**Everything that draws, briefs or judges costs nothing, and has to stay that way.** The site is
+meant to run unattended for years on free tiers; a backend that goes away must degrade to the
+placeholder icon, never to an unchecked picture. What each job runs on, and why:
+
+- *Drawing*: RealVisXL through the local ComfyUI on the laptop; FLUX.2 [klein] 4B on Cloudflare
+  Workers AI in CI (`--backend cloudflare`), about 100 neurons a picture out of 10,000 free a day.
+  RealVisXL on a free GitHub runner was measured and ruled out: 29-31 min a picture, 17-19 with
+  Lightning, at 15 GB of a 16 GB box.
+- *Briefs* (the dish knowledge): the `claude` CLI on the laptop; in CI a `bsdm.llm.Chain` of
+  Gemini Flash versions, then Gemma -- Flash's free tier is 20 requests a day *per model*, so they
+  take turns. Gemma 4 26B alone wrote briefs that said souvlaki is not on skewers.
+- *Judging*: the `claude` CLI on the laptop; in CI Gemma 4 26B on the Gemini API, which judged
+  the eval set as well as Claude Sonnet did and has the free quota for a night. Gemma is asked
+  without JSON mode (it loops until the server hangs up) and, for translation, with thinking at
+  "minimal" (it otherwise thinks through its whole output cap).
+- *Translation*: the `claude` CLI, else Gemma. Never Cloudflare while its neurons can draw.
+
+`--llm` picks the brief writer (and the judge, unless `--judge-llm` says otherwise); `auto` takes
+the CLI where it is installed. GitHub Models, the obvious free choice in 2025, was retired on
+2026-07-30.
 
 **The dish knowledge lives in the brief, not in `dishes.py`.** SDXL does not know what gyro meat
 or miso black cod looks like, and for two weeks a person supplied it one regex at a time — the
@@ -488,9 +497,10 @@ source: GitHub Actions).
   Actions-sourced site — that is a one-time setting — but it stops a deploy without it from
   clearing the setting.
 
-`site/` is build output and is not committed. `data/` is, including images: CI has no GPU, so
-images are generated locally, committed, and pushed. New dishes appear with a placeholder icon
-until that happens. `data/logos/` and `data/specials/` are committed for the same reason — the
+`site/` is build output and is not committed. `data/` is, including images: CI draws new dishes
+nightly with FLUX.2 [klein] on Cloudflare's free tier and commits what the judge passes; the
+laptop draws with RealVisXL, and `gen_images.py --audit` judges the pictures drawn before there
+was a judge. A dish shows a placeholder icon until a picture of it passes. `data/logos/` and `data/specials/` are committed for the same reason — the
 logos because cutting them needs a hand-verified config, the posters because they are an archive
 of something the source deletes. CI *does* fetch new posters, because `git add data/` picks them
 up; it never re-cuts logos.
