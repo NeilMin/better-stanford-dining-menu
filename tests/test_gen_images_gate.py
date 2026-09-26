@@ -211,3 +211,29 @@ def test_audit_leaves_a_picture_a_judge_has_already_passed(setup):
     _with_old_picture(setup, judge={"judge": "fake", "seen": "chicken", "at": "x"})
     assert run("--audit") == 0
     assert setup.llm.calls == [] and setup.drawn == []
+
+
+def test_a_dish_that_failed_three_runs_is_left_alone(setup):
+    """Four drawings a night, for ever, out of a free allocation."""
+    catalog = setup.catalog()
+    catalog["aaaa0001"]["rejected"] = {"tries": gen_images.MAX_TRIES, "brief_rev": brieflib.BRIEF_REV}
+    (setup.root / "data" / "dishes.json").write_text(json.dumps(catalog))
+    assert run() == 0
+    assert setup.drawn == [] and setup.llm.calls == []
+
+
+def test_new_brief_rules_or_a_flag_give_it_another_go(setup):
+    catalog = setup.catalog()
+    catalog["aaaa0001"]["rejected"] = {"tries": gen_images.MAX_TRIES, "brief_rev": brieflib.BRIEF_REV - 1}
+    (setup.root / "data" / "dishes.json").write_text(json.dumps(catalog))
+    setup.llm.briefs.append(BRIEF)
+    setup.llm.verdicts.append(PASS)
+    run()
+    assert len(setup.drawn) == 1
+
+
+def test_each_failed_run_counts(setup):
+    setup.llm.briefs += [BRIEF, BRIEF]
+    setup.llm.verdicts += [FAIL] * 4
+    run()
+    assert setup.catalog()["aaaa0001"]["rejected"]["tries"] == 1

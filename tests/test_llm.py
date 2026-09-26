@@ -226,3 +226,12 @@ def test_gemini_retries_a_dropped_connection(monkeypatch):
             return super().post(*a, **kw)
 
     assert llmlib.Gemini(key="k", session=Flaky(answer("ok"))).ask("x") == "ok"
+
+
+def test_thinking_is_only_turned_down_when_asked():
+    session = FakeSession(answer("a"), answer("b"))
+    llmlib.Gemini(model="gemma-4-26b-a4b-it", key="k", session=session).ask("x")
+    llmlib.Gemini(model="gemma-4-26b-a4b-it", key="k", session=session, thinking="minimal").ask("x")
+    first, second = (p["json"]["generationConfig"] for p in session.posts)
+    assert "thinkingConfig" not in first
+    assert second["thinkingConfig"] == {"thinkingLevel": "minimal"}

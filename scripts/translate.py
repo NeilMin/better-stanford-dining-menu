@@ -21,6 +21,7 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -33,6 +34,7 @@ sys.path.insert(0, str(ROOT))
 
 from bsdm import zh as zhlib  # noqa: E402
 from bsdm.cloudflare import CloudflareClient, CloudflareError, CloudflareQuotaError  # noqa: E402
+from bsdm.llm import Gemini, LLMError, Unavailable  # noqa: E402
 
 SYSTEM = (
     "You translate the menus of a US university dining hall into Simplified "
@@ -78,29 +80,18 @@ class TranslateError(RuntimeError):
     pass
 
 
-def ask(items: list[str], section: str, args) -> dict[str, str]:
-    """One model call: a list of English strings in, a JSON object out."""
-    prompt = (
+def request(items: list[str], section: str) -> str:
+    return (
         f"{RULES[section]}\n\n"
         "Reply with a JSON object mapping every input string below, copied "
         "exactly as given, to its Simplified Chinese translation.\n\n"
         + json.dumps(items, ensure_ascii=False, indent=0)
     )
-    cmd = [args.claude_bin, "-p", "--model", args.model,
-           "--system-prompt", SYSTEM, "--strict-mcp-config", "--restricted"]
-    try:
-        # Run outside the repo: the translator wants none of the project's
-        # context, and loading it would be paid for on every batch.
-        done = subprocess.run(
-            cmd + [prompt], capture_output=True, text=True,
-            timeout=args.timeout, cwd=tempfile.gettempdir(),
-        )
-    except subprocess.TimeoutExpired:
-        raise TranslateError(f"no answer in {args.timeout}s")
-    if done.returncode != 0:
-        raise TranslateError((done.stderr or done.stdout).strip()[:200] or "claude failed")
 
-    text = done.stdout.strip()
+
+def read_answer(text: str, items: list[str]) -> dict[str, str]:
+    """The translations in a model's reply, keyed by the strings that were asked."""
+    text = text.strip()
     # Belt and braces: the system prompt forbids a fence, but a stray one must
     # not throw away a whole batch.
     if match := re.search(r"\{.*\}", text, re.S):
@@ -124,6 +115,34 @@ def ask(items: list[str], section: str, args) -> dict[str, str]:
     return out
 
 
+def ask(items: list[str], section: str, args) -> dict[str, str]:
+    """One model call: a list of English strings in, a JSON object out."""
+    cmd = [args.claude_bin, "-p", "--model", args.model,
+           "--system-prompt", SYSTEM, "--strict-mcp-config", "--restricted"]
+    try:
+        # Run outside the repo: the translator wants none of the project's
+        # context, and loading it would be paid for on every batch.
+        done = subprocess.run(
+            cmd + [request(items, section)], capture_output=True, text=True,
+            timeout=args.timeout, cwd=tempfile.gettempdir(),
+        )
+    except subprocess.TimeoutExpired:
+        raise TranslateError(f"no answer in {args.timeout}s")
+    if done.returncode != 0:
+        raise TranslateError((done.stderr or done.stdout).strip()[:200] or "claude failed")
+    return read_answer(done.stdout, items)
+
+
+def ask_gemini(items: list[str], section: str, client: Gemini) -> dict[str, str]:
+    """One model call via the Gemini API's free tier (Gemma), for CI."""
+    try:
+        return read_answer(client.ask(request(items, section), system=SYSTEM), items)
+    except Unavailable:
+        raise
+    except LLMError as exc:
+        raise TranslateError(str(exc))
+
+
 def ask_cloudflare(items: list[str], section: str, client: CloudflareClient) -> dict[str, str]:
     """One model call via Cloudflare Workers AI."""
     return client.translate(items, section, SYSTEM, RULES[section])
@@ -132,8 +151,10 @@ def ask_cloudflare(items: list[str], section: str, client: CloudflareClient) -> 
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--backend", choices=["auto", "cloudflare", "claude"], default="auto",
-                    help="translation backend: cloudflare, claude, or auto (default: auto)")
+    ap.add_argument("--backend", choices=["auto", "claude", "gemini", "cloudflare"], default="auto",
+                    help="auto: the claude CLI where installed, else Gemma on the Gemini API's free "
+                         "tier (GEMINI_API_KEY), else Cloudflare -- whose free neurons are better "
+                         "spent drawing (default: auto)")
     ap.add_argument("--model", default="sonnet", help="model alias passed to claude (default sonnet)")
     ap.add_argument("--claude-bin", default="claude", help="path to the Claude Code CLI")
     ap.add_argument("--section", choices=sorted(zhlib.SECTIONS), action="append",
@@ -148,16 +169,21 @@ def main(argv: list[str] | None = None) -> int:
     args = ap.parse_args(argv)
 
     cf_client = CloudflareClient()
-    if args.backend == "cloudflare":
-        if not cf_client.is_configured():
-            print("Error: Cloudflare backend requested but CF_ACCOUNT_ID and CF_API_TOKEN are not set.",
-                  file=sys.stderr)
-            return 1
-        use_cf = True
-    elif args.backend == "auto":
-        use_cf = cf_client.is_configured()
-    else:
-        use_cf = False
+    gemini = Gemini(max_tokens=4096, thinking="minimal")
+    backend = args.backend
+    if backend == "auto":
+        backend = ("claude" if shutil.which(args.claude_bin) else
+                   "gemini" if gemini.available() else
+                   "cloudflare" if cf_client.is_configured() else "claude")
+    if backend == "cloudflare" and not cf_client.is_configured():
+        print("Error: Cloudflare backend requested but CF_ACCOUNT_ID and CF_API_TOKEN are not set.",
+              file=sys.stderr)
+        return 1
+    if backend == "gemini" and not gemini.available():
+        print("Error: Gemini backend requested but GEMINI_API_KEY is not set.", file=sys.stderr)
+        return 1
+    backend_name = {"cloudflare": "Cloudflare Workers AI", "gemini": gemini.name,
+                    "claude": f"claude ({args.model})"}[backend]
 
     table = zhlib.load(ROOT)
     want = zhlib.wanted(ROOT)
@@ -181,7 +207,6 @@ def main(argv: list[str] | None = None) -> int:
         return 0
 
     if args.dry_run:
-        backend_name = "Cloudflare Workers AI" if use_cf else f"claude ({args.model})"
         for section, items in todo.items():
             size = args.batch or BATCH[section]
             print(f"{section}: {len(items)} items in {-(-len(items) // size)} calls to {backend_name}")
@@ -204,12 +229,13 @@ def main(argv: list[str] | None = None) -> int:
             by_english.setdefault(english, []).append(key)
         english_list = list(by_english)
         batches = [english_list[i: i + size] for i in range(0, len(english_list), size)]
-        backend_name = "Cloudflare Workers AI" if use_cf else f"claude ({args.model})"
         print(f"{section}: {len(items)} missing, {len(batches)} calls to {backend_name}")
 
         with ThreadPoolExecutor(max_workers=max(1, args.jobs)) as pool:
-            if use_cf:
+            if backend == "cloudflare":
                 futures = {pool.submit(ask_cloudflare, batch, section, cf_client): batch for batch in batches}
+            elif backend == "gemini":
+                futures = {pool.submit(ask_gemini, batch, section, gemini): batch for batch in batches}
             else:
                 futures = {pool.submit(ask, batch, section, args): batch for batch in batches}
 
@@ -217,9 +243,8 @@ def main(argv: list[str] | None = None) -> int:
                 batch = futures[future]
                 try:
                     answer = future.result()
-                except CloudflareQuotaError as exc:
-                    print(f"  [{n}/{len(batches)}] Cloudflare quota exceeded: {exc}",
-                          file=sys.stderr)
+                except (CloudflareQuotaError, Unavailable) as exc:
+                    print(f"  [{n}/{len(batches)}] out of quota: {exc}", file=sys.stderr)
                     for f in futures:
                         f.cancel()
                     quota_exceeded = True

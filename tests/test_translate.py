@@ -72,8 +72,21 @@ def mock_zh_project(tmp_path):
     return root
 
 
-def test_main_backend_auto_uses_cloudflare_when_configured(mock_zh_project, monkeypatch):
+class _NoGemini:
+    name = "gemma-test"
+
+    def __init__(self, *a, available=False, **kw):
+        self._available = available
+
+    def available(self):
+        return self._available
+
+
+def test_main_backend_auto_uses_cloudflare_only_as_a_last_resort(mock_zh_project, monkeypatch):
+    """Cloudflare's free neurons are better spent drawing pictures."""
     monkeypatch.setattr("scripts.translate.ROOT", mock_zh_project)
+    monkeypatch.setattr("scripts.translate.shutil.which", lambda b: None)
+    monkeypatch.setattr("scripts.translate.Gemini", _NoGemini)
 
     mock_client = MagicMock()
     mock_client.is_configured.return_value = True
@@ -82,13 +95,32 @@ def test_main_backend_auto_uses_cloudflare_when_configured(mock_zh_project, monk
     mock_ask_cf = MagicMock(return_value={"Fried Rice": "炒饭", "Spring Rolls": "春卷"})
     monkeypatch.setattr("scripts.translate.ask_cloudflare", mock_ask_cf)
 
-    mock_ask_claude = MagicMock()
-    monkeypatch.setattr("scripts.translate.ask", mock_ask_claude)
-
     code = main(["--backend", "auto", "--section", "dishes"])
     assert code == 0
     assert mock_ask_cf.called
-    assert not mock_ask_claude.called
+
+
+def test_main_backend_auto_prefers_the_claude_cli_then_gemma(mock_zh_project, monkeypatch):
+    monkeypatch.setattr("scripts.translate.ROOT", mock_zh_project)
+    mock_client = MagicMock()
+    mock_client.is_configured.return_value = True
+    monkeypatch.setattr("scripts.translate.CloudflareClient", lambda: mock_client)
+    answer = {"Fried Rice": "炒饭", "Spring Rolls": "春卷"}
+    asked = []
+    monkeypatch.setattr("scripts.translate.ask", lambda items, section, args: asked.append("claude") or answer)
+    monkeypatch.setattr("scripts.translate.ask_gemini", lambda items, section, c: asked.append("gemini") or answer)
+    monkeypatch.setattr("scripts.translate.ask_cloudflare", lambda *a: asked.append("cloudflare") or answer)
+    monkeypatch.setattr("scripts.translate.Gemini", lambda *a, **kw: _NoGemini(available=True))
+
+    monkeypatch.setattr("scripts.translate.shutil.which", lambda b: "/usr/bin/claude")
+    main(["--section", "dishes"])
+    assert asked == ["claude"]
+
+    (mock_zh_project / "data" / "zh.json").unlink(missing_ok=True)
+    asked.clear()
+    monkeypatch.setattr("scripts.translate.shutil.which", lambda b: None)
+    main(["--section", "dishes"])
+    assert asked == ["gemini"]
 
 
 def test_main_backend_auto_falls_back_to_claude_when_not_configured(mock_zh_project, monkeypatch):
@@ -165,7 +197,7 @@ def test_main_handles_quota_error_gracefully(mock_zh_project, monkeypatch, capsy
     assert code == 0  # Exits cleanly on quota error
 
     err = capsys.readouterr().err
-    assert "quota exceeded" in err
+    assert "out of quota" in err
 
     # Verify first batch was persisted in zh.json
     zh_content = json.loads((mock_zh_project / "data" / "zh.json").read_text())

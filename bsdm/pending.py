@@ -1,11 +1,11 @@
 """The dishes the board is showing a placeholder for, written up as a to-do.
 
-Drawing a picture needs the local ComfyUI, so it is the one step of the pipeline
-CI cannot do for itself. A dish scraped tonight goes up with a placeholder icon
-and stays that way until somebody runs `make images` on the laptop and commits
-the result -- which means the nightly job cannot fix this, only ask, and the ask
-has to survive being ignored for a week, because the answer needs a GPU and the
-person holding it may be asleep.
+The nightly job draws what it can -- within Cloudflare's free allowance, and only
+pictures the judge passes -- so what is left here is the night's overflow and the
+dishes no picture has passed for, which it stops retrying after three runs. Those
+wait for `make images` on the laptop, which means the ask has to survive being
+ignored for a week: the answer needs a GPU and the person holding it may be
+asleep, or gone.
 
 Which is why the backlog is an issue and not a notification. A push arrives once
 and is gone; an issue is a list that shrinks by itself as images land, and it is
@@ -100,12 +100,15 @@ def body(items: list[tuple[str, dict]], mention: str | None = None) -> str:
     )
     lines += [
         "",
-        "Drawing a picture needs the ComfyUI on :8189, so CI cannot do it. They stay",
-        "placeholders until the images are drawn on the laptop and committed:",
+        "The nightly job draws new dishes within Cloudflare's free allowance and keeps",
+        "only pictures that pass the judge. A dish is here because the night's allowance",
+        "ran out before it, or because no picture has passed yet -- after three runs it",
+        "is left alone until the brief rules change. To draw them on the laptop instead:",
         "",
         "```sh",
         "make images                                            # the lot, meat first",
         "uv run python scripts/gen_images.py --max-priority 0   # meat only",
+        "uv run python scripts/gen_images.py --retry-rejected   # the ones CI gave up on",
         "```",
     ]
 
@@ -115,7 +118,9 @@ def body(items: list[tuple[str, dict]], mention: str | None = None) -> str:
             continue
         lines += ["", f"### {label} ({len(tier)})", ""]
         for _, entry in tier:
-            lines.append(f"- {entry['name']} — first on the menu {entry['first_seen']}")
+            tries = (entry.get("rejected") or {}).get("tries")
+            note = f" (no picture passed in {tries} run{'s' if tries != 1 else ''})" if tries else ""
+            lines.append(f"- {entry['name']} — first on the menu {entry['first_seen']}{note}")
 
     lines += [
         "",
@@ -147,5 +152,5 @@ def comment(new: list[tuple[str, dict]], items: list[tuple[str, dict]],
         f"{who}**{dishes(len(new))}** went up tonight with no picture "
         f"({tally(new)}):\n\n"
         f"{names}.\n\n"
-        f"{len(items)} waiting in total. `make images` when the GPU is free.\n"
+        f"{len(items)} waiting in total.\n"
     )

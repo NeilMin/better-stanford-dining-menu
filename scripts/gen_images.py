@@ -52,6 +52,17 @@ CARD_RATIO = 16 / 9
 # Fields of an earlier gate that a new picture makes meaningless.
 _STALE_FIELDS = ("vlm_score", "vlm_reason", "rejected")
 
+# Runs a dish may fail under one version of the brief instructions before it is
+# left alone. A dish nothing passes for would otherwise take its four drawings
+# out of Cloudflare's free allocation every night, for ever; a new BRIEF_REV, or
+# --retry-rejected, gives it another go.
+MAX_TRIES = 3
+
+
+def given_up(entry: dict) -> bool:
+    rejected = entry.get("rejected") or {}
+    return rejected.get("tries", 0) >= MAX_TRIES and rejected.get("brief_rev") == brieflib.BRIEF_REV
+
 
 def seed_for(dish_id: str, entry: dict | None = None) -> int:
     """A stable seed per dish, so a regenerated image looks like the old one."""
@@ -139,6 +150,8 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--limit", type=int, help="stop after N dishes")
     ap.add_argument("--only", help="substring match on the dish name, or =exact name")
     ap.add_argument("--force", action="store_true", help="redraw dishes that already have images")
+    ap.add_argument("--retry-rejected", action="store_true",
+                    help=f"also try dishes that failed {MAX_TRIES} runs running under the current brief rules")
     ap.add_argument("--redraw-stale", action="store_true",
                     help="also redraw images drawn before the current prompt rules")
     ap.add_argument("--audit", action="store_true",
@@ -174,6 +187,8 @@ def main(argv: list[str] | None = None) -> int:
         unjudged = args.audit and path.exists() and entry.get("image") and "judge" not in entry
         if (path.exists() and entry.get("image") and not args.force and not unjudged
                 and is_current(path) and not (args.redraw_stale and is_stale(entry))):
+            continue
+        if given_up(entry) and not (args.force or args.retry_rejected):
             continue
         pending.append((did, entry))
     del catalog  # record_image() re-reads; a long run must not write back a stale copy
@@ -332,6 +347,7 @@ def main(argv: list[str] | None = None) -> int:
                 record_image(did, {"rejected": {
                     "at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
                     "brief_rev": brief.get("rev") if brief else None,
+                    "tries": (entry.get("rejected") or {}).get("tries", 0) + 1,
                     "pictures": len(verdicts),
                     "seen": last.get("seen"),
                     "failed": [f["q"] for f in last.get("failed", [])],

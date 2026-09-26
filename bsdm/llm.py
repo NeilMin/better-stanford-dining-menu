@@ -178,12 +178,19 @@ class Gemini:
     """
 
     def __init__(self, model: str | None = None, key: str | None = None, timeout: int = 120,
-                 session: requests.Session | None = None, retries: int = 3):
+                 session: requests.Session | None = None, retries: int = 3, max_tokens: int = 2048,
+                 thinking: str | None = None):
         self.model = model or _setting("GEMINI_MODEL") or DEFAULT_GEMINI_MODEL
         self.key = key if key is not None else _setting("GEMINI_API_KEY")
         self.timeout = timeout
         self.session = session or requests.Session()
         self.retries = retries
+        self.max_tokens = max_tokens
+        # Gemma 4 thinks by default, and on a long, rule-heavy prompt (the
+        # translation rules) it spends the whole output cap doing so and answers
+        # nothing. "minimal" is the one level it accepts. The judge and the brief
+        # writer were measured with thinking on, and keep it.
+        self.thinking = thinking
 
     @property
     def name(self) -> str:
@@ -198,7 +205,9 @@ class Gemini:
         parts = [{"inline_data": {"mime_type": "image/jpeg", "data": base64.b64encode(jpeg(img)).decode()}}
                  for img in images]
         parts.append({"text": prompt})
-        config = {"temperature": 0, "maxOutputTokens": 2048}
+        config = {"temperature": 0, "maxOutputTokens": self.max_tokens}
+        if self.thinking:
+            config["thinkingConfig"] = {"thinkingLevel": self.thinking}
         # JSON mode sends Gemma into a loop that only ends when the server hangs
         # up at 60s; asked plainly it answers in seconds, and parse_json() takes
         # the fence off. Gemini proper handles JSON mode fine.
