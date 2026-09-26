@@ -567,13 +567,18 @@ def image_prompt(dish) -> str:
     if re.search(r"\bmusubi\b", name, re.I):
         parts.append("a pair of two chopsticks resting beside the bowl")
 
-    vessel = "served in a simple white ceramic bowl" if is_bowl(dish) else "plated on a simple white ceramic plate"
-    parts.append(
+    parts.append(photo_style(is_bowl(dish)))
+    return ", ".join(parts)
+
+
+def photo_style(bowl: bool) -> str:
+    """The house style every picture ends with, so the board reads as one set."""
+    vessel = "served in a simple white ceramic bowl" if bowl else "plated on a simple white ceramic plate"
+    return (
         f"appetizing food photography, {vessel}, "
         "overhead three-quarter view, centered composition with generous empty margin around the plate, "
         "soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail"
     )
-    return ", ".join(parts)
 
 
 NEGATIVE_PROMPT = (
@@ -594,6 +599,34 @@ _PROTEIN_NEGATIVE = {
 }
 
 
+def protein_exclusions(dish) -> list[str]:
+    """The proteins a dish's picture must not show, read off its classification.
+
+    Everything, for a dish the hall labels vegetarian; the other four proteins
+    for a dish that has one -- except any the name or top-level ingredients
+    actually mention, since "Chicken and Shrimp Jambalaya" must keep its shrimp.
+    """
+    category = classify(dish)
+    name = _get(dish)("name", "")
+    ing_text = _top_level_ingredients(_get(dish)("ingredients", "") or "")
+    combined_text = f"{name} {ing_text}".lower()
+
+    present_categories = set()
+    for cat, kws in _PRIMARY.items():
+        if any(re.search(rf"\b{re.escape(kw)}", combined_text) for kw in kws):
+            present_categories.add(cat)
+
+    if category in ("vegan", "vegetarian") or (
+        category == "other" and re.search(r"\b(vegetable|veggie|plant-based)\b", name, re.I)
+    ):
+        return list(_PROTEIN_NEGATIVE.values()) + ["meat"]
+    if category in _PROTEIN_NEGATIVE:
+        return [v for k, v in _PROTEIN_NEGATIVE.items() if k != category and k not in present_categories]
+    # "other" is genuinely unknown -- a dish with no icon and no protein
+    # keyword may still arrive with meat in it, so nothing is excluded.
+    return []
+
+
 def negative_prompt(dish) -> str:
     """The negative prompt for one dish, naming the proteins it must not show.
 
@@ -604,27 +637,8 @@ def negative_prompt(dish) -> str:
     labels vegetarian, and the other four proteins for a dish that has one, which
     is what stops grilled chicken from being plated as steak.
     """
-    category = classify(dish)
+    exclude = protein_exclusions(dish)
     name = _get(dish)("name", "")
-    ing_text = _top_level_ingredients(_get(dish)("ingredients", "") or "")
-    combined_text = f"{name} {ing_text}".lower()
-
-    # Never exclude proteins that are explicitly mentioned in the dish name or top ingredients
-    present_categories = set()
-    for cat, kws in _PRIMARY.items():
-        if any(re.search(rf"\b{re.escape(kw)}", combined_text) for kw in kws):
-            present_categories.add(cat)
-
-    if category in ("vegan", "vegetarian") or (
-        category == "other" and re.search(r"\b(vegetable|veggie|plant-based)\b", name, re.I)
-    ):
-        exclude = list(_PROTEIN_NEGATIVE.values()) + ["meat"]
-    elif category in _PROTEIN_NEGATIVE:
-        exclude = [v for k, v in _PROTEIN_NEGATIVE.items() if k != category and k not in present_categories]
-    else:
-        # "other" is genuinely unknown -- a dish with no icon and no protein
-        # keyword may still arrive with meat in it, so nothing is excluded.
-        exclude = []
 
     if re.search(r"\bgyro\b", name, re.I):
         if "meat" in name.lower():

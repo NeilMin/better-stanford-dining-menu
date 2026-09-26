@@ -218,6 +218,14 @@ rotate, 3× the wall time did not buy 3× the usefulness. Food-specific LoRAs we
 rejected: the SDXL ones on Civitai are either a dark/neon studio style or unrelated, and the good
 Flux ones target Flux.1-dev rather than schnell.
 
+**Pictures are checked, not trusted.** SDXL does not know what gyro meat looks like, so each dish
+first gets a brief from a language model (the `claude` CLI): what the picture must show, what the
+image model tends to get wrong, and a few yes/no questions that tell the right dish from those
+mistakes. Every picture is put to those questions, blind, before it is kept; failures are redrawn,
+then the brief is revised from what went wrong, and a dish nothing passes for keeps its
+placeholder icon rather than a wrong picture. `scripts/eval_judge.py` scores the checker against
+every picture a person already rejected by eye.
+
 Seeds are derived from the dish id, so regenerating a dish reproduces its picture. An image whose
 aspect ratio no longer matches the card is redrawn automatically, so changing the card shape
 refreshes the library rather than leaving the browser to centre-crop older pictures.

@@ -229,3 +229,40 @@ def no_network(monkeypatch: pytest.MonkeyPatch) -> None:
 def repo() -> Path:
     """The real checkout, for the golden tests that read committed artefacts."""
     return REPO
+
+
+class FakeLLM:
+    """A scripted stand-in for bsdm.llm.ClaudeCLI.
+
+    A request with an image is the judge; one without is the brief writer. Each
+    pops the next answer off its own queue: a dict is sent as JSON, a string
+    as is, an exception is raised. `calls` records (kind, prompt) in order.
+    """
+
+    name = "fake"
+    bin = "fake-claude"
+
+    def __init__(self, available: bool = True):
+        self._available = available
+        self.briefs: list = []
+        self.verdicts: list = []
+        self.calls: list[tuple[str, str]] = []
+
+    def available(self) -> bool:
+        return self._available
+
+    def ask(self, prompt: str, images=(), system: str = "") -> str:
+        kind = "judge" if images else "brief"
+        self.calls.append((kind, prompt))
+        queue = self.verdicts if images else self.briefs
+        if not queue:
+            raise AssertionError(f"unexpected {kind} request: {prompt[:80]!r}")
+        answer = queue.pop(0)
+        if isinstance(answer, Exception):
+            raise answer
+        return answer if isinstance(answer, str) else json.dumps(answer)
+
+
+@pytest.fixture
+def fake_llm() -> FakeLLM:
+    return FakeLLM()

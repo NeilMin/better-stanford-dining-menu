@@ -1,14 +1,13 @@
 """Cloudflare Workers AI REST client for translation and image generation.
 
-Provides a unified interface to Cloudflare's Workers AI endpoints, allowing
-automated translation via Llama 3.3 and image generation via SDXL Lightning
-without requiring local GPU or paid subscriptions.
+The free allocation (10,000 neurons a day) is the whole budget: translation via
+Llama 3.3 and image generation via FLUX, with no local GPU and nothing paid.
+Judging pictures is not done here -- see bsdm/judge.py.
 """
 
 from __future__ import annotations
 
 import base64
-import io
 import json
 import logging
 import os
@@ -23,7 +22,6 @@ log = logging.getLogger(__name__)
 CF_BASE_URL = "https://api.cloudflare.com/client/v4/accounts"
 DEFAULT_TRANSLATION_MODEL = "@cf/meta/llama-3.3-70b-instruct-fp8-fast"
 DEFAULT_IMAGE_MODEL = "@cf/black-forest-labs/flux-1-schnell"
-DEFAULT_VISION_MODEL = "@cf/meta/llama-3.2-11b-vision-instruct"
 
 
 def _load_dotenv(env_path: Path | str | None = None) -> None:
@@ -180,158 +178,3 @@ class CloudflareClient:
             pass
 
         return resp.content
-
-    def evaluate_image(
-        self,
-        image_bytes: bytes,
-        dish_name: str,
-        model: str = DEFAULT_VISION_MODEL,
-    ) -> dict[str, Any]:
-        """Evaluate a food image candidate for realism, cleanliness, and readiness."""
-        try:
-            from PIL import Image
-            im = Image.open(io.BytesIO(image_bytes)).convert("RGB")
-            im.thumbnail((512, 512))
-            buf = io.BytesIO()
-            im.save(buf, format="JPEG", quality=85)
-            thumb_bytes = buf.getvalue()
-        except Exception as exc:
-            log.warning("Failed to prepare thumbnail for vision eval: %s", exc)
-            return {"valid": False, "score": 0, "reason": "Invalid image bytes"}
-
-        prompt = (
-            f"You are an expert culinary photo editor for a dining publication. "
-            f"Critically evaluate whether this candidate image accurately and appetizingly depicts the dish '{dish_name}'.\n\n"
-            "Strict Disqualification Rules (MUST set valid=false and score <= 3 if ANY apply):\n"
-            f"1. WRONG DISH / CATEGORY MISMATCH: The image shows a different food type than '{dish_name}'. "
-            "For example: if the dish is a bread, flatbread, naan, roll, toast, or pastry, the image MUST show that bread/flatbread, NOT a bowl of curry, stew, or soup without bread as the primary subject; "
-            "if the dish is a salad, it must not be a hot meat roast; if the dish is a beverage, it must not be solid food.\n"
-            "2. MULTI-DISH PLATTER / THALI / BANQUET / BUFFET: The image shows a multi-dish sampler, an Indian thali platter with multiple small bowls, a buffet spread, or a banquet feast rather than focusing on the single requested dish.\n"
-            f"3. PROTEIN MISMATCH: If '{dish_name}' specifies chicken, beef, pork, or seafood, the plate must NOT show vegetarian cheese cubes (paneer) or tofu cubes; conversely, a vegetarian/vegan dish must not show meat.\n"
-            "4. AMATEUR SNAPSHOT & POOR LIGHTING: Home-kitchen snapshot, messy dirty stovetops/pans, blurry/grainy focus, harsh direct flash, or sickly unappetizing color casts.\n"
-            "5. CLUTTER & OVERLAYS: Visible hands, people, watermarks, text, menus, brand logos, or excessive cutlery clutter.\n\n"
-            "Acceptance Criteria (score 7-10, valid=true):\n"
-            f"- A single hero dish or bowl, cleanly plated on simple tableware with a clean neutral background.\n"
-            f"- Sharp focus, appetizing commercial food photography lighting, and accurate representation of '{dish_name}'.\n\n"
-            'Reply ONLY with a raw JSON object with keys: "valid" (boolean), "score" (integer 1-10), "reason" (short string).'
-        )
-        payload = {
-            "prompt": prompt,
-            "image": list(thumb_bytes),
-            "max_tokens": 256,
-        }
-        try:
-            resp = self._run(model, payload)
-            data = resp.json()
-            raw_text = data.get("result", {}).get("response", "") if isinstance(data, dict) else ""
-            if isinstance(raw_text, dict):
-                res = raw_text
-            elif isinstance(raw_text, str):
-                match = re.search(r"\{.*\}", raw_text, re.S)
-                if match:
-                    clean_json = (
-                        match.group(0)
-                        .replace("'", '"')
-                        .replace("True", "true")
-                        .replace("False", "false")
-                    )
-                    try:
-                        res = json.loads(clean_json)
-                    except Exception:
-                        res = {}
-                else:
-                    valid_m = re.search(r"\bvalid\b[*:\s]+(true|false)", raw_text, re.I)
-                    score_m = re.search(r"\bscore\b[*:\s]+(\d+)", raw_text, re.I)
-                    reason_m = re.search(r"\breason\b[*:\s]+([^\n*]+)", raw_text, re.I)
-                    if valid_m or score_m:
-                        res = {
-                            "valid": valid_m.group(1).lower() == "true" if valid_m else False,
-                            "score": int(score_m.group(1)) if score_m else 0,
-                            "reason": reason_m.group(1).strip() if reason_m else "",
-                        }
-                    else:
-                        res = {}
-            else:
-                res = {}
-
-            if isinstance(res, dict) and "valid" in res:
-                return {
-                    "valid": bool(res.get("valid", False)),
-                    "score": int(res.get("score", 0)),
-                    "reason": str(res.get("reason", "")),
-                }
-        except CloudflareQuotaError:
-            raise
-        except Exception as exc:
-            log.warning("Vision evaluation failed for '%s': %s", dish_name, exc)
-
-        return {"valid": False, "score": 0, "reason": "Evaluation failed"}
-
-    def compile_dish_prompt(
-        self,
-        name: str,
-        ingredients: str,
-        tags: list[str] | None = None,
-        category: str = "other",
-        model: str = DEFAULT_TRANSLATION_MODEL,
-    ) -> dict[str, str]:
-        tags_str = ", ".join(tags or [])
-        system = (
-            "You are an expert commercial food photography director and culinary stylist. "
-            "Your task is to take a dining hall dish name, category, and raw ingredient list, "
-            "and create a clean, appetizing image generation prompt and targeted negative prompt.\n\n"
-            "Rules:\n"
-            "1. CULINARY ACCURACY: Understand what the dish looks like when served (e.g. Hot Dog is in a bun; Fajitas are sliced seared meat strips with bell peppers and onions; Lasagna has visible pasta sheets and cheese).\n"
-            "2. STRIP CHEMICALS & LIQUIDS: Completely remove food additives, stabilizers, chemical preservatives (sorbitol, sodium lactate, sodium phosphates, hydrolyzed corn protein, gums, starch powders, acids, oils, cooking spray).\n"
-            "3. PHOTOGRAPHY STYLE: Food photography, plated on a simple white ceramic plate (or bowl for soup/stew), overhead three-quarter view, centered composition, generous empty margin around plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail.\n"
-            "4. TARGETED NEGATIVE: Exclude dish-specific pitfalls (e.g. for Hot Dog: corn, yellow sludge, cheese sauce, ridges, tire tread; for Fajitas: burrito, wrap, taco, noodles, soup; for vegan dishes: meat, chicken, beef, pork, seafood).\n"
-            "5. OUTPUT FORMAT: Respond ONLY with a valid JSON object with keys 'prompt' and 'negative'. Do not include markdown codeblocks or explanatory prose."
-        )
-        user_prompt = (
-            f"Dish: {name}\n"
-            f"Category: {category}\n"
-            f"Tags: {tags_str}\n"
-            f"Raw Ingredients: {ingredients}\n"
-        )
-        payload = {
-            "messages": [
-                {"role": "system", "content": system},
-                {"role": "user", "content": user_prompt},
-            ],
-            "max_tokens": 512,
-        }
-        resp = self._run(model, payload)
-        data = resp.json()
-        raw_text = data.get("result", {}).get("response", "") if isinstance(data, dict) else ""
-        if isinstance(raw_text, dict):
-            parsed = raw_text
-            if "prompt" in parsed:
-                return {
-                    "prompt": str(parsed.get("prompt", "")).strip(),
-                    "negative": str(parsed.get("negative", "")).strip(),
-                }
-        elif isinstance(raw_text, str):
-            match = re.search(r"\{.*\}", raw_text, re.S)
-            if match:
-                raw_text = match.group(0)
-            try:
-                parsed = json.loads(raw_text)
-                if isinstance(parsed, dict) and "prompt" in parsed:
-                    return {
-                        "prompt": str(parsed.get("prompt", "")).strip(),
-                        "negative": str(parsed.get("negative", "")).strip(),
-                    }
-            except Exception as exc:
-                log.warning("Failed to parse compile_dish_prompt JSON: %s", exc)
-
-        raise CloudflareError(f"Failed to compile prompt for {name}: {str(raw_text)[:200]}")
-
-    def evaluate_food_image(
-        self,
-        image_bytes: bytes,
-        dish_name: str,
-        model: str = DEFAULT_VISION_MODEL,
-    ) -> dict[str, Any]:
-        """Evaluate a generated food card for visual quality, authenticity, and lack of AI artifacts."""
-        return self.evaluate_image(image_bytes, dish_name=dish_name, model=model)
-

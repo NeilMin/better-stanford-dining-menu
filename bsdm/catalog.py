@@ -26,6 +26,11 @@ _MINOR = (
 
 _MINOR_RE = re.compile(r"\b(" + "|".join(_MINOR) + r")\b", re.I)
 
+# What scripts/gen_images.py records about a picture. A rebuild derives
+# everything else afresh, so a field missing from here is silently lost on the
+# next scrape -- which is how the old gate's scores went missing.
+IMAGE_FIELDS = ("generated_at", "model", "seed", "prompt_rev", "brief_rev", "judge", "rejected")
+
 
 def _is_minor(name: str) -> bool:
     # Word boundaries matter: "jackfruit" contains "fruit", and a pulled
@@ -109,7 +114,7 @@ def build(menu_paths: Iterable[Path], station_table: dict, previous: dict | None
             entry["first_seen"] = min(entry["first_seen"], old.get("first_seen", entry["first_seen"]))
             entry["min_order"] = min(entry["min_order"], old.get("min_order", 999))
             entry["image"] = old.get("image")
-            for key in ("generated_at", "model", "seed", "prompt_rev", "prompt_compiled", "prompt_compiler_rev"):
+            for key in IMAGE_FIELDS:
                 if key in old:
                     entry[key] = old[key]
 
@@ -117,12 +122,10 @@ def build(menu_paths: Iterable[Path], station_table: dict, previous: dict | None
         entry["station_only"] = as_daily.get(did, 0) == 0 and as_station.get(did, 0) > 0
         entry["needs_image"] = not entry["placeholder"] and not entry["station_only"] and not entry["is_station"]
         if entry["needs_image"]:
-            if old and old.get("prompt_compiled") and old.get("prompt"):
-                entry["prompt"] = old["prompt"]
-                entry["negative"] = old.get("negative")
-            else:
-                entry["prompt"] = dishlib.image_prompt(entry)
-                entry["negative"] = dishlib.negative_prompt(entry)
+            # The rule-based prompt, drawn from only when no brief can be
+            # written (gen_images.py --no-judge without the claude CLI).
+            entry["prompt"] = dishlib.image_prompt(entry)
+            entry["negative"] = dishlib.negative_prompt(entry)
         else:
             entry["prompt"] = None
             entry["negative"] = None

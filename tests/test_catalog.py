@@ -182,27 +182,29 @@ class TestAccumulation:
                         previous={dishlib.dish_id("Roast Chicken"): {"name": "Roast Chicken"}})
         assert entry_for(catalog, "Roast Chicken")["image"] is None
 
-    def test_compiled_prompt_is_carried_over(self, project):
+    def test_the_judges_record_survives_a_rebuild(self, project):
+        """CI rebuilds the catalog on every scrape; a verdict it drops is a
+        verdict nobody can audit, and a dropped rejection is retried blind."""
+        did = dishlib.dish_id("Roast Chicken")
+        judge = {"judge": "claude-sonnet", "seen": "roast chicken", "at": "2026-09-25T00:00:00+00:00"}
+        rejected = {"at": "2026-09-25T00:00:00+00:00", "pictures": 4, "failed": ["Is it chicken?"]}
+        previous = {did: {"name": "Roast Chicken", "image": f"{did}.webp", "brief_rev": 2,
+                          "judge": judge, "rejected": rejected}}
+        catalog = build(project, {"2026-09-17": {"wilbur": {"Dinner": [dish("Roast Chicken")]}}},
+                        previous=previous)
+        got = catalog[did]
+        assert (got["brief_rev"], got["judge"], got["rejected"]) == (2, judge, rejected)
+
+    def test_the_prompt_is_always_the_rule_based_one(self, project):
+        """The brief supersedes the old Llama-compiled prompts; a stored one is not kept."""
         d_raw = dish("Beef Hot Dog", "beef, sorbitol", order=0)
         did = dishlib.dish_id(d_raw["name"])
-        previous = {
-            did: {
-                "name": "Beef Hot Dog",
-                "ingredients": "beef, sorbitol",
-                "first_seen": "2026-09-10",
-                "min_order": 0,
-                "prompt": "Custom compiled prompt",
-                "negative": "Custom compiled negative",
-                "prompt_compiled": True,
-                "prompt_compiler_rev": 1,
-            }
-        }
+        previous = {did: {"name": "Beef Hot Dog", "prompt": "Custom compiled prompt",
+                          "prompt_compiled": True, "prompt_compiler_rev": 1}}
         catalog = build(project, {"2026-09-17": {"wilbur": {"Dinner": [d_raw]}}}, previous=previous)
         got = entry_for(catalog, "Beef Hot Dog")
-        assert got["prompt"] == "Custom compiled prompt"
-        assert got["negative"] == "Custom compiled negative"
-        assert got["prompt_compiled"] is True
-        assert got["prompt_compiler_rev"] == 1
+        assert got["prompt"] == dishlib.image_prompt(got)
+        assert "prompt_compiled" not in got
 
 
 

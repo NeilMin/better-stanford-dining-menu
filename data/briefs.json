@@ -1,0 +1,1945 @@
+{
+ "0181581216d4": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "egg",
+   "platter",
+   "side dishes",
+   "raw rice",
+   "sushi"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food cooked white rice?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat, shrimp or fish with the rice?",
+    "yes": false
+   },
+   {
+    "q": "Does the rice look raw or dry and uncooked?",
+    "yes": false
+   },
+   {
+    "q": "Is the rice a dark brown soy-sauce fried rice with egg and vegetables?",
+    "yes": false
+   }
+  ],
+  "dish": "Hawaiian garlic rice",
+  "look": "fluffy cooked white rice grains tossed with golden toasted garlic bits, glossy butter sheen, flecks of sliced green onion, light dark tamari tint on some grains, sprinkle of white sesame seeds",
+  "model": "claude-sonnet",
+  "name": "Hawaiian Garlic Rice",
+  "rev": 5,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-26T20:19:28+00:00"
+ },
+ "07783eb110f2": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "curry",
+   "vegetables",
+   "raw rice",
+   "platter",
+   "side dishes"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food cooked white rice?",
+    "yes": true
+   },
+   {
+    "q": "Does the rice look raw or dry and uncooked?",
+    "yes": false
+   },
+   {
+    "q": "Is the rice mixed with meat, fish or a saucy curry?",
+    "yes": false
+   }
+  ],
+  "dish": "steamed basmati rice",
+  "look": "fluffy cooked white basmati rice, long slender separate grains, light and airy, soft steamed texture, a gentle mound in the bowl",
+  "model": "claude-sonnet",
+  "name": "Basmati Rice",
+  "rev": 5,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-26T20:19:27+00:00"
+ },
+ "0fc2b8ff45b2": {
+  "avoid": [
+   "pita bread",
+   "flatbread",
+   "wrap",
+   "ground meat",
+   "beef",
+   "skewers",
+   "french fries",
+   "whole roasted chicken"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item sliced or shredded cooked chicken pieces?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat ground or crumbled like mince?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat wrapped in a pita or flatbread?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat on skewers?",
+    "yes": false
+   }
+  ],
+  "dish": "Greek-style gyro chicken",
+  "look": "a pile of thin sliced strips of roasted marinated chicken, golden-brown edges with reddish paprika colour, juicy tender pieces, browned crisp edges, a few flecks of oregano",
+  "model": "claude-sonnet",
+  "name": "Gyro Chicken",
+  "rev": 5,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-26T20:13:57+00:00"
+ },
+ "10c2fdd01e6c": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "tofu",
+   "noodles",
+   "raw eggplant",
+   "whole eggplant"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cooked eggplant pieces in a glossy sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is there meat, shrimp or fish mixed in?",
+    "yes": false
+   },
+   {
+    "q": "Is the eggplant a whole uncut vegetable or raw?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a soup or curry in a thin broth?",
+    "yes": false
+   }
+  ],
+  "dish": "Thai basil eggplant stir-fry",
+  "look": "chunks of cooked soft eggplant with purple skin and creamy flesh, strips of red and green bell pepper, glossy dark brown basil sauce coating everything, whole dark green Thai basil leaves",
+  "model": "claude-sonnet",
+  "name": "Thai Basil Eggplant",
+  "rev": 5,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-26T20:19:28+00:00"
+ },
+ "15057c283627": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "noodles",
+   "rice",
+   "sauce pool",
+   "almonds",
+   "casserole"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item whole green beans?",
+    "yes": true
+   },
+   {
+    "q": "Are the green beans cut into tiny pieces or pureed?",
+    "yes": false
+   },
+   {
+    "q": "Is there meat or seafood mixed in with the beans?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a soup or a creamy casserole?",
+    "yes": false
+   }
+  ],
+  "dish": "spicy garlic green beans",
+  "look": "a pile of whole bright green cooked green beans, slightly blistered with browned spots, tossed with minced golden garlic, flecks of red pepper flakes clinging to the pods, tender-crisp, glossy",
+  "model": "claude-sonnet",
+  "name": "Spicy Green Beans",
+  "rev": 5,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-26T20:19:32+00:00"
+ },
+ "158a0e86079f": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "bacon",
+   "sausage",
+   "closed sandwich",
+   "cheese"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item an open-faced english muffin topped with egg?",
+    "yes": true
+   },
+   {
+    "q": "Is the sandwich closed with a second piece of bread on top?",
+    "yes": false
+   },
+   {
+    "q": "Are there slices of bacon, ham or sausage on the sandwich?",
+    "yes": false
+   },
+   {
+    "q": "Is the egg raw or uncooked?",
+    "yes": false
+   }
+  ],
+  "dish": "open-faced breakfast sandwich",
+  "look": "a toasted english muffin half topped with a cooked egg, wilted green spinach leaves, tomato slices, spoonful of chunky roasted red salsa on top, golden browned muffin edges, single open-faced portion",
+  "model": "claude-sonnet",
+  "name": "Open Faced Breakfast Sandwich",
+  "rev": 5,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-26T20:19:32+00:00"
+ },
+ "194726070937": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "ham hock",
+   "sausage",
+   "white rice",
+   "soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food a mix of brown rice and beans?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat, sausage or fish in the dish?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a soup or stew with lots of broth?",
+    "yes": false
+   },
+   {
+    "q": "Is the rice plain white rather than brown?",
+    "yes": false
+   }
+  ],
+  "dish": "brown rice and black-eyed peas",
+  "look": "cooked nutty brown rice grains mixed with tender whole black-eyed peas, cream-colored beans with black eyes, moist and fluffy, flecks of chopped fresh green parsley on top",
+  "model": "claude-sonnet",
+  "name": "Savory Brown Rice & Black Eyed Peas",
+  "rev": 5,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-26T20:19:32+00:00"
+ },
+ "1cbb8d5a3d88": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "raw vegetables",
+   "salad",
+   "soup",
+   "rice",
+   "pasta",
+   "cheese"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food a mix of roasted chunks of vegetables?",
+    "yes": true
+   },
+   {
+    "q": "Do the vegetables look raw or uncooked like a fresh salad?",
+    "yes": false
+   },
+   {
+    "q": "Are there pieces of meat, fish or shrimp with the vegetables?",
+    "yes": false
+   },
+   {
+    "q": "Are the vegetables in a broth or soup?",
+    "yes": false
+   }
+  ],
+  "dish": "roasted vegetables",
+  "look": "a mixed pile of oven-roasted vegetable pieces, chunky cubes of zucchini, sliced bell pepper strips, broccoli florets, carrot rounds, red onion wedges, browned caramelized edges, tender glistening surfaces, whole roasted garlic cloves",
+  "model": "claude-sonnet",
+  "name": "Roasted Seasonal Vegetables",
+  "rev": 5,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-26T20:19:36+00:00"
+ },
+ "1e5910e94d34": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "ham",
+   "skewers",
+   "whole pineapple",
+   "ice cream",
+   "raw pineapple chunks",
+   "fruit salad"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cooked pineapple slices or wedges?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat or fish with the pineapple?",
+    "yes": false
+   },
+   {
+    "q": "Is the pineapple shown as a whole uncut fruit?",
+    "yes": false
+   },
+   {
+    "q": "Is the pineapple blended into a drink, salad or dessert with ice cream?",
+    "yes": false
+   }
+  ],
+  "dish": "grilled pineapple",
+  "look": "thick golden-yellow pineapple rings and wedges, dark caramelized char grill marks, juicy soft flesh, browned sugary edges, light dusting of cinnamon, tender core-free slices",
+  "model": "claude-sonnet",
+  "name": "Grilled Pineapple",
+  "rev": 5,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-26T20:19:36+00:00"
+ },
+ "1f0eee8cb27f": {
+  "avoid": [
+   "pepperoni",
+   "pineapple",
+   "ham",
+   "sausage",
+   "whole roasted chicken",
+   "calzone",
+   "salad",
+   "breadsticks",
+   "french fries"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a round pizza topped with cheese and pieces of chicken?",
+    "yes": true
+   },
+   {
+    "q": "Is the pizza covered in pepperoni slices?",
+    "yes": false
+   },
+   {
+    "q": "Is the food folded like a calzone or sandwich?",
+    "yes": false
+   },
+   {
+    "q": "Is there a whole roasted chicken or bone-in chicken pieces instead of pizza?",
+    "yes": false
+   }
+  ],
+  "dish": "BBQ chicken pizza",
+  "look": "round baked pizza, golden-brown bubbly melted mozzarella, chunks of grilled chicken glazed in glossy brown barbecue sauce, drizzles of barbecue sauce, thin purple red onion slivers, scattered fresh cilantro leaves, browned crust edge",
+  "model": "claude-sonnet",
+  "name": "BBQ Chicken Pizza",
+  "rev": 5,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-26T20:15:19+00:00"
+ },
+ "2264c08eede4": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "tofu",
+   "rice",
+   "noodles",
+   "naan bread"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food vegetables in a red-orange curry sauce?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat, fish or shrimp in the dish?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a clear thin soup or broth instead of a thick curry sauce?",
+    "yes": false
+   },
+   {
+    "q": "Is the main food a pile of plain rice or noodles?",
+    "yes": false
+   }
+  ],
+  "dish": "coconut red curry with sweet potato",
+  "look": "chunks of orange sweet potato, tomato pieces, red and green bell pepper strips, sliced mushrooms, chickpeas, shredded cabbage, simmering in creamy orange-red coconut curry sauce, glossy sauce",
+  "model": "claude-sonnet",
+  "name": "Coconut Red Curry with Sweet Potato",
+  "rev": 5,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-26T20:19:36+00:00"
+ },
+ "247414252988": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "peas",
+   "green beans",
+   "noodles",
+   "dumplings",
+   "rice",
+   "shelled beans only"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food green edamame pods or soybeans?",
+    "yes": true
+   },
+   {
+    "q": "Is the main item a soup or a sauce-heavy stir-fry?",
+    "yes": false
+   },
+   {
+    "q": "Are there pieces of meat or fish with the edamame?",
+    "yes": false
+   },
+   {
+    "q": "Is the main food long green string beans?",
+    "yes": false
+   }
+  ],
+  "dish": "sesame edamame",
+  "look": "a pile of bright green edamame pods in their fuzzy shells, some pods split open showing plump green beans, glossy dark tamari sheen, scattered toasted sesame seeds, coarse white salt flakes on the pods",
+  "model": "claude-sonnet",
+  "name": "Shell-On Toasted Sesame Edamame",
+  "rev": 5,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-26T20:19:40+00:00"
+ },
+ "2753e4945094": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "platter",
+   "side dishes",
+   "raw rice",
+   "sauce or gravy",
+   "soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food cooked rice with small vegetable pieces?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat, fish or shrimp with the rice?",
+    "yes": false
+   },
+   {
+    "q": "Is the rice sitting in broth or soup?",
+    "yes": false
+   },
+   {
+    "q": "Does the rice look raw or dry and uncooked?",
+    "yes": false
+   }
+  ],
+  "dish": "rice pilaf",
+  "look": "fluffy cooked white rice pilaf, separate tender grains, small diced orange carrot pieces, flecks of finely diced translucent onion, light golden sheen, mounded loosely",
+  "model": "claude-sonnet",
+  "name": "White Rice Pilaf",
+  "rev": 5,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-26T20:19:40+00:00"
+ },
+ "282df8369777": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "rice",
+   "naan bread",
+   "clear broth soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food mixed vegetables in a thick curry sauce?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat, chicken or seafood in the dish?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a thin clear soup or broth?",
+    "yes": false
+   }
+  ],
+  "dish": "Jamaican vegetable curry",
+  "look": "chunky mixed vegetables in a thick golden-yellow coconut curry sauce, chunks of potato, carrot, bell pepper, chickpeas and green beans, soft translucent onion, creamy orange-yellow gravy, glossy and stew-like",
+  "model": "claude-sonnet",
+  "name": "Jamaican Vegetable Curry",
+  "rev": 5,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-26T20:19:40+00:00"
+ },
+ "2af8a6c63440": {
+  "avoid": [
+   "tortilla wrap",
+   "burrito",
+   "taco",
+   "tortilla chips",
+   "rice",
+   "beans",
+   "guacamole",
+   "whole chicken pieces",
+   "beef steak"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item sliced strips of cooked chicken with peppers and onions?",
+    "yes": true
+   },
+   {
+    "q": "Is the food wrapped in a tortilla like a burrito or wrap?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken in whole bone-in pieces like drumsticks or thighs?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat ground or crumbled like mince?",
+    "yes": false
+   }
+  ],
+  "dish": "chicken fajitas",
+  "look": "sizzling strips of grilled sliced chicken breast, charred edges, tender strips of red, green and yellow bell pepper, softened sliced onion, glossy reddish-orange al pastor sauce coating the chicken, loose pile of fillings",
+  "model": "claude-sonnet",
+  "name": "Chicken Fajitas",
+  "rev": 5,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-26T20:19:44+00:00"
+ },
+ "31378ddfb8a0": {
+  "avoid": [
+   "whole chicken pieces",
+   "bone-in drumsticks",
+   "chicken nuggets",
+   "chicken wings",
+   "french fries",
+   "dipping sauce",
+   "salad",
+   "sandwich bun"
+  ],
+  "checks": [
+   {
+    "q": "Are the main items breaded strips of chicken?",
+    "yes": true
+   },
+   {
+    "q": "Are the chicken pieces bone-in like drumsticks or wings?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken sliced or shredded without breading?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken in a sandwich or bun?",
+    "yes": false
+   }
+  ],
+  "dish": "chicken tenders",
+  "look": "several golden-brown breaded chicken tenderloin strips, crispy craggy crumb coating, elongated finger shape, juicy white meat, piled in a small stack",
+  "model": "claude-sonnet",
+  "name": "Chicken Tenders",
+  "rev": 5,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-26T20:19:44+00:00"
+ },
+ "37354abb6d07": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "french fries",
+   "mashed potatoes",
+   "potato wedges",
+   "cheese",
+   "sour cream"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item small whole or halved roasted potatoes?",
+    "yes": true
+   },
+   {
+    "q": "Are the potatoes mashed or pureed?",
+    "yes": false
+   },
+   {
+    "q": "Are the potatoes cut into thin fries or chips?",
+    "yes": false
+   },
+   {
+    "q": "Are there pieces of meat or fish with the potatoes?",
+    "yes": false
+   }
+  ],
+  "dish": "roasted garlic herb fingerling potatoes",
+  "look": "a pile of small whole fingerling potatoes, some halved lengthwise, golden brown crisp skins, tender creamy yellow flesh, roasted soft garlic cloves, flecks of chopped green herbs, cracked black pepper",
+  "model": "claude-sonnet",
+  "name": "Roasted Garlic Herb Fingerling Potatoes",
+  "rev": 5,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-26T20:19:44+00:00"
+ },
+ "3dda86d35bac": {
+  "avoid": [
+   "chicken",
+   "meat",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "french fries",
+   "dipping sauce",
+   "salad",
+   "bun"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item breaded golden tender strips?",
+    "yes": true
+   },
+   {
+    "q": "Is the food a burger or sandwich on a bun?",
+    "yes": false
+   },
+   {
+    "q": "Are the pieces round nuggets or balls?",
+    "yes": false
+   },
+   {
+    "q": "Is the food sliced tofu blocks or a stir-fry in sauce?",
+    "yes": false
+   }
+  ],
+  "dish": "vegan chicken-style tenders",
+  "look": "several golden-brown breaded plant-based tenders, elongated strip shapes, crisp craggy crumb coating, tender fibrous white interior at torn edge, stacked slightly overlapping",
+  "model": "claude-sonnet",
+  "name": "Plant-Forward Tenders",
+  "rev": 5,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-26T20:19:48+00:00"
+ },
+ "3e3a996bd7b9": {
+  "avoid": [
+   "hot dog",
+   "sausage",
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "hamburger bun",
+   "toppings",
+   "mustard",
+   "fries"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a single long soft bread roll?",
+    "yes": true
+   },
+   {
+    "q": "Is there a sausage or hot dog inside the bun?",
+    "yes": false
+   },
+   {
+    "q": "Is the bread round like a hamburger bun?",
+    "yes": false
+   },
+   {
+    "q": "Is the bread sliced into multiple slices like a loaf?",
+    "yes": false
+   }
+  ],
+  "dish": "hot dog bun",
+  "look": "a single soft golden-brown split-top hot dog bun, long oblong shape, smooth glossy domed crust, pale fluffy white crumb visible along the top slit, tender enriched bread",
+  "model": "claude-sonnet",
+  "name": "Plain Hot Dog Bun",
+  "rev": 5,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-26T20:19:48+00:00"
+ },
+ "427834211d2a": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "ground meat sauce",
+   "spaghetti",
+   "whole baking dish",
+   "garlic bread",
+   "salad"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a layered baked pasta slice with sauce and cheese?",
+    "yes": true
+   },
+   {
+    "q": "Is the main item loose spaghetti or noodles instead of layered lasagna?",
+    "yes": false
+   },
+   {
+    "q": "Is there ground meat or sausage in the layers or sauce?",
+    "yes": false
+   }
+  ],
+  "dish": "vegetable lasagna",
+  "look": "a square slice of baked lasagna showing distinct layers of pasta sheets, red tomato sauce, melted mozzarella and diced zucchini, squash, spinach and mushrooms, browned bubbly cheese top, sprinkle of chopped parsley",
+  "model": "claude-sonnet",
+  "name": "Vegetable Lasagna",
+  "rev": 5,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-26T20:19:49+00:00"
+ },
+ "42a7b39e0fba": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "paella",
+   "peas",
+   "raw rice",
+   "side dishes",
+   "platter"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food cooked yellow rice?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat, seafood or sausage mixed in?",
+    "yes": false
+   },
+   {
+    "q": "Is the rice white with no yellow colour?",
+    "yes": false
+   },
+   {
+    "q": "Does the rice look raw or dry and uncooked?",
+    "yes": false
+   }
+  ],
+  "dish": "saffron rice",
+  "look": "fluffy long-grain basmati rice, separate grains in vivid golden-yellow saffron colour, a few deeper orange saffron threads, soft translucent pieces of cooked onion mixed through, mounded loosely",
+  "model": "claude-sonnet",
+  "name": "Saffron Rice",
+  "rev": 5,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-26T20:19:52+00:00"
+ },
+ "435c1da6efe7": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "pasta",
+   "zucchini noodles",
+   "cheese",
+   "breaded fried zucchini"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item sliced or chopped cooked zucchini?",
+    "yes": true
+   },
+   {
+    "q": "Is the zucchini spiralized into noodles?",
+    "yes": false
+   },
+   {
+    "q": "Is the zucchini breaded or deep fried?",
+    "yes": false
+   },
+   {
+    "q": "Are there pieces of meat or seafood with the zucchini?",
+    "yes": false
+   }
+  ],
+  "dish": "lemon herbed zucchini",
+  "look": "sliced zucchini half-moons and rounds, tender sautéed with lightly browned edges, bright green skin and pale flesh, thin lemon slices or wedges, tiny green herb leaves, minced garlic flecks, glossy",
+  "model": "claude-sonnet",
+  "name": "Lemon Herbed Zucchini",
+  "rev": 5,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-26T20:19:52+00:00"
+ },
+ "49755bfbcd3a": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "rice",
+   "naan bread",
+   "soup broth",
+   "tofu"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food chunks of vegetables in a yellow-orange curry sauce?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat, chicken or fish in the dish?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a thin watery soup rather than a thick saucy vegetable dish?",
+    "yes": false
+   },
+   {
+    "q": "Are the vegetables raw and uncooked?",
+    "yes": false
+   }
+  ],
+  "dish": "vegetable curry",
+  "look": "chunks of orange sweet potato and sliced carrots with green peas in a golden-yellow curry sauce, glossy and thick, flecks of sliced green onion, a scattering of chopped cilantro leaves",
+  "model": "claude-sonnet",
+  "name": "Curried Vegetables",
+  "rev": 5,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-26T20:19:53+00:00"
+ },
+ "4baffc9b2827": {
+  "avoid": [
+   "pita bread",
+   "flatbread",
+   "wrap",
+   "ground meat",
+   "meatballs",
+   "skewers",
+   "french fries",
+   "tzatziki bowl",
+   "salad"
+  ],
+  "checks": [
+   {
+    "q": "Is the meat in thin shaved slices or strips?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat ground or crumbled like mince?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat wrapped in a pita or flatbread?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat on skewers as chunks of kebab?",
+    "yes": false
+   }
+  ],
+  "dish": "Greek gyro meat",
+  "look": "a pile of thin shaved slices of seasoned beef and lamb, browned crisp edges, juicy dark brown meat strips, cut from a vertical rotisserie cone, a few flecks of minced garlic",
+  "model": "claude-sonnet",
+  "name": "Beef & Lamb Gyro Meat",
+  "rev": 5,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-26T20:19:56+00:00"
+ },
+ "50ea6a72eb85": {
+  "avoid": [
+   "sausage links",
+   "bratwurst",
+   "pork sausage",
+   "chili",
+   "sauerkraut",
+   "french fries",
+   "corn dog",
+   "burger patty",
+   "side dishes"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a whole frankfurter sausage in a bun?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat ground like a burger patty?",
+    "yes": false
+   },
+   {
+    "q": "Is the sausage battered and on a stick like a corn dog?",
+    "yes": false
+   },
+   {
+    "q": "Is the sausage covered in chili or thick toppings hiding it?",
+    "yes": false
+   }
+  ],
+  "dish": "beef hot dog",
+  "look": "a grilled all-beef frankfurter in a soft split hot dog bun, plump reddish-brown skin with light char marks, smooth glossy casing, bun toasted golden at the edges",
+  "model": "claude-sonnet",
+  "name": "Beef Hot Dog",
+  "rev": 5,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-26T20:19:57+00:00"
+ },
+ "53a559318a58": {
+  "avoid": [
+   "chicken tikka skewers",
+   "boneless cubes",
+   "naan bread",
+   "rice",
+   "salad",
+   "raw chicken",
+   "whole roasted chicken",
+   "soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item bone-in pieces of cooked chicken with a red-orange coating?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken cut into small cubes on skewers?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken submerged in a bowl of soupy curry?",
+    "yes": false
+   },
+   {
+    "q": "Does the chicken look raw or pale and unseasoned?",
+    "yes": false
+   }
+  ],
+  "dish": "tandoori chicken",
+  "look": "bone-in chicken pieces, legs and thighs, vivid red-orange tandoori coating, charred blackened spots on the skin, juicy cooked meat, a spoonful of creamy orange curry sauce beside, lemon wedge, a few slices of red onion",
+  "model": "claude-sonnet",
+  "name": "Tandoori Style Chicken",
+  "rev": 5,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-26T20:19:58+00:00"
+ },
+ "53b540ae47f3": {
+  "avoid": [
+   "chicken",
+   "pork ribs",
+   "ground beef",
+   "skewers",
+   "rice",
+   "noodles",
+   "soup",
+   "raw meat",
+   "vegetable side dishes"
+  ],
+  "checks": [
+   {
+    "q": "Are the main items pieces of cooked beef short rib with bone?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat ground or crumbled like mince?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat cut into small cubes on skewers?",
+    "yes": false
+   },
+   {
+    "q": "Does the meat look raw or uncooked?",
+    "yes": false
+   }
+  ],
+  "dish": "Hawaiian teriyaki short ribs",
+  "look": "several bone-in beef short ribs cut flanken style across the bone, glossy dark teriyaki glaze, caramelized charred edges, tender browned meat, sprinkle of toasted sesame seeds, sliced green onion, thin strips of orange zest, a few jalapeño slices",
+  "model": "claude-sonnet",
+  "name": "Hawaiian Teriyaki Short Ribs",
+  "rev": 5,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-26T20:20:00+00:00"
+ },
+ "60c7caa00da9": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "cheese",
+   "pasta",
+   "rice",
+   "salad greens"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item roasted green broccoli or broccolini stalks?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat or fish with the vegetables?",
+    "yes": false
+   },
+   {
+    "q": "Is the broccoli chopped into a puree or soup?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a pasta or grain dish?",
+    "yes": false
+   }
+  ],
+  "dish": "roasted broccolini with cherry tomatoes",
+  "look": "roasted broccolini stalks with tender green florets, charred crisp tips, blistered burst cherry tomatoes in red, thin slices of golden garlic, a few red pepper flakes, slightly glossy",
+  "model": "claude-sonnet",
+  "name": "Roasted Broccolini with Tomatoes",
+  "rev": 4,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-26T20:10:26+00:00"
+ },
+ "6c97a9c059e0": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "bacon",
+   "sausage",
+   "fried egg",
+   "omelette",
+   "toast"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food scrambled eggs in soft yellow curds?",
+    "yes": true
+   },
+   {
+    "q": "Is the egg a whole fried egg with a visible intact yolk?",
+    "yes": false
+   },
+   {
+    "q": "Is the egg folded into a smooth omelette shape?",
+    "yes": false
+   },
+   {
+    "q": "Are there pieces of meat with the eggs?",
+    "yes": false
+   }
+  ],
+  "dish": "scrambled eggs",
+  "look": "a mound of soft scrambled eggs, fluffy pale yellow curds, moist glossy folds, small tender clumps, golden edges, slightly irregular billowy texture",
+  "model": "claude-sonnet",
+  "name": "Scrambled Eggs",
+  "rev": 5,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-26T20:20:02+00:00"
+ },
+ "7c8def291144": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "noodles",
+   "whole tofu block",
+   "pineapple ring",
+   "rice"
+  ],
+  "checks": [
+   {
+    "q": "Are the main items cubes of tofu in a glossy sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is there meat, chicken or shrimp in the dish?",
+    "yes": false
+   },
+   {
+    "q": "Is the tofu one large uncut block or slab?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a soup or broth?",
+    "yes": false
+   }
+  ],
+  "dish": "pineapple teriyaki tofu stir-fry",
+  "look": "golden pan-seared tofu cubes glazed in glossy dark teriyaki sauce, pineapple chunks, orange sweet potato cubes, strips of green and red bell pepper, sliced onion, sliced green onion, sesame seeds",
+  "model": "claude-sonnet",
+  "name": "Island Teriyaki Tofu",
+  "rev": 5,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-26T20:20:06+00:00"
+ },
+ "8c1b4df69b6d": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "noodles",
+   "rice",
+   "edamame pods only",
+   "lettuce leaves"
+  ],
+  "checks": [
+   {
+    "q": "Are the main ingredients green soybeans mixed with shredded vegetables?",
+    "yes": true
+   },
+   {
+    "q": "Is there meat, fish or shrimp in the salad?",
+    "yes": false
+   },
+   {
+    "q": "Is the main item a bowl of noodles or rice?",
+    "yes": false
+   },
+   {
+    "q": "Is the salad mostly leafy lettuce greens?",
+    "yes": false
+   }
+  ],
+  "dish": "edamame salad",
+  "look": "shelled bright green edamame beans, shredded purple and green cabbage, thin orange carrot matchsticks, sliced green onion, small golden pineapple chunks, sprinkle of white and black sesame seeds, glossy light dressing",
+  "model": "claude-sonnet",
+  "name": "Edamame Salad",
+  "rev": 5,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-26T20:20:07+00:00"
+ },
+ "8fea081816f3": {
+  "avoid": [
+   "sushi rolls",
+   "nigiri",
+   "bacon",
+   "ham steak",
+   "fried egg",
+   "ground meat",
+   "raw fish",
+   "side dishes"
+  ],
+  "checks": [
+   {
+    "q": "Are there thick rectangular slices of browned canned luncheon meat over rice?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat ground or crumbled like mince?",
+    "yes": false
+   },
+   {
+    "q": "Is the food a sushi roll or a rice block wrapped in seaweed instead of loose rice in a bowl?",
+    "yes": false
+   },
+   {
+    "q": "Is the main protein raw fish or shrimp?",
+    "yes": false
+   }
+  ],
+  "dish": "Spam musubi bowl",
+  "look": "a bowl of steamed white rice topped with thick rectangular slices of pan-seared Spam, glossy dark teriyaki glaze, caramelized browned edges, strips of black nori seaweed, sprinkle of sesame seeds, thin slices of green onion",
+  "model": "claude-sonnet",
+  "name": "Spam Musubi Bowl",
+  "rev": 5,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-26T20:20:07+00:00"
+ },
+ "900cb05f2016": {
+  "avoid": [
+   "sausage patties",
+   "ground meat crumbles",
+   "hot dog bun",
+   "bratwurst in bun",
+   "eggs",
+   "bacon strips",
+   "pancakes",
+   "sliced sausage coins",
+   "peppers and onions"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item whole cylindrical sausage links?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat formed into flat round patties?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat crumbled or ground like mince?",
+    "yes": false
+   },
+   {
+    "q": "Are the sausages served in a bun?",
+    "yes": false
+   }
+  ],
+  "dish": "breakfast pork sausage links",
+  "look": "three plump cylindrical pork sausage links, browned glossy casings with darker seared spots, slightly curved, juicy tender meat, evenly sized, arranged side by side",
+  "model": "claude-sonnet",
+  "name": "Pork Sausage Link",
+  "rev": 5,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-26T20:20:11+00:00"
+ },
+ "99e47bcf3c0d": {
+  "avoid": [
+   "beef",
+   "chicken",
+   "lamb",
+   "shrimp",
+   "naan bread",
+   "rice platter",
+   "ground meat",
+   "soup broth",
+   "skewers",
+   "sausage"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item chunks of meat in a red curry sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat ground or crumbled like mince?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a thin watery soup or broth?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat grilled or on skewers with little sauce?",
+    "yes": false
+   }
+  ],
+  "dish": "pork vindaloo",
+  "look": "bite-sized chunks of tender pork in a thick, glossy deep red-orange vindaloo curry sauce, visible chunks of diced potato, sauce clinging to the meat, a few whole red chilies, a sprig of cilantro",
+  "model": "claude-sonnet",
+  "name": "Pork Vindaloo",
+  "rev": 5,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-26T20:20:12+00:00"
+ },
+ "9fea3410efb1": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "chunky vegetables",
+   "bread",
+   "salad",
+   "whole squash"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food a smooth orange pureed soup?",
+    "yes": true
+   },
+   {
+    "q": "Is the soup a clear thin broth with large chunks of vegetables?",
+    "yes": false
+   },
+   {
+    "q": "Are there pieces of meat or fish in the soup?",
+    "yes": false
+   },
+   {
+    "q": "Is the main item a solid roasted squash rather than a soup?",
+    "yes": false
+   }
+  ],
+  "dish": "butternut squash soup",
+  "look": "smooth velvety pureed soup, creamy orange-gold colour, thick silky texture, swirl of white cream on the surface, glossy surface, served hot in a bowl",
+  "model": "claude-sonnet",
+  "name": "Butternut Squash Soup",
+  "rev": 5,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-26T20:20:11+00:00"
+ },
+ "a16044ca8279": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "tofu blocks",
+   "rice",
+   "noodles",
+   "vegetable side dishes"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item fried slices or cubes of tempeh or soy cake with a crisp coating?",
+    "yes": true
+   },
+   {
+    "q": "Does the main item look like chicken nuggets or pieces of meat?",
+    "yes": false
+   },
+   {
+    "q": "Is the main item soft white tofu in a sauce?",
+    "yes": false
+   },
+   {
+    "q": "Is the food a soup or served in broth?",
+    "yes": false
+   }
+  ],
+  "dish": "crispy Korean-style tempeh",
+  "look": "golden-brown fried tempeh slices or cubes, crisp edges, visible grain texture of pressed soybeans, glossy reddish-brown Korean gochujang-style glaze, scattered toasted sesame seeds, thin sliced green onion on top",
+  "model": "claude-sonnet",
+  "name": "Crispy Korean-Style Tempeh",
+  "rev": 5,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-26T20:20:16+00:00"
+ },
+ "ace7d14ae0a3": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "tofu",
+   "noodles",
+   "rice",
+   "clear broth soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food mushrooms in a creamy yellow curry sauce?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of chicken, shrimp or other meat in the dish?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a thin clear broth soup or noodle soup?",
+    "yes": false
+   },
+   {
+    "q": "Is the main item a sushi roll or seaweed wrap?",
+    "yes": false
+   }
+  ],
+  "dish": "Thai yellow mushroom curry",
+  "look": "creamy golden-yellow coconut curry sauce, mixed sliced trumpet, oyster and button mushrooms, carrot slices, strips of red bell pepper, bamboo shoot strips, baby corn, chopped onion, a few torn nori sheet pieces on top",
+  "model": "claude-sonnet",
+  "name": "Thai Mushroom Curry with Nori",
+  "rev": 5,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-26T20:20:16+00:00"
+ },
+ "b133fbce12e0": {
+  "avoid": [
+   "raw salmon",
+   "sushi",
+   "salmon steak with bone",
+   "shrimp",
+   "white fish",
+   "rice",
+   "salad",
+   "lemon slices",
+   "sauce pool"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a cooked fillet of pink-orange fish?",
+    "yes": true
+   },
+   {
+    "q": "Is the fish raw or sliced like sashimi?",
+    "yes": false
+   },
+   {
+    "q": "Is the fish flaked or shredded into small pieces mixed with other ingredients?",
+    "yes": false
+   },
+   {
+    "q": "Is the main item shrimp or another shellfish?",
+    "yes": false
+   }
+  ],
+  "dish": "cilantro lime salmon",
+  "look": "a thick baked salmon fillet, opaque pink-orange flaky flesh, glossy honey glaze on top, flecks of green cilantro and lime zest, red chili flakes, cracked black pepper, a lime wedge on the side",
+  "model": "claude-sonnet",
+  "name": "Cilantro Lime Salmon",
+  "rev": 5,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-26T20:20:16+00:00"
+ },
+ "b4548565ca34": {
+  "avoid": [
+   "burger patty",
+   "beef",
+   "chicken",
+   "shrimp",
+   "french fries",
+   "salmon",
+   "wrap",
+   "side salad",
+   "fish tacos"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a breaded fried fish fillet in a bun?",
+    "yes": true
+   },
+   {
+    "q": "Is the filling a ground meat burger patty?",
+    "yes": false
+   },
+   {
+    "q": "Is the fish pink or orange like salmon?",
+    "yes": false
+   },
+   {
+    "q": "Is the filling a piece of fried chicken?",
+    "yes": false
+   }
+  ],
+  "dish": "crispy fish sandwich",
+  "look": "a golden breaded crispy fried white fish fillet on a soft glossy brioche bun, creamy white tartar sauce with flecks of pickle spilling at the edges, bun top resting slightly askew, crunchy craggy crust",
+  "model": "claude-sonnet",
+  "name": "Crispy Fish Sandwich",
+  "rev": 5,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-26T20:20:20+00:00"
+ },
+ "bb2cc90b58ac": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "pasta",
+   "meatballs",
+   "cheese",
+   "pizza"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food a red tomato sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is there pasta or noodles in the picture?",
+    "yes": false
+   },
+   {
+    "q": "Are there meatballs or pieces of meat in the sauce?",
+    "yes": false
+   },
+   {
+    "q": "Is the sauce covered in melted cheese?",
+    "yes": false
+   }
+  ],
+  "dish": "marinara sauce",
+  "look": "smooth chunky red tomato sauce, thick and rich, crushed tomato pieces, small flecks of minced onion and garlic, deep red colour, glossy surface, served as a pool of sauce",
+  "model": "claude-sonnet",
+  "name": "Marinara Sauce",
+  "rev": 5,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-26T20:20:20+00:00"
+ },
+ "bed43b2c282e": {
+  "avoid": [
+   "salmon",
+   "pink fish",
+   "tofu",
+   "fried breaded fish",
+   "soup",
+   "noodles",
+   "rice",
+   "shrimp",
+   "vegetable side dishes"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a fillet of white-fleshed fish?",
+    "yes": true
+   },
+   {
+    "q": "Is the fish pink or orange like salmon?",
+    "yes": false
+   },
+   {
+    "q": "Does the main item look like a block of tofu?",
+    "yes": false
+   },
+   {
+    "q": "Is the fish covered in a breaded or battered crust?",
+    "yes": false
+   }
+  ],
+  "dish": "miso-glazed black cod",
+  "look": "a thick fillet of sablefish, glossy caramelized dark-amber sweet miso glaze on top, flaky snow-white flesh, browned edges, thin sliced green scallions and a scattering of sesame seeds, small piece of pickled ginger",
+  "model": "claude-sonnet",
+  "name": "Miso Black Cod",
+  "rev": 5,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-26T20:20:20+00:00"
+ },
+ "ccf8b5079c93": {
+  "avoid": [
+   "steak",
+   "roast beef slices",
+   "mashed potatoes",
+   "noodles",
+   "pasta",
+   "rice",
+   "bread",
+   "soup broth",
+   "ground beef"
+  ],
+  "checks": [
+   {
+    "q": "Are the main items chunks of meat in a dark sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat a grilled or seared whole steak?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat ground or crumbled like mince?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a thin clear soup or broth?",
+    "yes": false
+   }
+  ],
+  "dish": "beef bourguignon",
+  "look": "tender chunks of braised beef in glossy dark red wine sauce, whole browned pearl onions, sliced mushrooms, orange carrot pieces, small bacon lardons, sprinkle of chopped parsley",
+  "model": "claude-sonnet",
+  "name": "Beef Bourguignon",
+  "rev": 5,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-26T20:20:24+00:00"
+ },
+ "dc80a7c19291": {
+  "avoid": [
+   "tortilla",
+   "taco",
+   "burrito",
+   "ground meat",
+   "pork chop",
+   "sliced roast pork",
+   "rice",
+   "beans",
+   "chicken"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item chunks of shredded or pulled meat?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat ground or crumbled like mince?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat wrapped in a tortilla or served as a taco?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat a whole chop or neatly cut slices?",
+    "yes": false
+   }
+  ],
+  "dish": "pork carnitas",
+  "look": "a pile of tender pulled pork chunks, shredded juicy meat, golden-brown crisp browned edges, some caramelized onion pieces mixed in, rich reddish-brown color, moist glistening texture",
+  "model": "claude-sonnet",
+  "name": "Carnitas",
+  "rev": 5,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-26T20:20:24+00:00"
+ },
+ "de812546212b": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "ham",
+   "bacon",
+   "sausage",
+   "fish",
+   "shrimp",
+   "collard greens",
+   "cornbread",
+   "soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food a mix of cooked rice and black-eyed peas?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat, sausage or ham in the dish?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a brothy soup or stew rather than a rice dish?",
+    "yes": false
+   },
+   {
+    "q": "Are the beans large kidney beans or dark black beans instead of small cream-colored peas?",
+    "yes": false
+   }
+  ],
+  "dish": "Hoppin' John",
+  "look": "cooked fluffy white rice mixed with tender black-eyed peas, small diced onion, celery and red and green bell pepper pieces, reddish-orange tint from smoked paprika, moist glistening grains, one rounded portion",
+  "model": "claude-sonnet",
+  "name": "Hoppin’ John Black-Eyed Peas & Rice",
+  "rev": 5,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-26T20:17:35+00:00"
+ },
+ "ea9d407fd68d": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "rice",
+   "pasta",
+   "pea pods",
+   "mashed peas",
+   "soup",
+   "green beans"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food whole round green peas?",
+    "yes": true
+   },
+   {
+    "q": "Are the peas mashed, pureed or blended into a soup?",
+    "yes": false
+   },
+   {
+    "q": "Is the main item green beans or pea pods rather than loose peas?",
+    "yes": false
+   },
+   {
+    "q": "Are there pieces of meat or fish mixed in?",
+    "yes": false
+   }
+  ],
+  "dish": "garlic green peas",
+  "look": "a serving of bright green cooked sweet peas, plump and glossy, tossed with golden sautéed minced garlic pieces, tender whole round peas piled loosely, a few pale garlic slivers among them",
+  "model": "claude-sonnet",
+  "name": "Garlic Green Peas",
+  "rev": 5,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-26T20:20:25+00:00"
+ },
+ "ec35f62fcf30": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "crawfish",
+   "sausage",
+   "rice",
+   "platter"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food mushrooms in a thick brown sauce?",
+    "yes": true
+   },
+   {
+    "q": "Are there shrimp, crawfish, or pieces of meat in the dish?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a thin broth soup?",
+    "yes": false
+   }
+  ],
+  "dish": "mushroom étouffée",
+  "look": "thick sliced mushrooms and okra pieces in a rich golden-brown roux-based Cajun sauce, diced green bell pepper and onion, glossy thick gravy, sprinkle of chopped parsley, sprigs of thyme",
+  "model": "claude-sonnet",
+  "name": "Mushroom Etouffee",
+  "rev": 5,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-26T20:20:28+00:00"
+ },
+ "ed5c4e45a6ce": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "tortilla",
+   "burrito",
+   "whole tofu block",
+   "rice",
+   "cheese"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item crumbled tofu in a red-brown sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the main item a solid whole block or slab of tofu?",
+    "yes": false
+   },
+   {
+    "q": "Is the food wrapped in a tortilla or served as a burrito or taco?",
+    "yes": false
+   },
+   {
+    "q": "Does the main item look like ground beef or other meat?",
+    "yes": false
+   }
+  ],
+  "dish": "tofu sofritas",
+  "look": "crumbled tofu simmered in a thick smoky red-brown chipotle tomato sauce, small irregular tofu crumbles with ground-meat-like texture, glossy saucy surface, flecks of roasted poblano pepper and onion",
+  "model": "claude-sonnet",
+  "name": "Tofu Sofritas",
+  "rev": 5,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-26T20:16:28+00:00"
+ },
+ "f337c3568e54": {
+  "avoid": [
+   "salmon",
+   "shrimp",
+   "fish sticks",
+   "chicken tenders",
+   "onion rings",
+   "coleslaw",
+   "burger",
+   "raw fish"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a battered or breaded fillet of white fish?",
+    "yes": true
+   },
+   {
+    "q": "Is the fish pink or orange like salmon?",
+    "yes": false
+   },
+   {
+    "q": "Is the main item chicken strips or nuggets?",
+    "yes": false
+   },
+   {
+    "q": "Is the fish served in a bun or sandwich?",
+    "yes": false
+   }
+  ],
+  "dish": "fish and chips",
+  "look": "two thick golden crispy battered pollock fillets, flaky white flesh, crunchy bubbly batter, a pile of golden baked french fries, lemon wedge, small ramekin of creamy pale remoulade dipping sauce",
+  "model": "claude-sonnet",
+  "name": "Fish & Chips with Remoulade",
+  "rev": 4,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-26T20:10:51+00:00"
+ },
+ "fdeefb326415": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "fish cake",
+   "boiled egg",
+   "noodles",
+   "rice"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item chewy cylindrical rice cakes in red sauce?",
+    "yes": true
+   },
+   {
+    "q": "Are the rice cakes replaced by noodles or pasta?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a brothy soup with the rice cakes floating in it?",
+    "yes": false
+   },
+   {
+    "q": "Are there pieces of meat, egg or fish cake in the dish?",
+    "yes": false
+   }
+  ],
+  "dish": "tteokbokki",
+  "look": "chewy cylindrical white rice cakes coated in glossy red-brown sweet-spicy sauce, sliced onion, carrot strips, shredded cabbage, sliced mushrooms, thin ribbons of seaweed, scattering of sesame seeds",
+  "model": "claude-sonnet",
+  "name": "Tteokbokki",
+  "rev": 5,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-26T20:20:29+00:00"
+ }
+}

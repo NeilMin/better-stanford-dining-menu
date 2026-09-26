@@ -1,17 +1,13 @@
 import io
 import json
-from unittest.mock import MagicMock, patch
-from PIL import Image
-import pytest
+from unittest.mock import MagicMock
 
-from bsdm.cloudflare import CloudflareClient, CloudflareError, CloudflareQuotaError
-from scripts.gen_images import (
-    crop_and_resize_to_card,
-    generate_with_cloudflare,
-    generate_with_search,
-    generate_with_search_fallback,
-    main,
-)
+import pytest
+from PIL import Image
+
+from bsdm.cloudflare import CloudflareClient, CloudflareQuotaError
+from scripts import gen_images
+from scripts.gen_images import crop_and_resize_to_card, generate_with_cloudflare, main
 
 
 def _make_test_image(color: str = "red", size: tuple[int, int] = (1024, 576)) -> Image.Image:
@@ -53,223 +49,66 @@ def test_generate_with_cloudflare_propagates_quota_error():
         generate_with_cloudflare(client, "Ramen prompt", "neg prompt")
 
 
-@patch("bsdm.web_image.search_food_image")
-def test_generate_with_search_returns_image(mock_search):
-    buf = io.BytesIO()
-    Image.new("RGB", (800, 600), color="yellow").save(buf, format="JPEG")
-    mock_search.return_value = buf.getvalue()
-
-    mock_client = MagicMock()
-    img, secs = generate_with_search("Curry", client=mock_client, min_score=7)
-    assert isinstance(img, Image.Image)
-    assert img.size == (1024, 576)
-    assert abs(img.width / img.height - 16 / 9) < 0.01
-    assert secs >= 0
-    mock_search.assert_called_once_with("Curry", client=mock_client, min_score=7, require_vlm=True)
-
-
-@patch("bsdm.web_image.search_food_image")
-def test_generate_with_search_returns_none_on_no_data(mock_search):
-    mock_search.return_value = None
-
-    img, secs = generate_with_search("Unknown dish")
-    assert img is None
-    assert secs >= 0
-
-
-@patch("bsdm.web_image.search_food_image")
-def test_generate_with_search_returns_none_on_corrupt_data(mock_search):
-    mock_search.return_value = b"corrupted non-image data"
-
-    img, secs = generate_with_search("Broken dish")
-    assert img is None
-    assert secs >= 0
-
-
 @pytest.fixture
-def mock_gen_project(tmp_path):
+def proj(tmp_path, monkeypatch, fake_llm):
     root = tmp_path / "project"
-    root.mkdir(parents=True)
-    data_dir = root / "data"
-    data_dir.mkdir()
-    images_dir = data_dir / "images"
-    images_dir.mkdir()
-
+    (root / "data" / "images").mkdir(parents=True)
     catalog = {
-        "dish1": {
-            "name": "Roast Chicken",
-            "prompt": "Juicy roast chicken on a plate",
-            "priority": 0,
-            "min_order": 0,
-            "needs_image": True,
-            "image": None,
-        },
-        "dish2": {
-            "name": "Steamed Broccoli",
-            "prompt": "Fresh steamed broccoli florets",
-            "priority": 2,
-            "min_order": 5,
-            "needs_image": True,
-            "image": None,
-        },
+        "dish1": {"name": "Roast Chicken", "ingredients": "chicken", "tags": [], "category": "poultry",
+                  "prompt": "Juicy roast chicken on a plate", "priority": 0, "min_order": 0,
+                  "needs_image": True, "image": None},
+        "dish2": {"name": "Steamed Broccoli", "ingredients": "broccoli", "tags": ["vegan"],
+                  "category": "vegan", "prompt": "Fresh steamed broccoli florets", "priority": 2,
+                  "min_order": 5, "needs_image": True, "image": None},
     }
-    (data_dir / "dishes.json").write_text(json.dumps(catalog))
-    return root
+    (root / "data" / "dishes.json").write_text(json.dumps(catalog))
+    monkeypatch.setattr(gen_images, "ROOT", root)
+    monkeypatch.setattr(gen_images, "CATALOG", root / "data" / "dishes.json")
+    monkeypatch.setattr(gen_images, "IMAGES", root / "data" / "images")
+    monkeypatch.setattr(gen_images, "ClaudeCLI", lambda *a, **kw: fake_llm)
+
+    comfy = MagicMock()
+    comfy.available.return_value = False
+    monkeypatch.setattr(gen_images, "ComfyClient", lambda *a, **kw: comfy)
+    cf = MagicMock(spec=CloudflareClient)
+    cf.is_configured.return_value = True
+    monkeypatch.setattr(gen_images, "CloudflareClient", lambda *a, **kw: cf)
+    return root, comfy, cf
 
 
-def test_main_tier1_web_search_accepted_before_ai(mock_gen_project, monkeypatch):
-    monkeypatch.setattr("scripts.gen_images.ROOT", mock_gen_project)
-    monkeypatch.setattr("scripts.gen_images.CATALOG", mock_gen_project / "data" / "dishes.json")
-    monkeypatch.setattr("scripts.gen_images.IMAGES", mock_gen_project / "data" / "images")
-
-    mock_cf = MagicMock()
-    mock_cf.is_configured.return_value = True
-    monkeypatch.setattr("scripts.gen_images.CloudflareClient", lambda *a, **kw: mock_cf)
-
-    # Web search succeeds at Tier 1
-    test_img = _make_test_image("orange")
-    mock_search_card = MagicMock(return_value=(test_img, 0.4))
-    monkeypatch.setattr("scripts.gen_images.generate_with_search", mock_search_card)
-
-    mock_gen_cf = MagicMock()
-    monkeypatch.setattr("scripts.gen_images.generate_with_cloudflare", mock_gen_cf)
-
-    code = main(["--backend", "auto", "--limit", "1", "--search-first"])
-    assert code == 0
-
-    catalog = json.loads((mock_gen_project / "data" / "dishes.json").read_text())
-    assert catalog["dish1"]["model"] == "web-search"
-    assert catalog["dish1"]["image"] == "dish1.webp"
-    assert (mock_gen_project / "data" / "images" / "dish1.webp").exists()
-
-    # Tier 2 (AI Generation) was not called because Tier 1 succeeded
-    assert not mock_gen_cf.called
+BRIEF = {"dish": "roast chicken", "look": "golden pieces", "vessel": "plate", "avoid": [],
+         "checks": [{"q": "Is it chicken?", "yes": True}]}
+PASS = {"answers": ["yes", "yes", "no", "no"], "seen": "chicken"}
 
 
-def test_main_backend_auto_uses_cloudflare_flux_when_tier1_fails(mock_gen_project, monkeypatch):
-    monkeypatch.setattr("scripts.gen_images.ROOT", mock_gen_project)
-    monkeypatch.setattr("scripts.gen_images.CATALOG", mock_gen_project / "data" / "dishes.json")
-    monkeypatch.setattr("scripts.gen_images.IMAGES", mock_gen_project / "data" / "images")
+def test_auto_draws_with_cloudflare_when_comfyui_is_down(proj, monkeypatch, fake_llm):
+    root, _comfy, _cf = proj
+    drawn = MagicMock(return_value=(_make_test_image(), 0.2))
+    monkeypatch.setattr(gen_images, "generate_with_cloudflare", drawn)
+    fake_llm.briefs.append(BRIEF)
+    fake_llm.verdicts.append(PASS)
 
-    mock_cf = MagicMock()
-    mock_cf.is_configured.return_value = True
-    monkeypatch.setattr("scripts.gen_images.CloudflareClient", lambda *a, **kw: mock_cf)
-
-    # Tier 1 search returns None
-    monkeypatch.setattr("scripts.gen_images.generate_with_search", lambda d, client=None, min_score=7, require_vlm=True: (None, 0.2))
-
-    test_img = _make_test_image("green")
-    monkeypatch.setattr("scripts.gen_images.generate_with_cloudflare", lambda client, p, n: (test_img, 0.5))
-
-    code = main(["--backend", "auto", "--limit", "1", "--search-first"])
-    assert code == 0
-
-    catalog = json.loads((mock_gen_project / "data" / "dishes.json").read_text())
-    assert catalog["dish1"]["model"] == "cf-flux"
-    assert catalog["dish1"]["image"] == "dish1.webp"
-    assert (mock_gen_project / "data" / "images" / "dish1.webp").exists()
+    assert main(["--limit", "1"]) == 0
+    assert drawn.call_count == 1
+    assert json.loads((root / "data" / "dishes.json").read_text())["dish1"]["model"] == "cf-flux"
 
 
-def test_main_backend_auto_falls_back_to_comfyui_when_available(mock_gen_project, monkeypatch):
-    monkeypatch.setattr("scripts.gen_images.ROOT", mock_gen_project)
-    monkeypatch.setattr("scripts.gen_images.CATALOG", mock_gen_project / "data" / "dishes.json")
-    monkeypatch.setattr("scripts.gen_images.IMAGES", mock_gen_project / "data" / "images")
+def test_a_spent_cloudflare_quota_stops_the_run_cleanly(proj, monkeypatch, fake_llm):
+    """Tomorrow's allocation will draw them; a red run would say nothing new."""
+    _root, _comfy, _cf = proj
+    drawn = MagicMock(side_effect=CloudflareQuotaError("429"))
+    monkeypatch.setattr(gen_images, "generate_with_cloudflare", drawn)
+    fake_llm.briefs.append(BRIEF)
 
-    mock_cf = MagicMock()
-    mock_cf.is_configured.return_value = False
-    monkeypatch.setattr("scripts.gen_images.CloudflareClient", lambda *a, **kw: mock_cf)
-
-    mock_comfy = MagicMock()
-    mock_comfy.available.return_value = True
-    test_img = _make_test_image("blue")
-    mock_comfy.generate.return_value = (test_img, 1.2)
-    monkeypatch.setattr("scripts.gen_images.ComfyClient", lambda *a, **kw: mock_comfy)
-
-    code = main(["--backend", "auto", "--limit", "1", "--search-first"])
-    assert code == 0
-
-    catalog = json.loads((mock_gen_project / "data" / "dishes.json").read_text())
-    assert catalog["dish1"]["model"] == "sdxl"
-    assert catalog["dish1"]["image"] == "dish1.webp"
+    assert main([]) == 0
+    assert drawn.call_count == 1, "kept asking after the quota was gone"
 
 
-def test_main_cloudflare_quota_error_rescued_by_search_fallback(mock_gen_project, monkeypatch, capsys):
-    monkeypatch.setattr("scripts.gen_images.ROOT", mock_gen_project)
-    monkeypatch.setattr("scripts.gen_images.CATALOG", mock_gen_project / "data" / "dishes.json")
-    monkeypatch.setattr("scripts.gen_images.IMAGES", mock_gen_project / "data" / "images")
-
-    mock_cf = MagicMock()
-    mock_cf.is_configured.return_value = True
-    monkeypatch.setattr("scripts.gen_images.CloudflareClient", lambda *a, **kw: mock_cf)
-
-    # Tier 1 fails
-    monkeypatch.setattr("scripts.gen_images.generate_with_search", lambda d, client=None, min_score=7, require_vlm=True: (None, 0.1))
-
-    # Cloudflare immediately raises quota error on dish1
-    mock_gen_cf = MagicMock(side_effect=CloudflareQuotaError("Rate limit 429"))
-    monkeypatch.setattr("scripts.gen_images.generate_with_cloudflare", mock_gen_cf)
-
-    # Search fallback rescues dish1
-    fallback_img = _make_test_image("orange")
-    mock_fallback = MagicMock(return_value=(fallback_img, 0.3))
-    monkeypatch.setattr("scripts.gen_images.generate_with_search_fallback", mock_fallback)
-
-    code = main(["--backend", "cloudflare"])
-    assert code == 0  # Clean exit on quota error
-    err = capsys.readouterr().err
-    assert "quota" in err.lower()
-
-    # Dish 1 was rescued by search fallback
-    catalog = json.loads((mock_gen_project / "data" / "dishes.json").read_text())
-    assert catalog["dish1"]["image"] == "dish1.webp"
-    assert catalog["dish1"]["model"] == "web-search"
-    assert (mock_gen_project / "data" / "images" / "dish1.webp").exists()
-
-    # Dish 2 was NOT attempted because quota_exceeded broke the loop after dish1
-    assert catalog["dish2"]["image"] is None
+def test_nothing_to_draw_with_is_an_error(proj):
+    _root, _comfy, cf = proj
+    cf.is_configured.return_value = False
+    assert main([]) == 2
 
 
-def test_main_no_search_fallback_when_disabled(mock_gen_project, monkeypatch):
-    monkeypatch.setattr("scripts.gen_images.ROOT", mock_gen_project)
-    monkeypatch.setattr("scripts.gen_images.CATALOG", mock_gen_project / "data" / "dishes.json")
-    monkeypatch.setattr("scripts.gen_images.IMAGES", mock_gen_project / "data" / "images")
-
-    mock_cf = MagicMock()
-    mock_cf.is_configured.return_value = True
-    monkeypatch.setattr("scripts.gen_images.CloudflareClient", lambda *a, **kw: mock_cf)
-
-    monkeypatch.setattr("scripts.gen_images.generate_with_search", lambda d, client=None, min_score=7, require_vlm=True: (None, 0.1))
-
-    def fake_gen_cf(client, p, n):
-        raise CloudflareError("Failed")
-
-    monkeypatch.setattr("scripts.gen_images.generate_with_cloudflare", fake_gen_cf)
-
-    mock_fallback = MagicMock()
-    monkeypatch.setattr("scripts.gen_images.generate_with_search_fallback", mock_fallback)
-
-    code = main(["--backend", "cloudflare", "--limit", "1", "--no-search-fallback", "--no-search-first"])
-    assert code == 1  # 1 failure and 0 done
-    assert not mock_fallback.called
-
-    catalog = json.loads((mock_gen_project / "data" / "dishes.json").read_text())
-    assert catalog["dish1"]["image"] is None
-
-
-def test_main_limit_zero_exits_cleanly(mock_gen_project, monkeypatch):
-    monkeypatch.setattr("scripts.gen_images.ROOT", mock_gen_project)
-    monkeypatch.setattr("scripts.gen_images.CATALOG", mock_gen_project / "data" / "dishes.json")
-    monkeypatch.setattr("scripts.gen_images.IMAGES", mock_gen_project / "data" / "images")
-
-    code = main(["--limit", "0"])
-    assert code == 0
-
-@patch("bsdm.web_image.search_food_image")
-def test_generate_with_search_fallback_enforces_vlm(mock_search):
-    # simulate web image search rejecting due to lack of VLM
-    mock_search.return_value = None
-
-    img, secs = generate_with_search_fallback("Broken dish")
-    assert img is None
-    # Verify that search_food_image was called with require_vlm=True and min_score=7
-    mock_search.assert_called_once_with("Broken dish", client=None, min_score=7, require_vlm=True)
+def test_main_limit_zero_exits_cleanly(proj):
+    assert main(["--limit", "0"]) == 0
