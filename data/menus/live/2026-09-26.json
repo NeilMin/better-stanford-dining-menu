@@ -1,6 +1,6 @@
 {
  "date": "2026-09-26",
- "scraped_at": "2026-09-26T06:15:22-07:00",
+ "scraped_at": "2026-09-26T16:42:15-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -1056,68 +1056,40 @@
      "order": 3
     },
     {
-     "name": "Rice Pilaf",
-     "recipe_id": "boxlunch-evgr47",
+     "name": "White Rice Pilaf",
+     "recipe_id": "5080677",
      "description": "",
-     "ingredients": "enriched long grain rice, yellow onion, soybean oil, olive oil, vegetable soup base (contains celery, carrots, onions), salt, sugar, hydrolyzed corn gluten, dehydrated potato, onion powder, carrot powder, natural flavoring, beet powder, salt",
-     "allergens": [
-      "SOY"
-     ],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "TREENUTS",
-      "WHEAT"
-     ],
+     "ingredients": "white rice pilaf, carrot, onion, canola/olive oil blend, salt, white pepper, bay leaf, vegetable soup base",
+     "allergens": [],
+     "trace_allergens": [],
      "tags": [
-      "vegan"
+      "gluten-free",
+      "vegan",
+      "halal"
      ],
      "order": 4
     },
     {
-     "name": "Panini Station",
-     "recipe_id": "4532805",
+     "name": "Omelet Station",
+     "recipe_id": "3565117",
      "description": "",
-     "ingredients": "(assorted) breads, cheeses, deli meats, lettuce, tomatoes, and onions",
+     "ingredients": "eggs, canola/olive oil blend, mushrooms, tomatoes, bacon, ham, pork sausage, cheddar cheese, onions, bell peppers, spinach, zucchini, olives",
      "allergens": [
       "EGG",
-      "SOY",
-      "WHEAT"
+      "MILK"
      ],
      "trace_allergens": [
       "COCONUT",
-      "MILK",
-      "TREENUTS"
+      "FISH",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "SOY",
+      "TREENUTS",
+      "WHEAT"
      ],
      "tags": [],
      "order": 5
-    },
-    {
-     "name": "Soup of the Day",
-     "recipe_id": "SoupoftheDay",
-     "description": "",
-     "ingredients": "chef's choice soup of the day",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [],
-     "order": 6
-    },
-    {
-     "name": "Composed Salad",
-     "recipe_id": "123116546",
-     "description": "",
-     "ingredients": "chef's choice composed salad",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "halal"
-     ],
-     "order": 7
     },
     {
      "name": "Performance Bar",
@@ -1127,7 +1099,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 8
+     "order": 6
     },
     {
      "name": "Craveable Grains",
@@ -1141,7 +1113,7 @@
       "vegan",
       "halal"
      ],
-     "order": 9
+     "order": 7
     },
     {
      "name": "Flavor Forward Legumes",
@@ -1155,42 +1127,39 @@
       "vegan",
       "halal"
      ],
+     "order": 8
+    },
+    {
+     "name": "Marinara Sauce",
+     "recipe_id": "4079962",
+     "description": "",
+     "ingredients": "tomatoes, tomato paste, soybean oil, sugar, salt, onion, garlic, spices, citric acid, natural flavor",
+     "allergens": [
+      "SOY"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan",
+      "halal"
+     ],
+     "order": 9
+    },
+    {
+     "name": "Alfredo Sauce",
+     "recipe_id": "5681078",
+     "description": "",
+     "ingredients": "cream, onion, milk powder, butter, parmesan cheese, flour, garlic, nutmeg, onion powder, salt",
+     "allergens": [
+      "MILK",
+      "WHEAT"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "vegetarian",
+      "halal"
+     ],
      "order": 10
-    },
-    {
-     "name": "Pasta",
-     "recipe_id": "5796111",
-     "description": "",
-     "ingredients": "semolina, durum wheat flour, canola/olive oil blend",
-     "allergens": [
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "EGG"
-     ],
-     "tags": [
-      "vegan",
-      "halal"
-     ],
-     "order": 11
-    },
-    {
-     "name": "Pasta Marinara",
-     "recipe_id": "5095708",
-     "description": "",
-     "ingredients": "pasta, marinara sauce, canola/olive oil blend",
-     "allergens": [
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "EGG"
-     ],
-     "tags": [
-      "vegan",
-      "halal"
-     ],
-     "order": 12
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -1204,7 +1173,7 @@
       "vegan",
       "halal"
      ],
-     "order": 13
+     "order": 11
     }
    ],
    "Dinner": [
@@ -1267,10 +1236,10 @@
      "order": 3
     },
     {
-     "name": "Pickled Cabbage Slaw",
-     "recipe_id": "5080396",
+     "name": "Roasted Eggplant",
+     "recipe_id": "3001669",
      "description": "",
-     "ingredients": "cole slaw, cilantro, lime juice, salt",
+     "ingredients": "eggplant, garlic, canola/olive oil blend, salt, pepper",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -1279,21 +1248,6 @@
       "halal"
      ],
      "order": 4
-    },
-    {
-     "name": "Thai Basil Eggplant",
-     "recipe_id": "121120010",
-     "description": "",
-     "ingredients": "eggplant, bell peppers, oil, Thai basil sauce (onion, garlic, ginger, coconut liquid aminos, Thai basil, maple syrup/sugar, rice vinegar, mushroom seasoning, sambal, corn starch)",
-     "allergens": [
-      "COCONUT"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan"
-     ],
-     "order": 5
     },
     {
      "name": "Coconut Rice",
@@ -1309,36 +1263,7 @@
       "vegan",
       "halal"
      ],
-     "order": 6
-    },
-    {
-     "name": "Soup of the Day",
-     "recipe_id": "SoupoftheDay",
-     "description": "",
-     "ingredients": "chef's choice soup of the day",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [],
-     "order": 7
-    },
-    {
-     "name": "Assorted Dinner Rolls",
-     "recipe_id": "5344600",
-     "description": "",
-     "ingredients": "unbleached wheat flour, malted barley flour, sour culture, salt, yeast, sesame seeds, amaranth, poppy seeds, whole wheat flour, dark rye flour, malt powder, honey, extra virgin olive oil, semolina, wheat germ",
-     "allergens": [
-      "SESAME",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "SOY",
-      "TREENUTS"
-     ],
-     "tags": [
-      "vegetarian",
-      "halal"
-     ],
-     "order": 8
+     "order": 5
     },
     {
      "name": "Composed Salad",
@@ -1350,7 +1275,7 @@
      "tags": [
       "halal"
      ],
-     "order": 9
+     "order": 6
     },
     {
      "name": "Performance Bar",
@@ -1360,7 +1285,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 10
+     "order": 7
     },
     {
      "name": "Craveable Grains",
@@ -1374,7 +1299,7 @@
       "vegan",
       "halal"
      ],
-     "order": 11
+     "order": 8
     },
     {
      "name": "Flavor Forward Legumes",
@@ -1388,13 +1313,29 @@
       "vegan",
       "halal"
      ],
-     "order": 12
+     "order": 9
     },
     {
-     "name": "Creamy Pesto",
-     "recipe_id": "7728050",
+     "name": "Marinara Sauce",
+     "recipe_id": "4079962",
      "description": "",
-     "ingredients": "pesto sauce (basil, canola oil, parmesan cheese, olive oil, garlic, salt, lemon juice concentrate, natural flavor, xanthan gum, soy lecithin, chamomile extract, rosemary extract, white sauce (flour, butter, cream, milk powder, onion powder, white pepper, garlic, nutmeg, salt), parmesan cheese, parsley",
+     "ingredients": "tomatoes, tomato paste, soybean oil, sugar, salt, onion, garlic, spices, citric acid, natural flavor",
+     "allergens": [
+      "SOY"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan",
+      "halal"
+     ],
+     "order": 10
+    },
+    {
+     "name": "Creamy Marinara",
+     "recipe_id": "CreamyMar(lakeside)",
+     "description": "",
+     "ingredients": "tomatoes, tomato paste, cream, milk powder, butter, parmesan cheese, flour, soybean oil, sugar, salt, onion, garlic, spices, citric acid, natural flavor",
      "allergens": [
       "MILK",
       "SOY",
@@ -1402,27 +1343,10 @@
      ],
      "trace_allergens": [],
      "tags": [
-      "vegetarian"
-     ],
-     "order": 13
-    },
-    {
-     "name": "Pasta Marinara",
-     "recipe_id": "5095708",
-     "description": "",
-     "ingredients": "pasta, marinara sauce, canola/olive oil blend",
-     "allergens": [
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "EGG"
-     ],
-     "tags": [
-      "vegan",
+      "vegetarian",
       "halal"
      ],
-     "order": 14
+     "order": 11
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -1436,7 +1360,7 @@
       "vegan",
       "halal"
      ],
-     "order": 15
+     "order": 12
     }
    ]
   },
@@ -3328,30 +3252,30 @@
    ],
    "Dinner": [
     {
-     "name": "Creole Rub Chicken",
-     "recipe_id": "3321252",
+     "name": "Cilantro Lime Chicken (FloMo)",
+     "recipe_id": "262609",
      "description": "",
-     "ingredients": "creole rub chicken (cayenne pepper, black pepper, paprika, cuminseed, salt, herb de provence), molasses sauce (ketchup, apple cider vinegar, black pepper, lemon, liquidsmoke, garlic, molasses, mustard, chipotle pepper, tamari sauce, ginger root, chili powder)",
+     "ingredients": "Chicken, Lime juice, Cilantro, Salt, Pepper",
+     "allergens": [],
+     "trace_allergens": [
+      "SOY",
+      "TREENUTS",
+      "WHEAT"
+     ],
+     "tags": [],
+     "order": 0
+    },
+    {
+     "name": "Coconut Red Curry with Sweet Potato",
+     "recipe_id": "3575285",
+     "description": "",
+     "ingredients": "sweet potatoes, canola/olive oil blend, onions, tomatoes, bell peppers, mushrooms, garbanzo beans, cabbage, house-made red curry paste (unsweetened coconut milk, dried red chili, garlic, lemongrass, salt, shallot, galangal, kaffir lime peel, pepper)",
      "allergens": [
-      "SOY"
+      "COCONUT"
      ],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
-      "halal"
-     ],
-     "order": 0
-    },
-    {
-     "name": "Mushroom Etouffee",
-     "recipe_id": "6323160",
-     "description": "",
-     "ingredients": "mushroom, okra, bell pepper, garlic, onion, parsley, thyme, canola/olive oil blend, salt, pepper, etouffee sauce (parsley, canola oil, garlic, tomato, cajun seasoning, flour, celery, onion, cayenne pepper, bell pepper, tabasco sauce, pepper)",
-     "allergens": [
-      "WHEAT"
-     ],
-     "trace_allergens": [],
-     "tags": [
       "vegan",
       "halal"
      ],
@@ -3400,38 +3324,31 @@
      "order": 4
     },
     {
-     "name": "Creole Sweet Potato Fries",
-     "recipe_id": "6468837",
+     "name": "Vermicelli Noodles",
+     "recipe_id": "VermNood17",
      "description": "",
-     "ingredients": "sweet potatoes, vegetable oil, modified food starch, sugar, salt, dextrin, spices, corn starch, rice flour, garlic powder, onion powder, disodium dihydrogen pyrophosphate, sodium bicarbonate, dried yeast, oleoresin paprika, xanthan gum, natural flavor, creole spices (cumin, cayenne pepper, paprika, herbs de provence, pepper, salt), fried in canola oil",
-     "allergens": [],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
-     ],
-     "tags": [
-      "vegan"
-     ],
-     "order": 5
-    },
-    {
-     "name": "RSK Dirty Rice",
-     "recipe_id": "4375656",
-     "description": "",
-     "ingredients": "rice, pea protein crumbles (pea protein isolate, canola oil, beef type flavor [yeast extract, maltodextrin, natural flavoring, salt, sunflower oil, onion powder], spices, rice flour, tomato powder, caramel colors, lemon juice concentrate, salt, onion extract, garlic extract), bell peppers, onions, celery, garlic, chili powder, bay leaf, parsley, oregano, thyme, salt, pepper",
+     "ingredients": "Vermicelli rice noodles, water",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
       "vegan",
+      "halal"
+     ],
+     "order": 5
+    },
+    {
+     "name": "Lemon Herb Rice Pilaf",
+     "recipe_id": "LemonHerbPilaf1",
+     "description": "",
+     "ingredients": "long grain rice, vegetable soup base, onions, celery, garlic, lemon zest, fresh lemon juice, parsley, green onions, thyme, oregano, bay leaf, olive/canola oil blend, butter, black pepper, salt",
+     "allergens": [
+      "MILK"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegetarian",
       "halal"
      ],
      "order": 6
@@ -4007,10 +3924,24 @@
      "order": 0
     },
     {
-     "name": "Thai Mushroom Curry with Nori",
-     "recipe_id": "ThaiMushCurrNor1",
+     "name": "Baked Potato",
+     "recipe_id": "6565324",
      "description": "",
-     "ingredients": "trumpet mushrooms, oyster mushrooms, button mushrooms, coconut milk, vegetable soup base, onions, carrots, red bell peppers, bamboo shoots, baby corn, Thai yellow curry paste, garlic, ginger, tamari, brown sugar, lime juice, canola/olive oil blend, nori, Thai basil, cilantro, salt, black pepper",
+     "ingredients": "potatoes, canola/olive oil blend, salt",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan",
+      "halal"
+     ],
+     "order": 1
+    },
+    {
+     "name": "Thai Coconut Curry Tofu",
+     "recipe_id": "ThaiCocoTofu1",
+     "description": "",
+     "ingredients": "tofu, seasonal vegetables, coconut milk, vegetarian red curry paste (Thai red chilies, garlic, shallots, lemongrass, makrut lime leaves, coriander seeds, cumin, white pepper, salt), onions, bell peppers, garlic, ginger, tamari, vegetarian oyster sauce, lime juice, basil, sugar, olive/canola oil blend, salt",
      "allergens": [
       "COCONUT",
       "SOY"
@@ -4021,7 +3952,7 @@
       "vegan",
       "halal"
      ],
-     "order": 1
+     "order": 2
     },
     {
      "name": "Seasonal Steamed Vegetables",
@@ -4035,7 +3966,7 @@
       "vegan",
       "halal"
      ],
-     "order": 2
+     "order": 3
     },
     {
      "name": "Seasonal Vegetable Board",
@@ -4049,7 +3980,7 @@
       "vegan",
       "halal"
      ],
-     "order": 3
+     "order": 4
     },
     {
      "name": "Pickled Cabbage Slaw",
@@ -4063,7 +3994,7 @@
       "vegan",
       "halal"
      ],
-     "order": 4
+     "order": 5
     },
     {
      "name": "Thai Basil Eggplant",
@@ -4078,7 +4009,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 5
+     "order": 6
     },
     {
      "name": "Coconut Rice",
@@ -4094,7 +4025,7 @@
       "vegan",
       "halal"
      ],
-     "order": 6
+     "order": 7
     },
     {
      "name": "Rice Noodle",
@@ -4108,66 +4039,45 @@
       "vegan",
       "halal"
      ],
-     "order": 7
-    },
-    {
-     "name": "Panini Station",
-     "recipe_id": "4532805",
-     "description": "",
-     "ingredients": "(assorted) breads, cheeses, deli meats, lettuce, tomatoes, and onions",
-     "allergens": [
-      "EGG",
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "COCONUT",
-      "MILK",
-      "TREENUTS"
-     ],
-     "tags": [],
      "order": 8
     },
     {
-     "name": "Soup of the Day",
-     "recipe_id": "SoupoftheDay",
+     "name": "Hearty Minestrone",
+     "recipe_id": "4633186",
      "description": "",
-     "ingredients": "chef's choice soup of the day",
-     "allergens": [],
+     "ingredients": "tomato puree, diced tomatoes in tomato juice, potatoes, kidney beans, carrots, green beans, celery, garbanzo beans, zucchini, peas, spinach, pasta, modified food starch, salt, parmesan cheese, gelatin, yeast extract, flour, flavoring, beef stock, spices, corn oil, canola oil, garlic, disodium inosinate, disodium guanylate, dextrose",
+     "allergens": [
+      "EGG",
+      "MILK",
+      "WHEAT"
+     ],
      "trace_allergens": [],
      "tags": [],
      "order": 9
     },
     {
-     "name": "Assorted Dinner Rolls",
-     "recipe_id": "5344600",
+     "name": "Garden Fresh Salad",
+     "recipe_id": "5482634",
      "description": "",
-     "ingredients": "unbleached wheat flour, malted barley flour, sour culture, salt, yeast, sesame seeds, amaranth, poppy seeds, whole wheat flour, dark rye flour, malt powder, honey, extra virgin olive oil, semolina, wheat germ",
+     "ingredients": "romaine lettuce, green onions, tomatoes, carrots, ranch dressing (soybean oil, vinegar, buttermilk, sugar, egg yolks, salt, food starch, whey, xanthan gum, garlic, onions, spice)",
      "allergens": [
-      "SESAME",
-      "WHEAT"
+      "EGG",
+      "MILK",
+      "SOY"
      ],
      "trace_allergens": [
-      "SOY",
-      "TREENUTS"
+      "COCONUT",
+      "FISH",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "TREENUTS",
+      "WHEAT"
      ],
      "tags": [
-      "vegetarian",
-      "halal"
+      "vegetarian"
      ],
      "order": 10
-    },
-    {
-     "name": "Composed Salad",
-     "recipe_id": "123116546",
-     "description": "",
-     "ingredients": "chef's choice composed salad",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "halal"
-     ],
-     "order": 11
     },
     {
      "name": "Performance Bar",
@@ -4177,7 +4087,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 12
+     "order": 11
     },
     {
      "name": "Craveable Grains",
@@ -4191,7 +4101,7 @@
       "vegan",
       "halal"
      ],
-     "order": 13
+     "order": 12
     },
     {
      "name": "Flavor Forward Legumes",
@@ -4205,23 +4115,23 @@
       "vegan",
       "halal"
      ],
-     "order": 14
+     "order": 13
     },
     {
-     "name": "Marinara Sauce",
-     "recipe_id": "4079962",
+     "name": "Alfredo Sauce",
+     "recipe_id": "5681078",
      "description": "",
-     "ingredients": "tomatoes, tomato paste, soybean oil, sugar, salt, onion, garlic, spices, citric acid, natural flavor",
+     "ingredients": "cream, onion, milk powder, butter, parmesan cheese, flour, garlic, nutmeg, onion powder, salt",
      "allergens": [
-      "SOY"
+      "MILK",
+      "WHEAT"
      ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
-      "vegan",
+      "vegetarian",
       "halal"
      ],
-     "order": 15
+     "order": 14
     },
     {
      "name": "Pasta",
@@ -4238,7 +4148,7 @@
       "vegan",
       "halal"
      ],
-     "order": 16
+     "order": 15
     }
    ]
   }

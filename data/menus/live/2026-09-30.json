@@ -1,6 +1,6 @@
 {
  "date": "2026-09-30",
- "scraped_at": "2026-09-26T06:15:22-07:00",
+ "scraped_at": "2026-09-26T16:42:15-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -1573,14 +1573,13 @@
     },
     {
      "name": "Mushroom Gravy",
-     "recipe_id": "6104386",
+     "recipe_id": "3104786",
      "description": "",
-     "ingredients": "mushrooms, onions, flour, canola oil, vegetable soup base (contains mushroom, carrot, celery), leeks, thyme, mushroom seasoning, garlic, white pepper",
-     "allergens": [
-      "WHEAT"
-     ],
+     "ingredients": "mushrooms, onions, garlic, canola/olive oil blend, balsamic vinegar, vegetarian soup base (contains celery, carrots), cornstarch, beet sugar, parsley, salt",
+     "allergens": [],
      "trace_allergens": [],
      "tags": [
+      "gluten-free",
       "vegan",
       "halal"
      ],
@@ -4551,35 +4550,35 @@
    ],
    "Dinner": [
     {
-     "name": "Miso Black Cod",
-     "recipe_id": "MisoCod1",
+     "name": "Battered Fried Fish",
+     "recipe_id": "5576094",
      "description": "",
-     "ingredients": "black cod (sablefish), white miso paste, brown sugar, tamari, ginger, green onions, sesame seeds",
+     "ingredients": "pollock, tempura batter, panko bread crumbs, canola shortening, cabbage, salsa mexicana (tomatoes, serrano chili, onions, cilantro, lime juice, canola/olive oil blend, salt) chipotle mayo (mexican crema, chipotle peppers, lime)",
      "allergens": [
+      "EGG",
       "FISH",
-      "SOY"
+      "MILK",
+      "SOY",
+      "WHEAT"
      ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
       "halal"
      ],
      "order": 0
     },
     {
-     "name": "Japanese Tofu with Red Beans",
-     "recipe_id": "JapTofuRedBeans1",
+     "name": "Roasted Honey Herb Garlic Tofu",
+     "recipe_id": "N/A",
      "description": "",
-     "ingredients": "tofu, beet puree, red beans, broccoli, carrots, cabbage, onions, red bell peppers, mushrooms, tamari, vegetable soup base, sugar, garlic, ginger, cornstarch, sesame oil, green onions, sesame seeds",
+     "ingredients": "tofu, tamari sauce, canola oil, thyme, garlic powder, honey, rice vinegar, garlic, salt, and pepper.",
      "allergens": [
-      "SESAME",
       "SOY"
      ],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
-      "vegan",
-      "halal"
+      "vegetarian"
      ],
      "order": 1
     },
@@ -4612,11 +4611,27 @@
      "order": 3
     },
     {
-     "name": "Sauteed Garlic Broccolini",
-     "recipe_id": "3770761",
+     "name": "Spicy Cabbage Coleslaw",
+     "recipe_id": "3836896",
      "description": "",
-     "ingredients": "broccolini, garlic, onion, canola/olive oil blend, salt",
+     "ingredients": "cabbage, lime juice, dill, jalapeno, sugar",
      "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan",
+      "halal"
+     ],
+     "order": 4
+    },
+    {
+     "name": "Fried Shoestring French Fries",
+     "recipe_id": "5802389-1",
+     "description": "",
+     "ingredients": "potatoes, vegetable oil (canola oil, sunflower oil, cottonseed oil, palm oil, corn oil, or soybean oil), modified food starch, rice flour, dextrin, salt, disodium dihydrogen pyrophosphate, sodium bicarbonate, dextrose, xanthan gum, fried in canola oil",
+     "allergens": [
+      "SOY"
+     ],
      "trace_allergens": [
       "COCONUT",
       "EGG",
@@ -4625,61 +4640,29 @@
       "PEANUTS",
       "SESAME",
       "SHELLFISH",
-      "SOY",
       "TREENUTS",
       "WHEAT"
      ],
      "tags": [
       "vegan"
      ],
-     "order": 4
-    },
-    {
-     "name": "Japanese Eggplant with Miso Glaze",
-     "recipe_id": "JapEggplantMiso1",
-     "description": "",
-     "ingredients": "Japanese eggplant, white miso paste, sugar, rice vinegar, tamari, apple juice, olive/canola oil blend, ginger, garlic, sesame oil, green onions, sesame seeds",
-     "allergens": [
-      "SESAME",
-      "SOY"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan",
-      "halal"
-     ],
      "order": 5
     },
     {
-     "name": "Steamed Japanese Rice",
-     "recipe_id": "SteaJapanRice1",
+     "name": "Garlic Bread",
+     "recipe_id": "3192879",
      "description": "",
-     "ingredients": "Japanese short-grain rice, water",
-     "allergens": [],
+     "ingredients": "french baguette (wheat flour, malted barley flour, sour culture, salt, yeast, cornmeal), garlic paste (olive oil, garlic, unsalted butter, parsley),",
+     "allergens": [
+      "MILK",
+      "WHEAT"
+     ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
-      "vegan",
+      "vegetarian",
       "halal"
      ],
      "order": 6
-    },
-    {
-     "name": "Japanese Potato Salad",
-     "recipe_id": "JapPotSalad1",
-     "description": "",
-     "ingredients": "potatoes, hard-boiled eggs, cucumber, red onion, Dijon mustard, seasoned rice vinegar, mayonnaise, salt, white pepper",
-     "allergens": [
-      "EGG",
-      "SOY"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "halal"
-     ],
-     "order": 7
     },
     {
      "name": "Wakame Salad",
@@ -4695,7 +4678,7 @@
      "tags": [
       "vegan"
      ],
-     "order": 8
+     "order": 7
     },
     {
      "name": "Soup of the Day",
@@ -4705,7 +4688,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 9
+     "order": 8
     },
     {
      "name": "Assorted Dinner Rolls",
@@ -4724,7 +4707,7 @@
       "vegetarian",
       "halal"
      ],
-     "order": 10
+     "order": 9
     },
     {
      "name": "Mizuna Mandarin Salad",
@@ -4740,7 +4723,7 @@
      "tags": [
       "vegan"
      ],
-     "order": 11
+     "order": 10
     },
     {
      "name": "Performance Bar",
@@ -4750,7 +4733,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 12
+     "order": 11
     },
     {
      "name": "Craveable Grains",
@@ -4764,7 +4747,7 @@
       "vegan",
       "halal"
      ],
-     "order": 13
+     "order": 12
     },
     {
      "name": "Flavor Forward Legumes",
@@ -4778,7 +4761,7 @@
       "vegan",
       "halal"
      ],
-     "order": 14
+     "order": 13
     },
     {
      "name": "Tomato Pasta with Mushrooms",
@@ -4795,7 +4778,7 @@
       "vegan",
       "halal"
      ],
-     "order": 15
+     "order": 14
     }
    ]
   },

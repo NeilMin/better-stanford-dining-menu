@@ -1,6 +1,6 @@
 {
  "date": "2026-09-28",
- "scraped_at": "2026-09-26T06:15:22-07:00",
+ "scraped_at": "2026-09-26T16:42:15-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -1367,15 +1367,24 @@
    ],
    "Dinner": [
     {
-     "name": "Beef & Lamb Gyro Meat",
-     "recipe_id": "BeefLambGyro1",
+     "name": "Chicken Gyros",
+     "recipe_id": "4527327",
      "description": "",
-     "ingredients": "Halal Beef, Water, Bread Crumbs, Salt, Yeast, Sugar, Halal Lamb, Corn Flour, Wheat Flour, Rye Flour, Garlic, Onion Powder, Soy Protein Concentrate",
+     "ingredients": "chicken, tzatziki (cucumber, mint, garlic, greek yogurt, sugar, salt, pepper, lemon juice), pickled red onion (red wine vinegar, pickling spice, red onions), whole wheat pita bread, cabbage salad (cabbage, canola/olive oil blend, lemon juice, garlic)",
      "allergens": [
+      "MILK",
       "SOY",
       "WHEAT"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "TREENUTS"
+     ],
      "tags": [
       "halal"
      ],
@@ -4266,64 +4275,39 @@
    ],
    "Lunch": [
     {
-     "name": "Seafood Jambalaya",
-     "recipe_id": "4860996",
+     "name": "Shrimp, Chicken & Pork Sausage Jambalaya",
+     "recipe_id": "6484833",
      "description": "",
-     "ingredients": "shrimp, squid, mussels, andouille sausage, okra, tomato puree, basmati rice, chicken base, garlic, creole spice (herbs de provence, cuminseed, salt, cayenne pepper, pepper, paprika), bell peppers, celery, onion, Worcestershire sauce, thyme, bay leaf, parsley",
+     "ingredients": "spicy tomato sauce (tomato sauce, butter, beef soup base, tomato, cayenne pepper, black pepper, onion), dirty rice (rice, butter, parsley, vegetable soup base [contains mushroom, celery], garlic, onion, celery, bay leaf, sage, cayenne pepper, oregano, thyme, pepper, salt, canola/olive oil blend), chicken soup base, chicken, shrimp, okra, beef pork andouille sausage, green onion",
      "allergens": [
-      "EGG",
       "FISH",
-      "SHELLFISH",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "COCONUT",
       "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SOY",
-      "TREENUTS"
+      "SHELLFISH"
      ],
-     "tags": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free"
+     ],
      "order": 0
     },
     {
-     "name": "Jambalaya with Fried Okra",
-     "recipe_id": "5310969",
+     "name": "Gardein Po’Boy Sandwich",
+     "recipe_id": "4416906",
      "description": "",
-     "ingredients": "jambalaya (brown rice, bell pepper, butternut squash, tomato, onion, mushroom, celery, okra, canola/olive oil blend, garlic, parsley, salt, pepper, thyme, cumin, cayenne, paprika), fried okra (okra, corn starch, corn meal, fried in canola oil)",
-     "allergens": [],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
+     "ingredients": "plant-forward chick’n strip, cabbage, oat milk, olive oil/canola blend, rice vinegar, cajun spice seasoning, jamaican jerk seasoning, paprika, cayenne pepper, garlic, onion, seasoning salt, seasoning spice, brown sugar, telera roll",
+     "allergens": [
       "SOY",
-      "TREENUTS",
       "WHEAT"
+     ],
+     "trace_allergens": [
+      "MILK",
+      "TREENUTS"
      ],
      "tags": [
       "vegan",
       "halal"
      ],
      "order": 1
-    },
-    {
-     "name": "Slow-Braised Collard Greens",
-     "recipe_id": "5686325",
-     "description": "",
-     "ingredients": "collard greens, vegetable soup base (contains carrots, mushrooms, celery), mustard seeds, onions, apple cider vinegar, canola/olive oil blend",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan",
-      "halal"
-     ],
-     "order": 2
     },
     {
      "name": "Seasonal Steamed Vegetables",
@@ -4337,7 +4321,7 @@
       "vegan",
       "halal"
      ],
-     "order": 3
+     "order": 2
     },
     {
      "name": "Seasonal Vegetable Board",
@@ -4351,7 +4335,7 @@
       "vegan",
       "halal"
      ],
-     "order": 4
+     "order": 3
     },
     {
      "name": "Creole Succotash",
@@ -4365,13 +4349,13 @@
       "vegan",
       "halal"
      ],
-     "order": 5
+     "order": 4
     },
     {
-     "name": "Steamed Louisiana-Style Rice",
-     "recipe_id": "LouisStyleRice1",
+     "name": "RSK Dirty Rice",
+     "recipe_id": "4375656",
      "description": "",
-     "ingredients": "long-grain rice, water, onions, celery, bell peppers, garlic, paprika, dried thyme, dried oregano, olive/canola oil blend, salt, black pepper",
+     "ingredients": "rice, pea protein crumbles (pea protein isolate, canola oil, beef type flavor [yeast extract, maltodextrin, natural flavoring, salt, sunflower oil, onion powder], spices, rice flour, tomato powder, caramel colors, lemon juice concentrate, salt, onion extract, garlic extract), bell peppers, onions, celery, garlic, chili powder, bay leaf, parsley, oregano, thyme, salt, pepper",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -4379,7 +4363,7 @@
       "vegan",
       "halal"
      ],
-     "order": 6
+     "order": 5
     },
     {
      "name": "Grilled Vegan/Vegetarian",
@@ -4402,7 +4386,7 @@
      "tags": [
       "halal"
      ],
-     "order": 7
+     "order": 6
     },
     {
      "name": "Panini Station",
@@ -4420,7 +4404,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 8
+     "order": 7
     },
     {
      "name": "Soup of the Day",
@@ -4430,7 +4414,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 9
+     "order": 8
     },
     {
      "name": "Composed Salad",
@@ -4442,7 +4426,7 @@
      "tags": [
       "halal"
      ],
-     "order": 10
+     "order": 9
     },
     {
      "name": "Performance Bar",
@@ -4452,7 +4436,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 11
+     "order": 10
     },
     {
      "name": "Craveable Grains",
@@ -4466,7 +4450,7 @@
       "vegan",
       "halal"
      ],
-     "order": 12
+     "order": 11
     },
     {
      "name": "Flavor Forward Legumes",
@@ -4480,7 +4464,7 @@
       "vegan",
       "halal"
      ],
-     "order": 13
+     "order": 12
     },
     {
      "name": "Marinara Cheese Ravioli",
@@ -4498,7 +4482,7 @@
       "vegetarian",
       "halal"
      ],
-     "order": 14
+     "order": 13
     }
    ],
    "Dinner": [
