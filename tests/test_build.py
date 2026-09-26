@@ -378,7 +378,7 @@ class TestRender:
         assert names == [f"https://{buildlib.DOMAIN}/", f"https://{buildlib.DOMAIN}/og.jpg"]
         assert (out / "og.jpg").read_bytes()[:2] == b"\xff\xd8", "a JPEG, as the name says"
 
-    def test_crawlers_are_pointed_at_the_one_page_on_this_host(self, site, tmp_path):
+    def test_crawlers_are_pointed_at_every_page_on_this_host(self, site, tmp_path):
         """robots.txt is per host, so the personal site's does not cover this
         one. The canonical, the sitemap and robots.txt all name the domain the
         build writes into CNAME, or Search Console files the page under a URL
@@ -391,8 +391,8 @@ class TestRender:
         assert re.findall(r'<link rel="canonical" href="([^"]+)"', html) == [home]
         assert f"Sitemap: {home}sitemap.xml" in (out / "robots.txt").read_text()
         sitemap = (out / "sitemap.xml").read_text()
-        assert re.findall(r"<loc>([^<]+)</loc>", sitemap) == [home]
-        assert "<lastmod>2026-09-17</lastmod>" in sitemap
+        assert re.findall(r"<loc>([^<]+)</loc>", sitemap) == [home, f"{home}wilbur/"]
+        assert sitemap.count("<lastmod>2026-09-17</lastmod>") == 2
 
     def test_only_the_pictures_in_use_are_copied(self, site, tmp_path):
         did = dish_id("Roast Chicken")
@@ -409,3 +409,95 @@ class TestRender:
         buildlib.build(site.root, out)
         assert not (out / "img" / "stale.webp").exists()
         assert (out / "img" / f"{did}.webp").exists()
+
+
+def _script_body(html: str, marker: str) -> dict:
+    start = html.index(marker)
+    body = html[html.index(">", start) + 1: html.index("</script>", start)]
+    return json.loads(body.replace("<\\/", "</"))
+
+
+class TestHallPages:
+    """Every active hall has /<id>/: the same app opened on that hall, filed
+    under its own URL, with the week written out for a crawler that runs no
+    script. The official menu has no URL per hall, which is the opening."""
+
+    @pytest.fixture
+    def out(self, site, tmp_path):
+        # Branner is in config and serving nothing this week; EVGR is not active.
+        site.add_hall("branner", name="Branner Dining",
+                      address="655 Escondido Rd, Stanford, CA 94305")
+        site.add_hall("evgr", active=False)
+        site.write_menu("2026-09-17", {"wilbur": {"Dinner": [
+            dish("Roast Chicken", "chicken"), dish("Mac & Cheese", "pasta")]}})
+        site.with_web()
+        out = tmp_path / "site"
+        buildlib.build(site.root, out)
+        return out
+
+    def test_every_active_hall_is_filed_under_its_own_url(self, out):
+        """Serving this week or not: a page that vanished over a break would
+        be dropped from the index and have to be found again."""
+        home = f"https://{buildlib.DOMAIN}/"
+        for hid in ("wilbur", "branner"):
+            html = (out / hid / "index.html").read_text()
+            assert re.findall(r'<link rel="canonical" href="([^"]+)"', html) == [f"{home}{hid}/"]
+            assert re.findall(r'<meta property="og:url" content="([^"]+)"', html) == [f"{home}{hid}/"]
+        assert not (out / "evgr").exists()
+        assert re.findall(r"<loc>([^<]+)</loc>", (out / "sitemap.xml").read_text()) == \
+            [home, f"{home}wilbur/", f"{home}branner/"]
+
+    def test_a_hall_page_is_titled_for_the_search_it_answers(self, out):
+        html = (out / "branner" / "index.html").read_text()
+        assert "<title>Branner Dining Menu Today · Stanford Dining, Side by Side</title>" in html
+        assert '<meta name="description" content="What Branner Dining at 655 Escondido Rd' in html
+
+    def test_the_week_is_in_the_html_and_escaped(self, out):
+        html = (out / "wilbur" / "index.html").read_text()
+        start = html.index('id="prerender"')
+        section = html[start: html.index("</section>", start)]
+        assert "<h3>Thursday, September 17</h3>" in section
+        assert "<h4>Dinner · 5pm–8pm</h4>" in section
+        assert "<li>Roast Chicken</li>" in section
+        assert "<li>Mac &amp; Cheese</li>" in section
+        assert "Closed." in (out / "branner" / "index.html").read_text()
+        # The home board writes nothing out, and the marker is gone either way.
+        home = (out / "index.html").read_text()
+        assert 'id="prerender"' not in home and "<!--PRERENDER-->" not in home
+
+    def test_structured_data_describes_the_hall(self, out):
+        ld = _script_body((out / "wilbur" / "index.html").read_text(), 'type="application/ld+json"')
+        assert ld["@type"] == "FoodEstablishment"
+        assert ld["url"] == f"https://{buildlib.DOMAIN}/wilbur/"
+        items = [i["name"] for s in ld["hasMenu"]["hasMenuSection"] for i in s["hasMenuItem"]]
+        assert items == ["Roast Chicken", "Mac & Cheese"]
+        assert {o["validFrom"] for o in ld["openingHoursSpecification"]} == {"2026-09-17"}
+        branner = _script_body((out / "branner" / "index.html").read_text(),
+                               'type="application/ld+json"')
+        assert (branner["address"]["streetAddress"], branner["address"]["postalCode"]) == \
+            ("655 Escondido Rd", "94305")
+        home = _script_body((out / "index.html").read_text(), 'type="application/ld+json"')
+        assert home["@type"] == "WebSite"
+
+    def test_the_page_tells_app_js_which_hall_and_how_far_down(self, out):
+        """The pictures are relative paths, so a page one directory down has
+        to say so; app.js prefixes every img/ and logo/ with `root`."""
+        home = _script_body((out / "index.html").read_text(), 'id="menu-data"')
+        wilbur = _script_body((out / "wilbur" / "index.html").read_text(), 'id="menu-data"')
+        assert home["page"] == {"hall": None, "root": ""}
+        assert wilbur["page"] == {"hall": "wilbur", "root": "../"}
+
+    def test_the_footer_links_land_on_pages_the_build_wrote(self, out):
+        for page in (out / "index.html", out / "wilbur" / "index.html"):
+            html = page.read_text()
+            links = re.findall(r'<a href="([^"]+/)">', html[html.index('class="foot-halls"'):])
+            assert len(links) == 2
+            for href in links:
+                assert (page.parent / href / "index.html").resolve().exists(), href
+
+    def test_a_hall_that_leaves_config_takes_its_page_with_it(self, site, out):
+        site.halls = [h for h in site.halls if h["id"] != "branner"]
+        site.save_config()
+        buildlib.build(site.root, out)
+        assert not (out / "branner").exists()
+        assert (out / "wilbur" / "index.html").exists() and (out / "img").is_dir()

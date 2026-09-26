@@ -2,6 +2,10 @@
   "use strict";
 
   const DATA = JSON.parse(document.getElementById("menu-data").textContent);
+  // Which page this is: the home board, or a hall's own page one directory
+  // down (bsdm/build.py, page_html). `root` is how to get from here back to
+  // the site's top, which every picture and logo path starts from.
+  const PAGE = DATA.page || { hall: null, root: "" };
   const MEALS = ["Breakfast", "Lunch", "Dinner"];
   // v4 added `lang` to the persisted shape.
   const STORE = "bsdm.prefs.v4";
@@ -102,6 +106,8 @@
       identical: "These menus are identical — go wherever is closest.",
       share: "Share",
       shareTip: "Share this day, meal and these halls",
+      hallTitle: (name) => `${name} Menu Today · Stanford Dining, Side by Side`,
+      footHalls: "Each hall on its own page:",
       shareWhen: (meal, day) => `${day.toLocaleDateString(undefined, { weekday: "long" })} ` +
         `${meal.toLowerCase()}, ${day.toLocaleDateString(undefined, { month: "short", day: "numeric" })}`,
       shareHalls: (n) => `${n} halls`,
@@ -184,6 +190,8 @@
       identical: "这几家的菜单完全相同——去离你最近的那家就好。",
       share: "分享",
       shareTip: "分享当前的日期、餐次和食堂",
+      hallTitle: (name) => `${name} 今日菜单 · 舌尖上的斯坦福`,
+      footHalls: "各食堂单独页面：",
       shareWhen: (meal, day) => `${day.toLocaleDateString("zh-CN", { month: "long", day: "numeric" })}` +
         `（${day.toLocaleDateString("zh-CN", { weekday: "short" })}）${meal}`,
       shareHalls: (n) => `${n} 家食堂`,
@@ -433,6 +441,13 @@
         on_its_day: "date" in arrived,
       });
     }
+    // A hall's own page opens on that hall alone, borrowed the same way: the
+    // reader who lands on /arrillaga/ from a search keeps the halls they had.
+    // A shared link's halls, should one be opened here, still win.
+    if (PAGE.hall && !("halls" in arrived) && hallById.has(PAGE.hall)) {
+      state.halls = [PAGE.hall];
+      borrowed.add("halls");
+    }
     if (["d", "m", "h"].some((k) => query.has(k))) {
       for (const k of ["d", "m", "h"]) query.delete(k);
       const rest = query.toString();
@@ -675,7 +690,7 @@
     if (!lightbox || !rec.image) return;
     const zh = zhName(rec);
     if (lightboxImg) {
-      lightboxImg.src = "img/" + rec.image;
+      lightboxImg.src = PAGE.root + "img/" + rec.image;
       lightboxImg.alt = zh || rec.name;
     }
     if (lightboxTitle) lightboxTitle.textContent = zh || rec.name;
@@ -757,7 +772,7 @@
       if (rec.image) {
         const thumb = el("img", {
           className: "thumb",
-          src: "img/" + rec.image,
+          src: PAGE.root + "img/" + rec.image,
           alt: zh || rec.name,
           loading: "lazy",
           decoding: "async",
@@ -863,6 +878,8 @@
 
     const board = document.getElementById("board");
     board.replaceChildren();
+    // The hall page's written-out week is for readers that run no script.
+    document.getElementById("prerender")?.remove();
 
     const meals = availableMeals(state.date);
     if (meals.length && !meals.includes(state.meal)) state.meal = meals[meals.length - 1];
@@ -993,7 +1010,7 @@
 
     const [w, h] = logoSize(hall.logo.w / hall.logo.h);
     const img = el("img", {
-      src: "logo/" + hall.logo.file,
+      src: PAGE.root + "logo/" + hall.logo.file,
       // Decorative: the hall's name is right beside it, and reading the logo
       // out as well would just say it twice.
       alt: "",
@@ -1352,7 +1369,9 @@
   function renderChrome() {
     // Not just for screen readers: it is what picks the CJK font in app.css.
     document.documentElement.lang = state.lang === "zh" ? "zh-Hans" : "en";
-    document.title = t("docTitle");
+    // A hall's page keeps its own title: it is what a search result shows.
+    const pageHall = PAGE.hall && hallById.get(PAGE.hall);
+    document.title = pageHall ? t("hallTitle", pageHall.name) : t("docTitle");
 
     document.getElementById("brand").replaceChildren(
       t("brandA"), el("span", { textContent: t("brandB") }));
@@ -1372,6 +1391,8 @@
     const lang = document.getElementById("lang");
     lang.textContent = t("langChip");
     lang.setAttribute("aria-label", t("langLabel"));
+
+    document.getElementById("foot-halls").textContent = t("footHalls");
 
     document.getElementById("share-label").textContent = t("share");
     document.getElementById("share").title = t("shareTip");
@@ -1577,7 +1598,7 @@
   }
 
   document.getElementById("share").addEventListener("click", async () => {
-    const url = new URL(linkFor(state), location.href).href;
+    const url = new URL(PAGE.root + linkFor(state), location.href).href;
     const text = shareLine();
     const stats = { meal: state.meal, hall_count: state.halls.length };
     if (navigator.share && !/MicroMessenger/i.test(navigator.userAgent)) {

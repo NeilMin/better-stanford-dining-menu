@@ -1,11 +1,13 @@
 """Assemble the static site from the scraped data.
 
-Output is a single self-contained index.html plus an img/ directory, so it works
-equally well opened from disk and served from GitHub Pages.
+Output is a self-contained index.html, one more per hall in <hallId>/, plus the
+img/ and logo/ directories they share, so it works equally well opened from
+disk and served from GitHub Pages.
 """
 
 from __future__ import annotations
 
+import html as html_lib
 import json
 import shutil
 from datetime import date, datetime
@@ -233,21 +235,212 @@ def build_payload(root: Path) -> dict:
     }
 
 
+# ---------- one page per hall ----------
+#
+# The board is one page, and a search for "arrillaga menu" has nothing on it to
+# land on: the menu is drawn by app.js, and the official app is a form with no
+# URL per hall. So every active hall also gets /<id>/, the same app opened on
+# that hall alone, with its own title and canonical, the week's menu written
+# into the HTML for a crawler that runs no script, and the hall described in
+# JSON-LD. The page tells app.js which hall it is and how far down it sits
+# (`page` in the data block), because the pictures are relative paths.
+
+MEAL_ORDER = ("Breakfast", "Brunch", "Lunch", "Dinner")
+
+
+def _json_script(value) -> str:
+    # Split the closing tag so a stray "</script>" inside the data can't end the block early.
+    return json.dumps(value, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+
+
+def _clock(hhmm: str) -> str:
+    """11:00 -> 11am, as app.js's fmtTime writes it in English."""
+    h, m = (int(x) for x in hhmm.split(":"))
+    suffix = "am" if h < 12 or h == 24 else "pm"
+    hour = h % 12 or 12
+    return f"{hour}:{m:02d}{suffix}" if m else f"{hour}{suffix}"
+
+
+def _dish_name(payload: dict, ref: str) -> str:
+    return payload["dishes"][ref.rsplit(".", 1)[0]]["name"]
+
+
+def _served(payload: dict, iso: str, hall_id: str) -> list[tuple[str, dict]]:
+    meals = payload["menus"].get(iso, {}).get(hall_id, {})
+    return [(m, meals[m]) for m in MEAL_ORDER if m in meals] + \
+        [(m, svc) for m, svc in meals.items() if m not in MEAL_ORDER]
+
+
+def _names(payload: dict, refs: list) -> list[str]:
+    """Dish names in board order. A station group is its station's name."""
+    return [_dish_name(payload, r["station"] if isinstance(r, dict) else r) for r in refs]
+
+
+def prerender(payload: dict, hall: dict) -> str:
+    """The hall's week as plain HTML, for whoever reads the page without
+    running app.js. render() removes it on the first draw, so a reader with
+    scripts sees the board and never this."""
+    esc = html_lib.escape
+    hid = hall["id"]
+    parts = [f'<section class="prerender" id="prerender">',
+             f"<h2>{esc(hall['name'])} menu</h2>"]
+    about = ". ".join(x for x in (hall.get("concept"), hall.get("address")) if x)
+    if about:
+        parts.append(f"<p>{esc(about)}.</p>")
+    for iso in payload["window"]:
+        day = date.fromisoformat(iso)
+        parts.append(f"<h3>{day.strftime('%A, %B')} {day.day}</h3>")
+        served = _served(payload, iso, hid)
+        if not served:
+            parts.append("<p>Closed.</p>")
+            continue
+        for meal, svc in served:
+            span = payload["hours"].get(iso, {}).get(hid, {}).get(meal)
+            when = f" · {_clock(span[0])}–{_clock(span[1])}" if span else ""
+            parts.append(f"<h4>{esc(meal)}{when}</h4>")
+            items = [f"<li>Special: {esc(n)}</li>" for n in _names(payload, svc["specials"])]
+            items += [f"<li>{esc(n)}</li>" for n in _names(payload, svc["daily"])]
+            if items:
+                parts.append("<ul>" + "".join(items) + "</ul>")
+            if svc["stations"]:
+                parts.append("<p>Every day: " +
+                             esc(", ".join(_names(payload, svc["stations"]))) + ".</p>")
+    parts.append("</section>")
+    return "\n".join(parts)
+
+
+def _address(text: str) -> dict:
+    """'489 Arguello Mall, Stanford, CA 94305' as a schema.org PostalAddress.
+    config/halls.json writes every address that way; one that is not is kept
+    whole rather than guessed at."""
+    out = {"@type": "PostalAddress", "addressCountry": "US"}
+    parts = [p.strip() for p in text.split(",")]
+    if len(parts) == 3 and len(region := parts[2].split()) == 2:
+        out.update(streetAddress=parts[0], addressLocality=parts[1],
+                   addressRegion=region[0], postalCode=region[1])
+    else:
+        out["streetAddress"] = text
+    return out
+
+
+def structured_data(payload: dict, hall: dict) -> dict:
+    """The hall as schema.org FoodEstablishment: where it is, when it is open
+    on each day of the window, and what it serves at each meal."""
+    hid = hall["id"]
+    data = {
+        "@context": "https://schema.org",
+        "@type": "FoodEstablishment",
+        "name": hall["name"],
+        "url": f"https://{DOMAIN}/{hid}/",
+    }
+    if hall.get("address"):
+        data["address"] = _address(hall["address"])
+    if hall.get("logo"):
+        data["image"] = f"https://{DOMAIN}/logo/{hall['logo']['file']}"
+    opening, sections = [], []
+    for iso in payload["window"]:
+        day = date.fromisoformat(iso)
+        for meal, span in payload["hours"].get(iso, {}).get(hid, {}).items():
+            opening.append({
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": f"https://schema.org/{day.strftime('%A')}",
+                # schema.org times stop at 23:59; the stored table can say 24:00.
+                "opens": span[0], "closes": "23:59" if span[1] == "24:00" else span[1],
+                "validFrom": iso, "validThrough": iso,
+            })
+        for meal, svc in _served(payload, iso, hid):
+            names = _names(payload, svc["specials"]) + _names(payload, svc["daily"])
+            if names:
+                sections.append({
+                    "@type": "MenuSection",
+                    "name": f"{day.strftime('%A, %B')} {day.day} · {meal}",
+                    "hasMenuItem": [{"@type": "MenuItem", "name": n} for n in names],
+                })
+    if opening:
+        data["openingHoursSpecification"] = opening
+    if sections:
+        data["hasMenu"] = {"@type": "Menu", "name": f"{hall['name']} menu",
+                           "hasMenuSection": sections}
+    return data
+
+
+def _swap(html: str, old: str, new: str) -> str:
+    """Replace one exact string in the template, and refuse if it has moved:
+    a hall page that quietly kept the home page's canonical would be filed as
+    a duplicate of it, which is the one thing these pages must not be."""
+    if html.count(old) != 1:
+        raise SystemExit(f"web/index.html: expected exactly one {old!r}")
+    return html.replace(old, new)
+
+
+HOME_TITLE = "Stanford Dining, Side by Side"
+HOME_DESCRIPTION = "Compare today's menus across Stanford dining halls, with a picture of every dish."
+
+
+def page_html(template: str, payload: dict, halls: list[dict], hall: dict | None) -> str:
+    """One page of the site: the home board when `hall` is None, else that
+    hall's page one directory down."""
+    esc = html_lib.escape
+    root = "../" if hall else ""
+    links = " · ".join(f'<a href="{root}{h["id"]}/">{esc(h["name"])}</a>' for h in halls)
+    html = template.replace("<!--HALLS-->", links)
+    home = f"https://{DOMAIN}/"
+    if hall is None:
+        ld = {"@context": "https://schema.org", "@type": "WebSite",
+              "name": HOME_TITLE, "url": home}
+        html = html.replace("<!--PRERENDER-->", "")
+    else:
+        url = f"{home}{hall['id']}/"
+        title = f"{hall['name']} Menu Today · {HOME_TITLE}"
+        where = f" at {hall['address']}" if hall.get("address") else ""
+        description = (f"What {hall['name']}{where} is serving today and this week: "
+                       "every meal, with hours, allergens and a picture of every dish.")
+        for old, new in [
+            (f"<title>{HOME_TITLE}</title>", f"<title>{esc(title)}</title>"),
+            (f'<meta name="description" content="{HOME_DESCRIPTION}">',
+             f'<meta name="description" content="{esc(description)}">'),
+            (f'<meta property="og:title" content="{HOME_TITLE}">',
+             f'<meta property="og:title" content="{esc(title)}">'),
+            (f'<meta property="og:description" content="{HOME_DESCRIPTION}">',
+             f'<meta property="og:description" content="{esc(description)}">'),
+            (f'<meta property="og:url" content="{home}">', f'<meta property="og:url" content="{url}">'),
+            (f'<link rel="canonical" href="{home}">', f'<link rel="canonical" href="{url}">'),
+        ]:
+            html = _swap(html, old, new)
+        ld = structured_data(payload, hall)
+        html = html.replace("<!--PRERENDER-->", prerender(payload, hall))
+    html = _swap(html, "</head>",
+                 f'<script type="application/ld+json">{_json_script(ld)}</script>\n</head>')
+    page = {"hall": hall["id"] if hall else None, "root": root}
+    return html.replace("/*DATA*/", _json_script({**payload, "page": page}))
+
+
 def build(root: Path, out: Path) -> dict:
     payload = build_payload(root)
     web = root / "web"
+    config = json.loads((root / "config" / "halls.json").read_text())
 
-    html = (web / "index.html").read_text()
-    html = html.replace("/*CSS*/", (web / "app.css").read_text())
-    html = html.replace("/*JS*/", (web / "app.js").read_text())
-    # Split the closing tag so a stray "</script>" inside the data can't end the block early.
-    html = html.replace(
-        "/*DATA*/",
-        json.dumps(payload, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/"),
-    )
+    template = (web / "index.html").read_text()
+    template = template.replace("/*CSS*/", (web / "app.css").read_text())
+    template = template.replace("/*JS*/", (web / "app.js").read_text())
+
+    # Every active hall gets its page, serving this week or not: over a break the
+    # data carries no halls at all, and a page that vanished for three weeks
+    # would be dropped from the index and have to be found again. A hall the
+    # week does not serve reads "Closed" down its page instead.
+    public = {h["id"]: h for h in payload["halls"]}
+    halls = [public.get(h["id"], h) for h in config["halls"] if h["active"]]
 
     out.mkdir(parents=True, exist_ok=True)
-    (out / "index.html").write_text(html)
+    (out / "index.html").write_text(page_html(template, payload, halls, None))
+    for hall in halls:
+        (out / hall["id"]).mkdir(exist_ok=True)
+        (out / hall["id"] / "index.html").write_text(page_html(template, payload, halls, hall))
+    # A hall that has left config/halls.json takes its page with it.
+    for stale in out.iterdir():
+        if stale.is_dir() and (stale / "index.html").exists() \
+                and stale.name not in {h["id"] for h in halls}:
+            shutil.rmtree(stale)
     (out / ".nojekyll").write_text("")
     # Pages reads the custom domain out of the published artifact, so shipping
     # CNAME here sets it on every deploy. Keeping it in the build rather than in
@@ -258,12 +451,13 @@ def build(root: Path, out: Path) -> dict:
     # own day, because the menu on the page is new every night.
     (out / "robots.txt").write_text(
         f"User-agent: *\nAllow: /\n\nSitemap: https://{DOMAIN}/sitemap.xml\n")
+    lastmod = menuslib.today().isoformat()
     (out / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-        f"  <url><loc>https://{DOMAIN}/</loc>"
-        f"<lastmod>{menuslib.today().isoformat()}</lastmod></url>\n"
-        "</urlset>\n")
+        + "".join(f"  <url><loc>https://{DOMAIN}/{path}</loc><lastmod>{lastmod}</lastmod></url>\n"
+                  for path in ["", *(f"{h['id']}/" for h in halls)])
+        + "</urlset>\n")
     # The link-preview card, named by absolute URL in index.html's og:image.
     # Composed once by hand from the logos and a few dishes, not per build.
     shutil.copy2(web / "og.jpg", out / "og.jpg")
@@ -307,4 +501,5 @@ def build(root: Path, out: Path) -> dict:
         "zh_dishes": sum(1 for d in payload["dishes"].values() if d.get("zh")),
         "zh_terms": len(payload["zh_terms"]),
         "html_kb": (out / "index.html").stat().st_size / 1024,
+        "hall_pages": len(halls),
     }

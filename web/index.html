@@ -84,6 +84,10 @@
 </section>
 
 <main>
+  <!-- On a hall's own page, the build writes that hall's week here as plain
+       HTML for readers that run no script; render() removes it on the first
+       draw. Empty on the home page. -->
+  <!--PRERENDER-->
   <div class="notices" id="notices"></div>
   <div class="board" id="board"></div>
   <!-- Whose column is whose, once the headers have scrolled away. Laid over the
@@ -119,6 +123,9 @@
     They illustrate what a dish usually looks like and are not photographs of the food being served.
     Allergen and ingredient text is reproduced from R&amp;DE and is subject to change without notice —
     if you have an allergy, confirm at the hall.</p>
+  <!-- A link to every hall's own page, written by the build so a crawler can
+       follow them without running app.js. -->
+  <p class="foot-halls"><span id="foot-halls">Each hall on its own page:</span> <!--HALLS--></p>
 </footer>
 
 <script id="menu-data" type="application/json">/*DATA*/</script>

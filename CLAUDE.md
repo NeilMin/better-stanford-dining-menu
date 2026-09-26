@@ -286,6 +286,18 @@ JSON block so a dish name cannot close the script tag early.
   and a key leaves `borrowed` only when its own control is clicked (hall chip, meal chip,
   Reset). A new control that sets a borrowed key has to do the same. The query is cleared on
   arrival, which keeps the date unremembered through a reload or a bookmark.
+- **Every active hall also has its own page, `/<hallId>/`,** written by `build.page_html()`
+  from the same template: its own title, description, canonical and `og:url`, a
+  `FoodEstablishment` JSON-LD block, and the week written out as plain HTML (`#prerender`) for
+  crawlers that run no script — `render()` removes it on the first draw. It exists for search:
+  the official menu has no URL per hall. Four things hold it together. The page is one
+  directory down, so every `img/` and `logo/` path in `web/app.js` starts with `PAGE.root`;
+  a new asset path that forgets it breaks only on the hall pages. The hall is *borrowed*
+  exactly like a shared link's halls. `renderChrome()` keeps the hall's title rather than
+  `docTitle`, because Google reads the title after the script has run. And `_swap()` refuses to
+  build if a head tag it rewrites has changed in `index.html`: a hall page that kept the home
+  page's canonical would be filed as a duplicate of it. Pages are made for every *active* hall
+  in config, serving or not, so a break does not drop them from the index.
 - **`web/og.jpg` is the link-preview card, composed once by hand** from the logos and a few
   dish pictures. The page is static, so every link unfurls with the same one; the line the
   button sends with the link is what says which view it is. `og:image` is an absolute URL on
