@@ -287,6 +287,13 @@ def main(argv: list[str] | None = None) -> int:
                     thumb_bytes = to_webp(attempt_img)
                     try:
                         eval_res = cf_client.evaluate_food_image(thumb_bytes, dish_name=dish_name)
+                    except CloudflareQuotaError as exc:
+                        print(f"  [{i}/{len(pending)}] Cloudflare VLM quota exceeded ({exc}), disabling VLM gate.", file=sys.stderr)
+                        args.vlm_gate = False
+                        image = attempt_img
+                        secs = total_secs
+                        used_model = attempt_model
+                        break
                     except Exception as exc:
                         print(f"  [{i}/{len(pending)}] VLM evaluation error for {dish_name}: {exc}", file=sys.stderr)
                         eval_res = {"valid": False, "score": 0, "reason": f"Evaluation error: {exc}"}

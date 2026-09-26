@@ -303,6 +303,15 @@ def test_evaluate_image_failure_fallback(mock_post):
     res_err = client.evaluate_image(buf.getvalue(), "Pizza")
     assert res_err == {"valid": False, "score": 0, "reason": "Evaluation failed"}
 
+    # Mock 429 quota error (must raise CloudflareQuotaError)
+    mock_resp = MagicMock()
+    mock_resp.status_code = 429
+    mock_resp.text = '{"errors":[{"message":"quota exceeded","code":4006}]}'
+    mock_post.side_effect = None
+    mock_post.return_value = mock_resp
+    with pytest.raises(CloudflareQuotaError):
+        client.evaluate_image(buf.getvalue(), "Pizza")
+
 
 def test_compile_dish_prompt_parses_json():
     client = CloudflareClient("acc123", "tok456")

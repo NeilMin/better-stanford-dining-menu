@@ -260,6 +260,8 @@ class CloudflareClient:
                     "score": int(res.get("score", 0)),
                     "reason": str(res.get("reason", "")),
                 }
+        except CloudflareQuotaError:
+            raise
         except Exception as exc:
             log.warning("Vision evaluation failed for '%s': %s", dish_name, exc)
 
