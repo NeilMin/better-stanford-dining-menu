@@ -174,6 +174,10 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--free-every", type=int, default=20, metavar="N",
                     help="release ComfyUI's cached models every N images (0 disables)")
     args = ap.parse_args(argv)
+    # A run is hours of one line per dish, read as it goes -- in a log file or a
+    # CI step, where stdout is otherwise block-buffered and lands out of order
+    # with the warnings on stderr.
+    sys.stdout.reconfigure(line_buffering=True)
     if args.audit and not args.judge:
         ap.error("--audit needs the judge")
 
