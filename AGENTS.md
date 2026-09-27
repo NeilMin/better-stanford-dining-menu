@@ -207,7 +207,8 @@ meant to run unattended for years on free tiers; a backend that goes away must d
 placeholder icon, never to an unchecked picture. What each job runs on, and why:
 
 - *Drawing*: RealVisXL through the local ComfyUI on the laptop; FLUX.2 [klein] 4B on Cloudflare
-  Workers AI in CI (`--backend cloudflare`), about 100 neurons a picture out of 10,000 free a day.
+  Workers AI in CI (`--backend cloudflare`), 26 neurons per 512x512 tile out of 10,000 free a
+  day -- sixty-odd pictures at best, and a morning of 40 test pictures once found the day spent.
   RealVisXL on a free GitHub runner was measured and ruled out: 29-31 min a picture, 17-19 with
   Lightning, at 15 GB of a 16 GB box. klein is told to fill the frame (`photo_style(close=True)`):
   the house style's generous margin exists because SDXL crops plates, and klein, which does what

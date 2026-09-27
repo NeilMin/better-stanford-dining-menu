@@ -22,8 +22,11 @@ log = logging.getLogger(__name__)
 CF_BASE_URL = "https://api.cloudflare.com/client/v4/accounts"
 DEFAULT_TRANSLATION_MODEL = "@cf/meta/llama-3.3-70b-instruct-fp8-fast"
 DEFAULT_IMAGE_MODEL = "@cf/black-forest-labs/flux-1-schnell"
-# FLUX.2 [klein] 4B: about 100 neurons a picture at 1344x768, so the free 10,000
-# a day buy roughly a hundred -- the only free generator that fits a night.
+# FLUX.2 [klein] 4B: 26 neurons per 512x512 tile of output (Cloudflare's price
+# list, 2026-09), so 100-160 a picture at 1344x768 depending on how a part-tile
+# is counted, and the free 10,000 a day buy some sixty to a hundred -- the only
+# free generator that fits a night. 40 in one morning once found the day spent,
+# so count on the low end.
 KLEIN_MODEL = "@cf/black-forest-labs/flux-2-klein-4b"
 
 
