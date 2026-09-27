@@ -208,7 +208,7 @@ placeholder icon, never to an unchecked picture. What each job runs on, and why:
 
 - *Drawing*: RealVisXL everywhere -- the local ComfyUI on the laptop, and in CI the same
   checkpoint on free GitHub runners' CPUs (`draw.yml`), at the laptop's 1344x768 and 12 steps
-  instead of 20. A runner takes 15-30 minutes a picture at 14.8 GB of its 16, so the queue is
+  instead of 20. A runner takes 17-19 minutes a picture at 15.3 GB of its 16, so the queue is
   dealt across up to six machines (`--shard K/N`), each stops starting dishes after four hours
   (`--minutes`), and `scripts/merge_draws.py` folds their copies of `data/` back into main as it
   is by then. The owner compared sizes by eye: 1024x576 was clearly worse, 12 steps against 20
@@ -501,8 +501,8 @@ JSON block so a dish name cannot close the script tag early.
 Live at **https://stanford-dining.neilmin.com** (Porkbun CNAME → `neilmin.github.io`, Pages
 source: GitHub Actions).
 
-- `draw.yml` — after each `refresh.yml` run, or by hand (`--dry-run` hands the result back as an
-  artifact instead of committing it). A `plan` job counts the queue, `draw` runs one job per
+- `draw.yml` — after each `refresh.yml` run, or by hand (the `dry_run` input hands the result
+  back as an artifact instead of committing it). A `plan` job counts the queue, `draw` runs one job per
   machine, `collect` merges and pushes, retrying from the new main if a scrape landed first.
 - `refresh.yml` — cron only. Scrapes, commits `data/`, then **calls** `pages.yml`. It calls
   rather than relies on its own push, because a push made with `GITHUB_TOKEN` does not fire

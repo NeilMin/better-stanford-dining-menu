@@ -3,7 +3,7 @@ name: Draw dish pictures
 # New dishes get their pictures from the same RealVisXL the laptop draws with,
 # on free GitHub runners. A public repository's standard runners cost nothing,
 # but they have no GPU: one picture at the laptop's 1344x768 takes a CPU
-# fifteen to thirty minutes. So the night's queue is dealt across several
+# about eighteen minutes. So the night's queue is dealt across several
 # machines at once (gen_images.py --shard), each with a six-hour limit, and one
 # job at the end folds what they drew back into the catalog.
 #
@@ -15,11 +15,10 @@ name: Draw dish pictures
 # placeholder and is tried again the next night, up to three times.
 
 on:
-  # After every scrape, which is what brings new dishes. Off until the owner
-  # has seen what a dry run draws; until then it runs by hand.
-  # workflow_run:
-  #   workflows: ["Daily menu refresh"]
-  #   types: [completed]
+  # After every scrape, which is what brings new dishes.
+  workflow_run:
+    workflows: ["Daily menu refresh"]
+    types: [completed]
   workflow_dispatch:
     inputs:
       machines:
@@ -47,8 +46,10 @@ env:
   # The laptop's ComfyUI, so a picture drawn here is the one it would draw.
   COMFYUI_COMMIT: b78cec879b9460d5cb25228a83a942fb78d2cd24
   CHECKPOINT_URL: https://huggingface.co/SG161222/RealVisXL_V5.0/resolve/main/RealVisXL_V5.0_fp16.safetensors
-  # About 25 minutes a dish on the slower runners (a picture, plus a redraw
-  # now and then), in four hours of drawing.
+  # Measured on the slower runners: 18 minutes a picture, judging included, and
+  # a picture and a half a dish (the dry run drew 9 for 6), so 27 minutes a
+  # dish in four hours. The unluckiest last dish, four pictures, still ends
+  # inside the step's five and a half.
   DISHES_PER_MACHINE: 9
   # Of the 20 jobs a free account may run at once; the scrape and the site
   # deploy need a few.
