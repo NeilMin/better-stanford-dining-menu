@@ -114,6 +114,7 @@ uv run python scripts/fetch_specials.py --show
 
 ## 4. Frontend & Layout Mechanics
 
+- **Phone First**: ~70% of visitors are on a phone. Check every page change at 360, 390 and 430 px wide, not only on the laptop; `scrollWidth > clientWidth` finds a clipped line.
 - **Single Inlined HTML Artifact**: `web/index.html` contains `/*CSS*/`, `/*JS*/`, and `/*DATA*/` placeholders. `bsdm/build.py` generates the self-contained `site/index.html`.
 - **CSS Grid & Subgrid**: `.board` defines row templates and each `.column` uses CSS `subgrid`. Standing counters use `grid-row: auto / -1` to fill unused rows without expanding dish card heights.
 - **Pinned Headers (`.pinned`)**: `.board` has `overflow-x: auto`, which makes `overflow-y` compute to `auto` and breaks standard `position: sticky`. The sticky hall row is a `position: fixed` overlay synchronized via `syncPins()`.

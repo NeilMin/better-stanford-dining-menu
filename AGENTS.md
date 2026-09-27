@@ -367,6 +367,12 @@ has no other way to be checked at all.
 inlines all three into one self-contained `site/index.html`. `</` is escaped as `<\/` inside the
 JSON block so a dish name cannot close the script tag early.
 
+- **The page is used on a phone first.** About 70% of visitors come from a phone, so no change
+  to the page is done until it has been looked at 360, 390 and 430 px wide, as well as on the
+  laptop it was written on. A line that fits on the laptop is the usual casualty: the English
+  name in the masthead fitted at 1710 px and lost "Side by Side" to an ellipsis at 390, which
+  is why it is set in two lines. `scrollWidth > clientWidth` on an element finds a clipped line
+  faster than a screenshot does.
 - **Bump `STORE` in `web/app.js`** (currently `bsdm.prefs.v4`) whenever the persisted state shape
   changes. Stale localStorage once looked exactly like a scraper bug, because the MCP browser
   shares the user's Chrome profile.
