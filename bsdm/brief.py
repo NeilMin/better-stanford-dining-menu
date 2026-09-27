@@ -229,14 +229,15 @@ def revise(entry: dict, brief: dict, verdicts: list[dict], llm) -> dict:
     return {**_stamp(new, entry, llm), "revisions": brief.get("revisions", 0) + 1}
 
 
-def compose(entry: dict, brief: dict) -> tuple[str, str]:
-    """The positive and negative prompt a brief draws with.
+def compose(entry: dict, brief: dict, close: bool = False) -> tuple[str, str]:
+    """The positive and negative prompt a brief draws with (`close`: see photo_style).
 
     The protein exclusions are still derived from the hall's own labels rather
     than trusted to the model: a vegetarian dish must never be drawn with meat,
     whatever the brief forgot to say.
     """
-    positive = f"{brief['dish']}, {brief['look']}, {dishlib.photo_style(brief['vessel'] == 'bowl')}"
+    style = dishlib.photo_style(brief["vessel"] == "bowl", close=close)
+    positive = f"{brief['dish']}, {brief['look']}, {style}"
     negative, seen = [], set()
     for term in [*brief.get("avoid", []), *dishlib.protein_exclusions(entry), dishlib.NEGATIVE_PROMPT]:
         if term.lower() not in seen:

@@ -571,13 +571,22 @@ def image_prompt(dish) -> str:
     return ", ".join(parts)
 
 
-def photo_style(bowl: bool) -> str:
-    """The house style every picture ends with, so the board reads as one set."""
+def photo_style(bowl: bool, close: bool = False) -> str:
+    """The house style every picture ends with, so the board reads as one set.
+
+    `close` is for FLUX.2 [klein]. SDXL needs the generous margin or it crops
+    the plate at the edge; klein does exactly what it is told, and drew a small
+    plate adrift on a white sweep. Told to fill the frame and given a table, it
+    comes out looking like the SDXL pictures beside it.
+    """
+    noun = "bowl" if bowl else "plate"
     vessel = "served in a simple white ceramic bowl" if bowl else "plated on a simple white ceramic plate"
+    framing = (f"close-up, the {noun} fills most of the frame, its rim just inside the edges" if close
+               else "centered composition with generous empty margin around the plate")
+    setting = "on a light wooden table" if close else "clean neutral background"
     return (
-        f"appetizing food photography, {vessel}, "
-        "overhead three-quarter view, centered composition with generous empty margin around the plate, "
-        "soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail"
+        f"appetizing food photography, {vessel}, overhead three-quarter view, {framing}, "
+        f"soft natural window light, shallow depth of field, {setting}, sharp focus, high detail"
     )
 
 

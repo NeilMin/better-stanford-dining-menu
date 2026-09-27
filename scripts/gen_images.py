@@ -315,7 +315,7 @@ def main(argv: list[str] | None = None) -> int:
                         break
                     brieflib.record(ROOT, did, brief)
                 if brief:
-                    positive, negative = brieflib.compose(entry, brief)
+                    positive, negative = brieflib.compose(entry, brief, close=backend == "cloudflare")
                 else:
                     positive = entry["prompt"]
                     negative = entry.get("negative") or dishlib.negative_prompt(entry)

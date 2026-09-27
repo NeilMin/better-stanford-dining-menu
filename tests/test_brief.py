@@ -124,6 +124,12 @@ class TestCompose:
         positive, _ = brieflib.compose(entry(), {**GYRO, "vessel": "bowl"})
         assert "white ceramic bowl" in positive
 
+    def test_klein_is_told_to_fill_the_frame_and_sdxl_is_not(self):
+        sdxl, _ = brieflib.compose(entry(), {**GYRO, "vessel": "bowl"})
+        klein, _ = brieflib.compose(entry(), {**GYRO, "vessel": "bowl"}, close=True)
+        assert "generous empty margin" in sdxl and "fills most of the frame" not in sdxl
+        assert "the bowl fills most of the frame" in klein and "margin" not in klein
+
     def test_a_vegetarian_dish_excludes_meat_even_if_the_brief_forgot(self):
         veg = entry("Vegetable Lasagna", "pasta, ricotta, spinach", tags=["vegetarian"])
         _, negative = brieflib.compose(veg, {**GYRO, "avoid": ["soup"]})
