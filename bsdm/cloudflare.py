@@ -1,7 +1,9 @@
 """Cloudflare Workers AI REST client for translation and image generation.
 
-The free allocation (10,000 neurons a day) is the whole budget: translation via
-Llama 3.3 and image generation via FLUX, with no local GPU and nothing paid.
+The free allocation is 10,000 neurons a day. This drew the CI pictures (FLUX.2
+[klein]) until the owner turned them down as too plastic, and translated
+before Gemma did; no workflow calls it now. What is left is
+`gen_images.py --backend cloudflare` and translate.py's last resort.
 Judging pictures is not done here -- see bsdm/judge.py.
 """
 

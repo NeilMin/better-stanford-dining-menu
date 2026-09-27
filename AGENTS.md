@@ -19,7 +19,7 @@ This file covers the invariants that are easy to break and only visible across s
 | `bsdm/brief.py` | Per-dish visual brief (what the picture must show, plus yes/no checks), written once by an LLM into `data/briefs.json`. |
 | `bsdm/judge.py` | Asks a brief's checks of a drawn picture, blind; a picture is kept only if it passes. |
 | `bsdm/llm.py` | The model behind briefs and judging: the `claude` CLI on the laptop, Gemini's free tier (`GEMINI_API_KEY`) where there is no CLI. |
-| `bsdm/cloudflare.py` | Cloudflare Workers AI client (Llama 3.3 70B translation, Flux.1 Schnell images). |
+| `bsdm/cloudflare.py` | Cloudflare Workers AI client, which no workflow calls any more: `gen_images.py --backend cloudflare` (FLUX.2 [klein]) and `translate.py`'s last resort (Llama 3.3 70B). |
 | `bsdm/specials.py` | Canva PDF geometric parser via PyMuPDF for dinner specials. |
 | `bsdm/logos.py` | Cropping hall logos from the campus map JPEG using `config/logos.json`. |
 | `bsdm/hours.py` | Fingerprinting and diffing the R&DE Dining Locations & Hours page. |
