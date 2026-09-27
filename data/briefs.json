@@ -1,4 +1,85 @@
 {
+ "000b8dcb26c0": {
+  "avoid": [
+   "pork ribs",
+   "shredded pulled pork",
+   "ground meat",
+   "meatballs",
+   "noodles",
+   "fried rice",
+   "buns",
+   "chicken",
+   "skewers"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cooked sliced meat with a glaze?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat shredded or ground like mince?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat served in a soup or broth?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat on bones like ribs?",
+    "yes": false
+   }
+  ],
+  "dish": "Char siu pork",
+  "look": "sliced roasted pork strips, glossy deep red-brown sticky glaze, charred caramelized edges, juicy pink-tinged tender interior, fanned slices on a plate, sticky sheen on the surface",
+  "model": "claude-sonnet",
+  "name": "Char Siu Pork",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-26T23:08:24+00:00"
+ },
+ "01470b01a0f5": {
+  "avoid": [
+   "orange segments",
+   "citrus slices",
+   "citrus zest",
+   "fruit",
+   "pita bread",
+   "flatbread",
+   "wrap",
+   "ground meat",
+   "meatballs",
+   "skewers",
+   "beef",
+   "tzatziki bowl"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item thin sliced or shaved meat?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat ground or crumbled like mince?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat wrapped in a pita or flatbread?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat on skewers or a whole roasted chicken piece with bone?",
+    "yes": false
+   }
+  ],
+  "dish": "Greek chicken gyro meat",
+  "look": "stack of thin shaved rotisserie-style chicken slices, savory golden-brown meat with reddish paprika-dusted edges, crisp browned tips, tender juicy strips piled loosely, plain and unadorned, looks like sliced gyro meat carved from a vertical spit",
+  "model": "claude-sonnet",
+  "name": "Greek Chicken Gyro Meat",
+  "rev": 6,
+  "revisions": 1,
+  "vessel": "plate",
+  "written_at": "2026-09-26T23:17:46+00:00"
+ },
  "0181581216d4": {
   "avoid": [
    "meat",
@@ -39,6 +120,45 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-26T20:19:28+00:00"
+ },
+ "06eded6e36b6": {
+  "avoid": [
+   "paneer cubes",
+   "tofu",
+   "beef",
+   "lamb",
+   "shrimp",
+   "whole chicken legs",
+   "soup",
+   "skewers",
+   "salad"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item chunks of meat in a creamy orange sauce?",
+    "yes": true
+   },
+   {
+    "q": "Are the meat pieces whole bone-in chicken pieces like drumsticks?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a thin brothy soup?",
+    "yes": false
+   },
+   {
+    "q": "Are the main pieces white cubes of cheese or tofu?",
+    "yes": false
+   }
+  ],
+  "dish": "chicken tikka masala",
+  "look": "bite-sized chunks of charred boneless chicken in a creamy orange-red tomato masala sauce, glossy sauce, swirl of cream, chopped cilantro on top, served over fluffy white basmati rice",
+  "model": "claude-sonnet",
+  "name": "Chicken Tikka Masala, Paneer Tikka Masala, Naan Bread, Steamed Basmati Rice",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-26T23:10:16+00:00"
  },
  "07783eb110f2": {
   "avoid": [
@@ -275,6 +395,45 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-26T20:19:32+00:00"
+ },
+ "1bb3aa13794c": {
+  "avoid": [
+   "pasta",
+   "spaghetti",
+   "noodles",
+   "chicken wings",
+   "sandwich",
+   "bun",
+   "salad",
+   "garlic bread",
+   "meatballs"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a breaded chicken cutlet topped with cheese and red sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken shredded or cut into small chunks?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken served in a bun or sandwich roll?",
+    "yes": false
+   },
+   {
+    "q": "Is there a large portion of spaghetti or pasta with the chicken?",
+    "yes": false
+   }
+  ],
+  "dish": "chicken Parmesan",
+  "look": "a breaded golden-brown chicken cutlet, topped with melted bubbly mozzarella with browned spots, covered in red marinara sauce, sprinkle of grated parmesan, crisp breaded edges, whole cutlet on top of the sauce",
+  "model": "claude-sonnet",
+  "name": "Chicken Parmesan",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-26T23:09:57+00:00"
  },
  "1cbb8d5a3d88": {
   "avoid": [
@@ -561,63 +720,335 @@
   "avoid": [
    "tortilla wrap",
    "burrito",
-   "taco",
-   "tortilla chips",
+   "tacos",
+   "beef steak",
+   "shrimp",
    "rice",
    "beans",
    "guacamole",
-   "whole chicken pieces",
-   "beef steak"
+   "whole roasted chicken",
+   "raw chicken"
   ],
   "checks": [
    {
-    "q": "Is the main item sliced strips of cooked chicken with peppers and onions?",
+    "q": "Is the main item sliced cooked chicken with peppers and onions?",
     "yes": true
    },
    {
-    "q": "Is the food wrapped in a tortilla like a burrito or wrap?",
+    "q": "Is the food wrapped in a tortilla or folded like a taco or burrito?",
     "yes": false
    },
    {
-    "q": "Is the chicken in whole bone-in pieces like drumsticks or thighs?",
+    "q": "Is the meat ground or shredded like mince?",
     "yes": false
    },
    {
-    "q": "Is the meat ground or crumbled like mince?",
+    "q": "Is the main protein steak or shrimp instead of chicken?",
     "yes": false
    }
   ],
   "dish": "chicken fajitas",
-  "look": "sizzling strips of grilled sliced chicken breast, charred edges, tender strips of red, green and yellow bell pepper, softened sliced onion, glossy reddish-orange al pastor sauce coating the chicken, loose pile of fillings",
+  "look": "sizzling strips of grilled sliced chicken breast, browned charred edges, tender bell pepper strips in red, green and yellow, soft sliced onions, glossy reddish-orange al pastor sauce coating, served loose in a pile",
   "model": "claude-sonnet",
   "name": "Chicken Fajitas",
-  "rev": 5,
+  "rev": 6,
   "revisions": 0,
   "vessel": "plate",
-  "written_at": "2026-09-26T20:19:44+00:00"
+  "written_at": "2026-09-26T23:09:44+00:00"
  },
- "31378ddfb8a0": {
+ "2ca542cb1674": {
   "avoid": [
-   "whole chicken pieces",
-   "bone-in drumsticks",
-   "chicken nuggets",
-   "chicken wings",
+   "beef",
+   "lamb",
+   "ground meat",
+   "meatballs",
+   "skewers",
    "french fries",
-   "dipping sauce",
-   "salad",
-   "sandwich bun"
+   "whole roast chicken",
+   "chicken drumsticks",
+   "rice bowl"
   ],
   "checks": [
    {
-    "q": "Are the main items breaded strips of chicken?",
+    "q": "Is the main item sliced chicken or meat, served in a folded pita?",
     "yes": true
    },
    {
-    "q": "Are the chicken pieces bone-in like drumsticks or wings?",
+    "q": "Is the meat ground or crumbled like mince?",
     "yes": false
    },
    {
-    "q": "Is the chicken sliced or shredded without breading?",
+    "q": "Is the meat on skewers?",
+    "yes": false
+   },
+   {
+    "q": "Is the main item a whole bone-in chicken piece such as a drumstick or thigh?",
+    "yes": false
+   }
+  ],
+  "dish": "chicken gyro",
+  "look": "a warm pita folded around sliced grilled chicken strips, golden-browned edges, crisp lettuce, tomato slices, red onion, creamy white tzatziki sauce drizzled over the filling",
+  "model": "claude-sonnet",
+  "name": "Chicken Gyro",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-26T23:09:50+00:00"
+ },
+ "2d19e0035732": {
+  "avoid": [
+   "rice",
+   "sausage",
+   "shrimp",
+   "whole roasted chicken",
+   "fried chicken",
+   "pasta",
+   "soup broth",
+   "side dishes"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item pieces of chicken in a tomato-based sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken breaded or deep fried?",
+    "yes": false
+   },
+   {
+    "q": "Are there shrimp or sausage slices in the dish?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a thin soup in a broth?",
+    "yes": false
+   }
+  ],
+  "dish": "Creole chicken",
+  "look": "pieces of cooked chicken simmered in a thick red-orange tomato sauce, diced tomatoes, soft chunks of green bell pepper and onion, glossy sauce, sprinkle of sliced green onion",
+  "model": "claude-sonnet",
+  "name": "Creole Chicken",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-26T23:11:04+00:00"
+ },
+ "2df7f17a3a1a": {
+  "avoid": [
+   "pasta",
+   "noodles",
+   "mashed potatoes",
+   "fried chicken",
+   "chicken wings",
+   "whole roast chicken",
+   "soup",
+   "broccoli",
+   "side salad"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cooked chicken pieces in a creamy sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken breaded or deep fried?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken served on pasta or noodles?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken a whole roasted bird or bone-in drumsticks?",
+    "yes": false
+   }
+  ],
+  "dish": "creamy garlic chicken over rice pilaf",
+  "look": "sliced pan-seared chicken breast pieces, golden browned edges, covered in thick pale ivory cream sauce, served over a bed of fluffy rice pilaf with separate grains and tiny diced carrot, flecks of chopped parsley",
+  "model": "claude-sonnet",
+  "name": "Creamy Garlic Chicken over Rice Pilaf",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-26T23:10:51+00:00"
+ },
+ "2ecaecc4f1ae": {
+  "avoid": [
+   "soup",
+   "noodles",
+   "ground beef",
+   "sushi rolls",
+   "tofu",
+   "chicken",
+   "shrimp",
+   "salad greens",
+   "side dishes"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a rice bowl topped with separate arranged toppings?",
+    "yes": true
+   },
+   {
+    "q": "Is the dish a soup or broth?",
+    "yes": false
+   },
+   {
+    "q": "Is the beef ground or crumbled like mince?",
+    "yes": false
+   },
+   {
+    "q": "Are the toppings mixed into a noodle dish?",
+    "yes": false
+   }
+  ],
+  "dish": "Korean bibimbap",
+  "look": "a bowl of white rice topped with arranged sections of seasoned sliced beef, sautéed spinach, sliced mushrooms, julienned carrots, bean sprouts, a sunny-side-up fried egg in the centre, shredded nori strips, drizzle of red-orange gochujang sauce",
+  "model": "claude-sonnet",
+  "name": "Bibimbap Bowl",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-26T23:07:19+00:00"
+ },
+ "2f6cb7175dec": {
+  "avoid": [
+   "rice",
+   "curry",
+   "ground meat",
+   "noodles",
+   "chicken",
+   "pork",
+   "creamy sauce",
+   "bread",
+   "side dishes"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food a stew of meat and potatoes in broth?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat ground or crumbled like mince?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a thick yellow or red curry?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish mostly noodles or rice?",
+    "yes": false
+   }
+  ],
+  "dish": "nikujaga",
+  "look": "Japanese braised beef and potato stew, thin slices of tender beef, chunks of soft potato, rounds of orange carrot, wedges of translucent onion, green beans, glossy light brown soy-mirin broth, served in a small bowl",
+  "model": "claude-sonnet",
+  "name": "Beef Nikujaga",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-26T23:05:55+00:00"
+ },
+ "2f7ea08f1a74": {
+  "avoid": [
+   "beef",
+   "pork",
+   "raw chicken",
+   "chicken breast slices",
+   "skewers",
+   "rice",
+   "noodles",
+   "soup",
+   "lettuce wraps"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cooked pieces of meat in a glossy sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat ground or crumbled like mince?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat on skewers?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat in a broth like a soup?",
+    "yes": false
+   }
+  ],
+  "dish": "chicken bulgogi",
+  "look": "bite-sized pieces of glazed boneless chicken thigh, glossy dark soy-honey sauce, caramelized browned edges, sesame seeds, sliced green onion, a few blistered green shishito peppers alongside",
+  "model": "claude-sonnet",
+  "name": "Bulgogi",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-26T23:07:42+00:00"
+ },
+ "3095445b5e1b": {
+  "avoid": [
+   "chicken tenders",
+   "nuggets",
+   "wrap",
+   "burger patty",
+   "french fries",
+   "side salad",
+   "drink",
+   "flowers"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a sandwich with a breaded chicken piece in a bun?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken shown without any bun, as loose pieces or strips?",
+    "yes": false
+   },
+   {
+    "q": "Is the filling a ground beef burger patty?",
+    "yes": false
+   },
+   {
+    "q": "Is the main item a wrap or tortilla?",
+    "yes": false
+   }
+  ],
+  "dish": "crispy fried chicken sandwich",
+  "look": "a golden crunchy breaded fried chicken breast fillet in a soft toasted bun, craggy crisp coating, sliced pickles, lettuce leaf, creamy sauce dripping at the edge, bun top resting on the chicken",
+  "model": "claude-sonnet",
+  "name": "Crispy “Magnolia” Chicken Sando with Hibiscus Ginger Beer",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-26T23:11:33+00:00"
+ },
+ "31378ddfb8a0": {
+  "avoid": [
+   "chicken wings",
+   "whole roast chicken",
+   "nuggets",
+   "grilled chicken breast",
+   "french fries",
+   "dipping sauce",
+   "salad",
+   "bun"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item strips of chicken?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken bone-in like wings or drumsticks?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken uncoated, grilled or sliced like a plain breast?",
     "yes": false
    },
    {
@@ -626,13 +1057,90 @@
    }
   ],
   "dish": "chicken tenders",
-  "look": "several golden-brown breaded chicken tenderloin strips, crispy craggy crumb coating, elongated finger shape, juicy white meat, piled in a small stack",
+  "look": "several golden-brown breaded chicken tenders, long strips with crunchy craggy coating, crisp textured crust, juicy white meat visible at one bitten-open end, stacked slightly overlapping",
   "model": "claude-sonnet",
   "name": "Chicken Tenders",
-  "rev": 5,
+  "rev": 6,
   "revisions": 0,
   "vessel": "plate",
-  "written_at": "2026-09-26T20:19:44+00:00"
+  "written_at": "2026-09-26T23:10:10+00:00"
+ },
+ "333164e95b02": {
+  "avoid": [
+   "chicken nuggets",
+   "chicken sandwich",
+   "bun",
+   "french fries",
+   "coleslaw",
+   "waffles",
+   "raw chicken",
+   "sauce-covered chicken",
+   "biscuits"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item fried chicken pieces with a crispy breaded crust?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken grilled or roasted with plain skin and no breading?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken shaped like small nuggets or strips?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken served in a bun as a sandwich?",
+    "yes": false
+   }
+  ],
+  "dish": "buttermilk fried chicken",
+  "look": "pieces of bone-in fried chicken, thick crunchy golden-brown craggy breading, drumstick and thigh, crisp textured crust, juicy meat, deep amber color",
+  "model": "claude-sonnet",
+  "name": "Buttermilk Fried Chicken",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-26T23:07:55+00:00"
+ },
+ "36b5ebcac89a": {
+  "avoid": [
+   "chicken wings",
+   "fried chicken breading",
+   "pulled shredded chicken",
+   "sandwich bun",
+   "french fries",
+   "coleslaw",
+   "corn on the cob",
+   "raw chicken"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cooked chicken pieces coated in sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken shredded or pulled into a sandwich?",
+    "yes": false
+   },
+   {
+    "q": "Does the chicken have a thick breaded fried crust?",
+    "yes": false
+   },
+   {
+    "q": "Does the chicken look raw or pale and uncooked?",
+    "yes": false
+   }
+  ],
+  "dish": "barbecue chicken",
+  "look": "bone-in chicken pieces, thighs and drumsticks, glossy dark reddish-brown barbecue glaze, caramelized charred edges, tender juicy meat, sticky sauce coating the skin, a few softened onion pieces on the side",
+  "model": "claude-sonnet",
+  "name": "BBQ Chicken",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-26T23:04:05+00:00"
  },
  "37354abb6d07": {
   "avoid": [
@@ -674,6 +1182,45 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-26T20:19:44+00:00"
+ },
+ "39e996905abe": {
+  "avoid": [
+   "raw chicken",
+   "whole roasted chicken",
+   "chicken wings",
+   "fried chicken nuggets",
+   "noodles",
+   "soup",
+   "vegetable stir-fry",
+   "rice",
+   "skewers"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cooked chicken pieces?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken raw or pale and uncooked?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken served in a broth or soup?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken breaded and deep-fried like nuggets?",
+    "yes": false
+   }
+  ],
+  "dish": "ginger lemongrass chicken",
+  "look": "pieces of cooked chicken, golden-brown seared edges, glossy light amber glaze, tender juicy meat, bite-sized chunks, flecks of minced ginger and lemongrass, a few thin slices of green onion",
+  "model": "claude-sonnet",
+  "name": "Ginger Lemongrass Chicken",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-26T23:15:33+00:00"
  },
  "3dda86d35bac": {
   "avoid": [
@@ -756,6 +1303,45 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-26T20:19:48+00:00"
+ },
+ "3eba5d040108": {
+  "avoid": [
+   "ground beef",
+   "steak",
+   "roast slices",
+   "chicken",
+   "pork",
+   "sausage",
+   "rice",
+   "pasta",
+   "bread"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item chunks of meat in a thick tomato-based sauce or stew?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat ground or crumbled like mince?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat a grilled or seared whole steak?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a thin broth soup with mostly vegetables?",
+    "yes": false
+   }
+  ],
+  "dish": "Creole beef daube",
+  "look": "tender chunks of braised beef, rich dark red-brown tomato gravy, diced carrot, celery, onion and bell pepper pieces, glossy thick stew sauce, a sprinkle of fresh thyme leaves",
+  "model": "claude-sonnet",
+  "name": "Creole Beef Daube",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-26T23:10:58+00:00"
  },
  "427834211d2a": {
   "avoid": [
@@ -929,7 +1515,7 @@
   ],
   "checks": [
    {
-    "q": "Is the meat in thin shaved slices or strips?",
+    "q": "Is the main item thin shaved slices or strips of meat?",
     "yes": true
    },
    {
@@ -941,18 +1527,58 @@
     "yes": false
    },
    {
-    "q": "Is the meat on skewers as chunks of kebab?",
+    "q": "Is the meat on skewers or in round meatball shapes?",
     "yes": false
    }
   ],
   "dish": "Greek gyro meat",
-  "look": "a pile of thin shaved slices of seasoned beef and lamb, browned crisp edges, juicy dark brown meat strips, cut from a vertical rotisserie cone, a few flecks of minced garlic",
+  "look": "a pile of thin shaved slices of seasoned beef and lamb, browned crisp edges, juicy dark brown meat strips, slightly curled slivers, a few flecks of chopped garlic and parsley",
   "model": "claude-sonnet",
   "name": "Beef & Lamb Gyro Meat",
-  "rev": 5,
+  "rev": 6,
   "revisions": 0,
   "vessel": "plate",
-  "written_at": "2026-09-26T20:19:56+00:00"
+  "written_at": "2026-09-26T23:04:31+00:00"
+ },
+ "4f7b55621b3f": {
+  "avoid": [
+   "beef",
+   "pork",
+   "raw chicken",
+   "breaded chicken",
+   "chicken wings",
+   "whole drumsticks",
+   "skewers",
+   "tortilla wrap",
+   "noodles",
+   "side dishes"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cooked sliced or bite-sized meat in a glossy brown sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat breaded or deep-fried like chicken nuggets?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat ground or crumbled like mince?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat served on skewers or as whole bone-in pieces?",
+    "yes": false
+   }
+  ],
+  "dish": "chicken bulgogi",
+  "look": "thin slices of marinated chicken, glossy dark brown-red soy glaze, caramelized browned edges, tender juicy strips piled together, thin slices of onion, sprinkle of sesame seeds, sliced scallion",
+  "model": "claude-sonnet",
+  "name": "Chicken Bulgogi",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-26T23:08:31+00:00"
  },
  "50ea6a72eb85": {
   "avoid": [
@@ -992,6 +1618,45 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-26T20:19:57+00:00"
+ },
+ "510d325b3908": {
+  "avoid": [
+   "soup",
+   "wonton soup",
+   "dumplings",
+   "noodle bowl",
+   "tortilla chips",
+   "croutons",
+   "rice",
+   "shrimp",
+   "fried rice"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a leafy salad with crispy fried strips on top?",
+    "yes": true
+   },
+   {
+    "q": "Are the wontons served in broth like a soup?",
+    "yes": false
+   },
+   {
+    "q": "Are there filled dumplings as the main item instead of crispy strips?",
+    "yes": false
+   },
+   {
+    "q": "Is the main item a bowl of noodles or rice?",
+    "yes": false
+   }
+  ],
+  "dish": "crispy wonton salad",
+  "look": "a bed of shredded green cabbage and romaine, golden fried wonton strips piled on top, julienned carrot, mandarin orange segments, sliced red cabbage, shredded grilled chicken, light sesame dressing, sliced almonds",
+  "model": "claude-sonnet",
+  "name": "Crispy Wonton Salad",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-26T23:11:26+00:00"
  },
  "53a559318a58": {
   "avoid": [
@@ -1110,6 +1775,85 @@
   "vessel": "plate",
   "written_at": "2026-09-26T20:10:26+00:00"
  },
+ "69acd623fc25": {
+  "avoid": [
+   "rice",
+   "naan",
+   "flatbread",
+   "whole roasted chicken",
+   "fried chicken",
+   "chicken drumsticks",
+   "soup broth",
+   "noodles",
+   "side dishes"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item chunks of meat in a curry sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken breaded or deep fried?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a clear thin soup or broth?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat a whole roasted chicken or whole drumsticks?",
+    "yes": false
+   }
+  ],
+  "dish": "Thai chicken curry",
+  "look": "bite-sized chunks of cooked chicken and diced potato in a thick golden-orange curry sauce, soft wedges of onion and tomato, slices of red Thai chili on top, pieces of lemongrass stalk",
+  "model": "claude-sonnet",
+  "name": "Curry Chicken",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-26T23:12:45+00:00"
+ },
+ "6c1e9cf35da4": {
+  "avoid": [
+   "french fries",
+   "chips",
+   "fish sticks",
+   "shrimp",
+   "salmon",
+   "lemon wedge",
+   "tartar sauce",
+   "coleslaw",
+   "fish tacos",
+   "soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item breaded or battered fried fish?",
+    "yes": true
+   },
+   {
+    "q": "Is the fish uncoated, grilled or baked without batter?",
+    "yes": false
+   },
+   {
+    "q": "Are there french fries or chips on the plate?",
+    "yes": false
+   },
+   {
+    "q": "Is the fish served in a taco, sandwich or bun?",
+    "yes": false
+   }
+  ],
+  "dish": "beer-battered fried cod",
+  "look": "two thick rectangular fillets of fried cod, crisp golden-yellow batter coating, bubbly crunchy uneven texture, light orange tint, flaky white flesh visible at one broken edge",
+  "model": "claude-sonnet",
+  "name": "Battered Cod",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-26T23:04:25+00:00"
+ },
  "6c97a9c059e0": {
   "avoid": [
    "meat",
@@ -1151,6 +1895,238 @@
   "vessel": "plate",
   "written_at": "2026-09-26T20:20:02+00:00"
  },
+ "6e9382f3e7ed": {
+  "avoid": [
+   "pork",
+   "beef",
+   "red sauce",
+   "tortilla",
+   "burrito",
+   "rice",
+   "beans",
+   "whole roasted chicken",
+   "cheese"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item chunks of meat in a green sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the sauce red or orange?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat shredded or ground into a filling wrapped in a tortilla?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a thin soup or broth?",
+    "yes": false
+   }
+  ],
+  "dish": "chicken chile verde",
+  "look": "bite-sized chunks of cooked chicken simmered in a thick chunky green tomatillo salsa, pale olive-green sauce, visible diced jalapeno and onion pieces, chopped fresh cilantro sprinkled on top",
+  "model": "claude-sonnet",
+  "name": "Chicken Chile Verde",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-26T23:09:37+00:00"
+ },
+ "6eabd86ed56e": {
+  "avoid": [
+   "chicken nuggets",
+   "chicken wings",
+   "whole roasted chicken",
+   "gravy",
+   "mashed potatoes",
+   "pasta",
+   "sandwich bun",
+   "grilled chicken breast"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a flat breaded and fried cutlet?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken unbreaded with a bare grilled surface?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken cut into small nugget or strip pieces?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken covered in a thick gravy or sauce?",
+    "yes": false
+   }
+  ],
+  "dish": "Wiener schnitzel-style chicken schnitzel",
+  "look": "a flat thin breaded chicken cutlet, golden-brown crisp crumb coating with bubbly uneven surface, paprika-tinted crust, fresh lemon wedges beside it, a little grated lemon zest on top",
+  "model": "claude-sonnet",
+  "name": "German Chicken Schnitzel",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-26T23:15:26+00:00"
+ },
+ "74787ab83447": {
+  "avoid": [
+   "whole roasted chicken",
+   "chicken drumsticks",
+   "fried chicken",
+   "breaded chicken",
+   "naan bread",
+   "rice",
+   "salad",
+   "skewers"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item chunks of meat in a creamy orange sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken breaded or deep-fried?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken a whole bird or bone-in drumsticks?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a clear broth soup?",
+    "yes": false
+   }
+  ],
+  "dish": "butter chicken",
+  "look": "bite-sized chunks of tender chicken in a thick creamy orange-red tomato butter sauce, glossy surface, swirl of white cream on top, a few flecks of chopped cilantro",
+  "model": "claude-sonnet",
+  "name": "Creamy Butter Chicken",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-26T23:10:44+00:00"
+ },
+ "75f6c9e945a1": {
+  "avoid": [
+   "bun",
+   "sandwich",
+   "coleslaw",
+   "ground meat",
+   "sliced pork chop",
+   "ribs",
+   "barbecue platter",
+   "french fries",
+   "beans"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item shredded meat?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat in a bun or sandwich?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat ground or crumbled like mince?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat in whole ribs or sliced chops?",
+    "yes": false
+   }
+  ],
+  "dish": "Carolina pulled pork",
+  "look": "a mound of tender shredded pork shoulder, pulled into thin juicy strands, golden-brown and reddish edges with darker bark bits, glistening tangy mustard-vinegar sauce, flecks of red pepper, soft strands of cooked onion",
+  "model": "claude-sonnet",
+  "name": "Carolina Pulled Pork",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-26T23:08:17+00:00"
+ },
+ "76ad28c3529f": {
+  "avoid": [
+   "ground beef",
+   "steak slices",
+   "tacos",
+   "tortilla",
+   "rice",
+   "black beans",
+   "fried plantains",
+   "meatballs",
+   "chicken"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item shredded meat in tomato sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat ground like mince or formed into meatballs?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat a grilled steak or whole roast slices?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat wrapped in a tortilla or served in a taco?",
+    "yes": false
+   }
+  ],
+  "dish": "Cuban ropa vieja",
+  "look": "a mound of tender shredded beef in chunky red tomato sauce, strips of green and red bell pepper, sliced onion, green olives, diced potato chunks, rich orange-red stew",
+  "model": "claude-sonnet",
+  "name": "Cuban Style Ropa Vieja",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-26T23:12:38+00:00"
+ },
+ "7896e25d76ba": {
+  "avoid": [
+   "rice",
+   "flatbread",
+   "roti",
+   "fried chicken",
+   "grilled chicken",
+   "red pepper slices",
+   "platter",
+   "side dishes",
+   "soup broth"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item chicken pieces in a yellow curry sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken breaded or deep-fried?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a thin clear soup?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken shredded or ground into small crumbles?",
+    "yes": false
+   }
+  ],
+  "dish": "Caribbean chicken curry",
+  "look": "bone-in chicken pieces and chunks of potato and carrot in a thick golden-yellow curry sauce, glossy orange-yellow gravy, tender braised chicken, sprinkle of chopped green onion and small thyme leaves",
+  "model": "claude-sonnet",
+  "name": "Caribbean Chicken Curry",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-26T23:08:02+00:00"
+ },
  "7c8def291144": {
   "avoid": [
    "meat",
@@ -1191,6 +2167,160 @@
   "vessel": "bowl",
   "written_at": "2026-09-26T20:20:06+00:00"
  },
+ "7d2854dbce3f": {
+  "avoid": [
+   "tortilla",
+   "taco shell",
+   "burrito",
+   "whole chicken breast",
+   "fried chicken",
+   "rice",
+   "beans",
+   "ground meat",
+   "cheese"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item shredded meat in a red sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat wrapped in a tortilla or served in a taco shell?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken a whole breast, drumstick or fried piece?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat ground like mince?",
+    "yes": false
+   }
+  ],
+  "dish": "chicken tinga",
+  "look": "a pile of shredded cooked chicken in a smoky red-orange chipotle tomato sauce, moist stringy pulled strands, thin strips of soft onion mixed through, glossy sauce, sprinkle of chopped cilantro",
+  "model": "claude-sonnet",
+  "name": "Chicken Tinga",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-26T23:10:23+00:00"
+ },
+ "844d07bc641d": {
+  "avoid": [
+   "boneless nuggets",
+   "chicken tenders",
+   "chicken breast",
+   "whole roasted chicken",
+   "french fries",
+   "raw chicken",
+   "pizza",
+   "salad"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item chicken wings on the bone?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken breaded boneless nuggets or strips?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken a whole roasted bird?",
+    "yes": false
+   },
+   {
+    "q": "Does the chicken look raw or pale and uncooked?",
+    "yes": false
+   }
+  ],
+  "dish": "fried chicken wings",
+  "look": "a pile of whole crispy fried chicken wings, golden-brown crunchy coating, glossy orange buffalo sauce coating the wings, served with carrot sticks and celery sticks and a small cup of white ranch dressing",
+  "model": "claude-sonnet",
+  "name": "Fried Chicken Wings",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-26T23:14:19+00:00"
+ },
+ "858cac06cf99": {
+  "avoid": [
+   "chicken breast",
+   "chicken nuggets",
+   "boneless chicken",
+   "fried chicken pieces in batter",
+   "french fries",
+   "celery sticks",
+   "dipping sauce cup",
+   "platter of sides",
+   "whole roast chicken"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item bone-in chicken wings?",
+    "yes": true
+   },
+   {
+    "q": "Are the chicken pieces boneless nuggets or strips?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken covered in a thick breaded batter coating?",
+    "yes": false
+   },
+   {
+    "q": "Is the main item a whole roasted chicken or chicken breast?",
+    "yes": false
+   }
+  ],
+  "dish": "baked lemon pepper chicken wings",
+  "look": "a pile of whole chicken wing pieces, drumettes and flats, golden-brown roasted skin, coated in glossy butter sauce, flecks of black pepper and yellow lemon zest, reddish paprika tint, a few lemon wedges",
+  "model": "claude-sonnet",
+  "name": "Baked Lemon-Pepper Chicken Wings",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-26T23:04:18+00:00"
+ },
+ "8b226e134133": {
+  "avoid": [
+   "corn on the cob",
+   "tortilla chips",
+   "nachos",
+   "burrito",
+   "cup of corn soup",
+   "meat",
+   "baked potato",
+   "salad"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item french fries topped with corn kernels?",
+    "yes": true
+   },
+   {
+    "q": "Is the corn still on the cob?",
+    "yes": false
+   },
+   {
+    "q": "Are the fries replaced by tortilla chips?",
+    "yes": false
+   },
+   {
+    "q": "Is the food served as a corn soup or in a cup of liquid?",
+    "yes": false
+   }
+  ],
+  "dish": "esquite fries",
+  "look": "crispy golden french fries topped with charred corn kernels, drizzle of creamy mayo crema, crumbled white cotija cheese, sprinkle of red chili powder, chopped cilantro, lime wedge on the side",
+  "model": "claude-sonnet",
+  "name": "Esquite fries",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-26T23:12:52+00:00"
+ },
  "8c1b4df69b6d": {
   "avoid": [
    "meat",
@@ -1230,6 +2360,45 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-26T20:20:07+00:00"
+ },
+ "8ca9e208e7aa": {
+  "avoid": [
+   "injera",
+   "ground meat",
+   "meatballs",
+   "skewers",
+   "rice",
+   "raw beef",
+   "steak slices",
+   "side dishes",
+   "soup broth"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item chunks of meat in a sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat ground or crumbled like mince?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat threaded on skewers?",
+    "yes": false
+   },
+   {
+    "q": "Does the meat look raw or pink and uncooked?",
+    "yes": false
+   }
+  ],
+  "dish": "beef tibs",
+  "look": "bite-sized chunks of browned beef, deep red-brown berbere-spiced sauce coating the meat, strips of soft green and red bell pepper, softened onion slices, glossy thick stew-like sauce",
+  "model": "claude-sonnet",
+  "name": "Braised Beef Tibs",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-26T23:07:37+00:00"
  },
  "8fea081816f3": {
   "avoid": [
@@ -1308,6 +2477,45 @@
   "vessel": "plate",
   "written_at": "2026-09-26T20:20:11+00:00"
  },
+ "975eadba9dd2": {
+  "avoid": [
+   "rice",
+   "chicken",
+   "beef",
+   "roti",
+   "flatbread",
+   "lamb chops",
+   "skewers",
+   "soup broth",
+   "whole habanero peppers"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item chunks of meat in a curry-style sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat ground or crumbled like mince?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a thin watery soup?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat a grilled or roasted lamb chop or rack on the bone?",
+    "yes": false
+   }
+  ],
+  "dish": "Caribbean lamb curry",
+  "look": "chunks of tender braised lamb shoulder in thick golden-yellow curry sauce, diced potatoes and carrot pieces, soft translucent onion, flecks of green onion and a few thyme leaves on top",
+  "model": "claude-sonnet",
+  "name": "Caribbean Lamb Curry",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-26T23:08:10+00:00"
+ },
  "99e47bcf3c0d": {
   "avoid": [
    "beef",
@@ -1347,6 +2555,46 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-26T20:20:12+00:00"
+ },
+ "9ddd4512f6ad": {
+  "avoid": [
+   "fried chicken",
+   "breaded chicken",
+   "chicken wings",
+   "chicken nuggets",
+   "shredded chicken",
+   "pasta",
+   "rice",
+   "salad",
+   "sauce-covered chicken",
+   "fish"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cooked chicken meat?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken covered in a thick breaded or battered coating?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken shredded or cut into small chunks in a sauce?",
+    "yes": false
+   },
+   {
+    "q": "Is the main item a piece of fish?",
+    "yes": false
+   }
+  ],
+  "dish": "blackened chicken breast",
+  "look": "a whole grilled chicken breast, deeply charred dark reddish-brown spice crust, juicy white meat inside, sliced diagonally to show the interior, slightly crisp edges, a lemon wedge on the side",
+  "model": "claude-sonnet",
+  "name": "Blackened Chicken",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-26T23:07:25+00:00"
  },
  "9fea3410efb1": {
   "avoid": [
@@ -1428,6 +2676,122 @@
   "vessel": "plate",
   "written_at": "2026-09-26T20:20:16+00:00"
  },
+ "a28d32135b5f": {
+  "avoid": [
+   "tortilla wrap",
+   "burrito",
+   "tacos",
+   "ground beef",
+   "chicken",
+   "shrimp",
+   "rice",
+   "guacamole",
+   "tortilla chips"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item sliced meat with peppers and onions?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat ground or crumbled like mince?",
+    "yes": false
+   },
+   {
+    "q": "Is the food wrapped inside a tortilla or folded into a taco or burrito?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat chicken or shrimp?",
+    "yes": false
+   }
+  ],
+  "dish": "beef fajitas",
+  "look": "sizzling strips of seared sliced beef, charred browned edges, mixed with sliced red, green and yellow bell peppers and strips of onion, tender and glistening, served loose in a pile on a hot cast iron skillet",
+  "model": "claude-sonnet",
+  "name": "Beef Fajitas",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-26T23:04:48+00:00"
+ },
+ "a4c4bf761aa0": {
+  "avoid": [
+   "french fries",
+   "cheese curds",
+   "ground beef",
+   "raw meat",
+   "steak slices",
+   "burger",
+   "rice",
+   "noodles",
+   "side dishes"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item chunks of meat in brown gravy?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat ground or crumbled like mince?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat a grilled steak or burger patty?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a clear broth soup?",
+    "yes": false
+   }
+  ],
+  "dish": "braised beef poutine topping",
+  "look": "tender shredded braised beef chunks in thick glossy dark brown gravy, soft cooked onions, rich brown sauce pooled and dripping, a few flecks of thyme, hot and steaming, served as a mound of saucy beef",
+  "model": "claude-sonnet",
+  "name": "Braised Beef Poutine (Topping)",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-26T23:07:31+00:00"
+ },
+ "a9c64bca3f9a": {
+  "avoid": [
+   "chicken wings",
+   "fried chicken nuggets",
+   "rice",
+   "sausage",
+   "shrimp",
+   "soup",
+   "side dishes",
+   "salad"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cooked chicken pieces?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken breaded and deep fried like fried chicken?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken shredded or cut into small cubes in a stew?",
+    "yes": false
+   },
+   {
+    "q": "Is the main item shrimp or sausage?",
+    "yes": false
+   }
+  ],
+  "dish": "creole spiced chicken with molasses glaze",
+  "look": "roasted bone-in chicken pieces, deep reddish-brown creole spice crust, glossy dark molasses glaze brushed on top, crisp browned skin, juicy meat, drizzle of dark sticky sauce on the plate",
+  "model": "claude-sonnet",
+  "name": "Creole Rub Chicken",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-26T23:11:11+00:00"
+ },
  "ace7d14ae0a3": {
   "avoid": [
    "meat",
@@ -1477,35 +2841,35 @@
    "white fish",
    "rice",
    "salad",
-   "lemon slices",
-   "sauce pool"
+   "sauce pooled in bowl",
+   "skewers"
   ],
   "checks": [
    {
-    "q": "Is the main item a cooked fillet of pink-orange fish?",
+    "q": "Is the main item a cooked fillet of fish?",
     "yes": true
    },
    {
-    "q": "Is the fish raw or sliced like sashimi?",
+    "q": "Is the fish raw, sliced like sashimi or sushi?",
     "yes": false
    },
    {
-    "q": "Is the fish flaked or shredded into small pieces mixed with other ingredients?",
+    "q": "Is the fish white-fleshed rather than pink or orange?",
     "yes": false
    },
    {
-    "q": "Is the main item shrimp or another shellfish?",
+    "q": "Is the main item shrimp or other shellfish?",
     "yes": false
    }
   ],
   "dish": "cilantro lime salmon",
-  "look": "a thick baked salmon fillet, opaque pink-orange flaky flesh, glossy honey glaze on top, flecks of green cilantro and lime zest, red chili flakes, cracked black pepper, a lime wedge on the side",
+  "look": "a thick baked salmon fillet, pink-orange flaky flesh, glossy honey glaze on top, flecks of chopped green cilantro, thin curls of lime zest, a few red chili flakes, lime wedge on the side",
   "model": "claude-sonnet",
   "name": "Cilantro Lime Salmon",
-  "rev": 5,
+  "rev": 6,
   "revisions": 0,
   "vessel": "plate",
-  "written_at": "2026-09-26T20:20:16+00:00"
+  "written_at": "2026-09-26T23:10:38+00:00"
  },
  "b4548565ca34": {
   "avoid": [
@@ -1545,6 +2909,83 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-26T20:20:20+00:00"
+ },
+ "b6dffdd2c7d3": {
+  "avoid": [
+   "shrimp",
+   "chicken",
+   "fish sticks",
+   "fish and chips",
+   "french fries",
+   "salmon",
+   "grilled fish",
+   "sauce-covered fish",
+   "side dishes"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item breaded or crusted fried fish?",
+    "yes": true
+   },
+   {
+    "q": "Is the fish pink or orange like salmon?",
+    "yes": false
+   },
+   {
+    "q": "Is the main item chicken or shrimp?",
+    "yes": false
+   },
+   {
+    "q": "Is the fish uncoated or grilled with no crust?",
+    "yes": false
+   }
+  ],
+  "dish": "Southern fried catfish",
+  "look": "two whole catfish fillets, crisp golden-brown cornmeal crust, craggy crunchy coating, flaky white flesh at broken edge, served whole in fillet shape, lemon wedge on the side",
+  "model": "claude-sonnet",
+  "name": "Fried Catfish",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-26T23:14:11+00:00"
+ },
+ "b9f9e6f892d4": {
+  "avoid": [
+   "spaghetti",
+   "ground meat pile",
+   "pizza",
+   "baked ziti",
+   "casserole dish",
+   "garlic bread",
+   "salad",
+   "meatballs"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a layered baked pasta with cheese on top?",
+    "yes": true
+   },
+   {
+    "q": "Is the main item loose spaghetti or noodles in sauce?",
+    "yes": false
+   },
+   {
+    "q": "Does the main item look like a pizza?",
+    "yes": false
+   },
+   {
+    "q": "Is the main item a pile of ground meat without pasta layers?",
+    "yes": false
+   }
+  ],
+  "dish": "beef lasagna Bolognese",
+  "look": "a thick square slice of baked lasagna, distinct stacked layers of pasta sheets, chunky meaty red beef ragu, creamy white béchamel, melted golden-brown mozzarella top with bubbly browned spots, sprinkle of chopped basil and parsley",
+  "model": "claude-sonnet",
+  "name": "Beef Bolognese Lasagna",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-26T23:04:37+00:00"
  },
  "bb2cc90b58ac": {
   "avoid": [
@@ -1625,26 +3066,61 @@
   "vessel": "plate",
   "written_at": "2026-09-26T20:20:20+00:00"
  },
- "ccf8b5079c93": {
+ "cce77b5c28c2": {
   "avoid": [
-   "steak",
-   "roast beef slices",
-   "mashed potatoes",
-   "noodles",
-   "pasta",
-   "rice",
-   "bread",
-   "soup broth",
-   "ground beef"
+   "pita bread",
+   "flatbread",
+   "wrap",
+   "gyro slices",
+   "ground meat",
+   "meatballs",
+   "chicken",
+   "french fries",
+   "salad",
+   "tzatziki bowl"
   ],
   "checks": [
    {
-    "q": "Are the main items chunks of meat in a dark sauce?",
+    "q": "Is the main item grilled chunks of meat?",
     "yes": true
    },
    {
-    "q": "Is the meat a grilled or seared whole steak?",
+    "q": "Is the meat ground or shaped like meatballs or patties?",
     "yes": false
+   },
+   {
+    "q": "Is the meat wrapped in a pita or flatbread?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat thinly shaved or sliced like gyro meat?",
+    "yes": false
+   }
+  ],
+  "dish": "Greek beef souvlaki",
+  "look": "several grilled cubes of beef threaded on a wooden skewer, browned charred edges, juicy tender chunks, glistening surface, flecks of chopped parsley, lemon wedge on the side",
+  "model": "claude-sonnet",
+  "name": "Beef Souvlaki",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-26T23:06:59+00:00"
+ },
+ "ccf8b5079c93": {
+  "avoid": [
+   "ground beef",
+   "steak slices",
+   "noodles",
+   "mashed potatoes",
+   "rice",
+   "soup broth",
+   "bread",
+   "side salad"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item chunks of meat in a dark sauce?",
+    "yes": true
    },
    {
     "q": "Is the meat ground or crumbled like mince?",
@@ -1653,16 +3129,173 @@
    {
     "q": "Is the dish a thin clear soup or broth?",
     "yes": false
+   },
+   {
+    "q": "Is the meat a grilled or seared whole steak?",
+    "yes": false
    }
   ],
   "dish": "beef bourguignon",
-  "look": "tender chunks of braised beef in glossy dark red wine sauce, whole browned pearl onions, sliced mushrooms, orange carrot pieces, small bacon lardons, sprinkle of chopped parsley",
+  "look": "tender chunks of braised beef in glossy dark red-brown wine sauce, whole pearl onions, sliced carrots, browned mushrooms, small bacon pieces, sprinkle of chopped parsley",
   "model": "claude-sonnet",
   "name": "Beef Bourguignon",
-  "rev": 5,
+  "rev": 6,
   "revisions": 0,
   "vessel": "bowl",
-  "written_at": "2026-09-26T20:20:24+00:00"
+  "written_at": "2026-09-26T23:04:42+00:00"
+ },
+ "cd60b00ba776": {
+  "avoid": [
+   "hamburger bun",
+   "pulled pork",
+   "ground meat",
+   "tortilla wrap",
+   "hot dog",
+   "french fries",
+   "chicken",
+   "sliced sandwich bread"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a sandwich in a long baguette roll?",
+    "yes": true
+   },
+   {
+    "q": "Is the filling shredded or pulled meat in a heavy sauce?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat wrapped in a tortilla or flatbread?",
+    "yes": false
+   },
+   {
+    "q": "Is the sandwich served on a round hamburger bun?",
+    "yes": false
+   }
+  ],
+  "dish": "BBQ pork banh mi",
+  "look": "a crusty baguette split lengthwise, filled with sliced glossy red-brown barbecued pork, pickled shredded carrot and daikon, cucumber slices, fresh cilantro sprigs, sliced jalapeno, one whole sandwich",
+  "model": "claude-sonnet",
+  "name": "BBQ Pork Bahn Mi",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-26T23:04:11+00:00"
+ },
+ "d7bd5cc28d8f": {
+  "avoid": [
+   "ground beef",
+   "meatballs",
+   "steak slab",
+   "rice",
+   "noodle nest",
+   "pasta",
+   "soup broth",
+   "french fries",
+   "side salad"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item beef pieces in a creamy sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the beef ground or crumbled like mince?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a thin broth soup?",
+    "yes": false
+   },
+   {
+    "q": "Is the beef a whole steak or roast slab rather than strips or pieces?",
+    "yes": false
+   }
+  ],
+  "dish": "beef stroganoff",
+  "look": "tender strips of sautéed beef in a creamy light-brown sour cream gravy, sliced mushrooms, whole glossy pearl onions, soft caramelized onions, thick velvety sauce, a dollop of white sour cream on top",
+  "model": "claude-sonnet",
+  "name": "Beef Stroganoff",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-26T23:07:07+00:00"
+ },
+ "da48c9dfa5ad": {
+  "avoid": [
+   "fried chicken breading",
+   "chicken nuggets",
+   "chicken wings",
+   "noodles",
+   "rice",
+   "soup",
+   "raw chicken",
+   "sliced chicken breast"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cooked chicken pieces?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken breaded or deep-fried with a thick crust?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a soup or broth?",
+    "yes": false
+   },
+   {
+    "q": "Does the chicken look raw or pale and undercooked?",
+    "yes": false
+   }
+  ],
+  "dish": "five spice chicken",
+  "look": "bone-in chicken pieces roasted golden brown, glossy dark reddish-brown glaze, tossed with sliced onion, chunks of yellow squash and corn kernels, a few star anise pods, scattered chopped cilantro, flecks of red pepper",
+  "model": "claude-sonnet",
+  "name": "Five Spice Chicken",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-26T23:14:04+00:00"
+ },
+ "da4943a847b4": {
+  "avoid": [
+   "whole chicken drumsticks",
+   "fried chicken",
+   "breaded cutlet",
+   "rice",
+   "naan bread",
+   "vegetables",
+   "soup",
+   "skewers"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item chunks of meat in a creamy orange curry sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken breaded or deep-fried?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken a whole bone-in piece like a drumstick or leg?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a thin broth soup?",
+    "yes": false
+   }
+  ],
+  "dish": "butter chicken",
+  "look": "bite-sized chunks of tender boneless chicken thigh, smothered in creamy orange-red tomato butter sauce, glossy silky curry gravy, swirl of cream on top, sprinkle of chopped cilantro",
+  "model": "claude-sonnet",
+  "name": "Butter Chicken",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-26T23:07:48+00:00"
  },
  "dc80a7c19291": {
   "avoid": [
@@ -1864,43 +3497,160 @@
   "vessel": "bowl",
   "written_at": "2026-09-26T20:16:28+00:00"
  },
- "f337c3568e54": {
+ "ef1552985343": {
   "avoid": [
-   "salmon",
-   "shrimp",
-   "fish sticks",
-   "chicken tenders",
-   "onion rings",
-   "coleslaw",
-   "burger",
-   "raw fish"
+   "tortilla",
+   "burrito",
+   "tacos",
+   "rice",
+   "beans",
+   "raw chicken",
+   "fried chicken",
+   "salad",
+   "whole peppers"
   ],
   "checks": [
    {
-    "q": "Is the main item a battered or breaded fillet of white fish?",
+    "q": "Is the main item cooked chicken pieces in a red-brown sauce?",
     "yes": true
+   },
+   {
+    "q": "Is the chicken wrapped in a tortilla or served as a taco or burrito?",
+    "yes": false
+   },
+   {
+    "q": "Does the chicken look raw or pale and uncooked?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken breaded or deep-fried?",
+    "yes": false
+   }
+  ],
+  "dish": "chipotle chicken",
+  "look": "cooked chicken pieces, browned and glazed in a smoky brick-red chipotle adobo sauce, glossy sauce coating, charred edges, juicy tender meat, flecks of red pepper",
+  "model": "claude-sonnet",
+  "name": "Chipotle Chicken",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-26T23:10:31+00:00"
+ },
+ "f06ba0b42af8": {
+  "avoid": [
+   "salmon",
+   "shrimp",
+   "ground beef",
+   "hard taco shell",
+   "burrito",
+   "rice",
+   "chips",
+   "grilled fish",
+   "sushi"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item tacos with fried fish in tortillas?",
+    "yes": true
+   },
+   {
+    "q": "Is the filling ground meat or shredded chicken?",
+    "yes": false
    },
    {
     "q": "Is the fish pink or orange like salmon?",
     "yes": false
    },
    {
-    "q": "Is the main item chicken strips or nuggets?",
+    "q": "Is the food a burrito or a large rolled wrap?",
+    "yes": false
+   }
+  ],
+  "dish": "fish tacos",
+  "look": "two soft corn tortillas folded around chunks of golden crispy battered cod, flaky white fish inside, shredded green cabbage, pico de gallo, drizzle of white creamy sauce, lime wedge",
+  "model": "claude-sonnet",
+  "name": "Crispy Cod Fish Tacos",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-26T23:11:18+00:00"
+ },
+ "f337c3568e54": {
+  "avoid": [
+   "salmon",
+   "shrimp",
+   "fish sticks",
+   "burger",
+   "bun",
+   "coleslaw",
+   "raw fish",
+   "soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item battered or breaded fried fish?",
+    "yes": true
+   },
+   {
+    "q": "Is the fish raw or uncooked?",
     "yes": false
    },
    {
-    "q": "Is the fish served in a bun or sandwich?",
+    "q": "Is the main item a sandwich or burger in a bun?",
+    "yes": false
+   },
+   {
+    "q": "Is the fish shrimp or another shellfish?",
     "yes": false
    }
   ],
   "dish": "fish and chips",
-  "look": "two thick golden crispy battered pollock fillets, flaky white flesh, crunchy bubbly batter, a pile of golden baked french fries, lemon wedge, small ramekin of creamy pale remoulade dipping sauce",
+  "look": "crisp golden beer-battered pollock fillets, bubbly crunchy batter, alongside a pile of golden baked french fries, a lemon wedge, a small ramekin of creamy pale remoulade sauce for dipping",
   "model": "claude-sonnet",
   "name": "Fish & Chips with Remoulade",
-  "rev": 4,
+  "rev": 6,
   "revisions": 0,
   "vessel": "plate",
-  "written_at": "2026-09-26T20:10:51+00:00"
+  "written_at": "2026-09-26T23:13:57+00:00"
+ },
+ "f97bd50646a5": {
+  "avoid": [
+   "rice",
+   "ground beef",
+   "soup",
+   "broth",
+   "chicken",
+   "shrimp",
+   "sushi",
+   "tofu",
+   "spring roll wrapper unfilled"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food noodles with meat and vegetables?",
+    "yes": true
+   },
+   {
+    "q": "Is the dish a soup with broth?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat ground or crumbled like mince?",
+    "yes": false
+   },
+   {
+    "q": "Is the main food a bowl of plain white rice?",
+    "yes": false
+   }
+  ],
+  "dish": "beef teriyaki yakisoba",
+  "look": "a mound of stir-fried yakisoba noodles topped with glossy teriyaki-glazed sliced beef, strips of cabbage, carrot and broccoli, dark brown sticky sauce, with a crisp golden fried egg roll on the side",
+  "model": "claude-sonnet",
+  "name": "Beef Teriyaki & Noodle Bowl",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-26T23:07:13+00:00"
  },
  "fdeefb326415": {
   "avoid": [
