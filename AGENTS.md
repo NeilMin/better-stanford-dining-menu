@@ -47,7 +47,7 @@ make images        # draw dishes still missing pictures (local ComfyUI on :8189 
 make images-todo   # print the dishes still waiting for a picture (what the nightly job files)
 make logos         # cut the hall logos out of the R&DE map -> data/logos/
 make specials      # fetch the specials calendar on its own
-make translate     # fill in data/zh.json (needs the claude CLI; never runs in CI)
+make translate     # fill in data/zh.json (the claude CLI, else Gemma with GEMINI_API_KEY)
 make site          # render site/ from data/
 make serve         # build, then preview at http://127.0.0.1:8777
 make verify        # re-fetch today's dinner live and diff it against what is stored
@@ -167,10 +167,11 @@ to survive a Ctrl-C, and a hand-corrected translation must not be undone by the 
 `--force` to redo one deliberately. A dropped batch is normal — it just stays missing and the
 next run picks it up.
 
-**`data/zh.json` is generated but committed, and CI never writes it.** Translating needs the
-`claude` CLI, so it happens on a laptop and arrives as a commit, exactly like images. New dishes
-show their English name in Chinese mode until then; `scripts/update.py` prints how many are
-waiting.
+**`data/zh.json` is generated but committed, and both CI and the laptop write it.** The nightly
+job translates what the scrape brought in with Gemma on the Gemini free tier, before it draws;
+`make translate` on a laptop uses the `claude` CLI. A dish the night could not translate shows its
+English name in Chinese mode until a later run does; `scripts/update.py` prints how many are
+waiting. The step is `continue-on-error`, like drawing: a spent quota is tomorrow's work.
 
 **The picture backlog must not become a red run.** `bsdm/source.py` owns red and it means a hall
 needs a config entry *tonight* or its menus are lost; a dish without a picture is what a new dish

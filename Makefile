@@ -27,7 +27,7 @@ logos-check:               ## has R&DE redrawn the map the logo boxes point into
 specials:                  ## follow the specials calendar link on the hours page
 	$(PY) scripts/fetch_specials.py
 
-translate:                 ## fill in the missing Chinese (needs the claude CLI)
+translate:                 ## fill in the missing Chinese (claude CLI, else Gemma via GEMINI_API_KEY)
 	$(PY) scripts/translate.py
 
 site:                      ## render site/ from data/

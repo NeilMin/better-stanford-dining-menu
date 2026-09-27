@@ -236,9 +236,9 @@ def main() -> int:
     log.info("Scraped %d services / %d dish rows", total_services, total_dishes)
     log.info("%s", summarize_catalog(catalog))
 
-    # Informational: translating needs the Claude Code CLI, so like image
-    # generation it happens on a laptop and arrives as a commit. CI just says
-    # how much of today's menu is still waiting for one.
+    # Informational: translation is a separate step -- the next one in CI,
+    # `make translate` on a laptop. This says how much of today's menu is
+    # waiting for it.
     log.info("%s", zhlib.summarize(ROOT))
     untranslated = sum(len(v) for v in zhlib.missing(ROOT).values())
     if untranslated:

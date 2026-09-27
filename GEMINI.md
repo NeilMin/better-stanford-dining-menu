@@ -45,7 +45,7 @@ make images-todo   # Check pending dishes waiting for image generation
 make logos         # Crop hall logos from R&DE campus map -> data/logos/
 make logos-check   # Verify whether R&DE map coordinates have moved
 make specials      # Fetch and parse dinner specials PDF calendar
-make translate     # Fill in data/zh.json (requires claude CLI; run locally)
+make translate     # Fill in data/zh.json (claude CLI, else Gemma with GEMINI_API_KEY; CI runs it nightly)
 make site          # Render static site/ from data/
 make serve         # Preview at http://127.0.0.1:8777
 make verify        # Live fetch and diff against stored data to detect scraper faults

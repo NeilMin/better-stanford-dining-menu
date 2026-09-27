@@ -45,13 +45,15 @@ uv sync
 make test        # the suite: no network, no GPU
 make update      # scrape the rolling 7-day window into data/menus/, and the specials poster
 make logos       # cut the hall logos out of the R&DE map (once; they rarely change)
-make images      # draw the dishes still missing pictures (needs local ComfyUI)
-make translate   # fill in the Chinese still missing (needs the claude CLI)
+make images      # draw the dishes still missing pictures (local ComfyUI + the claude CLI)
+make translate   # fill in the Chinese still missing (the claude CLI, else GEMINI_API_KEY)
 make serve       # preview at http://127.0.0.1:8777
 ```
 
-`make update`, `make logos` and `make site` need only network access. `make images` needs a GPU and
-`make translate` needs the Claude Code CLI, which is why both are separate steps.
+`make update`, `make logos` and `make site` need only network access. The nightly job also
+translates and draws new dishes on free tiers (Gemma on the Gemini API, FLUX.2 [klein] on
+Cloudflare); `make images` and `make translate` do the same on a laptop, with a GPU and the Claude
+Code CLI, and are how a backlog gets cleared.
 
 ## How it fits together
 

@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """Fill in the Chinese translations data/zh.json is still missing.
 
-The engine is the Claude Code CLI in headless mode (`claude -p`), so translating
-costs nothing beyond the subscription already in use and needs no API key. Like
-image generation this runs locally and its output is committed: CI scrapes and
-publishes, it never translates. A dish that has not been through here yet simply
-shows its English name in Chinese mode.
+On a laptop the engine is the Claude Code CLI in headless mode (`claude -p`),
+which costs nothing beyond the subscription already in use. The nightly job has
+no CLI and uses Gemma on the Gemini API's free tier (GEMINI_API_KEY) instead,
+right after the scrape. A dish that has not been through here yet simply shows
+its English name in Chinese mode.
 
 Work is keyed on the dish name and on the ingredient term, so this is resumable
 and idempotent -- a term is translated once and then reused by every dish that
