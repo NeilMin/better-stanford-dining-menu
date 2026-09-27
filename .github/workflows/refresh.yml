@@ -37,19 +37,11 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: uv run python scripts/translate.py
 
-      # Everything here is free and nothing unchecked is kept: Gemini Flash
-      # (then Gemma) writes each new dish's brief, FLUX.2 [klein] on
-      # Cloudflare's free tier draws it, and Gemma judges every picture against
-      # the brief. A dish no picture passes for keeps its placeholder, and is
-      # left alone after three runs. Running out of either allowance stops the
-      # step cleanly; tomorrow's picks up where it left off.
-      - name: Draw pending dish images
-        continue-on-error: true
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
-          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
-        run: uv run python scripts/gen_images.py --backend cloudflare --llm gemini --limit 40
+      # No drawing here for now. FLUX.2 [klein] on Cloudflare was the free
+      # generator this step ran, and the owner turned its pictures down
+      # (2026-09-27): too plastic next to the RealVisXL ones. Until a free way
+      # to run RealVisXL itself is proven, new dishes keep their placeholder
+      # and are drawn on the laptop (`make images`).
 
       # always(), because the night's menus and assets are worth keeping whatever
       # else the run turns up -- the source holds seven days and no more.
