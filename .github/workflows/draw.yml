@@ -1,0 +1,260 @@
+name: Draw dish pictures
+
+# New dishes get their pictures from the same RealVisXL the laptop draws with,
+# on free GitHub runners. A public repository's standard runners cost nothing,
+# but they have no GPU: one picture at the laptop's 1344x768 takes a CPU
+# fifteen to thirty minutes. So the night's queue is dealt across several
+# machines at once (gen_images.py --shard), each with a six-hour limit, and one
+# job at the end folds what they drew back into the catalog.
+#
+# Cloudflare's FLUX.2 [klein] was the free generator before this, and was
+# turned down by the owner: too plastic next to the RealVisXL pictures.
+#
+# Nothing here publishes an unchecked picture. Gemma judges every one against
+# the dish's brief, exactly as on the laptop; a dish none passes for keeps its
+# placeholder and is tried again the next night, up to three times.
+
+on:
+  # After every scrape, which is what brings new dishes. Off until the owner
+  # has seen what a dry run draws; until then it runs by hand.
+  # workflow_run:
+  #   workflows: ["Daily menu refresh"]
+  #   types: [completed]
+  workflow_dispatch:
+    inputs:
+      machines:
+        description: "Machines to split the queue across (0: as many as it needs)"
+        default: "0"
+      limit:
+        description: "Dishes per machine (0: as many as fit in the time)"
+        default: "0"
+      dry_run:
+        description: "Draw and judge, but commit nothing: what passed comes back as an artifact"
+        type: boolean
+        default: false
+
+# One night's drawing at a time. The second scrape of the day can land while
+# the first night's machines are still drawing; it waits rather than drawing the
+# same dishes a second time.
+concurrency:
+  group: draw
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  # The laptop's ComfyUI, so a picture drawn here is the one it would draw.
+  COMFYUI_COMMIT: b78cec879b9460d5cb25228a83a942fb78d2cd24
+  CHECKPOINT_URL: https://huggingface.co/SG161222/RealVisXL_V5.0/resolve/main/RealVisXL_V5.0_fp16.safetensors
+  # About 25 minutes a dish on the slower runners (a picture, plus a redraw
+  # now and then), in four hours of drawing.
+  DISHES_PER_MACHINE: 9
+  # Of the 20 jobs a free account may run at once; the scrape and the site
+  # deploy need a few.
+  MAX_MACHINES: 6
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      sha: ${{ steps.plan.outputs.sha }}
+      count: ${{ steps.plan.outputs.count }}
+      shards: ${{ steps.plan.outputs.shards }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main   # by name: the scrape that triggered this committed after it started
+
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - id: plan
+        env:
+          WANT: ${{ inputs.machines || '0' }}
+        run: |
+          n=$(uv run python scripts/gen_images.py --count)
+          m=$(( (n + DISHES_PER_MACHINE - 1) / DISHES_PER_MACHINE ))
+          if [ "$m" -gt "$MAX_MACHINES" ]; then m=$MAX_MACHINES; fi
+          if [ "$WANT" -gt 0 ] && [ "$n" -gt 0 ]; then m=$WANT; fi
+          if [ "$m" -lt 1 ]; then m=1; fi   # an empty matrix is an error even on a skipped job
+          echo "$n dishes waiting for a picture; $m machines"
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          echo "count=$n" >> "$GITHUB_OUTPUT"
+          echo "shards=$(python3 -c "import json; print(json.dumps([f'{k}/$m' for k in range(1, $m + 1)]))")" >> "$GITHUB_OUTPUT"
+
+  draw:
+    needs: plan
+    if: needs.plan.outputs.count != '0'
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    strategy:
+      fail-fast: false   # one machine's trouble is not a reason to throw away the others' pictures
+      matrix:
+        shard: ${{ fromJSON(needs.plan.outputs.shards) }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.plan.outputs.sha }}   # every machine deals from the same queue
+
+      - name: Make room for a 7 GB checkpoint
+        run: sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL
+
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - run: uv sync
+
+      - name: ComfyUI at the laptop's commit, CPU torch
+        run: |
+          git init -q /tmp/comfyui && cd /tmp/comfyui
+          git fetch -q --depth 1 https://github.com/comfyanonymous/ComfyUI "$COMFYUI_COMMIT"
+          git checkout -q FETCH_HEAD
+          python3 -m venv /tmp/cvenv
+          /tmp/cvenv/bin/pip install -q torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+          /tmp/cvenv/bin/pip install -q -r requirements.txt
+
+      # Kept in the Actions cache as well as fetched from Hugging Face, so a
+      # checkpoint that disappears from there does not stop the drawing here
+      # for as long as the nightly runs keep the cache warm.
+      - id: checkpoint
+        uses: actions/cache/restore@v4
+        with:
+          path: /tmp/checkpoint
+          key: realvisxl-v5-fp16
+
+      - if: steps.checkpoint.outputs.cache-hit != 'true'
+        run: |
+          mkdir -p /tmp/checkpoint
+          curl -sSfL --retry 3 -o /tmp/checkpoint/realvisxlV50.safetensors "$CHECKPOINT_URL"
+
+      - if: steps.checkpoint.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        continue-on-error: true   # the other machines race to save the same key
+        with:
+          path: /tmp/checkpoint
+          key: realvisxl-v5-fp16
+
+      - name: Start ComfyUI
+        run: |
+          ln -s /tmp/checkpoint/realvisxlV50.safetensors /tmp/comfyui/models/checkpoints/realvisxlV50.safetensors
+          cd /tmp/comfyui
+          nohup /tmp/cvenv/bin/python main.py --cpu --listen 127.0.0.1 --port 8189 > /tmp/comfyui.log 2>&1 &
+          for i in $(seq 150); do curl -sf http://127.0.0.1:8189/system_stats >/dev/null && break; sleep 2; done
+          curl -sf http://127.0.0.1:8189/system_stats > /dev/null
+
+      # The laptop's size and model, 12 steps rather than 20: side by side the
+      # owner could not tell them apart, and it is two fifths less CPU. No new
+      # dish is started after four hours, and the step is cut off at five and a
+      # half, so the hand-back below always runs inside the job's six.
+      - name: Draw this machine's share
+        timeout-minutes: 330
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          LIMIT: ${{ inputs.limit || '0' }}
+        run: |
+          extra=()
+          if [ "$LIMIT" != 0 ]; then extra=(--limit "$LIMIT"); fi
+          uv run python scripts/gen_images.py --backend comfyui --llm gemini \
+            --steps 12 --free-every 0 --max-wait 3600 --minutes 240 \
+            --shard "${{ matrix.shard }}" "${extra[@]}"
+
+      - name: Hand back what was drawn
+        if: always()
+        run: |
+          mkdir -p out/data/images
+          cp data/dishes.json out/data/
+          if [ -f data/briefs.json ]; then cp data/briefs.json out/data/; fi
+          git ls-files -m -o --exclude-standard -- data/images | xargs -r -I{} cp {} out/data/images/
+          ls out/data/images | wc -l
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: shard-${{ strategy.job-index }}
+          path: out/
+          retention-days: 3
+
+      - name: ComfyUI's log
+        if: failure()
+        run: tail -60 /tmp/comfyui.log
+
+  collect:
+    needs: [plan, draw]
+    # Whatever came back, even if a machine failed: its neighbours' pictures are good.
+    if: ${{ !cancelled() && needs.plan.outputs.count != '0' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      pushed: ${{ steps.commit.outputs.pushed }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: shard-*
+          path: shards
+
+      # Applied to main as it is now, not as it was when the machines started:
+      # a scrape may have committed in the hours between. If one lands between
+      # this merge and the push, start over from the new main.
+      - name: Dry run -- merge, and hand the result back instead of committing it
+        if: inputs.dry_run
+        env:
+          BASE: ${{ needs.plan.outputs.sha }}
+        run: |
+          git fetch -q --depth 1 origin "$BASE"
+          uv run python scripts/merge_draws.py --base "$BASE" shards/*
+          mkdir -p merged/data/images
+          cp data/dishes.json data/briefs.json merged/data/
+          git ls-files -m -o --exclude-standard -- data/images | xargs -r -I{} cp {} merged/data/images/
+
+      - if: inputs.dry_run
+        uses: actions/upload-artifact@v4
+        with:
+          name: merged
+          path: merged/
+          retention-days: 7
+
+      - id: commit
+        if: ${{ !inputs.dry_run }}
+        env:
+          BASE: ${{ needs.plan.outputs.sha }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch -q --depth 1 origin "$BASE"
+          for attempt in 1 2 3; do
+            uv run python scripts/merge_draws.py --base "$BASE" shards/*
+            git add data/
+            if git diff --cached --quiet; then
+              echo "Nothing new to commit."
+              exit 0
+            fi
+            git commit -qm "data: pictures drawn on free runners, $(date -u +%Y-%m-%d)"
+            if git push -q; then
+              echo "pushed=true" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+            git fetch -q origin main && git reset -q --hard origin/main
+          done
+          exit 1
+
+  # Called, like refresh.yml does: a push made with GITHUB_TOKEN does not fire `on: push`.
+  publish:
+    needs: collect
+    if: needs.collect.outputs.pushed == 'true'
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/pages.yml

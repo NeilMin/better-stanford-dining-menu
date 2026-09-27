@@ -37,11 +37,9 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: uv run python scripts/translate.py
 
-      # No drawing here for now. FLUX.2 [klein] on Cloudflare was the free
-      # generator this step ran, and the owner turned its pictures down
-      # (2026-09-27): too plastic next to the RealVisXL ones. Until a free way
-      # to run RealVisXL itself is proven, new dishes keep their placeholder
-      # and are drawn on the laptop (`make images`).
+      # No drawing here: draw.yml does it once this run has finished, on
+      # several machines at once, because a picture takes a CPU a quarter of
+      # an hour and this job has a scrape to commit.
 
       # always(), because the night's menus and assets are worth keeping whatever
       # else the run turns up -- the source holds seven days and no more.

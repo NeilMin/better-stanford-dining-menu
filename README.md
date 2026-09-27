@@ -51,9 +51,9 @@ make serve       # preview at http://127.0.0.1:8777
 ```
 
 `make update`, `make logos` and `make site` need only network access. The nightly job also
-translates and draws new dishes on free tiers (Gemma on the Gemini API, FLUX.2 [klein] on
-Cloudflare); `make images` and `make translate` do the same on a laptop, with a GPU and the Claude
-Code CLI, and are how a backlog gets cleared.
+translates new dishes (Gemma on the Gemini API's free tier) and, in `draw.yml`, draws them with
+the laptop's own model on free GitHub runners, several at once; `make images` and
+`make translate` do the same on a laptop, with a GPU and the Claude Code CLI.
 
 ## How it fits together
 

@@ -54,7 +54,7 @@ _STALE_FIELDS = ("vlm_score", "vlm_reason", "rejected")
 
 # Runs a dish may fail under one version of the brief instructions before it is
 # left alone. A dish nothing passes for would otherwise take its four drawings
-# out of Cloudflare's free allocation every night, for ever; a new BRIEF_REV, or
+# out of the free runners' night every night, for ever; a new BRIEF_REV, or
 # --retry-rejected, gives it another go.
 MAX_TRIES = 3
 
@@ -173,6 +173,15 @@ def main(argv: list[str] | None = None) -> int:
                     help="draw the first attempt with this seed rather than the dish's own")
     ap.add_argument("--free-every", type=int, default=20, metavar="N",
                     help="release ComfyUI's cached models every N images (0 disables)")
+    ap.add_argument("--max-wait", type=float, default=600, metavar="SECONDS",
+                    help="how long one ComfyUI picture may take (default 600; a CPU needs more)")
+    ap.add_argument("--shard", metavar="K/N",
+                    help="draw every Nth pending dish starting at the Kth, so N machines split "
+                         "the queue between them (see .github/workflows/draw.yml)")
+    ap.add_argument("--minutes", type=float, metavar="M",
+                    help="start no new dish after M minutes, so a CI job ends before it is killed")
+    ap.add_argument("--count", action="store_true",
+                    help="print how many dishes would be drawn, and draw nothing")
     args = ap.parse_args(argv)
     # A run is hours of one line per dish, read as it goes -- in a log file or a
     # CI step, where stdout is otherwise block-buffered and lands out of order
@@ -206,13 +215,23 @@ def main(argv: list[str] | None = None) -> int:
         pending.append((did, entry))
     del catalog  # record_image() re-reads; a long run must not write back a stale copy
 
+    if args.shard:
+        # Dealt round-robin, so every machine gets its share of the meat, which
+        # is drawn first, rather than one machine getting all of it.
+        k, n = (int(x) for x in args.shard.split("/"))
+        if not 1 <= k <= n:
+            ap.error("--shard is K/N with 1 <= K <= N")
+        pending = pending[k - 1::n]
     if args.limit is not None:
         pending = pending[: args.limit]
+    if args.count:
+        print(len(pending))
+        return 0
     if not pending:
         print("Nothing to draw -- every illustratable dish already has an image.")
         return 0
 
-    comfy = ComfyClient(args.url)
+    comfy = ComfyClient(args.url, max_wait=args.max_wait)
     cf = CloudflareClient()
     backend = args.backend
     if backend == "auto":
@@ -283,6 +302,10 @@ def main(argv: list[str] | None = None) -> int:
     try:
         for i, (did, entry) in enumerate(pending, 1):
             tag = f"  [{i}/{len(pending)}] P{entry.get('priority', 2)} {entry['name'][:42]:42.42s}"
+            if args.minutes and time.monotonic() - started > args.minutes * 60:
+                print(f"\nOut of time after {args.minutes:g} min; {len(pending) - i + 1} dishes "
+                      "left for the next run.")
+                break
 
             # One call writes this dish's brief and the next few that need one.
             batch = [(d, e) for d, e in pending[i - 1:] if needs_brief(d)][:args.brief_batch]

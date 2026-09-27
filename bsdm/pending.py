@@ -1,6 +1,6 @@
 """The dishes the board is showing a placeholder for, written up as a to-do.
 
-The nightly job draws what it can -- within Cloudflare's free allowance, and only
+The nightly job draws what it can -- in the hours its free runners have, and only
 pictures the judge passes -- so what is left here is the night's overflow and the
 dishes no picture has passed for, which it stops retrying after three runs. Those
 wait for `make images` on the laptop, which means the ask has to survive being
@@ -100,9 +100,9 @@ def body(items: list[tuple[str, dict]], mention: str | None = None) -> str:
     )
     lines += [
         "",
-        "The nightly job draws new dishes within Cloudflare's free allowance and keeps",
-        "only pictures that pass the judge. A dish is here because the night's allowance",
-        "ran out before it, or because no picture has passed yet -- after three runs it",
+        "The nightly job draws new dishes on free runners and keeps only pictures that",
+        "pass the judge. A dish is here because the night's machines ran out of time",
+        "before it, or because no picture has passed yet -- after three runs it",
         "is left alone until the brief rules change. To draw them on the laptop instead:",
         "",
         "```sh",

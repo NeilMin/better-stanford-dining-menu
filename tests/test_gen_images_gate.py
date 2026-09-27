@@ -269,3 +269,31 @@ def test_each_failed_run_counts(setup):
     setup.llm.verdicts += [FAIL] * 4
     run()
     assert setup.catalog()["aaaa0001"]["rejected"]["tries"] == 1
+
+
+def test_count_prints_the_queue_and_draws_nothing(setup, capsys):
+    assert main(["--backend", "comfyui", "--count"]) == 0
+    assert capsys.readouterr().out.strip() == "2"
+    assert not setup.drawn and not setup.llm.calls
+
+
+def test_shards_deal_the_queue_between_machines(setup, capsys):
+    """Round-robin, so the meat at the head of the queue is spread across machines."""
+    main(["--backend", "comfyui", "--count", "--shard", "1/2"])
+    main(["--backend", "comfyui", "--count", "--shard", "2/2"])
+    assert capsys.readouterr().out.split() == ["1", "1"]
+
+    setup.llm.briefs.append(BROCCOLI)
+    setup.llm.verdicts.append(PASS)
+    assert main(["--backend", "comfyui", "--shard", "2/2"]) == 0
+    assert setup.image("bbbb0002").exists() and not setup.image("aaaa0001").exists()
+
+
+def test_out_of_time_starts_no_new_dish(setup, monkeypatch, capsys):
+    clock = iter(range(0, 10**6, 1000))  # every reading is a thousand seconds on
+    monkeypatch.setattr(gen_images.time, "monotonic", lambda: next(clock))
+    setup.llm.briefs += [BRIEF, BROCCOLI]
+    setup.llm.verdicts.append(PASS)
+    assert main(["--backend", "comfyui", "--minutes", "30"]) == 0
+    assert setup.image("aaaa0001").exists() and not setup.image("bbbb0002").exists()
+    assert "Out of time" in capsys.readouterr().out

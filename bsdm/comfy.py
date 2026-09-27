@@ -106,9 +106,12 @@ def build_workflow(model: str, positive: str, negative: str, seed: int,
 
 
 class ComfyClient:
-    def __init__(self, base_url: str = DEFAULT_URL, timeout: int = 15):
+    def __init__(self, base_url: str = DEFAULT_URL, timeout: int = 15, max_wait: float = 600):
         self.base_url = base_url.rstrip("/")
         self.timeout = timeout
+        # How long one picture may take. Ten minutes is generous on a GPU; a
+        # free CI runner draws one on its CPU in fifteen to thirty.
+        self.max_wait = max_wait
         self.client_id = str(uuid.uuid4())
         self.session = requests.Session()
 
@@ -208,7 +211,7 @@ class ComfyClient:
                  steps: int | None = None) -> tuple[Image.Image, float]:
         started = time.monotonic()
         workflow = build_workflow(model, positive, negative, seed, size, steps)
-        outputs = self.wait(self.submit(workflow))
+        outputs = self.wait(self.submit(workflow), max_wait=self.max_wait)
         return self.fetch_image(outputs), time.monotonic() - started
 
 

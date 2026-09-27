@@ -32,7 +32,7 @@ This file covers the invariants that are easy to break and only visible across s
 | `data/` | Scraped menus (`live/`, `archive/`), `dishes.json`, `stations.json`, `zh.json`, images, and logos. |
 | `web/` | Web template (`index.html`), vanilla JS application (`app.js`), and responsive styles (`app.css`). |
 | `tests/` | Pytest test suite, mock fixtures (`conftest.py`), and JS bridge tests (`test_web_js.py`). |
-| `.github/workflows/` | `refresh.yml` (scrape, translate, draw and judge new dishes, twice a day), `pages.yml` (test, build, deploy to GitHub Pages). |
+| `.github/workflows/` | `refresh.yml` (scrape and translate, twice a day), `draw.yml` (after each scrape: draw and judge new dishes on several free runners at once), `pages.yml` (test, build, deploy to GitHub Pages). |
 
 ## Commands
 
@@ -206,13 +206,16 @@ is worse than the icon, for the same reason `build()` will not publish last week
 meant to run unattended for years on free tiers; a backend that goes away must degrade to the
 placeholder icon, never to an unchecked picture. What each job runs on, and why:
 
-- *Drawing*: RealVisXL through the local ComfyUI on the laptop; FLUX.2 [klein] 4B on Cloudflare
-  Workers AI in CI (`--backend cloudflare`), 26 neurons per 512x512 tile out of 10,000 free a
-  day -- sixty-odd pictures at best, and a morning of 40 test pictures once found the day spent.
-  RealVisXL on a free GitHub runner was measured and ruled out: 29-31 min a picture, 17-19 with
-  Lightning, at 15 GB of a 16 GB box. klein is told to fill the frame (`photo_style(close=True)`):
-  the house style's generous margin exists because SDXL crops plates, and klein, which does what
-  it is told, drew small plates adrift on white.
+- *Drawing*: RealVisXL everywhere -- the local ComfyUI on the laptop, and in CI the same
+  checkpoint on free GitHub runners' CPUs (`draw.yml`), at the laptop's 1344x768 and 12 steps
+  instead of 20. A runner takes 15-30 minutes a picture at 14.8 GB of its 16, so the queue is
+  dealt across up to six machines (`--shard K/N`), each stops starting dishes after four hours
+  (`--minutes`), and `scripts/merge_draws.py` folds their copies of `data/` back into main as it
+  is by then. The owner compared sizes by eye: 1024x576 was clearly worse, 12 steps against 20
+  was not. FLUX.2 [klein] on Cloudflare's free tier drew in CI for a day and was turned down as
+  too plastic; `--backend cloudflare` and `photo_style(close=True)` are what is left of it. The
+  CPU route had been ruled out once already on the time per picture alone, before anyone counted
+  machines -- a public repository's runners are free, twenty at a time, six hours each.
 - *Briefs* (the dish knowledge): the `claude` CLI on the laptop; in CI a `bsdm.llm.Chain` of
   Gemini Flash versions, then Gemma -- Flash's free tier is 20 requests a day *per model*, so they
   take turns. Gemma 4 26B alone wrote briefs that said souvlaki is not on skewers. Briefs are
@@ -492,6 +495,9 @@ JSON block so a dish name cannot close the script tag early.
 Live at **https://stanford-dining.neilmin.com** (Porkbun CNAME → `neilmin.github.io`, Pages
 source: GitHub Actions).
 
+- `draw.yml` — after each `refresh.yml` run, or by hand (`--dry-run` hands the result back as an
+  artifact instead of committing it). A `plan` job counts the queue, `draw` runs one job per
+  machine, `collect` merges and pushes, retrying from the new main if a scrape landed first.
 - `refresh.yml` — cron only. Scrapes, commits `data/`, then **calls** `pages.yml`. It calls
   rather than relies on its own push, because a push made with `GITHUB_TOKEN` does not fire
   `on: push`.
@@ -503,10 +509,10 @@ source: GitHub Actions).
   Actions-sourced site — that is a one-time setting — but it stops a deploy without it from
   clearing the setting.
 
-`site/` is build output and is not committed. `data/` is, including images: CI draws new dishes
-nightly with FLUX.2 [klein] on Cloudflare's free tier and commits what the judge passes; the
-laptop draws with RealVisXL, and `gen_images.py --audit` judges the pictures drawn before there
-was a judge. A dish shows a placeholder icon until a picture of it passes. `data/logos/` and `data/specials/` are committed for the same reason — the
+`site/` is build output and is not committed. `data/` is, including images: `draw.yml` draws
+new dishes after each scrape with RealVisXL on free runners and commits what the judge passes;
+the laptop draws with the same model, and `gen_images.py --audit` judges the pictures drawn
+before there was a judge. A dish shows a placeholder icon until a picture of it passes. `data/logos/` and `data/specials/` are committed for the same reason — the
 logos because cutting them needs a hand-verified config, the posters because they are an archive
 of something the source deletes. CI *does* fetch new posters, because `git add data/` picks them
 up; it never re-cuts logos.
