@@ -275,6 +275,42 @@
   "vessel": "bowl",
   "written_at": "2026-09-26T20:19:28+00:00"
  },
+ "12d3139d3a47": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "bacon bits",
+   "sour cream",
+   "cheddar cheese",
+   "butter"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food a whole baked potato?",
+    "yes": true
+   },
+   {
+    "q": "Are there dairy or meat toppings like bacon, cheese, or sour cream on the potato?",
+    "yes": false
+   },
+   {
+    "q": "Is the potato chopped into french fries, wedges, or mashed?",
+    "yes": false
+   }
+  ],
+  "dish": "baked potato",
+  "look": "whole baked russet potato, split open lengthwise across the top, fluffy steaming white potato interior, dry papery brown skin, sprinkle of coarse sea salt",
+  "model": "gemini-flash-latest",
+  "name": "Baked Potato",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-27T04:33:15+00:00"
+ },
  "15057c283627": {
   "avoid": [
    "meat",
@@ -1103,6 +1139,40 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-26T23:07:55+00:00"
+ },
+ "3412e155de76": {
+  "avoid": [
+   "rice",
+   "fried rice",
+   "noodles",
+   "broccoli",
+   "skewers",
+   "tempura batter",
+   "breading",
+   "raw chicken"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item sliced chicken coated in a dark shiny glaze?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken breaded or fried in a crunchy batter?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken threaded on skewers?",
+    "yes": false
+   }
+  ],
+  "dish": "chicken teriyaki",
+  "look": "sliced cooked chicken thighs, thick glossy dark brown caramelized teriyaki glaze, toasted white sesame seeds, sprinkle of finely chopped green scallions",
+  "model": "gemini-flash-latest",
+  "name": "Teriyaki Glazed Chicken",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-27T04:33:15+00:00"
  },
  "36b5ebcac89a": {
   "avoid": [
@@ -2910,6 +2980,40 @@
   "vessel": "plate",
   "written_at": "2026-09-26T20:20:20+00:00"
  },
+ "b5e04fbed525": {
+  "avoid": [
+   "rice",
+   "tacos",
+   "tortilla",
+   "curry",
+   "creamy sauce",
+   "breading",
+   "fried chicken",
+   "shredded chicken"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a piece of grilled chicken?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken breaded or deep-fried?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken shredded, pulled, or ground?",
+    "yes": false
+   }
+  ],
+  "dish": "cilantro lime grilled chicken",
+  "look": "grilled boneless chicken breast, distinct dark char grill marks, glossy citrus glaze, heavy sprinkle of finely chopped green cilantro leaves, fresh cut lime wedges resting beside the chicken",
+  "model": "gemini-flash-latest",
+  "name": "Cilantro Lime Chicken (FloMo)",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-27T04:33:15+00:00"
+ },
  "b6dffdd2c7d3": {
   "avoid": [
    "shrimp",
@@ -2949,6 +3053,40 @@
   "vessel": "plate",
   "written_at": "2026-09-26T23:14:11+00:00"
  },
+ "b8deebd0d2e5": {
+  "avoid": [
+   "rice",
+   "noodles",
+   "vermicelli bowl",
+   "soup",
+   "breaded pork",
+   "tonkatsu",
+   "ground pork",
+   "skewers"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item sliced grilled pork?",
+    "yes": true
+   },
+   {
+    "q": "Is the pork served floating in broth or over noodles in a bowl?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat breaded with breadcrumbs and fried?",
+    "yes": false
+   }
+  ],
+  "dish": "Vietnamese grilled lemongrass pork",
+  "look": "sliced grilled pork loin cutlets, charred reddish-brown edges, fine minced lemongrass bits, translucent garlic flecks, light glistening savory glaze, sliced fresh green scallions",
+  "model": "gemini-flash-latest",
+  "name": "Lemongrass Pork",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-27T04:33:15+00:00"
+ },
  "b9f9e6f892d4": {
   "avoid": [
    "spaghetti",
@@ -2986,6 +3124,40 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-26T23:04:37+00:00"
+ },
+ "bacbacfbc4f6": {
+  "avoid": [
+   "fish sticks",
+   "french fries",
+   "chips",
+   "tartar sauce",
+   "burger bun",
+   "taco",
+   "tortilla",
+   "salmon"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a fried fish fillet?",
+    "yes": true
+   },
+   {
+    "q": "Is the fish inside a sandwich, burger bun, or taco?",
+    "yes": false
+   },
+   {
+    "q": "Is the fish unbreaded or raw?",
+    "yes": false
+   }
+  ],
+  "dish": "panko-crusted fried fish fillet",
+  "look": "golden-brown panko-crusted fried whitefish fillet, crispy textured coating, shredded green and purple cabbage slaw on the side, drizzle of creamy pale orange chipotle mayo, fresh lemon wedge",
+  "model": "gemini-flash-latest",
+  "name": "Battered Fried Fish",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-27T04:33:15+00:00"
  },
  "bb2cc90b58ac": {
   "avoid": [
@@ -3026,6 +3198,39 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-26T20:20:20+00:00"
+ },
+ "bb68b9b02633": {
+  "avoid": [
+   "fried chicken",
+   "breading",
+   "chicken nuggets",
+   "soup",
+   "sliced cold cuts",
+   "rotisserie skewer",
+   "french fries"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a piece of roasted bone-in chicken?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken breaded or battered like southern fried chicken?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken raw or undercooked pink?",
+    "yes": false
+   }
+  ],
+  "dish": "roast chicken quarter",
+  "look": "bone-in roasted chicken leg quarter, deep golden-brown crispy skin, glistening roasted juices, specks of roasted dried herbs, tender carved edge, fresh rosemary sprig",
+  "model": "gemini-flash-latest",
+  "name": "Roasted Chicken",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-27T04:33:15+00:00"
  },
  "bed43b2c282e": {
   "avoid": [
@@ -3181,6 +3386,39 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-26T23:04:11+00:00"
+ },
+ "cfbec1603e6f": {
+  "avoid": [
+   "soup",
+   "noodles",
+   "pasta",
+   "shredded beef tacos",
+   "raw meat",
+   "mashed potatoes",
+   "pie crust"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item sliced braised beef pot roast?",
+    "yes": true
+   },
+   {
+    "q": "Is the beef served as ground meat or meatballs?",
+    "yes": false
+   },
+   {
+    "q": "Is the beef wrapped in pastry or dough like a pot pie?",
+    "yes": false
+   }
+  ],
+  "dish": "beef pot roast with root vegetables",
+  "look": "thick tender slices of braised beef chuck roast, rich glossy dark brown gravy, tender whole baby carrot pieces, stewed russet potato chunks, braised celery segments, sprinkle of finely chopped fresh parsley",
+  "model": "gemini-flash-latest",
+  "name": "Pot Roast with Root Veggies",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-27T04:33:15+00:00"
  },
  "d7bd5cc28d8f": {
   "avoid": [
@@ -3535,6 +3773,39 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-26T23:10:31+00:00"
+ },
+ "ef46fa384f8f": {
+  "avoid": [
+   "flour tortilla",
+   "burrito wrap",
+   "beef",
+   "lamb gyro",
+   "french fries inside wrap",
+   "skewers",
+   "kebab stick"
+  ],
+  "checks": [
+   {
+    "q": "Is the food a pita sandwich filled with sliced chicken and toppings?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken served on wooden skewers or metal kebab sticks?",
+    "yes": false
+   },
+   {
+    "q": "Is it rolled tightly in a tortilla like a burrito?",
+    "yes": false
+   }
+  ],
+  "dish": "chicken gyro",
+  "look": "warm folded whole wheat pita bread, sliced seasoned grilled chicken strips, creamy white tzatziki sauce, bright pink pickled red onion strips, finely shredded green cabbage salad",
+  "model": "gemini-flash-latest",
+  "name": "Chicken Gyros",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-27T04:33:15+00:00"
  },
  "f06ba0b42af8": {
   "avoid": [

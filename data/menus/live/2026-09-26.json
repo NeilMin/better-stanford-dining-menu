@@ -1,6 +1,6 @@
 {
  "date": "2026-09-26",
- "scraped_at": "2026-09-26T16:42:15-07:00",
+ "scraped_at": "2026-09-26T21:29:04-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -1875,21 +1875,37 @@
      "order": 0
     },
     {
-     "name": "Thai Mushroom Curry with Nori",
-     "recipe_id": "ThaiMushCurrNor1",
+     "name": "Roasted Chicken",
+     "recipe_id": "4245208",
      "description": "",
-     "ingredients": "trumpet mushrooms, oyster mushrooms, button mushrooms, coconut milk, vegetable soup base, onions, carrots, red bell peppers, bamboo shoots, baby corn, Thai yellow curry paste, garlic, ginger, tamari, brown sugar, lime juice, canola/olive oil blend, nori, Thai basil, cilantro, salt, black pepper",
+     "ingredients": "chicken, salt, pepper, canola/olive oil blend",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "halal"
+     ],
+     "order": 1
+    },
+    {
+     "name": "Vegetable Tofu Curry",
+     "recipe_id": "4515606",
+     "description": "",
+     "ingredients": "coconut milk, tofu, cilantro, lemongrass, yellow curry paste, onions, baby corn, peas, bell peppers, zucchini, yellow squash, spinach, canola/olive oil blend",
      "allergens": [
       "COCONUT",
       "SOY"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "FISH",
+      "SHELLFISH"
+     ],
      "tags": [
       "gluten-free",
       "vegan",
       "halal"
      ],
-     "order": 1
+     "order": 2
     },
     {
      "name": "Seasonal Steamed Vegetables",
@@ -1903,7 +1919,7 @@
       "vegan",
       "halal"
      ],
-     "order": 2
+     "order": 3
     },
     {
      "name": "Seasonal Vegetable Board",
@@ -1917,7 +1933,7 @@
       "vegan",
       "halal"
      ],
-     "order": 3
+     "order": 4
     },
     {
      "name": "Pickled Cabbage Slaw",
@@ -1931,7 +1947,7 @@
       "vegan",
       "halal"
      ],
-     "order": 4
+     "order": 5
     },
     {
      "name": "Thai Basil Eggplant",
@@ -1946,7 +1962,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 5
+     "order": 6
     },
     {
      "name": "Coconut Rice",
@@ -1962,7 +1978,7 @@
       "vegan",
       "halal"
      ],
-     "order": 6
+     "order": 7
     },
     {
      "name": "Rice Noodle",
@@ -1976,7 +1992,7 @@
       "vegan",
       "halal"
      ],
-     "order": 7
+     "order": 8
     },
     {
      "name": "Burger Bar",
@@ -1986,7 +2002,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 8
+     "order": 9
     },
     {
      "name": "Grilled Chicken",
@@ -2009,7 +2025,7 @@
      "tags": [
       "halal"
      ],
-     "order": 9
+     "order": 10
     },
     {
      "name": "Grilled Vegan/Vegetarian",
@@ -2032,7 +2048,7 @@
      "tags": [
       "halal"
      ],
-     "order": 10
+     "order": 11
     },
     {
      "name": "Panini Station",
@@ -2050,7 +2066,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 11
+     "order": 12
     },
     {
      "name": "Soup of the Day",
@@ -2060,7 +2076,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 12
+     "order": 13
     },
     {
      "name": "Assorted Dinner Rolls",
@@ -2079,7 +2095,7 @@
       "vegetarian",
       "halal"
      ],
-     "order": 13
+     "order": 14
     },
     {
      "name": "Composed Salad",
@@ -2091,7 +2107,7 @@
      "tags": [
       "halal"
      ],
-     "order": 14
+     "order": 15
     },
     {
      "name": "Performance Bar",
@@ -2101,7 +2117,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 15
+     "order": 16
     },
     {
      "name": "Craveable Grains",
@@ -2115,7 +2131,7 @@
       "vegan",
       "halal"
      ],
-     "order": 16
+     "order": 17
     },
     {
      "name": "Flavor Forward Legumes",
@@ -2129,23 +2145,25 @@
       "vegan",
       "halal"
      ],
-     "order": 17
+     "order": 18
     },
     {
-     "name": "Creamy Pesto",
-     "recipe_id": "7728050",
+     "name": "Creamy Pesto Pasta",
+     "recipe_id": "Creamypestopasta",
      "description": "",
-     "ingredients": "pesto sauce (basil, canola oil, parmesan cheese, olive oil, garlic, salt, lemon juice concentrate, natural flavor, xanthan gum, soy lecithin, chamomile extract, rosemary extract, white sauce (flour, butter, cream, milk powder, onion powder, white pepper, garlic, nutmeg, salt), parmesan cheese, parsley",
+     "ingredients": "",
      "allergens": [
       "MILK",
       "SOY",
       "WHEAT"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "EGG"
+     ],
      "tags": [
       "vegetarian"
      ],
-     "order": 18
+     "order": 19
     },
     {
      "name": "Pasta Marinara",
@@ -2163,7 +2181,7 @@
       "vegan",
       "halal"
      ],
-     "order": 19
+     "order": 20
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -2177,7 +2195,7 @@
       "vegan",
       "halal"
      ],
-     "order": 20
+     "order": 21
     }
    ]
   },
@@ -3907,15 +3925,11 @@
    ],
    "Dinner": [
     {
-     "name": "Red Thai Curry Chicken",
-     "recipe_id": "ThaiRedCurryChx1",
+     "name": "BBQ Chicken",
+     "recipe_id": "6404699",
      "description": "",
-     "ingredients": "Thai red chili paste (garlic, dried red chili, lemongrass, shallot, salt, galangal, shrimp paste, mukrat lime peel, pepper), coconut milk, fish sauce, brown sugar",
-     "allergens": [
-      "COCONUT",
-      "FISH",
-      "SHELLFISH"
-     ],
+     "ingredients": "chicken, apple cider, sugar, chili powder, onions, liquid smoke, garlic, ketchup, canola/olive oil blend, salt",
+     "allergens": [],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
