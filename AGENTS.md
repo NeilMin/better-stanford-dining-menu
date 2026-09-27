@@ -208,10 +208,14 @@ placeholder icon, never to an unchecked picture. What each job runs on, and why:
 - *Drawing*: RealVisXL through the local ComfyUI on the laptop; FLUX.2 [klein] 4B on Cloudflare
   Workers AI in CI (`--backend cloudflare`), about 100 neurons a picture out of 10,000 free a day.
   RealVisXL on a free GitHub runner was measured and ruled out: 29-31 min a picture, 17-19 with
-  Lightning, at 15 GB of a 16 GB box.
+  Lightning, at 15 GB of a 16 GB box. klein is told to fill the frame (`photo_style(close=True)`):
+  the house style's generous margin exists because SDXL crops plates, and klein, which does what
+  it is told, drew small plates adrift on white.
 - *Briefs* (the dish knowledge): the `claude` CLI on the laptop; in CI a `bsdm.llm.Chain` of
   Gemini Flash versions, then Gemma -- Flash's free tier is 20 requests a day *per model*, so they
-  take turns. Gemma 4 26B alone wrote briefs that said souvlaki is not on skewers.
+  take turns. Gemma 4 26B alone wrote briefs that said souvlaki is not on skewers. Briefs are
+  written eight dishes to a call (`--brief-batch`), which is what keeps a night inside Flash's
+  allowance; it scored the same on the eval as one a call, for Claude and for Flash alike.
 - *Judging*: the `claude` CLI on the laptop; in CI Gemma 4 26B on the Gemini API, which judged
   the eval set as well as Claude Sonnet did and has the free quota for a night. Gemma is asked
   without JSON mode (it loops until the server hangs up) and, for translation, with thinking at
