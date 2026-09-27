@@ -1632,21 +1632,26 @@
     render();
   });
 
-  // Left/right arrows step through the week.
+  // Left/right arrows step through the week, and do nothing else. Left to the
+  // browser they would also scroll whatever was last clicked, which with more
+  // than three halls up is the board, and its scroll-snap turns the nudge into
+  // a whole column: one press moved the day and the halls at once. So the key
+  // is taken even on the first and last day, where there is no day to move to.
+  // A modifier is left alone -- Cmd/Alt+arrow is the browser's back and forward.
   document.addEventListener("keydown", (e) => {
     if (e.target.matches("input, textarea, select")) return;
     if (e.key === "Escape" && tour) {
       endTour();
       return;
     }
+    if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+    if (e.altKey || e.ctrlKey || e.metaKey) return;
+    e.preventDefault();
     const i = DATA.window.indexOf(state.date);
-    if (e.key === "ArrowLeft" && i > 0) {
-      state.date = DATA.window[i - 1];
-      render();
-    } else if (e.key === "ArrowRight" && i < DATA.window.length - 1) {
-      state.date = DATA.window[i + 1];
-      render();
-    }
+    const next = i + (e.key === "ArrowLeft" ? -1 : 1);
+    if (next < 0 || next >= DATA.window.length) return;
+    state.date = DATA.window[next];
+    render();
   });
 
   render();
