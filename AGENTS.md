@@ -211,7 +211,9 @@ placeholder icon, never to an unchecked picture. What each job runs on, and why:
   instead of 20. A runner takes 17-19 minutes a picture at 15.3 GB of its 16, so the queue is
   dealt across up to six machines (`--shard K/N`), each stops starting dishes after four hours
   (`--minutes`), and `scripts/merge_draws.py` folds their copies of `data/` back into main as it
-  is by then. The owner compared sizes by eye: 1024x576 was clearly worse, 12 steps against 20
+  is by then. The runners are for the few new dishes a scrape brings; a backlog (a new
+  `BRIEF_REV`, a term's first week of menus) is the laptop's, at a minute and a half a picture --
+  the owner's division, so hold `draw.yml`'s trigger while the laptop works one off. The owner compared sizes by eye: 1024x576 was clearly worse, 12 steps against 20
   was not. FLUX.2 [klein] on Cloudflare's free tier drew in CI for a day and was turned down as
   too plastic; `--backend cloudflare` and `photo_style(close=True)` are what is left of it. The
   CPU route had been ruled out once already on the time per picture alone, before anyone counted
