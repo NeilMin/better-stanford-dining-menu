@@ -15,12 +15,12 @@ name: Draw dish pictures
 # placeholder and is tried again the next night, up to three times.
 
 on:
-  # After every scrape, which is what brings new dishes. Off while the laptop,
-  # which draws a picture in a minute and a half, works off the backlog; the
-  # runners are for the few new dishes a scrape brings after that.
-  # workflow_run:
-  #   workflows: ["Daily menu refresh"]
-  #   types: [completed]
+  # After every scrape, which is what brings new dishes. A backlog is the
+  # laptop's job -- it draws a picture in a minute and a half -- and the
+  # runners are for the few new dishes each scrape brings.
+  workflow_run:
+    workflows: ["Daily menu refresh"]
+    types: [completed]
   workflow_dispatch:
     inputs:
       machines:
