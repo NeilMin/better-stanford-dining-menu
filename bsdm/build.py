@@ -373,7 +373,7 @@ def _swap(html: str, old: str, new: str) -> str:
     return html.replace(old, new)
 
 
-# The name is the brand, which the masthead and the site name keep. The title is
+# The name is the brand, which the site name and the hall titles keep. The title is
 # what a search result shows, so it carries the words people search with; it
 # says "menus" and not "today", because the board is the whole week.
 SITE_NAME = "Stanford Dining, Side by Side"

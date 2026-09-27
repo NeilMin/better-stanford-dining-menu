@@ -56,7 +56,7 @@
       langChip: "中文",
       langLabel: "切换到中文",
       docTitle: "Stanford Dining Hall Menus, Side by Side",
-      brandA: "Stanford Dining, ",
+      brandA: "Stanford Dining Hall Menus, ",
       brandB: "Side by Side",
       lblDay: "Day", lblMeal: "Meal", lblHalls: "Halls", lblFilter: "Filter",
       today: "Today", tomorrow: "Tomorrow",

@@ -160,6 +160,18 @@ html:lang(zh) .col-concept { font-family: var(--cjk), var(--sans); font-size: 15
     #8C1515;
 }
 .brand span { font-weight: 500; font-style: italic; color: var(--cardinal); }
+/* The English name is too long for one line: beside the week on a laptop it
+   ran into the day chips, beside the switches on a phone it lost "Side by Side"
+   to an ellipsis. So it is set in two lines, the mark centred beside both,
+   which is no taller than the day chips. Chinese keeps its one line. */
+html:lang(en) .brand {
+  position: relative;
+  padding-left: 32px;
+  font-size: 17px;
+  line-height: 1.12;
+}
+html:lang(en) .brand::before { position: absolute; left: 0; top: 50%; translate: 0 -50%; }
+html:lang(en) .brand span { display: block; overflow: hidden; text-overflow: ellipsis; }
 
 .tools { grid-area: tools; display: flex; justify-content: flex-end; gap: 2px; }
 
@@ -1363,6 +1375,7 @@ html:lang(zh) .tour-title { font-family: var(--cjk), var(--serif); }
   .brand { flex: 1 1 auto; min-width: 0; font-size: 17px; }
   /* Fifteen CJK characters at 17px run into the switches. */
   html:lang(zh) .brand { font-size: 15px; }
+  html:lang(en) .brand { padding-left: 28px; font-size: 16px; }
   .brand::before { width: 20px; height: 20px; margin-right: 8px; vertical-align: -4px;
     background-position: 5px 5px, 10.6px 5px, 0 0; background-size: 4.4px 10px, 4.4px 10px, auto; }
   .tools { margin-right: -8px; }
