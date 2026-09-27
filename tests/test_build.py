@@ -449,7 +449,7 @@ class TestHallPages:
 
     def test_a_hall_page_is_titled_for_the_search_it_answers(self, out):
         html = (out / "branner" / "index.html").read_text()
-        assert "<title>Branner Dining Menu Today · Stanford Dining, Side by Side</title>" in html
+        assert "<title>Branner Dining Menu · Stanford Dining, Side by Side</title>" in html
         assert '<meta name="description" content="What Branner Dining at 655 Escondido Rd' in html
 
     def test_the_week_is_in_the_html_and_escaped(self, out):

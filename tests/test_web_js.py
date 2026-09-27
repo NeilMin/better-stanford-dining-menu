@@ -300,6 +300,17 @@ class TestPureHelpers:
         ]
 
 
+def test_the_script_keeps_the_title_the_build_wrote(tmp_path):
+    """Google reads the title after the script has run, so it is app.js's
+    English, not the <title> in the file, that a search result shows. The two
+    drifting apart would quietly undo a title chosen for search."""
+    from bsdm import build as buildlib
+
+    got = call(["UI"], "return [UI.en.docTitle, UI.en.hallTitle('Branner Dining')];",
+               tmp_path=tmp_path)
+    assert got == [buildlib.HOME_TITLE, buildlib.hall_title("Branner Dining")]
+
+
 def test_the_stored_preferences_key_is_versioned(tmp_path):
     """Bumped whenever the persisted shape changes. Stale localStorage once
     looked exactly like a scraper bug."""

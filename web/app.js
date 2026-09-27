@@ -55,7 +55,7 @@
     en: {
       langChip: "中文",
       langLabel: "切换到中文",
-      docTitle: "Stanford Dining, Side by Side",
+      docTitle: "Stanford Dining Hall Menus, Side by Side",
       brandA: "Stanford Dining, ",
       brandB: "Side by Side",
       lblDay: "Day", lblMeal: "Meal", lblHalls: "Halls", lblFilter: "Filter",
@@ -106,7 +106,7 @@
       identical: "These menus are identical — go wherever is closest.",
       share: "Share",
       shareTip: "Share this day, meal and these halls",
-      hallTitle: (name) => `${name} Menu Today · Stanford Dining, Side by Side`,
+      hallTitle: (name) => `${name} Menu · Stanford Dining, Side by Side`,
       footHalls: "Each hall on its own page:",
       shareWhen: (meal, day) => `${day.toLocaleDateString(undefined, { weekday: "long" })} ` +
         `${meal.toLowerCase()}, ${day.toLocaleDateString(undefined, { month: "short", day: "numeric" })}`,
@@ -190,7 +190,7 @@
       identical: "这几家的菜单完全相同——去离你最近的那家就好。",
       share: "分享",
       shareTip: "分享当前的日期、餐次和食堂",
-      hallTitle: (name) => `${name} 今日菜单 · 舌尖上的斯坦福`,
+      hallTitle: (name) => `${name} 菜单 · 舌尖上的斯坦福`,
       footHalls: "各食堂单独页面：",
       shareWhen: (meal, day) => `${day.toLocaleDateString("zh-CN", { month: "long", day: "numeric" })}` +
         `（${day.toLocaleDateString("zh-CN", { weekday: "short" })}）${meal}`,

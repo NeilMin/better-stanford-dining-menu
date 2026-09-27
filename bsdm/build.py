@@ -373,8 +373,18 @@ def _swap(html: str, old: str, new: str) -> str:
     return html.replace(old, new)
 
 
-HOME_TITLE = "Stanford Dining, Side by Side"
+# The name is the brand, which the masthead and the site name keep. The title is
+# what a search result shows, so it carries the words people search with; it
+# says "menus" and not "today", because the board is the whole week.
+SITE_NAME = "Stanford Dining, Side by Side"
+HOME_TITLE = "Stanford Dining Hall Menus, Side by Side"
 HOME_DESCRIPTION = "Compare today's menus across Stanford dining halls, with a picture of every dish."
+
+
+def hall_title(name: str) -> str:
+    """A hall page's title. web/app.js writes the same one after it runs, which
+    is the one Google reads; a test holds the two together."""
+    return f"{name} Menu · {SITE_NAME}"
 
 
 def page_html(template: str, payload: dict, halls: list[dict], hall: dict | None) -> str:
@@ -387,11 +397,11 @@ def page_html(template: str, payload: dict, halls: list[dict], hall: dict | None
     home = f"https://{DOMAIN}/"
     if hall is None:
         ld = {"@context": "https://schema.org", "@type": "WebSite",
-              "name": HOME_TITLE, "url": home}
+              "name": SITE_NAME, "url": home}
         html = html.replace("<!--PRERENDER-->", "")
     else:
         url = f"{home}{hall['id']}/"
-        title = f"{hall['name']} Menu Today · {HOME_TITLE}"
+        title = hall_title(hall['name'])
         where = f" at {hall['address']}" if hall.get("address") else ""
         description = (f"What {hall['name']}{where} is serving today and this week: "
                        "every meal, with hours, allergens and a picture of every dish.")
