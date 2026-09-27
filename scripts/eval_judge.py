@@ -82,6 +82,8 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--brief-root", type=Path, default=ROOT,
                     help="project root whose data/briefs.json to read and write -- point it at a "
                          "scratch directory to try another brief writer without touching the real one")
+    ap.add_argument("--brief-batch", type=int, default=1, metavar="N",
+                    help="write briefs N dishes to a call, as gen_images.py does (default 1)")
     ap.add_argument("--workers", type=int, default=4)
     ap.add_argument("--out", type=Path, help="write every verdict here as JSON")
     args = ap.parse_args(argv)
@@ -109,7 +111,7 @@ def main(argv: list[str] | None = None) -> int:
 
     def brief_for(did: str) -> dict:
         existing = briefs.get(did)
-        if existing and brieflib.is_current(existing) and not args.rewrite:
+        if existing and brieflib.is_current(existing) and (not args.rewrite or did in batched):
             return existing
         b = brieflib.write(catalog[did], llm)
         with lock:  # record() re-reads and rewrites the file
@@ -119,6 +121,28 @@ def main(argv: list[str] | None = None) -> int:
 
     # Briefs first, one per dish, so no two cases race to write the same one.
     dish_ids = sorted({c[1] for c in cases})
+    batched: set[str] = set()
+    if args.brief_batch > 1:
+        todo = [d for d in dish_ids if args.rewrite or not brieflib.is_current(briefs.get(d))]
+        chunks = [todo[n:n + args.brief_batch] for n in range(0, len(todo), args.brief_batch)]
+
+        def write_chunk(chunk):
+            written = brieflib.write_many([catalog[d] for d in chunk], llm)
+            with lock:
+                for d, b in zip(chunk, written):
+                    if b:
+                        briefs[d] = b
+                        batched.add(d)
+                        brieflib.record(args.brief_root, d, b)
+            return sum(1 for b in written if b)
+
+        with ThreadPoolExecutor(args.workers) as ex:
+            for chunk, result in zip(chunks, ex.map(lambda c: _try(write_chunk, c), chunks)):
+                if isinstance(result, Exception):
+                    print(f"  batch of {len(chunk)} briefs failed: {result}", file=sys.stderr)
+                elif result < len(chunk):
+                    print(f"  batch left {len(chunk) - result} of {len(chunk)} unusable", file=sys.stderr)
+        # What a batch left out is written alone below, as gen_images.py does.
     with ThreadPoolExecutor(args.workers) as ex:
         for did, result in zip(dish_ids, ex.map(lambda d: _try(brief_for, d), dish_ids)):
             if isinstance(result, Exception):

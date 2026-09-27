@@ -172,8 +172,9 @@ class Gemini:
     Free within per-model rate limits; the price is that Google may use what is
     sent to improve its products, which for pictures of dining hall food is no
     price at all. A per-minute limit is waited out, as the 429 asks; one that
-    will not clear within a minute is the daily quota, and that is Unavailable.
-    An overloaded model (503) is retried with backoff, then also Unavailable.
+    will not clear within a minute or so is the daily quota, and that is
+    Unavailable. An overloaded model (503), or a 429 that names no wait, is
+    retried with backoff, then also Unavailable.
     The key travels in a header, never in the URL, so it cannot end up in a log.
     """
 
@@ -232,7 +233,11 @@ class Gemini:
                     wait = _retry_after(r.json())
                 except ValueError:
                     wait = None
-                if wait is not None and wait <= 60 and attempt < self.retries:
+                # A bare RESOURCE_EXHAUSTED, naming no quota and no wait, is
+                # Google's capacity rather than ours, and passes like an overload.
+                if wait is None:
+                    wait = 10 * 3 ** attempt
+                if wait <= 90 and attempt < self.retries:
                     time.sleep(wait + 1)
                     continue
                 raise Unavailable(f"Gemini quota: {r.text[:300]}")
@@ -313,7 +318,8 @@ def pick(which: str = "auto", claude_model: str = "sonnet", role: str = "judge")
 
     def gemini():
         if role == "brief":
-            return Chain(Gemini(model=m) for m in BRIEF_MODELS)
+            # Room for a batch of briefs and the thinking before them.
+            return Chain(Gemini(model=m, max_tokens=16384) for m in BRIEF_MODELS)
         return Gemini()
 
     if which == "claude":

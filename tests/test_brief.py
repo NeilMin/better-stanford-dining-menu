@@ -69,6 +69,25 @@ class TestWriteAndRevise:
         assert b["rev"] == brieflib.BRIEF_REV
         assert (b["model"], b["name"], b["revisions"]) == ("fake", "Beef & Lamb Gyro Meat", 0)
 
+    def test_one_call_writes_several_briefs_in_order(self, fake_llm):
+        lasagna = {**GYRO, "dish": "vegetable lasagna"}
+        fake_llm.briefs += [GYRO, lasagna]
+        dishes = [entry(), entry("Vegetable Lasagna", "pasta, ricotta", tags=["vegetarian"])]
+        written = brieflib.write_many(dishes, fake_llm)
+        assert len(fake_llm.calls) == 1
+        prompt = fake_llm.calls[0][1]
+        assert "[1]\nDish: Beef & Lamb Gyro Meat" in prompt and "[2]\nDish: Vegetable Lasagna" in prompt
+        assert "Reply with this JSON object" not in prompt
+        assert [b["dish"] for b in written] == ["Greek gyro meat", "vegetable lasagna"]
+        assert [b["name"] for b in written] == ["Beef & Lamb Gyro Meat", "Vegetable Lasagna"]
+        assert all(b["rev"] == brieflib.BRIEF_REV and b["revisions"] == 0 for b in written)
+
+    def test_a_brief_the_batch_left_out_or_mangled_comes_back_none(self, fake_llm):
+        fake_llm.briefs.append(json.dumps({"1": {**GYRO, "vessel": "tray"}, "3": GYRO}))
+        written = brieflib.write_many([entry(), entry("Carnitas"), entry("Pozole")], fake_llm)
+        assert written[:2] == [None, None]  # a vessel that is not one; no "2" at all
+        assert written[2]["name"] == "Pozole"
+
     def test_a_revision_keeps_the_checks_whatever_the_writer_says(self, fake_llm):
         """A model asked to get past its own failed check will decide the check was wrong."""
         fake_llm.briefs.append(GYRO)

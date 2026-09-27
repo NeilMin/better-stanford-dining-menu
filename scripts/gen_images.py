@@ -154,6 +154,8 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--revisions", type=int, default=1, metavar="N",
                     help="times the brief is revised after its pictures all fail (default 1)")
     ap.add_argument("--rewrite-briefs", action="store_true", help="write the briefs afresh")
+    ap.add_argument("--brief-batch", type=int, default=8, metavar="N",
+                    help="dishes whose briefs one call writes (default 8)")
     ap.add_argument("--limit", type=int, help="stop after N dishes")
     ap.add_argument("--only", help="substring match on the dish name, or =exact name")
     ap.add_argument("--force", action="store_true", help="redraw dishes that already have images")
@@ -263,21 +265,43 @@ def main(argv: list[str] | None = None) -> int:
     done = rejected = passed = 0
     drawn = 0
     briefs = brieflib.load(ROOT)
+    fresh: set[str] = set()  # written this run, so --rewrite-briefs writes each once
+
+    def needs_brief(did: str) -> bool:
+        return bool(llm) and did not in fresh and (
+            args.rewrite_briefs or not brieflib.is_current(briefs.get(did)))
+
+    def keep_brief(did: str, brief: dict) -> None:
+        brieflib.record(ROOT, did, brief)
+        briefs[did] = brief
+        fresh.add(did)
 
     try:
         for i, (did, entry) in enumerate(pending, 1):
             tag = f"  [{i}/{len(pending)}] P{entry.get('priority', 2)} {entry['name'][:42]:42.42s}"
 
-            brief = briefs.get(did)
-            if llm and (args.rewrite_briefs or not brieflib.is_current(brief)):
+            # One call writes this dish's brief and the next few that need one.
+            batch = [(d, e) for d, e in pending[i - 1:] if needs_brief(d)][:args.brief_batch]
+            if len(batch) > 1 and batch[0][0] == did:
                 try:
-                    brief = brieflib.write(entry, llm)
+                    written = brieflib.write_many([e for _, e in batch], llm)
+                except Unavailable:
+                    raise
+                except LLMError as exc:
+                    print(f"{tag} batch of briefs failed, writing them one by one: {exc}", file=sys.stderr)
+                    written = []
+                for (d, _), b in zip(batch, written):
+                    if b:
+                        keep_brief(d, b)
+            if needs_brief(did):
+                try:
+                    keep_brief(did, brieflib.write(entry, llm))
                 except Unavailable:
                     raise
                 except LLMError as exc:
                     print(f"{tag} no brief: {exc}", file=sys.stderr)
                     continue
-                brieflib.record(ROOT, did, brief)
+            brief = briefs.get(did)
 
             base_seed = args.seed if args.seed is not None else seed_for(did, entry)
             kept = None
@@ -313,7 +337,7 @@ def main(argv: list[str] | None = None) -> int:
                     except LLMError as exc:
                         print(f"{tag} revision failed: {exc}", file=sys.stderr)
                         break
-                    brieflib.record(ROOT, did, brief)
+                    keep_brief(did, brief)
                 if brief:
                     positive, negative = brieflib.compose(entry, brief, close=backend == "cloudflare")
                 else:

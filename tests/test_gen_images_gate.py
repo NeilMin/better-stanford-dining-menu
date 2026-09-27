@@ -130,6 +130,38 @@ def test_a_redraw_that_fails_leaves_the_old_picture_alone(setup):
     assert setup.catalog()["aaaa0001"]["image"] == "aaaa0001.webp"
 
 
+BROCCOLI = {
+    "dish": "steamed broccoli", "look": "bright green broccoli florets", "vessel": "bowl",
+    "avoid": ["meat"], "checks": [{"q": "Is it broccoli?", "yes": True}],
+}
+
+
+def test_one_call_writes_the_briefs_for_the_dishes_ahead(setup):
+    setup.llm.briefs += [BRIEF, BROCCOLI]
+    setup.llm.verdicts += [PASS, PASS]
+    assert main(["--backend", "comfyui"]) == 0
+    assert [kind for kind, _ in setup.llm.calls].count("brief") == 1
+    assert set(brieflib.load(setup.root)) == {"aaaa0001", "bbbb0002"}
+    assert setup.drawn[1]["positive"].startswith("steamed broccoli, bright green broccoli florets")
+    assert setup.image("bbbb0002").exists()
+
+
+def test_a_dish_the_batch_left_out_is_asked_for_alone(setup):
+    setup.llm.briefs += [json.dumps({"1": BRIEF}), BROCCOLI]
+    setup.llm.verdicts += [PASS, PASS]
+    assert main(["--backend", "comfyui"]) == 0
+    brief_calls = [prompt for kind, prompt in setup.llm.calls if kind == "brief"]
+    assert len(brief_calls) == 2 and "Write the brief for one dish" in brief_calls[1]
+    assert brieflib.load(setup.root)["bbbb0002"]["dish"] == "steamed broccoli"
+
+
+def test_a_failed_batch_falls_back_to_one_brief_at_a_time(setup):
+    setup.llm.briefs += [LLMError("garbled"), BRIEF, BROCCOLI]
+    setup.llm.verdicts += [PASS, PASS]
+    assert main(["--backend", "comfyui"]) == 0
+    assert setup.image("aaaa0001").exists() and setup.image("bbbb0002").exists()
+
+
 def test_a_picture_the_judge_could_not_read_is_not_kept(setup):
     setup.llm.briefs.append(BRIEF)
     setup.llm.verdicts += [LLMError("garbled"), PASS]

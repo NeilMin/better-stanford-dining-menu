@@ -134,6 +134,25 @@ def write_request(entry: dict) -> str:
     )
 
 
+def write_many_request(entries: list[dict]) -> str:
+    """One request for several dishes' briefs, keyed "1", "2", ... in order.
+
+    Numbers rather than dish ids: a model copies a short number back reliably
+    and a 12-digit hex id not always.
+    """
+    dishes = "\n\n".join(f"[{n}]\n{_describe(entry)}" for n, entry in enumerate(entries, 1))
+    return (
+        f"Write the briefs for these {len(entries)} dishes from a Stanford dining hall menu, each "
+        "on its own merits. Each picture shows its one dish alone; the photo style is added for "
+        "you, so describe only the food.\n\n"
+        f"{dishes}\n\n"
+        + _FORMAT.replace("Reply with this JSON object:", "Each brief is this JSON object:", 1)
+        + f"\n\n{_EXAMPLES}\n\n"
+        "Reply with one JSON object that maps each dish's number to its brief: "
+        '{"1": {"dish": ...}, "2": {"dish": ...}}'
+    )
+
+
 def unanswerable(brief: dict, verdicts: list[dict]) -> list[str]:
     """The brief's checks the judge failed only ever by saying "unclear".
 
@@ -176,7 +195,10 @@ def revise_request(entry: dict, brief: dict, verdicts: list[dict]) -> str:
 
 def parse(text: str) -> dict:
     """Validate a model's answer into a brief, or raise BriefError."""
-    raw = parse_json(text)
+    return _validate(parse_json(text))
+
+
+def _validate(raw: dict) -> dict:
     dish = str(raw.get("dish") or "").strip()
     look = str(raw.get("look") or "").strip().rstrip(".")
     vessel = raw.get("vessel")
@@ -207,6 +229,27 @@ def _stamp(brief: dict, entry: dict, llm) -> dict:
 def write(entry: dict, llm) -> dict:
     brief = parse(llm.ask(write_request(entry), system=SYSTEM))
     return {**_stamp(brief, entry, llm), "revisions": 0}
+
+
+def write_many(entries: list[dict], llm) -> list[dict | None]:
+    """Briefs for several dishes from one call; None for any the answer left unusable.
+
+    The format rules and the examples are most of a request, so one call for
+    eight dishes costs about what two single ones do. That is what lets Gemini
+    Flash, at 20 free requests a day, write every brief a night needs instead
+    of handing the rest to Gemma. A dish left out or malformed comes back None
+    and the caller asks for it alone.
+    """
+    answer = parse_json(llm.ask(write_many_request(entries), system=SYSTEM))
+    out: list[dict | None] = []
+    for n, entry in enumerate(entries, 1):
+        item = answer.get(str(n))
+        try:
+            brief = _validate(item) if isinstance(item, dict) else None
+        except BriefError:
+            brief = None
+        out.append({**_stamp(brief, entry, llm), "revisions": 0} if brief else None)
+    return out
 
 
 def revise(entry: dict, brief: dict, verdicts: list[dict], llm) -> dict:

@@ -20,6 +20,7 @@ predicate apart and no test should be the second place that predicate is spelled
 from __future__ import annotations
 
 import json
+import re
 import shutil
 from datetime import date
 from pathlib import Path
@@ -237,6 +238,11 @@ class FakeLLM:
     A request with an image is the judge; one without is the brief writer. Each
     pops the next answer off its own queue: a dict is sent as JSON, a string
     as is, an exception is raised. `calls` records (kind, prompt) in order.
+
+    A request for several briefs at once ("[1]", "[2]", ... in the prompt) is
+    answered from the same queue, one brief per dish, so a test queues briefs
+    in dish order and does not care how they were asked for. An exception or a
+    string at the head of the queue answers the whole batch.
     """
 
     name = "fake"
@@ -257,6 +263,12 @@ class FakeLLM:
         queue = self.verdicts if images else self.briefs
         if not queue:
             raise AssertionError(f"unexpected {kind} request: {prompt[:80]!r}")
+        many = len(re.findall(r"^\[\d+\]$", prompt, re.MULTILINE)) if not images else 0
+        if many and isinstance(queue[0], dict):
+            batch = {}
+            while len(batch) < many and queue and isinstance(queue[0], dict):
+                batch[str(len(batch) + 1)] = queue.pop(0)
+            return json.dumps(batch)
         answer = queue.pop(0)
         if isinstance(answer, Exception):
             raise answer

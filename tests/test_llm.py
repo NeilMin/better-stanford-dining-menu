@@ -161,10 +161,20 @@ def test_gemini_waits_out_a_per_minute_limit(monkeypatch):
 
 def test_gemini_out_of_daily_quota_is_unavailable(monkeypatch):
     monkeypatch.setattr(llmlib.time, "sleep", lambda s: None)
+    session = FakeSession(quota("3600s"))
     with pytest.raises(Unavailable):
-        llmlib.Gemini(key="k", session=FakeSession(quota())).ask("x")
+        llmlib.Gemini(key="k", session=session).ask("x")
+    assert len(session.posts) == 1, "an hour's wait is tomorrow's quota: do not ask again"
+
+
+def test_gemini_backs_off_a_429_that_names_no_wait(monkeypatch):
+    """Google's own capacity: it answered again seconds later in the eval that found it."""
+    slept = []
+    monkeypatch.setattr(llmlib.time, "sleep", slept.append)
+    assert llmlib.Gemini(key="k", session=FakeSession(quota(), answer("ok"))).ask("x") == "ok"
+    assert slept == [11]
     with pytest.raises(Unavailable):
-        llmlib.Gemini(key="k", session=FakeSession(quota("3600s"))).ask("x")
+        llmlib.Gemini(key="k", session=FakeSession(*[quota()] * 4)).ask("x")
 
 
 def test_gemini_with_a_bad_key_or_none_is_unavailable():
