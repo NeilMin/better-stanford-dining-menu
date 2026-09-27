@@ -677,6 +677,40 @@
   "vessel": "plate",
   "written_at": "2026-09-27T07:44:39+00:00"
  },
+ "0ea38ff9e9b2": {
+  "avoid": [
+   "sausage link",
+   "hot dog",
+   "bun",
+   "bread",
+   "eggs",
+   "bacon",
+   "pancakes",
+   "gravy"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a cooked round sausage patty?",
+    "yes": true
+   },
+   {
+    "q": "Is the sausage in a long link or cylindrical casing?",
+    "yes": false
+   },
+   {
+    "q": "Is the patty served inside a bun or sandwich?",
+    "yes": false
+   }
+  ],
+  "dish": "pork sausage patty",
+  "look": "single round seared pork sausage patty, dark golden brown pan-fried crust, juicy coarsely ground texture, faint glistening oil sheen",
+  "model": "gemini-3.6-flash",
+  "name": "Pork Sausage Patty",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-27T14:22:11+00:00"
+ },
  "0fc2b8ff45b2": {
   "avoid": [
    "pita bread",
@@ -792,12 +826,10 @@
    "pork",
    "fish",
    "shrimp",
-   "bacon bits",
    "sour cream",
-   "cheddar cheese",
-   "butter",
-   "melted cheese sauce",
-   "white creamy filling"
+   "cheese",
+   "white crumbles",
+   "herbs"
   ],
   "checks": [
    {
@@ -814,13 +846,13 @@
    }
   ],
   "dish": "baked potato",
-  "look": "whole baked russet potato, split open lengthwise across the top, fluffy steaming white potato interior visible in the split, dry papery brown skin intact and closed around the sides and ends, sprinkle of coarse sea salt",
-  "model": "claude-sonnet",
+  "look": "single whole baked russet potato, split open lengthwise across top, fluffy steaming pale yellow potato flesh visible inside split, rough dry papery brown potato skin wrapped around sides, plain bare potato interior",
+  "model": "gemini-3.6-flash",
   "name": "Baked Potato",
   "rev": 6,
-  "revisions": 1,
+  "revisions": 2,
   "vessel": "plate",
-  "written_at": "2026-09-27T09:47:29+00:00"
+  "written_at": "2026-09-27T16:11:50+00:00"
  },
  "13d7bb8eea9f": {
   "avoid": [
@@ -856,6 +888,38 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T08:27:45+00:00"
+ },
+ "1473088ca909": {
+  "avoid": [
+   "croissant",
+   "biscuit",
+   "sliced toast",
+   "scrambled egg",
+   "bacon",
+   "burger bun"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a breakfast sandwich on an english muffin?",
+    "yes": true
+   },
+   {
+    "q": "Are the contents served loose without bread?",
+    "yes": false
+   },
+   {
+    "q": "Is the egg scrambled instead of a fried egg disk?",
+    "yes": false
+   }
+  ],
+  "dish": "sausage egg and cheese english muffin sandwich",
+  "look": "toasted english muffin, melted yellow cheddar cheese draped over a round fried egg, savory brown pork sausage patty inside",
+  "model": "gemini-3.6-flash",
+  "name": "Pork Sausage, Egg & Cheese Sandwich",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-27T14:22:11+00:00"
  },
  "15057c283627": {
   "avoid": [
@@ -1149,6 +1213,39 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-26T20:19:32+00:00"
+ },
+ "19b1ec6ed747": {
+  "avoid": [
+   "fried egg",
+   "omelet",
+   "bread",
+   "toast",
+   "pancakes",
+   "bacon",
+   "raw egg"
+  ],
+  "checks": [
+   {
+    "q": "Is the main dish scrambled eggs?",
+    "yes": true
+   },
+   {
+    "q": "Is it a folded omelet or fried sunny-side-up egg?",
+    "yes": false
+   },
+   {
+    "q": "Is the egg served inside a sandwich or wrap?",
+    "yes": false
+   }
+  ],
+  "dish": "sausage and egg scramble",
+  "look": "soft fluffy scrambled yellow eggs, sliced savory cooked pork sausage, sauteed diced bell peppers and green zucchini, glistening steam",
+  "model": "gemini-3.6-flash",
+  "name": "Sausage Power Scramble",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-27T14:22:11+00:00"
  },
  "19dc59952f8c": {
   "avoid": [
@@ -6819,6 +6916,40 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T07:39:15+00:00"
  },
+ "8aa578bdf257": {
+  "avoid": [
+   "pita",
+   "wrap",
+   "sandwich",
+   "skewers",
+   "kebabs",
+   "raw chicken",
+   "tzatziki",
+   "rice"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item seasoned cooked meat slices?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat on skewers?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat wrapped inside a pita or flatbread?",
+    "yes": false
+   }
+  ],
+  "dish": "chicken shawarma",
+  "look": "thin sliced marinated chicken, golden-brown seared edges, tender spiced meat pieces, faint dusting of reddish-amber spices, scattered parsley garnish",
+  "model": "gemini-3.6-flash",
+  "name": "Chicken Shawarma",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-27T14:22:11+00:00"
+ },
  "8acf693c691b": {
   "avoid": [
    "burrito",
@@ -7077,6 +7208,42 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T04:46:15+00:00"
+ },
+ "8f4c3fdf173a": {
+  "avoid": [
+   "french fries",
+   "mashed potatoes",
+   "potato chips",
+   "raw potato",
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item roasted potato pieces?",
+    "yes": true
+   },
+   {
+    "q": "Are the potatoes mashed or pureed?",
+    "yes": false
+   },
+   {
+    "q": "Does the dish contain meat or poultry?",
+    "yes": false
+   }
+  ],
+  "dish": "turmeric roasted potatoes",
+  "look": "roasted potato cubes, bright golden yellow turmeric seasoning, crispy caramelized edges, soft fluffy center, specks of ground spices",
+  "model": "gemini-3.6-flash",
+  "name": "Turmeric Roasted Potatoes",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-27T14:22:11+00:00"
  },
  "8f4cf22b861e": {
   "avoid": [
@@ -9574,6 +9741,42 @@
   "vessel": "plate",
   "written_at": "2026-09-27T06:01:04+00:00"
  },
+ "bbc0c98b2298": {
+  "avoid": [
+   "french fries",
+   "mashed potatoes",
+   "hash browns patty",
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "eggs"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item diced potatoes with vegetables?",
+    "yes": true
+   },
+   {
+    "q": "Are the potatoes fried as long thin french fries?",
+    "yes": false
+   },
+   {
+    "q": "Does the dish contain meat or eggs?",
+    "yes": false
+   }
+  ],
+  "dish": "breakfast home fries",
+  "look": "diced roasted potatoes, crispy brown edges, mixed with sauteed red and green bell pepper dice and softened onions, light reddish paprika tint",
+  "model": "gemini-3.6-flash",
+  "name": "Farm-Style Potatoes",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-27T14:22:11+00:00"
+ },
  "bdef8f7e01fc": {
   "avoid": [
    "rice",
@@ -11036,6 +11239,40 @@
   "revisions": 1,
   "vessel": "bowl",
   "written_at": "2026-09-27T06:13:25+00:00"
+ },
+ "d9a3f416baa8": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "raw tofu",
+   "soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cooked tofu in red sauce?",
+    "yes": true
+   },
+   {
+    "q": "Does the dish contain meat, poultry, or seafood?",
+    "yes": false
+   },
+   {
+    "q": "Is the tofu plain white and uncooked?",
+    "yes": false
+   }
+  ],
+  "dish": "harissa tofu",
+  "look": "seared golden tofu cubes, coated in thick fiery red harissa chili sauce, caramelized edges, sprinkled with flecks of green herbs",
+  "model": "gemini-3.6-flash",
+  "name": "Harissa Tofu",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-27T14:22:11+00:00"
  },
  "da48c9dfa5ad": {
   "avoid": [
