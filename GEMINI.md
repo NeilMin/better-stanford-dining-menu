@@ -75,7 +75,7 @@ uv run python scripts/fetch_specials.py --show
 
 ### Scraper & Source Integrity
 - **Sequential Requests Only**: R&DE's app is ASP.NET WebForms. `__VIEWSTATE` and `__EVENTVALIDATION` rotate on each request. Requests **cannot** be parallelized.
-- **Clock is Pacific (`America/Los_Angeles`)**: Scheduled cron runs twice daily (08:30 UTC = 01:30 PT, and 21:30 UTC = 14:30 PT). `bsdm/menus.py:today()` defines the serving date.
+- **Clock is Pacific (`America/Los_Angeles`)**: Scheduled cron runs four times a day (`refresh.yml` has the slots, set against GitHub's start delays). `bsdm/menus.py:today()` defines the serving date.
 - **Self-Healing Scraper Retries**: If an expected service returns empty dishes (due to transient ASP.NET session desync / empty postback), `scripts/update.py` immediately retries once with a fresh `MenuScraper` instance and adopts the new healthy session upon recovery.
 - **Archive is Append-Only**: Days `< today` are moved from `data/menus/live/` to `data/menus/archive/YYYY/MM/` by `bsdm/menus.py:archive_past()`. Past days are never re-scraped or overwritten.
 - **A New Dining Hall Causes a Red CI Run**: `bsdm/source.py` tracks halls in the dropdown. If R&DE adds a hall not in `config/halls.json`, `scripts/check_source.py` fails the CI run *after* data is committed and published. This alerts the maintainer immediately without losing data.

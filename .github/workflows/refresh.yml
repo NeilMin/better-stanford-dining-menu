@@ -6,11 +6,26 @@ name: Daily menu refresh
 
 on:
   schedule:
-    # Run twice daily:
-    # 08:30 UTC is 01:30 PT, after R&DE has rolled the window to the next day at midnight.
-    # 21:30 UTC is 14:30 PT, after lunch, catching afternoon updates before dinner.
-    - cron: "30 8,21 * * *"
+    # Four times a day. R&DE edits today's and the coming days' menus during
+    # the day -- the afternoon scrape found changed meals in days already on
+    # file every day in September 2026 -- so twice a day left the board wrong
+    # until dinner. GitHub starts scheduled runs late: in September 2026 the
+    # 08:30 UTC slot started around 13:30 and the 21:30 slot around 23:50. The
+    # slots are set against those delays, so each run should land about when
+    # it is useful (PDT; PST is an hour earlier):
+    #   03:17 UTC, 20:17 PT: tomorrow's edits, drawn overnight
+    #   08:17 UTC, 01:17 PT: the window rolls to a new day; lands before breakfast
+    #   15:17 UTC, 08:17 PT: lands before lunch
+    #   20:17 UTC, 13:17 PT: lands before dinner
+    # Off the hour and the half hour, where GitHub's scheduler is busiest.
+    - cron: "17 3,8,15,20 * * *"
   workflow_dispatch:
+
+# A late run can start while the next one is still going; two scrapes
+# committing data/ at once would race to push.
+concurrency:
+  group: refresh
+  cancel-in-progress: false
 
 permissions:
   contents: write   # the night's menus

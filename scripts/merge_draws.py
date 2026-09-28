@@ -3,7 +3,7 @@
 
 .github/workflows/draw.yml splits the night's queue across free runners
 (gen_images.py --shard), each drawing on its own copy of data/. None of them may
-push -- they would race each other and the twice-daily scrape -- so each hands
+push -- they would race each other and the scrape -- so each hands
 its data/ back as an artifact, and this applies what each one changed to the
 catalog as it is *now*, which a scrape may have rewritten since they started.
 

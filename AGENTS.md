@@ -32,7 +32,7 @@ This file covers the invariants that are easy to break and only visible across s
 | `data/` | Scraped menus (`live/`, `archive/`), `dishes.json`, `stations.json`, `zh.json`, images, and logos. |
 | `web/` | Web template (`index.html`), vanilla JS application (`app.js`), and responsive styles (`app.css`). |
 | `tests/` | Pytest test suite, mock fixtures (`conftest.py`), and JS bridge tests (`test_web_js.py`). |
-| `.github/workflows/` | `refresh.yml` (scrape and translate, twice a day), `draw.yml` (after each scrape: draw and judge new dishes on several free runners at once), `pages.yml` (test, build, deploy to GitHub Pages). |
+| `.github/workflows/` | `refresh.yml` (scrape and translate, four times a day), `draw.yml` (after each scrape: draw and judge new dishes on several free runners at once), `pages.yml` (test, build, deploy to GitHub Pages). |
 
 ## Commands
 

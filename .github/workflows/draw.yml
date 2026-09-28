@@ -34,9 +34,10 @@ on:
         type: boolean
         default: false
 
-# One night's drawing at a time. The second scrape of the day can land while
-# the first night's machines are still drawing; it waits rather than drawing the
-# same dishes a second time.
+# One night's drawing at a time. The next scrape can land while the last one's
+# machines are still drawing; it waits rather than drawing the same dishes a
+# second time. GitHub keeps one waiting run and cancels an older one, which
+# loses nothing: plan reads main by name and counts the whole queue.
 concurrency:
   group: draw
   cancel-in-progress: false
