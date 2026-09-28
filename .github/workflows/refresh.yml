@@ -66,10 +66,32 @@ jobs:
           git add data/
           if git diff --cached --quiet; then
             echo "No menu or asset changes."
-          else
-            git commit -m "data: refresh menus and assets for $(date -u +%Y-%m-%d)"
-            git push
+            exit 0
           fi
+          git commit -qm "data: refresh menus and assets for $(date -u +%Y-%m-%d)"
+          # draw.yml's collect, or a laptop, may have pushed since this run
+          # checked out; replay the scrape on top of main as it is now. The one
+          # file both sides write is data/dishes.json -- the scrape re-derives
+          # it, a draw records pictures in it -- so a conflict there is settled
+          # by taking main's and deriving over it again: the carry-over in
+          # catalog.build() keeps the pictures, the menus just scraped give the
+          # rest. A conflict anywhere else is for a person, and the next scrape
+          # picks the menus up again meanwhile.
+          for attempt in 1 2 3; do
+            if git push -q; then exit 0; fi
+            git fetch -q origin main
+            if ! git rebase -q origin/main; then
+              if [ "$(git diff --name-only --diff-filter=U)" != "data/dishes.json" ]; then
+                git rebase --abort
+                exit 1
+              fi
+              git checkout -q --ours data/dishes.json   # mid-rebase, "ours" is main
+              uv run python scripts/rebuild_catalog.py
+              git add data/dishes.json
+              GIT_EDITOR=true git rebase --continue
+            fi
+          done
+          exit 1
 
       # Last, and on purpose. R&DE adding a dining hall is not something the
       # scrape can act on -- a hall needs a menu_key, a schedule, aliases, an
