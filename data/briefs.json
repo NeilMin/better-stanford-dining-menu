@@ -11424,6 +11424,42 @@
   "vessel": "plate",
   "written_at": "2026-09-27T06:14:59+00:00"
  },
+ "dc9ea5f39a91": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "sausage",
+   "raw pasta",
+   "dry pasta",
+   "basil"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food pasta in cream sauce?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat, chicken, or seafood with the pasta?",
+    "yes": false
+   },
+   {
+    "q": "Is the pasta uncooked or raw?",
+    "yes": false
+   }
+  ],
+  "dish": "Rasta pasta",
+  "look": "penne pasta heavily coated in thick creamy orange-yellow jerk sauce, rich cheese sauce, sauteed red bell pepper strips, yellow bell pepper strips, green bell pepper strips, wilted green spinach",
+  "model": "gemini-3.6-flash",
+  "name": "Rasta Pasta",
+  "rev": 6,
+  "revisions": 1,
+  "vessel": "bowl",
+  "written_at": "2026-09-28T00:56:04+00:00"
+ },
  "dcccf92d99b0": {
   "avoid": [
    "meat",
@@ -12879,6 +12915,39 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T06:01:04+00:00"
+ },
+ "fbbcd78bd682": {
+  "avoid": [
+   "pulled pork",
+   "ribs",
+   "pork chop",
+   "ground meat",
+   "skewers",
+   "raw meat",
+   "rice"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cooked glazed meat?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat shredded or pulled?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat served on skewers?",
+    "yes": false
+   }
+  ],
+  "dish": "Jamaican jerk pork belly",
+  "look": "thick slices of seared pork belly, glossy dark brown jerk glaze, charred edges, crisp fat cap, juicy tender meat, topped with sliced red onions and green scallions",
+  "model": "gemini-3.6-flash",
+  "name": "Jerk Pork Belly",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-28T00:03:54+00:00"
  },
  "fd0eea6f082a": {
   "avoid": [
