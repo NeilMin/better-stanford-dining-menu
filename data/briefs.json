@@ -11432,33 +11432,35 @@
    "pork",
    "fish",
    "shrimp",
-   "sausage",
-   "raw pasta",
-   "dry pasta",
-   "basil"
+   "dry pasta with no visible sauce",
+   "plain pasta with only spinach and no sauce",
+   "light thin oil-based sauce",
+   "clear or watery sauce",
+   "basil leaf garnish",
+   "vinaigrette"
   ],
   "checks": [
    {
-    "q": "Is the main food pasta in cream sauce?",
+    "q": "Is the main food pasta in a creamy sauce?",
     "yes": true
    },
    {
-    "q": "Are there pieces of meat, chicken, or seafood with the pasta?",
+    "q": "Is there a piece of meat, chicken, or seafood in the dish?",
     "yes": false
    },
    {
-    "q": "Is the pasta uncooked or raw?",
+    "q": "Is the sauce a red tomato sauce instead of creamy?",
     "yes": false
    }
   ],
-  "dish": "Rasta pasta",
-  "look": "penne pasta heavily coated in thick creamy orange-yellow jerk sauce, rich cheese sauce, sauteed red bell pepper strips, yellow bell pepper strips, green bell pepper strips, wilted green spinach",
-  "model": "gemini-3.6-flash",
+  "dish": "Rasta Pasta",
+  "look": "penne pasta coated heavily in a thick, glossy, orange-tinted creamy sauce, sauce clinging to and pooling around every piece, colorful julienned red, yellow, and green bell pepper strips mixed throughout, wilted spinach ribbons, red onion slivers, scallion flecks, melted cheddar cheese coating the noodles",
+  "model": "claude-sonnet",
   "name": "Rasta Pasta",
   "rev": 6,
-  "revisions": 1,
+  "revisions": 3,
   "vessel": "bowl",
-  "written_at": "2026-09-28T00:56:04+00:00"
+  "written_at": "2026-09-28T01:30:01+00:00"
  },
  "dcccf92d99b0": {
   "avoid": [
@@ -12918,36 +12920,37 @@
  },
  "fbbcd78bd682": {
   "avoid": [
-   "pulled pork",
-   "ribs",
-   "pork chop",
+   "chicken",
+   "beef",
+   "bacon strips",
    "ground meat",
+   "raw pork",
    "skewers",
-   "raw meat",
-   "rice"
+   "rice",
+   "salad"
   ],
   "checks": [
    {
-    "q": "Is the main item cooked glazed meat?",
+    "q": "Is the main item chunks or cubes of pork belly?",
     "yes": true
    },
    {
-    "q": "Is the meat shredded or pulled?",
+    "q": "Is the meat raw or unseared?",
     "yes": false
    },
    {
-    "q": "Is the meat served on skewers?",
+    "q": "Is the meat a whole intact slab rather than cut pieces?",
     "yes": false
    }
   ],
-  "dish": "Jamaican jerk pork belly",
-  "look": "thick slices of seared pork belly, glossy dark brown jerk glaze, charred edges, crisp fat cap, juicy tender meat, topped with sliced red onions and green scallions",
-  "model": "gemini-3.6-flash",
+  "dish": "jerk pork belly",
+  "look": "seared cubes of pork belly, dark caramelized glazed exterior, charred spice crust flecked with garlic and turmeric, thick tender fatty layer, glossy sticky sauce, scattered sliced onions",
+  "model": "claude-sonnet",
   "name": "Jerk Pork Belly",
   "rev": 6,
   "revisions": 0,
   "vessel": "plate",
-  "written_at": "2026-09-28T00:03:54+00:00"
+  "written_at": "2026-09-28T01:14:44+00:00"
  },
  "fd0eea6f082a": {
   "avoid": [
