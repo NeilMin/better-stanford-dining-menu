@@ -576,6 +576,38 @@
   "vessel": "plate",
   "written_at": "2026-09-27T06:14:59+00:00"
  },
+ "0a682c33bc74": {
+  "avoid": [
+   "taco",
+   "burrito",
+   "wrap",
+   "sandwich on sliced bread",
+   "omelet",
+   "pancake"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a sandwich on a roll?",
+    "yes": true
+   },
+   {
+    "q": "Is the filling wrapped in a tortilla?",
+    "yes": false
+   },
+   {
+    "q": "Is the egg served as a loose scramble without bread?",
+    "yes": false
+   }
+  ],
+  "dish": "ham and egg torta",
+  "look": "telera bread roll, melted provolone cheese, folded scrambled eggs, thin slices of ham, creamy refried pinto beans, rings of white onion, slices of green jalapeno",
+  "model": "gemma-4-26b-a4b-it",
+  "name": "Ham and Egg Torta Ham and Egg Torta with Spicy Ref",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-28T17:10:34+00:00"
+ },
  "0bfcdb7add10": {
   "avoid": [
    "white fish",
@@ -925,6 +957,40 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T14:22:11+00:00"
+ },
+ "14ccbf8c361b": {
+  "avoid": [
+   "shrimp",
+   "salmon",
+   "tuna",
+   "chicken",
+   "nuggets",
+   "mashed potatoes",
+   "coleslaw",
+   "tartar sauce"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a battered fish fillet?",
+    "yes": true
+   },
+   {
+    "q": "Is the fish pink or orange like salmon?",
+    "yes": false
+   },
+   {
+    "q": "Is the fish served as nuggets or strips?",
+    "yes": false
+   }
+  ],
+  "dish": "fish and chips",
+  "look": "golden battered cod fillet, crispy fried exterior, thick cut french fries, pale yellow potato, lightly salted",
+  "model": "gemma-4-26b-a4b-it",
+  "name": "Fish & Chips",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-28T17:10:56+00:00"
  },
  "15057c283627": {
   "avoid": [
@@ -1756,6 +1822,42 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T08:19:18+00:00"
+ },
+ "2232c37b726e": {
+  "avoid": [
+   "noodles",
+   "pasta",
+   "rice",
+   "ground meat",
+   "mince",
+   "pork chops",
+   "sliced ham",
+   "ribs",
+   "whole pork shoulder",
+   "burger patty"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item shredded pork?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat in whole slices or chunks?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat ground like mince?",
+    "yes": false
+   }
+  ],
+  "dish": "BBQ Pulled Pork",
+  "look": "shredded pork strands, pulled meat texture, moist long fibers, thick glossy reddish-brown BBQ sauce, translucent sautéed onion pieces, pile of meat",
+  "model": "gemma-4-26b-a4b-it",
+  "name": "BBQ Pulled Pork",
+  "rev": 6,
+  "revisions": 1,
+  "vessel": "plate",
+  "written_at": "2026-09-28T17:48:21+00:00"
  },
  "2264c08eede4": {
   "avoid": [
@@ -3019,6 +3121,41 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T06:53:41+00:00"
+ },
+ "35146904e1f1": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "rice",
+   "noodles",
+   "soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item tofu?",
+    "yes": true
+   },
+   {
+    "q": "Is the tofu served as a whole block?",
+    "yes": false
+   },
+   {
+    "q": "Is there meat or fish in the dish?",
+    "yes": false
+   }
+  ],
+  "dish": "smoked tofu and BBQ eggplant",
+  "look": "cubed smoked tofu, charred eggplant chunks, sliced bell peppers, red onion wedges, cilantro leaves, glossy dark BBQ sauce",
+  "model": "gemma-4-26b-a4b-it",
+  "name": "Smoked Tofu & BBQ Eggplant",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-28T17:10:56+00:00"
  },
  "353521e62fe4": {
   "avoid": [
@@ -4667,6 +4804,43 @@
   "vessel": "bowl",
   "written_at": "2026-09-26T23:11:26+00:00"
  },
+ "5237eebdff4f": {
+  "avoid": [
+   "fresh herbs",
+   "leafy greens",
+   "salad",
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "cheese",
+   "egg"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item fried eggplant?",
+    "yes": true
+   },
+   {
+    "q": "Is there meat or fish on the plate?",
+    "yes": false
+   },
+   {
+    "q": "Is the eggplant served as a whole vegetable?",
+    "yes": false
+   }
+  ],
+  "dish": "Fried Eggplant with Garlic Chips",
+  "look": "thick slices of fried eggplant, golden brown crispy edges, strips of dark nori seaweed, golden french fries, minced garlic bits",
+  "model": "gemma-4-26b-a4b-it",
+  "name": "Fried Eggplant & Chips",
+  "rev": 6,
+  "revisions": 1,
+  "vessel": "plate",
+  "written_at": "2026-09-28T18:08:01+00:00"
+ },
  "530923e310e8": {
   "avoid": [
    "rice",
@@ -5059,6 +5233,40 @@
   "vessel": "plate",
   "written_at": "2026-09-27T05:20:07+00:00"
  },
+ "594ca166b6a4": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "mashed potatoes",
+   "soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a vegetable dish of cauliflower and potatoes?",
+    "yes": true
+   },
+   {
+    "q": "Is there meat or poultry in the dish?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a liquid soup or stew?",
+    "yes": false
+   }
+  ],
+  "dish": "aloo gobi",
+  "look": "roasted cauliflower florets, golden cooked potato chunks, yellow turmeric coating, bits of sautéed onion, visible cumin seeds",
+  "model": "gemma-4-26b-a4b-it",
+  "name": "Aloo Gobi",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-28T17:10:34+00:00"
+ },
  "597bc2aeda26": {
   "avoid": [
    "burger",
@@ -5235,6 +5443,41 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T04:46:15+00:00"
+ },
+ "6555ab16b826": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "pancakes",
+   "waffles",
+   "syrup bowl"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item bread sticks?",
+    "yes": true
+   },
+   {
+    "q": "Is the main item a round pancake?",
+    "yes": false
+   },
+   {
+    "q": "Is the bread served as a whole loaf?",
+    "yes": false
+   }
+  ],
+  "dish": "french toast sticks",
+  "look": "golden brown bread sticks, thick cut, crispy exterior, soft bread interior",
+  "model": "gemma-4-26b-a4b-it",
+  "name": "French Toast Sticks",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-28T17:10:56+00:00"
  },
  "66192846a159": {
   "avoid": [
@@ -6204,6 +6447,38 @@
   "vessel": "bowl",
   "written_at": "2026-09-26T23:10:44+00:00"
  },
+ "7596f807e76b": {
+  "avoid": [
+   "omelet",
+   "scrambled eggs",
+   "meat",
+   "bacon",
+   "sausage",
+   "pancakes"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item fried eggs with salsa?",
+    "yes": true
+   },
+   {
+    "q": "Are the eggs scrambled into a uniform mass?",
+    "yes": false
+   },
+   {
+    "q": "Is there meat served with the eggs?",
+    "yes": false
+   }
+  ],
+  "dish": "huevos adeltas with roasted salsa",
+  "look": "fried eggs, bright red roasted tomato and tomatillo salsa, bits of sautéed onion, fresh green cilantro leaves",
+  "model": "gemma-4-26b-a4b-it",
+  "name": "Huevos Adelita & Roasted Salsa",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-28T17:10:34+00:00"
+ },
  "75f6c9e945a1": {
   "avoid": [
    "bun",
@@ -6638,6 +6913,41 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T08:24:37+00:00"
+ },
+ "8014a0bb7d9f": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "mashed potatoes",
+   "regular straight fries",
+   "tater tots"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item waffle-cut fries?",
+    "yes": true
+   },
+   {
+    "q": "Are the fries regular straight-cut style?",
+    "yes": false
+   },
+   {
+    "q": "Is the food mashed or in a bowl?",
+    "yes": false
+   }
+  ],
+  "dish": "waffle fries",
+  "look": "crispy golden waffle fries, lattice pattern, seasoned potato strips, dusted with paprika and garlic powder",
+  "model": "gemma-4-26b-a4b-it",
+  "name": "Waffle Fries",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-28T17:10:56+00:00"
  },
  "81f15f5b56f3": {
   "avoid": [
@@ -7145,6 +7455,41 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-26T23:07:37+00:00"
+ },
+ "8d8cf25e24e2": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "waffles",
+   "french toast",
+   "oatmeal"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item pancakes?",
+    "yes": true
+   },
+   {
+    "q": "Is the main item a waffle?",
+    "yes": false
+   },
+   {
+    "q": "Is the pancake served as a crepe?",
+    "yes": false
+   }
+  ],
+  "dish": "banana pancakes",
+  "look": "fluffy multigrain pancakes, golden brown surface, sliced fresh banana pieces, soft texture",
+  "model": "gemma-4-26b-a4b-it",
+  "name": "Banana Pancakes",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-28T17:10:56+00:00"
  },
  "8ed0b23245c1": {
   "avoid": [
@@ -8545,6 +8890,42 @@
   "revisions": 1,
   "vessel": "plate",
   "written_at": "2026-09-27T07:04:09+00:00"
+ },
+ "a55b578ffea6": {
+  "avoid": [
+   "asparagus",
+   "asparagus spears",
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "cauliflower",
+   "broccoli florets only"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item broccolini?",
+    "yes": true
+   },
+   {
+    "q": "Is the vegetable cauliflower?",
+    "yes": false
+   },
+   {
+    "q": "Is the vegetable served as a soup?",
+    "yes": false
+   }
+  ],
+  "dish": "Roasted Parmesan Broccolini",
+  "look": "long slender broccolini stalks, dark green florets, charred edges, melted white parmesan cheese, golden toasted cheese crust, roasted vegetable texture",
+  "model": "gemma-4-26b-a4b-it",
+  "name": "Baked Parmesan Broccolini",
+  "rev": 6,
+  "revisions": 1,
+  "vessel": "plate",
+  "written_at": "2026-09-28T19:20:51+00:00"
  },
  "a9c64bca3f9a": {
   "avoid": [
@@ -10134,6 +10515,39 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T06:57:19+00:00"
+ },
+ "c55dfe6d0c41": {
+  "avoid": [
+   "omelet",
+   "scrambled eggs",
+   "meat",
+   "bacon",
+   "sausage",
+   "pancake",
+   "soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a baked frittata?",
+    "yes": true
+   },
+   {
+    "q": "Is the texture loose like scrambled eggs?",
+    "yes": false
+   },
+   {
+    "q": "Is there meat or poultry in the dish?",
+    "yes": false
+   }
+  ],
+  "dish": "tofu and egg substitute frittata",
+  "look": "thick baked savory egg-style cake, chunks of firm tofu, bright red bell pepper strips, slices of tomato, rings of onion, green pepperoncini slices",
+  "model": "gemma-4-26b-a4b-it",
+  "name": "\"Egg\" & Tofu Frittata",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-28T17:10:34+00:00"
  },
  "c579474200a3": {
   "avoid": [
@@ -11865,6 +12279,39 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T05:30:31+00:00"
  },
+ "e7579de20495": {
+  "avoid": [
+   "large meal",
+   "hot cooked breakfast",
+   "meat",
+   "eggs",
+   "bacon",
+   "sausage",
+   "pancakes"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item an assortment of cold breakfast items?",
+    "yes": true
+   },
+   {
+    "q": "Is the food served hot like cooked eggs or meat?",
+    "yes": false
+   },
+   {
+    "q": "Is there meat or dairy in the assortment?",
+    "yes": false
+   }
+  ],
+  "dish": "allergy-friendly breakfast assortment",
+  "look": "small containers of creamy chia seed pudding, bowls of overnight oats with granola, sliced bread, vegan yogurt, small seed bars",
+  "model": "gemma-4-26b-a4b-it",
+  "name": "Assorted Allergy-Friendly Items",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-28T17:10:34+00:00"
+ },
  "e7f69acf1c33": {
   "avoid": [
    "fried chicken",
@@ -12812,6 +13259,40 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T04:57:12+00:00"
+ },
+ "f95733897f23": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "soup",
+   "smooth sauce"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a green spinach dish with cheese cubes?",
+    "yes": true
+   },
+   {
+    "q": "Is there meat or poultry in the dish?",
+    "yes": false
+   },
+   {
+    "q": "Is the texture a thin liquid soup?",
+    "yes": false
+   }
+  ],
+  "dish": "palak paneer",
+  "look": "thick vibrant green spinach puree, cubes of white paneer cheese, flecks of red tomato, hints of yellow turmeric and spices",
+  "model": "gemma-4-26b-a4b-it",
+  "name": "Palak Paneer",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-28T17:10:34+00:00"
  },
  "f97bd50646a5": {
   "avoid": [
