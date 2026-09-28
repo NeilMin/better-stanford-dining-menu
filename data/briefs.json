@@ -9782,6 +9782,45 @@
   "vessel": "plate",
   "written_at": "2026-09-27T14:22:11+00:00"
  },
+ "bdc3480b4ef9": {
+  "avoid": [
+   "scrambled eggs",
+   "meat",
+   "bacon",
+   "sausage",
+   "ham",
+   "cheese",
+   "pancake stack",
+   "yogurt",
+   "butter pat"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a crumbled scramble texture?",
+    "yes": true
+   },
+   {
+    "q": "Is there bacon, sausage, or ham on the plate?",
+    "yes": false
+   },
+   {
+    "q": "Is the plate a stack of pancakes or waffles instead of a scramble?",
+    "yes": false
+   },
+   {
+    "q": "Is there a whole fried or sunny-side-up egg visible?",
+    "yes": false
+   }
+  ],
+  "dish": "vegan tofu scramble breakfast plate",
+  "look": "crumbled yellow tofu scramble flecked with turmeric, diced bell pepper and onion, side of roasted diced breakfast potatoes golden brown, sautéed spinach, avocado wedge, halved cherry tomatoes",
+  "model": "claude-sonnet",
+  "name": "Chef's Choice Vegan Breakfast",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-28T06:31:20+00:00"
+ },
  "bdef8f7e01fc": {
   "avoid": [
    "rice",
@@ -10128,6 +10167,44 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T08:19:18+00:00"
+ },
+ "c596a422a08d": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "bacon",
+   "sausage",
+   "pork",
+   "fish",
+   "shrimp",
+   "whole egg shells",
+   "fried egg",
+   "omelet",
+   "toast",
+   "chopped herb garnish"
+  ],
+  "checks": [
+   {
+    "q": "Does the main item look like soft scrambled eggs?",
+    "yes": true
+   },
+   {
+    "q": "Is the main item a whole fried or boiled egg shape?",
+    "yes": false
+   },
+   {
+    "q": "Is there visible meat mixed in with the eggs?",
+    "yes": false
+   }
+  ],
+  "dish": "vegan scrambled eggs",
+  "look": "scrambled plant-based eggs, soft moist yellow curds, matte turmeric-yellow color, visible diced onion pieces mixed throughout the curds, small soft loose clumps, mounded texture, light glossy sheen",
+  "model": "claude-sonnet",
+  "name": "Plant Powered \"Eggs”",
+  "rev": 6,
+  "revisions": 1,
+  "vessel": "plate",
+  "written_at": "2026-09-28T06:35:34+00:00"
  },
  "c5a5844a39d6": {
   "avoid": [
