@@ -1,6 +1,6 @@
 {
  "date": "2026-10-04",
- "scraped_at": "2026-09-29T02:55:18-07:00",
+ "scraped_at": "2026-09-29T13:01:26-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -1266,12 +1266,11 @@
    ],
    "Dinner": [
     {
-     "name": "Hawaiian Teriyaki Short Ribs",
-     "recipe_id": "HawShortRibs1",
+     "name": "Jamaican Oxtail Stew",
+     "recipe_id": "JamaicanOxtailStew1",
      "description": "",
-     "ingredients": "beef short ribs, teriyaki sauce (tamari, pineapple juice, brown sugar, ginger, garlic, apple cider vinegar, cornstarch, sesame oil), ginger, green onions, orange juice, orange zest, garlic, jalapeño, toasted sesame seeds, olive/canola oil blend, salt, black pepper",
+     "ingredients": "beef oxtail, beef base, carrot, lima beans, bay leaf, thyme, ginger, garlic, onion, salt, pepper, paprika, kitchen bouquet sauce, brown sugar, ketchup, allspice, green onions, cornstarch",
      "allergens": [
-      "SESAME",
       "SOY"
      ],
      "trace_allergens": [],
@@ -1327,18 +1326,25 @@
      "order": 3
     },
     {
-     "name": "Hawaiian Garlic Rice",
-     "recipe_id": "HawGarRice1",
+     "name": "Jollof Rice",
+     "recipe_id": "4150751",
      "description": "",
-     "ingredients": "white rice, garlic, butter, green onions, tamari, sesame seeds, olive/canola oil blend, salt, black pepper",
-     "allergens": [
+     "ingredients": "basmati rice, tomatoes, green peas, onions, carrots, canola/olive oil blend, tomato paste, ginger, garlic, curry powder, cinnamon stick, cardamom seeds, bay leaf, salt",
+     "allergens": [],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
       "MILK",
+      "PEANUTS",
       "SESAME",
-      "SOY"
+      "SHELLFISH",
+      "SOY",
+      "TREENUTS",
+      "WHEAT"
      ],
-     "trace_allergens": [],
      "tags": [
-      "vegetarian",
+      "vegan",
       "halal"
      ],
      "order": 4
@@ -1360,6 +1366,67 @@
      "order": 5
     },
     {
+     "name": "Rosemary Fried Chicken Wings",
+     "recipe_id": "RoseChxWings1",
+     "description": "",
+     "ingredients": "chicken, thyme, granulated garlic, cajun seasoning, granulated onion, dry mustard, cornstarch, rosemary, flour, salt, pepper",
+     "allergens": [
+      "WHEAT"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "halal"
+     ],
+     "order": 6
+    },
+    {
+     "name": "Louisiana Red Beans and Rice",
+     "recipe_id": "LouB&R17",
+     "description": "",
+     "ingredients": "Red Kidney Beans, Onion, Bell Pepper, Celery, Garlic, Bay leaves, Dried Thyme, Fresh Parsley, Cayenne Pepper, Long grain rice, Water, Vegetable Base, Salt, Black Pepper.",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegetarian",
+      "halal"
+     ],
+     "order": 7
+    },
+    {
+     "name": "7 Cheesy Mac",
+     "recipe_id": "7CM99",
+     "description": "",
+     "ingredients": "pasta, milk, butter, flour, sharp cheddar, white cheddar, monterey, pepper jack, swiss, provolone, parmesan, sour cream, cream cheese, garlic, cajun spice, onion, salt, pepper, sherry vinegar",
+     "allergens": [
+      "EGG",
+      "MILK",
+      "WHEAT"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "vegetarian"
+     ],
+     "order": 8
+    },
+    {
+     "name": "Fire Cornbread",
+     "recipe_id": "4493130",
+     "description": "",
+     "ingredients": "cornmeal, flour, buttermilk, milk, eggs, maple syrup, baking powder, baking soda, sugar, salt",
+     "allergens": [
+      "EGG",
+      "MILK",
+      "WHEAT"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "vegetarian",
+      "halal"
+     ],
+     "order": 9
+    },
+    {
      "name": "Soup of the Day",
      "recipe_id": "SoupoftheDay",
      "description": "",
@@ -1367,7 +1434,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 6
+     "order": 10
     },
     {
      "name": "Assorted Dinner Rolls",
@@ -1386,7 +1453,7 @@
       "vegetarian",
       "halal"
      ],
-     "order": 7
+     "order": 11
     },
     {
      "name": "Composed Salad",
@@ -1398,7 +1465,7 @@
      "tags": [
       "halal"
      ],
-     "order": 8
+     "order": 12
     },
     {
      "name": "Performance Bar",
@@ -1408,7 +1475,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 9
+     "order": 13
     },
     {
      "name": "Craveable Grains",
@@ -1422,7 +1489,7 @@
       "vegan",
       "halal"
      ],
-     "order": 10
+     "order": 14
     },
     {
      "name": "Flavor Forward Legumes",
@@ -1436,7 +1503,7 @@
       "vegan",
       "halal"
      ],
-     "order": 11
+     "order": 15
     },
     {
      "name": "Tri Color Cheese Tortellini",
@@ -1450,7 +1517,7 @@
      ],
      "trace_allergens": [],
      "tags": [],
-     "order": 12
+     "order": 16
     },
     {
      "name": "Pasta Marinara",
@@ -1468,7 +1535,7 @@
       "vegan",
       "halal"
      ],
-     "order": 13
+     "order": 17
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -1482,7 +1549,7 @@
       "vegan",
       "halal"
      ],
-     "order": 14
+     "order": 18
     }
    ]
   },
@@ -4033,17 +4100,27 @@
      "order": 2
     },
     {
-     "name": "Ham and Egg Torta Ham and Egg Torta with Spicy Ref",
-     "recipe_id": "HamandEggTorta3",
+     "name": "Chilaquiles with Roasted Tomato Salsa",
+     "recipe_id": "4199856",
      "description": "",
-     "ingredients": "sliced ham, refried pinto beans, scramble egg, white onion, jalapeno, telera bread, provolone cheese, oil, salt, pepper,",
+     "ingredients": "flour tortilla, eggs, onion, cilantro, cojita cheese, sour cream, roasted tomato salsa (tomatoes, chipotle peppers, adobo sauce, garlic, canola/olive oil blend, salt), radish, garlic, canola/olive oil blend, salt",
      "allergens": [
       "EGG",
       "MILK",
+      "SOY",
       "WHEAT"
      ],
-     "trace_allergens": [],
-     "tags": [],
+     "trace_allergens": [
+      "COCONUT",
+      "FISH",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "TREENUTS"
+     ],
+     "tags": [
+      "vegetarian"
+     ],
      "order": 3
     },
     {
