@@ -8,6 +8,8 @@ for a fortnight comes back a stranger owing an hour of GPU time.
 
 from __future__ import annotations
 
+import pytest
+
 from bsdm import catalog as cataloglib
 from bsdm import dishes as dishlib
 
@@ -228,6 +230,16 @@ class TestSpecials:
                                    "to": "2026-09-19"}])
         got = entry_for(catalog, "Esquite Fries")
         assert got["placeholder"] is False and got["needs_image"]
+
+    @pytest.mark.parametrize("name", ["Boba Tea Bar", "Pho Noodle Station"])
+    def test_a_bar_on_the_poster_is_not_read_as_a_counter(self, project, name):
+        """is_station_container() reads "Bar" or "Station" with no ingredients
+        as a standing counter, and skips the picture. The poster gives no
+        ingredients for anything, and a special is a card whatever its name."""
+        catalog = build(project, {"2026-09-29": {"ricker": {"Dinner": [dish("Rice")]}}},
+                        specials=[{"text": name, "from": "2026-09-28", "to": "2026-10-02"}])
+        got = entry_for(catalog, name)
+        assert not got["is_station"] and got["needs_image"] and got["priority"] == 0
 
     def test_a_special_the_menu_also_lists_keeps_the_menus_ingredients(self, project):
         catalog = build(project, {"2026-09-17": {"wilbur": {"Dinner": [

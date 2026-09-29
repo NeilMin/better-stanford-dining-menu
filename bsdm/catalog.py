@@ -118,7 +118,10 @@ def build(menu_paths: Iterable[Path], station_table: dict, previous: dict | None
                 if key in old:
                     entry[key] = old[key]
 
-        entry["is_station"] = dishlib.is_station_container(entry)
+        # A special is a card whatever its name says. "Boba Tea Bar" on the
+        # poster has no ingredients because the poster gives none, which is
+        # exactly what is_station_container() reads a counter by.
+        entry["is_station"] = not entry.get("special") and dishlib.is_station_container(entry)
         entry["station_only"] = as_daily.get(did, 0) == 0 and as_station.get(did, 0) > 0
         entry["needs_image"] = not entry["placeholder"] and not entry["station_only"] and not entry["is_station"]
         if entry["needs_image"]:
