@@ -3963,6 +3963,42 @@
   "vessel": "plate",
   "written_at": "2026-09-27T08:08:27+00:00"
  },
+ "3e790f35066a": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "sausage",
+   "andouille",
+   "bacon",
+   "raw beans"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish composed of red beans and white rice?",
+    "yes": true
+   },
+   {
+    "q": "Are there slices of sausage or meat in the dish?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a dry fried rice?",
+    "yes": false
+   }
+  ],
+  "dish": "Louisiana red beans and rice",
+  "look": "creamy red kidney beans in a thick savory reddish-brown sauce, served over a mound of fluffy long-grain white rice, flecks of green bell pepper and celery, garnished with fresh chopped parsley",
+  "model": "gemini-3.5-flash",
+  "name": "Louisiana Red Beans and Rice",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-29T20:18:23+00:00"
+ },
  "3eba5d040108": {
   "avoid": [
    "ground beef",
@@ -14372,6 +14408,38 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T06:53:41+00:00"
+ },
+ "f74a40c6915f": {
+  "avoid": [
+   "rice",
+   "flatbread",
+   "shredded beef",
+   "ground beef",
+   "soup broth",
+   "raw vegetables"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item chunks of meat in a dark sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat shredded or ground?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a clear soup?",
+    "yes": false
+   }
+  ],
+  "dish": "Jamaican oxtail stew",
+  "look": "thick chunks of bone-in beef oxtail, rich dark brown gravy, tender orange carrot rounds, plump pale green lima beans, sprinkled with chopped green onions",
+  "model": "gemini-3.5-flash",
+  "name": "Jamaican Oxtail Stew",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-29T20:18:23+00:00"
  },
  "f7b6d5499609": {
   "avoid": [
