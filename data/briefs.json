@@ -1681,6 +1681,39 @@
   "vessel": "plate",
   "written_at": "2026-09-26T20:19:36+00:00"
  },
+ "1e721d735295": {
+  "avoid": [
+   "fried rice",
+   "steamed plain rice",
+   "noodle soup",
+   "clear broth",
+   "beef",
+   "pork",
+   "egg drop soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food a thick rice porridge?",
+    "yes": true
+   },
+   {
+    "q": "Is the rice dry separate grains like fried rice?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a noodle soup?",
+    "yes": false
+   }
+  ],
+  "dish": "ginger chicken congee",
+  "look": "thick creamy white rice porridge, shredded poached chicken, topped with sliced scallions, glistening chili crisp, crispy fried garlic, crispy fried shallots, thin ginger slivers",
+  "model": "claude-sonnet",
+  "name": "Ginger Rice Congree with Toppings: Scallions, Chili Crisp, Fried Garlic, Fried Shallot, Chicken or Tofu",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-29T16:28:29+00:00"
+ },
  "1f0eee8cb27f": {
   "avoid": [
    "pepperoni",
@@ -1997,6 +2030,40 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-29T00:31:05+00:00"
+ },
+ "24042a7e6508": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "rice",
+   "flatbread"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a thick stew with chickpeas?",
+    "yes": true
+   },
+   {
+    "q": "Are there chunks of meat in the stew?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a clear thin broth soup?",
+    "yes": false
+   }
+  ],
+  "dish": "West African maafe chickpea stew",
+  "look": "a thick creamy orange-brown peanut and tomato stew, whole tender chickpeas, chunks of sweet potato and carrot, glossy surface, chopped peanuts and cilantro on top",
+  "model": "claude-sonnet",
+  "name": "West African Maafe Chickpea Stew",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-29T16:49:13+00:00"
  },
  "244c70d82884": {
   "avoid": [
@@ -2479,6 +2546,39 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-26T23:11:04+00:00"
+ },
+ "2d643e8a05d7": {
+  "avoid": [
+   "cream sauce",
+   "spaghetti and meatballs",
+   "chicken",
+   "fish fillet",
+   "lobster",
+   "cheese",
+   "rice"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item pasta with mixed seafood?",
+    "yes": true
+   },
+   {
+    "q": "Is the pasta covered in thick white cream sauce?",
+    "yes": false
+   },
+   {
+    "q": "Are there pieces of chicken or meat instead of seafood?",
+    "yes": false
+   }
+  ],
+  "dish": "linguine frutti di mare",
+  "look": "linguine pasta twirled with pink shrimp, rings of calamari, open black mussel and clam shells, chunks of red tomato, light glossy wine sauce, chopped parsley, red pepper flakes",
+  "model": "claude-sonnet",
+  "name": "Frutti Di Mare",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-29T16:28:29+00:00"
  },
  "2df7f17a3a1a": {
   "avoid": [
@@ -4360,6 +4460,39 @@
   "vessel": "plate",
   "written_at": "2026-09-27T04:56:29+00:00"
  },
+ "488daa5009e7": {
+  "avoid": [
+   "chicken",
+   "beef",
+   "rice",
+   "naan",
+   "skewers",
+   "ground meat",
+   "vegetable-only curry"
+  ],
+  "checks": [
+   {
+    "q": "Are there meat chunks in a curry sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat ground like mince?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a dry grilled meat without sauce?",
+    "yes": false
+   }
+  ],
+  "dish": "lamb curry",
+  "look": "tender chunks of lamb in thick spiced golden-brown curry gravy, glossy sauce, diced onion, hint of tomato, chopped cilantro",
+  "model": "claude-sonnet",
+  "name": "Lamb Curry",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-29T16:28:29+00:00"
+ },
  "49755bfbcd3a": {
   "avoid": [
    "meat",
@@ -4541,6 +4674,44 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T06:22:24+00:00"
+ },
+ "4b90e361231a": {
+  "avoid": [
+   "rice",
+   "tortilla chips",
+   "cheese",
+   "sour cream",
+   "hot dog",
+   "cornbread",
+   "pasta",
+   "sliced steak"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a thick stew of meat and beans in red sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the dish a clear or thin broth soup?",
+    "yes": false
+   },
+   {
+    "q": "Is the main item a plain piece of steak or a burger patty?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish served over pasta or rice as the main component?",
+    "yes": false
+   }
+  ],
+  "dish": "chili con carne",
+  "look": "thick red-brown chili of ground beef and kidney beans in rich tomato sauce, diced tomato pieces, small chopped green pepper bits, glossy chunky stew texture, steaming",
+  "model": "claude-sonnet",
+  "name": "Chili Con Carne",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-29T17:08:40+00:00"
  },
  "4baffc9b2827": {
   "avoid": [
@@ -5549,6 +5720,39 @@
   "vessel": "plate",
   "written_at": "2026-09-26T20:10:26+00:00"
  },
+ "617dc0125c50": {
+  "avoid": [
+   "tortilla chips",
+   "tacos",
+   "rice",
+   "beans",
+   "chili con carne",
+   "tomato soup",
+   "tostada"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a soup or stew with hominy kernels and meat?",
+    "yes": true
+   },
+   {
+    "q": "Is the dish a dry plate with no broth?",
+    "yes": false
+   },
+   {
+    "q": "Does the dish look like ground beef chili with beans?",
+    "yes": false
+   }
+  ],
+  "dish": "pozole rojo",
+  "look": "a bowl of Mexican hominy stew, red chili broth, large puffed white hominy kernels, tender shredded pork chunks, topped with shredded cabbage, chopped white onion, cilantro, lime wedge, drizzle of red chili oil",
+  "model": "claude-sonnet",
+  "name": "Pozole with Cilantro, Lime, Onions and Chili Oil",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-29T16:49:13+00:00"
+ },
  "650d25f97736": {
   "avoid": [
    "chicken",
@@ -5759,6 +5963,39 @@
   "revisions": 1,
   "vessel": "bowl",
   "written_at": "2026-09-27T06:20:54+00:00"
+ },
+ "696d7092eb15": {
+  "avoid": [
+   "chicken",
+   "fries",
+   "hot dog",
+   "sandwich wrap",
+   "veggie patty",
+   "salad",
+   "pizza"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a burger patty in a bun?",
+    "yes": true
+   },
+   {
+    "q": "Is the patty made of chicken or a crumbly vegetable mix?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat served without a bun as loose ground meat?",
+    "yes": false
+   }
+  ],
+  "dish": "Tuscan fire burger",
+  "look": "a beef burger patty in a toasted bun, melted cheese, spicy red pepper spread, roasted red peppers, fresh arugula, tomato slice, juicy charred patty, sesame-topped bun",
+  "model": "claude-sonnet",
+  "name": "Tuscan Fire Burger",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-29T16:49:13+00:00"
  },
  "69acd623fc25": {
   "avoid": [
@@ -6125,6 +6362,39 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T08:12:49+00:00"
+ },
+ "6dad564a51d7": {
+  "avoid": [
+   "noodles",
+   "broccoli",
+   "fried chicken breading",
+   "whole roast chicken",
+   "egg",
+   "soup",
+   "orange sauce"
+  ],
+  "checks": [
+   {
+    "q": "Is there cooked chicken pieces in a dark glossy sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken breaded and deep fried like nuggets?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken raw or pale and unsauced?",
+    "yes": false
+   }
+  ],
+  "dish": "sweet soy chicken with jasmine rice and long beans",
+  "look": "pieces of glossy soy-glazed dark brown chicken, mound of steamed white jasmine rice, bright green stir-fried Chinese long beans cut into lengths, sticky shiny sauce",
+  "model": "claude-sonnet",
+  "name": "Sweet Soy Chicken, Steam Jasmine Rice, Chinese Long Beans",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-29T16:49:13+00:00"
  },
  "6db1cd2f518d": {
   "avoid": [
@@ -6842,6 +7112,38 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-26T23:08:02+00:00"
+ },
+ "7b59e120a928": {
+  "avoid": [
+   "whole cake slice",
+   "ice cream",
+   "pie",
+   "brownies",
+   "fruit",
+   "cupcake"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a layered creamy dessert in a small cup?",
+    "yes": true
+   },
+   {
+    "q": "Is the main item a large whole cake or a slice of cake?",
+    "yes": false
+   },
+   {
+    "q": "Is the main item ice cream in scoops?",
+    "yes": false
+   }
+  ],
+  "dish": "Oreo cheesecake cups",
+  "look": "individual clear cups of dessert, crushed dark Oreo cookie crumb base, thick creamy white cheesecake layer, whipped cream swirl on top, chocolate cookie crumbs and a half Oreo cookie garnish",
+  "model": "claude-sonnet",
+  "name": "Oreo Cheesecake Cups",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-29T16:49:13+00:00"
  },
  "7b5f054faacd": {
   "avoid": [
@@ -9693,6 +9995,45 @@
   "vessel": "plate",
   "written_at": "2026-09-26T23:10:38+00:00"
  },
+ "b25317f79275": {
+  "avoid": [
+   "plain hot dog without bacon",
+   "sausage links without bun",
+   "bratwurst",
+   "corn dog",
+   "french fries",
+   "chili",
+   "sauerkraut",
+   "burger",
+   "bacon strips on the side"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a hot dog wrapped in bacon?",
+    "yes": true
+   },
+   {
+    "q": "Is the hot dog plain with no bacon wrapped around it?",
+    "yes": false
+   },
+   {
+    "q": "Is the main item a corn dog or battered sausage on a stick?",
+    "yes": false
+   },
+   {
+    "q": "Is the main item a hamburger?",
+    "yes": false
+   }
+  ],
+  "dish": "bacon-wrapped hot dogs",
+  "look": "hot dog in a soft bun, frankfurter wrapped in spiral of crisp browned bacon strips, charred bacon edges, glossy rendered surface, bun toasted golden at the edges",
+  "model": "claude-sonnet",
+  "name": "Bacon Wrapped Hot Dogs",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-29T16:26:47+00:00"
+ },
  "b2f7abf0820c": {
   "avoid": [
    "chicken",
@@ -10146,6 +10487,39 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T04:33:15+00:00"
+ },
+ "b91b6ed40a40": {
+  "avoid": [
+   "burrito",
+   "tacos",
+   "nachos with melted cheese",
+   "tortilla wrap",
+   "rice",
+   "beans platter",
+   "soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item tortilla chips or tortilla pieces coated in salsa?",
+    "yes": true
+   },
+   {
+    "q": "Is the food a rolled or folded tortilla wrap?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a soup with broth?",
+    "yes": false
+   }
+  ],
+  "dish": "chilaquiles",
+  "look": "crisp tortilla chip triangles simmered in red salsa, softened edges, crumbled white cotija cheese, drizzle of crema, sliced red onion, a few cilantro leaves",
+  "model": "claude-sonnet",
+  "name": "Chilaquiles",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-29T16:28:29+00:00"
  },
  "b9f9e6f892d4": {
   "avoid": [
@@ -11458,6 +11832,39 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T08:27:45+00:00"
  },
+ "cea3a82500af": {
+  "avoid": [
+   "beer",
+   "wine",
+   "tea bag",
+   "whole apple pie",
+   "soup",
+   "ice cream",
+   "large dinner food"
+  ],
+  "checks": [
+   {
+    "q": "Is there a mug or glass of amber cider?",
+    "yes": true
+   },
+   {
+    "q": "Is the main item a savory meal?",
+    "yes": false
+   },
+   {
+    "q": "Is the drink a dark cola or coffee?",
+    "yes": false
+   }
+  ],
+  "dish": "ginger apple cider with sweets",
+  "look": "warm amber apple cider in a clear mug, cinnamon stick, thin slice of apple, beside a small assortment of cookies, mini pastries and candies",
+  "model": "claude-sonnet",
+  "name": "Ginger Apple Cider with Assorted Sweets",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-29T16:28:29+00:00"
+ },
  "cea3adb65834": {
   "avoid": [
    "meat",
@@ -11692,6 +12099,39 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T04:50:08+00:00"
  },
+ "d260158ff1bd": {
+  "avoid": [
+   "ramen",
+   "egg",
+   "dumplings",
+   "fried noodles",
+   "spring rolls",
+   "curry",
+   "separate side plates"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item noodles in a broth soup?",
+    "yes": true
+   },
+   {
+    "q": "Are the noodles stir-fried without broth?",
+    "yes": false
+   },
+   {
+    "q": "Does the dish look like ramen with a soft-boiled egg and pork slices?",
+    "yes": false
+   }
+  ],
+  "dish": "pho",
+  "look": "a large bowl of Vietnamese beef noodle soup, clear brown fragrant broth, flat white rice noodles, thin slices of rare beef, green onion, fresh basil leaves, bean sprouts, lime wedge on the side",
+  "model": "claude-sonnet",
+  "name": "Pho Noodle Station",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-29T16:49:13+00:00"
+ },
  "d3ad2fe14444": {
   "avoid": [
    "tortillas",
@@ -11867,6 +12307,39 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T09:50:49+00:00"
+ },
+ "d76b600a205c": {
+  "avoid": [
+   "fried chicken",
+   "grilled chicken breast",
+   "couscous",
+   "rice",
+   "pita",
+   "skewers",
+   "raw chicken"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cooked chicken pieces in red sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken breaded and deep fried?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat ground or shredded into a filling?",
+    "yes": false
+   }
+  ],
+  "dish": "harissa braised chicken",
+  "look": "bone-in chicken pieces braised until tender, red-orange harissa tomato sauce, green olives, orange slices, softened onion and celery, lemon wedge, fresh mint and parsley leaves",
+  "model": "claude-sonnet",
+  "name": "Harissa Braised Chicken",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-29T16:28:29+00:00"
  },
  "d790b6ee5b86": {
   "avoid": [
@@ -12690,6 +13163,41 @@
   "vessel": "plate",
   "written_at": "2026-09-27T06:34:15+00:00"
  },
+ "ebcf48a11348": {
+  "avoid": [
+   "noodles without chicken",
+   "plate of cucumber slices",
+   "soup broth",
+   "fried rice",
+   "beef",
+   "shrimp",
+   "tofu",
+   "spaghetti with tomato sauce",
+   "whole skewer platter"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item noodles?",
+    "yes": true
+   },
+   {
+    "q": "Are the noodles in a hot broth soup?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat beef or shrimp instead of chicken?",
+    "yes": false
+   }
+  ],
+  "dish": "cold peanut noodles with chicken satay",
+  "look": "sliced grilled chicken satay strips with golden-brown char marks laid on top of chilled noodles, chicken pieces clearly visible, creamy peanut sauce coating the noodles, shredded carrot, cucumber slices, crushed peanuts, sesame seeds",
+  "model": "claude-sonnet",
+  "name": "Cold Noodles with Chicken Satay",
+  "rev": 6,
+  "revisions": 1,
+  "vessel": "bowl",
+  "written_at": "2026-09-29T16:35:43+00:00"
+ },
  "ec35f62fcf30": {
   "avoid": [
    "shrimp",
@@ -12832,6 +13340,39 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-26T20:16:28+00:00"
+ },
+ "ee33d2f59f86": {
+  "avoid": [
+   "ramen",
+   "pho",
+   "rice",
+   "dumplings",
+   "vegetables",
+   "bean sprouts",
+   "fried noodles"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item noodles in a broth with beef?",
+    "yes": true
+   },
+   {
+    "q": "Are the noodles stir-fried without broth?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a creamy or red tomato pasta sauce?",
+    "yes": false
+   }
+  ],
+  "dish": "yakamein",
+  "look": "a bowl of New Orleans beef noodle soup, dark savory brown broth, soft spaghetti noodles, sliced tender beef, halved hard-boiled egg, chopped green onions, soy-dark liquid",
+  "model": "claude-sonnet",
+  "name": "Yakamein",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-29T16:49:13+00:00"
  },
  "eeacd36d0fe8": {
   "avoid": [
@@ -13260,6 +13801,39 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T04:53:30+00:00"
+ },
+ "f42cd4381b5b": {
+  "avoid": [
+   "coffee",
+   "soup",
+   "pudding",
+   "smoothie with fruit chunks",
+   "dessert bowl",
+   "multiple cups",
+   "boba toppings bar"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a cold drink in a cup?",
+    "yes": true
+   },
+   {
+    "q": "Is the main item a soup or bowl of food?",
+    "yes": false
+   },
+   {
+    "q": "Are there several different cups or a buffet spread?",
+    "yes": false
+   }
+  ],
+  "dish": "bubble tea",
+  "look": "tall clear plastic cup of milk tea, creamy light brown tea, dark chewy tapioca pearls settled at the bottom, ice cubes, wide dome-lid or straw",
+  "model": "claude-sonnet",
+  "name": "Boba Tea Bar",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-29T16:28:29+00:00"
  },
  "f5e04336cbc3": {
   "avoid": [
@@ -13786,6 +14360,39 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-28T01:14:44+00:00"
+ },
+ "fc857dc2c40c": {
+  "avoid": [
+   "pizza",
+   "pancake stack with syrup",
+   "omelet",
+   "noodles",
+   "soup",
+   "rice",
+   "sushi"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a thick round savory pancake?",
+    "yes": true
+   },
+   {
+    "q": "Is the main item a sweet breakfast pancake stack with syrup?",
+    "yes": false
+   },
+   {
+    "q": "Is the main item a pizza with cheese and toppings?",
+    "yes": false
+   }
+  ],
+  "dish": "okonomiyaki",
+  "look": "a thick round savory Japanese cabbage pancake, golden-brown seared surface, zigzag of glossy dark brown sauce and white mayonnaise drizzle, sprinkle of bonito flakes and green onion, cut into wedges",
+  "model": "claude-sonnet",
+  "name": "Okonomiyaki",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-29T16:49:13+00:00"
  },
  "fd0eea6f082a": {
   "avoid": [
