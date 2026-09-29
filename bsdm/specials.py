@@ -73,13 +73,12 @@ TITLE_RE = re.compile(
     r"(?:(?P<m2>[A-Za-z]+)\.?\s*)?(?P<d2>\d{1,2})\s*,?\s*(?P<y>\d{4})",
     re.I)
 
-# The link on the hours page, matched on the words in the filename and the link
-# text rather than on a path, because the path is a new invention every
-# fortnight. Two passes: R&DE also publishes things like special-diet guidance,
-# so a link that says "calendar" as well wins outright, and the loose match is
-# only the fallback.
-LINK_RE = re.compile(r"special", re.I)
-LINK_STRONG_RE = re.compile(r"special.*calendar|calendar.*special", re.I | re.S)
+# Where the hours page keeps the poster: the red banner directly under the page
+# title, which is the first block of the page's content. Every copy of the page
+# the Wayback Machine holds from May 2025 on has it there, while the file name
+# is a new invention each time ("Calendar_Sept14-25", "Calendar_March_0",
+# "Calendar_5_11-_5_22_2026"). So the place is read and the name is not.
+BANNER = ".field--name-field-content > .field__item"
 
 # "Hall: dish". The label is everything before the first colon, which is also
 # where a list of halls would be ("Stern & Wilbur: ...").
@@ -130,19 +129,15 @@ def resolve_halls(label: str, table: dict[str, str]) -> list[str]:
 # ---------- the page ----------
 
 def find_link(html: str, base: str = HOURS_URL) -> str | None:
-    """The specials calendar PDF linked from the hours page."""
-    soup = BeautifulSoup(html, "html.parser")
-    candidates = []
-    for a in soup.find_all("a", href=True):
-        href = a["href"]
-        if not href.lower().split("?")[0].endswith(".pdf"):
-            continue
-        haystack = unquote(href) + " " + a.get_text(" ", strip=True)
-        if LINK_RE.search(haystack):
-            candidates.append((bool(LINK_STRONG_RE.search(haystack)), urljoin(base, href)))
-    if not candidates:
-        return None
-    return next((url for strong, url in candidates if strong), candidates[0][1])
+    """Whatever the banner at the top of the hours page links to.
+
+    None when the banner is there with nothing linked, which it has been
+    between editions ("Learn about special events at our Dining Halls",
+    October 2025), or when the page has no banner at all.
+    """
+    banner = BeautifulSoup(html, "html.parser").select_one(BANNER)
+    link = banner.find("a", href=True) if banner else None
+    return urljoin(base, link["href"]) if link else None
 
 
 def download(url: str, timeout: int = 60) -> bytes:
@@ -412,12 +407,16 @@ def update(root: Path, config: dict, *, force: bool = False,
     page = html if html is not None else fetch_page()
     url = find_link(page)
     if not url:
-        return {"url": None, "status": "no link on the hours page"}
+        return {"url": None, "status": "no link in the banner on the hours page"}
 
     store = load(root)
     existing = next((c for c in store["calendars"] if c["url"] == url), None)
 
     blob = download(url)
+    # The banner has linked a page rather than a poster before; that is not
+    # an edition, and archiving it would file HTML under specials/.
+    if not blob.startswith(b"%PDF"):
+        return {"url": url, "status": "not a pdf"}
     digest = hashlib.sha256(blob).hexdigest()
     # An edition that would not parse is read again every time: the fix is a
     # change to the parser, and the bytes it has to be tried on are the same.

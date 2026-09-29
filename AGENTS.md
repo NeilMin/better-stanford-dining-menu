@@ -332,7 +332,17 @@ needs no meal guard of its own. Campus-wide notes stay `notices`, checked agains
 edition nobody fetched while it was up is gone for good -- worse than the menus, which at least
 have a rolling week. `specials.update()` therefore writes the PDF to `data/specials/` before it
 tries to parse it, records the error on the calendar entry, and returns rather than raising:
-`scripts/update.py` logs it and carries on with the night's menus.
+`scripts/update.py` logs it and carries on with the night's menus. An edition stored with an
+error is parsed again on every run, because the fix is a change to the parser tried on the same
+bytes.
+
+**The poster is found by where it hangs, not by what it is called.** It is the link in the red
+banner under the page title -- the first block of the page's content, `specials.BANNER` -- in
+every copy of the page the Wayback Machine holds from May 2025 on, while no two file names have
+been alike (`Calendar_Sept14-25`, `Calendar_March_0`, `Calendar_5_11-_5_22_2026`). Do not go back
+to matching words in the name. What the banner links is not always a poster: a monthly events
+calendar in May 2025, nothing at all in October 2025, so anything that is not a PDF is skipped
+rather than archived.
 
 ## Tests
 

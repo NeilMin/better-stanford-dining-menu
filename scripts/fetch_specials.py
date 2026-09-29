@@ -66,9 +66,11 @@ def main() -> int:
 
     result = specialslib.update(ROOT, config, force=args.force)
     if not result["url"]:
-        print("No specials calendar linked from the hours page.")
+        print("Nothing linked from the banner on the hours page.")
         return 0
     print(f"{result['status']}: {result['url']}")
+    if result["status"] == "not a pdf":
+        return 0
     if result["status"] == "unreadable":
         print(f"  archived as {result['file']}, but could not be read: {result['error']}",
               file=sys.stderr)

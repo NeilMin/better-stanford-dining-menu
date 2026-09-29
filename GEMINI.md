@@ -98,6 +98,7 @@ uv run python scripts/fetch_specials.py --show
 - **Everything Free**: CI draws with the laptop's RealVisXL on free GitHub runners' CPUs, the queue split across up to six machines (`draw.yml`, `--shard`), writes briefs eight dishes to a call with a chain of Gemini Flash models then Gemma (Flash's free tier is 20 requests/day per model), and judges and translates with Gemma 4 26B -- all on the free `GEMINI_API_KEY`. The laptop uses ComfyUI RealVisXL and the `claude` CLI. RealVisXL on a free GitHub runner was measured at 29-31 min/picture and ruled out. Nothing paid, ever; a backend that disappears must degrade to the placeholder icon.
 
 ### Specials Poster
+- **Found by Position**: The poster is whatever the red banner under the hours page title links (`specials.BANNER`), never matched by file name; non-PDF links are skipped.
 - **Geometric Parsing via PyMuPDF**: Canva PDF text stream order is non-linear. `bsdm/specials.py` reads geometry: coloured rectangles define date ranges, text belongs to the smallest enclosing bounding box.
 - **Menu Outranks Poster for Open State**: Specials span Mon–Fri even if a hall opens on Tuesday. `bsdm/build.py` only renders a special if the scraped menu confirms that hall is serving dinner that day.
 

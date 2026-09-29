@@ -61,35 +61,85 @@ class TestLabels:
         assert specialslib.resolve_halls("   ", specialslib.alias_table(halls.config)) == []
 
 
+def hours_page(*blocks):
+    """The hours page as R&DE's Drupal lays it out: the title in a hero, then
+    the content blocks, the first of which is the banner the poster hangs in."""
+    return ('<html><body>'
+            '<div class="field field--name-field-content-hero field__item">'
+            '<span><strong>DINING LOCATIONS &amp; HOURS</strong></span></div>'
+            '<div class="field field--name-field-content field__items">'
+            + "".join(f'<div class="field__item">{block}</div>' for block in blocks)
+            + '</div></body></html>')
+
+
+def banner(href=None, text="View Monday - Friday Dinner Specials at our Dining Halls"):
+    inner = f'<a href="{href}"><strong>{text}</strong></a>' if href else text
+    return ('<div class="paragraph paragraph--type--boxed-gray-section '
+            f'paragraph-bg-cardinal-red"><p class="text-align-center">{inner}</p></div>')
+
+
+HALL = ('<div class="paragraph"><h2>Arrillaga Family Dining Commons</h2>'
+        '<a href="https://maps.app.goo.gl/sKH6n1U1kMAS4QbK8">489 Arguello Mall</a></div>')
+
+
 class TestFindLink:
-    def page(self, *links):
-        return "<html><body>" + "".join(
-            f'<a href="{href}">{text}</a>' for href, text in links) + "</body></html>"
+    """The poster is read from where the page keeps it, never from its name:
+    every edition in a year of the page has hung in the banner under the
+    title, and no two have been named alike."""
 
-    def test_finds_the_poster_by_the_words_in_it(self):
-        html = self.page(("/files/Dining%20Hall%20Specials%20Calendar_Sept14-25.pdf", "Specials"))
-        assert specialslib.find_link(html).endswith("Calendar_Sept14-25.pdf")
+    @pytest.mark.parametrize("href", [
+        "/sites/default/files/2026-09/Dining_Hall_Specials_Calendar_Sept28-Oct9.pdf",
+        "/sites/default/files/2026-03/Dining_Hall_Specials_Calendar_March_0.pdf",
+        "/sites/default/files/2025-05/May2025DiningHallsMonthlyCalendar.pptx%20(1).pdf",
+        "/sites/default/files/2026-10/document.pdf",
+    ])
+    def test_the_banner_link_whatever_the_file_is_called(self, href):
+        got = specialslib.find_link(hours_page(banner(href), HALL))
+        assert got == "https://rde.stanford.edu" + href
 
-    def test_a_link_that_says_calendar_too_wins_outright(self):
-        """R&DE also publishes special-diet guidance, which says "special"
-        without being the poster."""
-        html = self.page(("/files/special-diets.pdf", "Special Diets"),
-                         ("/files/specials-calendar.pdf", "Dining Hall Specials Calendar"))
-        assert specialslib.find_link(html).endswith("specials-calendar.pdf")
+    def test_only_the_banner_is_read(self):
+        """A PDF further down that says "specials calendar" in every word is
+        still not the one the banner links."""
+        html = hours_page(banner("/files/2026-09/poster.pdf"), HALL,
+                          '<a href="/files/specials-calendar.pdf">Specials Calendar</a>')
+        assert specialslib.find_link(html).endswith("/files/2026-09/poster.pdf")
 
-    def test_relative_links_are_resolved_against_the_page(self):
-        got = specialslib.find_link(self.page(("/sites/x/specials.pdf", "Specials")))
-        assert got.startswith("https://rde.stanford.edu/")
+    def test_the_link_is_taken_as_it_is(self):
+        href = "https://rde.stanford.edu/f/specials.pdf?t=17263"
+        assert specialslib.find_link(hours_page(banner(href))) == href
 
-    def test_a_query_string_does_not_hide_the_extension(self):
-        html = self.page(("/files/specials.pdf?t=17263", "Specials Calendar"))
-        assert specialslib.find_link(html) is not None
+    def test_a_banner_with_nothing_linked(self):
+        """October 2025: "Learn about special events at our Dining Halls",
+        and no link."""
+        assert specialslib.find_link(hours_page(banner(), HALL)) is None
 
-    def test_only_pdfs(self):
-        assert specialslib.find_link(self.page(("/specials-calendar.html", "Specials"))) is None
+    def test_no_banner_is_not_a_guess_elsewhere(self):
+        html = '<a href="/files/specials-calendar.pdf">Specials Calendar</a>'
+        assert specialslib.find_link(html) is None
 
-    def test_nothing_linked_is_not_an_error(self):
-        assert specialslib.find_link(self.page(("/menus.pdf", "Menus"))) is None
+    def test_the_live_page_keeps_it_there(self):
+        """A copy of the page on 2026-09-29, cut down to the structure around
+        the banner, down to the hero's stray <!DOCTYPE> and <style>."""
+        html = (
+            '<div class="field field--name-field-content-hero"><div class="clearfix '
+            'text-formatted field field--name-field-hero-content"><!DOCTYPE html><html>'
+            '<head><style>.welcome-text span { font-size: 70px; }</style></head><body>'
+            '<p><span><strong>DINING LOCATIONS & HOURS</strong></span></p></body></html>'
+            '</div></div>'
+            '<div class="field field--name-field-content field--type-entity-reference-revisions '
+            'field--label-hidden field__items"><div class="field__item"><div class="paragraph '
+            'paragraph--type--boxed-gray-section paragraph--view-mode--full '
+            'paragraph-boxed-gray-section paragraph-spacing paragraph-bg-cardinal-red">'
+            '<div class="paragraph-boxed-gray-section--content paragraph-container">'
+            '<div class="paragraph-boxed-gray-section--body"><p class="text-align-center">'
+            '<a href="/sites/default/files/2026-09/Dining_Hall_Specials_Calendar_Sept28-Oct9.pdf"'
+            ' data-entity-type="media"><span style="font-size:26px;"><strong>View Monday - '
+            'Friday Dinner Specials at our Dining Halls for Sept. 28 - Oct. 9&nbsp;</strong>'
+            '</span></a></p></div></div></div></div>'
+            '<div class="field__item"><div class="paragraph paragraph--type--image-full-width">'
+            '</div></div></div>')
+        assert specialslib.find_link(html) == ("https://rde.stanford.edu/sites/default/files/"
+                                               "2026-09/Dining_Hall_Specials_Calendar_Sept28-Oct9.pdf")
 
 
 class TestArchiveName:
@@ -246,7 +296,7 @@ class TestTitle:
 
 
 class TestUpdate:
-    HTML = '<a href="https://rde.stanford.edu/f/specials-calendar.pdf">Specials Calendar</a>'
+    HTML = hours_page(banner("https://rde.stanford.edu/f/specials-calendar.pdf"), HALL)
 
     @pytest.fixture
     def downloads(self, monkeypatch):
@@ -268,13 +318,13 @@ class TestUpdate:
     def test_an_unreadable_poster_does_not_raise(self, halls, downloads):
         """scripts/update.py logs it and carries on with the night's menus. A
         poster R&DE has reshaped must not cost us a night of them."""
-        downloads(b"nonsense")
+        downloads(b"%PDF-1.4 nonsense")
         specialslib.update(halls.root, halls.config, html=self.HTML)
         stored = specialslib.load(halls.root)["calendars"][0]
         assert "error" in stored and stored["file"].startswith("undated/")
 
     def test_a_readable_poster_is_folded_in(self, halls, downloads, monkeypatch):
-        downloads(b"pdf bytes")
+        downloads(b"%PDF-1.4 pdf bytes")
         monkeypatch.setattr(specialslib, "parse", lambda blob: {
             "title": "DINNER SPECIALS FOR SEPTEMBER 14 - 25, 2026", "meal": "Dinner",
             "from": "2026-09-14", "to": "2026-09-25",
@@ -293,7 +343,7 @@ class TestUpdate:
 
     def test_a_label_matching_no_hall_is_reported_not_swallowed(self, halls, downloads,
                                                                 monkeypatch):
-        downloads(b"pdf bytes")
+        downloads(b"%PDF-1.4 pdf bytes")
         monkeypatch.setattr(specialslib, "parse", lambda blob: {
             "title": "t", "meal": "Dinner", "from": "2026-09-14", "to": "2026-09-25",
             "entries": [{"label": "Toyon", "text": "Toyon: Something",
@@ -303,7 +353,7 @@ class TestUpdate:
         assert result["unplaced_labels"] == ["Toyon"]
 
     def test_the_same_bytes_twice_is_not_refetched_work(self, halls, downloads, monkeypatch):
-        downloads(b"pdf bytes")
+        downloads(b"%PDF-1.4 pdf bytes")
         monkeypatch.setattr(specialslib, "parse", lambda blob: {
             "title": "t", "meal": "Dinner", "from": "2026-09-14", "to": "2026-09-25",
             "entries": [],
@@ -318,7 +368,7 @@ class TestUpdate:
         """The fix for an unreadable poster is a change to the parser, tried on
         the same bytes; "unchanged" would keep the edition off the board for
         the whole fortnight it is up."""
-        downloads(b"pdf bytes")
+        downloads(b"%PDF-1.4 pdf bytes")
         specialslib.update(halls.root, halls.config, html=self.HTML)
         undated = specialslib.load(halls.root)["calendars"][0]["file"]
         assert undated.startswith("undated/")
@@ -335,15 +385,24 @@ class TestUpdate:
         assert not (specialslib.archive_dir(halls.root) / undated).exists()
 
     def test_no_link_on_the_page_is_reported_not_raised(self, halls):
-        result = specialslib.update(halls.root, halls.config, html="<html></html>")
-        assert result == {"url": None, "status": "no link on the hours page"}
+        result = specialslib.update(halls.root, halls.config, html=hours_page(banner(), HALL))
+        assert result == {"url": None, "status": "no link in the banner on the hours page"}
+
+    def test_a_banner_linking_a_page_is_not_an_edition(self, halls, downloads):
+        """Read by position, the banner can link anything; HTML filed under
+        data/specials/ would sit there as an unreadable poster for good."""
+        downloads(b"<!DOCTYPE html><html><body>Special events</body></html>")
+        result = specialslib.update(halls.root, halls.config, html=self.HTML)
+        assert result["status"] == "not a pdf"
+        assert specialslib.load(halls.root)["calendars"] == []
+        assert not specialslib.archive_dir(halls.root).exists()
 
     def test_calendars_are_stored_in_date_order(self, halls, downloads, monkeypatch):
         for n, (url, start) in enumerate([("b.pdf", "2026-09-14"), ("a.pdf", "2026-08-03")]):
-            downloads(f"pdf {n}".encode())
+            downloads(f"%PDF-1.4 {n}".encode())
             monkeypatch.setattr(specialslib, "parse", lambda blob, s=start: {
                 "title": "t", "meal": "Dinner", "from": s, "to": s, "entries": []})
             specialslib.update(halls.root, halls.config,
-                               html=f'<a href="https://rde.stanford.edu/{url}">Specials</a>')
+                               html=hours_page(banner(f"https://rde.stanford.edu/{url}")))
         stored = specialslib.load(halls.root)["calendars"]
         assert [c["from"] for c in stored] == ["2026-08-03", "2026-09-14"]

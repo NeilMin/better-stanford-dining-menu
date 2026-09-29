@@ -206,7 +206,9 @@ def main() -> int:
             result = specialslib.update(ROOT, config, html=page)
             specials_url = result["url"]
             if not result["url"]:
-                log.info("Specials: no calendar linked from the hours page.")
+                log.info("Specials: nothing linked from the banner on the hours page.")
+            elif result["status"] == "not a pdf":
+                log.info("Specials: the banner links %s, which is not a poster.", result["url"])
             elif result["status"] == "unchanged":
                 log.info("Specials: unchanged (%d entries).", result["entries"])
             elif result["status"] == "unreadable":
