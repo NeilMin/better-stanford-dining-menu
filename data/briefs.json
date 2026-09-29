@@ -1073,6 +1073,42 @@
   "vessel": "plate",
   "written_at": "2026-09-26T20:19:32+00:00"
  },
+ "16be004676dc": {
+  "avoid": [
+   "whole chicken breasts",
+   "whole chicken pieces",
+   "white rice",
+   "rice",
+   "skewers",
+   "tacos",
+   "tortillas",
+   "burritos",
+   "pineapple chunks",
+   "beef"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food sliced or chopped cooked chicken in a reddish marinade?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken served wrapped in a taco or tortilla?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat skewered on sticks?",
+    "yes": false
+   }
+  ],
+  "dish": "chicken al pastor",
+  "look": "bite-sized chopped cooked chicken pieces, thin strips of chicken thighs coated in thick reddish-orange achiote marinade, charred grill edges, sautéed red bell pepper strips, tender caramelized white onion slices, fresh chopped cilantro",
+  "model": "gemini-flash-latest",
+  "name": "Al Pastor Chicken",
+  "rev": 6,
+  "revisions": 1,
+  "vessel": "plate",
+  "written_at": "2026-09-29T01:08:29+00:00"
+ },
  "1764ace053da": {
   "avoid": [
    "chicken",
@@ -1284,6 +1320,39 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-26T20:19:32+00:00"
+ },
+ "1992ccfb4123": {
+  "avoid": [
+   "taco",
+   "bowl",
+   "unwrapped",
+   "sandwich",
+   "burger",
+   "chips",
+   "french fries"
+  ],
+  "checks": [
+   {
+    "q": "Is the food a rolled flour tortilla burrito?",
+    "yes": true
+   },
+   {
+    "q": "Is the food served open in a bowl without being wrapped in a tortilla?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish served as open-face tacos?",
+    "yes": false
+   }
+  ],
+  "dish": "pork burrito",
+  "look": "large folded flour tortilla burrito, cut in half, cross-section showing shredded pork, orange Spanish rice, black beans, melted cheddar cheese, fresh pico de gallo, dollop of bright green guacamole",
+  "model": "gemini-flash-latest",
+  "name": "Pork Ranchero Burrito",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-29T00:31:05+00:00"
  },
  "19b1ec6ed747": {
   "avoid": [
@@ -1827,18 +1896,18 @@
   "avoid": [
    "noodles",
    "pasta",
+   "spaghetti",
+   "ramen",
    "rice",
    "ground meat",
    "mince",
    "pork chops",
    "sliced ham",
-   "ribs",
-   "whole pork shoulder",
-   "burger patty"
+   "ribs"
   ],
   "checks": [
    {
-    "q": "Is the main item shredded pork?",
+    "q": "Is the main item shredded meat?",
     "yes": true
    },
    {
@@ -1851,13 +1920,13 @@
    }
   ],
   "dish": "BBQ Pulled Pork",
-  "look": "shredded pork strands, pulled meat texture, moist long fibers, thick glossy reddish-brown BBQ sauce, translucent sautéed onion pieces, pile of meat",
-  "model": "gemma-4-26b-a4b-it",
+  "look": "shredded pulled pork strands, heaped pile of coarse pulled meat, thickly coated in glossy dark reddish-brown BBQ sauce, soft translucent cooked diced onions mixed throughout, moist glistening shredded meat texture",
+  "model": "gemini-3.6-flash",
   "name": "BBQ Pulled Pork",
   "rev": 6,
-  "revisions": 1,
+  "revisions": 2,
   "vessel": "plate",
-  "written_at": "2026-09-28T17:48:21+00:00"
+  "written_at": "2026-09-29T02:06:47+00:00"
  },
  "2264c08eede4": {
   "avoid": [
@@ -1893,6 +1962,41 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T06:30:47+00:00"
+ },
+ "22add51f8555": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "cheese",
+   "cream",
+   "raw mushrooms"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food cooked sliced mushrooms in a warm savory broth?",
+    "yes": true
+   },
+   {
+    "q": "Does the dish contain pieces of meat, poultry, or seafood?",
+    "yes": false
+   },
+   {
+    "q": "Are the mushrooms raw and uncooked?",
+    "yes": false
+   }
+  ],
+  "dish": "mushroom stew",
+  "look": "sliced earthy cremini and button mushrooms, rich dark savoury tomato-tinted broth, slivers of translucent white onions, sliced green jalapeno rings, torn fresh herbs",
+  "model": "gemini-flash-latest",
+  "name": "Hongos Guisados Stew",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-29T00:31:05+00:00"
  },
  "244c70d82884": {
   "avoid": [
@@ -4182,6 +4286,41 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T06:57:19+00:00"
+ },
+ "466b3724374d": {
+  "avoid": [
+   "burrito wrap",
+   "rolled burrito",
+   "hard taco shell",
+   "soup",
+   "broth",
+   "raw meat",
+   "orange slices",
+   "sliced avocado",
+   "shredded cheddar"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish served as an open grain bowl with shredded pork carnitas?",
+    "yes": true
+   },
+   {
+    "q": "Is the food fully rolled up inside a closed burrito wrap?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat ground or minced?",
+    "yes": false
+   }
+  ],
+  "dish": "pork burrito bowl",
+  "look": "open grain bowl, base of reddish Spanish rice, prominent pile of shredded pork carnitas with crispy browned edges, whole pinto beans, crumbled white queso fresco, swirl of orange chipotle crema, bright green avocado salsa, warm flour tortilla on the side",
+  "model": "gemini-3.5-flash",
+  "name": "Pork Carnitas Burrito Bowl",
+  "rev": 6,
+  "revisions": 1,
+  "vessel": "bowl",
+  "written_at": "2026-09-29T03:37:55+00:00"
  },
  "472e498da806": {
   "avoid": [
@@ -6629,6 +6768,42 @@
   "vessel": "bowl",
   "written_at": "2026-09-26T23:12:38+00:00"
  },
+ "76e925fd257c": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "cheese",
+   "sour cream",
+   "hard taco shells",
+   "flour tortilla wrap"
+  ],
+  "checks": [
+   {
+    "q": "Are the main items soft corn tacos filled with dark mushrooms and hibiscus filling?",
+    "yes": true
+   },
+   {
+    "q": "Does the dish contain animal meat, poultry, or cheese?",
+    "yes": false
+   },
+   {
+    "q": "Are the tacos served in crispy hard U-shaped shells?",
+    "yes": false
+   }
+  ],
+  "dish": "hibiscus and mushroom tacos",
+  "look": "three soft warm yellow corn tortillas, filled with dark shredded sautéed mushrooms and deep magenta hibiscus flowers, glossy dark barbacoa glaze, diced white onions, fresh green cilantro",
+  "model": "gemini-flash-latest",
+  "name": "Tacos de Jamaica y Hongos",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-29T00:31:05+00:00"
+ },
  "7896e25d76ba": {
   "avoid": [
    "rice",
@@ -8999,6 +9174,39 @@
   "vessel": "plate",
   "written_at": "2026-09-27T04:57:12+00:00"
  },
+ "aade175fcc85": {
+  "avoid": [
+   "refried beans",
+   "dry beans",
+   "bean dip",
+   "raw beans",
+   "pasta",
+   "rice",
+   "cheese sauce"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a brothy bean stew containing whole pinto beans and meat?",
+    "yes": true
+   },
+   {
+    "q": "Are the beans mashed smooth like refried beans?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish dry with no visible broth or liquid?",
+    "yes": false
+   }
+  ],
+  "dish": "frijoles charros",
+  "look": "tender whole pinto beans in rich soupy bean broth, diced bacon pieces, sliced sausage rounds, diced stewed tomatoes, chopped jalapenos, minced onions, chopped fresh cilantro",
+  "model": "gemini-flash-latest",
+  "name": "Frijoles Charros",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-29T00:31:05+00:00"
+ },
  "ac1e0c38ce07": {
   "avoid": [
    "beef",
@@ -9202,6 +9410,39 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T04:57:12+00:00"
+ },
+ "ae97ecf5c3ab": {
+  "avoid": [
+   "ground beef",
+   "steak",
+   "skewers",
+   "dry meat",
+   "noodles",
+   "rice",
+   "raw beef"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food chunks or tips of beef simmered in a red sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the beef ground like mince or hamburger?",
+    "yes": false
+   },
+   {
+    "q": "Is the beef served as an intact dry steak?",
+    "yes": false
+   }
+  ],
+  "dish": "beef tips in chipotle sauce",
+  "look": "tender bite-sized beef tips, rich reddish-brown chipotle tomato sauce, diced stewed tomatoes, translucent sliced onions, chopped fresh cilantro garnish",
+  "model": "gemini-flash-latest",
+  "name": "Chipotle Beef Puntas",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-29T00:31:05+00:00"
  },
  "aec0bdc5a96f": {
   "avoid": [
@@ -13437,6 +13678,42 @@
   "revisions": 1,
   "vessel": "bowl",
   "written_at": "2026-09-27T05:07:50+00:00"
+ },
+ "fb63f0f4bcf5": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "bacon",
+   "refried beans",
+   "cheese",
+   "dairy"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food whole cooked pinto beans in bean broth?",
+    "yes": true
+   },
+   {
+    "q": "Does the dish contain chunks of bacon, pork, or other meat?",
+    "yes": false
+   },
+   {
+    "q": "Are the beans mashed and pureed into refried beans?",
+    "yes": false
+   }
+  ],
+  "dish": "frijoles de la olla",
+  "look": "tender whole pinto beans, rich brown cooking broth, diced soft simmered onions, glossy bean liquor, sprig of fresh cilantro",
+  "model": "gemini-flash-latest",
+  "name": "Frijoles Pintos",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-29T00:31:05+00:00"
  },
  "fb93c230dce5": {
   "avoid": [
