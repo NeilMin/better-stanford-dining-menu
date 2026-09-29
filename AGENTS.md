@@ -332,9 +332,10 @@ needs no meal guard of its own. Campus-wide notes stay `notices`, checked agains
 edition nobody fetched while it was up is gone for good -- worse than the menus, which at least
 have a rolling week. `specials.update()` therefore writes the PDF to `data/specials/` before it
 tries to parse it, records the error on the calendar entry, and returns rather than raising:
-`scripts/update.py` logs it and carries on with the night's menus. An edition stored with an
-error is parsed again on every run, because the fix is a change to the parser tried on the same
-bytes.
+`scripts/update.py` logs it and carries on with the night's menus -- and `bsdm/source.py` turns the
+run red at the end, like a new hall, because the Sept 28 - Oct 9 edition sat unread behind a
+warning in a green log. An edition stored with an error is parsed again on every run, because the
+fix is a change to the parser tried on the same bytes.
 
 **The poster is found by where it hangs, not by what it is called.** It is the link in the red
 banner under the page title -- the first block of the page's content, `specials.BANNER` -- in

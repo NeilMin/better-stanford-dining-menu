@@ -209,6 +209,7 @@ def main() -> int:
                 log.info("Specials: nothing linked from the banner on the hours page.")
             elif result["status"] == "not a pdf":
                 log.info("Specials: the banner links %s, which is not a poster.", result["url"])
+                specials_url = None   # to bsdm/source.py, the same as nothing linked
             elif result["status"] == "unchanged":
                 log.info("Specials: unchanged (%d entries).", result["entries"])
             elif result["status"] == "unreadable":

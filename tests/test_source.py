@@ -110,6 +110,29 @@ class TestDrift:
         snapshot(project, ["Wilbur"], specials_url=None)
         assert len(sourcelib.drift(project.root, project.config)) == 1
 
+    def test_a_poster_found_but_not_read(self, project):
+        """Archived, and absent from the board for its whole fortnight, with
+        the only sign of it a warning in a green log -- which is how the
+        Sept 28 edition's "SEPT." went unread."""
+        project.set_today("2026-09-29")
+        project.add_hall("wilbur", menu_key="Wilbur")
+        project.write_specials({"url": "https://x/p.pdf", "file": "undated/undated_p.pdf",
+                                "error": "KeyError: 'SEPT'"})
+        snapshot(project, ["Wilbur"])
+        found = sourcelib.drift(project.root, project.config)
+        assert len(found) == 1 and "KeyError: 'SEPT'" in found[0]
+        assert "--dry-run data/specials/undated/undated_p.pdf" in found[0]
+
+    def test_an_old_unreadable_edition_no_longer_linked_is_silent(self, project):
+        project.set_today("2026-09-29")
+        project.add_hall("wilbur", menu_key="Wilbur")
+        project.write_specials(
+            {"url": "https://x/old.pdf", "file": "undated/undated_old.pdf", "error": "boom"},
+            {"url": "https://x/p.pdf", "meal": "Dinner", "from": "2026-09-28",
+             "to": "2026-10-09", "entries": []})
+        snapshot(project, ["Wilbur"])
+        assert sourcelib.drift(project.root, project.config) == []
+
     def test_several_findings_are_all_reported(self, project):
         project.set_today("2026-09-17")
         project.add_hall("wilbur", menu_key="Wilbur")

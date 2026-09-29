@@ -90,20 +90,36 @@ def drift(root: Path, config: dict) -> list[str]:
     # from, and it is silent by nature: the hours page simply stops linking one.
     # Only worth saying when there is also no calendar on file covering today --
     # a fortnight with no specials at all is a normal thing for R&DE to publish.
+    calendars = specialslib.load(root).get("calendars", [])
     if not snapshot.get("specials_url"):
         iso = today().isoformat()
         covered = any(c.get("from") and c.get("to") and c["from"] <= iso <= c["to"]
-                      for c in specialslib.load(root).get("calendars", []))
+                      for c in calendars)
         if not covered:
             found.append(
                 "No specials calendar is linked from the hours page, and none on "
                 "file covers today.\n"
-                "  Either R&DE has moved the poster or renamed it past "
-                "bsdm/specials.py's link match\n"
-                "  (it looks for 'special', preferring a link that also says "
-                "'calendar').\n"
+                "  bsdm/specials.py reads the link in the red banner under the page "
+                "title (specials.BANNER);\n"
+                "  either the banner links nothing or something that is not a PDF, "
+                "or R&DE has moved it.\n"
                 "  Check the hours page by hand: an edition not saved while it is "
                 "up is gone for good."
             )
+
+    # A poster that was found and archived but would not parse. Its specials
+    # are missing from the board for the whole fortnight, and the log line that
+    # says so sits in a green run: the Sept 28 edition wrote "SEPT." and went
+    # unread for that reason. The next scrape parses it again by itself, so the
+    # fix is a change to the parser and nothing else.
+    linked = next((c for c in calendars if c.get("url") == snapshot.get("specials_url")), None)
+    if linked and linked.get("error"):
+        found.append(
+            f"The specials poster on the hours page could not be read: {linked['error']}\n"
+            f"  It is archived as data/specials/{linked['file']}; see what the parser "
+            f"makes of it with\n"
+            f"  python scripts/fetch_specials.py --dry-run data/specials/{linked['file']}\n"
+            f"  Once bsdm/specials.py reads it, the next scrape parses it again by itself."
+        )
 
     return found
