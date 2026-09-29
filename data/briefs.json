@@ -259,6 +259,42 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T06:34:15+00:00"
  },
+ "038626f2b3f1": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "cheese",
+   "pizza toppings",
+   "sandwich",
+   "butter"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a baked flatbread or bread?",
+    "yes": true
+   },
+   {
+    "q": "Does it look like pizza with sauce and cheese?",
+    "yes": false
+   },
+   {
+    "q": "Is it made into a sandwich?",
+    "yes": false
+   }
+  ],
+  "dish": "garlic and herb focaccia",
+  "look": "rectangular slab of golden focaccia bread cut into squares, dimpled surface, crisp browned top, sprigs of rosemary and thyme, bits of roasted garlic, airy crumb",
+  "model": "claude-sonnet",
+  "name": "Garlic&Herb Foccacia",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-29T17:11:14+00:00"
+ },
  "03d318467e61": {
   "avoid": [
    "meat",
@@ -3576,6 +3612,42 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T04:53:30+00:00"
  },
+ "38c1fca7938b": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "curry sauce",
+   "vegetables",
+   "platter",
+   "raw rice"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food cooked rice?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat or fish with the rice?",
+    "yes": false
+   },
+   {
+    "q": "Is the rice plain white with no yellow color?",
+    "yes": false
+   }
+  ],
+  "dish": "turmeric rice",
+  "look": "fluffy cooked basmati rice grains dyed bright golden yellow, flecks of chopped chives, small bits of onion, thin curls of lemon zest, loose separate grains",
+  "model": "claude-sonnet",
+  "name": "Turmeric Chive Rice",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-29T17:11:14+00:00"
+ },
  "3905768a5eb5": {
   "avoid": [
    "meat",
@@ -4215,6 +4287,42 @@
   "vessel": "plate",
   "written_at": "2026-09-26T20:19:52+00:00"
  },
+ "43e100311ed0": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "cheese",
+   "tomato sauce",
+   "meatballs",
+   "cream sauce"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food long flat pasta noodles?",
+    "yes": true
+   },
+   {
+    "q": "Is the pasta covered in a thick red or creamy sauce?",
+    "yes": false
+   },
+   {
+    "q": "Are there pieces of meat or seafood with the pasta?",
+    "yes": false
+   }
+  ],
+  "dish": "linguine pasta",
+  "look": "a nest of cooked linguine, long flat ribbon noodles, pale golden yellow, glossy, twirled into a neat pile, slightly glistening strands",
+  "model": "claude-sonnet",
+  "name": "Linguine",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-29T17:24:02+00:00"
+ },
  "44e750bff8d1": {
   "avoid": [
    "chicken sandwich",
@@ -4785,6 +4893,42 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T06:53:41+00:00"
+ },
+ "4bfaa33fe5f4": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "egg",
+   "dry fried rice",
+   "clear broth soup",
+   "noodles"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food a thick white rice porridge?",
+    "yes": true
+   },
+   {
+    "q": "Is the rice dry and separate like fried rice?",
+    "yes": false
+   },
+   {
+    "q": "Is there an egg or meat on top of the porridge?",
+    "yes": false
+   }
+  ],
+  "dish": "congee rice porridge",
+  "look": "thick creamy white rice porridge, soft broken-down rice grains, topped with sliced shiitake mushrooms, thin slivers of ginger, chopped green onions, crispy fried shallots",
+  "model": "claude-sonnet",
+  "name": "Congee Rice Porridge",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-29T17:24:02+00:00"
  },
  "4c37c5be1cdf": {
   "avoid": [
@@ -5752,6 +5896,46 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-29T16:49:13+00:00"
+ },
+ "6372e656d9fa": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "sausage",
+   "tomato sauce",
+   "spaghetti",
+   "bread"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item pasta?",
+    "yes": true
+   },
+   {
+    "q": "Is the pasta long strands like spaghetti?",
+    "yes": false
+   },
+   {
+    "q": "Are there pieces of chicken, shrimp or sausage with the pasta?",
+    "yes": false
+   },
+   {
+    "q": "Is the pasta in red tomato sauce?",
+    "yes": false
+   }
+  ],
+  "dish": "pesto orecchiette",
+  "look": "small ear-shaped orecchiette pasta coated in green basil pesto, wilted spinach leaves, sliced brown crimini mushrooms, soft onion pieces, toasted pine nuts, shavings of parmesan cheese",
+  "model": "claude-sonnet",
+  "name": "Pesto Orecchiette",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-29T17:11:14+00:00"
  },
  "650d25f97736": {
   "avoid": [
@@ -7637,6 +7821,42 @@
   "vessel": "plate",
   "written_at": "2026-09-27T05:43:05+00:00"
  },
+ "88e673e12cba": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "tortilla",
+   "sausage",
+   "bun",
+   "rice"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cooked sliced onions and bell peppers?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat or sausage?",
+    "yes": false
+   },
+   {
+    "q": "Are the vegetables served in a tortilla or bun?",
+    "yes": false
+   }
+  ],
+  "dish": "caramelized onions and peppers",
+  "look": "soft sliced onions and strips of red, yellow and green bell pepper, deep golden-brown caramelized edges, glistening tender pile",
+  "model": "claude-sonnet",
+  "name": "Caramelized Onions & Peppers",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-29T17:11:14+00:00"
+ },
  "89be6958063f": {
   "avoid": [
    "whole peppers",
@@ -7853,6 +8073,42 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T06:22:24+00:00"
+ },
+ "8b63c5d5b8a4": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "lettuce salad",
+   "tomatoes",
+   "creamy dressing",
+   "olives"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food sliced cucumber?",
+    "yes": true
+   },
+   {
+    "q": "Is the cucumber covered in a thick creamy dressing like tzatziki?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a leafy green salad with mixed vegetables?",
+    "yes": false
+   }
+  ],
+  "dish": "Moroccan pickled cucumbers",
+  "look": "sliced fresh cucumber rounds and spears, green skin, pale green flesh, glistening in clear pickling brine, fresh dill sprigs, whole garlic cloves, visible coriander and cumin seeds",
+  "model": "claude-sonnet",
+  "name": "Moroccan Pickled Cucumbers",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-29T17:24:02+00:00"
  },
  "8c1b4df69b6d": {
   "avoid": [
@@ -8567,6 +8823,42 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T06:30:47+00:00"
+ },
+ "998e85b27032": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "couscous",
+   "soup",
+   "cheese",
+   "whole raw squash"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item roasted squash pieces?",
+    "yes": true
+   },
+   {
+    "q": "Is the squash pureed like a soup?",
+    "yes": false
+   },
+   {
+    "q": "Are there pieces of meat or fish?",
+    "yes": false
+   }
+  ],
+  "dish": "charred squash with ras el hanout",
+  "look": "roasted squash half-moon slices or wedges, blackened charred edges, tender orange flesh, dusting of warm brown spice, chopped parsley and cilantro on top",
+  "model": "claude-sonnet",
+  "name": "Charred Squash with Ras el Hanout",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-29T17:11:14+00:00"
  },
  "99de65322e8a": {
   "avoid": [
@@ -11509,6 +11801,41 @@
   "vessel": "plate",
   "written_at": "2026-09-27T07:31:35+00:00"
  },
+ "cbb23af96975": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "pasta",
+   "cheese",
+   "raw salad"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item roasted vegetables?",
+    "yes": true
+   },
+   {
+    "q": "Is the dish a raw fresh salad with lettuce?",
+    "yes": false
+   },
+   {
+    "q": "Are there pieces of meat or fish?",
+    "yes": false
+   }
+  ],
+  "dish": "roasted fennel and cherry tomatoes",
+  "look": "wedges of roasted fennel bulb, caramelized golden-brown edges, blistered burst cherry tomatoes, halved black and green olives, chopped fresh parsley",
+  "model": "claude-sonnet",
+  "name": "Roasted Fennel and Cherry Tomatoes",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-29T17:11:14+00:00"
+ },
  "cbeaa895acd5": {
   "avoid": [
    "whole avocado",
@@ -13060,6 +13387,46 @@
   "vessel": "plate",
   "written_at": "2026-09-27T04:50:49+00:00"
  },
+ "e927cf3b32dd": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "pasta",
+   "cheese",
+   "bread",
+   "whole eggplant"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a chunky cooked eggplant and tomato vegetable mixture?",
+    "yes": true
+   },
+   {
+    "q": "Is the eggplant a smooth puree like a dip?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish served on pasta?",
+    "yes": false
+   },
+   {
+    "q": "Are there pieces of meat or fish?",
+    "yes": false
+   }
+  ],
+  "dish": "eggplant caponata",
+  "look": "chunky Sicilian relish of diced eggplant, celery and onion in glossy tomato sauce, capers, deep red-brown color, chopped parsley on top",
+  "model": "claude-sonnet",
+  "name": "Eggplant Caponata",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-29T17:11:14+00:00"
+ },
  "e98a1914f2cc": {
   "avoid": [
    "beef",
@@ -13165,38 +13532,37 @@
  },
  "ebcf48a11348": {
   "avoid": [
-   "noodles without chicken",
-   "plate of cucumber slices",
    "soup broth",
-   "fried rice",
+   "hot noodle soup",
    "beef",
+   "pork",
    "shrimp",
-   "tofu",
-   "spaghetti with tomato sauce",
-   "whole skewer platter"
+   "white rice",
+   "raw chicken",
+   "pasta sauce"
   ],
   "checks": [
    {
-    "q": "Is the main item noodles?",
+    "q": "Is the dish composed of noodles with cooked chicken?",
     "yes": true
    },
    {
-    "q": "Are the noodles in a hot broth soup?",
+    "q": "Are the noodles submerged in a hot soupy broth?",
     "yes": false
    },
    {
-    "q": "Is the meat beef or shrimp instead of chicken?",
+    "q": "Is the meat a red meat or seafood instead of chicken?",
     "yes": false
    }
   ],
   "dish": "cold peanut noodles with chicken satay",
-  "look": "sliced grilled chicken satay strips with golden-brown char marks laid on top of chilled noodles, chicken pieces clearly visible, creamy peanut sauce coating the noodles, shredded carrot, cucumber slices, crushed peanuts, sesame seeds",
-  "model": "claude-sonnet",
+  "look": "chilled wheat noodles coated in creamy tan peanut satay sauce, strips of grilled chicken with dark brown grill marks, matchstick cucumber ribbons, shredded orange carrots, chopped roasted peanuts, sliced scallions",
+  "model": "gemini-flash-latest",
   "name": "Cold Noodles with Chicken Satay",
   "rev": 6,
-  "revisions": 1,
+  "revisions": 0,
   "vessel": "bowl",
-  "written_at": "2026-09-29T16:35:43+00:00"
+  "written_at": "2026-09-29T17:36:43+00:00"
  },
  "ec35f62fcf30": {
   "avoid": [
@@ -13554,6 +13920,42 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T04:56:29+00:00"
+ },
+ "efbf6f0822af": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "french fries",
+   "mashed potatoes",
+   "sweet potatoes",
+   "cheese"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food roasted potato chunks?",
+    "yes": true
+   },
+   {
+    "q": "Are the potatoes mashed or pureed?",
+    "yes": false
+   },
+   {
+    "q": "Are the potatoes thin french fries?",
+    "yes": false
+   }
+  ],
+  "dish": "Moroccan spiced roasted potatoes",
+  "look": "bite-sized roasted potato chunks, golden brown crisp edges, orange-red spiced coating, tender fluffy interior, flecks of chopped fresh parsley, a few roasted garlic pieces",
+  "model": "claude-sonnet",
+  "name": "Moroccan Roasted Potatoes",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-29T17:24:02+00:00"
  },
  "f0173d429d11": {
   "avoid": [
@@ -14040,6 +14442,42 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T08:19:18+00:00"
+ },
+ "f89ab2c469cd": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "couscous",
+   "lamb",
+   "conical tagine pot",
+   "flatbread"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a stew of vegetables and chickpeas in sauce?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat or fish in the stew?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a smooth pureed soup?",
+    "yes": false
+   }
+  ],
+  "dish": "chickpea and cauliflower tagine",
+  "look": "stew of golden chickpeas and cauliflower florets, chunks of carrot and tomato, green olives, thick orange-red spiced sauce, slivers of preserved lemon rind, chopped cilantro on top",
+  "model": "claude-sonnet",
+  "name": "Chickpea & Cauliflower Tagine",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-29T17:11:14+00:00"
  },
  "f8fcd4c63ef5": {
   "avoid": [
