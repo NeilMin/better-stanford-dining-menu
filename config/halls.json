@@ -1,6 +1,6 @@
 {
   "_source": "https://rde.stanford.edu/dining-hospitality/dining-locations-hours",
-  "_captured": "2026-09-15",
+  "_captured": "2026-09-29",
   "_note": "Hand-transcribed ground truth. The source page is prose, not structured data, so scripts/check_hours.py watches it for changes rather than parsing it. When it reports a diff, re-transcribe this file.",
   "_schema": {
     "menu_key": "value submitted to the rdeapps lstLocations dropdown",
@@ -29,9 +29,9 @@
         {"from": "2026-09-18", "to": null, "label": "Fall Hours", "days": [0,1,2,3,4],
          "meals": {"Breakfast": ["07:30","10:00"], "Lunch": ["11:00","15:00"], "Dinner": ["17:00","20:30"]}},
         {"from": "2026-09-18", "to": null, "label": "Fall Hours", "days": [5,6],
-         "meals": {"Lunch": ["09:00","13:30"], "Dinner": ["17:00","20:00"]}}
+         "meals": {"Lunch": ["09:30","13:30"], "Dinner": ["17:00","20:00"]}}
       ],
-      "late_night": {"name": "Arrillaga Nights", "days": [3,4,5,6], "hours": ["21:30","02:00"]}
+      "late_night": {"name": "Arrillaga Nights", "days": [1,2,3,4,5], "hours": ["21:00","02:00"]}
     },
     {
       "id": "lakeside",
@@ -53,9 +53,9 @@
         {"from": "2026-09-18", "to": null, "label": "Fall Hours", "days": [0,1,2,3,4],
          "meals": {"Breakfast": ["07:30","10:00"], "Lunch": ["11:00","14:00"], "Dinner": ["17:00","20:30"]}},
         {"from": "2026-09-18", "to": null, "label": "Fall Hours", "days": [5,6],
-         "meals": {"Lunch": ["09:00","13:30"], "Dinner": ["17:00","20:00"]}}
+         "meals": {"Lunch": ["09:30","13:30"], "Dinner": ["17:00","20:00"]}}
       ],
-      "late_night": {"name": "Late Night at Lakeside", "days": [6,0,1,2,3], "hours": ["21:30","02:00"]}
+      "late_night": {"name": "Late Night at Lakeside", "days": [6,0,1,2,3], "hours": ["21:00","02:00"]}
     },
     {
       "id": "wilbur",
@@ -76,9 +76,9 @@
         {"from": "2026-09-17", "to": "2026-09-17", "label": "NSO Hours", "days": [0,1,2,3,4,5,6],
          "meals": {"Breakfast": ["07:30","09:00"], "Lunch": ["11:30","13:30"], "Dinner": ["17:00","19:00"]}},
         {"from": "2026-09-18", "to": null, "label": "Fall Hours", "days": [0,1,2,3,4],
-         "meals": {"Breakfast": ["07:30","10:00"], "Lunch": ["11:00","14:00"], "Dinner": ["17:00","20:00"]}},
+         "meals": {"Breakfast": ["07:30","09:00"], "Lunch": ["11:00","13:30"], "Dinner": ["17:00","20:00"]}},
         {"from": "2026-09-18", "to": null, "label": "Fall Hours", "days": [5,6],
-         "meals": {"Lunch": ["09:00","13:30"], "Dinner": ["17:00","20:00"]}}
+         "meals": {"Lunch": ["10:30","13:30"], "Dinner": ["17:00","20:00"]}}
       ],
       "late_night": null
     },
