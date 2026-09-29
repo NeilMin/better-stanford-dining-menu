@@ -224,6 +224,27 @@ class TestTexts:
         assert specialslib.texts(project.root) == ["Esquite Fries", "Thanksgiving Day Dinner"]
 
 
+class TestTitle:
+    """The fortnight comes from the title, however R&DE spells the month."""
+
+    @pytest.mark.parametrize("word, month", [
+        ("SEPTEMBER", 9), ("SEPT", 9), ("Sept.", 9), ("SEP", 9), ("OCT", 10),
+        ("november", 11),
+    ])
+    def test_a_month_written_out_or_cut_short(self, word, month):
+        assert specialslib._month(word) == month
+
+    @pytest.mark.parametrize("word", ["MA", "JU", "SEPTX", "FOR"])
+    def test_a_word_that_is_not_one_month(self, word):
+        with pytest.raises(ValueError):
+            specialslib._month(word)
+
+    def test_an_abbreviated_range_across_two_months(self):
+        hit = specialslib.TITLE_RE.search("DINNER SPECIALS FOR SEPT. 28 - OCT. 9, 2026")
+        assert (hit["m1"], hit["d1"], hit["m2"], hit["d2"], hit["y"]) == \
+            ("SEPT", "28", "OCT", "9", "2026")
+
+
 class TestUpdate:
     HTML = '<a href="https://rde.stanford.edu/f/specials-calendar.pdf">Specials Calendar</a>'
 
@@ -291,6 +312,27 @@ class TestUpdate:
         again = specialslib.update(halls.root, halls.config, html=self.HTML)
         assert again["status"] == "unchanged"
         assert len(specialslib.load(halls.root)["calendars"]) == 1
+
+    def test_an_edition_that_would_not_parse_is_read_again(self, halls, downloads,
+                                                           monkeypatch):
+        """The fix for an unreadable poster is a change to the parser, tried on
+        the same bytes; "unchanged" would keep the edition off the board for
+        the whole fortnight it is up."""
+        downloads(b"pdf bytes")
+        specialslib.update(halls.root, halls.config, html=self.HTML)
+        undated = specialslib.load(halls.root)["calendars"][0]["file"]
+        assert undated.startswith("undated/")
+
+        monkeypatch.setattr(specialslib, "parse", lambda blob: {
+            "title": "t", "meal": "Dinner", "from": "2026-09-28", "to": "2026-10-09",
+            "entries": [],
+        })
+        again = specialslib.update(halls.root, halls.config, html=self.HTML)
+
+        assert again["status"] == "updated"
+        [stored] = specialslib.load(halls.root)["calendars"]
+        assert "error" not in stored and stored["file"].startswith("2026/09/")
+        assert not (specialslib.archive_dir(halls.root) / undated).exists()
 
     def test_no_link_on_the_page_is_reported_not_raised(self, halls):
         result = specialslib.update(halls.root, halls.config, html="<html></html>")

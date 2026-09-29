@@ -54,9 +54,19 @@ MONTHS = {m.upper(): i for i, m in enumerate(
 
 WEEKDAYS = ["SUNDAY", "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY"]
 
+
+def _month(word: str) -> int:
+    """A month the way a poster writes it: "SEPTEMBER", "SEPT.", "Oct"."""
+    word = word.upper().rstrip(".")
+    hits = [n for name, n in MONTHS.items() if len(word) >= 3 and name.startswith(word)]
+    if len(hits) != 1:
+        raise ValueError(f"no month called {word!r}")
+    return hits[0]
+
+
 # "DINNER SPECIALS FOR SEPTEMBER 14 - 25, 2026" -- the meal and the fortnight.
-# Seen with and without spaces around the dash, and with the second month
-# spelled out when the range crosses one.
+# Seen with and without spaces around the dash, with the second month spelled
+# out when the range crosses one, and abbreviated ("SEPT. 28 - OCT. 9, 2026").
 TITLE_RE = re.compile(
     r"(?P<meal>BREAKFAST|BRUNCH|LUNCH|DINNER)\s+SPECIALS\s+FOR\s+"
     r"(?P<m1>[A-Za-z]+)\.?\s*(?P<d1>\d{1,2})\s*[-–—]\s*"
@@ -172,14 +182,33 @@ def _bbox(segments):
 
 
 def _text_lines(page) -> list[dict]:
+    """The page's text, one piece per run of spans that share a baseline.
+
+    PyMuPDF's own lines are not enough: it will join the second line of a note
+    to the entry beside it when the two touch ("Heritage Month Dinner" +
+    "Stern: Chilaquiles", Sept 28 - Oct 9), and the joined box then sits in
+    neither bar. A real line keeps one baseline across its spans; that one
+    did not.
+    """
     lines = []
     for block in page.get_text("dict")["blocks"]:
         if block["type"] != 0:
             continue
         for line in block["lines"]:
-            text = "".join(span["text"] for span in line["spans"])
-            if text.strip():
-                lines.append({"text": text, "box": line["bbox"]})
+            runs: list[list[dict]] = []
+            for span in line["spans"]:
+                if runs and (not span["text"].strip()
+                             or abs(span["origin"][1] - runs[-1][-1]["origin"][1]) < 1):
+                    runs[-1].append(span)
+                else:
+                    runs.append([span])
+            for run in runs:
+                text = "".join(span["text"] for span in run)
+                if text.strip():
+                    solid = [s["bbox"] for s in run if s["text"].strip()]
+                    box = (min(b[0] for b in solid), min(b[1] for b in solid),
+                           max(b[2] for b in solid), max(b[3] for b in solid))
+                    lines.append({"text": text, "box": box})
     return lines
 
 
@@ -200,8 +229,8 @@ def parse(blob: bytes) -> dict:
         raise ValueError("no 'SPECIALS FOR <month> <d>-<d>, <year>' title on page 1")
 
     year = int(match["y"])
-    start = dt.date(year, MONTHS[match["m1"].upper()], int(match["d1"]))
-    end = dt.date(year, MONTHS[(match["m2"] or match["m1"]).upper()], int(match["d2"]))
+    start = dt.date(year, _month(match["m1"]), int(match["d1"]))
+    end = dt.date(year, _month(match["m2"] or match["m1"]), int(match["d2"]))
     if end < start:                       # a range that runs into January
         end = dt.date(year + 1, end.month, end.day)
 
@@ -390,7 +419,10 @@ def update(root: Path, config: dict, *, force: bool = False,
 
     blob = download(url)
     digest = hashlib.sha256(blob).hexdigest()
-    if existing and existing.get("sha256") == digest and not force:
+    # An edition that would not parse is read again every time: the fix is a
+    # change to the parser, and the bytes it has to be tried on are the same.
+    if existing and existing.get("sha256") == digest and not force \
+            and "error" not in existing:
         return {"url": url, "status": "unchanged", "entries": len(existing.get("entries", []))}
 
     parsed, error = None, None
@@ -405,6 +437,9 @@ def update(root: Path, config: dict, *, force: bool = False,
     out = archive_dir(root) / name
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_bytes(blob)
+    # The same bytes read at last: out of undated/ and into their fortnight.
+    if existing and existing.get("sha256") == digest and existing.get("file") != name:
+        (archive_dir(root) / existing["file"]).unlink(missing_ok=True)
 
     record = {"url": url, "file": name, "sha256": digest,
               "fetched_at": dt.datetime.now(dt.timezone.utc)
