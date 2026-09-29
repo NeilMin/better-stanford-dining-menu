@@ -50,10 +50,13 @@ env:
   COMFYUI_COMMIT: b78cec879b9460d5cb25228a83a942fb78d2cd24
   CHECKPOINT_URL: https://huggingface.co/SG161222/RealVisXL_V5.0/resolve/main/RealVisXL_V5.0_fp16.safetensors
   # Measured on the slower runners: 18 minutes a picture, judging included, and
-  # a picture and a half a dish (the dry run drew 9 for 6), so 27 minutes a
-  # dish in four hours. The unluckiest last dish, four pictures, still ends
-  # inside the step's five and a half.
-  DISHES_PER_MACHINE: 9
+  # a picture and a half a dish on average -- 47 pictures for 30 dishes over
+  # the first four nights. Nine a machine was that average to the minute, and
+  # the night of 2026-09-28 drew 13 pictures for 6 dishes and ran out of time
+  # with 3 still waiting. Six is three hours at the average and still inside
+  # four at that night's rate; the machines are free. The unluckiest last dish,
+  # four pictures, still ends inside the step's five and a half.
+  DISHES_PER_MACHINE: 6
   # Of the 20 jobs a free account may run at once; the scrape and the site
   # deploy need a few.
   MAX_MACHINES: 6
