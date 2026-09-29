@@ -1,6 +1,6 @@
 {
  "date": "2026-09-28",
- "scraped_at": "2026-09-28T09:47:45-07:00",
+ "scraped_at": "2026-09-28T17:24:00-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -221,7 +221,7 @@
      "name": "Seafood Jambalaya",
      "recipe_id": "4860996",
      "description": "",
-     "ingredients": "shrimp, squid, mussels, andouille sausage, okra, tomato puree, basmati rice, chicken base, garlic, creole spice (herbs de provence, cuminseed, salt, cayenne pepper, pepper, paprika), bell peppers, celery, onion, Worcestershire sauce, thyme, bay leaf, parsley",
+     "ingredients": "shrimp, mussels, andouille sausage, okra, tomato puree, basmati rice, chicken base, garlic, creole spice (herbs de provence, cuminseed, salt, cayenne pepper, pepper, paprika), bell peppers, celery, onion, Worcestershire sauce, thyme, bay leaf, parsley",
      "allergens": [
       "EGG",
       "FISH",
@@ -1637,37 +1637,33 @@
      "order": 15
     },
     {
-     "name": "Marinara Cheese Ravioli",
-     "recipe_id": "3581918",
+     "name": "Marinara Sauce",
+     "recipe_id": "3612835",
      "description": "",
-     "ingredients": "ravioli, marinara sauce, parmesan cheese",
+     "ingredients": "italian tomatoes, diced tomatoes, fresh onions, extra virgin olive oil, garlic, sea salt, oregano, black pepper",
      "allergens": [
-      "EGG",
-      "MILK",
-      "SOY",
-      "WHEAT"
+      "SOY"
      ],
      "trace_allergens": [],
      "tags": [
-      "vegetarian",
+      "gluten-free",
+      "vegan",
       "halal"
      ],
      "order": 16
     },
     {
-     "name": "Pasta Marinara",
-     "recipe_id": "5095708",
+     "name": "Alfredo Sauce",
+     "recipe_id": "5681078",
      "description": "",
-     "ingredients": "pasta, marinara sauce, canola/olive oil blend",
+     "ingredients": "cream, onion, milk powder, butter, parmesan cheese, flour, garlic, nutmeg, onion powder, salt",
      "allergens": [
-      "SOY",
+      "MILK",
       "WHEAT"
      ],
-     "trace_allergens": [
-      "EGG"
-     ],
+     "trace_allergens": [],
      "tags": [
-      "vegan",
+      "vegetarian",
       "halal"
      ],
      "order": 17
@@ -1923,7 +1919,7 @@
      "name": "Seafood Jambalaya",
      "recipe_id": "4860996",
      "description": "",
-     "ingredients": "shrimp, squid, mussels, andouille sausage, okra, tomato puree, basmati rice, chicken base, garlic, creole spice (herbs de provence, cuminseed, salt, cayenne pepper, pepper, paprika), bell peppers, celery, onion, Worcestershire sauce, thyme, bay leaf, parsley",
+     "ingredients": "shrimp, mussels, andouille sausage, okra, tomato puree, basmati rice, chicken base, garlic, creole spice (herbs de provence, cuminseed, salt, cayenne pepper, pepper, paprika), bell peppers, celery, onion, Worcestershire sauce, thyme, bay leaf, parsley",
      "allergens": [
       "EGG",
       "FISH",
@@ -2194,17 +2190,18 @@
      "order": 16
     },
     {
-     "name": "Pesto Sauce",
-     "recipe_id": "6128910",
+     "name": "Pasta Alfredo",
+     "recipe_id": "5683556",
      "description": "",
-     "ingredients": "basil, canola oil, parmesan cheese (milk, bacterial culture, salt, microbial enzymes, extra virgin olive oil, garlic, salt, lemon juice concentrate, natural flavor, ascorbic acid, xanthan gum, soy lecithin, chamomile extract, rosemary extract)",
+     "ingredients": "pasta, white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, parmesan cheese",
      "allergens": [
       "MILK",
-      "SOY"
+      "WHEAT"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "EGG"
+     ],
      "tags": [
-      "gluten-free",
       "vegetarian",
       "halal"
      ],
@@ -2739,7 +2736,7 @@
      "name": "Seafood Jambalaya",
      "recipe_id": "4860996",
      "description": "",
-     "ingredients": "shrimp, squid, mussels, andouille sausage, okra, tomato puree, basmati rice, chicken base, garlic, creole spice (herbs de provence, cuminseed, salt, cayenne pepper, pepper, paprika), bell peppers, celery, onion, Worcestershire sauce, thyme, bay leaf, parsley",
+     "ingredients": "shrimp, mussels, andouille sausage, okra, tomato puree, basmati rice, chicken base, garlic, creole spice (herbs de provence, cuminseed, salt, cayenne pepper, pepper, paprika), bell peppers, celery, onion, Worcestershire sauce, thyme, bay leaf, parsley",
      "allergens": [
       "EGG",
       "FISH",
@@ -3386,6 +3383,61 @@
       "halal"
      ],
      "order": 21
+    },
+    {
+     "name": "Pork Ranchero Burrito",
+     "recipe_id": "5341335",
+     "description": "",
+     "ingredients": "ranchero pork (pork, garlic, canola/olive oil blend, oregano, salt, pepper, roasted red salsa [tomatoes, onion, garlic, chipotle peppers]), spanish rice (brown rice, vegetable soup base, onions, bell peppers, garlic, jalapeno peppers, canola/olive oil blend, tomato juice, salt, coriander, cumin, pepper, cilantro), cheese, black beans, pico de gallo, guacamole, flour tortilla",
+     "allergens": [
+      "MILK",
+      "WHEAT"
+     ],
+     "trace_allergens": [],
+     "tags": [],
+     "order": 22
+    },
+    {
+     "name": "Hongos Guisados Stew",
+     "recipe_id": "3274445",
+     "description": "",
+     "ingredients": "mushroom, onion, canola olive oil, jalapeno chili, epazote herb, garlic, salt",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan",
+      "halal"
+     ],
+     "order": 23
+    },
+    {
+     "name": "Arroz Mixto Con Verduras",
+     "recipe_id": "6060873",
+     "description": "",
+     "ingredients": "white rice, corn, green peas, onions, garlic, epazote, canola/olive oil blend, black pepper, salt",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan",
+      "halal"
+     ],
+     "order": 24
+    },
+    {
+     "name": "Refried Beans",
+     "recipe_id": "4835563",
+     "description": "",
+     "ingredients": "pinto beans, onions, garlic, canola oil, extra virgin olive oil, cumin, coriander, cilantro, salt",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan",
+      "halal"
+     ],
+     "order": 25
     }
    ]
   },
@@ -3964,16 +4016,6 @@
      "order": 9
     },
     {
-     "name": "Burger Bar",
-     "recipe_id": "5964436",
-     "description": "",
-     "ingredients": "",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [],
-     "order": 10
-    },
-    {
      "name": "Grilled Chicken",
      "recipe_id": "5816331",
      "description": "",
@@ -3986,30 +4028,7 @@
       "gluten-free",
       "halal"
      ],
-     "order": 11
-    },
-    {
-     "name": "Grilled Vegan/Vegetarian",
-     "recipe_id": "13468741",
-     "description": "",
-     "ingredients": "chef's choice grilled vegan OR vegetarian option",
-     "allergens": [],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
-     ],
-     "tags": [
-      "halal"
-     ],
-     "order": 12
+     "order": 10
     },
     {
      "name": "Soup of the Day",
@@ -4019,7 +4038,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 13
+     "order": 11
     },
     {
      "name": "Assorted Dinner Rolls",
@@ -4038,7 +4057,7 @@
       "vegetarian",
       "halal"
      ],
-     "order": 14
+     "order": 12
     },
     {
      "name": "Composed Salad",
@@ -4050,7 +4069,7 @@
      "tags": [
       "halal"
      ],
-     "order": 15
+     "order": 13
     },
     {
      "name": "Performance Bar",
@@ -4060,7 +4079,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 16
+     "order": 14
     },
     {
      "name": "Craveable Grains",
@@ -4074,7 +4093,7 @@
       "vegan",
       "halal"
      ],
-     "order": 17
+     "order": 15
     },
     {
      "name": "Flavor Forward Legumes",
@@ -4088,7 +4107,7 @@
       "vegan",
       "halal"
      ],
-     "order": 18
+     "order": 16
     },
     {
      "name": "Marinara Cheese Ravioli",
@@ -4106,7 +4125,7 @@
       "vegetarian",
       "halal"
      ],
-     "order": 19
+     "order": 17
     },
     {
      "name": "Pasta Marinara",
@@ -4124,21 +4143,7 @@
       "vegan",
       "halal"
      ],
-     "order": 20
-    },
-    {
-     "name": "Penne Pasta (Gluten-Free)",
-     "recipe_id": "3189216",
-     "description": "",
-     "ingredients": "brown rice, rice bran, water",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan",
-      "halal"
-     ],
-     "order": 21
+     "order": 18
     }
    ]
   },
@@ -4492,8 +4497,8 @@
    ],
    "Dinner": [
     {
-     "name": "Chicken Fajitas",
-     "recipe_id": "4829855",
+     "name": "Al Pastor Chicken",
+     "recipe_id": "4829855-2",
      "description": "",
      "ingredients": "chicken, bell peppers, onions, garlic, al pastor sauce (orange juice, achiote paste, garlic, onion, vinegar, cumin seed, guajillo chili, ancho chili, salt, sugar)",
      "allergens": [],
@@ -4628,14 +4633,16 @@
      "order": 8
     },
     {
-     "name": "Chicken Tortilla Soup",
-     "recipe_id": "4343353",
+     "name": "Hearty Minestrone",
+     "recipe_id": "4633186",
      "description": "",
-     "ingredients": "chicken soup base, chicken, canola/olive oil blend, tomato puree, tomatoes, black beans, salsa, onion, jalapeno, corn, hominy, garlic, cilantro, chili powder, oregano, salt, pepper",
-     "allergens": [],
-     "trace_allergens": [
+     "ingredients": "tomato puree, diced tomatoes in tomato juice, potatoes, kidney beans, carrots, green beans, celery, garbanzo beans, zucchini, peas, spinach, pasta, modified food starch, salt, parmesan cheese, gelatin, yeast extract, flour, flavoring, beef stock, spices, corn oil, canola oil, garlic, disodium inosinate, disodium guanylate, dextrose",
+     "allergens": [
+      "EGG",
+      "MILK",
       "WHEAT"
      ],
+     "trace_allergens": [],
      "tags": [],
      "order": 9
     },
@@ -4659,17 +4666,13 @@
      "order": 10
     },
     {
-     "name": "Zesty Tex-Mex Salad",
-     "recipe_id": "4425678",
+     "name": "Composed Salad",
+     "recipe_id": "123116546",
      "description": "",
-     "ingredients": "romaine lettuce, black beans, cherry tomatoes, bell peppers, cilantro, corn, olive oil, italian dressing (soybean oil, distilled vinegar, high fructose corn syrup, corn syrup, salt, garlic, corn syrup solids, xanthan gum, lemon juice concentrate, spice, red bell pepper, paprika, fd&c yellow no.5, fd&c yellow No.6)",
-     "allergens": [
-      "SOY"
-     ],
+     "ingredients": "chef's choice composed salad",
+     "allergens": [],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
-      "vegan",
       "halal"
      ],
      "order": 11
@@ -5103,10 +5106,10 @@
      "order": 8
     },
     {
-     "name": "Caprese Pizza",
-     "recipe_id": "4173253",
+     "name": "Cheese Pizza",
+     "recipe_id": "5646522",
      "description": "",
-     "ingredients": "pizza dough, pesto sauce, mozzarella cheese, parmesan cheese, tomatoes, canola/olive oil blend, salt, pepper",
+     "ingredients": "pizza dough, tomato sauce, mozzarella cheese, parmesan cheese",
      "allergens": [
       "MILK",
       "SOY",
