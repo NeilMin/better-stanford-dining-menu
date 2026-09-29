@@ -1,6 +1,6 @@
 {
  "date": "2026-09-29",
- "scraped_at": "2026-09-29T13:01:26-07:00",
+ "scraped_at": "2026-09-29T16:45:54-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -214,18 +214,12 @@
    ],
    "Lunch": [
     {
-     "name": "Vietnamese Lemongrass Beef",
-     "recipe_id": "VietLemonBeef1",
+     "name": "Braised Herbed Chicken",
+     "recipe_id": "5550133",
      "description": "",
-     "ingredients": "beef, onions, bell peppers, lemongrass, garlic, ginger, tamari, lime juice, sugar, fish sauce, olive/canola oil blend, salt, black pepper",
-     "allergens": [
-      "FISH",
-      "SOY",
-      "TRACEALLERGENS"
-     ],
-     "trace_allergens": [
-      "SHELLFISH"
-     ],
+     "ingredients": "herb chicken(chicken, sage, rosemary, thyme, garlic, black pepper, salt), chicken soup base, dijon mustard, apple cider vinegar, mushrooms, pearl onions, celery, carrots, green peas, canola/olive oil blend, bay leaf, black pepper, salt",
+     "allergens": [],
+     "trace_allergens": [],
      "tags": [
       "gluten-free",
       "halal"
@@ -1419,17 +1413,23 @@
      "order": 0
     },
     {
-     "name": "Red Lentil & Cauliflower Curry",
-     "recipe_id": "CauliLentilCurry1",
+     "name": "Paneer Butter Masala",
+     "recipe_id": "4153115",
      "description": "",
-     "ingredients": "red lentils, cauliflower, stewed tomatoes, onions, garlic, coconut milk, curry powder, chili powder, mushroom seasoning, lemon juice, cilantro, oil, salt, and pepper",
+     "ingredients": "paneer cheese, onions, tomato, unsalted butter, canola/olive oil blend, ginger, cashews, cream, bay leaf, curry sauce (onions, ginger, garlic, tomato puree, tomato sauce, tomato paste, ketchup, turmeric, garam masala, coriander seeds, curry powder, ground cumin, cumin seeds, chili powder, salt), coriander seeds, cinnamon, cardamom seeds, garam masala, karoori methi (fenugreek), parsley",
      "allergens": [
-      "COCONUT"
+      "MILK",
+      "PEANUTS",
+      "SOY",
+      "TREENUTS"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "EGG",
+      "SESAME",
+      "WHEAT"
+     ],
      "tags": [
-      "gluten-free",
-      "vegan",
+      "vegetarian",
       "halal"
      ],
      "order": 1
@@ -1501,10 +1501,10 @@
      "order": 5
     },
     {
-     "name": "New York Steak with Herb Butter",
-     "recipe_id": "3129348",
+     "name": "Chimichurri Steak",
+     "recipe_id": "6303972",
      "description": "",
-     "ingredients": "beef, canola/olive oil blend, salt, pepper, herb butter (butter, shallot, lemon juice, thyme, chives)",
+     "ingredients": "grilled steak, canola/olive oil blend, salt, pepper, chimichurri sauce (cilantro, parsley, oregano, canola oil, red wine vinegar, garlic, lime juice, pepper, salt)",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -1642,37 +1642,34 @@
      "order": 15
     },
     {
-     "name": "Pasta Pesto",
-     "recipe_id": "3857040",
+     "name": "Marinara Sauce",
+     "recipe_id": "3612835",
      "description": "",
-     "ingredients": "pasta, pesto sauce (basil, canola oil, parmesan cheese, extra virgin olive oil, garlic, lemon juice concentrate, natural flavor, ascorbic acid, xanthan gum, soy lecithin, chamomile extract, rosemary extract, salt)",
+     "ingredients": "italian tomatoes, diced tomatoes, fresh onions, extra virgin olive oil, garlic, sea salt, oregano, black pepper",
+     "allergens": [
+      "SOY"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan",
+      "halal"
+     ],
+     "order": 16
+    },
+    {
+     "name": "Creamy Marinara",
+     "recipe_id": "CreamyMar(lakeside)",
+     "description": "",
+     "ingredients": "tomatoes, tomato paste, cream, milk powder, butter, parmesan cheese, flour, soybean oil, sugar, salt, onion, garlic, spices, citric acid, natural flavor",
      "allergens": [
       "MILK",
       "SOY",
       "WHEAT"
      ],
-     "trace_allergens": [
-      "EGG"
-     ],
+     "trace_allergens": [],
      "tags": [
-      "vegetarian"
-     ],
-     "order": 16
-    },
-    {
-     "name": "Pasta Marinara",
-     "recipe_id": "5095708",
-     "description": "",
-     "ingredients": "pasta, marinara sauce, canola/olive oil blend",
-     "allergens": [
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "EGG"
-     ],
-     "tags": [
-      "vegan",
+      "vegetarian",
       "halal"
      ],
      "order": 17
@@ -3234,54 +3231,6 @@
      "order": 8
     },
     {
-     "name": "Burger Bar",
-     "recipe_id": "5964436",
-     "description": "",
-     "ingredients": "",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [],
-     "order": 9
-    },
-    {
-     "name": "Grilled Chicken",
-     "recipe_id": "5816331",
-     "description": "",
-     "ingredients": "chicken, olive oil, salt, pepper",
-     "allergens": [
-      "TRACEALLERGENS"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "halal"
-     ],
-     "order": 10
-    },
-    {
-     "name": "Grilled Vegan/Vegetarian",
-     "recipe_id": "13468741",
-     "description": "",
-     "ingredients": "chef's choice grilled vegan OR vegetarian option",
-     "allergens": [],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
-     ],
-     "tags": [
-      "halal"
-     ],
-     "order": 11
-    },
-    {
      "name": "Soup of the Day",
      "recipe_id": "SoupoftheDay",
      "description": "",
@@ -3289,7 +3238,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 12
+     "order": 9
     },
     {
      "name": "Assorted Dinner Rolls",
@@ -3308,7 +3257,7 @@
       "vegetarian",
       "halal"
      ],
-     "order": 13
+     "order": 10
     },
     {
      "name": "Composed Salad",
@@ -3320,7 +3269,7 @@
      "tags": [
       "halal"
      ],
-     "order": 14
+     "order": 11
     },
     {
      "name": "Performance Bar",
@@ -3330,7 +3279,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 15
+     "order": 12
     },
     {
      "name": "Craveable Grains",
@@ -3344,7 +3293,7 @@
       "vegan",
       "halal"
      ],
-     "order": 16
+     "order": 13
     },
     {
      "name": "Flavor Forward Legumes",
@@ -3358,7 +3307,7 @@
       "vegan",
       "halal"
      ],
-     "order": 17
+     "order": 14
     },
     {
      "name": "Pasta Pesto",
@@ -3376,7 +3325,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 18
+     "order": 15
     },
     {
      "name": "Pasta Marinara",
@@ -3394,7 +3343,7 @@
       "vegan",
       "halal"
      ],
-     "order": 19
+     "order": 16
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -3408,7 +3357,7 @@
       "vegan",
       "halal"
      ],
-     "order": 20
+     "order": 17
     },
     {
      "name": "Crispy Cod Fish Tacos",
@@ -3430,7 +3379,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 21
+     "order": 18
     },
     {
      "name": "Tacos de Jamaica y Hongos",
@@ -3445,7 +3394,7 @@
       "vegan",
       "halal"
      ],
-     "order": 22
+     "order": 19
     },
     {
      "name": "Arroz Rojo",
@@ -3459,7 +3408,7 @@
       "vegan",
       "halal"
      ],
-     "order": 23
+     "order": 20
     },
     {
      "name": "Refried Black Beans",
@@ -3483,7 +3432,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 24
+     "order": 21
     }
    ]
   },
@@ -4741,20 +4690,6 @@
      "order": 8
     },
     {
-     "name": "Grilled Pineapple",
-     "recipe_id": "GrillPineapple1",
-     "description": "",
-     "ingredients": "pineapple, brown sugar, lime juice, ginger, cinnamon, olive/canola oil blend, salt, black pepper",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan",
-      "halal"
-     ],
-     "order": 9
-    },
-    {
      "name": "Chicken Noodle Soup",
      "recipe_id": "MollyChxNoodleSoup1",
      "description": "",
@@ -4767,7 +4702,7 @@
      ],
      "trace_allergens": [],
      "tags": [],
-     "order": 10
+     "order": 9
     },
     {
      "name": "Assorted Dinner Rolls",
@@ -4786,7 +4721,7 @@
       "vegetarian",
       "halal"
      ],
-     "order": 11
+     "order": 10
     },
     {
      "name": "Edamame Salad",
@@ -4803,7 +4738,7 @@
       "vegan",
       "halal"
      ],
-     "order": 12
+     "order": 11
     },
     {
      "name": "Performance Bar",
@@ -4813,7 +4748,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 13
+     "order": 12
     },
     {
      "name": "Craveable Grains",
@@ -4827,7 +4762,7 @@
       "vegan",
       "halal"
      ],
-     "order": 14
+     "order": 13
     },
     {
      "name": "Flavor Forward Legumes",
@@ -4841,7 +4776,7 @@
       "vegan",
       "halal"
      ],
-     "order": 15
+     "order": 14
     },
     {
      "name": "Creamy Pesto",
@@ -4857,7 +4792,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 16
+     "order": 15
     }
    ]
   },
