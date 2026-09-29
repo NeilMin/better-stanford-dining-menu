@@ -309,7 +309,9 @@ dish people walk across campus for. Now `bsdm/build.py` gives each service a `sp
 ordinary dish refs next to `daily`, and `column()` renders them first, whatever meat-first does to
 the rest, as a `.card-special`. A dish the menu also lists is shown once, as the special, and keeps
 the menu's ingredients. `catalog.build()` must set `placeholder: False` on them: an empty ingredient
-list is what `is_placeholder()` reads as "changes daily", which would skip the picture.
+list is what `is_placeholder()` reads as "changes daily", which would skip the picture. For the same
+reason a special is never `is_station`: "Boba Tea Bar" with no ingredients is what
+`is_station_container()` reads as a counter.
 
 **The specials poster is read geometrically, and that is not fussiness.** Text order in the PDF is
 meaningless -- one entry's two lines are not adjacent to each other in it, and a note drawn on top
