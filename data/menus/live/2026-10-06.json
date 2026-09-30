@@ -1,6 +1,6 @@
 {
  "date": "2026-10-06",
- "scraped_at": "2026-09-30T02:47:19-07:00",
+ "scraped_at": "2026-09-30T13:05:14-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -2849,29 +2849,6 @@
      "order": 7
     },
     {
-     "name": "Grilled Chicken",
-     "recipe_id": "520454-02",
-     "description": "",
-     "ingredients": "chicken, canola/olive oil blend, salt, pepper",
-     "allergens": [],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
-     ],
-     "tags": [
-      "halal"
-     ],
-     "order": 8
-    },
-    {
      "name": "Grilled Vegan/Vegetarian",
      "recipe_id": "13468741",
      "description": "",
@@ -2892,23 +2869,7 @@
      "tags": [
       "halal"
      ],
-     "order": 9
-    },
-    {
-     "name": "Handmade Pizza",
-     "recipe_id": "afdcpizza2",
-     "description": "",
-     "ingredients": "wheat flour, yeast, sugar, olive oil, mozzarella cheese, marinara sauce",
-     "allergens": [
-      "MILK",
-      "WHEAT"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "vegetarian",
-      "halal"
-     ],
-     "order": 10
+     "order": 8
     },
     {
      "name": "Panini Station",
@@ -2926,7 +2887,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 11
+     "order": 9
     },
     {
      "name": "Soup of the Day",
@@ -2936,7 +2897,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 12
+     "order": 10
     },
     {
      "name": "Composed Salad",
@@ -2948,7 +2909,7 @@
      "tags": [
       "halal"
      ],
-     "order": 13
+     "order": 11
     },
     {
      "name": "Performance Bar",
@@ -2958,7 +2919,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 14
+     "order": 12
     },
     {
      "name": "Craveable Grains",
@@ -2972,7 +2933,7 @@
       "vegan",
       "halal"
      ],
-     "order": 15
+     "order": 13
     },
     {
      "name": "Flavor Forward Legumes",
@@ -2986,7 +2947,7 @@
       "vegan",
       "halal"
      ],
-     "order": 16
+     "order": 14
     },
     {
      "name": "Pasta Marinara",
@@ -3004,7 +2965,7 @@
       "vegan",
       "halal"
      ],
-     "order": 17
+     "order": 15
     },
     {
      "name": "Pasta Pesto",
@@ -3022,7 +2983,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 18
+     "order": 16
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -3036,7 +2997,7 @@
       "vegan",
       "halal"
      ],
-     "order": 19
+     "order": 17
     }
    ],
    "Dinner": [
@@ -4491,47 +4452,38 @@
      "order": 1
     },
     {
-     "name": "Szechuan Green Beans",
-     "recipe_id": "SzeGB17",
+     "name": "Braised Bok Choy",
+     "recipe_id": "7045677",
      "description": "",
-     "ingredients": "Green Beans, Garlic, Ginger, Soy Sauce, Sambal, Sesame Oil, Neutral Oil, Salt, Black Pepper.",
+     "ingredients": "bok choy, sesame oil, butter, chicken pho broth (garlic, onions, ginger, lemongrass, chicken soup base, anise, cloves, cinnamon, peppercorn, mushroom seasoning)",
      "allergens": [
+      "MILK",
+      "SESAME",
       "SOY"
      ],
      "trace_allergens": [],
      "tags": [
-      "vegan",
+      "gluten-free",
       "halal"
      ],
      "order": 2
     },
     {
-     "name": "Seasonal Vegetable Board",
-     "recipe_id": "4503514",
+     "name": "Ginger Roasted Squash & Pumpkin Seeds",
+     "recipe_id": "6094314",
      "description": "",
-     "ingredients": "seasonal roasted vegetables with olive/canola oil blend, salt, pepper",
+     "ingredients": "seasonal squash, ginger, canola/olive oil blend, garlic, thyme, pepper, salt, pumpkin seeds",
      "allergens": [],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "PEANUTS",
+      "TREENUTS"
+     ],
      "tags": [
       "gluten-free",
       "vegan",
       "halal"
      ],
      "order": 3
-    },
-    {
-     "name": "Garlic Stir-Fried Gai Lan",
-     "recipe_id": "GaiLG17",
-     "description": "",
-     "ingredients": "Gai Lan, Garlic, Neutral Oil, Salt, Black Pepper",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan",
-      "halal"
-     ],
-     "order": 4
     },
     {
      "name": "Fried Rice",
@@ -4556,23 +4508,24 @@
       "vegan",
       "halal"
      ],
-     "order": 5
+     "order": 4
     },
     {
-     "name": "Miso Soup",
-     "recipe_id": "3902989",
+     "name": "Vegetable Chow Mein Noodles",
+     "recipe_id": "4856200",
      "description": "",
-     "ingredients": "vegetable soup base, onions, swiss chard, white miso, tofu",
+     "ingredients": "chow mein noodles, carrots, canola/olive oil blend, celery, white pepper, cabbage, green onions, stir fry sauce (tamari sauce, canola oil, green onion, fried shallots, red pepper, onion, vegetarian oyster sauce [sugar, soy sauce, salt, corn starch, yeast extract, caramel color, mushroom flavor, salt], brown sugar)",
      "allergens": [
-      "SOY"
+      "EGG",
+      "SOY",
+      "WHEAT"
      ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
-      "vegan",
+      "vegetarian",
       "halal"
      ],
-     "order": 6
+     "order": 5
     },
     {
      "name": "Panini Station",
@@ -4590,23 +4543,17 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 7
+     "order": 6
     },
     {
-     "name": "Miso Soup",
-     "recipe_id": "3902989",
+     "name": "Soup of the Day",
+     "recipe_id": "SoupoftheDay",
      "description": "",
-     "ingredients": "vegetable soup base, onions, swiss chard, white miso, tofu",
-     "allergens": [
-      "SOY"
-     ],
+     "ingredients": "chef's choice soup of the day",
+     "allergens": [],
      "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan",
-      "halal"
-     ],
-     "order": 8
+     "tags": [],
+     "order": 7
     },
     {
      "name": "Mizuna Mandarin Salad",
@@ -4622,7 +4569,7 @@
      "tags": [
       "vegan"
      ],
-     "order": 9
+     "order": 8
     },
     {
      "name": "Performance Bar",
@@ -4632,7 +4579,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 10
+     "order": 9
     },
     {
      "name": "Craveable Grains",
@@ -4646,7 +4593,7 @@
       "vegan",
       "halal"
      ],
-     "order": 11
+     "order": 10
     },
     {
      "name": "Flavor Forward Legumes",
@@ -4660,7 +4607,7 @@
       "vegan",
       "halal"
      ],
-     "order": 12
+     "order": 11
     },
     {
      "name": "Pasta Marinara",
@@ -4678,37 +4625,37 @@
       "vegan",
       "halal"
      ],
-     "order": 13
+     "order": 12
     }
    ],
    "Dinner": [
     {
-     "name": "Shrimp Linguine al Limone",
-     "recipe_id": "LimoneShrimp1",
+     "name": "Al Pastor Pork Taco",
+     "recipe_id": "4974358",
      "description": "",
-     "ingredients": "linguine pasta, shrimp, lemon juice, parmesan cheese, garlic, parsley, butter, olive/canola oil blend, salt, black pepper",
-     "allergens": [
+     "ingredients": "al pastor pork (pork, canola oil, al pastor marinade [achiote paste, salt, sugar, garlic, onions, vinegar, cumin seed, guajillo chili, ancho chili]), corn tortilla, pineapples, onions, cilantro, lime, salt, pepper",
+     "allergens": [],
+     "trace_allergens": [
+      "EGG",
       "MILK",
-      "SHELLFISH",
+      "PEANUTS",
+      "SOY",
+      "TREENUTS",
       "WHEAT"
      ],
-     "trace_allergens": [],
-     "tags": [
-      "halal"
-     ],
+     "tags": [],
      "order": 0
     },
     {
-     "name": "Tuscan White Bean & Jackfruit Ragù",
-     "recipe_id": "TusBeanJackRagu1",
+     "name": "Mushroom Hongos Al Pastor",
+     "recipe_id": "3798100",
      "description": "",
-     "ingredients": "cannellini beans, jackfruit, crushed tomatoes, onions, carrots, celery, garlic, vegetable soup base, tomato paste, rosemary, thyme, basil, red pepper flakes, olive/canola oil blend, salt, black pepper",
+     "ingredients": "mushrooms, onions, guajillo chili, orange juice, achiote paste, garlic, cilantro, pineapple, white vinegar, lime juice, canola/olive oil blend, cumin seeds, salt, pepper",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
-      "vegan",
-      "halal"
+      "vegan"
      ],
      "order": 1
     },
@@ -4727,24 +4674,23 @@
      "order": 2
     },
     {
-     "name": "Seasonal Vegetable Board",
-     "recipe_id": "4503514",
+     "name": "Fire Roasted Corn & Chayote Squash",
+     "recipe_id": "CornChaySqua1",
      "description": "",
-     "ingredients": "seasonal roasted vegetables with olive/canola oil blend, salt, pepper",
+     "ingredients": "corn, chayote squash, olive/canola oil blend, salt, pepper",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
-      "vegan",
-      "halal"
+      "vegan"
      ],
      "order": 3
     },
     {
-     "name": "Roasted Zucchini, Eggplant & Peppers",
-     "recipe_id": "ZuccEggplantBells1",
+     "name": "Seasoned Black Beans",
+     "recipe_id": "5111980",
      "description": "",
-     "ingredients": "zucchini, eggplant, red bell peppers, onions, garlic, oregano, parsley, lemon juice, olive/canola oil blend, salt, black pepper",
+     "ingredients": "black beans, canola/olive oil blend, salt",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -4755,45 +4701,10 @@
      "order": 4
     },
     {
-     "name": "Focaccia",
-     "recipe_id": "Focaccia1",
+     "name": "Cilantro Jasmine Rice",
+     "recipe_id": "4218356-1",
      "description": "",
-     "ingredients": "unbleached enriched flour (wheat flour, malted barley flour, niacin, reduced iron, thiamine mononitrate, riboflavin, folic acid), water, sour culture, extra virgin olive oil, salt, semolina, yeast",
-     "allergens": [
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "MILK",
-      "SESAME",
-      "SOY",
-      "TREENUTS"
-     ],
-     "tags": [
-      "vegan"
-     ],
-     "order": 5
-    },
-    {
-     "name": "Parmesan Herb Risotto",
-     "recipe_id": "ParmHerbRisotto1",
-     "description": "",
-     "ingredients": "arborio rice, parmesan cheese, onions, garlic, vegetable soup base, butter, lemon juice, parsley, thyme, olive/canola oil blend, salt, black pepper",
-     "allergens": [
-      "MILK"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegetarian",
-      "halal"
-     ],
-     "order": 6
-    },
-    {
-     "name": "Bruschetta Topping",
-     "recipe_id": "BruschettaTop1",
-     "description": "",
-     "ingredients": "tomatoes, basil, garlic, olive/canola oil blend, balsamic vinegar, salt, black pepper",
+     "ingredients": "jasmine rice, onions, canola/olive oil blend, cilantro, green onion, jalapeno chili, salt, garlic",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -4801,63 +4712,21 @@
       "vegan",
       "halal"
      ],
-     "order": 7
+     "order": 5
     },
     {
-     "name": "Burger Bar",
-     "recipe_id": "5964436",
+     "name": "Corn Tortilla",
+     "recipe_id": "3537943",
      "description": "",
-     "ingredients": "",
+     "ingredients": "white corn, lime, sodium propionate, cellulose gum, fumaric acid, sorbic acid",
      "allergens": [],
      "trace_allergens": [],
-     "tags": [],
-     "order": 8
-    },
-    {
-     "name": "Grilled Chicken",
-     "recipe_id": "520454-02",
-     "description": "",
-     "ingredients": "chicken, canola/olive oil blend, salt, pepper",
-     "allergens": [],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
-     ],
      "tags": [
+      "gluten-free",
+      "vegan",
       "halal"
      ],
-     "order": 9
-    },
-    {
-     "name": "Grilled Vegan/Vegetarian",
-     "recipe_id": "13468741",
-     "description": "",
-     "ingredients": "chef's choice grilled vegan OR vegetarian option",
-     "allergens": [],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
-     ],
-     "tags": [
-      "halal"
-     ],
-     "order": 10
+     "order": 6
     },
     {
      "name": "Panini Station",
@@ -4875,7 +4744,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 11
+     "order": 7
     },
     {
      "name": "Soup of the Day",
@@ -4885,7 +4754,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 12
+     "order": 8
     },
     {
      "name": "Assorted Dinner Rolls",
@@ -4904,7 +4773,7 @@
       "vegetarian",
       "halal"
      ],
-     "order": 13
+     "order": 9
     },
     {
      "name": "Composed Salad",
@@ -4916,7 +4785,7 @@
      "tags": [
       "halal"
      ],
-     "order": 14
+     "order": 10
     },
     {
      "name": "Performance Bar",
@@ -4926,7 +4795,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 15
+     "order": 11
     },
     {
      "name": "Craveable Grains",
@@ -4940,7 +4809,7 @@
       "vegan",
       "halal"
      ],
-     "order": 16
+     "order": 12
     },
     {
      "name": "Flavor Forward Legumes",
@@ -4954,57 +4823,26 @@
       "vegan",
       "halal"
      ],
-     "order": 17
+     "order": 13
     },
     {
-     "name": "Pasta Marinara",
-     "recipe_id": "5095708",
+     "name": "Gnocchi Genovese",
+     "recipe_id": "6960061",
      "description": "",
-     "ingredients": "pasta, marinara sauce, canola/olive oil blend",
+     "ingredients": "gnocchi (enriched durum flour, potato granules [potatoes, vegetable monoglycerides, diglycerides], eggs, salt), pesto sauce (basil, canola oil, parmesan cheese [milk, cheese culture, salt, enzymes], granulated garlic, salt), canola/olive oil blend, garlic, salt, pepper",
      "allergens": [
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "EGG"
-     ],
-     "tags": [
-      "vegan",
-      "halal"
-     ],
-     "order": 18
-    },
-    {
-     "name": "Pasta Pesto",
-     "recipe_id": "3857040",
-     "description": "",
-     "ingredients": "pasta, pesto sauce (basil, canola oil, parmesan cheese, extra virgin olive oil, garlic, lemon juice concentrate, natural flavor, ascorbic acid, xanthan gum, soy lecithin, chamomile extract, rosemary extract, salt)",
-     "allergens": [
+      "EGG",
       "MILK",
-      "SOY",
       "WHEAT"
      ],
      "trace_allergens": [
-      "EGG"
+      "SOY"
      ],
      "tags": [
-      "vegetarian"
-     ],
-     "order": 19
-    },
-    {
-     "name": "Penne Pasta (Gluten-Free)",
-     "recipe_id": "3189216",
-     "description": "",
-     "ingredients": "brown rice, rice bran, water",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan",
+      "vegetarian",
       "halal"
      ],
-     "order": 20
+     "order": 14
     }
    ]
   },

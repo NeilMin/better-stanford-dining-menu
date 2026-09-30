@@ -1,6 +1,6 @@
 {
  "date": "2026-10-02",
- "scraped_at": "2026-09-30T02:47:19-07:00",
+ "scraped_at": "2026-09-30T13:05:14-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -4633,10 +4633,10 @@
    ],
    "Dinner": [
     {
-     "name": "Pork Carnitas",
-     "recipe_id": "4496035",
+     "name": "Cuban Pork Mojo",
+     "recipe_id": "6075337",
      "description": "",
-     "ingredients": "pork carnitas (pork, garlic, bay leaf, canola oil, salt), orange juice, oranges, onions, garlic, bay leaf, sugar, salt",
+     "ingredients": "pork, citrus marinade (lemon juice, lime juice, canola/olive oil blend, salt, oregano, pepper, garlic)",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -4675,34 +4675,6 @@
      "order": 2
     },
     {
-     "name": "Seasonal Vegetable Board",
-     "recipe_id": "4503514",
-     "description": "",
-     "ingredients": "seasonal roasted vegetables with olive/canola oil blend, salt, pepper",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan",
-      "halal"
-     ],
-     "order": 3
-    },
-    {
-     "name": "Roasted Squash",
-     "recipe_id": "3571714",
-     "description": "",
-     "ingredients": "zucchini, squash, olive oil, thyme, salt, pepper",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan",
-      "halal"
-     ],
-     "order": 4
-    },
-    {
      "name": "Broccoli Rabe with Garlic & Lemon",
      "recipe_id": "RoatBrocRabe1",
      "description": "",
@@ -4716,7 +4688,73 @@
       "vegetarian",
       "halal"
      ],
+     "order": 3
+    },
+    {
+     "name": "Fried Sweet Plantains",
+     "recipe_id": "5514461",
+     "description": "",
+     "ingredients": "plantains, fried in soybean oil",
+     "allergens": [
+      "SOY"
+     ],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "TREENUTS",
+      "WHEAT"
+     ],
+     "tags": [
+      "vegan"
+     ],
+     "order": 4
+    },
+    {
+     "name": "Cuban Spiced Black Beans",
+     "recipe_id": "3730766",
+     "description": "",
+     "ingredients": "black beans, onions, jalapenos, bay leaf, chili powder, cumin, cayenne pepper, canola/olive oil blend, white pepper, salt",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan",
+      "halal"
+     ],
      "order": 5
+    },
+    {
+     "name": "Arroz a la Mexicana",
+     "recipe_id": "5514294",
+     "description": "",
+     "ingredients": "jasmine rice, onions, tomatoes, corn, carrots, serrano chili, garlic, clove spice, canola/olive oil blend, bay leaf, salt, pepper",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan",
+      "halal"
+     ],
+     "order": 6
+    },
+    {
+     "name": "Roasted Sweet Potatoes with Chili & Lime",
+     "recipe_id": "3210201",
+     "description": "",
+     "ingredients": "sweet potatoes, guajillo chili powder, lime, cilantro, canola/olive oil, pepper, salt",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan",
+      "halal"
+     ],
+     "order": 7
     },
     {
      "name": "Flour Tortilla",
@@ -4732,47 +4770,14 @@
      "tags": [
       "vegan"
      ],
-     "order": 6
-    },
-    {
-     "name": "Arroz a la Mexicana",
-     "recipe_id": "5514294",
-     "description": "",
-     "ingredients": "jasmine rice, onions, tomatoes, corn, carrots, serrano chili, garlic, clove spice, canola/olive oil blend, bay leaf, salt, pepper",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan",
-      "halal"
-     ],
-     "order": 7
-    },
-    {
-     "name": "Garlic Herb Spaghetti",
-     "recipe_id": "GarHerbSpaghetti1",
-     "description": "",
-     "ingredients": "spaghetti, garlic, parsley, basil, lemon juice, red pepper flakes, olive/canola oil blend, salt, black pepper",
-     "allergens": [
-      "WHEAT"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "vegan",
-      "halal"
-     ],
      "order": 8
     },
     {
-     "name": "Hearty Minestrone",
-     "recipe_id": "4633186",
+     "name": "Soup of the Day",
+     "recipe_id": "SoupoftheDay",
      "description": "",
-     "ingredients": "tomato puree, diced tomatoes in tomato juice, potatoes, kidney beans, carrots, green beans, celery, garbanzo beans, zucchini, peas, spinach, pasta, modified food starch, salt, parmesan cheese, gelatin, yeast extract, flour, flavoring, beef stock, spices, corn oil, canola oil, garlic, disodium inosinate, disodium guanylate, dextrose",
-     "allergens": [
-      "EGG",
-      "MILK",
-      "WHEAT"
-     ],
+     "ingredients": "chef's choice soup of the day",
+     "allergens": [],
      "trace_allergens": [],
      "tags": [],
      "order": 9

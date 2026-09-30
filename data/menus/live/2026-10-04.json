@@ -1,6 +1,6 @@
 {
  "date": "2026-10-04",
- "scraped_at": "2026-09-30T02:47:19-07:00",
+ "scraped_at": "2026-09-30T13:05:14-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -4491,11 +4491,14 @@
      "order": 2
     },
     {
-     "name": "Seasonal Vegetable Board",
-     "recipe_id": "4503514",
+     "name": "Japanese Eggplant with Miso Glaze",
+     "recipe_id": "JapEggplantMiso1",
      "description": "",
-     "ingredients": "seasonal roasted vegetables with olive/canola oil blend, salt, pepper",
-     "allergens": [],
+     "ingredients": "Japanese eggplant, white miso paste, sugar, rice vinegar, tamari, apple juice, olive/canola oil blend, ginger, garlic, sesame oil, green onions, sesame seeds",
+     "allergens": [
+      "SESAME",
+      "SOY"
+     ],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
@@ -4528,23 +4531,6 @@
      "order": 4
     },
     {
-     "name": "Japanese Eggplant with Miso Glaze",
-     "recipe_id": "JapEggplantMiso1",
-     "description": "",
-     "ingredients": "Japanese eggplant, white miso paste, sugar, rice vinegar, tamari, apple juice, olive/canola oil blend, ginger, garlic, sesame oil, green onions, sesame seeds",
-     "allergens": [
-      "SESAME",
-      "SOY"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan",
-      "halal"
-     ],
-     "order": 5
-    },
-    {
      "name": "Steamed Japanese Rice",
      "recipe_id": "SteaJapanRice1",
      "description": "",
@@ -4556,7 +4542,7 @@
       "vegan",
       "halal"
      ],
-     "order": 6
+     "order": 5
     },
     {
      "name": "Japanese Potato Salad",
@@ -4572,7 +4558,7 @@
       "gluten-free",
       "halal"
      ],
-     "order": 7
+     "order": 6
     },
     {
      "name": "Soup of the Day",
@@ -4582,7 +4568,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 8
+     "order": 7
     },
     {
      "name": "Assorted Dinner Rolls",
@@ -4601,7 +4587,7 @@
       "vegetarian",
       "halal"
      ],
-     "order": 9
+     "order": 8
     },
     {
      "name": "Composed Salad",
@@ -4613,7 +4599,7 @@
      "tags": [
       "halal"
      ],
-     "order": 10
+     "order": 9
     },
     {
      "name": "Performance Bar",
@@ -4623,7 +4609,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 11
+     "order": 10
     },
     {
      "name": "Craveable Grains",
@@ -4637,7 +4623,7 @@
       "vegan",
       "halal"
      ],
-     "order": 12
+     "order": 11
     },
     {
      "name": "Flavor Forward Legumes",
@@ -4651,40 +4637,25 @@
       "vegan",
       "halal"
      ],
-     "order": 13
+     "order": 12
     },
     {
-     "name": "Marinara Sauce",
-     "recipe_id": "4079962",
+     "name": "Pasta Alfredo",
+     "recipe_id": "5683556",
      "description": "",
-     "ingredients": "tomatoes, tomato paste, soybean oil, sugar, salt, onion, garlic, spices, citric acid, natural flavor",
+     "ingredients": "pasta, white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, parmesan cheese",
      "allergens": [
-      "SOY"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan",
-      "halal"
-     ],
-     "order": 14
-    },
-    {
-     "name": "Pasta",
-     "recipe_id": "5796111",
-     "description": "",
-     "ingredients": "semolina, durum wheat flour, canola/olive oil blend",
-     "allergens": [
+      "MILK",
       "WHEAT"
      ],
      "trace_allergens": [
       "EGG"
      ],
      "tags": [
-      "vegan",
+      "vegetarian",
       "halal"
      ],
-     "order": 15
+     "order": 13
     }
    ]
   },
