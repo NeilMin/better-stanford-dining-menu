@@ -1491,6 +1491,41 @@
   "vessel": "plate",
   "written_at": "2026-09-27T04:46:15+00:00"
  },
+ "1a75479818b2": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "naan",
+   "rice",
+   "shredded cheese"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish cheese cubes in a creamy curry sauce?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat, chicken, or seafood?",
+    "yes": false
+   },
+   {
+    "q": "Is the cheese shredded or melted into a solid layer?",
+    "yes": false
+   }
+  ],
+  "dish": "paneer butter masala",
+  "look": "golden-tinged white paneer cheese cubes, rich creamy orange-red tomato curry sauce, swirl of fresh cream, fine flecks of dried fenugreek leaves",
+  "model": "gemini-3.6-flash",
+  "name": "Paneer Butter Masala",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-29T23:55:14+00:00"
+ },
  "1ab2e08cc7d9": {
   "avoid": [
    "chicken",
@@ -2689,6 +2724,38 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T07:54:50+00:00"
+ },
+ "2eafd684a496": {
+  "avoid": [
+   "fried chicken",
+   "grilled chicken",
+   "shredded chicken",
+   "raw chicken",
+   "rice",
+   "clear soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish meat and vegetable chunks in red stew sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat shredded or ground like mince?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a clear broth soup?",
+    "yes": false
+   }
+  ],
+  "dish": "chicken afritada",
+  "look": "tender chicken chunks, rich red tomato sauce gravy, soft yellow potato wedges, diced orange carrots, green peas, sliced red onions, minced garlic flecks",
+  "model": "gemini-3.6-flash",
+  "name": "Chicken Afritada Stew",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-29T23:55:14+00:00"
  },
  "2ecaecc4f1ae": {
   "avoid": [
@@ -5899,6 +5966,39 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-26T20:10:26+00:00"
+ },
+ "612cbb5525be": {
+  "avoid": [
+   "fried chicken",
+   "shredded chicken",
+   "chicken wings",
+   "raw chicken",
+   "pasta",
+   "rice",
+   "soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cooked chicken pieces?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken deep-fried or breaded?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat shredded or ground like mince?",
+    "yes": false
+   }
+  ],
+  "dish": "braised herb chicken",
+  "look": "braised bone-in chicken thighs, glossy golden herb gravy, tender brown mushroom slices, peeled pearl onions, diced orange carrots, bright green peas, fresh parsley",
+  "model": "gemini-3.6-flash",
+  "name": "Braised Herbed Chicken",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-29T23:55:14+00:00"
  },
  "617dc0125c50": {
   "avoid": [
@@ -13321,6 +13421,39 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T05:36:06+00:00"
+ },
+ "e1eb5b16e7f8": {
+  "avoid": [
+   "skewers",
+   "kebabs",
+   "burger",
+   "ground beef",
+   "tacos",
+   "wrap",
+   "raw meat"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item sliced cooked steak?",
+    "yes": true
+   },
+   {
+    "q": "Is the beef ground or formed into a patty?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat served on skewers?",
+    "yes": false
+   }
+  ],
+  "dish": "grilled chimichurri steak",
+  "look": "thick slices of grilled beef steak, seared crust, medium-rare pink center, bright green oil-based herb sauce drizzled on top, fresh parsley flecks",
+  "model": "gemini-3.6-flash",
+  "name": "Chimichurri Steak",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-29T23:55:14+00:00"
  },
  "e5b8f9728ec1": {
   "avoid": [
