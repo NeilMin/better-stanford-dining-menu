@@ -2727,35 +2727,42 @@
  },
  "2eafd684a496": {
   "avoid": [
-   "fried chicken",
-   "grilled chicken",
-   "shredded chicken",
-   "raw chicken",
    "rice",
-   "clear soup"
+   "noodles",
+   "fried chicken",
+   "chicken soup",
+   "clear broth",
+   "curry",
+   "side dishes",
+   "raw vegetables",
+   "platter"
   ],
   "checks": [
    {
-    "q": "Is the dish meat and vegetable chunks in red stew sauce?",
+    "q": "Is the main item chicken pieces with vegetables in a tomato-based sauce?",
     "yes": true
    },
    {
-    "q": "Is the meat shredded or ground like mince?",
+    "q": "Is the chicken breaded or deep fried?",
     "yes": false
    },
    {
-    "q": "Is the dish a clear broth soup?",
+    "q": "Is the dish a thin clear broth soup?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish mostly rice or noodles?",
     "yes": false
    }
   ],
   "dish": "chicken afritada",
-  "look": "tender chicken chunks, rich red tomato sauce gravy, soft yellow potato wedges, diced orange carrots, green peas, sliced red onions, minced garlic flecks",
-  "model": "gemini-3.6-flash",
+  "look": "bone-in chicken pieces simmered in a thick orange-red tomato sauce, chunks of golden potato, sliced orange carrots, bright green peas, strips of red bell pepper, soft red onion, glossy stew",
+  "model": "claude-sonnet",
   "name": "Chicken Afritada Stew",
   "rev": 6,
   "revisions": 0,
   "vessel": "bowl",
-  "written_at": "2026-09-29T23:55:14+00:00"
+  "written_at": "2026-09-30T06:30:18+00:00"
  },
  "2ecaecc4f1ae": {
   "avoid": [
