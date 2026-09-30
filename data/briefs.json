@@ -1390,6 +1390,42 @@
   "vessel": "plate",
   "written_at": "2026-09-29T00:31:05+00:00"
  },
+ "19a6bcbf36d0": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "chili con carne",
+   "kidney beans",
+   "black beans",
+   "bread"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food large white beans?",
+    "yes": true
+   },
+   {
+    "q": "Does the dish contain ground meat or chili?",
+    "yes": false
+   },
+   {
+    "q": "Are the beans small and black?",
+    "yes": false
+   }
+  ],
+  "dish": "stewed gigante beans",
+  "look": "Large plump white gigante beans, thick reddish-orange harissa sauce, soft diced red bell peppers, translucent cooked onions, flecks of fresh thyme leaves",
+  "model": "gemini-3.5-flash",
+  "name": "Harissa Gigante Beans",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-30T20:39:41+00:00"
+ },
  "19b1ec6ed747": {
   "avoid": [
    "fried egg",
@@ -1493,6 +1529,10 @@
  },
  "1a5ce3e335a9": {
   "avoid": [
+   "nuts",
+   "peanuts",
+   "cashews",
+   "sesame seeds",
    "meat",
    "chicken",
    "beef",
@@ -1500,13 +1540,11 @@
    "fish",
    "shrimp",
    "oyster sauce",
-   "noodles",
-   "rice",
    "raw vegetables"
   ],
   "checks": [
    {
-    "q": "Is the main item stir-fried leafy gai lan vegetables?",
+    "q": "Is the main item stir-fried green leafy vegetables?",
     "yes": true
    },
    {
@@ -1519,13 +1557,13 @@
    }
   ],
   "dish": "stir-fried gai lan with garlic",
-  "look": "whole cooked gai lan green stems and leaves, tender-crisp dark leaves, glossy surface, topped with crispy golden minced fried garlic bits",
+  "look": "cooked Chinese broccoli gai lan featuring long thick glossy jade green stems and tender dark leafy tops, glistening in light clear sauce, scattered with finely chopped golden toasted garlic",
   "model": "gemini-3.6-flash",
   "name": "Garlic Stir-Fried Gai Lan",
   "rev": 6,
-  "revisions": 0,
+  "revisions": 1,
   "vessel": "plate",
-  "written_at": "2026-09-30T10:02:25+00:00"
+  "written_at": "2026-09-30T21:36:45+00:00"
  },
  "1a75479818b2": {
   "avoid": [
@@ -1630,6 +1668,41 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T05:33:17+00:00"
+ },
+ "1b2e26686213": {
+  "avoid": [
+   "bacon",
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "cheese",
+   "raw Brussels sprouts"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item roasted Brussels sprouts?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of bacon or meat mixed into the dish?",
+    "yes": false
+   },
+   {
+    "q": "Do the Brussels sprouts look raw and unroasted?",
+    "yes": false
+   }
+  ],
+  "dish": "roasted Brussels sprouts",
+  "look": "halved roasted Brussels sprouts, deeply charred dark caramelized edges, tender bright green interiors, crispy scattered outer leaves, light glossy sheen",
+  "model": "gemini-3.6-flash",
+  "name": "Roasted Brussel Sprouts",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-30T20:17:36+00:00"
  },
  "1badcd40f485": {
   "avoid": [
@@ -1781,6 +1854,41 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-26T20:19:36+00:00"
+ },
+ "1dec12206c4e": {
+  "avoid": [
+   "squash soup",
+   "mashed squash",
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "raw squash"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item roasted butternut squash?",
+    "yes": true
+   },
+   {
+    "q": "Is the squash mashed or blended into soup?",
+    "yes": false
+   },
+   {
+    "q": "Are there pieces of meat served with the squash?",
+    "yes": false
+   }
+  ],
+  "dish": "roasted butternut squash",
+  "look": "roasted tender orange butternut squash cubes, browned caramelized edges, visible flecks of dried green oregano, fresh lime wedges on side",
+  "model": "gemini-3.6-flash",
+  "name": "Oregano Butternut Squash",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-30T20:17:36+00:00"
  },
  "1e5910e94d34": {
   "avoid": [
@@ -2832,6 +2940,42 @@
   "vessel": "plate",
   "written_at": "2026-09-26T23:10:51+00:00"
  },
+ "2e887fd71053": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "soup",
+   "purée",
+   "raw squash",
+   "sweet potato fries"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food roasted squash cubes?",
+    "yes": true
+   },
+   {
+    "q": "Is the squash puréed into a soup?",
+    "yes": false
+   },
+   {
+    "q": "Are there pieces of meat or chicken mixed in?",
+    "yes": false
+   }
+  ],
+  "dish": "roasted squash with pumpkin seeds",
+  "look": "Roasted butternut squash cubes, caramelized golden-brown edges, sprinkled with toasted green pumpkin seeds, tiny flecks of thyme, glistening roasted texture",
+  "model": "gemini-3.5-flash",
+  "name": "Ginger Roasted Squash & Pumpkin Seeds",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-30T20:39:41+00:00"
+ },
  "2e942726a221": {
   "avoid": [
    "meat",
@@ -2944,6 +3088,40 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-26T23:07:19+00:00"
+ },
+ "2f4b9ed4fcdf": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "spaghetti",
+   "raw pasta"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item stuffed pasta pillows?",
+    "yes": true
+   },
+   {
+    "q": "Does the dish contain meat, poultry, or seafood?",
+    "yes": false
+   },
+   {
+    "q": "Is the pasta raw or uncooked?",
+    "yes": false
+   }
+  ],
+  "dish": "mushroom ravioli",
+  "look": "square pillow-shaped pasta ravioli, coated in rich creamy white sauce, topped with sautéed sliced brown mushrooms, wilted dark green spinach, diced ripe tomatoes, shaved parmesan cheese, fresh thyme",
+  "model": "gemini-3.6-flash",
+  "name": "Wild Mushroom Ravioli",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-30T20:19:16+00:00"
  },
  "2f6cb7175dec": {
   "avoid": [
@@ -4921,6 +5099,42 @@
   "vessel": "plate",
   "written_at": "2026-09-27T04:56:29+00:00"
  },
+ "479ceb40a2da": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "tomato sauce",
+   "red sauce",
+   "spaghetti",
+   "raw potatoes"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food gnocchi dumplings?",
+    "yes": true
+   },
+   {
+    "q": "Is the sauce red or tomato-based?",
+    "yes": false
+   },
+   {
+    "q": "Are the noodles long like spaghetti?",
+    "yes": false
+   }
+  ],
+  "dish": "gnocchi with pesto sauce",
+  "look": "Plump ridged potato gnocchi dumplings, coated in vibrant green basil pesto sauce, flecks of minced garlic, glossy finish",
+  "model": "gemini-3.5-flash",
+  "name": "Gnocchi Genovese",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-30T20:39:41+00:00"
+ },
  "488daa5009e7": {
   "avoid": [
    "chicken",
@@ -6006,6 +6220,38 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T08:24:37+00:00"
+ },
+ "565248882b93": {
+  "avoid": [
+   "chicken",
+   "beef",
+   "cuban sandwich",
+   "tacos",
+   "skewers",
+   "raw meat"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cooked sliced or shredded meat?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat served inside a sandwich or wrap?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat served on skewers?",
+    "yes": false
+   }
+  ],
+  "dish": "Cuban mojo pork",
+  "look": "shredded roasted pork shoulder, tender juicy meat strands, crisp caramelized edges, glistening citrus garlic sauce, garnished with fresh cilantro sprigs and orange zest",
+  "model": "gemini-3.6-flash",
+  "name": "Cuban Pork Mojo",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-30T20:19:16+00:00"
  },
  "56cb5d436c05": {
   "avoid": [
@@ -7213,6 +7459,39 @@
   "revisions": 1,
   "vessel": "plate",
   "written_at": "2026-09-27T07:20:31+00:00"
+ },
+ "6e51b37c417b": {
+  "avoid": [
+   "burrito",
+   "hard shell taco",
+   "flour tortilla",
+   "ground meat",
+   "shredded cheese",
+   "sour cream",
+   "lettuce"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a soft taco filled with chopped meat?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat ground like mince?",
+    "yes": false
+   },
+   {
+    "q": "Is the taco wrapped completely like a burrito?",
+    "yes": false
+   }
+  ],
+  "dish": "al pastor tacos",
+  "look": "small soft yellow corn tortilla filled with chopped reddish-orange marinated al pastor pork, diced roasted pineapple, finely chopped white onions, chopped cilantro leaves, fresh lime wedge on the side",
+  "model": "gemini-3.6-flash",
+  "name": "Al Pastor Pork Taco",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-30T20:17:23+00:00"
  },
  "6e9382f3e7ed": {
   "avoid": [
@@ -9456,6 +9735,42 @@
   "vessel": "bowl",
   "written_at": "2026-09-26T23:08:10+00:00"
  },
+ "9848ff4ccce7": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "broth",
+   "soup",
+   "rice",
+   "egg rolls"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food stir-fried noodles?",
+    "yes": true
+   },
+   {
+    "q": "Are the noodles in a liquid soup or broth?",
+    "yes": false
+   },
+   {
+    "q": "Are there pieces of chicken, beef, or shrimp?",
+    "yes": false
+   }
+  ],
+  "dish": "vegetable chow mein",
+  "look": "Stir-fried thin yellow chow mein noodles, shredded orange carrots, sliced green cabbage, green onion stalks, light brown savory soy-based sauce glaze",
+  "model": "gemini-3.5-flash",
+  "name": "Vegetable Chow Mein Noodles",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-30T20:39:41+00:00"
+ },
  "9883089b31c8": {
   "avoid": [
    "meat",
@@ -10362,6 +10677,39 @@
   "revisions": 1,
   "vessel": "plate",
   "written_at": "2026-09-28T19:20:51+00:00"
+ },
+ "a6ce6058209a": {
+  "avoid": [
+   "pho noodles",
+   "chicken meat",
+   "beef",
+   "pork",
+   "raw bok choy",
+   "soup bowl full of vegetables",
+   "carrots"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item braised bok choy?",
+    "yes": true
+   },
+   {
+    "q": "Are there noodles or chunks of chicken in the dish?",
+    "yes": false
+   },
+   {
+    "q": "Does the bok choy look completely raw?",
+    "yes": false
+   }
+  ],
+  "dish": "braised baby bok choy",
+  "look": "tender halved baby bok choy, vibrant green leaves, pale glistening white stems, shallow light savory chicken pho broth, glossy smooth sheen",
+  "model": "gemini-3.6-flash",
+  "name": "Braised Bok Choy",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-30T20:17:36+00:00"
  },
  "a7246fde99a0": {
   "avoid": [
@@ -12786,6 +13134,42 @@
   "vessel": "bowl",
   "written_at": "2026-09-26T23:04:42+00:00"
  },
+ "cd274e2a99ba": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "banana split",
+   "french fries",
+   "raw bananas",
+   "dipping sauce"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food fried sliced plantains?",
+    "yes": true
+   },
+   {
+    "q": "Are the plantains yellow and raw?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish served as a dessert with ice cream?",
+    "yes": false
+   }
+  ],
+  "dish": "fried sweet plantains",
+  "look": "Thick diagonally sliced rounds of ripe plantains, deep golden-brown caramelized edges, soft sweet yellow centers, glistening tender texture",
+  "model": "gemini-3.5-flash",
+  "name": "Fried Sweet Plantains",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-30T20:39:41+00:00"
+ },
  "cd60b00ba776": {
   "avoid": [
    "hamburger bun",
@@ -13363,6 +13747,42 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T04:50:08+00:00"
+ },
+ "d4e44082e4cf": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "cheese",
+   "cream",
+   "raw zucchini",
+   "whole corn on the cob"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food a cooked mixture of sliced zucchini and corn kernels?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat or seafood mixed into the vegetables?",
+    "yes": false
+   },
+   {
+    "q": "Is the zucchini raw and uncooked?",
+    "yes": false
+   }
+  ],
+  "dish": "sautéed zucchini and corn",
+  "look": "sliced green zucchini half-moons sautéed with charred yellow corn kernels, translucent diced onions, minced cooked garlic, lightly glistening, warm vegetable blend",
+  "model": "gemini-3.6-flash",
+  "name": "Zucchini & Corn",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-09-30T20:17:23+00:00"
  },
  "d4fdae20273f": {
   "avoid": [
@@ -14677,6 +15097,42 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-26T20:16:28+00:00"
+ },
+ "ee2aeee45b10": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "mashed potatoes",
+   "french fries",
+   "cheese",
+   "sour cream"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food roasted chunks or cubes of orange sweet potato?",
+    "yes": true
+   },
+   {
+    "q": "Are the potatoes mashed into a smooth purée?",
+    "yes": false
+   },
+   {
+    "q": "Are there pieces of meat or bacon mixed with the potatoes?",
+    "yes": false
+   }
+  ],
+  "dish": "roasted chili lime sweet potatoes",
+  "look": "chunky roasted orange sweet potato cubes, caramelized brown crisp edges, light coating of dark reddish chili powder, scatter of chopped cilantro leaves, fresh lime wedge",
+  "model": "gemini-3.6-flash",
+  "name": "Roasted Sweet Potatoes with Chili & Lime",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-09-30T20:17:23+00:00"
  },
  "ee33d2f59f86": {
   "avoid": [
