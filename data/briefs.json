@@ -3516,36 +3516,47 @@
  },
  "2fc114616336": {
   "avoid": [
-   "ground beef",
-   "burger patty",
-   "stew",
-   "meatloaf",
+   "neon pink",
+   "bright magenta",
+   "artificial pink paint",
+   "raw bloody beef",
+   "undercooked meat",
+   "asparagus",
+   "vegetables",
+   "side dish",
    "skewers",
-   "raw meat",
-   "ribs"
+   "hamburger",
+   "pork",
+   "chicken",
+   "seafood"
   ],
   "checks": [
    {
-    "q": "Is the main item sliced cooked beef?",
+    "q": "Is the main item sliced cooked beef steak with a browned exterior?",
     "yes": true
    },
    {
-    "q": "Is the meat ground or crumbled like mince?",
+    "q": "Does the interior of the beef look unnaturally neon, fluorescent pink, or like artificial paint?",
     "yes": false
    },
    {
-    "q": "Is the meat raw or uncooked?",
+    "q": "Does the meat look raw or bloody uncooked?",
+    "yes": false
+   },
+   {
+    "q": "Is there any pork, chicken, or seafood?",
     "yes": false
    }
   ],
   "dish": "grilled tri-tip steak",
-  "look": "thick slices of grilled beef tri-tip, medium-rare reddish-pink center, seared dark brown crust with visible grill marks, juicy meat slices arranged overlapping",
-  "model": "gemini-3.6-flash",
+  "hand": true,
+  "look": "thick slices of grilled tri-tip beef arranged fanned out, dark seared crust with grill marks, tender warm rose-pink medium-cooked interior with natural beef grain, juicy meat texture, cracked black pepper",
+  "model": "hand",
   "name": "Grilled Tri Tip",
   "rev": 6,
   "revisions": 0,
   "vessel": "plate",
-  "written_at": "2026-10-01T20:34:12+00:00"
+  "written_at": "2026-10-01T23:12:32+00:00"
  },
  "3095445b5e1b": {
   "avoid": [
@@ -17412,37 +17423,48 @@
  },
  "f7dce61b9b39": {
   "avoid": [
-   "ground beef",
-   "steak",
+   "beans",
+   "edamame",
+   "green peas",
+   "lima beans",
+   "broad beans",
+   "green beans",
    "noodles",
-   "white rice",
-   "carrots",
-   "peas",
-   "soup",
-   "green beans"
+   "chopsticks",
+   "ramekin",
+   "extra bowl",
+   "side dish",
+   "pork",
+   "chicken",
+   "seafood"
   ],
   "checks": [
    {
-    "q": "Is the main item sliced meat and broccoli?",
+    "q": "Does the photo show sliced beef with prominent green broccoli florets in a bowl?",
     "yes": true
    },
    {
-    "q": "Is the meat ground or crumbled like mince?",
+    "q": "Is the dish missing broccoli florets?",
     "yes": false
    },
    {
-    "q": "Is the dish served as a soup?",
+    "q": "Is the dish covered with green beans, edamame or peas instead of broccoli florets?",
+    "yes": false
+   },
+   {
+    "q": "Is there any pork, chicken, or seafood?",
     "yes": false
    }
   ],
-  "dish": "Mongolian Beef and Broccoli",
-  "look": "sliced beef strips and bright green broccoli florets, glossy dark brown savory sauce, green edamame beans, sliced brown shiitake mushrooms, bed of fluffy brown rice, chopped green onions, a swirl of red sriracha",
-  "model": "gemma-4-31b-it",
+  "dish": "Mongolian beef and broccoli bowl",
+  "hand": true,
+  "look": "tender sliced beef strips in rich glossy dark brown sauce, generous vibrant green steamed broccoli florets with tender stalks, sliced brown shiitake mushrooms, chopped green onions, served over fluffy steamed rice",
+  "model": "hand",
   "name": "Mongolian Beef & Broccoli Bowl",
   "rev": 6,
-  "revisions": 1,
+  "revisions": 0,
   "vessel": "bowl",
-  "written_at": "2026-10-01T21:28:11+00:00"
+  "written_at": "2026-10-01T23:12:32+00:00"
  },
  "f82b67e85167": {
   "avoid": [
