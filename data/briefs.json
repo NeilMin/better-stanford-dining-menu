@@ -3478,6 +3478,31 @@
   "vessel": "plate",
   "written_at": "2026-09-26T23:07:42+00:00"
  },
+ "2fc114616336": {
+  "avoid": [
+   "pork",
+   "chicken",
+   "fish",
+   "seafood",
+   "dairy",
+   "cheese"
+  ],
+  "checks": [
+   {
+    "expect": "yes",
+    "q": "Does the photo show slices of grilled beef steak with a browned crust?"
+   },
+   {
+    "expect": "no",
+    "q": "Is there any pork, chicken, or seafood?"
+   }
+  ],
+  "dish": "grilled tri tip steak",
+  "hand": true,
+  "look": "thick slices of grilled beef tri tip with dark caramelized crust and juicy pink medium-rare interior, glistening surface, cracked black pepper, fresh rosemary sprig",
+  "plate": "plate",
+  "rev": 6
+ },
  "3095445b5e1b": {
   "avoid": [
    "chicken tenders",
@@ -17177,6 +17202,31 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T06:14:59+00:00"
+ },
+ "f7dce61b9b39": {
+  "avoid": [
+   "pork",
+   "chicken",
+   "fish",
+   "seafood",
+   "dairy",
+   "cheese"
+  ],
+  "checks": [
+   {
+    "expect": "yes",
+    "q": "Does the photo show sliced beef with broccoli served in a bowl?"
+   },
+   {
+    "expect": "no",
+    "q": "Is there any chicken, pork, or seafood?"
+   }
+  ],
+  "dish": "Mongolian beef and broccoli bowl",
+  "hand": true,
+  "look": "tender sliced beef in rich glossy dark brown sauce, steamed bright green broccoli florets, sliced shiitake mushrooms, edamame, chopped scallions, served over steamed brown rice",
+  "plate": "bowl",
+  "rev": 6
  },
  "f82b67e85167": {
   "avoid": [
