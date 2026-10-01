@@ -1,6 +1,6 @@
 {
  "date": "2026-10-01",
- "scraped_at": "2026-10-01T03:14:17-07:00",
+ "scraped_at": "2026-10-01T13:22:00-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -1179,34 +1179,29 @@
      "order": 0
     },
     {
-     "name": "Agedashi-Style Tofu",
-     "recipe_id": "AgedashiTofu1",
+     "name": "Soy Sesame \"Chick'n\" Stir-Fry",
+     "recipe_id": "4187385",
      "description": "",
-     "ingredients": "tofu, potato starch, water, tamari, mirin, kombu, mushroom seasoning, ginger, green onions, olive/canola oil blend, salt",
+     "ingredients": "plant based chick'n, garlic, bell peppers, onions, sesame seeds, mongolian stir-fry sauce (tamari, sugar, hoisin, cornstarch, vegetarian oyster sauce), salt, canola/olive oil blend, pepper",
      "allergens": [
-      "SOY"
+      "SESAME",
+      "SOY",
+      "WHEAT"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SHELLFISH",
+      "TREENUTS"
+     ],
      "tags": [
-      "gluten-free",
-      "vegan"
+      "vegan",
+      "halal"
      ],
      "order": 1
-    },
-    {
-     "name": "Simmered Kabocha Squash",
-     "recipe_id": "SimmKoboSqua1",
-     "description": "",
-     "ingredients": "kabocha squash, water, tamari, mirin, sugar, kombu, mushroom seasoning, ginger, olive/canola oil blend, salt",
-     "allergens": [
-      "SOY"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan"
-     ],
-     "order": 2
     },
     {
      "name": "Seasonal Steamed Vegetables",
@@ -1220,7 +1215,7 @@
       "vegan",
       "halal"
      ],
-     "order": 3
+     "order": 2
     },
     {
      "name": "Seasonal Vegetable Board",
@@ -1234,13 +1229,13 @@
       "vegan",
       "halal"
      ],
-     "order": 4
+     "order": 3
     },
     {
-     "name": "Steamed Japanese Rice",
-     "recipe_id": "SteaJapanRice1",
+     "name": "Steamed Jasmine Rice",
+     "recipe_id": "5134594",
      "description": "",
-     "ingredients": "Japanese short-grain rice, water",
+     "ingredients": "jasmine rice, water, salt",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -1248,7 +1243,7 @@
       "vegan",
       "halal"
      ],
-     "order": 5
+     "order": 4
     },
     {
      "name": "Grilled Cajun Steak Protein Bowl",
@@ -1274,53 +1269,7 @@
       "gluten-free",
       "halal"
      ],
-     "order": 6
-    },
-    {
-     "name": "Grilled Chicken",
-     "recipe_id": "520454-02",
-     "description": "",
-     "ingredients": "chicken, canola/olive oil blend, salt, pepper",
-     "allergens": [],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
-     ],
-     "tags": [
-      "halal"
-     ],
-     "order": 7
-    },
-    {
-     "name": "Grilled Vegan/Vegetarian",
-     "recipe_id": "13468741",
-     "description": "",
-     "ingredients": "chef's choice grilled vegan OR vegetarian option",
-     "allergens": [],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
-     ],
-     "tags": [
-      "halal"
-     ],
-     "order": 8
+     "order": 5
     },
     {
      "name": "Cheese Quesadilla",
@@ -1344,7 +1293,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 9
+     "order": 6
     },
     {
      "name": "Panini Station",
@@ -1362,7 +1311,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 10
+     "order": 7
     },
     {
      "name": "Soup of the Day",
@@ -1372,7 +1321,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 11
+     "order": 8
     },
     {
      "name": "Composed Salad",
@@ -1384,7 +1333,7 @@
      "tags": [
       "halal"
      ],
-     "order": 12
+     "order": 9
     },
     {
      "name": "Performance Bar",
@@ -1394,7 +1343,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 13
+     "order": 10
     },
     {
      "name": "Craveable Grains",
@@ -1408,7 +1357,7 @@
       "vegan",
       "halal"
      ],
-     "order": 14
+     "order": 11
     },
     {
      "name": "Flavor Forward Legumes",
@@ -1422,7 +1371,7 @@
       "vegan",
       "halal"
      ],
-     "order": 15
+     "order": 12
     },
     {
      "name": "Pasta Marinara",
@@ -1440,25 +1389,23 @@
       "vegan",
       "halal"
      ],
-     "order": 16
+     "order": 13
     },
     {
-     "name": "Pasta Alfredo",
-     "recipe_id": "5683556",
+     "name": "Creamy Pesto",
+     "recipe_id": "7728050",
      "description": "",
-     "ingredients": "pasta, white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, parmesan cheese",
+     "ingredients": "pesto sauce (basil, canola oil, parmesan cheese, olive oil, garlic, salt, lemon juice concentrate, natural flavor, xanthan gum, soy lecithin, chamomile extract, rosemary extract, white sauce (flour, butter, cream, milk powder, onion powder, white pepper, garlic, nutmeg, salt), parmesan cheese, parsley",
      "allergens": [
       "MILK",
+      "SOY",
       "WHEAT"
      ],
-     "trace_allergens": [
-      "EGG"
-     ],
+     "trace_allergens": [],
      "tags": [
-      "vegetarian",
-      "halal"
+      "vegetarian"
      ],
-     "order": 17
+     "order": 14
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -1472,7 +1419,7 @@
       "vegan",
       "halal"
      ],
-     "order": 18
+     "order": 15
     }
    ],
    "Dinner": [
@@ -3648,41 +3595,32 @@
    ],
    "Lunch": [
     {
-     "name": "Beef Teriyaki & Noodle Bowl",
-     "recipe_id": "COV4469856",
+     "name": "Teriyaki Beef",
+     "recipe_id": "4976390",
      "description": "",
-     "ingredients": "Teriyaki Beef (beef strips, teriyaki marinade [tamari, alcohol-free mirin, garlic, chili powder, canola/olive oil blend], teriyaki glaze[tamari, sugar, canola/olive oil blend, cornstarch]), Sauteed Vegetables, Yakisoba Noodles (ramen noodles, cabbage, carrots, onions, vegetarian oyster sauce, A-1 steak sauce, ketchup, pickled ginger, mushrooms, mayonnaise, furikake seasoning), eggrolls (fried in canola oil)",
-     "allergens": [
-      "EGG",
-      "SESAME",
-      "SOY",
-      "WHEAT",
-      "TRACEALLERGENS"
-     ],
-     "trace_allergens": [
-      "COCONUT",
-      "FISH",
-      "MILK",
-      "SHELLFISH",
-      "TREENUTS"
-     ],
+     "ingredients": "beef, teriyaki marinade (canola oil, alcohol-free mirin, no soy sauce, garlic, chili powder), teriyaki glaze (sugar, no soy sauce, cornstarch, canola oil)",
+     "allergens": [],
+     "trace_allergens": [],
      "tags": [
+      "gluten-free",
       "halal"
      ],
      "order": 0
     },
     {
-     "name": "Agedashi-Style Tofu",
-     "recipe_id": "AgedashiTofu1",
+     "name": "Miso Tofu Stir-Fry",
+     "recipe_id": "7104320",
      "description": "",
-     "ingredients": "tofu, potato starch, water, tamari, mirin, kombu, mushroom seasoning, ginger, green onions, olive/canola oil blend, salt",
+     "ingredients": "tofu, onions, miso sesame dressing (ginger, sesame oil, mustard, white miso, rice vinegar, tamari sauce, canola/olive oil blend, brown sugar, garlic, sesame seeds), sesame oil, canola/olive oil blend, celery, sesame seeds",
      "allergens": [
+      "SESAME",
       "SOY"
      ],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
-      "vegan"
+      "vegan",
+      "halal"
      ],
      "order": 1
     },
@@ -3730,18 +3668,16 @@
      "order": 4
     },
     {
-     "name": "Goma-ae Spinach with Sesame",
-     "recipe_id": "GomaSpinSes1",
+     "name": "Collard Greens",
+     "recipe_id": "3365370",
      "description": "",
-     "ingredients": "spinach, sesame seeds, tamari, sugar, mirin, rice vinegar, sesame oil, ginger, salt",
-     "allergens": [
-      "SESAME",
-      "SOY"
-     ],
+     "ingredients": "collard greens, mustard greens, kale, hot sauce (cayenne peppers, distilled vinegar, salt, xanthan gum), canola/olive oil blend, garlic, onions, salt, pepper",
+     "allergens": [],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
-      "vegan"
+      "vegan",
+      "halal"
      ],
      "order": 5
     },
@@ -3760,37 +3696,44 @@
      "order": 6
     },
     {
-     "name": "Vegetable Yakisoba",
-     "recipe_id": "5545292",
+     "name": "Vegetable Chow Mein Noodles",
+     "recipe_id": "4856200",
      "description": "",
-     "ingredients": "ramen noodles, cabbage, carrots, onions, vegetarian oyster sauce, A-1 steak sauce, ketchup, pickled ginger, mushrooms, mayonnaise, furikake seasoning (nori seaweed, sesame seeds, salt, sugar, korean red pepper, mushroom seasoning)",
+     "ingredients": "chow mein noodles, carrots, canola/olive oil blend, celery, white pepper, cabbage, green onions, stir fry sauce (tamari sauce, canola oil, green onion, fried shallots, red pepper, onion, vegetarian oyster sauce [sugar, soy sauce, salt, corn starch, yeast extract, caramel color, mushroom flavor, salt], brown sugar)",
      "allergens": [
       "EGG",
-      "SESAME",
+      "SOY",
+      "WHEAT"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "vegetarian",
+      "halal"
+     ],
+     "order": 7
+    },
+    {
+     "name": "Hot Dog",
+     "recipe_id": "5520685",
+     "description": "",
+     "ingredients": "beef sausage, whole wheat bun",
+     "allergens": [
       "SOY",
       "WHEAT"
      ],
      "trace_allergens": [
       "COCONUT",
+      "EGG",
       "FISH",
       "MILK",
       "PEANUTS",
+      "SESAME",
       "SHELLFISH",
       "TREENUTS"
      ],
      "tags": [
-      "vegetarian"
+      "halal"
      ],
-     "order": 7
-    },
-    {
-     "name": "Burger Bar",
-     "recipe_id": "5964436",
-     "description": "",
-     "ingredients": "",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [],
      "order": 8
     },
     {
@@ -3952,20 +3895,20 @@
      "order": 18
     },
     {
-     "name": "Pasta Alfredo",
-     "recipe_id": "5683556",
+     "name": "Pasta Pesto",
+     "recipe_id": "3857040",
      "description": "",
-     "ingredients": "pasta, white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, parmesan cheese",
+     "ingredients": "pasta, pesto sauce (basil, canola oil, parmesan cheese, extra virgin olive oil, garlic, lemon juice concentrate, natural flavor, ascorbic acid, xanthan gum, soy lecithin, chamomile extract, rosemary extract, salt)",
      "allergens": [
       "MILK",
+      "SOY",
       "WHEAT"
      ],
      "trace_allergens": [
       "EGG"
      ],
      "tags": [
-      "vegetarian",
-      "halal"
+      "vegetarian"
      ],
      "order": 19
     },
@@ -5171,6 +5114,20 @@
      "order": 2
     },
     {
+     "name": "Garlic Rice",
+     "recipe_id": "4505728",
+     "description": "",
+     "ingredients": "rice, canola/olive oil blend, garlic, salt",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan",
+      "halal"
+     ],
+     "order": 3
+    },
+    {
      "name": "Spring Rolls",
      "recipe_id": "5587308",
      "description": "",
@@ -5193,7 +5150,7 @@
       "vegetarian",
       "halal"
      ],
-     "order": 3
+     "order": 4
     },
     {
      "name": "Vegetable Yakisoba",
@@ -5217,7 +5174,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 4
+     "order": 5
     },
     {
      "name": "Burger Bar",
@@ -5227,7 +5184,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 5
+     "order": 6
     },
     {
      "name": "Grilled Chicken",
@@ -5250,7 +5207,7 @@
      "tags": [
       "halal"
      ],
-     "order": 6
+     "order": 7
     },
     {
      "name": "Impossible Burger",
@@ -5269,7 +5226,7 @@
       "vegan",
       "halal"
      ],
-     "order": 7
+     "order": 8
     },
     {
      "name": "Pesto Chicken Pizza",
@@ -5288,7 +5245,7 @@
      "tags": [
       "halal"
      ],
-     "order": 8
+     "order": 9
     },
     {
      "name": "Panini Station",
@@ -5306,22 +5263,23 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 9
+     "order": 10
     },
     {
-     "name": "Chicken Noodle Soup",
-     "recipe_id": "MollyChxNoodleSoup1",
+     "name": "Miso Soup",
+     "recipe_id": "3902989",
      "description": "",
-     "ingredients": "chicken stock, chicken meat, carrots, celery, enriched egg noodles, peas, onions, modified food starch, bleached enriched flour, salt, chicken fat, yeast extract, sugar, chicken meat including chicken juices, maltodextrin, water, vegetables (celery, onions, carrots), dehydrated whey (milk), garlic, soy protein isolate, spices, turmeric, cornstarch, beta carotene, dehydrated chicken, citric acid",
+     "ingredients": "vegetable soup base, onions, swiss chard, white miso, tofu",
      "allergens": [
-      "EGG",
-      "MILK",
-      "SOY",
-      "WHEAT"
+      "SOY"
      ],
      "trace_allergens": [],
-     "tags": [],
-     "order": 10
+     "tags": [
+      "gluten-free",
+      "vegan",
+      "halal"
+     ],
+     "order": 11
     },
     {
      "name": "Mediterranean Salad",
@@ -5338,7 +5296,7 @@
       "vegetarian",
       "halal"
      ],
-     "order": 11
+     "order": 12
     },
     {
      "name": "Performance Bar",
@@ -5348,7 +5306,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 12
+     "order": 13
     },
     {
      "name": "Craveable Grains",
@@ -5362,7 +5320,7 @@
       "vegan",
       "halal"
      ],
-     "order": 13
+     "order": 14
     },
     {
      "name": "Flavor Forward Legumes",
@@ -5376,7 +5334,7 @@
       "vegan",
       "halal"
      ],
-     "order": 14
+     "order": 15
     },
     {
      "name": "Pasta Marinara",
@@ -5394,7 +5352,7 @@
       "vegan",
       "halal"
      ],
-     "order": 15
+     "order": 16
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -5408,7 +5366,7 @@
       "vegan",
       "halal"
      ],
-     "order": 16
+     "order": 17
     }
    ],
    "Dinner": [
@@ -5847,10 +5805,10 @@
    ],
    "Dinner": [
     {
-     "name": "Chicken Afritada Stew",
-     "recipe_id": "4503777",
+     "name": "Braised Beef Tibs",
+     "recipe_id": "5603165",
      "description": "",
-     "ingredients": "chicken, potato, carrot, tomato, green peas, red onions, bay leaf, garlic, chicken base, sugar, canola oil, salt, and pepper",
+     "ingredients": "beef, berbere spice (coriander seed, ginger, fenugreek, all spice, clove, red pepper flakes, paprika, spanish paprika, hungarian paprika, salt, pepper), bell pepper, onion",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -5860,23 +5818,24 @@
      "order": 0
     },
     {
-     "name": "Chickpea Afritada Stew",
-     "recipe_id": "11223312330",
+     "name": "Lentil Stew with Berbere Spices",
+     "recipe_id": "5619912",
      "description": "",
-     "ingredients": "oil, onion, garlic, tomatoes, tomato paste, basil, bay leaf, veg base, nutritional yeast, salt, pepper, potatoes, carrots, red bell pepper, sugar, chickpeas",
+     "ingredients": "lentils, berebere spice (fenugreek, chiles, paprika, salt, ginger, onion powder, cardamom, coriander, nutmeg, garlic powder, cloves, cinnamon, allspice)",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
-      "vegan"
+      "vegan",
+      "halal"
      ],
      "order": 1
     },
     {
-     "name": "Garlic Rice",
-     "recipe_id": "5121297-1",
+     "name": "Spinach Rice Pilaf",
+     "recipe_id": "5080677-1",
      "description": "",
-     "ingredients": "rice, garlic, canola/olive oil blend",
+     "ingredients": "jasmine rice, spinach, garlic, onion, canola/olive oil blend, salt",
      "allergens": [],
      "trace_allergens": [],
      "tags": [

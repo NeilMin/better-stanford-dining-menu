@@ -1,6 +1,6 @@
 {
  "date": "2026-10-04",
- "scraped_at": "2026-10-01T03:14:17-07:00",
+ "scraped_at": "2026-10-01T13:22:00-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -1281,13 +1281,12 @@
      "order": 0
     },
     {
-     "name": "Island Teriyaki Tofu",
-     "recipe_id": "IslandTeriTofu1",
+     "name": "Jamaican Vegetable Curry",
+     "recipe_id": "6673230",
      "description": "",
-     "ingredients": "tofu, pineapple juice, pineapple chunks, sweet potatoes, green/red bell peppers, onions, tamari, brown sugar, ginger, garlic, green onions, cornstarch, rice vinegar, sesame seeds, olive/canola oil blend, salt, black pepper",
+     "ingredients": "vegetable soup base, coconut milk, onions, seasonal vegetables, garlic, ginger, canola/olive oil blend, brown sugar, cinnamon stick, masala spice, curry powder, salt",
      "allergens": [
-      "SESAME",
-      "SOY"
+      "COCONUT"
      ],
      "trace_allergens": [],
      "tags": [
@@ -1326,44 +1325,21 @@
      "order": 3
     },
     {
-     "name": "Jollof Rice",
-     "recipe_id": "4150751",
+     "name": "Coconut Rice & Peas",
+     "recipe_id": "3946726",
      "description": "",
-     "ingredients": "basmati rice, tomatoes, green peas, onions, carrots, canola/olive oil blend, tomato paste, ginger, garlic, curry powder, cinnamon stick, cardamom seeds, bay leaf, salt",
-     "allergens": [],
-     "trace_allergens": [
+     "ingredients": "rice, coconut milk, shredded coconut, beans, onions, thyme, green onions, unsalted butter, habanero chili, ginger, allspice, garlic",
+     "allergens": [
       "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
+      "MILK"
      ],
+     "trace_allergens": [],
      "tags": [
-      "vegan",
+      "gluten-free",
+      "vegetarian",
       "halal"
      ],
      "order": 4
-    },
-    {
-     "name": "Hawaiian Macaroni Salad",
-     "recipe_id": "HawMacSalad1",
-     "description": "",
-     "ingredients": "elbow macaroni, mayonnaise, tuna, carrots, whole milk, sweet onion, apple cider vinegar, sugar, salt, black pepper",
-     "allergens": [
-      "EGG",
-      "FISH",
-      "MILK",
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [],
-     "tags": [],
-     "order": 5
     },
     {
      "name": "Rosemary Fried Chicken Wings",
@@ -1377,7 +1353,7 @@
      "tags": [
       "halal"
      ],
-     "order": 6
+     "order": 5
     },
     {
      "name": "Louisiana Red Beans and Rice",
@@ -1391,7 +1367,7 @@
       "vegetarian",
       "halal"
      ],
-     "order": 7
+     "order": 6
     },
     {
      "name": "7 Cheesy Mac",
@@ -1407,7 +1383,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 8
+     "order": 7
     },
     {
      "name": "Fire Cornbread",
@@ -1424,7 +1400,7 @@
       "vegetarian",
       "halal"
      ],
-     "order": 9
+     "order": 8
     },
     {
      "name": "Soup of the Day",
@@ -1434,7 +1410,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 10
+     "order": 9
     },
     {
      "name": "Assorted Dinner Rolls",
@@ -1453,7 +1429,7 @@
       "vegetarian",
       "halal"
      ],
-     "order": 11
+     "order": 10
     },
     {
      "name": "Composed Salad",
@@ -1465,7 +1441,7 @@
      "tags": [
       "halal"
      ],
-     "order": 12
+     "order": 11
     },
     {
      "name": "Performance Bar",
@@ -1475,7 +1451,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 13
+     "order": 12
     },
     {
      "name": "Craveable Grains",
@@ -1489,7 +1465,7 @@
       "vegan",
       "halal"
      ],
-     "order": 14
+     "order": 13
     },
     {
      "name": "Flavor Forward Legumes",
@@ -1503,7 +1479,7 @@
       "vegan",
       "halal"
      ],
-     "order": 15
+     "order": 14
     },
     {
      "name": "Tri Color Cheese Tortellini",
@@ -1517,7 +1493,7 @@
      ],
      "trace_allergens": [],
      "tags": [],
-     "order": 16
+     "order": 15
     },
     {
      "name": "Pasta Marinara",
@@ -1535,7 +1511,7 @@
       "vegan",
       "halal"
      ],
-     "order": 17
+     "order": 16
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -1549,7 +1525,7 @@
       "vegan",
       "halal"
      ],
-     "order": 18
+     "order": 17
     }
    ]
   },
@@ -2070,19 +2046,25 @@
    ],
    "Dinner": [
     {
-     "name": "Hawaiian Teriyaki Short Ribs",
-     "recipe_id": "HawShortRibs1",
+     "name": "Mongolian Beef & Broccoli Bowl",
+     "recipe_id": "5338768",
      "description": "",
-     "ingredients": "beef short ribs, teriyaki sauce (tamari, pineapple juice, brown sugar, ginger, garlic, apple cider vinegar, cornstarch, sesame oil), ginger, green onions, orange juice, orange zest, garlic, jalapeño, toasted sesame seeds, olive/canola oil blend, salt, black pepper",
+     "ingredients": "beef, mongolian sauce (tamari, hoisin sauce, sugar, vegetarian oyster sauce), broccoli, edamame, shiitake mushrooms, brown rice, green onions, sriracha, canola/olive oil blend, salt, pepper",
      "allergens": [
       "SESAME",
-      "SOY"
+      "SHELLFISH",
+      "SOY",
+      "WHEAT"
      ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "halal"
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "TREENUTS"
      ],
+     "tags": [],
      "order": 0
     },
     {
@@ -2131,23 +2113,6 @@
      "order": 3
     },
     {
-     "name": "Shell-On Toasted Sesame Edamame",
-     "recipe_id": "4446028",
-     "description": "",
-     "ingredients": "edamame, toasted sesame seeds, toasted sesame oil, tamari, canola/olive oil blend, flaky salt",
-     "allergens": [
-      "SESAME",
-      "SOY"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan",
-      "halal"
-     ],
-     "order": 4
-    },
-    {
      "name": "Hawaiian Coleslaw",
      "recipe_id": "HawColeslaw1",
      "description": "",
@@ -2161,7 +2126,7 @@
       "gluten-free",
       "vegetarian"
      ],
-     "order": 5
+     "order": 4
     },
     {
      "name": "Hawaiian Garlic Rice",
@@ -2178,7 +2143,7 @@
       "vegetarian",
       "halal"
      ],
-     "order": 6
+     "order": 5
     },
     {
      "name": "Hawaiian Macaroni Salad",
@@ -2194,7 +2159,7 @@
      ],
      "trace_allergens": [],
      "tags": [],
-     "order": 7
+     "order": 6
     },
     {
      "name": "Grilled Pineapple",
@@ -2208,7 +2173,7 @@
       "vegan",
       "halal"
      ],
-     "order": 8
+     "order": 7
     },
     {
      "name": "Edamame Salad",
@@ -2225,7 +2190,7 @@
       "vegan",
       "halal"
      ],
-     "order": 9
+     "order": 8
     },
     {
      "name": "Burger Bar",
@@ -2235,7 +2200,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 10
+     "order": 9
     },
     {
      "name": "Grilled Chicken",
@@ -2250,7 +2215,7 @@
       "gluten-free",
       "halal"
      ],
-     "order": 11
+     "order": 10
     },
     {
      "name": "Grilled Vegan/Vegetarian",
@@ -2273,7 +2238,7 @@
      "tags": [
       "halal"
      ],
-     "order": 12
+     "order": 11
     },
     {
      "name": "Soup of the Day",
@@ -2283,7 +2248,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 13
+     "order": 12
     },
     {
      "name": "Assorted Dinner Rolls",
@@ -2302,7 +2267,7 @@
       "vegetarian",
       "halal"
      ],
-     "order": 14
+     "order": 13
     },
     {
      "name": "Composed Salad",
@@ -2314,7 +2279,7 @@
      "tags": [
       "halal"
      ],
-     "order": 15
+     "order": 14
     },
     {
      "name": "Performance Bar",
@@ -2324,7 +2289,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 16
+     "order": 15
     },
     {
      "name": "Craveable Grains",
@@ -2338,7 +2303,7 @@
       "vegan",
       "halal"
      ],
-     "order": 17
+     "order": 16
     },
     {
      "name": "Flavor Forward Legumes",
@@ -2352,7 +2317,7 @@
       "vegan",
       "halal"
      ],
-     "order": 18
+     "order": 17
     },
     {
      "name": "Tri Color Cheese Tortellini",
@@ -2366,7 +2331,7 @@
      ],
      "trace_allergens": [],
      "tags": [],
-     "order": 19
+     "order": 18
     },
     {
      "name": "Pasta Marinara",
@@ -2384,7 +2349,7 @@
       "vegan",
       "halal"
      ],
-     "order": 20
+     "order": 19
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -2398,7 +2363,7 @@
       "vegan",
       "halal"
      ],
-     "order": 21
+     "order": 20
     }
    ]
   },
@@ -2903,14 +2868,11 @@
    ],
    "Dinner": [
     {
-     "name": "Hawaiian Teriyaki Short Ribs",
-     "recipe_id": "HawShortRibs1",
+     "name": "Grilled Tri Tip",
+     "recipe_id": "4769744",
      "description": "",
-     "ingredients": "beef short ribs, teriyaki sauce (tamari, pineapple juice, brown sugar, ginger, garlic, apple cider vinegar, cornstarch, sesame oil), ginger, green onions, orange juice, orange zest, garlic, jalapeño, toasted sesame seeds, olive/canola oil blend, salt, black pepper",
-     "allergens": [
-      "SESAME",
-      "SOY"
-     ],
+     "ingredients": "beef, canola/olive oil blend, salt, pepper",
+     "allergens": [],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
