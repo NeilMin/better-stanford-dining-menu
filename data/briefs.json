@@ -6911,6 +6911,31 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T04:50:49+00:00"
  },
+ "5c23b9039a39": {
+  "avoid": [
+   "meat",
+   "egg",
+   "hot steam",
+   "cooked oats",
+   "cooked porridge",
+   "savory food"
+  ],
+  "checks": [
+   {
+    "expect": "yes",
+    "q": "Does the photo show a jar or bowl of chilled overnight oats topped with fruit or seeds?"
+   },
+   {
+    "expect": "no",
+    "q": "Is there any savory meat or eggs?"
+   }
+  ],
+  "dish": "overnight oats",
+  "hand": true,
+  "look": "creamy chilled overnight rolled oats layered with chia seeds in a clean glass jar or bowl, topped with fresh blueberries, sliced strawberries, and pumpkin seeds",
+  "plate": "bowl",
+  "rev": 6
+ },
  "5dc6dacce93e": {
   "avoid": [
    "rice",
@@ -10227,6 +10252,34 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T04:53:30+00:00"
+ },
+ "96f238647ae5": {
+  "avoid": [
+   "meat",
+   "poultry",
+   "beef",
+   "pork",
+   "chicken",
+   "fish",
+   "seafood",
+   "cheese",
+   "dairy"
+  ],
+  "checks": [
+   {
+    "expect": "yes",
+    "q": "Does the photo show a colorful platter of roasted seasonal vegetables?"
+   },
+   {
+    "expect": "no",
+    "q": "Is there any meat, fish, or poultry?"
+   }
+  ],
+  "dish": "roasted vegetable board",
+  "hand": true,
+  "look": "a rustic platter of colorful roasted seasonal vegetables including caramelized zucchini, red bell pepper slices, roasted baby carrots, and yellow squash, tossed in olive oil, fresh thyme and parsley garnish",
+  "plate": "plate",
+  "rev": 6
  },
  "97394ff5253d": {
   "avoid": [
@@ -13920,6 +13973,37 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T07:31:35+00:00"
+ },
+ "cb72cee636b4": {
+  "avoid": [
+   "meat",
+   "beef",
+   "steak",
+   "pork",
+   "bacon",
+   "chicken",
+   "poultry",
+   "fish",
+   "seafood",
+   "cheese",
+   "eggs",
+   "dairy"
+  ],
+  "checks": [
+   {
+    "expect": "yes",
+    "q": "Does the photo show grilled vegetables or grilled tofu with visible grill marks?"
+   },
+   {
+    "expect": "no",
+    "q": "Is there any meat, poultry, or fish on the plate?"
+   }
+  ],
+  "dish": "grilled vegan platter",
+  "hand": true,
+  "look": "grilled marinated portobello mushroom caps, thick zucchini slices, yellow squash and red bell peppers with distinct charred grill marks, fresh herbs, drizzled with olive oil",
+  "plate": "plate",
+  "rev": 6
  },
  "cbb23af96975": {
   "avoid": [
