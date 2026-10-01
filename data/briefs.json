@@ -8881,36 +8881,43 @@
  },
  "87d5db3ace4c": {
   "avoid": [
+   "dry chicken",
+   "uncoated fried chicken",
+   "plain fried chicken nuggets",
+   "sauce pool under dry chicken",
+   "green beans",
+   "asparagus",
+   "vegetable sides",
+   "french fries",
    "raw chicken",
    "skewers",
    "chicken wings",
-   "whole chicken breast",
    "soup",
    "noodles",
    "rice"
   ],
   "checks": [
    {
-    "q": "Is the main item bite-sized pieces of glazed fried chicken?",
+    "q": "Is the main item bite-sized crispy chicken pieces thoroughly coated and glistening in a thick sticky red-brown sauce?",
     "yes": true
    },
    {
-    "q": "Is the chicken raw or uncooked?",
+    "q": "Are the chicken pieces dry or uncoated with sauce pooling separately underneath?",
     "yes": false
    },
    {
-    "q": "Is the chicken served as whole bone-in wings or drumsticks?",
+    "q": "Are there green beans, fries, or noodles on the plate?",
     "yes": false
    }
   ],
   "dish": "General Tso's chicken",
-  "look": "crispy battered bite-sized chicken nuggets, glossy sweet and spicy reddish-brown glaze, shiny sauce flecks, red chili flakes, minced garlic, finely chopped green onions",
-  "model": "gemini-3.6-flash",
+  "look": "bite-sized crispy fried chicken nuggets thoroughly coated in a thick sticky glossy dark reddish-brown sauce, every piece evenly glazed and glistening, shiny wok-tossed glaze clinging to the crispy batter, dried whole red chili peppers, sprinkled with toasted sesame seeds and sliced green scallions, served on a white ceramic plate",
+  "model": "gemini-3.8-flash",
   "name": "General Chicken",
   "rev": 6,
   "revisions": 0,
   "vessel": "plate",
-  "written_at": "2026-09-30T10:02:01+00:00"
+  "written_at": "2026-10-01T07:35:00+00:00"
  },
  "87ee905dee6d": {
   "avoid": [
@@ -13239,36 +13246,43 @@
  },
  "c8ad011b6384": {
   "avoid": [
+   "beef",
+   "roast beef",
+   "beef brisket",
+   "steak",
+   "dark red beef grain",
+   "dark brown meat fibers",
+   "ribs",
+   "bone-in meat",
+   "raw meat",
+   "sauce pool",
    "rice",
    "noodles",
    "soup",
-   "raw pork",
-   "skewers",
-   "whole pig",
-   "chopsticks"
+   "skewers"
   ],
   "checks": [
    {
-    "q": "Is the main item sliced roasted meat?",
+    "q": "Is the main item sliced Chinese BBQ char siu pork with glossy red-lacquered edges and tender pale pork meat?",
     "yes": true
    },
    {
-    "q": "Is the meat shredded or pulled?",
+    "q": "Does the meat look like dark roast beef or beef steak rather than pork?",
     "yes": false
    },
    {
-    "q": "Is the meat served on skewers?",
+    "q": "Is the meat shredded, ground, or served in soup?",
     "yes": false
    }
   ],
-  "dish": "Cantonese char siu pork",
-  "look": "thick slices of roasted pork shoulder, glossy dark red caramelized glaze, charred edges, juicy tender meat, glistening sweet sauce, sprinkled with white sesame seeds",
-  "model": "gemini-3.5-flash",
+  "dish": "Cantonese BBQ char siu pork",
+  "look": "thick diagonal slices of authentic Cantonese char siu roast pork, tender juicy pale-pink and white pork meat grain, glossy vibrant red-lacquered outer crust with charred caramelized dark edges, glistening sweet honey maltose glaze, fanned out neatly on a white ceramic plate",
+  "model": "gemini-3.8-flash",
   "name": "Cantonese Char Siu Pork",
   "rev": 6,
   "revisions": 0,
   "vessel": "plate",
-  "written_at": "2026-09-30T10:09:22+00:00"
+  "written_at": "2026-10-01T07:35:00+00:00"
  },
  "c8dd8ea4d1f0": {
   "avoid": [
