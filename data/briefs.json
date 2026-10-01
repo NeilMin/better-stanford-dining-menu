@@ -3927,14 +3927,20 @@
  },
  "35d9a834ef63": {
   "avoid": [
-   "fried chicken",
-   "breaded cutlet",
-   "chicken wings",
-   "whole roasted chicken",
+   "raw chicken",
+   "undercooked meat",
+   "pale chicken",
+   "watery pool",
    "sauce pool",
+   "green beans",
+   "asparagus",
+   "vegetable sides",
    "side dishes",
    "rice",
-   "salad"
+   "salad",
+   "breaded chicken",
+   "fried chicken",
+   "shredded chicken"
   ],
   "checks": [
    {
@@ -3950,14 +3956,14 @@
     "yes": false
    }
   ],
-  "dish": "grilled chicken breast",
-  "look": "a whole grilled chicken breast, golden-brown surface with dark char grill marks, juicy white meat, slightly glossy skin, thick cut, sliced partly to show tender interior",
-  "model": "claude-sonnet",
+  "dish": "sliced grilled chicken breast",
+  "look": "thick diagonal slices of grilled chicken breast fanned out on a white plate, golden-brown seared crust with distinct dark char grill marks, juicy tender white meat texture, light flecks of cracked black pepper, appetizing glistening finish",
+  "model": "gemini-3.8-flash",
   "name": "Grilled Chicken",
   "rev": 6,
   "revisions": 0,
   "vessel": "plate",
-  "written_at": "2026-09-27T05:30:31+00:00"
+  "written_at": "2026-10-01T07:25:00+00:00"
  },
  "36b5ebcac89a": {
   "avoid": [
@@ -5420,10 +5426,10 @@
    "pork",
    "fish",
    "shrimp",
-   "egg",
-   "peas",
-   "carrots",
-   "raw rice"
+   "steamed white rice",
+   "plain white rice",
+   "pine nuts",
+   "nuts"
   ],
   "checks": [
    {
@@ -5440,13 +5446,13 @@
    }
   ],
   "dish": "scallion ginger fried rice",
-  "look": "fluffy stir-fried white rice grains, lightly browned, tossed with abundant chopped green scallions, minced ginger, golden fried garlic bits, glistening with a light soy sauce seasoning",
-  "model": "gemini-3.5-flash",
+  "look": "stir-fried light brown rice grains glistening with soy sauce, mixed throughout with finely chopped green scallions, minced fresh ginger, and tiny golden fried garlic pieces, evenly distributed",
+  "model": "gemini-3.6-flash",
   "name": "Scallion-Ginger Fried Rice",
   "rev": 6,
-  "revisions": 0,
+  "revisions": 1,
   "vessel": "bowl",
-  "written_at": "2026-09-30T10:09:22+00:00"
+  "written_at": "2026-10-01T07:08:18+00:00"
  },
  "4ac68252b436": {
   "avoid": [
@@ -12505,6 +12511,41 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T04:50:08+00:00"
  },
+ "be9e73d80c12": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "noodles",
+   "rice",
+   "soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food green beans coated in a dark savory sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is there visible meat, pork belly, or chicken mixed in?",
+    "yes": false
+   },
+   {
+    "q": "Is this a bowl of soup or broth?",
+    "yes": false
+   }
+  ],
+  "dish": "Adobong Sitaw",
+  "look": "tender cut green beans braised in a glossy dark brown soy-vinegar sauce, browned minced garlic, sliced onions, black pepper flecks, served warm on a plate",
+  "model": "gemini-3.8-flash",
+  "name": "Adobong Green Beans",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-01T06:40:00+00:00"
+ },
  "bed43b2c282e": {
   "avoid": [
    "salmon",
@@ -14168,15 +14209,15 @@
  },
  "d50f397b480c": {
   "avoid": [
+   "bowl of loose pasta",
+   "grated parmesan cheese",
+   "unmelted shredded cheese",
    "meat",
    "chicken",
    "beef",
    "pork",
    "fish",
-   "shrimp",
-   "raw pasta",
-   "dairy cheese slices",
-   "garlic bulbs"
+   "shrimp"
   ],
   "checks": [
    {
@@ -14192,14 +14233,14 @@
     "yes": false
    }
   ],
-  "dish": "baked pasta bolognese",
-  "look": "baked penne pasta, rich red marinara sauce, crumbled plant-based meat, melted vegan cheese shreds, golden-brown toasted top, flecks of red pepper flakes, chopped parsley",
-  "model": "gemini-3.5-flash",
+  "dish": "baked pasta bolognese casserole",
+  "look": "a portion of baked pasta casserole, penne baked into a compact savory bake with rich red bolognese sauce, covered in a blanket of melted golden brown bubbly cheese crust, browned crispy edges, plated warm",
+  "model": "gemini-3.8-flash",
   "name": "Beyond Bolognese Pasta Bake",
   "rev": 6,
   "revisions": 0,
-  "vessel": "bowl",
-  "written_at": "2026-10-01T00:13:18+00:00"
+  "vessel": "plate",
+  "written_at": "2026-10-01T07:22:00+00:00"
  },
  "d56b30d8d354": {
   "avoid": [
