@@ -1529,41 +1529,41 @@
  },
  "1a5ce3e335a9": {
   "avoid": [
-   "nuts",
-   "peanuts",
-   "cashews",
+   "seeds",
    "sesame seeds",
+   "thin stringy stems",
+   "broccolini",
+   "spinach",
+   "wilted shredded greens",
    "meat",
    "chicken",
    "beef",
    "pork",
    "fish",
-   "shrimp",
-   "oyster sauce",
-   "raw vegetables"
+   "shrimp"
   ],
   "checks": [
    {
-    "q": "Is the main item stir-fried green leafy vegetables?",
+    "q": "Is the main food Chinese broccoli (gai lan) with distinctive thick cylindrical green stalks and broad dark leaves?",
     "yes": true
    },
    {
-    "q": "Are there pieces of meat, chicken, or seafood?",
+    "q": "Does the dish look like thin leafy spinach or wilted shredded greens lacking thick stalks?",
     "yes": false
    },
    {
-    "q": "Is the vegetable dish raw and uncooked?",
+    "q": "Is there meat, chicken, or seafood visible?",
     "yes": false
    }
   ],
-  "dish": "stir-fried gai lan with garlic",
-  "look": "cooked Chinese broccoli gai lan featuring long thick glossy jade green stems and tender dark leafy tops, glistening in light clear sauce, scattered with finely chopped golden toasted garlic",
+  "dish": "garlic stir-fried gai lan",
+  "look": "gai lan Chinese broccoli with thick glossy jade-green cylindrical stems and broad dark green leaves, stir-fried intact whole stalks, topped with scattered golden minced garlic bits",
   "model": "gemini-3.6-flash",
   "name": "Garlic Stir-Fried Gai Lan",
   "rev": 6,
   "revisions": 1,
   "vessel": "plate",
-  "written_at": "2026-09-30T21:36:45+00:00"
+  "written_at": "2026-10-01T07:35:30+00:00"
  },
  "1a75479818b2": {
   "avoid": [
