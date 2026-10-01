@@ -85,7 +85,6 @@ class _NoGemini:
 def test_main_backend_auto_uses_cloudflare_only_as_a_last_resort(mock_zh_project, monkeypatch):
     """Cloudflare's free neurons are better spent drawing pictures."""
     monkeypatch.setattr("scripts.translate.ROOT", mock_zh_project)
-    monkeypatch.setattr("scripts.translate.shutil.which", lambda b: None)
     monkeypatch.setattr("scripts.translate.Gemini", _NoGemini)
 
     mock_client = MagicMock()
@@ -100,7 +99,8 @@ def test_main_backend_auto_uses_cloudflare_only_as_a_last_resort(mock_zh_project
     assert mock_ask_cf.called
 
 
-def test_main_backend_auto_prefers_the_claude_cli_then_gemma(mock_zh_project, monkeypatch):
+def test_main_backend_auto_is_gemma_even_where_the_claude_cli_is_installed(mock_zh_project, monkeypatch):
+    """The CLI is the owner's subscription: only `--backend claude` spends it."""
     monkeypatch.setattr("scripts.translate.ROOT", mock_zh_project)
     mock_client = MagicMock()
     mock_client.is_configured.return_value = True
@@ -111,35 +111,30 @@ def test_main_backend_auto_prefers_the_claude_cli_then_gemma(mock_zh_project, mo
     monkeypatch.setattr("scripts.translate.ask_gemini", lambda items, section, c: asked.append("gemini") or answer)
     monkeypatch.setattr("scripts.translate.ask_cloudflare", lambda *a: asked.append("cloudflare") or answer)
     monkeypatch.setattr("scripts.translate.Gemini", lambda *a, **kw: _NoGemini(available=True))
+    monkeypatch.setattr("shutil.which", lambda b: "/usr/bin/claude")
 
-    monkeypatch.setattr("scripts.translate.shutil.which", lambda b: "/usr/bin/claude")
-    main(["--section", "dishes"])
-    assert asked == ["claude"]
-
-    (mock_zh_project / "data" / "zh.json").unlink(missing_ok=True)
-    asked.clear()
-    monkeypatch.setattr("scripts.translate.shutil.which", lambda b: None)
     main(["--section", "dishes"])
     assert asked == ["gemini"]
 
+    (mock_zh_project / "data" / "zh.json").unlink(missing_ok=True)
+    asked.clear()
+    main(["--backend", "claude", "--section", "dishes"])
+    assert asked == ["claude"]
 
-def test_main_backend_auto_falls_back_to_claude_when_not_configured(mock_zh_project, monkeypatch):
+
+def test_main_backend_auto_without_a_key_or_cloudflare_stops_rather_than_use_the_cli(
+        mock_zh_project, monkeypatch, capsys):
     monkeypatch.setattr("scripts.translate.ROOT", mock_zh_project)
-
     mock_client = MagicMock()
     mock_client.is_configured.return_value = False
     monkeypatch.setattr("scripts.translate.CloudflareClient", lambda: mock_client)
-
-    mock_ask_cf = MagicMock()
-    monkeypatch.setattr("scripts.translate.ask_cloudflare", mock_ask_cf)
-
-    mock_ask_claude = MagicMock(return_value={"Fried Rice": "炒饭", "Spring Rolls": "春卷"})
+    monkeypatch.setattr("scripts.translate.Gemini", _NoGemini)
+    mock_ask_claude = MagicMock()
     monkeypatch.setattr("scripts.translate.ask", mock_ask_claude)
 
     code = main(["--backend", "auto", "--section", "dishes"])
-    assert code == 0
-    assert not mock_ask_cf.called
-    assert mock_ask_claude.called
+    assert code == 1 and not mock_ask_claude.called
+    assert "GEMINI_API_KEY" in capsys.readouterr().err
 
 
 def test_main_backend_explicit_cloudflare_unconfigured_exits_error(mock_zh_project, monkeypatch, capsys):

@@ -45,15 +45,15 @@ uv sync
 make test        # the suite: no network, no GPU
 make update      # scrape the rolling 7-day window into data/menus/, and the specials poster
 make logos       # cut the hall logos out of the R&DE map (once; they rarely change)
-make images      # draw the dishes still missing pictures (local ComfyUI + the claude CLI)
-make translate   # fill in the Chinese still missing (the claude CLI, else GEMINI_API_KEY)
+make images      # draw the dishes still missing pictures (local ComfyUI + Gemini via GEMINI_API_KEY)
+make translate   # fill in the Chinese still missing (Gemma via GEMINI_API_KEY)
 make serve       # preview at http://127.0.0.1:8777
 ```
 
 `make update`, `make logos` and `make site` need only network access. The nightly job also
 translates new dishes (Gemma on the Gemini API's free tier) and, in `draw.yml`, draws them with
 the laptop's own model on free GitHub runners, several at once; `make images` and
-`make translate` do the same on a laptop, with a GPU and the Claude Code CLI.
+`make translate` do the same on a laptop, with a GPU and a free Gemini API key in `.env`.
 
 ## How it fits together
 
@@ -67,7 +67,7 @@ R&DE halls map ─── scripts/fetch_logos.py ──►  data/logos/<hallId>.w
                                                                 │
 local ComfyUI  ─── scripts/gen_images.py ───►  data/images/<dishId>.webp
                                                                 │
-claude CLI     ─── scripts/translate.py ────►  data/zh.json     │
+Gemini (free)  ─── scripts/translate.py ────►  data/zh.json     │
                                                                 │
                    scripts/build_site.py ───────────────────────►  site/index.html
                                                                    site/img/ + site/logo/
@@ -144,8 +144,9 @@ day costs a handful of names plus whichever terms have genuinely never been seen
 Ingredient lists are lists, not prose, which is the whole reason this works; dish names are not,
 so those are translated whole.
 
-The engine is the Claude Code CLI in headless mode, so translating costs nothing beyond a
-subscription already in use and needs no API key:
+The engine is Gemma on the Gemini API's free tier, so translating costs nothing; it needs a free
+key in `GEMINI_API_KEY` (the environment or `.env`). The Claude Code CLI is only used if you ask
+for it with `--backend claude`:
 
 ```sh
 make translate                                        # everything missing
@@ -221,7 +222,7 @@ rejected: the SDXL ones on Civitai are either a dark/neon studio style or unrela
 Flux ones target Flux.1-dev rather than schnell.
 
 **Pictures are checked, not trusted.** SDXL does not know what gyro meat looks like, so each dish
-first gets a brief from a language model (the `claude` CLI): what the picture must show, what the
+first gets a brief from a language model (Gemini's free tier): what the picture must show, what the
 image model tends to get wrong, and a few yes/no questions that tell the right dish from those
 mistakes. Every picture is put to those questions, blind, before it is kept; failures are redrawn,
 then the brief is revised from what went wrong, and a dish nothing passes for keeps its

@@ -139,9 +139,9 @@ def main(argv: list[str] | None = None) -> int:
                     help=f"Workers AI model for --backend cloudflare (default {KLEIN_MODEL})")
     ap.add_argument("--llm", choices=["auto", "claude", "gemini"], default="auto",
                     help="who writes briefs (and judges, unless --judge-llm says otherwise): the "
-                         "claude CLI where it is installed, else the Gemini API's free tier with "
-                         "GEMINI_API_KEY -- Flash models in turn for briefs, Gemma for judging "
-                         "(default: auto)")
+                         "Gemini API's free tier with GEMINI_API_KEY -- Flash models in turn for "
+                         "briefs, Gemma for judging. auto is gemini; the claude CLI only when "
+                         "named (default: auto)")
     ap.add_argument("--judge-llm", choices=["auto", "claude", "gemini"],
                     help="who judges pictures, if not the same as --llm")
     ap.add_argument("--llm-model", default="sonnet",
@@ -262,8 +262,8 @@ def main(argv: list[str] | None = None) -> int:
         if args.judge:
             # Without a judge nothing drawn tonight could be kept, so drawing
             # would spend the GPU on pictures destined for the bin.
-            print("Nothing to write briefs and judge pictures -- no claude CLI and no "
-                  "GEMINI_API_KEY; nothing drawn. (--no-judge draws with the rule-based prompts.)",
+            print("Nothing to write briefs and judge pictures -- no GEMINI_API_KEY (environment or "
+                  ".env) and no --llm claude; nothing drawn. (--no-judge draws with the rule-based prompts.)",
                   file=sys.stderr)
             return 2
         llm = None

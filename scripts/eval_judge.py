@@ -72,7 +72,7 @@ def rejected_pictures() -> list[tuple[str, str, bytes]]:
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--llm", choices=["auto", "claude", "gemini"], default="auto",
-                    help="the claude CLI where installed, else Gemini (default: auto)")
+                    help="gemini; the claude CLI only when named (default: auto)")
     ap.add_argument("--judge-llm", choices=["auto", "claude", "gemini"],
                     help="who judges, if not the same as --llm (which then only writes briefs)")
     ap.add_argument("--model", default="sonnet", help="claude model alias (default sonnet)")

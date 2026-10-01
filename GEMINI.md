@@ -40,12 +40,12 @@ uv sync
 make test          # Full test suite: no network, no GPU, ~2s
 make update        # Scrape rolling 7-day window -> data/menus/, data/stations.json, data/dishes.json, data/specials/
 make catalog       # Re-derive data/dishes.json from stored menus, then rebuild site
-make images        # Draw dishes missing pictures (local ComfyUI on :8189 + claude CLI for briefs and judging)
+make images        # Draw dishes missing pictures (local ComfyUI on :8189; Gemini writes briefs and judges, GEMINI_API_KEY in .env)
 make images-todo   # Check pending dishes waiting for image generation
 make logos         # Crop hall logos from R&DE campus map -> data/logos/
 make logos-check   # Verify whether R&DE map coordinates have moved
 make specials      # Fetch and parse dinner specials PDF calendar
-make translate     # Fill in data/zh.json (claude CLI, else Gemma with GEMINI_API_KEY; CI runs it nightly)
+make translate     # Fill in data/zh.json (Gemma with GEMINI_API_KEY; CI runs it nightly)
 make site          # Render static site/ from data/
 make serve         # Preview at http://127.0.0.1:8777
 make verify        # Live fetch and diff against stored data to detect scraper faults
@@ -88,19 +88,21 @@ uv run python scripts/fetch_specials.py --show
 
 ### Image Generation: Brief, Draw, Judge
 - **Port 8189**: ComfyUI runs on port `8189`, **not** `8188` (8188 belongs to an unrelated project).
-- **Brief**: `bsdm/brief.py` asks a language model (`bsdm/llm.py`: the `claude` CLI on the laptop, the free Gemini API with `GEMINI_API_KEY` in CI) once per dish for what the picture must show: a cookbook name, a CLIP-friendly `look`, `plate`/`bowl`, an `avoid` list (the negative prompt) and 2-4 yes/no `checks`. Stored in `data/briefs.json`, which only `gen_images.py` writes. `BRIEF_REV` bumps rewrite briefs.
+- **Brief**: `bsdm/brief.py` asks a language model (`bsdm/llm.py`: the free Gemini API with `GEMINI_API_KEY`, in CI and on the laptop; the `claude` CLI only for an explicit `--llm claude`) once per dish for what the picture must show: a cookbook name, a CLIP-friendly `look`, `plate`/`bowl`, an `avoid` list (the negative prompt) and 2-4 yes/no `checks`. Stored in `data/briefs.json`, which only `gen_images.py` writes. `BRIEF_REV` bumps rewrite briefs.
 - **Judge**: `bsdm/judge.py` asks the brief's checks plus shared ones (recognisable? a spread of several dishes? text or hands?) blind, and compares the answers itself. Checks are about *which dish* (protein, form, raw vs cooked), never garnish. "unclear" fails a defining feature and passes a mistake.
 - **Never Keep a Failure**: failed pictures are redrawn (`--attempts`), then the brief is revised from the failures (`--revisions`; `checks` never change). A picture is written only after it passes; otherwise the dish keeps its placeholder and a `rejected` record. New image fields must be listed in `catalog.IMAGE_FIELDS` or the next scrape drops them.
 - **Evaluate Before Trusting**: `scripts/eval_judge.py` replays pictures a person rejected (the version before each fix commit) against the accepted replacement.
 - **Prompt Rev**: Bump `bsdm/dishes.py:PROMPT_REV` whenever prompt generation rules change, allowing `--redraw-stale` to selectively refresh older images.
 - **SDXL Prompting Rules**: Positive prompts **cannot** use phrases like "no meat" (CLIP lacks negation and interprets this as a prompt about meat). Protein exclusions are strictly placed in `bsdm/dishes.py:negative_prompt()`.
 - **Flavoring Exclusion**: `_FLAVORING_RE` in `bsdm/dishes.py` prevents condiments like "chicken soup base" or "A-1 steak sauce" from turning vegetable dishes into meat classifications or drawing meat on the plate.
-- **Everything Free**: CI draws with the laptop's RealVisXL on free GitHub runners' CPUs, the queue split across up to six machines (`draw.yml`, `--shard`), writes briefs eight dishes to a call with a chain of Gemini Flash models then Gemma (Flash's free tier is 20 requests/day per model), and judges and translates with Gemma 4 26B -- all on the free `GEMINI_API_KEY`. The laptop uses ComfyUI RealVisXL and the `claude` CLI. RealVisXL on a free GitHub runner was measured at 29-31 min/picture and ruled out. Nothing paid, ever; a backend that disappears must degrade to the placeholder icon.
+- **Everything Free**: CI draws with the laptop's RealVisXL on free GitHub runners' CPUs, the queue split across up to six machines (`draw.yml`, `--shard`), writes briefs eight dishes to a call with a chain of Gemini Flash models then Gemma (Flash's free tier is 20 requests/day per model), and judges and translates with Gemma 4 26B -- all on the free `GEMINI_API_KEY`. The laptop uses ComfyUI RealVisXL and the same Gemini key; the owner's `claude` CLI is never the default (`--llm claude` only). RealVisXL on a free GitHub runner was measured at 29-31 min/picture and ruled out. Nothing paid, ever; a backend that disappears must degrade to the placeholder icon.
 
 ### Specials Poster
 - **Found by Position**: The poster is whatever the red banner under the hours page title links (`specials.BANNER`), never matched by file name; non-PDF links are skipped.
 - **Geometric Parsing via PyMuPDF**: Canva PDF text stream order is non-linear. `bsdm/specials.py` reads geometry: coloured rectangles define date ranges, text belongs to the smallest enclosing bounding box.
 - **Menu Outranks Poster for Open State**: Specials span Mon–Fri even if a hall opens on Tuesday. `bsdm/build.py` only renders a special if the scraped menu confirms that hall is serving dinner that day.
+- **Label-less Blocks Belong to the Row They Sit In**: A block with no "Hall:" prefix that is as tall as one row is that hall's special on those days (Oct 7 "National Hispanic Heritage Month Dinner" is Stern's alone); one spanning several rows is a campus-wide notice. `attach_halls()` decides from the `row` geometry `parse()` records.
+- **No-Menu Specials Get a Hand-Written Spread Brief**: When the poster names no dishes, the brief is written by hand with `spread` (a table of dishes; the plate style, `table spread/feast` negatives and judge's "is this a spread?" check are lifted) and `hand` (immune to `BRIEF_REV` bumps). Do not let a model write it from the name.
 
 ### Bilingual / Translation (Chinese & English)
 - **Tokenizer Parity**: `bsdm/zh.py:terms_in()` and `web/app.js:splitIngredients()` tokenize ingredient strings using the exact same separator regex (`([,()\[\]])`) and normalization. Any deviation produces untranslated English words in Chinese mode.

@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Fill in the Chinese translations data/zh.json is still missing.
 
-On a laptop the engine is the Claude Code CLI in headless mode (`claude -p`),
-which costs nothing beyond the subscription already in use. The nightly job has
-no CLI and uses Gemma on the Gemini API's free tier (GEMINI_API_KEY) instead,
-right after the scrape. A dish that has not been through here yet simply shows
+The engine is Gemma on the Gemini API's free tier (GEMINI_API_KEY), on the laptop
+and in the nightly job alike, right after the scrape. The Claude Code CLI in
+headless mode (`claude -p`) is there for `--backend claude`, and only on
+request: it is the owner's subscription. A dish that has not been through here yet simply shows
 its English name in Chinese mode.
 
 Work is keyed on the dish name and on the ingredient term, so this is resumable
@@ -21,7 +21,6 @@ from __future__ import annotations
 import argparse
 import json
 import re
-import shutil
 import subprocess
 import sys
 import tempfile
@@ -152,9 +151,9 @@ def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--backend", choices=["auto", "claude", "gemini", "cloudflare"], default="auto",
-                    help="auto: the claude CLI where installed, else Gemma on the Gemini API's free "
-                         "tier (GEMINI_API_KEY), else Cloudflare -- whose free neurons are better "
-                         "spent drawing (default: auto)")
+                    help="auto: Gemma on the Gemini API's free tier (GEMINI_API_KEY), else Cloudflare "
+                         "-- whose free neurons are better spent drawing. The claude CLI only when "
+                         "named (default: auto)")
     ap.add_argument("--model", default="sonnet", help="model alias passed to claude (default sonnet)")
     ap.add_argument("--claude-bin", default="claude", help="path to the Claude Code CLI")
     ap.add_argument("--section", choices=sorted(zhlib.SECTIONS), action="append",
@@ -172,15 +171,15 @@ def main(argv: list[str] | None = None) -> int:
     gemini = Gemini(max_tokens=4096, thinking="minimal")
     backend = args.backend
     if backend == "auto":
-        backend = ("claude" if shutil.which(args.claude_bin) else
-                   "gemini" if gemini.available() else
-                   "cloudflare" if cf_client.is_configured() else "claude")
+        backend = ("gemini" if gemini.available() else
+                   "cloudflare" if cf_client.is_configured() else "gemini")
     if backend == "cloudflare" and not cf_client.is_configured():
         print("Error: Cloudflare backend requested but CF_ACCOUNT_ID and CF_API_TOKEN are not set.",
               file=sys.stderr)
         return 1
     if backend == "gemini" and not gemini.available():
-        print("Error: Gemini backend requested but GEMINI_API_KEY is not set.", file=sys.stderr)
+        print("Error: no GEMINI_API_KEY (in the environment or .env); "
+              "--backend claude uses the claude CLI instead.", file=sys.stderr)
         return 1
     backend_name = {"cloudflare": "Cloudflare Workers AI", "gemini": gemini.name,
                     "claude": f"claude ({args.model})"}[backend]

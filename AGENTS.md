@@ -18,7 +18,7 @@ This file covers the invariants that are easy to break and only visible across s
 | `bsdm/dishes.py` | Protein classification, prompt generation, CLIP negative prompt filtering. |
 | `bsdm/brief.py` | Per-dish visual brief (what the picture must show, plus yes/no checks), written once by an LLM into `data/briefs.json`. |
 | `bsdm/judge.py` | Asks a brief's checks of a drawn picture, blind; a picture is kept only if it passes. |
-| `bsdm/llm.py` | The model behind briefs and judging: the `claude` CLI on the laptop, Gemini's free tier (`GEMINI_API_KEY`) where there is no CLI. |
+| `bsdm/llm.py` | The model behind briefs and judging: Gemini's free tier (`GEMINI_API_KEY`, from the environment or `.env`) everywhere; the `claude` CLI only when a command is told `--llm claude`. |
 | `bsdm/cloudflare.py` | Cloudflare Workers AI client, which no workflow calls any more: `gen_images.py --backend cloudflare` (FLUX.2 [klein]) and `translate.py`'s last resort (Llama 3.3 70B). |
 | `bsdm/specials.py` | Canva PDF geometric parser via PyMuPDF for dinner specials. |
 | `bsdm/logos.py` | Cropping hall logos from the campus map JPEG using `config/logos.json`. |
@@ -42,12 +42,12 @@ make test          # the suite: no network, no GPU, ~2s
 make update        # scrape the rolling 7-day window -> data/menus/, data/stations.json, data/dishes.json
                    #   and follow the specials link on the hours page -> data/specials/
 make catalog       # re-derive data/dishes.json from stored menus, then rebuild the site
-make images        # draw dishes still missing pictures (local ComfyUI on :8189 + the claude CLI,
-                   #   which writes each dish's brief and judges every picture)
+make images        # draw dishes still missing pictures (local ComfyUI on :8189; Gemini writes each
+                   #   dish's brief and judges every picture -- needs GEMINI_API_KEY in .env)
 make images-todo   # print the dishes still waiting for a picture (what the nightly job files)
 make logos         # cut the hall logos out of the R&DE map -> data/logos/
 make specials      # fetch the specials calendar on its own
-make translate     # fill in data/zh.json (the claude CLI, else Gemma with GEMINI_API_KEY)
+make translate     # fill in data/zh.json (Gemma with GEMINI_API_KEY)
 make site          # render site/ from data/
 make serve         # build, then preview at http://127.0.0.1:8777
 make verify        # re-fetch today's dinner live and diff it against what is stored
@@ -169,7 +169,7 @@ next run picks it up.
 
 **`data/zh.json` is generated but committed, and both CI and the laptop write it.** The nightly
 job translates what the scrape brought in with Gemma on the Gemini free tier, before it draws;
-`make translate` on a laptop uses the `claude` CLI. A dish the night could not translate shows its
+`make translate` on a laptop uses it too. A dish the night could not translate shows its
 English name in Chinese mode until a later run does; `scripts/update.py` prints how many are
 waiting. The step is `continue-on-error`, like drawing: a spent quota is tomorrow's work.
 
@@ -218,19 +218,24 @@ placeholder icon, never to an unchecked picture. What each job runs on, and why:
   too plastic; `--backend cloudflare` and `photo_style(close=True)` are what is left of it. The
   CPU route had been ruled out once already on the time per picture alone, before anyone counted
   machines -- a public repository's runners are free, twenty at a time, six hours each.
-- *Briefs* (the dish knowledge): the `claude` CLI on the laptop; in CI a `bsdm.llm.Chain` of
-  Gemini Flash versions, then Gemma -- Flash's free tier is 20 requests a day *per model*, so they
+- *Briefs* (the dish knowledge): a `bsdm.llm.Chain` of Gemini Flash versions, then Gemma, in CI and
+  on the laptop alike -- Flash's free tier is 20 requests a day *per model*, so they
   take turns. Gemma 4 26B alone wrote briefs that said souvlaki is not on skewers. Briefs are
   written eight dishes to a call (`--brief-batch`), which is what keeps a night inside Flash's
   allowance; it scored the same on the eval as one a call, for Claude and for Flash alike.
-- *Judging*: the `claude` CLI on the laptop; in CI Gemma 4 26B on the Gemini API, which judged
+- *Judging*: Gemma 4 26B on the Gemini API, in CI and on the laptop, which judged
   the eval set as well as Claude Sonnet did and has the free quota for a night. Gemma is asked
   without JSON mode (it loops until the server hangs up) and, for translation, with thinking at
   "minimal" (it otherwise thinks through its whole output cap).
-- *Translation*: the `claude` CLI, else Gemma. Never Cloudflare while its neurons can draw.
+- *Translation*: Gemma. Never Cloudflare while its neurons can draw.
+- *The `claude` CLI* is the owner's subscription and is never reached for by default: `auto` means
+  Gemini, and with no key the commands stop and say so rather than fall back to it. It is there
+  for `--llm claude` / `--backend claude`, said on purpose -- e.g. when the free quota is spent and
+  the owner chooses to spend the subscription on a backlog. Since the laptop now draws on the same
+  free quota as CI, a big local backlog and the nightly job compete for it.
 
-`--llm` picks the brief writer (and the judge, unless `--judge-llm` says otherwise); `auto` takes
-the CLI where it is installed. GitHub Models, the obvious free choice in 2025, was retired on
+`--llm` picks the brief writer (and the judge, unless `--judge-llm` says otherwise); `auto` is
+Gemini, and the CLI only when named. GitHub Models, the obvious free choice in 2025, was retired on
 2026-07-30.
 
 **The dish knowledge lives in the brief, not in `dishes.py`.** SDXL does not know what gyro meat
@@ -238,7 +243,7 @@ or miso black cod looks like, and for two weeks a person supplied it one regex a
 per-dish branches in `_hero_protein_phrase()` and `negative_prompt()`. `bsdm/brief.py` asks a
 language model once per dish for what the picture must show and records it in
 `data/briefs.json`. Do not add new per-dish branches to `dishes.py`; they only feed the
-rule-based prompt now, which draws only under `--no-judge` without the claude CLI. If a dish
+rule-based prompt now, which draws only under `--no-judge`. If a dish
 keeps failing, read its brief first.
 
 **A brief's checks are about which dish, never about garnish.** The judge fails a picture on
@@ -250,6 +255,17 @@ same reason. A revision may change `look` and `avoid` but not what a check tests
 to get past its own failed check decides the check was wrong. The one exception is a check no
 picture could answer ("unclear" every time, e.g. "is the meat in this curry pork?"): it may be
 reworded, keeping its expected answer, or the dish would sit on its placeholder for good.
+
+**A special whose poster names no dishes is drawn as a table of them, by a hand-written brief.**
+A model given only "National Hispanic Heritage Month Dinner" would invent a menu, and the poster
+does not say what is served -- so the picture is a laden table of Latin American food that
+commits to nothing. Two flags on its brief make that possible: `spread` swaps the one-white-plate
+style and the `multiple dishes, table spread, feast` negatives for a table's (`photo_style(spread=)`,
+`SPREAD_NEGATIVE_PROMPT`) and drops the judge's "is this a spread?" check, which is otherwise
+what fails a luau platter drawn for a bowl of rice; `hand` makes `is_current()` true for any
+`BRIEF_REV`, so a rev bump does not hand it back to a model. Both survive `revise()`. Redraw with
+`gen_images.py --only "=National Hispanic Heritage Month Dinner" --force --revisions 0`, which
+leaves the brief alone; `--rewrite-briefs` would overwrite it.
 
 **`data/briefs.json` has one writer and is not the catalog.** `catalog.build()` re-derives
 `dishes.json` on every scrape and keeps only the image fields named in `catalog.IMAGE_FIELDS`;
@@ -327,6 +343,18 @@ block drawn over the top. `bsdm/build.py` resolves it by only ever attaching a s
 scraped menus show that hall serving that meal -- filed under the calendar's meal, so the page
 needs no meal guard of its own. Campus-wide notes stay `notices`, checked against the meal in
 `web/app.js`. Do not try to derive it from the PDF's z-order.
+
+**A block with no "Hall:" in front of it is placed by the row it was drawn in.** "National Hispanic
+Heritage Month Dinner" is one maroon cell cut out of Stern's Chilaquiles bar on the Wednesday: it
+is Stern's, on that day, and nobody else's. It used to land in `notices` -- a banner over every
+hall, which read as "this week, everywhere". `attach_halls()` gives a label-less block the hall of
+any labelled bar in a row as tall as it is (`_same_row`); a block that reaches across several rows
+("Traditional Thanksgiving Dinner at all Dining Halls!") is for the whole campus and stays a note.
+The same words in two rows are one entry with both halls (Nov 2025's "Thanksgiving Day Dinner" is
+AFDC and Lakeside, the only two rows not marked closed). `parse()` hands over each entry's `row`;
+`attach_halls()` uses it and drops it, so it never reaches `data/specials.json`. An edition already
+stored is not re-read unless its PDF changed, so after changing this, re-parse the archive from
+`data/specials/` by hand and patch only the entries whose `halls` moved.
 
 **An unreadable poster is still archived.** The hours page links one fortnight at a time, so an
 edition nobody fetched while it was up is gone for good -- worse than the menus, which at least

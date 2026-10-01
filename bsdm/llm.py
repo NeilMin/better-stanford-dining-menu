@@ -4,10 +4,11 @@ Both jobs go through one call, `ask(prompt, images)`, so the backend is a choice
 made once rather than a branch in every caller. There are two, and both cost
 nothing:
 
-    ClaudeCLI  the Claude Code CLI in headless mode, the engine scripts/translate.py
-               uses -- a subscription already in use, no API key. On the laptop.
     Gemini     the Gemini API's free tier, with a free Google AI Studio key in
-               GEMINI_API_KEY. In CI, where there is no claude CLI.
+               GEMINI_API_KEY. The default everywhere: CI, and the laptop too.
+    ClaudeCLI  the Claude Code CLI in headless mode -- the owner's own
+               subscription, so only ever on request (`--llm claude`), never
+               because it happens to be installed.
 
 The failure that matters is `Unavailable`: a usage limit, a missing binary or
 key is not something retrying the next dish will fix, so the caller stops asking
@@ -307,15 +308,17 @@ class Chain:
 
 
 def pick(which: str = "auto", claude_model: str = "sonnet", role: str = "judge"):
-    """The backend to use: the claude CLI where it is installed, else the Gemini API.
+    """The backend to use: the Gemini API, or the claude CLI when asked for by name.
+
+    "auto" is Gemini. It used to take the CLI wherever one was installed, which
+    spent the owner's subscription on a job nobody had asked it to do; a laptop
+    that wants the CLI says `--llm claude`.
 
     On the Gemini API the brief writer is the Flash-then-Gemma chain and the
     judge is Gemma alone, whose free tier is big enough for a night of pictures.
     Returns one whether or not it is available; the caller asks, so it can say
     what is missing.
     """
-    claude = ClaudeCLI(model=claude_model)
-
     def gemini():
         if role == "brief":
             # Room for a batch of briefs and the thinking before them.
@@ -323,10 +326,5 @@ def pick(which: str = "auto", claude_model: str = "sonnet", role: str = "judge")
         return Gemini()
 
     if which == "claude":
-        return claude
-    if which == "gemini":
-        return gemini()
-    if claude.available():
-        return claude
-    g = gemini()
-    return g if g.available() else claude
+        return ClaudeCLI(model=claude_model)
+    return gemini()

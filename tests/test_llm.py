@@ -193,14 +193,23 @@ def test_gemini_with_nothing_to_say_is_an_error_for_that_call():
     assert not isinstance(err.value, Unavailable)
 
 
-def test_auto_prefers_the_claude_cli_then_gemini(monkeypatch):
+def test_auto_is_gemini_even_where_the_claude_cli_is_installed(monkeypatch):
+    """The CLI is the owner's subscription: it is used when named, never because it is there."""
     monkeypatch.setenv("GEMINI_API_KEY", "k")
     monkeypatch.setattr(llmlib.shutil, "which", lambda b: "/usr/bin/claude")
-    assert isinstance(llmlib.pick("auto"), ClaudeCLI)
-    monkeypatch.setattr(llmlib.shutil, "which", lambda b: None)
     assert isinstance(llmlib.pick("auto"), llmlib.Gemini)
-    monkeypatch.delenv("GEMINI_API_KEY")
-    assert isinstance(llmlib.pick("auto"), ClaudeCLI), "with neither, report the CLI as missing"
+    assert isinstance(llmlib.pick("gemini"), llmlib.Gemini)
+
+
+def test_with_no_key_auto_reports_gemini_missing_and_does_not_reach_for_the_cli(monkeypatch):
+    monkeypatch.setattr(llmlib.shutil, "which", lambda b: "/usr/bin/claude")
+    monkeypatch.delenv("GEMINI_API_KEY", raising=False)
+    got = llmlib.pick("auto")
+    assert isinstance(got, llmlib.Gemini) and not got.available()
+
+
+def test_the_claude_cli_is_used_when_asked_for_by_name(monkeypatch):
+    assert isinstance(llmlib.pick("claude"), ClaudeCLI)
 
 
 def test_gemini_retries_an_overload_then_gives_up_for_the_night(monkeypatch):
