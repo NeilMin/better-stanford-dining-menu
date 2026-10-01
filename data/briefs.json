@@ -189,6 +189,42 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T10:19:38+00:00"
  },
+ "024351e6a22e": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "ground pork",
+   "soup broth",
+   "peanut garnish",
+   "bok choy"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food noodles with mushrooms?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of ground meat or shrimp on the noodles?",
+    "yes": false
+   },
+   {
+    "q": "Are the noodles served in a soup with lots of broth?",
+    "yes": false
+   }
+  ],
+  "dish": "vegetarian dan dan noodles",
+  "look": "cooked wavy egg noodles tossed in glossy dark brown tamari sauce, sautéed sliced mushrooms, chopped green onion, thin ginger slivers, minced garlic bits",
+  "model": "claude-sonnet",
+  "name": "Mushroom Dan Dan Noodles",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-01T19:05:42+00:00"
+ },
  "02ce58dc85d5": {
   "avoid": [
    "chicken",
@@ -885,6 +921,40 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T07:31:35+00:00"
+ },
+ "113682ebb57b": {
+  "avoid": [
+   "boneless nuggets",
+   "chicken tenders",
+   "buffalo red sauce",
+   "celery sticks",
+   "ranch dip",
+   "french fries",
+   "drumsticks only",
+   "platter"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item bone-in chicken wings?",
+    "yes": true
+   },
+   {
+    "q": "Are the wings coated in red hot sauce?",
+    "yes": false
+   },
+   {
+    "q": "Are the pieces boneless breaded nuggets or strips?",
+    "yes": false
+   }
+  ],
+  "dish": "garlic parmesan chicken wings",
+  "look": "a pile of whole cooked chicken wings, bone-in drumettes and flats, coated in glossy pale golden garlic parmesan sauce, speckles of grated parmesan, browned crisp skin, chopped parsley",
+  "model": "claude-sonnet",
+  "name": "Garlic Parmesan Chicken Wings",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-01T19:05:42+00:00"
  },
  "12460b3d8498": {
   "avoid": [
@@ -1805,6 +1875,42 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-01T10:31:58+00:00"
+ },
+ "1b03323aeae7": {
+  "avoid": [
+   "single plate",
+   "one dish",
+   "sushi",
+   "chopsticks",
+   "noodles",
+   "pizza",
+   "burgers",
+   "sandwiches"
+  ],
+  "checks": [
+   {
+    "q": "Is this a table laid with many different dishes?",
+    "yes": true
+   },
+   {
+    "q": "Is there just one plate or bowl of food in the picture?",
+    "yes": false
+   },
+   {
+    "q": "Is the food mostly sushi, noodles, pizza, burgers or sandwiches?",
+    "yes": false
+   }
+  ],
+  "dish": "Latin American feast",
+  "hand": true,
+  "look": "a crowded festive table of many Latin American dishes, tacos with cilantro and lime, tamales in corn husks, golden empanadas, rice and black beans, fried sweet plantains, grilled street corn with cotija, guacamole with tortilla chips, ceviche, churros, flan, colorful woven tablecloth",
+  "model": "hand",
+  "name": "National Hispanic Heritage Month Dinner",
+  "rev": 6,
+  "revisions": 0,
+  "spread": true,
+  "vessel": "plate",
+  "written_at": "2026-10-01T18:58:02+00:00"
  },
  "1b2e26686213": {
   "avoid": [
@@ -12225,14 +12331,17 @@
  },
  "b4c1fe2bf245": {
   "avoid": [
+   "boneless meat",
+   "boneless beef",
+   "meat without bones",
+   "boneless steak slabs",
    "rice",
    "lettuce wraps",
    "kimchi",
    "skewers",
    "ground beef",
    "soup",
-   "stew",
-   "raw meat"
+   "stew"
   ],
   "checks": [
    {
@@ -12248,14 +12357,14 @@
     "yes": false
    }
   ],
-  "dish": "Korean grilled beef short ribs",
-  "look": "thick slices of flanken-style beef short ribs, three small oval bones embedded in the meat, caramelized dark brown edges, glossy dark soy glaze, toasted white sesame seeds, sliced green onions",
-  "model": "gemini-3.5-flash",
+  "dish": "Korean galbi short ribs",
+  "look": "flanken-cut beef short ribs featuring small white round bone cross-sections along the edge of each strip, caramelized dark brown glossy glaze, grilled charred edges, toasted sesame seeds, green onion garnish",
+  "model": "gemini-3.6-flash",
   "name": "Korean-Style Galbi Short Ribs",
   "rev": 6,
-  "revisions": 0,
+  "revisions": 2,
   "vessel": "plate",
-  "written_at": "2026-10-01T10:36:25+00:00"
+  "written_at": "2026-10-01T19:21:57+00:00"
  },
  "b5e04fbed525": {
   "avoid": [
@@ -13489,6 +13598,48 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T08:27:45+00:00"
+ },
+ "c68fde5b1223": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "bacon",
+   "sausage",
+   "tortilla",
+   "fried egg",
+   "salsa",
+   "beans"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item scrambled eggs?",
+    "yes": true
+   },
+   {
+    "q": "Is the egg a whole fried or poached egg with a visible yolk?",
+    "yes": false
+   },
+   {
+    "q": "Are there pieces of meat such as bacon or sausage?",
+    "yes": false
+   },
+   {
+    "q": "Is the egg wrapped in a tortilla as a burrito or taco?",
+    "yes": false
+   }
+  ],
+  "dish": "huevos a la mexicana",
+  "look": "soft fluffy scrambled eggs mixed with small diced red tomato, diced white onion and diced green pepper, moist golden-yellow curds with red and green flecks",
+  "model": "claude-sonnet",
+  "name": "Huevos a la Mexicana",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-01T19:05:42+00:00"
  },
  "c6b7d3e01f09": {
   "avoid": [
@@ -15392,6 +15543,46 @@
   "vessel": "plate",
   "written_at": "2026-09-27T04:27:22+00:00"
  },
+ "e1203d92de6c": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "egg",
+   "soup",
+   "noodles",
+   "rice"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item tofu?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat, fish or shrimp?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a soup or stew in broth?",
+    "yes": false
+   },
+   {
+    "q": "Is there a fried egg on the dish?",
+    "yes": false
+   }
+  ],
+  "dish": "kimchi tofu",
+  "look": "slices of pan-seared firm tofu, golden edges, topped with glossy red-orange kimchi vinaigrette, bits of chopped napa cabbage kimchi, red chili flecks, sesame seeds, sliced scallion",
+  "model": "claude-sonnet",
+  "name": "Kimchi Tofu",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-01T19:05:42+00:00"
+ },
  "e1b4760c09f9": {
   "avoid": [
    "meat",
@@ -15530,6 +15721,44 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-30T10:02:25+00:00"
+ },
+ "e36586673323": {
+  "avoid": [
+   "fried chicken",
+   "breaded cutlet",
+   "chicken wings",
+   "pasta",
+   "rice",
+   "tomato sauce",
+   "whole roast chicken",
+   "vegetable side"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cooked chicken pieces in a creamy sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken breaded or deep fried?",
+    "yes": false
+   },
+   {
+    "q": "Is the sauce red or tomato-based?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken served on the bone as wings or drumsticks?",
+    "yes": false
+   }
+  ],
+  "dish": "creamy tarragon chicken",
+  "look": "seared golden chicken breast pieces in a pale ivory creamy white wine sauce, flecks of green tarragon, minced shallot, thin curls of lemon zest, glossy sauce pooled around the chicken",
+  "model": "claude-sonnet",
+  "name": "Creamy Tarragon Chicken",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-01T19:05:42+00:00"
  },
  "e5b335e732a5": {
   "avoid": [
