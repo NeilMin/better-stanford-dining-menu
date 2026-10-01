@@ -352,12 +352,14 @@ class TestSharedLinks:
                             "?d=2026-09-24&m=brunch&h=gone",
                             "?m=DINNER&h=wilbur,arrillaga,wilbur",
                             "?utm_source=wechat",
+                            "?d=2026-09-25&m=lunch&h=wilbur&utm_source=share&utm_medium=link",
                             ""],
                    prelude=LINK_PRELUDE, tmp_path=tmp_path)
         assert got == [{"meal": "Dinner", "halls": ["wilbur"]},
                        {"date": "2026-09-24"},
                        {"meal": "Dinner", "halls": ["arrillaga", "wilbur"]},
                        {},
+                       {"date": "2026-09-25", "meal": "Lunch", "halls": ["wilbur"]},
                        {}]
 
     def test_a_friends_link_does_not_overwrite_your_halls(self, tmp_path):
