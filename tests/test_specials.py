@@ -179,6 +179,62 @@ class TestAttachHalls:
         assert got[0]["halls"] == [] and got[0]["text"] == "Thanksgiving Day Dinner"
 
 
+class TestBlocksDrawnIntoARow:
+    """A block with no "Hall:" in front of it is placed by where it was drawn."""
+
+    ROW = (1242.0, 1328.0)
+
+    def entries(self, *blocks):
+        out = [{"label": "Wilbur", "text": "Wilbur: Chilaquiles", "dish": "Chilaquiles",
+                "from": "2026-10-05", "to": "2026-10-09", "row": self.ROW},
+               {"label": "AFDC", "text": "AFDC: Sweet Soy Chicken", "dish": "Sweet Soy Chicken",
+                "from": "2026-10-05", "to": "2026-10-09", "row": (1330.0, 1415.0)}]
+        for text, row, first in blocks:
+            out.append({"label": None, "text": text, "dish": None,
+                        "from": first, "to": first, "row": row})
+        return out
+
+    def test_a_block_as_tall_as_a_row_belongs_to_that_halls_row(self, halls):
+        entries = self.entries(("Hispanic Heritage Dinner", (1242.0, 1328.0), "2026-10-07"))
+        got = specialslib.attach_halls(entries, specialslib.alias_table(halls.config))
+        block = next(e for e in got if e["text"] == "Hispanic Heritage Dinner")
+        assert block["halls"] == ["wilbur"]
+        assert (block["from"], block["to"]) == ("2026-10-07", "2026-10-07")
+
+    def test_a_block_reaching_across_rows_is_for_the_whole_campus(self, halls):
+        """"Traditional Thanksgiving Dinner at all Dining Halls!" is four rows
+        tall; no one hall's row is as tall as it is."""
+        entries = self.entries(("Thanksgiving at all halls", (1242.0, 1415.0), "2026-10-07"))
+        got = specialslib.attach_halls(entries, specialslib.alias_table(halls.config))
+        assert next(e for e in got if e["text"].startswith("Thanksgiving"))["halls"] == []
+
+    def test_a_block_between_rows_is_nobodys(self, halls):
+        entries = self.entries(("Half and half", (1290.0, 1370.0), "2026-10-07"))
+        got = specialslib.attach_halls(entries, specialslib.alias_table(halls.config))
+        assert next(e for e in got if e["text"] == "Half and half")["halls"] == []
+
+    def test_the_same_words_in_two_rows_are_one_entry_for_both_halls(self, halls):
+        entries = self.entries(("Thanksgiving Day Dinner", (1242.0, 1328.0), "2026-10-07"),
+                               ("Thanksgiving Day Dinner", (1330.0, 1415.0), "2026-10-07"))
+        got = specialslib.attach_halls(entries, specialslib.alias_table(halls.config))
+        dinners = [e for e in got if e["text"] == "Thanksgiving Day Dinner"]
+        assert len(dinners) == 1 and dinners[0]["halls"] == ["wilbur", "arrillaga"]
+
+    def test_the_row_is_scaffolding_and_is_not_stored(self, halls):
+        entries = self.entries(("Hispanic Heritage Dinner", (1242.0, 1328.0), "2026-10-07"))
+        got = specialslib.attach_halls(entries, specialslib.alias_table(halls.config))
+        assert all("row" not in e for e in got)
+
+    def test_a_labelled_sentence_in_a_row_is_left_alone(self, halls):
+        """Only a block with no label at all is placed by geometry."""
+        entries = self.entries()
+        entries.append({"label": "Reminder", "text": "Reminder: closed Friday",
+                        "dish": "closed Friday", "from": "2026-10-09", "to": "2026-10-09",
+                        "row": self.ROW})
+        got = specialslib.attach_halls(entries, specialslib.alias_table(halls.config))
+        assert next(e for e in got if e["label"] == "Reminder")["halls"] == []
+
+
 def calendar(*entries, meal="Dinner"):
     return {"url": "https://x/p.pdf", "meal": meal, "from": entries[0]["from"],
             "to": entries[-1]["to"], "entries": list(entries)}

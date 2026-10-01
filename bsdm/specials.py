@@ -28,6 +28,13 @@ Bars are told from the grid they sit on by the weekend: every background stripe
 runs the full width of the calendar, and no special has ever run on a Saturday
 or a Sunday, so a rectangle covering a weekend column is furniture.
 
+A block that has no "Hall:" in front of it is read the same way. One drawn as
+tall as a single row, sitting in that hall's row, is that hall's special on
+those days ("National Hispanic Heritage Month Dinner" cut out of Stern's
+Chilaquiles bar on the Wednesday); one that reaches across several rows is
+for the whole campus ("Traditional Thanksgiving Dinner at all Dining Halls!").
+The same words in two rows are one entry for both halls.
+
 What this deliberately does not do is decide whether a hall is open. The bars
 span Monday to Friday even when a hall reopens on the Tuesday; the scraped menus
 already know which days have a dinner service, so build.py only ever puts a
@@ -309,16 +316,19 @@ def parse(blob: bytes) -> dict:
         # hall's special or a sentence that happens to contain a colon is not
         # something the poster's geometry can tell you. attach_halls decides.
         entry = {"label": None, "text": text, "dish": None,
-                 "from": min(days).isoformat(), "to": max(days).isoformat()}
+                 "from": min(days).isoformat(), "to": max(days).isoformat(),
+                 "row": (band["y0"], band["y1"])}
         if hit := ENTRY_RE.match(text):
             entry["label"] = hit["label"].strip()
             entry["dish"] = re.sub(r"\s+", " ", hit["text"]).strip()
         entries.append(entry)
 
-    # A note drawn across several rows lands in each of them; it is one note.
+    # The same block drawn twice is one entry. The same words in two different
+    # rows are not: attach_halls reads which halls those rows belong to.
     seen, unique = set(), []
     for entry in entries:
-        key = (entry["text"], entry["from"], entry["to"])
+        key = (entry["text"], entry["from"], entry["to"],
+               tuple(round(y) for y in entry["row"]))
         if key not in seen:
             seen.add(key)
             unique.append(entry)
@@ -341,6 +351,14 @@ def _nearest_column(line: dict, centres: list[float | None]) -> int:
     return min((i for i, c in enumerate(centres) if c), key=lambda i: abs(cx - centres[i]))
 
 
+def _same_row(a: tuple[float, float], b: tuple[float, float]) -> bool:
+    """Whether two bands are one row of the grid: as tall as each other, on each other."""
+    height_a, height_b = a[1] - a[0], b[1] - b[0]
+    overlap = min(a[1], b[1]) - max(a[0], b[0])
+    return (overlap >= 0.8 * min(height_a, height_b)
+            and abs(height_a - height_b) <= 0.15 * max(height_a, height_b))
+
+
 def attach_halls(entries: list[dict], table: dict[str, str]) -> list[dict]:
     """Decide, per entry, whether its "X: y" is a hall and its dish.
 
@@ -348,12 +366,33 @@ def attach_halls(entries: list[dict], table: dict[str, str]) -> list[dict]:
     the column already says which hall it is. When it is not, `text` keeps the
     whole line, colon and all, because "Reminder: closed Friday" is a sentence,
     not a label on a dish.
+
+    An entry with no label at all is placed by where it was drawn: as tall as a
+    row and sitting in a hall's row, it is that hall's. Taller than a row, it
+    spans halls and stays a note. Entries with the same text on the same days
+    are merged, their halls joined, so a block drawn in two rows is one entry.
     """
     for entry in entries:
         entry["halls"] = resolve_halls(entry["label"], table) if entry["label"] else []
         if entry["halls"] and entry.get("dish"):
             entry["text"] = entry["dish"]
         entry.pop("dish", None)
+
+    for entry in entries:
+        if entry["halls"] or entry["label"] or not entry.get("row"):
+            continue
+        for other in entries:
+            if other["label"] and other["halls"] and other.get("row") \
+                    and _same_row(entry["row"], other["row"]):
+                entry["halls"] += [h for h in other["halls"] if h not in entry["halls"]]
+
+    merged: dict[tuple, dict] = {}
+    for entry in entries:
+        entry.pop("row", None)
+        kept = merged.setdefault((entry["text"], entry.get("from"), entry.get("to")), entry)
+        if kept is not entry:
+            kept["halls"] += [h for h in entry["halls"] if h not in kept["halls"]]
+    entries[:] = merged.values()
     return entries
 
 

@@ -87,6 +87,40 @@ def test_every_hall_label_resolves(parsed, repo):
         assert unplaced == [], f"{name}: add an alias in config/halls.json"
 
 
+@pytest.fixture
+def placed(repo):
+    """A calendar's entries as they are stored: halls attached, rows merged."""
+    config = json.loads((repo / "config" / "halls.json").read_text())
+    table = specialslib.alias_table(config)
+
+    def attach(calendar):
+        return specialslib.attach_halls(json.loads(json.dumps(calendar["entries"])), table)
+    return attach
+
+
+class TestOctober2026:
+    """The Wednesday of the second week is not a campus-wide anything: the block
+    is cut out of Stern's Chilaquiles bar, in Stern's row, for that one day."""
+
+    @pytest.fixture
+    def calendar(self, parsed):
+        return next(c for n, c in parsed.items() if "Sept28-Oct9" in n)
+
+    def test_a_block_cut_into_a_halls_bar_is_that_halls_special(self, calendar, placed):
+        block = next(e for e in placed(calendar)
+                     if e["text"] == "National Hispanic Heritage Month Dinner")
+        assert block["halls"] == ["stern"]
+        assert block["from"] == block["to"] == "2026-10-07"
+
+    def test_the_bar_it_interrupts_runs_either_side_of_it(self, calendar, placed):
+        runs = sorted((e["from"], e["to"]) for e in placed(calendar)
+                      if e["halls"] == ["stern"] and e["text"] == "Chilaquiles")
+        assert runs == [("2026-10-05", "2026-10-06"), ("2026-10-08", "2026-10-09")]
+
+    def test_nothing_on_this_poster_is_left_for_the_whole_campus(self, calendar, placed):
+        assert [e["text"] for e in placed(calendar) if not e["halls"]] == []
+
+
 class TestSeptember2026:
     """One edition read line by line, because a count is not a reading."""
 
@@ -144,6 +178,16 @@ class TestNovember2025:
         on the way to the board."""
         assert any("No Dinner Special" in e["text"] for e in calendar["entries"])
 
+    def test_a_note_across_several_rows_is_still_for_the_whole_campus(self, calendar, placed):
+        """Four rows tall, so it is not any one hall's."""
+        note = next(e for e in placed(calendar) if e["text"].startswith("Traditional Thanksgiving"))
+        assert note["halls"] == []
+
+    def test_a_note_in_two_rows_is_for_those_two_halls(self, calendar, placed):
+        """AFDC and Lakeside are the two rows without "Closed this week"."""
+        note = next(e for e in placed(calendar) if e["text"] == "Thanksgiving Day Dinner")
+        assert sorted(note["halls"]) == ["arrillaga", "lakeside"]
+
     def test_the_typo_r_and_de_keeps_remaking(self, calendar, repo):
         config = json.loads((repo / "config" / "halls.json").read_text())
         table = specialslib.alias_table(config)
@@ -151,7 +195,7 @@ class TestNovember2025:
         assert specialslib.resolve_halls("WIlbur", table) == ["wilbur"]
 
 
-def test_a_note_is_recorded_once_however_many_rows_it_crosses(parsed):
+def test_a_note_is_recorded_once_however_many_rows_it_crosses(parsed, placed):
     for name, calendar in parsed.items():
-        keys = [(e["text"], e["from"], e["to"]) for e in calendar["entries"]]
+        keys = [(e["text"], e["from"], e["to"]) for e in placed(calendar)]
         assert len(keys) == len(set(keys)), name
