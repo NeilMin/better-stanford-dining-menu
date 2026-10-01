@@ -785,6 +785,42 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T08:27:45+00:00"
  },
+ "0d7c5a4ae33a": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "bacon",
+   "ham hock",
+   "turkey leg",
+   "raw salad",
+   "fish",
+   "shrimp"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food cooked dark leafy greens?",
+    "yes": true
+   },
+   {
+    "q": "Is there bacon, ham, or other meat mixed into the greens?",
+    "yes": false
+   },
+   {
+    "q": "Does the dish look like a raw fresh green salad?",
+    "yes": false
+   }
+  ],
+  "dish": "braised collard greens",
+  "look": "tender braised dark green collard green leaves, wilted kale, cooked mustard greens, sautéed chopped onions, flecks of minced garlic, glistening in light cooking pot liquor",
+  "model": "gemini-3.6-flash",
+  "name": "Collard Greens",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-01T20:34:12+00:00"
+ },
  "0e91bcd66bd1": {
   "avoid": [
    "meat",
@@ -3480,28 +3516,36 @@
  },
  "2fc114616336": {
   "avoid": [
-   "pork",
-   "chicken",
-   "fish",
-   "seafood",
-   "dairy",
-   "cheese"
+   "ground beef",
+   "burger patty",
+   "stew",
+   "meatloaf",
+   "skewers",
+   "raw meat",
+   "ribs"
   ],
   "checks": [
    {
-    "expect": "yes",
-    "q": "Does the photo show slices of grilled beef steak with a browned crust?"
+    "q": "Is the main item sliced cooked beef?",
+    "yes": true
    },
    {
-    "expect": "no",
-    "q": "Is there any pork, chicken, or seafood?"
+    "q": "Is the meat ground or crumbled like mince?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat raw or uncooked?",
+    "yes": false
    }
   ],
-  "dish": "grilled tri tip steak",
-  "hand": true,
-  "look": "thick slices of grilled beef tri tip with dark caramelized crust and juicy pink medium-rare interior, glistening surface, cracked black pepper, fresh rosemary sprig",
-  "plate": "plate",
-  "rev": 6
+  "dish": "grilled tri-tip steak",
+  "look": "thick slices of grilled beef tri-tip, medium-rare reddish-pink center, seared dark brown crust with visible grill marks, juicy meat slices arranged overlapping",
+  "model": "gemini-3.6-flash",
+  "name": "Grilled Tri Tip",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-01T20:34:12+00:00"
  },
  "3095445b5e1b": {
   "avoid": [
@@ -5510,6 +5554,41 @@
   "vessel": "plate",
   "written_at": "2026-09-30T20:39:41+00:00"
  },
+ "4809ffb083b5": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "burrito",
+   "hard shell taco",
+   "flour tortilla wrap"
+  ],
+  "checks": [
+   {
+    "q": "Are the main items soft corn tortillas with vegetable filling?",
+    "yes": true
+   },
+   {
+    "q": "Is there meat, chicken, or seafood in the tacos?",
+    "yes": false
+   },
+   {
+    "q": "Are the tacos wrapped into a closed burrito?",
+    "yes": false
+   }
+  ],
+  "dish": "veggie tacos",
+  "look": "warm yellow corn tortillas filled with sautéed bell pepper strips, sliced mushrooms, diced zucchini, creamy black refried beans, shredded cabbage, crumbled white queso fresco, topped with creamy avocado salsa",
+  "model": "gemini-3.6-flash",
+  "name": "Verdura de la Milpa Tacos",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-01T20:34:12+00:00"
+ },
  "488daa5009e7": {
   "avoid": [
    "chicken",
@@ -5542,6 +5621,39 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-29T16:28:29+00:00"
+ },
+ "4928bd35dae8": {
+  "avoid": [
+   "chicken",
+   "pork",
+   "whole steak fillet",
+   "soup",
+   "raw beef",
+   "skewers",
+   "noodles"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cooked sliced beef in sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat chicken, pork, or seafood?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a soup or liquid broth?",
+    "yes": false
+   }
+  ],
+  "dish": "teriyaki beef",
+  "look": "thin strips of seared beef tossed in a shiny dark brown teriyaki glaze, glistening thick sauce, sprinkled with white toasted sesame seeds and sliced green scallions",
+  "model": "gemini-3.6-flash",
+  "name": "Teriyaki Beef",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-01T20:34:12+00:00"
  },
  "4940c109f822": {
   "avoid": [
@@ -8380,6 +8492,40 @@
   "vessel": "plate",
   "written_at": "2026-09-28T17:10:34+00:00"
  },
+ "75c22d675b66": {
+  "avoid": [
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "tofu blocks",
+   "rice",
+   "noodles"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item chunks of protein in a stir-fry?",
+    "yes": true
+   },
+   {
+    "q": "Is the protein sliced fish or shrimp?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a soup?",
+    "yes": false
+   }
+  ],
+  "dish": "Vegan Sesame Chicken Stir-Fry",
+  "look": "chunks of plant-based chicken, glossy dark brown sesame sauce, sliced red and green bell peppers, translucent sautéed onions, sprinkle of white sesame seeds",
+  "model": "gemma-4-31b-it",
+  "name": "Soy Sesame \"Chick'n\" Stir-Fry",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-01T20:45:15+00:00"
+ },
  "75f6c9e945a1": {
   "avoid": [
    "bun",
@@ -8604,6 +8750,41 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-26T23:08:02+00:00"
+ },
+ "7b3f9fe42911": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "taco",
+   "burrito",
+   "raw peppers"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item battered fried peppers?",
+    "yes": true
+   },
+   {
+    "q": "Is the dish a taco or burrito?",
+    "yes": false
+   },
+   {
+    "q": "Is the pepper raw and uncooked?",
+    "yes": false
+   }
+  ],
+  "dish": "Chile Rellenos with Salsa",
+  "look": "battered and fried poblano peppers, golden brown crispy coating, melted cheese filling, topped with chunky red roasted tomato salsa, bits of onion and garlic in salsa",
+  "model": "gemma-4-31b-it",
+  "name": "Chille Rellenos & Tomato Salsa",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-01T20:45:15+00:00"
  },
  "7b59e120a928": {
   "avoid": [
@@ -10130,6 +10311,40 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T06:30:47+00:00"
+ },
+ "9269def41b2b": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "raw tofu",
+   "soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cooked tofu cubes?",
+    "yes": true
+   },
+   {
+    "q": "Is there meat, chicken, beef, pork, fish, or shrimp in the dish?",
+    "yes": false
+   },
+   {
+    "q": "Does the tofu look like raw white un-seared blocks?",
+    "yes": false
+   }
+  ],
+  "dish": "miso tofu stir-fry",
+  "look": "golden pan-fried tofu cubes, translucent stir-fried onion slices, chopped crisp celery, coated in a rich brown miso sesame dressing, sprinkled with toasted white sesame seeds",
+  "model": "gemini-3.6-flash",
+  "name": "Miso Tofu Stir-Fry",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-01T20:34:12+00:00"
  },
  "93695a59d399": {
   "avoid": [
@@ -17197,28 +17412,37 @@
  },
  "f7dce61b9b39": {
   "avoid": [
-   "pork",
-   "chicken",
-   "fish",
-   "seafood",
-   "dairy",
-   "cheese"
+   "ground beef",
+   "steak",
+   "noodles",
+   "white rice",
+   "carrots",
+   "peas",
+   "soup",
+   "green beans"
   ],
   "checks": [
    {
-    "expect": "yes",
-    "q": "Does the photo show sliced beef with broccoli served in a bowl?"
+    "q": "Is the main item sliced meat and broccoli?",
+    "yes": true
    },
    {
-    "expect": "no",
-    "q": "Is there any chicken, pork, or seafood?"
+    "q": "Is the meat ground or crumbled like mince?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish served as a soup?",
+    "yes": false
    }
   ],
-  "dish": "Mongolian beef and broccoli bowl",
-  "hand": true,
-  "look": "tender sliced beef in rich glossy dark brown sauce, steamed bright green broccoli florets, sliced shiitake mushrooms, edamame, chopped scallions, served over steamed brown rice",
-  "plate": "bowl",
-  "rev": 6
+  "dish": "Mongolian Beef and Broccoli",
+  "look": "sliced beef strips and bright green broccoli florets, glossy dark brown savory sauce, green edamame beans, sliced brown shiitake mushrooms, bed of fluffy brown rice, chopped green onions, a swirl of red sriracha",
+  "model": "gemma-4-31b-it",
+  "name": "Mongolian Beef & Broccoli Bowl",
+  "rev": 6,
+  "revisions": 1,
+  "vessel": "bowl",
+  "written_at": "2026-10-01T21:28:11+00:00"
  },
  "f82b67e85167": {
   "avoid": [
@@ -17823,6 +18047,39 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T07:39:15+00:00"
+ },
+ "fe123c379617": {
+  "avoid": [
+   "mustard",
+   "ketchup",
+   "relish",
+   "sauerkraut",
+   "burger patty",
+   "corn dog",
+   "sliced sausage"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a sausage in a bun?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat a burger patty?",
+    "yes": false
+   },
+   {
+    "q": "Is the sausage sliced into rounds?",
+    "yes": false
+   }
+  ],
+  "dish": "Beef Hot Dog",
+  "look": "grilled beef frankfurter, browned skin, nestled in a soft toasted whole wheat brown bun, smooth texture, light brown bread",
+  "model": "gemma-4-31b-it",
+  "name": "Hot Dog",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-01T20:45:15+00:00"
  },
  "fe2b360b9660": {
   "avoid": [
