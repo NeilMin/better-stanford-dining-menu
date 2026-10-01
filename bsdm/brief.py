@@ -17,6 +17,13 @@ looks like after thirty dishes. A brief moves the knowledge to a language model:
 The photo style is not the model's to choose: dishes.photo_style() is appended
 to every prompt, so the board still reads as one set.
 
+Two flags exist for the one thing a model cannot be asked about. "National
+Hispanic Heritage Month Dinner" is a special whose poster says nothing of what
+is served, so its brief is written by hand as a table of dishes. `spread` lets
+a picture be that -- the house style, the negative prompt and the judge all
+otherwise hold a picture to one plate -- and `hand` keeps a new BRIEF_REV from
+handing the dish back to a model that has only the name to go on.
+
 Briefs live in data/briefs.json, their own file with one writer, rather than in
 the catalog: catalog.build() re-derives dishes.json on every scrape and CI runs
 it, and a field it does not know about is a field it drops. Writing merges into
@@ -105,7 +112,7 @@ def record(root: Path, dish_id: str, brief: dict) -> None:
 
 
 def is_current(brief: dict | None) -> bool:
-    return bool(brief) and brief.get("rev", 0) >= BRIEF_REV
+    return bool(brief) and (bool(brief.get("hand")) or brief.get("rev", 0) >= BRIEF_REV)
 
 
 def _describe(entry: dict) -> str:
@@ -269,7 +276,8 @@ def revise(entry: dict, brief: dict, verdicts: list[dict], llm) -> dict:
         if c["q"] in unclear and str(rephrased.get(c["q"]) or "").strip() else c
         for c in brief["checks"]
     ]
-    return {**_stamp(new, entry, llm), "revisions": brief.get("revisions", 0) + 1}
+    flags = {k: brief[k] for k in ("hand", "spread") if k in brief}
+    return {**_stamp(new, entry, llm), **flags, "revisions": brief.get("revisions", 0) + 1}
 
 
 def compose(entry: dict, brief: dict, close: bool = False) -> tuple[str, str]:
@@ -279,10 +287,12 @@ def compose(entry: dict, brief: dict, close: bool = False) -> tuple[str, str]:
     than trusted to the model: a vegetarian dish must never be drawn with meat,
     whatever the brief forgot to say.
     """
-    style = dishlib.photo_style(brief["vessel"] == "bowl", close=close)
+    spread = bool(brief.get("spread"))
+    style = dishlib.photo_style(brief["vessel"] == "bowl", close=close, spread=spread)
     positive = f"{brief['dish']}, {brief['look']}, {style}"
+    house = dishlib.SPREAD_NEGATIVE_PROMPT if spread else dishlib.NEGATIVE_PROMPT
     negative, seen = [], set()
-    for term in [*brief.get("avoid", []), *dishlib.protein_exclusions(entry), dishlib.NEGATIVE_PROMPT]:
+    for term in [*brief.get("avoid", []), *dishlib.protein_exclusions(entry), house]:
         if term.lower() not in seen:
             seen.add(term.lower())
             negative.append(term)

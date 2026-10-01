@@ -571,14 +571,21 @@ def image_prompt(dish) -> str:
     return ", ".join(parts)
 
 
-def photo_style(bowl: bool, close: bool = False) -> str:
+def photo_style(bowl: bool, close: bool = False, spread: bool = False) -> str:
     """The house style every picture ends with, so the board reads as one set.
 
     `close` is for FLUX.2 [klein]. SDXL needs the generous margin or it crops
     the plate at the edge; klein does exactly what it is told, and drew a small
     plate adrift on a white sweep. Told to fill the frame and given a table, it
     comes out looking like the SDXL pictures beside it.
+
+    `spread` is for a brief that is a table of dishes, not one: there is no plate
+    to centre, and a shallow depth of field would blur most of the table.
     """
+    if spread:
+        return ("appetizing food photography, many dishes shared together on a long wooden table, "
+                "overhead view, the whole spread fills the frame, "
+                "soft natural window light, sharp focus, high detail")
     noun = "bowl" if bowl else "plate"
     vessel = "served in a simple white ceramic bowl" if bowl else "plated on a simple white ceramic plate"
     framing = (f"close-up, the {noun} fills most of the frame, its rim just inside the edges" if close
@@ -590,13 +597,19 @@ def photo_style(bowl: bool, close: bool = False) -> str:
     )
 
 
+_ONE_DISH = "duplicate plates, multiple dishes, table spread, feast"
+
 NEGATIVE_PROMPT = (
     "text, words, letters, watermark, signature, logo, menu, label, "
     "hands, people, person, fingers, cutlery clutter, extra chopsticks, "
     "three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, "
     "lowres, deformed, distorted, oversaturated, cartoon, illustration, "
-    "3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast"
+    f"3d render, plastic, fake looking, {_ONE_DISH}"
 )
+
+# For a brief that is a table of dishes (brief["spread"]): everything above but
+# the words that keep a picture to one plate.
+SPREAD_NEGATIVE_PROMPT = NEGATIVE_PROMPT.removesuffix(f", {_ONE_DISH}")
 
 # What each protein looks like on a plate, phrased for the negative prompt.
 _PROTEIN_NEGATIVE = {

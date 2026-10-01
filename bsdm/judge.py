@@ -34,16 +34,16 @@ def checks(brief: dict) -> list[dict]:
     think to ask about, and it is a judgement call where "unclear" is an honest
     answer about a perfectly good picture -- so only a definite no fails it.
     """
-    return [
-        *brief["checks"],
-        {"q": f"Would someone who ordered {brief['dish']} recognise this as that dish?", "yes": True,
-         "lenient": True},
-        # Narrow on purpose: fish and chips is one dish with its chips on the
-        # plate. What this catches is the luau platter drawn for a bowl of rice.
+    recognised = {"q": f"Would someone who ordered {brief['dish']} recognise this as that dish?",
+                  "yes": True, "lenient": True}
+    # Narrow on purpose: fish and chips is one dish with its chips on the
+    # plate. What this catches is the luau platter drawn for a bowl of rice.
+    # A brief that is a spread by design asks for the opposite itself.
+    one_dish = [] if brief.get("spread") else [
         {"q": "Is this a spread of several different dishes, like a buffet table or a combination platter?",
-         "yes": False},
-        {"q": "Is there any text, logo, watermark, hand or person in the picture?", "yes": False},
-    ]
+         "yes": False}]
+    no_text = {"q": "Is there any text, logo, watermark, hand or person in the picture?", "yes": False}
+    return [*brief["checks"], recognised, *one_dish, no_text]
 
 
 def request(questions: list[dict]) -> str:

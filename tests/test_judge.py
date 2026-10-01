@@ -68,3 +68,25 @@ def test_the_wrong_number_of_answers_is_an_error_not_a_verdict(fake_llm):
     fake_llm.verdicts.append({"answers": ["yes"], "seen": "?"})
     with pytest.raises(LLMError):
         judge.inspect(b"picture", BRIEF, fake_llm)
+
+
+class TestASpreadByDesign:
+    """A special whose poster says nothing of the menu is drawn as a table of dishes."""
+
+    SPREAD = {**BRIEF, "spread": True,
+              "checks": [{"q": "Is this a table of many different dishes?", "yes": True}]}
+
+    def test_it_is_not_asked_whether_the_picture_is_a_spread(self):
+        asked = [c["q"] for c in judge.checks(self.SPREAD)]
+        assert not any("spread of several different dishes" in q for q in asked)
+        assert any("spread of several different dishes" in c["q"] for c in judge.checks(BRIEF))
+
+    def test_text_and_recognition_are_still_asked(self):
+        asked = [c["q"] for c in judge.checks(self.SPREAD)]
+        assert any("recognise" in q for q in asked) and any("watermark" in q for q in asked)
+
+    def test_it_passes_on_the_brief_s_own_answers(self, fake_llm):
+        # The brief's one, then recognition, then text.
+        fake_llm.verdicts.append({"answers": ["yes", "yes", "no"], "seen": "a laden table"})
+        assert judge.inspect(b"picture", self.SPREAD, fake_llm)["pass"]
+
