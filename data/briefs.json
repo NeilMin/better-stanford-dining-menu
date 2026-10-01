@@ -8921,38 +8921,30 @@
  },
  "8014a0bb7d9f": {
   "avoid": [
+   "straight fries",
+   "regular french fries",
+   "shoestring fries",
+   "potato wedges",
+   "tater tots",
+   "potato strips",
    "meat",
-   "chicken",
-   "beef",
-   "pork",
-   "fish",
-   "shrimp",
-   "mashed potatoes",
-   "regular straight fries",
-   "tater tots"
+   "cheese"
   ],
   "checks": [
    {
-    "q": "Is the main item waffle-cut fries?",
-    "yes": true
+    "expect": "yes",
+    "q": "Does the photo show crispy lattice waffle fries?"
    },
    {
-    "q": "Are the fries regular straight-cut style?",
-    "yes": false
-   },
-   {
-    "q": "Is the food mashed or in a bowl?",
-    "yes": false
+    "expect": "no",
+    "q": "Are there any regular straight-cut french fry strips?"
    }
   ],
   "dish": "waffle fries",
-  "look": "crispy golden waffle fries, lattice pattern, seasoned potato strips, dusted with paprika and garlic powder",
-  "model": "gemma-4-26b-a4b-it",
-  "name": "Waffle Fries",
-  "rev": 6,
-  "revisions": 0,
-  "vessel": "plate",
-  "written_at": "2026-09-28T17:10:56+00:00"
+  "hand": true,
+  "look": "crispy golden-brown criss-cross lattice-cut waffle potato fries with distinct waffle grid pattern, dusted with paprika and garlic powder",
+  "plate": "plate",
+  "rev": 6
  },
  "8077663be4a2": {
   "avoid": [
