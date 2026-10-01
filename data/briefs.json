@@ -612,6 +612,41 @@
   "vessel": "plate",
   "written_at": "2026-09-27T06:14:59+00:00"
  },
+ "097764766c5c": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "lettuce salad",
+   "raw whole peppers",
+   "dip"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a mix of cooked sliced peppers and carrots?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat or seafood in the dish?",
+    "yes": false
+   },
+   {
+    "q": "Are the vegetables whole and uncut?",
+    "yes": false
+   }
+  ],
+  "dish": "sautéed peppers and carrots",
+  "look": "sautéed sliced red bell peppers, sliced yellow bell peppers, tender julienned orange carrots, glossy surface, slightly caramelized tender edges",
+  "model": "gemini-3.6-flash",
+  "name": "Bell Peppers & Shredded Carrots",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-01T10:31:58+00:00"
+ },
  "0a682c33bc74": {
   "avoid": [
    "taco",
@@ -1317,6 +1352,42 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T06:49:46+00:00"
  },
+ "193cfed60c22": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "lettuce",
+   "creamy dressing",
+   "mayonnaise",
+   "whole unpeeled cucumbers"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a sliced cucumber salad?",
+    "yes": true
+   },
+   {
+    "q": "Is the salad covered in a heavy creamy or white dressing?",
+    "yes": false
+   },
+   {
+    "q": "Does the salad contain meat, poultry, or seafood?",
+    "yes": false
+   }
+  ],
+  "dish": "Thai cucumber salad",
+  "look": "thinly sliced crisp green cucumber rounds, slivers of vibrant red onion, crushed golden roasted peanuts, chopped fresh cilantro, sprinkle of red pepper flakes, light clear dressing",
+  "model": "gemini-3.7-flash",
+  "name": "Thai Cucumber Salad",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-01T10:25:41+00:00"
+ },
  "194726070937": {
   "avoid": [
    "meat",
@@ -1600,6 +1671,40 @@
   "vessel": "bowl",
   "written_at": "2026-09-29T23:55:14+00:00"
  },
+ "1a7cdaefaad7": {
+  "avoid": [
+   "tacos",
+   "tortilla chips",
+   "salsa",
+   "guacamole",
+   "raw eggs",
+   "lettuce",
+   "rice",
+   "beans"
+  ],
+  "checks": [
+   {
+    "q": "Is the food wrapped in a flour tortilla?",
+    "yes": true
+   },
+   {
+    "q": "Is the tortilla open like a taco or quesadilla?",
+    "yes": false
+   },
+   {
+    "q": "Is the filling primarily sweet or dessert-like?",
+    "yes": false
+   }
+  ],
+  "dish": "breakfast burrito",
+  "look": "a large flour tortilla tightly wrapped and cut in half, revealing a filling of scrambled eggs, crumbled pork sausage, crispy bacon bits, diced golden potatoes, and melted cheddar cheese",
+  "model": "gemini-3.5-flash",
+  "name": "Meat Lovers' Breakfast Burrito",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-01T10:36:25+00:00"
+ },
  "1ab2e08cc7d9": {
   "avoid": [
    "chicken",
@@ -1668,6 +1773,38 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T05:33:17+00:00"
+ },
+ "1af3b1e1ad19": {
+  "avoid": [
+   "whole pig",
+   "raw pork",
+   "pork chops",
+   "bone-in meat",
+   "skewers",
+   "ground meat"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item sliced roast meat?",
+    "yes": true
+   },
+   {
+    "q": "Is the dish a whole roasted animal?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat ground or on skewers?",
+    "yes": false
+   }
+  ],
+  "dish": "roast pork with gravy",
+  "look": "thick juicy slices of roasted pork loin, crispy golden-brown crackling edge, savory brown pork gravy drizzled over the top, tender moist interior",
+  "model": "gemini-3.6-flash",
+  "name": "Roast Pork Carving Station",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-01T10:31:58+00:00"
  },
  "1b2e26686213": {
   "avoid": [
@@ -5964,6 +6101,73 @@
   "vessel": "plate",
   "written_at": "2026-09-26T23:08:31+00:00"
  },
+ "4fe613e5513d": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "raw bok choy",
+   "noodles",
+   "tofu"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cooked leafy green vegetables?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat, chicken, or seafood?",
+    "yes": false
+   },
+   {
+    "q": "Does the vegetable look completely raw and unheated?",
+    "yes": false
+   }
+  ],
+  "dish": "garlic stir-fried bok choy",
+  "look": "tender cooked baby bok choy halves, bright green leaves, glossy pale stalks, minced fried golden garlic scattered on top, light glistening pan sauce",
+  "model": "gemini-3.6-flash",
+  "name": "Bok Choy with Garlic",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-01T10:31:58+00:00"
+ },
+ "502c39671734": {
+  "avoid": [
+   "burger patty",
+   "tortilla wrap",
+   "raw beef",
+   "deli slice sandwich",
+   "pizza",
+   "rice"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a hot meat sandwich in a long bun?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat shaped into a burger patty?",
+    "yes": false
+   },
+   {
+    "q": "Is the sandwich wrapped in a flatbread or tortilla?",
+    "yes": false
+   }
+  ],
+  "dish": "Philly cheesesteak",
+  "look": "thinly sliced sautéed beef, melted gooey cheese, sautéed sliced onions, sliced mushrooms, stuffed inside a crusty hoagie roll, glistening warm filling",
+  "model": "gemini-3.6-flash",
+  "name": "Philly Cheesesteak",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-01T10:31:58+00:00"
+ },
  "50ea6a72eb85": {
   "avoid": [
    "pork sausage",
@@ -8593,6 +8797,41 @@
   "vessel": "plate",
   "written_at": "2026-09-28T17:10:56+00:00"
  },
+ "8077663be4a2": {
+  "avoid": [
+   "beef",
+   "pork",
+   "shrimp",
+   "noodles",
+   "rice",
+   "curry paste tub",
+   "raw chicken",
+   "skewers",
+   "dry grilled chicken"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food chicken in yellow curry sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken dry or grilled without sauce?",
+    "yes": false
+   },
+   {
+    "q": "Is the curry served over noodles or inside a wrap?",
+    "yes": false
+   }
+  ],
+  "dish": "Thai yellow chicken curry",
+  "look": "tender chicken pieces, creamy vibrant yellow coconut curry sauce, visible sliced lemongrass pieces, flecks of fresh herbs, glistening surface",
+  "model": "gemini-3.7-flash",
+  "name": "Thai Lemongrass Chicken Curry",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-01T10:25:41+00:00"
+ },
  "81f15f5b56f3": {
   "avoid": [
    "tomato broth",
@@ -8951,6 +9190,43 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T05:43:05+00:00"
+ },
+ "88c461a96f15": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "mashed potatoes",
+   "french fries",
+   "baked whole potato",
+   "raw potatoes",
+   "casserole baking dish"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food a baked layered potato gratin?",
+    "yes": true
+   },
+   {
+    "q": "Is the potato in the form of mashed potatoes or french fries?",
+    "yes": false
+   },
+   {
+    "q": "Does the dish contain pieces of bacon or meat?",
+    "yes": false
+   }
+  ],
+  "dish": "potato gratin",
+  "look": "a square portion of thinly sliced layered potatoes, bubbly browned golden-crusted cheese top, creamy melted interior, scattered fresh thyme leaves",
+  "model": "gemini-3.7-flash",
+  "name": "Potato Gratin",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-01T10:25:41+00:00"
  },
  "88e673e12cba": {
   "avoid": [
@@ -9844,6 +10120,42 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T04:53:30+00:00"
+ },
+ "97394ff5253d": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "tomato sauce",
+   "marinara",
+   "cheese",
+   "raw pasta"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food yellow ribbon noodles?",
+    "yes": true
+   },
+   {
+    "q": "Is there meat, chicken, or seafood on the noodles?",
+    "yes": false
+   },
+   {
+    "q": "Are the noodles covered in a red tomato sauce?",
+    "yes": false
+   }
+  ],
+  "dish": "buttered egg noodles",
+  "look": "a mound of wide ribbon-shaped yellow egg noodles, glistening melted butter coating the pasta, finely chopped green parsley, flecks of fresh tarragon",
+  "model": "gemini-3.5-flash",
+  "name": "Buttered Egg Noodles",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-01T10:36:25+00:00"
  },
  "9758ac77e9f9": {
   "avoid": [
@@ -11275,6 +11587,42 @@
   "vessel": "plate",
   "written_at": "2026-09-27T07:31:35+00:00"
  },
+ "ad2da3cb1404": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "pasta",
+   "rice",
+   "soup broth",
+   "raw mushrooms"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a mixture of mushrooms and beans in a creamy sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is there meat, chicken, or seafood in the dish?",
+    "yes": false
+   },
+   {
+    "q": "Is the sauce a clear broth or red tomato sauce?",
+    "yes": false
+   }
+  ],
+  "dish": "creamy wild mushroom and white bean stew",
+  "look": "assorted wild mushrooms, plump white cannellini beans, thick creamy ivory-colored sauce, flecks of fresh green tarragon leaves, chopped shallots",
+  "model": "gemini-3.5-flash",
+  "name": "Wild Mushroom with Tarragon Cream",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-01T10:36:25+00:00"
+ },
  "ae77b32c45b7": {
   "avoid": [
    "meat",
@@ -11874,6 +12222,40 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T06:03:50+00:00"
+ },
+ "b4c1fe2bf245": {
+  "avoid": [
+   "rice",
+   "lettuce wraps",
+   "kimchi",
+   "skewers",
+   "ground beef",
+   "soup",
+   "stew",
+   "raw meat"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item sliced meat with visible bones?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat ground or shaped like meatballs?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat served as a soup or stew?",
+    "yes": false
+   }
+  ],
+  "dish": "Korean grilled beef short ribs",
+  "look": "thick slices of flanken-style beef short ribs, three small oval bones embedded in the meat, caramelized dark brown edges, glossy dark soy glaze, toasted white sesame seeds, sliced green onions",
+  "model": "gemini-3.5-flash",
+  "name": "Korean-Style Galbi Short Ribs",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-01T10:36:25+00:00"
  },
  "b5e04fbed525": {
   "avoid": [
@@ -13107,6 +13489,41 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T08:27:45+00:00"
+ },
+ "c6b7d3e01f09": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "dairy cream carton",
+   "raw white tofu blocks",
+   "soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food tofu in a creamy herb sauce?",
+    "yes": true
+   },
+   {
+    "q": "Does the dish contain visible pieces of meat or poultry?",
+    "yes": false
+   },
+   {
+    "q": "Is the tofu raw, white, and unseared without sauce?",
+    "yes": false
+   }
+  ],
+  "dish": "creamy tarragon tofu",
+  "look": "pan-seared golden-brown tofu cubes, rich ivory creamy tarragon sauce, flecks of dark green chopped tarragon, glistening glossy coating, fine yellow lemon zest garnish",
+  "model": "gemini-3.7-flash",
+  "name": "Creamy Tofu Tarragon",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-01T10:25:41+00:00"
  },
  "c77693105729": {
   "avoid": [
@@ -15114,6 +15531,43 @@
   "vessel": "bowl",
   "written_at": "2026-09-30T10:02:25+00:00"
  },
+ "e5b335e732a5": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "raw carrots",
+   "soup",
+   "salad greens",
+   "honeycomb",
+   "honey jar"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food cooked glazed carrots?",
+    "yes": true
+   },
+   {
+    "q": "Are the carrots raw and crunchy like carrot sticks?",
+    "yes": false
+   },
+   {
+    "q": "Does the dish include meat or poultry?",
+    "yes": false
+   }
+  ],
+  "dish": "honey glazed carrots",
+  "look": "tender roasted carrot coins and spears, glossy amber honey glaze, caramelized edges, scattered whole thyme leaves, finely chopped green parsley garnish",
+  "model": "gemini-3.7-flash",
+  "name": "Honey Thyme Glazed Carrots",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-01T10:25:41+00:00"
+ },
  "e5b8f9728ec1": {
   "avoid": [
    "chicken",
@@ -16065,6 +16519,42 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T06:57:19+00:00"
  },
+ "f2470cebcbb4": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "bacon",
+   "raw green beans",
+   "casserole",
+   "cheese"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item green beans?",
+    "yes": true
+   },
+   {
+    "q": "Is there meat, bacon, or seafood mixed with the beans?",
+    "yes": false
+   },
+   {
+    "q": "Are the green beans baked in a creamy casserole with fried onions?",
+    "yes": false
+   }
+  ],
+  "dish": "green beans almondine",
+  "look": "a pile of slender bright green haricots verts, toasted sliced almonds scattered on top, glistening golden-brown butter sauce, minced translucent shallots",
+  "model": "gemini-3.5-flash",
+  "name": "Haricot Verts with Brown Butter",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-01T10:36:25+00:00"
+ },
  "f337c3568e54": {
   "avoid": [
    "salmon",
@@ -16977,6 +17467,41 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T07:39:15+00:00"
+ },
+ "fe2b360b9660": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "yellow rice",
+   "curry sauce",
+   "fried rice"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a portion of cooked white rice?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat, poultry, or seafood mixed in?",
+    "yes": false
+   },
+   {
+    "q": "Does the rice look raw, dry, or uncooked?",
+    "yes": false
+   }
+  ],
+  "dish": "coconut lime rice",
+  "look": "fluffy white steamed rice, cooked in coconut milk, torn dark green makrut lime leaf pieces, moist glistening grains",
+  "model": "gemini-3.6-flash",
+  "name": "Makrut Lime Jasmine Rice",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-01T10:31:58+00:00"
  },
  "fead3e292f02": {
   "avoid": [
