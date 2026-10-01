@@ -2075,6 +2075,39 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T08:12:49+00:00"
  },
+ "208de60b7c00": {
+  "avoid": [
+   "rice",
+   "pineapple",
+   "chicken",
+   "shrimp",
+   "tofu",
+   "raw meat",
+   "skewers"
+  ],
+  "checks": [
+   {
+    "q": "Are there chunks of meat in a reddish sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat shredded or ground?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a soup with broth?",
+    "yes": false
+   }
+  ],
+  "dish": "sweet and sour pork",
+  "look": "crispy golden-brown pork chunks, thick glossy reddish-orange sweet and sour sauce coating, chunks of green and red bell peppers, glistening glaze",
+  "model": "gemini-3.5-flash",
+  "name": "Sweet & Sour Pork",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-01T00:09:14+00:00"
+ },
  "20bd75bcf723": {
   "avoid": [
    "meat",
@@ -3587,6 +3620,39 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T05:33:17+00:00"
  },
+ "33cd2b7fac98": {
+  "avoid": [
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "pasta",
+   "raw mushrooms"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cooked mushrooms?",
+    "yes": true
+   },
+   {
+    "q": "Is there chicken or other meat on the plate?",
+    "yes": false
+   },
+   {
+    "q": "Are the mushrooms raw?",
+    "yes": false
+   }
+  ],
+  "dish": "oyster mushroom piccata",
+  "look": "pan-seared whole oyster mushrooms, golden-brown caramelized edges, glossy translucent yellow lemon-caper piccata sauce pooled around, scattered green capers, sprinkle of chopped fresh flat-leaf parsley",
+  "model": "gemini-3.5-flash",
+  "name": "Oyster Mushroom Piccata",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-01T00:14:24+00:00"
+ },
  "340a8c59d9a3": {
   "avoid": [
    "beef",
@@ -3722,6 +3788,40 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T06:14:59+00:00"
+ },
+ "343834de23d8": {
+  "avoid": [
+   "raw chicken",
+   "whole chicken",
+   "chicken wings",
+   "gravy boat",
+   "potatoes",
+   "carrots",
+   "salad",
+   "rice"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a piece of cooked chicken?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken raw or uncooked?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken shredded or ground?",
+    "yes": false
+   }
+  ],
+  "dish": "herb roasted chicken",
+  "look": "a roasted chicken breast with crispy golden-brown skin, glistening melted herb butter, flecks of chopped rosemary, thyme, and chives, scattered sliced shallots",
+  "model": "gemini-3.5-flash",
+  "name": "Herb Roasted Chicken Lemon Thyme Butter",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-01T00:08:26+00:00"
  },
  "348bec54f2b0": {
   "avoid": [
@@ -8272,6 +8372,42 @@
   "vessel": "plate",
   "written_at": "2026-09-27T06:46:09+00:00"
  },
+ "7ce093c83e43": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "seafood",
+   "raw tofu",
+   "noodles",
+   "stir-fry"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a broth soup with tofu?",
+    "yes": true
+   },
+   {
+    "q": "Does the soup contain meat, poultry, or seafood?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a dry stir-fry without broth?",
+    "yes": false
+   }
+  ],
+  "dish": "tofu sinigang",
+  "look": "clear tamarind broth, soft white tofu cubes, stewed red tomatoes, translucent daikon radish slices, bright green beans, sliced okra rounds, purple eggplant pieces, chopped green onions",
+  "model": "gemini-3.6-flash",
+  "name": "Tofu Sinigang",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-01T00:09:14+00:00"
+ },
  "7d2854dbce3f": {
   "avoid": [
    "tortilla",
@@ -8663,6 +8799,42 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-30T10:06:09+00:00"
+ },
+ "87752afe95de": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "fresh spring roll",
+   "raw rice paper",
+   "noodles",
+   "dipping bowl"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food golden fried spring rolls?",
+    "yes": true
+   },
+   {
+    "q": "Are the rolls soft unfried fresh rice paper wraps?",
+    "yes": false
+   },
+   {
+    "q": "Does the dish contain real meat or seafood?",
+    "yes": false
+   }
+  ],
+  "dish": "vegetable lumpia",
+  "look": "deep-fried golden-brown crispy spring rolls, blistered pastry wrapper, sliced diagonally showing shredded cabbage, green peas, plant-based crumbles, steaming vegetable filling",
+  "model": "gemini-3.6-flash",
+  "name": "Crunchy Veggie Lumpia",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-01T00:09:14+00:00"
  },
  "878e8beb3448": {
   "avoid": [
@@ -10418,6 +10590,41 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T06:30:47+00:00"
  },
+ "a23a018dd204": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "raw rice",
+   "scrambled egg",
+   "pineapple"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food cooked fried rice?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat or seafood mixed in?",
+    "yes": false
+   },
+   {
+    "q": "Does the rice look raw or uncooked?",
+    "yes": false
+   }
+  ],
+  "dish": "garlic fried rice with vegetables",
+  "look": "stir-fried jasmine rice grains, savory tamari-tinted color, crispy golden fried minced garlic bits, bright green peas, diced orange carrots, finely chopped celery, tender onion bits",
+  "model": "gemini-3.6-flash",
+  "name": "Garlic Fried Rice",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-01T00:09:14+00:00"
+ },
  "a28d32135b5f": {
   "avoid": [
    "tortilla wrap",
@@ -10743,6 +10950,42 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-30T10:09:22+00:00"
+ },
+ "a8de102949dc": {
+  "avoid": [
+   "beef",
+   "pork",
+   "fresh herbs",
+   "parsley",
+   "cilantro",
+   "fried chicken",
+   "raw chicken",
+   "skewers",
+   "rice",
+   "soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food braised chicken pieces?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken deep-fried with crispy breading?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat raw or undercooked?",
+    "yes": false
+   }
+  ],
+  "dish": "Filipino chicken adobo",
+  "look": "braised skin-on chicken thighs with visible bones, glistening glossy dark-brown soy glaze, tender braised onion slices, crispy golden fried garlic flakes garnish, rich savory pan juices",
+  "model": "gemini-3.5-flash",
+  "name": "Soy-Vinegar Braised Chicken Adobo",
+  "rev": 6,
+  "revisions": 1,
+  "vessel": "bowl",
+  "written_at": "2026-10-01T00:49:15+00:00"
  },
  "a9c64bca3f9a": {
   "avoid": [
@@ -11161,6 +11404,41 @@
   "revisions": 1,
   "vessel": "bowl",
   "written_at": "2026-09-27T08:32:01+00:00"
+ },
+ "af1e5d097a42": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "soup",
+   "broth",
+   "egg"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food stir-fried noodles?",
+    "yes": true
+   },
+   {
+    "q": "Are the noodles in a soup or broth?",
+    "yes": false
+   },
+   {
+    "q": "Are there pieces of meat, poultry, or seafood visible?",
+    "yes": false
+   }
+  ],
+  "dish": "pancit bihon",
+  "look": "thin translucent rice noodles stir-fried, shredded green cabbage, thin julienned orange carrots, sliced celery, topped with crispy golden fried shallots and chopped green onions",
+  "model": "gemini-3.5-flash",
+  "name": "Pancit Bihon",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-01T00:08:26+00:00"
  },
  "af44a4682069": {
   "avoid": [
@@ -12118,6 +12396,39 @@
   "vessel": "plate",
   "written_at": "2026-09-27T14:22:11+00:00"
  },
+ "bbd95a98d307": {
+  "avoid": [
+   "white fish",
+   "tofu",
+   "rice",
+   "noodles",
+   "soup",
+   "raw salmon",
+   "lemon slices"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cooked fish?",
+    "yes": true
+   },
+   {
+    "q": "Is the fish white-fleshed?",
+    "yes": false
+   },
+   {
+    "q": "Is the fish raw like sashimi?",
+    "yes": false
+   }
+  ],
+  "dish": "miso salmon",
+  "look": "a thick fillet of salmon, glossy caramelized orange-pink flesh, dark-brown sweet miso glaze on top, flaky texture, sprinkled with toasted white sesame seeds, thin rings of green scallions",
+  "model": "gemini-3.5-flash",
+  "name": "Miso Salmon",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-01T00:14:24+00:00"
+ },
  "bdc3480b4ef9": {
   "avoid": [
    "scrambled eggs",
@@ -12300,6 +12611,42 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T06:46:09+00:00"
+ },
+ "c0ba05e5dca5": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "tofu",
+   "rice",
+   "noodles",
+   "raw vegetables"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a mixture of cooked vegetables?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat, poultry, or seafood?",
+    "yes": false
+   },
+   {
+    "q": "Are the vegetables raw in a salad?",
+    "yes": false
+   }
+  ],
+  "dish": "vegetable stir-fry",
+  "look": "tender-crisp broccoli florets, sliced carrots, snap peas, bell peppers, glossy brown savory stir-fry sauce coating, minced garlic flecks",
+  "model": "gemini-3.5-flash",
+  "name": "Vegetable Stir-Fry",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-01T00:09:14+00:00"
  },
  "c1f05d8afceb": {
   "avoid": [
@@ -13819,6 +14166,41 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T07:30:19+00:00"
  },
+ "d50f397b480c": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "raw pasta",
+   "dairy cheese slices",
+   "garlic bulbs"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish baked pasta with sauce and melted cheese?",
+    "yes": true
+   },
+   {
+    "q": "Are there visible slices of meat like chicken or beef?",
+    "yes": false
+   },
+   {
+    "q": "Is the pasta dry and uncooked?",
+    "yes": false
+   }
+  ],
+  "dish": "baked pasta bolognese",
+  "look": "baked penne pasta, rich red marinara sauce, crumbled plant-based meat, melted vegan cheese shreds, golden-brown toasted top, flecks of red pepper flakes, chopped parsley",
+  "model": "gemini-3.5-flash",
+  "name": "Beyond Bolognese Pasta Bake",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-01T00:13:18+00:00"
+ },
  "d56b30d8d354": {
   "avoid": [
    "beef",
@@ -14710,6 +15092,39 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T05:30:31+00:00"
+ },
+ "e6876edfcd5a": {
+  "avoid": [
+   "pasta",
+   "spaghetti",
+   "rice",
+   "raw chicken",
+   "whole chicken",
+   "olives",
+   "cheese"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item chicken pieces in a red sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken shredded or ground?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken served dry without sauce?",
+    "yes": false
+   }
+  ],
+  "dish": "Chicken Cacciatore",
+  "look": "braised bone-in chicken thighs, thick red tomato sauce, sliced red and green bell peppers, sliced white mushrooms, chopped onions, sprinkled with fresh basil leaves",
+  "model": "gemini-3.5-flash",
+  "name": "Chicken Cacciatore",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-01T00:13:18+00:00"
  },
  "e7579de20495": {
   "avoid": [
