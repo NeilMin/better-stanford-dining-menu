@@ -656,13 +656,14 @@
    "pork",
    "fish",
    "shrimp",
-   "lettuce salad",
-   "raw whole peppers",
-   "dip"
+   "raw vegetables",
+   "stems",
+   "green stems",
+   "raw salad"
   ],
   "checks": [
    {
-    "q": "Is the dish a mix of cooked sliced peppers and carrots?",
+    "q": "Is the dish made of cooked vegetables?",
     "yes": true
    },
    {
@@ -674,14 +675,14 @@
     "yes": false
    }
   ],
-  "dish": "sautéed peppers and carrots",
-  "look": "sautéed sliced red bell peppers, sliced yellow bell peppers, tender julienned orange carrots, glossy surface, slightly caramelized tender edges",
-  "model": "gemini-3.6-flash",
+  "dish": "Sautéed Bell Peppers and Carrots",
+  "look": "steaming hot sautéed bell peppers and carrots, wilted and tender shredded orange carrot strands, soft cooked strips of red and yellow bell pepper, glistening cooked vegetable medley, soft texture",
+  "model": "gemini-3.5-flash",
   "name": "Bell Peppers & Shredded Carrots",
   "rev": 6,
-  "revisions": 0,
+  "revisions": 2,
   "vessel": "plate",
-  "written_at": "2026-10-01T10:31:58+00:00"
+  "written_at": "2026-10-01T20:14:18+00:00"
  },
  "0a682c33bc74": {
   "avoid": [
@@ -12345,7 +12346,7 @@
   ],
   "checks": [
    {
-    "q": "Is the main item sliced meat with visible bones?",
+    "q": "Is the main item glazed cooked meat?",
     "yes": true
    },
    {
