@@ -38,6 +38,38 @@
   "vessel": "plate",
   "written_at": "2026-09-26T23:08:24+00:00"
  },
+ "0049d73a4656": {
+  "avoid": [
+   "raw chicken",
+   "whole chicken",
+   "chicken breast",
+   "burgers",
+   "french fries",
+   "skewers"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food cooked chicken wings?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken raw or uncooked?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken ground into a patty?",
+    "yes": false
+   }
+  ],
+  "dish": "barbecue chicken wings",
+  "look": "roasted chicken wingettes and drumettes, thick glossy dark barbecue jerk glaze, lightly charred skin, small side ramekin of creamy dipping sauce",
+  "model": "gemini-3.6-flash",
+  "name": "Barbecue Chicken wings",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-02T10:03:48+00:00"
+ },
  "0123cb091811": {
   "avoid": [
    "shrimp",
@@ -398,6 +430,40 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T06:46:09+00:00"
+ },
+ "0641992994cb": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "bacon",
+   "clams"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food a thick creamy soup?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat, chicken, beef, pork, fish or shrimp?",
+    "yes": false
+   },
+   {
+    "q": "Is the soup a thin clear broth?",
+    "yes": false
+   }
+  ],
+  "dish": "corn and potato chowder",
+  "look": "creamy thick golden-white soup, sweet yellow corn kernels, tender diced potato cubes, finely chopped green celery flecks, rich velvety texture",
+  "model": "gemini-3.6-flash",
+  "name": "Corn Potato Chowder",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-02T10:03:48+00:00"
  },
  "06def5459c8f": {
   "avoid": [
@@ -1423,6 +1489,40 @@
   "vessel": "plate",
   "written_at": "2026-09-27T05:03:54+00:00"
  },
+ "180ec8d8270f": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "raw tofu",
+   "dry tofu"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food tofu cubes in a creamy sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is there meat or seafood in the dish?",
+    "yes": false
+   },
+   {
+    "q": "Is the sauce a thin clear broth?",
+    "yes": false
+   }
+  ],
+  "dish": "tofu malai curry",
+  "look": "cubed tofu, thick creamy orange tomato coconut curry sauce, finely chopped cilantro garnish, flecks of ground spices, glossy smooth curry",
+  "model": "gemini-3.6-flash",
+  "name": "Malai Curry Tofu",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-02T10:04:59+00:00"
+ },
  "19342ed7ddc3": {
   "avoid": [
    "noodles",
@@ -2284,6 +2384,40 @@
   "vessel": "plate",
   "written_at": "2026-09-26T20:15:19+00:00"
  },
+ "1f2b5aee148d": {
+  "avoid": [
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "tofu blocks",
+   "raw tofu",
+   "soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item tofu?",
+    "yes": true
+   },
+   {
+    "q": "Is the tofu a single large block?",
+    "yes": false
+   },
+   {
+    "q": "Is there meat or fish?",
+    "yes": false
+   }
+  ],
+  "dish": "Blackened Cajun Tofu",
+  "look": "cubed firm tofu, dark charred blackened seasoning, sautéed zucchini slices, diced bell peppers, sliced onions, matte texture",
+  "model": "gemma-4-31b-it",
+  "name": "Cajun Blackened Tofu",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-02T10:14:36+00:00"
+ },
  "1fef8a891f46": {
   "avoid": [
    "meat",
@@ -2708,6 +2842,39 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-26T20:19:40+00:00"
+ },
+ "2678fe03bfd8": {
+  "avoid": [
+   "corn on the cob",
+   "popcorn",
+   "chicken",
+   "beef",
+   "fish",
+   "shrimp",
+   "whole corn ears"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item corn?",
+    "yes": true
+   },
+   {
+    "q": "Is the corn on a cob?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a thin soup?",
+    "yes": false
+   }
+  ],
+  "dish": "Creole Corn Maque Choux",
+  "look": "golden corn kernels, small bits of browned bacon, diced red and green bell peppers, translucent sautéed onions, creamy buttery sauce, chopped green onions",
+  "model": "gemma-4-31b-it",
+  "name": "Creole Corn Maque Choux",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-02T10:14:36+00:00"
  },
  "2753e4945094": {
   "avoid": [
@@ -4645,6 +4812,40 @@
   "vessel": "plate",
   "written_at": "2026-09-27T04:50:49+00:00"
  },
+ "39d1f2351eda": {
+  "avoid": [
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "whole cauliflower head",
+   "mashed cauliflower",
+   "raw cauliflower"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cauliflower?",
+    "yes": true
+   },
+   {
+    "q": "Is the cauliflower mashed?",
+    "yes": false
+   },
+   {
+    "q": "Is there meat or fish?",
+    "yes": false
+   }
+  ],
+  "dish": "Cajun Roasted Cauliflower",
+  "look": "roasted cauliflower florets, reddish-brown cajun spice coating, charred edges, flecks of green parsley",
+  "model": "gemma-4-31b-it",
+  "name": "Cajun Roasted Cauliflower",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-02T10:14:36+00:00"
+ },
  "39e996905abe": {
   "avoid": [
    "raw chicken",
@@ -4782,6 +4983,42 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T04:40:44+00:00"
+ },
+ "3d5c2144320f": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "bacon",
+   "cheese",
+   "chili",
+   "french fries"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a hot dog sausage in a bun?",
+    "yes": true
+   },
+   {
+    "q": "Is the sausage made of real meat?",
+    "yes": false
+   },
+   {
+    "q": "Is the hot dog sliced up or served without a bun?",
+    "yes": false
+   }
+  ],
+  "dish": "vegan hot dog",
+  "look": "grilled vegan hot dog sausage with dark char marks, warm split hot dog bun, drizzle of yellow mustard, finely chopped raw white onions",
+  "model": "gemini-3.5-flash",
+  "name": "Veggie Hot Dog",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-02T10:06:48+00:00"
  },
  "3dda86d35bac": {
   "avoid": [
@@ -6685,6 +6922,41 @@
   "vessel": "plate",
   "written_at": "2026-09-27T04:38:56+00:00"
  },
+ "55092c8860c2": {
+  "avoid": [
+   "bacon",
+   "sausage",
+   "toast",
+   "scrambled eggs",
+   "omelet",
+   "raw eggs",
+   "shells",
+   "meat",
+   "hashbrowns"
+  ],
+  "checks": [
+   {
+    "q": "Are the main items fried eggs?",
+    "yes": true
+   },
+   {
+    "q": "Are the eggs scrambled or folded into an omelet?",
+    "yes": false
+   },
+   {
+    "q": "Are there breakfast meats like bacon or sausage on the plate?",
+    "yes": false
+   }
+  ],
+  "dish": "fried eggs",
+  "look": "two sunny-side-up fried eggs, crispy golden-brown lacy edges, bright yellow runny yolks, firm opaque white albumen, glistening surface",
+  "model": "gemini-3.5-flash",
+  "name": "Fried Eggs",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-02T10:09:55+00:00"
+ },
  "55bdc297193d": {
   "avoid": [
    "chicken",
@@ -7193,6 +7465,39 @@
   "vessel": "plate",
   "written_at": "2026-09-26T20:10:26+00:00"
  },
+ "61200815510a": {
+  "avoid": [
+   "rice",
+   "pasta",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "raw chicken"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item sliced meat?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat ground or crumbled like mince?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a thin soup?",
+    "yes": false
+   }
+  ],
+  "dish": "Creamy Cajun Chicken",
+  "look": "sliced chicken breast, thick creamy orange-red sauce, diced onions, green celery bits, red and green bell pepper chunks, glossy texture",
+  "model": "gemma-4-31b-it",
+  "name": "Creamy Cajun Chicken",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-02T10:14:36+00:00"
+ },
  "612cbb5525be": {
   "avoid": [
    "fried chicken",
@@ -7298,6 +7603,40 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-29T17:11:14+00:00"
+ },
+ "6454fa632bc7": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "rice",
+   "raw chickpeas"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food a thick vegetable stew?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat, chicken, beef, pork, fish or shrimp?",
+    "yes": false
+   },
+   {
+    "q": "Is the stew a clear thin soup?",
+    "yes": false
+   }
+  ],
+  "dish": "tofu and chickpea maafe",
+  "look": "thick orange-red African stew, cubed tofu, whole chickpeas, tender sweet potato chunks, diced red bell peppers, garnished with crushed red pepper flakes",
+  "model": "gemini-3.6-flash",
+  "name": "Tofu & Chickpea Maafe (Branner)",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-02T10:03:48+00:00"
  },
  "650d25f97736": {
   "avoid": [
@@ -9207,6 +9546,38 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T05:43:05+00:00"
  },
+ "82b2bb087ae4": {
+  "avoid": [
+   "hot dog",
+   "chicken sandwich",
+   "raw meat",
+   "patty melt",
+   "sliders",
+   "french fries"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a beef patty in a burger bun?",
+    "yes": true
+   },
+   {
+    "q": "Is the patty raw or uncooked?",
+    "yes": false
+   },
+   {
+    "q": "Is it a hot dog or sausage?",
+    "yes": false
+   }
+  ],
+  "dish": "beef burger",
+  "look": "grilled beef patty, melted yellow cheddar cheese, top and bottom toasted sesame seed bun, crisp green lettuce, ripe red tomato slice",
+  "model": "gemini-3.6-flash",
+  "name": "The Farm Burger with Bun",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-02T10:04:59+00:00"
+ },
  "844d07bc641d": {
   "avoid": [
    "boneless nuggets",
@@ -9385,6 +9756,39 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-30T10:06:09+00:00"
+ },
+ "8737d3af817a": {
+  "avoid": [
+   "beef",
+   "chicken",
+   "skewers",
+   "grill marks",
+   "noodles",
+   "raw pork",
+   "rice"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food braised meat chunks in a dark sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat served on skewers?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a soup with clear broth?",
+    "yes": false
+   }
+  ],
+  "dish": "Filipino pork adobo",
+  "look": "tender braised pork shoulder chunks, dark soy vinegar reduction sauce, whole black peppercorns, roasted garlic flecks, glossy savory dark brown gravy",
+  "model": "gemini-3.6-flash",
+  "name": "Filipino Pork Adobo",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-02T10:04:59+00:00"
  },
  "87752afe95de": {
   "avoid": [
@@ -9937,6 +10341,40 @@
   "vessel": "bowl",
   "written_at": "2026-09-26T23:07:37+00:00"
  },
+ "8d273e174ff9": {
+  "avoid": [
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "spaghetti",
+   "macaroni",
+   "raw pasta"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item pasta?",
+    "yes": true
+   },
+   {
+    "q": "Is there meat or fish?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a soup?",
+    "yes": false
+   }
+  ],
+  "dish": "Cajun Garlic Butter Pasta",
+  "look": "penne pasta, glossy yellow butter sauce, reddish cajun spice flecks, minced garlic bits, chopped parsley",
+  "model": "gemma-4-31b-it",
+  "name": "Cajun Garlic Butter Pasta",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-02T10:14:36+00:00"
+ },
  "8d8cf25e24e2": {
   "avoid": [
    "meat",
@@ -10005,6 +10443,40 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T05:43:05+00:00"
+ },
+ "8ef2407e1af4": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "soup",
+   "raw tofu"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item tofu and green beans?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat, chicken, beef, pork, fish or shrimp?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a broth soup with noodles?",
+    "yes": false
+   }
+  ],
+  "dish": "tofu and green bean bistek",
+  "look": "golden seared tofu cubes, tender whole green beans, rings of softened sliced white onions, coated in a glistening dark savory soy glaze",
+  "model": "gemini-3.6-flash",
+  "name": "Tofu & Green Bean Bistek",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-02T10:03:48+00:00"
  },
  "8ef9910ec041": {
   "avoid": [
@@ -10496,6 +10968,43 @@
   "vessel": "plate",
   "written_at": "2026-09-27T04:53:30+00:00"
  },
+ "9499572cdc10": {
+  "avoid": [
+   "rice paper",
+   "translucent wrapper",
+   "fresh spring rolls",
+   "summer rolls",
+   "raw spring rolls",
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp"
+  ],
+  "checks": [
+   {
+    "q": "Are the main items fried spring rolls?",
+    "yes": true
+   },
+   {
+    "q": "Is there meat visible in the filling?",
+    "yes": false
+   },
+   {
+    "q": "Are the spring rolls raw or wrapped in translucent rice paper?",
+    "yes": false
+   }
+  ],
+  "dish": "Vegetable Spring Rolls",
+  "look": "deep-fried golden-brown spring rolls, crispy opaque bubbly pastry wrapper, cylindrical shape, sliced diagonally, filling of shredded cabbage, orange carrots, thin white vermicelli noodles",
+  "model": "gemma-4-31b-it",
+  "name": "Vegetable Spring Rolls",
+  "rev": 6,
+  "revisions": 1,
+  "vessel": "plate",
+  "written_at": "2026-10-02T12:29:21+00:00"
+ },
  "96f238647ae5": {
   "avoid": [
    "meat",
@@ -10706,6 +11215,42 @@
   "vessel": "plate",
   "written_at": "2026-09-27T06:30:47+00:00"
  },
+ "9916de4fffd2": {
+  "avoid": [
+   "shrimp",
+   "clams",
+   "mussels",
+   "fish",
+   "crab",
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "bread"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a red tomato-based stew?",
+    "yes": true
+   },
+   {
+    "q": "Are there visible shellfish like clams or mussels?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish dry without broth?",
+    "yes": false
+   }
+  ],
+  "dish": "jackfruit cioppino",
+  "look": "chunks of tender stringy jackfruit, rich red tomato broth, sliced fennel, diced red bell peppers, celery, carrots, chopped parsley, basil leaves",
+  "model": "gemini-3.5-flash",
+  "name": "Jackfruit Cioppino",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-02T10:09:55+00:00"
+ },
  "998e85b27032": {
   "avoid": [
    "meat",
@@ -10813,6 +11358,40 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T05:36:06+00:00"
+ },
+ "9ae90503d4eb": {
+  "avoid": [
+   "beef",
+   "pork",
+   "chicken",
+   "fish",
+   "shrimp",
+   "mashed potatoes",
+   "burger bun",
+   "meatballs"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food crumbled ground protein in brown gravy?",
+    "yes": true
+   },
+   {
+    "q": "Is the protein in solid chunks or slices?",
+    "yes": false
+   },
+   {
+    "q": "Does the dish contain real animal meat?",
+    "yes": false
+   }
+  ],
+  "dish": "vegan ground meat with gravy",
+  "look": "crumbled plant-based ground meat cooked with diced onions, smothered in a thick savory brown gravy, served hot, garnished with a sprinkle of chopped parsley",
+  "model": "gemini-3.5-flash",
+  "name": "Beyond Ground & Gravy",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-02T10:06:48+00:00"
  },
  "9bed9f3e67d7": {
   "avoid": [
@@ -11854,6 +12433,38 @@
   "vessel": "plate",
   "written_at": "2026-09-27T07:17:51+00:00"
  },
+ "ac1eacc0ad2d": {
+  "avoid": [
+   "tomato sauce",
+   "spaghetti",
+   "raw chicken",
+   "meatballs",
+   "soup",
+   "bread"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food pasta tossed in a creamy orange-red sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the sauce a clear broth or soup?",
+    "yes": false
+   },
+   {
+    "q": "Is the pasta dry without sauce?",
+    "yes": false
+   }
+  ],
+  "dish": "chipotle chicken pasta",
+  "look": "penne pasta tossed in a creamy orange-red chipotle sauce, topped with grilled chicken breast strips, sautéed red bell pepper strips, sliced onions, grated parmesan cheese",
+  "model": "gemini-3.5-flash",
+  "name": "Spicy Chicken Chipotle Pasta",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-02T10:06:48+00:00"
+ },
  "ac3eb85383d6": {
   "avoid": [
    "beef steak",
@@ -12376,6 +12987,42 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-26T23:10:38+00:00"
+ },
+ "b19f7b5b1977": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "sandwich fillings",
+   "cheese",
+   "french toast",
+   "syrup"
+  ],
+  "checks": [
+   {
+    "q": "Is the food a thick slice of toasted bread?",
+    "yes": true
+   },
+   {
+    "q": "Is the bread made into a sandwich with meat or cheese inside?",
+    "yes": false
+   },
+   {
+    "q": "Does the bread look soft, white, and untoasted?",
+    "yes": false
+   }
+  ],
+  "dish": "Texas toast",
+  "look": "thick slice of golden toasted white bread, glistening garlic butter spread, browned edges, flecks of dried parsley, soft airy crumb",
+  "model": "gemini-3.6-flash",
+  "name": "Texas Toast",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-02T10:04:59+00:00"
  },
  "b25317f79275": {
   "avoid": [
@@ -12940,6 +13587,42 @@
   "vessel": "plate",
   "written_at": "2026-09-29T16:28:29+00:00"
  },
+ "b93143b9e965": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "turkey",
+   "gravy boat",
+   "whole cornbread loaf",
+   "cranberries"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food a baked, crumbled bread dressing?",
+    "yes": true
+   },
+   {
+    "q": "Is it a solid, unsliced loaf of cornbread?",
+    "yes": false
+   },
+   {
+    "q": "Does the dressing contain pieces of meat or poultry?",
+    "yes": false
+   }
+  ],
+  "dish": "cornbread dressing",
+  "look": "a scoop of moist golden-brown baked cornbread dressing, crumbled cornbread, bits of white bread, diced cooked onions, chopped celery, flecks of green thyme",
+  "model": "gemini-3.5-flash",
+  "name": "Cornbread Dressing",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-02T10:06:48+00:00"
+ },
  "b9f9e6f892d4": {
   "avoid": [
    "spaghetti",
@@ -13305,6 +13988,42 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T04:50:08+00:00"
+ },
+ "be46358a0b2e": {
+  "avoid": [
+   "cheese",
+   "pizza",
+   "tomato sauce",
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "raw dough"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a flatbread?",
+    "yes": true
+   },
+   {
+    "q": "Is the flatbread covered in melted cheese or pizza toppings?",
+    "yes": false
+   },
+   {
+    "q": "Is the flatbread raw or pale white?",
+    "yes": false
+   }
+  ],
+  "dish": "sweet potato flatbread",
+  "look": "toasted golden-brown flatbread made from orange sweet potato dough, charred spots, brushed with garlic oil, minced golden garlic on top",
+  "model": "gemini-3.5-flash",
+  "name": "Sweet Potato Garlic Flatbread",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-02T10:09:55+00:00"
  },
  "be9e73d80c12": {
   "avoid": [
@@ -14840,6 +15559,39 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T05:20:07+00:00"
  },
+ "d0cf6dc33730": {
+  "avoid": [
+   "rice",
+   "naan bread",
+   "skewers",
+   "raw meat",
+   "chicken",
+   "beef",
+   "pork"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food meat chunks in curry sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat on skewers?",
+    "yes": false
+   },
+   {
+    "q": "Is the food served in a sandwich or wrap?",
+    "yes": false
+   }
+  ],
+  "dish": "lamb vindaloo",
+  "look": "tender chunks of cooked lamb, cubed potatoes, simmered in a thick dark reddish-brown spicy curry sauce, sprinkled with fresh cilantro leaves",
+  "model": "gemini-3.6-flash",
+  "name": "Lamb Vindaloo",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-02T10:03:48+00:00"
+ },
  "d1102c756972": {
   "avoid": [
    "spaghetti",
@@ -14973,6 +15725,40 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-29T16:49:13+00:00"
+ },
+ "d2e5cd41c668": {
+  "avoid": [
+   "sandwich",
+   "burger",
+   "toast",
+   "whole loaf",
+   "butter",
+   "cheese",
+   "meat",
+   "fish"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item sliced bread?",
+    "yes": true
+   },
+   {
+    "q": "Is it a sandwich with fillings?",
+    "yes": false
+   },
+   {
+    "q": "Is it a whole unsliced loaf?",
+    "yes": false
+   }
+  ],
+  "dish": "Grilled Sourdough Baguette",
+  "look": "sliced sourdough baguette, toasted golden-brown surface, charred grill marks, airy open crumb, crisp crust",
+  "model": "gemma-4-31b-it",
+  "name": "Grilled Sourdough Baguette",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-02T10:14:36+00:00"
  },
  "d3ad2fe14444": {
   "avoid": [
@@ -15286,6 +16072,38 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-29T16:28:29+00:00"
+ },
+ "d773f86f39d5": {
+  "avoid": [
+   "raw chicken",
+   "bones",
+   "skewers",
+   "rice",
+   "pasta",
+   "gravy"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item sliced cooked chicken breast?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken shredded or ground?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken served on skewers?",
+    "yes": false
+   }
+  ],
+  "dish": "Cajun blackened chicken",
+  "look": "sliced grilled chicken breast with a dark charred spiced crust, sautéed strips of yellow onion, red bell pepper, green bell pepper",
+  "model": "gemini-3.5-flash",
+  "name": "Cajun Blackened Chicken",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-02T10:06:48+00:00"
  },
  "d790b6ee5b86": {
   "avoid": [
@@ -16088,6 +16906,110 @@
   "vessel": "plate",
   "written_at": "2026-10-01T19:05:42+00:00"
  },
+ "e3b9c5f2de7d": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "raw asparagus",
+   "hollandaise sauce",
+   "creamy sauce"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food cooked green asparagus spears?",
+    "yes": true
+   },
+   {
+    "q": "Is there meat or fish served with the asparagus?",
+    "yes": false
+   },
+   {
+    "q": "Does the asparagus look raw and pale?",
+    "yes": false
+   }
+  ],
+  "dish": "lemon herb asparagus",
+  "look": "tender cooked whole green asparagus spears, fine yellow lemon zest flecks, chopped fresh dill, chopped parsley, black pepper, glistening light coating",
+  "model": "gemini-3.6-flash",
+  "name": "Lemon Herb Asparagus",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-02T10:04:59+00:00"
+ },
+ "e3f94b0624ca": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "raw broccoli",
+   "cheese sauce",
+   "broccoli soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food roasted broccoli florets?",
+    "yes": true
+   },
+   {
+    "q": "Is there meat, chicken, or seafood served with the broccoli?",
+    "yes": false
+   },
+   {
+    "q": "Is the broccoli raw or covered in melted cheese sauce?",
+    "yes": false
+   }
+  ],
+  "dish": "roasted broccoli",
+  "look": "tender roasted broccoli florets, charred deep green tops, golden brown roasted stems, light glistening sheen, flecks of coarse salt, roasted garlic bits",
+  "model": "gemini-3.6-flash",
+  "name": "Roasted Broccoli",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-02T10:04:59+00:00"
+ },
+ "e506cf52d5ef": {
+  "avoid": [
+   "rice",
+   "pasta",
+   "raw shrimp",
+   "shells",
+   "skewers",
+   "shrimp cocktail",
+   "lemon wedges",
+   "bread"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cooked shrimp?",
+    "yes": true
+   },
+   {
+    "q": "Are the shrimp raw or grey?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a soup or broth?",
+    "yes": false
+   }
+  ],
+  "dish": "Creole shrimp",
+  "look": "plump pink sautéed shrimp, coated in a reddish-orange spiced butter sauce, mixed with diced red and green bell peppers, chopped celery, diced tomatoes, resting on a bed of shredded green lettuce",
+  "model": "gemini-3.5-flash",
+  "name": "Creole Shrimp",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-02T10:09:55+00:00"
+ },
  "e5b335e732a5": {
   "avoid": [
    "meat",
@@ -16401,6 +17323,42 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T06:34:15+00:00"
+ },
+ "eb87abae29c4": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "mashed potatoes",
+   "french fries",
+   "potato chips",
+   "cheese"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food roasted potato wedges or chunks?",
+    "yes": true
+   },
+   {
+    "q": "Are the potatoes mashed or pureed?",
+    "yes": false
+   },
+   {
+    "q": "Are there pieces of meat mixed with the potatoes?",
+    "yes": false
+   }
+  ],
+  "dish": "herb roasted potatoes",
+  "look": "golden-brown roasted potato wedges with crispy browned edges, tossed with visible flecks of dried rosemary, dried thyme, and dried oregano",
+  "model": "gemini-3.5-flash",
+  "name": "Herb Roasted Potatoes",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-02T10:06:48+00:00"
  },
  "ebcf48a11348": {
   "avoid": [
@@ -16719,6 +17677,40 @@
   "vessel": "plate",
   "written_at": "2026-09-27T06:01:04+00:00"
  },
+ "eec3df6f2213": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "long pasta",
+   "raw pasta"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food pasta with vegetables?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat, chicken, beef, pork, fish or shrimp?",
+    "yes": false
+   },
+   {
+    "q": "Is the pasta raw and uncooked?",
+    "yes": false
+   }
+  ],
+  "dish": "orecchiette with broccoli and sundried tomatoes",
+  "look": "cooked ear-shaped orecchiette pasta, vibrant green broccoli florets, sliced dark red sundried tomatoes, toasted pine nuts, grated parmesan cheese, red pepper flakes",
+  "model": "gemini-3.6-flash",
+  "name": "Orecchiette Pasta",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-02T10:03:48+00:00"
+ },
  "ef1552985343": {
   "avoid": [
    "tortilla",
@@ -16898,6 +17890,40 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T10:05:32+00:00"
+ },
+ "f04685e641a5": {
+  "avoid": [
+   "rice",
+   "raw chicken",
+   "pork",
+   "beef",
+   "skewers",
+   "whole chicken",
+   "parsley",
+   "lemon"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cooked chicken pieces in a dark sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken shredded or ground?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken dry and without sauce?",
+    "yes": false
+   }
+  ],
+  "dish": "Filipino chicken adobo",
+  "look": "bone-in chicken thighs and drumsticks, coated in a glossy dark brown savory sauce, caramelized edges, tender meat, scattered soft golden garlic cloves",
+  "model": "gemini-3.5-flash",
+  "name": "Filipino Chicken Adobo",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-02T10:09:55+00:00"
  },
  "f0504a187e00": {
   "avoid": [
