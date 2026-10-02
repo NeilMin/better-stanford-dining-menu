@@ -10341,6 +10341,37 @@
   "vessel": "bowl",
   "written_at": "2026-09-26T23:07:37+00:00"
  },
+ "8d1133014288": {
+  "avoid": [
+   "ice cream scoops",
+   "ice cream cone",
+   "smoothie",
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp"
+  ],
+  "checks": [
+   {
+    "q": "Are the main items frozen ice pops on wooden sticks?",
+    "yes": true
+   },
+   {
+    "q": "Is the food scoopable ice cream in a bowl or cone?",
+    "yes": false
+   }
+  ],
+  "dish": "Mexican paletas",
+  "look": "two Mexican paletas, frozen fruit ice pops on wooden sticks, vibrant red strawberry and bright yellow mango colors, visible chunks of embedded fresh fruit, frosty texture, condensation drops",
+  "model": "gemini-3.5-flash",
+  "name": "Homemade Paletas",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-02T20:14:58+00:00"
+ },
  "8d273e174ff9": {
   "avoid": [
    "chicken",
@@ -12191,6 +12222,40 @@
   "revisions": 1,
   "vessel": "plate",
   "written_at": "2026-09-28T19:20:51+00:00"
+ },
+ "a5f2564e62fa": {
+  "avoid": [
+   "chicken patty",
+   "burger patty",
+   "grilled chicken breast",
+   "pulled pork",
+   "beef burger",
+   "chicken wings",
+   "pork ribs",
+   "french fries"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a sandwich with shredded meat in a bun?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat a solid beef patty like a hamburger?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat served as bone-in chicken wings or ribs?",
+    "yes": false
+   }
+  ],
+  "dish": "barbecue chicken sandwich",
+  "look": "shredded pulled chicken meat dripping with glossy dark reddish-brown barbecue sauce, piled high inside a toasted brioche bun, creamy white coleslaw with shredded green cabbage, purple red onion slices, green jalapeno slices",
+  "model": "gemini-3.5-flash",
+  "name": "BBQ Chicken Sandwich",
+  "rev": 6,
+  "revisions": 1,
+  "vessel": "plate",
+  "written_at": "2026-10-02T21:11:53+00:00"
  },
  "a6ce6058209a": {
   "avoid": [
