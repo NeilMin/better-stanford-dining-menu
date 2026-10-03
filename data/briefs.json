@@ -4780,6 +4780,41 @@
   "vessel": "plate",
   "written_at": "2026-09-27T06:14:59+00:00"
  },
+ "3919456bf331": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "pasta",
+   "chips",
+   "french fries"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a thick red pepper dip or sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the sauce served over pasta?",
+    "yes": false
+   },
+   {
+    "q": "Are there pieces of meat or poultry in the sauce?",
+    "yes": false
+   }
+  ],
+  "dish": "romesco sauce",
+  "look": "thick textured orange-red romesco sauce, roasted red pepper emulsion, smooth creamy dip, topped with finely minced parsley and sesame seeds",
+  "model": "gemini-3.6-flash",
+  "name": "Romesco Sauce",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-03T09:33:01+00:00"
+ },
  "392ed26ddfe3": {
   "avoid": [
    "meat",
@@ -8023,6 +8058,40 @@
   "revisions": 1,
   "vessel": "bowl",
   "written_at": "2026-09-27T06:20:54+00:00"
+ },
+ "69563fc74ada": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "french fries",
+   "mashed potatoes"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food roasted potato cubes with red sauce?",
+    "yes": true
+   },
+   {
+    "q": "Are the potatoes mashed or puréed?",
+    "yes": false
+   },
+   {
+    "q": "Are the potatoes thin long fries?",
+    "yes": false
+   }
+  ],
+  "dish": "patatas bravas",
+  "look": "crispy golden roasted potato cubes, tossed with smoked paprika, drizzled with rich orange-red romesco sauce, garnished with chopped fresh parsley",
+  "model": "gemini-3.6-flash",
+  "name": "Patatas Bravas with Romesco Sauce",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-03T09:33:01+00:00"
  },
  "696d7092eb15": {
   "avoid": [
@@ -14760,6 +14829,40 @@
   "vessel": "plate",
   "written_at": "2026-09-27T06:46:09+00:00"
  },
+ "bffe6aca77a8": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "gravy",
+   "french fries"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food mashed potatoes?",
+    "yes": true
+   },
+   {
+    "q": "Is there gravy on the potatoes?",
+    "yes": false
+   },
+   {
+    "q": "Are the potatoes whole or roasted in cubes?",
+    "yes": false
+   }
+  ],
+  "dish": "dill and garlic mashed potatoes",
+  "look": "fluffy yellow mashed potatoes, blended with flecks of fresh chopped green dill, roasted garlic cloves, glossy melted butter drizzle",
+  "model": "gemini-3.6-flash",
+  "name": "Dill & Roasted Garlic Mashed Potatoes",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-03T09:33:01+00:00"
+ },
  "c0ba05e5dca5": {
   "avoid": [
    "meat",
@@ -15779,6 +15882,41 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-30T20:39:41+00:00"
+ },
+ "cd5a06885e4d": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "cheese",
+   "ground meat",
+   "dairy"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food baked pasta in red sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is there ground meat or sausage in the pasta?",
+    "yes": false
+   },
+   {
+    "q": "Is there melted dairy cheese on top?",
+    "yes": false
+   }
+  ],
+  "dish": "baked pasta marinara",
+  "look": "baked penne pasta, coated in dark red tomato marinara sauce, visible cooked zucchini slices, tender mushroom pieces, fresh basil leaves garnish",
+  "model": "gemini-3.6-flash",
+  "name": "Baked Pasta Marinara",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-03T09:33:01+00:00"
  },
  "cd60b00ba776": {
   "avoid": [
@@ -17243,6 +17381,41 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T07:31:35+00:00"
+ },
+ "df418a74e349": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "gravy",
+   "lumps",
+   "raw whole potato"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food mashed potatoes?",
+    "yes": true
+   },
+   {
+    "q": "Is there gravy on the potatoes?",
+    "yes": false
+   },
+   {
+    "q": "Are the potatoes whole or sliced instead of mashed?",
+    "yes": false
+   }
+  ],
+  "dish": "chive mashed potatoes",
+  "look": "creamy golden yukon mashed potatoes, smooth velvety texture, pool of melted butter in center, sprinkle of finely chopped fresh green chives",
+  "model": "gemini-3.6-flash",
+  "name": "Chive Mashed Potatoes",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-03T09:33:01+00:00"
  },
  "df4ae881f436": {
   "avoid": [
