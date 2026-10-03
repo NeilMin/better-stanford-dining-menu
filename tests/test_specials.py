@@ -440,6 +440,23 @@ class TestUpdate:
         assert "error" not in stored and stored["file"].startswith("2026/09/")
         assert not (specialslib.archive_dir(halls.root) / undated).exists()
 
+    def test_a_revised_edition_at_a_new_url_replaces_the_old_one(self, halls, downloads,
+                                                                  monkeypatch):
+        """R&DE re-uploaded Sept 28 - Oct 9 into a new folder with Stern's
+        Chilaquiles changed to Paletas. Kept side by side, both reached the board."""
+        for n, (url, dish) in enumerate([("2026-09/Cal_Sept28-Oct9.pdf", "Chilaquiles"),
+                                         ("2026-10/Cal%20Sept28-Oct9.pdf", "Homemade Paletas")]):
+            downloads(f"%PDF-1.4 {n}".encode())
+            monkeypatch.setattr(specialslib, "parse", lambda blob, d=dish: {
+                "title": "t", "meal": "Dinner", "from": "2026-09-28", "to": "2026-10-09",
+                "entries": [{"label": "Stern", "text": d,
+                             "from": "2026-10-05", "to": "2026-10-06"}]})
+            result = specialslib.update(halls.root, halls.config,
+                                        html=hours_page(banner(f"https://rde.stanford.edu/{url}")))
+        assert result["status"] == "updated"
+        [stored] = specialslib.load(halls.root)["calendars"]
+        assert [e["text"] for e in stored["entries"]] == ["Homemade Paletas"]
+
     def test_no_link_on_the_page_is_reported_not_raised(self, halls):
         result = specialslib.update(halls.root, halls.config, html=hours_page(banner(), HALL))
         assert result == {"url": None, "status": "no link in the banner on the hours page"}

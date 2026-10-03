@@ -488,7 +488,18 @@ def update(root: Path, config: dict, *, force: bool = False,
     else:
         record["error"] = error
 
-    store["calendars"] = [c for c in store["calendars"] if c["url"] != url] + [record]
+    # A revised edition of a fortnight already on file replaces it, whatever
+    # URL it came from: R&DE re-uploaded Sept 28 - Oct 9 under a new folder
+    # with one special changed, and keyed on the URL alone both stayed, so the
+    # board offered the old special next to the new one.
+    def superseded(c):
+        if c["url"] == url or c.get("file") == name:
+            return True
+        return bool(parsed) and (c.get("meal"), c.get("from"), c.get("to")) == \
+            (parsed["meal"], parsed["from"], parsed["to"])
+    replaced = [c for c in store["calendars"] if superseded(c)]
+    existing = existing or (replaced[0] if replaced else None)
+    store["calendars"] = [c for c in store["calendars"] if not superseded(c)] + [record]
     save(root, store)
 
     if error:

@@ -113,8 +113,11 @@ class TestOctober2026:
         assert block["from"] == block["to"] == "2026-10-07"
 
     def test_the_bar_it_interrupts_runs_either_side_of_it(self, calendar, placed):
+        # By position, not by name: R&DE re-issued this poster on Oct 2 with
+        # the bar's Chilaquiles changed to Homemade Paletas.
         runs = sorted((e["from"], e["to"]) for e in placed(calendar)
-                      if e["halls"] == ["stern"] and e["text"] == "Chilaquiles")
+                      if e["halls"] == ["stern"] and e["from"] >= "2026-10-05"
+                      and e["text"] != "National Hispanic Heritage Month Dinner")
         assert runs == [("2026-10-05", "2026-10-06"), ("2026-10-08", "2026-10-09")]
 
     def test_nothing_on_this_poster_is_left_for_the_whole_campus(self, calendar, placed):
