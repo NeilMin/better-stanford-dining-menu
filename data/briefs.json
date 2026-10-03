@@ -3271,6 +3271,42 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T07:54:50+00:00"
  },
+ "2c938bc82419": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "skewers",
+   "kebabs",
+   "raw salad",
+   "tortillas"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish an assortment of grilled vegetables?",
+    "yes": true
+   },
+   {
+    "q": "Are the vegetables threaded onto skewers or kebabs?",
+    "yes": false
+   },
+   {
+    "q": "Is there meat or poultry on the plate?",
+    "yes": false
+   }
+  ],
+  "dish": "Mexican grilled mixed vegetables",
+  "look": "thick charred slices of green chayote, yellow squash, zucchini rounds, red onion wedges, grilled tomato halves, reddish chili glaze, dark grill marks, chopped fresh cilantro",
+  "model": "gemini-3.7-flash",
+  "name": "Cardinal Sage Grilled Vegetables",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-03T08:46:53+00:00"
+ },
  "2ca542cb1674": {
   "avoid": [
    "beef",
@@ -3936,6 +3972,42 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-26T23:10:10+00:00"
+ },
+ "31872715d48f": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "large sliced onions",
+   "raw onions",
+   "onion rings",
+   "skewers"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food glazed whole pearl onions?",
+    "yes": true
+   },
+   {
+    "q": "Are the onions sliced into large rings or raw?",
+    "yes": false
+   },
+   {
+    "q": "Is there meat or fish in the dish?",
+    "yes": false
+   }
+  ],
+  "dish": "balsamic glazed pearl onions",
+  "look": "whole peeled pearl onions, glossy dark mahogany balsamic reduction glaze, caramelized tender surface, whole rosemary needles, rich dark brown coating",
+  "model": "gemini-3.7-flash",
+  "name": "Balsamic Glazed Pearl Onions",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-03T08:46:53+00:00"
  },
  "318a9e6be867": {
   "avoid": [
@@ -4950,6 +5022,42 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-30T10:02:01+00:00"
+ },
+ "3b335111eaa0": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "parmesan cheese",
+   "red tomato sauce",
+   "meatballs",
+   "thick fettuccine"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food thin angel hair pasta?",
+    "yes": true
+   },
+   {
+    "q": "Is the pasta covered in red tomato sauce or heavy cream sauce?",
+    "yes": false
+   },
+   {
+    "q": "Is there meat, chicken, or seafood with the pasta?",
+    "yes": false
+   }
+  ],
+  "dish": "lemon garlic angel hair pasta",
+  "look": "twirled nest of delicate thin angel hair pasta, glistening light garlic olive oil sauce, thin yellow lemon zest strips, minced sautéed garlic, finely chopped fresh parsley",
+  "model": "gemini-3.7-flash",
+  "name": "Angel Hair Pasta with Lemon & Garlic",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-03T08:46:53+00:00"
  },
  "3c39da08613f": {
   "avoid": [
@@ -9716,6 +9824,78 @@
   "vessel": "plate",
   "written_at": "2026-09-26T23:14:19+00:00"
  },
+ "84566955f0ca": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "french fries",
+   "mashed potatoes",
+   "raw potatoes",
+   "potato chips"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food roasted halved potatoes?",
+    "yes": true
+   },
+   {
+    "q": "Are the potatoes mashed or puréed?",
+    "yes": false
+   },
+   {
+    "q": "Is there meat or bacon in the dish?",
+    "yes": false
+   }
+  ],
+  "dish": "roasted paprika fingerling potatoes",
+  "look": "halved roasted fingerling potatoes, crispy golden-brown edges, vibrant red dusted paprika coating, tender wrinkled skins, roasted garlic bits, flecks of parsley",
+  "model": "gemini-3.7-flash",
+  "name": "Paprika Roasted Potatoes",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-03T08:46:53+00:00"
+ },
+ "85194199bd6d": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "raw squash",
+   "cheese",
+   "parmesan",
+   "soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food roasted slices of yellow squash?",
+    "yes": true
+   },
+   {
+    "q": "Does the squash appear raw and uncooked?",
+    "yes": false
+   },
+   {
+    "q": "Is there meat or seafood in the dish?",
+    "yes": false
+   }
+  ],
+  "dish": "roasted summer squash",
+  "look": "roasted yellow summer squash half-moons, tender caramelized golden-brown edges, soft cooked texture, flecks of finely chopped green parsley, fresh mint leaves",
+  "model": "gemini-3.7-flash",
+  "name": "Roasted Summer Squash with Herbs",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-03T08:46:53+00:00"
+ },
  "856a77743b68": {
   "avoid": [
    "meat",
@@ -9856,6 +10036,42 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-30T10:06:09+00:00"
+ },
+ "85f9080339aa": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "shredded carrots",
+   "raw carrot sticks",
+   "soup",
+   "dip"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food roasted multi-colored carrots?",
+    "yes": true
+   },
+   {
+    "q": "Are the carrots raw sliced sticks or shredded?",
+    "yes": false
+   },
+   {
+    "q": "Is there meat or poultry on the plate?",
+    "yes": false
+   }
+  ],
+  "dish": "roasted rainbow carrots",
+  "look": "roasted whole baby rainbow carrots in purple, yellow, and orange, tender blistered skins, caramelized edges, chopped fresh thyme leaves, cracked black pepper",
+  "model": "gemini-3.7-flash",
+  "name": "Roasted Rainbow Carrots",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-03T08:46:53+00:00"
  },
  "8737d3af817a": {
   "avoid": [
@@ -11958,6 +12174,42 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T06:34:15+00:00"
+ },
+ "a1774e128d54": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "loose corn kernels",
+   "creamed corn",
+   "raw corn husk",
+   "popcorn"
+  ],
+  "checks": [
+   {
+    "q": "Is the food corn on the cob?",
+    "yes": true
+   },
+   {
+    "q": "Are the corn kernels cut off the cob into loose kernels?",
+    "yes": false
+   },
+   {
+    "q": "Is there meat or poultry on the plate?",
+    "yes": false
+   }
+  ],
+  "dish": "corn on the cob",
+  "look": "whole ear of yellow corn on the cob, plump juicy steamed kernels, light sheen of melted butter, flecks of cracked black pepper, slight tender golden sheen",
+  "model": "gemini-3.7-flash",
+  "name": "Corn on the Cobb",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-03T08:46:53+00:00"
  },
  "a18b04db0aac": {
   "avoid": [
@@ -17664,6 +17916,42 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T08:19:18+00:00"
+ },
+ "eaa8f7d6da84": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "raw tofu",
+   "raw mushrooms",
+   "rice",
+   "tortillas"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food tofu cubes with mushrooms?",
+    "yes": true
+   },
+   {
+    "q": "Is there meat, chicken, or seafood on the plate?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish served as a soup or broth?",
+    "yes": false
+   }
+  ],
+  "dish": "Spanish garlic tofu and mushrooms",
+  "look": "golden seared tofu cubes, sliced brown mushrooms, slivered tender onions, diced roasted red peppers, glossy reddish paprika garlic glaze, sprinkle of chopped fresh parsley",
+  "model": "gemini-3.7-flash",
+  "name": "Spanish-Style Garlic Mushroom Tofu",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-03T08:46:53+00:00"
  },
  "eb2b0b0c3ca7": {
   "avoid": [
