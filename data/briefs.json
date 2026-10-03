@@ -12114,6 +12114,41 @@
   "vessel": "bowl",
   "written_at": "2026-09-26T23:07:31+00:00"
  },
+ "a4cd72eb9e61": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "bacon",
+   "raw brussels sprouts",
+   "cheese"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food roasted brussels sprouts?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of bacon, pork, or other meat mixed in?",
+    "yes": false
+   },
+   {
+    "q": "Are the brussels sprouts raw and whole?",
+    "yes": false
+   }
+  ],
+  "dish": "roasted brussels sprouts",
+  "look": "halved brussels sprouts, deeply browned and caramelized outer leaves, tender green centers, charred edges, glistening surface, single portion, scattered loose crispy leaves",
+  "model": "gemini-3.5-flash",
+  "name": "Roasted Brussels Sprouts",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-02T23:59:27+00:00"
+ },
  "a4e5a2b1bd5c": {
   "avoid": [
    "chicken",
@@ -13725,6 +13760,45 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-26T23:04:37+00:00"
+ },
+ "ba9659072afa": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "cheese sauce",
+   "raw broccoli",
+   "beef and broccoli stir fry"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food cooked broccoli florets?",
+    "yes": true
+   },
+   {
+    "q": "Is there meat, chicken, or beef mixed with the broccoli?",
+    "yes": false
+   },
+   {
+    "q": "Is the broccoli raw and uncooked?",
+    "yes": false
+   },
+   {
+    "q": "Is the broccoli covered in a thick cheese sauce?",
+    "yes": false
+   }
+  ],
+  "dish": "grilled broccoli",
+  "look": "bright green broccoli florets, dark black grill marks, charred edges, tender stalks, lightly caramelized tips, glistening surface, single portion",
+  "model": "gemini-3.5-flash",
+  "name": "Grilled Broccoli",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-02T23:59:27+00:00"
  },
  "bacbacfbc4f6": {
   "avoid": [
