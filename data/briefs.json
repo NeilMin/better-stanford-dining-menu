@@ -1094,6 +1094,40 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T07:54:50+00:00"
  },
+ "12913259bfbe": {
+  "avoid": [
+   "sandwich bun",
+   "hoagie roll",
+   "tacos",
+   "tortilla",
+   "rice",
+   "mashed potatoes",
+   "pasta",
+   "solid whole steak"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item shredded braised meat in sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat served in a sandwich bun or roll?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat an intact un-shredded steak?",
+    "yes": false
+   }
+  ],
+  "dish": "Mediterranean braised shredded beef",
+  "look": "tender braised shredded beef chuck, long strands of pulled dark brown meat, glossy reddish-brown tomato braising sauce, diced cooked orange carrots, sliced sauteed red bell peppers, translucent onions, flecks of dried green herbs",
+  "model": "gemini-flash-latest",
+  "name": "Mediterranean Shredded Beef",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-03T07:52:08+00:00"
+ },
  "12d3139d3a47": {
   "avoid": [
    "meat",
@@ -5234,6 +5268,39 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T06:30:47+00:00"
  },
+ "405fc6ed26af": {
+  "avoid": [
+   "whole unsliced pizza",
+   "sub sandwich",
+   "hero roll",
+   "pasta",
+   "spaghetti",
+   "raw dough",
+   "salad"
+  ],
+  "checks": [
+   {
+    "q": "Is the food a slice of pizza topped with chicken and cheese?",
+    "yes": true
+   },
+   {
+    "q": "Is the dish a sandwich on a roll or hero bun?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken served over a bed of spaghetti pasta?",
+    "yes": false
+   }
+  ],
+  "dish": "chicken parmesan pizza",
+  "look": "single triangle slice of baked pizza, crisp bubbly golden crust, melted white mozzarella cheese, rich red tomato marinara base, bite-sized pieces of breaded golden chicken breast, grated parmesan dusting",
+  "model": "gemini-flash-latest",
+  "name": "Chicken Parmesan Pizza",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-03T07:52:08+00:00"
+ },
  "40883b836820": {
   "avoid": [
    "chicken",
@@ -9062,6 +9129,39 @@
   "vessel": "plate",
   "written_at": "2026-09-29T00:31:05+00:00"
  },
+ "786074cf1eea": {
+  "avoid": [
+   "whole sausage links",
+   "hot dog bun",
+   "pizza",
+   "pasta",
+   "spaghetti",
+   "burger patty",
+   "raw ground pork"
+  ],
+  "checks": [
+   {
+    "q": "Is the food crumbled or ground cooked meat?",
+    "yes": true
+   },
+   {
+    "q": "Is the sausage in a whole tubular link or casing?",
+    "yes": false
+   },
+   {
+    "q": "Is the sausage served on top of a pizza or pasta dish?",
+    "yes": false
+   }
+  ],
+  "dish": "cooked Italian sausage crumbles",
+  "look": "browned cooked ground pork sausage crumbles, chunky textured clusters of minced savory meat, crisp caramelized dark edges, glistening cooking juices, visible whole fennel seeds, flecks of dried herbs",
+  "model": "gemini-flash-latest",
+  "name": "Italian Sausage Crumble",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-03T07:52:08+00:00"
+ },
  "7896e25d76ba": {
   "avoid": [
    "rice",
@@ -12292,6 +12392,39 @@
   "vessel": "plate",
   "written_at": "2026-10-02T21:11:53+00:00"
  },
+ "a6be9de8b9e3": {
+  "avoid": [
+   "white fish",
+   "salmon burger",
+   "pasta",
+   "rice",
+   "sushi",
+   "raw fish",
+   "creamy white sauce"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a seared fillet of pink or orange fish?",
+    "yes": true
+   },
+   {
+    "q": "Is the fish white-fleshed instead of salmon?",
+    "yes": false
+   },
+   {
+    "q": "Is the fish raw like sushi?",
+    "yes": false
+   }
+  ],
+  "dish": "pan-seared salmon",
+  "look": "pan-seared pink salmon fillet, golden-brown seared crisp skin, flaky coral-orange flesh, blistered whole red cherry tomatoes, fresh yellow lemon wedge, chopped green parsley flecks",
+  "model": "gemini-flash-latest",
+  "name": "Seared Salmon",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-03T07:52:08+00:00"
+ },
  "a6ce6058209a": {
   "avoid": [
    "pho noodles",
@@ -12357,6 +12490,75 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-30T10:09:22+00:00"
+ },
+ "a7a87d3f5638": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "cheese",
+   "french fries",
+   "raw chickpeas"
+  ],
+  "checks": [
+   {
+    "q": "Is the main dish chickpeas and squash in a reddish sauce?",
+    "yes": true
+   },
+   {
+    "q": "Does the dish contain any meat, poultry, or seafood?",
+    "yes": false
+   },
+   {
+    "q": "Is the food served with French fries or potato wedges?",
+    "yes": false
+   }
+  ],
+  "dish": "Spanish chickpea and vegetable bravas",
+  "look": "roasted golden-brown whole chickpeas, roasted half-moon slices of green zucchini, tender sliced yellow summer squash, smothered in vibrant reddish-orange bravas sauce, charred edges",
+  "model": "gemini-flash-latest",
+  "name": "Chickpea Bravas with Veggies",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-03T07:52:08+00:00"
+ },
+ "a8b9b1a7939d": {
+  "avoid": [
+   "tortillas",
+   "rice",
+   "refried beans",
+   "tacos",
+   "burrito",
+   "red enchilada sauce",
+   "ground meat",
+   "raw meat"
+  ],
+  "checks": [
+   {
+    "q": "Is the main dish chunks of meat in a green sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the sauce red or brown instead of green?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat wrapped inside a tortilla or burrito?",
+    "yes": false
+   }
+  ],
+  "dish": "pork chile verde",
+  "look": "chunks of tender braised pork shoulder, thick vibrant olive-green tomatillo sauce, diced cooked translucent onions, flecks of minced green cilantro, glistening rich stew consistency",
+  "model": "gemini-flash-latest",
+  "name": "Pork Chile Verde",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-03T07:52:08+00:00"
  },
  "a8de102949dc": {
   "avoid": [
@@ -17253,6 +17455,42 @@
   "vessel": "bowl",
   "written_at": "2026-10-01T00:13:18+00:00"
  },
+ "e6c75c131ad4": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "real scallops",
+   "rice",
+   "pasta",
+   "raw mushrooms"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item seared sliced mushrooms?",
+    "yes": true
+   },
+   {
+    "q": "Is there real animal meat or seafood on the plate?",
+    "yes": false
+   },
+   {
+    "q": "Are the mushrooms raw and unseared?",
+    "yes": false
+   }
+  ],
+  "dish": "pan-seared king oyster mushroom medallions",
+  "look": "thick sliced king oyster mushroom rounds, scored diamond crosshatch pattern, deep golden-brown caramelized seared tops, pale tender fibrous centers, minced golden garlic bits, fresh green thyme sprigs, yellow lemon wedge",
+  "model": "gemini-flash-latest",
+  "name": "Seared King Oyster Mushroom",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-03T07:52:08+00:00"
+ },
  "e7579de20495": {
   "avoid": [
    "large meal",
@@ -18096,6 +18334,40 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T05:03:54+00:00"
+ },
+ "f05c4f259f50": {
+  "avoid": [
+   "fried chicken",
+   "chicken nuggets",
+   "rice",
+   "paella",
+   "curry sauce",
+   "skewers",
+   "tacos",
+   "raw chicken"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item roasted bone-in chicken?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken breaded and deep-fried?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken cut into chunks inside a rice dish?",
+    "yes": false
+   }
+  ],
+  "dish": "Spanish paprika roast chicken",
+  "look": "roasted bone-in chicken quarter, crisp golden-red paprika-seasoned skin, caramelized roasted white onion wedges, whole browned roasted garlic cloves, fresh needle-like green rosemary sprig",
+  "model": "gemini-flash-latest",
+  "name": "Roasted Spanish-Style Chicken",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-03T07:52:08+00:00"
  },
  "f06ba0b42af8": {
   "avoid": [
