@@ -750,6 +750,42 @@
   "vessel": "plate",
   "written_at": "2026-10-01T20:14:18+00:00"
  },
+ "0a2f3946fb2f": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "raw vegetables",
+   "salad greens",
+   "pasta",
+   "cheese"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item roasted vegetables?",
+    "yes": true
+   },
+   {
+    "q": "Are the vegetables raw and uncooked?",
+    "yes": false
+   },
+   {
+    "q": "Is there meat or fish included?",
+    "yes": false
+   }
+  ],
+  "dish": "roasted zucchini and bell peppers",
+  "look": "thick rounded slices of green zucchini mixed with roasted red and yellow bell pepper strips, visible dark caramelized edges, sprinkled with chopped parsley",
+  "model": "gemini-3.6-flash",
+  "name": "Roasted Zucchini & Peppers",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-04T10:07:59+00:00"
+ },
  "0a682c33bc74": {
   "avoid": [
    "taco",
@@ -2190,6 +2226,42 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-26T23:09:57+00:00"
+ },
+ "1c54506537c3": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "raw rice",
+   "fried rice",
+   "paella",
+   "pasta"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food creamy rice?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat or seafood?",
+    "yes": false
+   },
+   {
+    "q": "Is the rice dry or separate grains like fried rice?",
+    "yes": false
+   }
+  ],
+  "dish": "lemon risotto",
+  "look": "creamy pale yellow arborio rice risotto, rich glossy texture, topped with bright yellow lemon zest curls, grated parmesan cheese, chopped fresh green parsley",
+  "model": "gemini-3.6-flash",
+  "name": "Lemon Risotto",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-04T10:08:39+00:00"
  },
  "1c926658dd7d": {
   "avoid": [
@@ -5128,6 +5200,42 @@
   "vessel": "bowl",
   "written_at": "2026-10-03T08:46:53+00:00"
  },
+ "3c111d65f3a3": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "rice",
+   "curry paste",
+   "raw lentils",
+   "flatbread"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food a lentil stew?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat or poultry?",
+    "yes": false
+   },
+   {
+    "q": "Do the ingredients look raw and uncooked?",
+    "yes": false
+   }
+  ],
+  "dish": "lentil and sweet potato stew",
+  "look": "a rich hearty stew of brown lentils, tender orange yam cubes, diced carrots, sliced leeks, savory brown broth, garnished with chopped green parsley",
+  "model": "gemini-3.6-flash",
+  "name": "Lentils & Yams",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-04T10:08:39+00:00"
+ },
  "3c39da08613f": {
   "avoid": [
    "mashed potatoes",
@@ -5444,6 +5552,42 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T06:30:47+00:00"
+ },
+ "3fec1dd8d6eb": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "plain yellow rice",
+   "curry rice",
+   "pilaf",
+   "soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the main dish fried rice?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat or seafood mixed in?",
+    "yes": false
+   },
+   {
+    "q": "Is the rice submerged in soup broth?",
+    "yes": false
+   }
+  ],
+  "dish": "ginger scallion fried rice",
+  "look": "stir-fried jasmine rice heavily speckled with abundant bright green chopped scallions, pale minced ginger, soft flecks of yellow scrambled egg, light green peas, finely diced orange carrots",
+  "model": "gemini-3.6-flash",
+  "name": "Ginger Scallion Fried Rice",
+  "rev": 6,
+  "revisions": 1,
+  "vessel": "bowl",
+  "written_at": "2026-10-04T11:35:32+00:00"
  },
  "405fc6ed26af": {
   "avoid": [
@@ -9062,6 +9206,42 @@
   "vessel": "plate",
   "written_at": "2026-09-27T06:14:59+00:00"
  },
+ "7431493b6585": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "yellow egg yolks",
+   "fried eggs",
+   "pancakes",
+   "toast"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food scrambled white eggs mixed with vegetables?",
+    "yes": true
+   },
+   {
+    "q": "Are whole yellow egg yolks visible?",
+    "yes": false
+   },
+   {
+    "q": "Does the dish contain bacon or meat?",
+    "yes": false
+   }
+  ],
+  "dish": "vegetable egg white scramble",
+  "look": "fluffy cooked egg whites scrambled together with diced red bell peppers, sautéed zucchini quarter-slices, and chopped green spinach leaves",
+  "model": "gemini-3.6-flash",
+  "name": "Harvest Egg White Scramble",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-04T10:07:59+00:00"
+ },
  "74787ab83447": {
   "avoid": [
    "whole roasted chicken",
@@ -10219,6 +10399,42 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-03T08:46:53+00:00"
+ },
+ "86ab20d5a48c": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "raw carrots",
+   "mashed carrots",
+   "peas",
+   "dip"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food cooked carrots?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat or seafood?",
+    "yes": false
+   },
+   {
+    "q": "Are the carrots raw or shredded in a salad?",
+    "yes": false
+   }
+  ],
+  "dish": "roasted garlic carrots",
+  "look": "tender roasted whole orange carrots with caramelized golden-brown edges, whole soft roasted garlic cloves scattered around, garnished with fresh thyme sprigs",
+  "model": "gemini-3.6-flash",
+  "name": "Garlic Roasted Carrots",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-04T10:08:39+00:00"
  },
  "8737d3af817a": {
   "avoid": [
@@ -15675,6 +15891,42 @@
   "vessel": "plate",
   "written_at": "2026-10-01T07:35:00+00:00"
  },
+ "c8bb9e6f877a": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "bacon",
+   "sausage",
+   "fish",
+   "shrimp",
+   "scrambled eggs",
+   "bread"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food a baked egg dish?",
+    "yes": true
+   },
+   {
+    "q": "Does the frittata contain bacon, sausage, or meat?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish cooked as loose scrambled eggs?",
+    "yes": false
+   }
+  ],
+  "dish": "spinach and feta frittata",
+  "look": "a thick wedge of golden baked egg frittata, visible green wilted spinach leaves, chopped dark red sundried tomatoes, black kalamata olives, crumbled white feta cheese on top",
+  "model": "gemini-3.6-flash",
+  "name": "Greek Frittata",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-04T10:08:39+00:00"
+ },
  "c8dd8ea4d1f0": {
   "avoid": [
    "chicken wings",
@@ -16602,6 +16854,41 @@
   "vessel": "plate",
   "written_at": "2026-10-02T10:14:36+00:00"
  },
+ "d344ff05e453": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "mashed potatoes",
+   "french fries",
+   "raw potato"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food roasted potato cubes?",
+    "yes": true
+   },
+   {
+    "q": "Is the dish smooth mashed potatoes?",
+    "yes": false
+   },
+   {
+    "q": "Does the dish contain chorizo or meat?",
+    "yes": false
+   }
+  ],
+  "dish": "papas bravas",
+  "look": "roasted golden potato cubes dusted with reddish smoked paprika, drizzled with creamy pale garlic lemon aioli sauce, garnished with parsley",
+  "model": "gemini-3.6-flash",
+  "name": "Papas Bravas with Roasted Garlic Mayo",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-04T10:07:59+00:00"
+ },
  "d3ad2fe14444": {
   "avoid": [
    "tortillas",
@@ -16779,6 +17066,41 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-01T07:22:00+00:00"
+ },
+ "d5350ce0369e": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "cooked vegetables",
+   "noodles",
+   "lettuce"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food a cucumber salad?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat or seafood?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a warm cooked stir-fry?",
+    "yes": false
+   }
+  ],
+  "dish": "Asian cucumber salad",
+  "look": "thinly sliced smashed green cucumbers tossed in dark tamari sauce, red chili crisp oil flecks, white sesame seeds, sliced green scallions on top",
+  "model": "gemini-3.6-flash",
+  "name": "Sesame Cucumber Salad",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-04T10:08:39+00:00"
  },
  "d56b30d8d354": {
   "avoid": [
@@ -18732,6 +19054,41 @@
   "vessel": "plate",
   "written_at": "2026-09-26T23:10:31+00:00"
  },
+ "ef2983e7e21e": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "soup",
+   "raw tofu",
+   "noodles"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food cubes of glazed tofu?",
+    "yes": true
+   },
+   {
+    "q": "Is there meat or seafood in the dish?",
+    "yes": false
+   },
+   {
+    "q": "Is the tofu served swimming in a liquid broth or soup?",
+    "yes": false
+   }
+  ],
+  "dish": "gochujang glazed tofu",
+  "look": "cubes of golden seared tofu coated in a sticky thick dark red gochujang glaze, garnished with sprinkled white sesame seeds and chopped green onions",
+  "model": "gemini-3.6-flash",
+  "name": "Gochujang-Glazed Tofu",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-04T10:07:59+00:00"
+ },
  "ef46fa384f8f": {
   "avoid": [
    "flour tortilla",
@@ -19048,6 +19405,39 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-30T10:06:09+00:00"
+ },
+ "f14ca63e30fd": {
+  "avoid": [
+   "raw chicken",
+   "whole chicken",
+   "chicken wings",
+   "gravy",
+   "french fries",
+   "salad",
+   "skewers"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food cooked chicken?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken raw or uncooked?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat ground like mince?",
+    "yes": false
+   }
+  ],
+  "dish": "herb-roasted rotisserie chicken",
+  "look": "a golden-brown quarter roasted chicken piece, crisp seasoned skin with dark paprika specks, juicy white meat interior, sprinkled with finely chopped fresh rosemary, thyme, and green parsley garnish",
+  "model": "gemini-3.6-flash",
+  "name": "Herb Roasted Rotisserie Chicken",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-04T10:08:39+00:00"
  },
  "f19ef3f4af91": {
   "avoid": [
