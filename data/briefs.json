@@ -4747,6 +4747,42 @@
   "vessel": "plate",
   "written_at": "2026-09-26T20:19:44+00:00"
  },
+ "37bb4e5a3fef": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "raw vegetables",
+   "pasta",
+   "cheese",
+   "rice"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish roasted squash and mushrooms?",
+    "yes": true
+   },
+   {
+    "q": "Does the dish contain meat or seafood?",
+    "yes": false
+   },
+   {
+    "q": "Do the vegetables appear raw and uncooked?",
+    "yes": false
+   }
+  ],
+  "dish": "roasted squash and mushrooms",
+  "look": "roasted tender green zucchini slices, bright yellow sunburst squash quarters, baby summer squash rounds, browned roasted button mushroom pieces, caramelized edges, sprinkled with chopped green herbs",
+  "model": "gemini-flash-latest",
+  "name": "Roasted Squash with Mushrooms",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-04T18:45:39+00:00"
+ },
  "38ab2d878190": {
   "avoid": [
    "chicken tenders",
@@ -5518,6 +5554,44 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T07:17:51+00:00"
+ },
+ "3eeb924e71d6": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "green peas",
+   "legumes",
+   "parsley garnish",
+   "thin soup broth",
+   "noodles",
+   "rice"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a vegetable stew with crumbles in broth?",
+    "yes": true
+   },
+   {
+    "q": "Are there whole chunks of animal meat?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish dry without broth or sauce?",
+    "yes": false
+   }
+  ],
+  "dish": "vegetarian beef stew",
+  "look": "thick dark reddish-brown savory stew gravy, textured soy protein beefless crumbles, tender diced orange carrots, sliced green celery ribs, translucent diced onions, diced stewed red tomatoes, hearty thick vegetable stew",
+  "model": "gemini-3.7-flash",
+  "name": "Plant-Forward Gardein \"Beef\" Stew",
+  "rev": 6,
+  "revisions": 1,
+  "vessel": "bowl",
+  "written_at": "2026-10-04T19:43:54+00:00"
  },
  "3f271136568b": {
   "avoid": [
@@ -14756,6 +14830,40 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-26T20:20:20+00:00"
+ },
+ "bb4b84784e8e": {
+  "avoid": [
+   "hot dog bun",
+   "whole hot dog",
+   "tortilla",
+   "burrito",
+   "bacon",
+   "raw egg",
+   "side salad",
+   "ketchup"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish scrambled eggs with sausage?",
+    "yes": true
+   },
+   {
+    "q": "Is the sausage served whole in a bun?",
+    "yes": false
+   },
+   {
+    "q": "Is the food rolled inside a tortilla?",
+    "yes": false
+   }
+  ],
+  "dish": "huevos con salchicha",
+  "look": "soft scrambled yellow eggs, sliced browned rounds of beef hot dog sausage mixed throughout, glossy curds, lightly seared sausage edges, homestyle scramble",
+  "model": "gemini-flash-latest",
+  "name": "Huevos con Salchichas",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-04T18:45:39+00:00"
  },
  "bb68b9b02633": {
   "avoid": [
