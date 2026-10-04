@@ -5616,44 +5616,56 @@
  },
  "42a7b39e0fba": {
   "avoid": [
+   "white rice",
+   "plain white rice",
+   "pale rice",
    "meat",
    "chicken",
    "beef",
    "pork",
    "fish",
    "shrimp",
-   "paella",
+   "curry sauce",
+   "stew",
+   "soup",
    "peas",
+   "corn",
+   "star anise",
+   "noodles",
+   "pasta",
+   "threads",
+   "yarn",
    "raw rice",
+   "uncooked rice",
    "side dishes",
    "platter"
   ],
   "checks": [
    {
-    "q": "Is the main food cooked yellow rice?",
+    "q": "Is the main food yellow or golden cooked rice?",
     "yes": true
    },
    {
-    "q": "Are there pieces of meat, seafood or sausage mixed in?",
+    "q": "Is the rice mostly white with little or no yellow colour?",
     "yes": false
    },
    {
-    "q": "Is the rice white with no yellow colour?",
+    "q": "Are there pieces of meat, poultry, or seafood?",
     "yes": false
    },
    {
-    "q": "Does the rice look raw or dry and uncooked?",
+    "q": "Does the rice look raw or uncooked?",
     "yes": false
    }
   ],
-  "dish": "saffron rice",
-  "look": "fluffy long-grain basmati rice, separate grains in vivid golden-yellow saffron colour, a few deeper orange saffron threads, soft translucent pieces of cooked onion mixed through, mounded loosely",
-  "model": "claude-sonnet",
+  "dish": "Persian saffron rice",
+  "hand": true,
+  "look": "fluffy aromatic long-grain basmati rice dyed vibrant golden-yellow throughout, distinct tender glistening cooked yellow rice grains, served in a simple ceramic bowl",
   "name": "Saffron Rice",
-  "rev": 5,
+  "rev": 6,
   "revisions": 0,
   "vessel": "bowl",
-  "written_at": "2026-09-26T20:19:52+00:00"
+  "written_at": "2026-10-04T04:02:42+00:00"
  },
  "435c1da6efe7": {
   "avoid": [
