@@ -3163,6 +3163,40 @@
   "vessel": "bowl",
   "written_at": "2026-09-30T10:09:22+00:00"
  },
+ "2acfa5d173e1": {
+  "avoid": [
+   "meat",
+   "beef",
+   "pork",
+   "chicken",
+   "fish",
+   "shrimp",
+   "meatballs",
+   "cheese"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item long pasta noodles?",
+    "yes": true
+   },
+   {
+    "q": "Are there meatballs or pieces of meat in the sauce?",
+    "yes": false
+   },
+   {
+    "q": "Is the pasta in a soup or broth?",
+    "yes": false
+   }
+  ],
+  "dish": "spaghetti marinara",
+  "look": "long strands of cooked spaghetti pasta, thick red tomato sauce, chunks of crushed tomatoes, fresh green basil leaves, glossy red glaze",
+  "model": "gemma-4-31b-it",
+  "name": "Spaghetti",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-03T23:28:48+00:00"
+ },
  "2af8a6c63440": {
   "avoid": [
    "tortilla wrap",
@@ -9855,6 +9889,38 @@
   "vessel": "plate",
   "written_at": "2026-10-02T10:04:59+00:00"
  },
+ "83d194f65ad7": {
+  "avoid": [
+   "beef",
+   "chicken",
+   "pork",
+   "bread",
+   "crackers",
+   "salad"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a bean stew?",
+    "yes": true
+   },
+   {
+    "q": "Is it a dry dish without broth?",
+    "yes": false
+   },
+   {
+    "q": "Is it a clear soup without beans?",
+    "yes": false
+   }
+  ],
+  "dish": "vegetable bean stew",
+  "look": "hearty bean stew, plump kidney beans, chunks of orange carrots, diced celery, cubed potatoes, thick brown savory broth, steam",
+  "model": "gemma-4-31b-it",
+  "name": "Harvest Bean Stew",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-03T23:28:48+00:00"
+ },
  "844d07bc641d": {
   "avoid": [
    "boneless nuggets",
@@ -10174,6 +10240,39 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-10-02T10:04:59+00:00"
+ },
+ "8756b5c6706d": {
+  "avoid": [
+   "beef",
+   "pork",
+   "chicken",
+   "fish",
+   "shrimp",
+   "cheese",
+   "bacon"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a burger patty on a bun?",
+    "yes": true
+   },
+   {
+    "q": "Is the patty a whole piece of fish or chicken?",
+    "yes": false
+   },
+   {
+    "q": "Is it a salad?",
+    "yes": false
+   }
+  ],
+  "dish": "plant-based burger",
+  "look": "grilled plant-based burger patty, charred grill marks, browned exterior, juicy pinkish-brown center, toasted sesame seed bun, soft bread texture",
+  "model": "gemma-4-31b-it",
+  "name": "Plant Based Burger Patty",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-03T23:28:48+00:00"
  },
  "87752afe95de": {
   "avoid": [
@@ -17879,6 +17978,39 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-10-01T00:13:18+00:00"
+ },
+ "e6bbd372d8bd": {
+  "avoid": [
+   "meat",
+   "beef",
+   "pork",
+   "chicken",
+   "fish",
+   "shrimp",
+   "tofu"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item fried rice?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat or seafood in the rice?",
+    "yes": false
+   },
+   {
+    "q": "Is the rice boiled or steamed without stir-frying?",
+    "yes": false
+   }
+  ],
+  "dish": "vegetable fried rice",
+  "look": "stir-fried white rice, scrambled egg bits, diced orange carrots, sliced green celery, chopped green lettuce, translucent sautéed onions, light brown tamari glaze",
+  "model": "gemma-4-31b-it",
+  "name": "Five Happiness Fried Rice",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-03T23:28:48+00:00"
  },
  "e6c75c131ad4": {
   "avoid": [
