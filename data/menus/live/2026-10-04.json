@@ -1,6 +1,6 @@
 {
  "date": "2026-10-04",
- "scraped_at": "2026-10-04T11:39:30-07:00",
+ "scraped_at": "2026-10-04T16:14:15-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -1281,12 +1281,11 @@
      "order": 3
     },
     {
-     "name": "Coconut Rice & Peas",
-     "recipe_id": "3946726",
+     "name": "Caribbean Butter Rice",
+     "recipe_id": "CaribButRice1",
      "description": "",
-     "ingredients": "rice, coconut milk, shredded coconut, beans, onions, thyme, green onions, unsalted butter, habanero chili, ginger, allspice, garlic",
+     "ingredients": "rice, water, butter, garlic, onions, thyme, allspice, olive/canola oil blend, salt, black pepper",
      "allergens": [
-      "COCONUT",
       "MILK"
      ],
      "trace_allergens": [],
@@ -1296,6 +1295,20 @@
       "halal"
      ],
      "order": 4
+    },
+    {
+     "name": "Roasted Plantains",
+     "recipe_id": "3445905",
+     "description": "",
+     "ingredients": "plantains, canola/olive oil blend, salt, pepper",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan",
+      "halal"
+     ],
+     "order": 5
     },
     {
      "name": "Rosemary Fried Chicken Wings",
@@ -1309,21 +1322,23 @@
      "tags": [
       "halal"
      ],
-     "order": 5
+     "order": 6
     },
     {
-     "name": "Louisiana Red Beans and Rice",
-     "recipe_id": "LouB&R17",
+     "name": "Butter Rice",
+     "recipe_id": "ButterRice1",
      "description": "",
-     "ingredients": "Red Kidney Beans, Onion, Bell Pepper, Celery, Garlic, Bay leaves, Dried Thyme, Fresh Parsley, Cayenne Pepper, Long grain rice, Water, Vegetable Base, Salt, Black Pepper.",
-     "allergens": [],
+     "ingredients": "rice, butter, and salt",
+     "allergens": [
+      "MILK"
+     ],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
       "vegetarian",
       "halal"
      ],
-     "order": 6
+     "order": 7
     },
     {
      "name": "7 Cheesy Mac",
@@ -1339,7 +1354,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 7
+     "order": 8
     },
     {
      "name": "Fire Cornbread",
@@ -1356,7 +1371,7 @@
       "vegetarian",
       "halal"
      ],
-     "order": 8
+     "order": 9
     },
     {
      "name": "Soup of the Day",
@@ -1366,7 +1381,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 9
+     "order": 10
     },
     {
      "name": "Assorted Dinner Rolls",
@@ -1385,7 +1400,7 @@
       "vegetarian",
       "halal"
      ],
-     "order": 10
+     "order": 11
     },
     {
      "name": "Composed Salad",
@@ -1397,7 +1412,7 @@
      "tags": [
       "halal"
      ],
-     "order": 11
+     "order": 12
     },
     {
      "name": "Performance Bar",
@@ -1407,7 +1422,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 12
+     "order": 13
     },
     {
      "name": "Craveable Grains",
@@ -1421,7 +1436,7 @@
       "vegan",
       "halal"
      ],
-     "order": 13
+     "order": 14
     },
     {
      "name": "Flavor Forward Legumes",
@@ -1435,39 +1450,39 @@
       "vegan",
       "halal"
      ],
-     "order": 14
-    },
-    {
-     "name": "Tri Color Cheese Tortellini",
-     "recipe_id": "6188353",
-     "description": "",
-     "ingredients": "enriched semolina flour, romano cheese (cow's milk, sheep's milk), ricotta cheese, wheat flour, parmesan cheese, pasteurized eggs, corn starch, salt, paprika oleoresin, asiago cheese, spinach powder, garlic powder, spices, onion powder, fontina cheese, xanthan gum, locust bean gum, guar gum, beta carotene",
-     "allergens": [
-      "EGG",
-      "MILK",
-      "WHEAT"
-     ],
-     "trace_allergens": [],
-     "tags": [],
      "order": 15
     },
     {
-     "name": "Pasta Marinara",
-     "recipe_id": "5095708",
+     "name": "Creamy Pesto",
+     "recipe_id": "7728050",
      "description": "",
-     "ingredients": "pasta, marinara sauce, canola/olive oil blend",
+     "ingredients": "pesto sauce (basil, canola oil, parmesan cheese, olive oil, garlic, salt, lemon juice concentrate, natural flavor, xanthan gum, soy lecithin, chamomile extract, rosemary extract, white sauce (flour, butter, cream, milk powder, onion powder, white pepper, garlic, nutmeg, salt), parmesan cheese, parsley",
      "allergens": [
+      "MILK",
       "SOY",
       "WHEAT"
      ],
-     "trace_allergens": [
-      "EGG"
-     ],
+     "trace_allergens": [],
      "tags": [
+      "vegetarian"
+     ],
+     "order": 16
+    },
+    {
+     "name": "Marinara Sauce",
+     "recipe_id": "3612835",
+     "description": "",
+     "ingredients": "italian tomatoes, diced tomatoes, fresh onions, extra virgin olive oil, garlic, sea salt, oregano, black pepper",
+     "allergens": [
+      "SOY"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
       "vegan",
       "halal"
      ],
-     "order": 16
+     "order": 17
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -1481,7 +1496,7 @@
       "vegan",
       "halal"
      ],
-     "order": 17
+     "order": 18
     }
    ]
   },
@@ -4366,41 +4381,21 @@
      "order": 3
     },
     {
-     "name": "Sauteed Garlic Broccolini",
-     "recipe_id": "3770761",
+     "name": "Japchae Glass Noodles",
+     "recipe_id": "4806374",
      "description": "",
-     "ingredients": "broccolini, garlic, onion, canola/olive oil blend, salt",
-     "allergens": [],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
+     "ingredients": "sweet potato noodles, carrots, cabbage, onions, bell peppers, tamari, sesame oil, canola/olive oil blend, salt, sugar, garlic, pepper",
+     "allergens": [
       "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
+      "SOY"
      ],
-     "tags": [
-      "vegan"
-     ],
-     "order": 4
-    },
-    {
-     "name": "Steamed Japanese Rice",
-     "recipe_id": "SteaJapanRice1",
-     "description": "",
-     "ingredients": "Japanese short-grain rice, water",
-     "allergens": [],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
       "vegan",
       "halal"
      ],
-     "order": 5
+     "order": 4
     },
     {
      "name": "Japanese Potato Salad",
@@ -4416,7 +4411,7 @@
       "gluten-free",
       "halal"
      ],
-     "order": 6
+     "order": 5
     },
     {
      "name": "Soup of the Day",
@@ -4426,7 +4421,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 7
+     "order": 6
     },
     {
      "name": "Assorted Dinner Rolls",
@@ -4445,7 +4440,7 @@
       "vegetarian",
       "halal"
      ],
-     "order": 8
+     "order": 7
     },
     {
      "name": "Composed Salad",
@@ -4457,7 +4452,7 @@
      "tags": [
       "halal"
      ],
-     "order": 9
+     "order": 8
     },
     {
      "name": "Performance Bar",
@@ -4467,7 +4462,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 10
+     "order": 9
     },
     {
      "name": "Craveable Grains",
@@ -4481,7 +4476,7 @@
       "vegan",
       "halal"
      ],
-     "order": 11
+     "order": 10
     },
     {
      "name": "Flavor Forward Legumes",
@@ -4495,7 +4490,7 @@
       "vegan",
       "halal"
      ],
-     "order": 12
+     "order": 11
     },
     {
      "name": "Pasta Alfredo",
@@ -4513,7 +4508,7 @@
       "vegetarian",
       "halal"
      ],
-     "order": 13
+     "order": 12
     }
    ]
   },
