@@ -2377,6 +2377,42 @@
   "vessel": "plate",
   "written_at": "2026-09-26T20:19:36+00:00"
  },
+ "1d8b91ff05e3": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "bacon",
+   "ham",
+   "sausage",
+   "fish",
+   "shrimp",
+   "whole pie in pan"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a cut slice of quiche?",
+    "yes": true
+   },
+   {
+    "q": "Is there visible meat, bacon, or sausage in the quiche?",
+    "yes": false
+   },
+   {
+    "q": "Is the quiche a whole, uncut round pie?",
+    "yes": false
+   }
+  ],
+  "dish": "spinach and mushroom quiche",
+  "look": "thick square cut of baked savory quiche, golden layered puff pastry bottom, yellow custard filling generously studded with dark wilted spinach and sautéed brown mushroom slices, lightly browned melted vegan cheese top with toasted edges",
+  "model": "gemini-flash-latest",
+  "name": "Spinach & Mushroom Quiche Slab",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-05T10:42:43+00:00"
+ },
  "1dec12206c4e": {
   "avoid": [
    "squash soup",
@@ -2595,6 +2631,42 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T06:22:24+00:00"
+ },
+ "2036526025c6": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "cheese",
+   "pasta",
+   "rice",
+   "raw fennel"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food roasted fennel and mushrooms?",
+    "yes": true
+   },
+   {
+    "q": "Is there any meat or seafood on the plate?",
+    "yes": false
+   },
+   {
+    "q": "Do the vegetables look raw and uncooked?",
+    "yes": false
+   }
+  ],
+  "dish": "herb-roasted fennel and mushrooms",
+  "look": "roasted wedges of tender fennel bulb with caramelized edges, roasted whole and halved brown cremini mushrooms, glistening browned surfaces, scattered minced garlic bits, chopped green rosemary, thyme leaves, fresh parsley",
+  "model": "gemini-flash-latest",
+  "name": "Herb Roasted Fennel & Mushrooms",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-05T10:42:43+00:00"
  },
  "206c2e7a1875": {
   "avoid": [
@@ -6064,6 +6136,39 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T07:39:15+00:00"
  },
+ "45fe18a09ef5": {
+  "avoid": [
+   "beef",
+   "pork",
+   "chicken",
+   "sausage",
+   "shrimp",
+   "raw rice",
+   "platter"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food cooked rice?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat or sausage in the rice?",
+    "yes": false
+   },
+   {
+    "q": "Does the rice look raw or dry?",
+    "yes": false
+   }
+  ],
+  "dish": "Dirty Rice",
+  "look": "long-grain white rice, brownish-orange color, finely diced mushrooms, small bits of green bell pepper, diced celery, flecks of green parsley",
+  "model": "gemma-4-31b-it",
+  "name": "Carolina-Style Dirty Rice",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-05T10:51:19+00:00"
+ },
  "4622675fff94": {
   "avoid": [
    "chicken",
@@ -6309,6 +6414,40 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-30T20:39:41+00:00"
+ },
+ "47abe930ce6f": {
+  "avoid": [
+   "sandwich bun",
+   "slider bun",
+   "taco",
+   "tortilla",
+   "skewers",
+   "bone-in ribs",
+   "pulled pork",
+   "rice bowl"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item glazed pork belly?",
+    "yes": true
+   },
+   {
+    "q": "Is the pork served inside bread or a bun?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat shredded or pulled?",
+    "yes": false
+   }
+  ],
+  "dish": "mustard-molasses glazed pork belly",
+  "look": "thick-cut slab of roasted pork belly, dark amber glossy sticky molasses glaze, visible whole-grain mustard seeds, seared caramelized edges, distinct layers of succulent meat and tender rendered white fat, chopped fresh parsley garnish",
+  "model": "gemini-flash-latest",
+  "name": "Mustard Molasses Glazed Pork Belly",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-05T10:42:43+00:00"
  },
  "4809ffb083b5": {
   "avoid": [
@@ -9279,6 +9418,40 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T06:22:24+00:00"
  },
+ "73b84a420023": {
+  "avoid": [
+   "beef",
+   "pork",
+   "chicken",
+   "fish",
+   "shrimp",
+   "tortilla",
+   "taco",
+   "raw tofu"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item tofu?",
+    "yes": true
+   },
+   {
+    "q": "Is the main item meat?",
+    "yes": false
+   },
+   {
+    "q": "Is the tofu in a taco or wrap?",
+    "yes": false
+   }
+  ],
+  "dish": "Barbacoa Tofu",
+  "look": "cubed tofu, shredded texture, deep reddish-brown chipotle glaze, glossy sauce, small pieces of softened onion, moist surface",
+  "model": "gemma-4-31b-it",
+  "name": "Barbacoa Tofu",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-05T10:51:19+00:00"
+ },
  "73f3ade2bfb7": {
   "avoid": [
    "tacos",
@@ -11752,6 +11925,41 @@
   "vessel": "plate",
   "written_at": "2026-09-27T06:01:04+00:00"
  },
+ "93900c73e138": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "pasta",
+   "rice",
+   "raw grains"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food couscous?",
+    "yes": true
+   },
+   {
+    "q": "Is the main food rice or pasta?",
+    "yes": false
+   },
+   {
+    "q": "Are there pieces of meat in the dish?",
+    "yes": false
+   }
+  ],
+  "dish": "Herbed Couscous",
+  "look": "small granules of steamed couscous, pale yellow color, tiny diced red tomatoes, small orange carrot bits, translucent diced onions, chopped fresh parsley, mint leaves",
+  "model": "gemma-4-31b-it",
+  "name": "Herbed Couscous",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-05T10:51:19+00:00"
+ },
  "9447e7380ead": {
   "avoid": [
    "meatballs",
@@ -12535,6 +12743,40 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T04:50:08+00:00"
+ },
+ "9fbf83fc6102": {
+  "avoid": [
+   "ground beef",
+   "mince",
+   "steak",
+   "skewers",
+   "dry curry",
+   "naan",
+   "rice",
+   "chicken"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food tender cooked meat chunks in a rich dark gravy?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat ground or minced?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a dry grilled meat or skewer?",
+    "yes": false
+   }
+  ],
+  "dish": "beef nihari",
+  "look": "tender chunks of slow-cooked beef in a thick dark reddish-brown curry gravy, glistening rich broth, garnished with julienned fresh ginger, sliced green chilies, chopped fresh cilantro",
+  "model": "gemini-3.6-flash",
+  "name": "Beef Nihari",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-05T10:46:18+00:00"
  },
  "9fc7014a8431": {
   "avoid": [
@@ -13731,6 +13973,74 @@
   "vessel": "bowl",
   "written_at": "2026-10-01T10:36:25+00:00"
  },
+ "adbe86e4f624": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "bacon",
+   "fish",
+   "shrimp",
+   "mashed potatoes",
+   "french fries",
+   "whole casserole baking dish"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food a portion of layered potato gratin?",
+    "yes": true
+   },
+   {
+    "q": "Are the potatoes mashed into a puree?",
+    "yes": false
+   },
+   {
+    "q": "Are there pieces of meat or bacon mixed in or on top?",
+    "yes": false
+   }
+  ],
+  "dish": "potatoes au gratin",
+  "look": "square portion of scalloped potato gratin, closely layered tender thin slices of yukon gold potato, rich creamy white cheese sauce, bubbling golden-brown baked cheddar and parmesan top crust, tiny flecks of fresh green thyme",
+  "model": "gemini-flash-latest",
+  "name": "Pomme Gratin",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-05T10:42:43+00:00"
+ },
+ "adff4fbcba74": {
+  "avoid": [
+   "taco",
+   "tortilla",
+   "rice",
+   "beans",
+   "corn",
+   "raw beef"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item shredded meat?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat in a taco or wrap?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat ground or minced?",
+    "yes": false
+   }
+  ],
+  "dish": "Beef Barbacoa",
+  "look": "shredded beef, slow-cooked tender texture, dark brown meat, rich reddish-brown sauce, moist glistening surface, small bits of softened onion",
+  "model": "gemma-4-31b-it",
+  "name": "Beef Barbacoa",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-05T10:51:19+00:00"
+ },
  "ae77b32c45b7": {
   "avoid": [
    "meat",
@@ -14117,6 +14427,42 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-02T10:04:59+00:00"
+ },
+ "b21b97379996": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "bacon",
+   "chorizo",
+   "fish",
+   "shrimp",
+   "burrito",
+   "scrambled eggs"
+  ],
+  "checks": [
+   {
+    "q": "Is the main dish fried eggs served on tortillas with beans and salsa?",
+    "yes": true
+   },
+   {
+    "q": "Does the plate contain bacon, sausage, or meat?",
+    "yes": false
+   },
+   {
+    "q": "Are the eggs scrambled?",
+    "yes": false
+   }
+  ],
+  "dish": "huevos rancheros",
+  "look": "crispy warm corn tortillas topped with fried sunny-side-up eggs, bright liquid egg yolks, smooth refried beans, chunky red roasted salsa spooned over the top, fresh cilantro leaves garnish",
+  "model": "gemini-3.6-flash",
+  "name": "Huevos Rancheros",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-05T10:46:18+00:00"
  },
  "b25317f79275": {
   "avoid": [
@@ -18283,6 +18629,42 @@
   "vessel": "plate",
   "written_at": "2026-10-01T19:05:42+00:00"
  },
+ "e36668490315": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "coleslaw",
+   "soup",
+   "sauerkraut",
+   "raw cabbage"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food a charred cabbage wedge?",
+    "yes": true
+   },
+   {
+    "q": "Does the dish contain meat, chicken, or seafood?",
+    "yes": false
+   },
+   {
+    "q": "Is the cabbage cooked in a soup or liquid broth?",
+    "yes": false
+   }
+  ],
+  "dish": "charred cabbage with lemon and parsley",
+  "look": "a thick charred wedge of cabbage, prominent dark grill marks on outer leaves, tender translucent cooked layers, light lemon juice glaze, cracked black pepper, fresh chopped parsley garnish",
+  "model": "gemini-3.6-flash",
+  "name": "Lemony Charred Cabbage",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-05T10:46:18+00:00"
+ },
  "e3b9c5f2de7d": {
   "avoid": [
    "meat",
@@ -19509,6 +19891,41 @@
   "vessel": "plate",
   "written_at": "2026-10-03T07:52:08+00:00"
  },
+ "f05ddad1b1af": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "coleslaw",
+   "soup",
+   "raw cabbage"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food a roasted wedge of cabbage?",
+    "yes": true
+   },
+   {
+    "q": "Is there meat, chicken, pork, or seafood on the plate?",
+    "yes": false
+   },
+   {
+    "q": "Is the cabbage raw shredded coleslaw?",
+    "yes": false
+   }
+  ],
+  "dish": "mustard glazed roasted cabbage",
+  "look": "a thick roasted cabbage wedge, seared golden-brown caramelized outer edges, glossy mustard herb glaze coating, sprinkled with chopped fresh parsley and dried oregano flakes",
+  "model": "gemini-3.6-flash",
+  "name": "Herb Mustard Glazed Cabbage",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-05T10:46:18+00:00"
+ },
  "f06ba0b42af8": {
   "avoid": [
    "salmon",
@@ -19826,6 +20243,38 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-29T16:28:29+00:00"
+ },
+ "f459ceae3e6c": {
+  "avoid": [
+   "whole uncut quiche",
+   "pie tin",
+   "casserole pan",
+   "raw egg",
+   "salad",
+   "french fries"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food a cut slice of baked quiche?",
+    "yes": true
+   },
+   {
+    "q": "Is the quiche a whole, uncut pie?",
+    "yes": false
+   },
+   {
+    "q": "Is the egg custard runny or raw?",
+    "yes": false
+   }
+  ],
+  "dish": "bacon and sausage quiche",
+  "look": "thick rectangular slice of baked savory quiche, flaky golden-brown puff pastry crust along the base, tender pale-yellow egg custard, studded with browned pork sausage crumbles, crispy chopped bacon, wilted dark spinach leaves, sautéed sliced mushrooms, golden melted cheddar crust on top",
+  "model": "gemini-flash-latest",
+  "name": "Bacon Egg & Sausage Quiche Slab",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-05T10:42:43+00:00"
  },
  "f5e04336cbc3": {
   "avoid": [
