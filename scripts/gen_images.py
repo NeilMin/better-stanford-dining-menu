@@ -44,6 +44,8 @@ from bsdm.comfy import DEFAULT_URL, MODELS, ComfyClient, ComfyError, to_webp  # 
 from bsdm.llm import LLMError, Unavailable  # noqa: E402
 from bsdm.llm import pick as pick_llm  # noqa: E402
 from bsdm.pending import rank  # noqa: E402
+from bsdm.queue import load_queue  # noqa: E402
+
 
 IMAGES = ROOT / "data" / "images"
 CATALOG = ROOT / "data" / "dishes.json"
@@ -159,6 +161,8 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--limit", type=int, help="stop after N dishes")
     ap.add_argument("--only", help="substring match on the dish name, or =exact name")
     ap.add_argument("--force", action="store_true", help="redraw dishes that already have images")
+    ap.add_argument("--from-queue", nargs="?", const=str(ROOT / "data" / "redraw_queue.json"),
+                    help="Read dishes to redraw from redraw_queue.json and force regeneration")
     ap.add_argument("--retry-rejected", action="store_true",
                     help=f"also try dishes that failed {MAX_TRIES} runs running under the current brief rules")
     ap.add_argument("--redraw-stale", action="store_true",
@@ -190,11 +194,23 @@ def main(argv: list[str] | None = None) -> int:
     if args.audit and not args.judge:
         ap.error("--audit needs the judge")
 
+    queue_ids: set[str] | None = None
+    if args.from_queue:
+        q_path = Path(args.from_queue)
+        queue_items = load_queue(q_path)
+        if not queue_items:
+            print(f"Redraw queue at {q_path} is empty. Nothing to redraw.")
+            return 0
+        queue_ids = {item["id"] for item in queue_items if "id" in item}
+        args.force = True
+
     catalog = json.loads(CATALOG.read_text())
     IMAGES.mkdir(parents=True, exist_ok=True)
     pending = []
     for did, entry in sorted(catalog.items(), key=rank):
         if not entry.get("needs_image") or not entry.get("prompt"):
+            continue
+        if queue_ids is not None and did not in queue_ids:
             continue
         if entry.get("priority", 2) > args.max_priority:
             continue
