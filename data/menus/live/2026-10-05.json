@@ -1,6 +1,6 @@
 {
  "date": "2026-10-05",
- "scraped_at": "2026-10-05T03:34:10-07:00",
+ "scraped_at": "2026-10-05T15:03:21-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -723,6 +723,7 @@
      "description": "",
      "ingredients": "unbleached wheat flour, malted barley flour, sour culture, salt, yeast, sesame seeds, amaranth, poppy seeds, whole wheat flour, dark rye flour, malt powder, honey, extra virgin olive oil, semolina, wheat germ",
      "allergens": [
+      "MILK",
       "SESAME",
       "WHEAT"
      ],
@@ -1122,11 +1123,13 @@
      "order": 3
     },
     {
-     "name": "Caramelized Onions & Peppers",
-     "recipe_id": "4466498",
+     "name": "Sauteed Peppers & Onions",
+     "recipe_id": "5181608",
      "description": "",
-     "ingredients": "onions, bell peppers, canola/olive oil blend, salt",
-     "allergens": [],
+     "ingredients": "bell peppers, onions, soybean oil, canola/olive oil blend",
+     "allergens": [
+      "SOY"
+     ],
      "trace_allergens": [
       "COCONUT",
       "EGG",
@@ -1135,12 +1138,12 @@
       "PEANUTS",
       "SESAME",
       "SHELLFISH",
-      "SOY",
       "TREENUTS",
       "WHEAT"
      ],
      "tags": [
-      "vegan"
+      "vegan",
+      "halal"
      ],
      "order": 4
     },
@@ -1191,43 +1194,19 @@
      "order": 7
     },
     {
-     "name": "Grilled Vegan/Vegetarian",
-     "recipe_id": "13468741",
+     "name": "Chicken Philly Sandwich",
+     "recipe_id": "01",
      "description": "",
-     "ingredients": "chef's choice grilled vegan OR vegetarian option",
-     "allergens": [],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
-     ],
-     "tags": [
-      "halal"
-     ],
-     "order": 8
-    },
-    {
-     "name": "Handmade Pizza",
-     "recipe_id": "afdcpizza2",
-     "description": "",
-     "ingredients": "wheat flour, yeast, sugar, olive oil, mozzarella cheese, marinara sauce",
+     "ingredients": "Bread Roll, ( Wheat Flour, yeast, Sea Salt, All Purpose Flour), Sliced Chicken, Sliced Onion, Red and Green Bell Pepper, Cheese, Garlic, Salt and Pepper",
      "allergens": [
+      "EGG",
       "MILK",
-      "WHEAT"
+      "WHEAT",
+      "TRACEALLERGENS"
      ],
      "trace_allergens": [],
-     "tags": [
-      "vegetarian",
-      "halal"
-     ],
-     "order": 9
+     "tags": [],
+     "order": 8
     },
     {
      "name": "Panini Station",
@@ -1245,17 +1224,22 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 10
+     "order": 9
     },
     {
-     "name": "Soup of the Day",
-     "recipe_id": "SoupoftheDay",
+     "name": "Chicken Noodle Soup",
+     "recipe_id": "MollyChxNoodleSoup1",
      "description": "",
-     "ingredients": "chef's choice soup of the day",
-     "allergens": [],
+     "ingredients": "chicken stock, chicken meat, carrots, celery, enriched egg noodles, peas, onions, modified food starch, bleached enriched flour, salt, chicken fat, yeast extract, sugar, chicken meat including chicken juices, maltodextrin, water, vegetables (celery, onions, carrots), dehydrated whey (milk), garlic, soy protein isolate, spices, turmeric, cornstarch, beta carotene, dehydrated chicken, citric acid",
+     "allergens": [
+      "EGG",
+      "MILK",
+      "SOY",
+      "WHEAT"
+     ],
      "trace_allergens": [],
      "tags": [],
-     "order": 11
+     "order": 10
     },
     {
      "name": "Composed Salad",
@@ -1267,7 +1251,7 @@
      "tags": [
       "halal"
      ],
-     "order": 12
+     "order": 11
     },
     {
      "name": "Performance Bar",
@@ -1277,7 +1261,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 13
+     "order": 12
     },
     {
      "name": "Craveable Grains",
@@ -1291,7 +1275,7 @@
       "vegan",
       "halal"
      ],
-     "order": 14
+     "order": 13
     },
     {
      "name": "Flavor Forward Legumes",
@@ -1305,42 +1289,39 @@
       "vegan",
       "halal"
      ],
+     "order": 14
+    },
+    {
+     "name": "Marinara Sauce",
+     "recipe_id": "4079962",
+     "description": "",
+     "ingredients": "tomatoes, tomato paste, soybean oil, sugar, salt, onion, garlic, spices, citric acid, natural flavor",
+     "allergens": [
+      "SOY"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan",
+      "halal"
+     ],
      "order": 15
     },
     {
-     "name": "Marinara Cheese Ravioli",
-     "recipe_id": "3581918",
+     "name": "Creamy Pesto",
+     "recipe_id": "7728050",
      "description": "",
-     "ingredients": "ravioli, marinara sauce, parmesan cheese",
+     "ingredients": "pesto sauce (basil, canola oil, parmesan cheese, olive oil, garlic, salt, lemon juice concentrate, natural flavor, xanthan gum, soy lecithin, chamomile extract, rosemary extract, white sauce (flour, butter, cream, milk powder, onion powder, white pepper, garlic, nutmeg, salt), parmesan cheese, parsley",
      "allergens": [
-      "EGG",
       "MILK",
       "SOY",
       "WHEAT"
      ],
      "trace_allergens": [],
      "tags": [
-      "vegetarian",
-      "halal"
+      "vegetarian"
      ],
      "order": 16
-    },
-    {
-     "name": "Pesto Sauce",
-     "recipe_id": "6128910",
-     "description": "",
-     "ingredients": "basil, canola oil, parmesan cheese (milk, bacterial culture, salt, microbial enzymes, extra virgin olive oil, garlic, salt, lemon juice concentrate, natural flavor, ascorbic acid, xanthan gum, soy lecithin, chamomile extract, rosemary extract)",
-     "allergens": [
-      "MILK",
-      "SOY"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegetarian",
-      "halal"
-     ],
-     "order": 17
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -1354,16 +1335,18 @@
       "vegan",
       "halal"
      ],
-     "order": 18
+     "order": 17
     }
    ],
    "Dinner": [
     {
-     "name": "Harissa Braised Chicken",
-     "recipe_id": "4344621",
+     "name": "Grilled Chicken",
+     "recipe_id": "5816331",
      "description": "",
-     "ingredients": "chicken, tomatoes, harissa paste, olives, oranges, onions, celery, lemon, garlic, canola/olive oil blend, parsley, baharat spice (onion powder, coriander, cumin, garlic, paprika, cardamom seed, pepper, cloves, salt, cinnamon, nutmeg), mint, parsley, salt",
-     "allergens": [],
+     "ingredients": "chicken, olive oil, salt, pepper",
+     "allergens": [
+      "TRACEALLERGENS"
+     ],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
@@ -1428,10 +1411,10 @@
      "order": 4
     },
     {
-     "name": "Moroccan Roasted Potatoes",
-     "recipe_id": "MorrRoastPots1",
+     "name": "Roasted Squash",
+     "recipe_id": "3571714",
      "description": "",
-     "ingredients": "potatoes, garlic, cumin, paprika, coriander, turmeric, parsley, lemon juice, olive/canola oil blend, salt, black pepper",
+     "ingredients": "zucchini, squash, olive oil, thyme, salt, pepper",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -1472,16 +1455,16 @@
      "order": 7
     },
     {
-     "name": "Mashed Potatoes",
-     "recipe_id": "4055591",
+     "name": "Scalloped Potatoes",
+     "recipe_id": "6621610",
      "description": "",
-     "ingredients": "dehydrated mashed potato pearls, cream, whole milk, butter, salt, pepper",
+     "ingredients": "sliced potatoes, whole milk, fontina, parmesan, monterey jack cheese, nutmeg, thyme, bay leaf, white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt)",
      "allergens": [
-      "MILK"
+      "MILK",
+      "WHEAT"
      ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
       "vegetarian",
       "halal"
      ],
@@ -1493,6 +1476,7 @@
      "description": "",
      "ingredients": "unbleached wheat flour, malted barley flour, sour culture, salt, yeast, sesame seeds, amaranth, poppy seeds, whole wheat flour, dark rye flour, malt powder, honey, extra virgin olive oil, semolina, wheat germ",
      "allergens": [
+      "MILK",
       "SESAME",
       "WHEAT"
      ],
@@ -1507,11 +1491,16 @@
      "order": 9
     },
     {
-     "name": "Soup of the Day",
-     "recipe_id": "SoupoftheDay",
+     "name": "Boston Clam Chowder",
+     "recipe_id": "4055703",
      "description": "",
-     "ingredients": "chef's choice soup of the day",
-     "allergens": [],
+     "ingredients": "potatoes, clams, clam juice, food starch, celery, soybean oil, margarine, and salt",
+     "allergens": [
+      "FISH",
+      "SHELLFISH",
+      "SOY",
+      "WHEAT"
+     ],
      "trace_allergens": [],
      "tags": [],
      "order": 10
@@ -1522,6 +1511,7 @@
      "description": "",
      "ingredients": "unbleached wheat flour, malted barley flour, sour culture, salt, yeast, sesame seeds, amaranth, poppy seeds, whole wheat flour, dark rye flour, malt powder, honey, extra virgin olive oil, semolina, wheat germ",
      "allergens": [
+      "MILK",
       "SESAME",
       "WHEAT"
      ],
@@ -1586,37 +1576,34 @@
      "order": 15
     },
     {
-     "name": "Marinara Cheese Ravioli",
-     "recipe_id": "3581918",
+     "name": "Marinara Sauce",
+     "recipe_id": "4079962",
      "description": "",
-     "ingredients": "ravioli, marinara sauce, parmesan cheese",
+     "ingredients": "tomatoes, tomato paste, soybean oil, sugar, salt, onion, garlic, spices, citric acid, natural flavor",
      "allergens": [
-      "EGG",
+      "SOY"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan",
+      "halal"
+     ],
+     "order": 16
+    },
+    {
+     "name": "Creamy Pesto",
+     "recipe_id": "7728050",
+     "description": "",
+     "ingredients": "pesto sauce (basil, canola oil, parmesan cheese, olive oil, garlic, salt, lemon juice concentrate, natural flavor, xanthan gum, soy lecithin, chamomile extract, rosemary extract, white sauce (flour, butter, cream, milk powder, onion powder, white pepper, garlic, nutmeg, salt), parmesan cheese, parsley",
+     "allergens": [
       "MILK",
       "SOY",
       "WHEAT"
      ],
      "trace_allergens": [],
      "tags": [
-      "vegetarian",
-      "halal"
-     ],
-     "order": 16
-    },
-    {
-     "name": "Pesto Sauce",
-     "recipe_id": "6128910",
-     "description": "",
-     "ingredients": "basil, canola oil, parmesan cheese (milk, bacterial culture, salt, microbial enzymes, extra virgin olive oil, garlic, salt, lemon juice concentrate, natural flavor, ascorbic acid, xanthan gum, soy lecithin, chamomile extract, rosemary extract)",
-     "allergens": [
-      "MILK",
-      "SOY"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegetarian",
-      "halal"
+      "vegetarian"
      ],
      "order": 17
     },
@@ -2374,6 +2361,7 @@
      "description": "",
      "ingredients": "unbleached wheat flour, malted barley flour, sour culture, salt, yeast, sesame seeds, amaranth, poppy seeds, whole wheat flour, dark rye flour, malt powder, honey, extra virgin olive oil, semolina, wheat germ",
      "allergens": [
+      "MILK",
       "SESAME",
       "WHEAT"
      ],
@@ -3083,6 +3071,7 @@
      "description": "",
      "ingredients": "unbleached wheat flour, malted barley flour, sour culture, salt, yeast, sesame seeds, amaranth, poppy seeds, whole wheat flour, dark rye flour, malt powder, honey, extra virgin olive oil, semolina, wheat germ",
      "allergens": [
+      "MILK",
       "SESAME",
       "WHEAT"
      ],
@@ -3918,6 +3907,7 @@
      "description": "",
      "ingredients": "unbleached wheat flour, malted barley flour, sour culture, salt, yeast, sesame seeds, amaranth, poppy seeds, whole wheat flour, dark rye flour, malt powder, honey, extra virgin olive oil, semolina, wheat germ",
      "allergens": [
+      "MILK",
       "SESAME",
       "WHEAT"
      ],
@@ -4398,29 +4388,31 @@
      "order": 7
     },
     {
-     "name": "Soup of the Day",
-     "recipe_id": "SoupoftheDay",
+     "name": "Hearty Minestrone",
+     "recipe_id": "4633186",
      "description": "",
-     "ingredients": "chef's choice soup of the day",
-     "allergens": [],
+     "ingredients": "tomato puree, diced tomatoes in tomato juice, potatoes, kidney beans, carrots, green beans, celery, garbanzo beans, zucchini, peas, spinach, pasta, modified food starch, salt, parmesan cheese, gelatin, yeast extract, flour, flavoring, beef stock, spices, corn oil, canola oil, garlic, disodium inosinate, disodium guanylate, dextrose",
+     "allergens": [
+      "EGG",
+      "MILK",
+      "WHEAT"
+     ],
      "trace_allergens": [],
      "tags": [],
      "order": 8
     },
     {
-     "name": "Southwestern Ranch Salad",
-     "recipe_id": "4041962",
+     "name": "Strawberry Fields Salad",
+     "recipe_id": "5505758",
      "description": "",
-     "ingredients": "romaine lettuce, black beans, corn, black olives, cherry tomatoes, bell peppers, corn tortilla chips, cheese, cilantro, ranch dressing (soybean oil, vinegar, buttermilk, sugar, egg yolks, salt, food starch, whey, xanthan gum, garlic, onions, spice)",
+     "ingredients": "kale, strawberries, salt, pepper, balsamic vinaigrette (balsamic vinegar [wine vinegar, grape juice], vegetable oil [soybean oil, canola oil, and/or olive oil], sugar, salt, garlic, dijon mustard [vinegar, mustard seed, salt, white wine, fruit pectin, spice], xanthan gum, mustard flour, parsley, artificial flavor)",
      "allergens": [
-      "EGG",
-      "MILK",
       "SOY"
      ],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
-      "vegetarian"
+      "vegan"
      ],
      "order": 9
     },
@@ -4463,20 +4455,18 @@
      "order": 12
     },
     {
-     "name": "Pasta Pesto",
-     "recipe_id": "3857040",
+     "name": "Alfredo Sauce",
+     "recipe_id": "5681078",
      "description": "",
-     "ingredients": "pasta, pesto sauce (basil, canola oil, parmesan cheese, extra virgin olive oil, garlic, lemon juice concentrate, natural flavor, ascorbic acid, xanthan gum, soy lecithin, chamomile extract, rosemary extract, salt)",
+     "ingredients": "cream, onion, milk powder, butter, parmesan cheese, flour, garlic, nutmeg, onion powder, salt",
      "allergens": [
       "MILK",
-      "SOY",
       "WHEAT"
      ],
-     "trace_allergens": [
-      "EGG"
-     ],
+     "trace_allergens": [],
      "tags": [
-      "vegetarian"
+      "vegetarian",
+      "halal"
      ],
      "order": 13
     }
@@ -4613,6 +4603,7 @@
      "description": "",
      "ingredients": "unbleached wheat flour, malted barley flour, sour culture, salt, yeast, sesame seeds, amaranth, poppy seeds, whole wheat flour, dark rye flour, malt powder, honey, extra virgin olive oil, semolina, wheat germ",
      "allergens": [
+      "MILK",
       "SESAME",
       "WHEAT"
      ],
@@ -5412,6 +5403,7 @@
      "description": "",
      "ingredients": "unbleached wheat flour, malted barley flour, sour culture, salt, yeast, sesame seeds, amaranth, poppy seeds, whole wheat flour, dark rye flour, malt powder, honey, extra virgin olive oil, semolina, wheat germ",
      "allergens": [
+      "MILK",
       "SESAME",
       "WHEAT"
      ],
