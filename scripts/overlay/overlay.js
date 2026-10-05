@@ -95,6 +95,10 @@
     }
 
     const isSelected = queueMap.has(info.id);
+    const stateStr = isSelected ? "selected" : "unselected";
+    if (btn.dataset.state === stateStr) return;
+    btn.dataset.state = stateStr;
+
     if (isSelected) {
       card.classList.add("card-redraw-active");
       btn.classList.add("is-selected");
@@ -170,23 +174,29 @@
         if (count === 0) {
           listEl.innerHTML = '<div style="padding: 12px; color: #64748b; text-align: center;">暂无选中菜品，点击卡片右上角“重画”添加</div>';
         } else {
-          listEl.innerHTML = Array.from(queueMap.values())
-            .map(
-              (item) => `
-            <div class="redraw-drawer-item">
-              <span class="redraw-drawer-item-title" title="${item.name}">${item.name}</span>
-              <button class="redraw-drawer-item-remove" data-id="${item.id}" title="移除">×</button>
-            </div>
-          `
-            )
-            .join("");
+          listEl.replaceChildren();
+          Array.from(queueMap.values()).forEach((item) => {
+            const itemEl = document.createElement("div");
+            itemEl.className = "redraw-drawer-item";
 
-          listEl.querySelectorAll(".redraw-drawer-item-remove").forEach((btn) => {
-            btn.addEventListener("click", (e) => {
-              const id = e.currentTarget.getAttribute("data-id");
-              const item = queueMap.get(id);
-              if (item) toggleDishOnServer(item);
+            const titleEl = document.createElement("span");
+            titleEl.className = "redraw-drawer-item-title";
+            titleEl.title = item.name;
+            titleEl.textContent = item.name;
+
+            const removeBtn = document.createElement("button");
+            removeBtn.type = "button";
+            removeBtn.className = "redraw-drawer-item-remove";
+            removeBtn.title = "移除";
+            removeBtn.textContent = "×";
+            removeBtn.dataset.id = item.id;
+            removeBtn.addEventListener("click", () => {
+              toggleDishOnServer(item);
             });
+
+            itemEl.appendChild(titleEl);
+            itemEl.appendChild(removeBtn);
+            listEl.appendChild(itemEl);
           });
         }
       }
@@ -197,15 +207,18 @@
     createDock();
     fetchQueue();
 
-    // Observe board updates when user switches date/meal/halls
-    const observer = new MutationObserver(() => {
-      syncAllCards();
-    });
     const board = document.getElementById("board") || document.body;
-    observer.observe(board, { childList: true, subtree: true });
+    const observer = new MutationObserver(() => {
+      observer.disconnect();
+      syncAllCards();
+      observer.observe(board, { childList: true, subtree: true });
+    });
 
     // Initial sync
     syncAllCards();
+
+    // Observe board updates when user switches date/meal/halls
+    observer.observe(board, { childList: true, subtree: true });
   }
 
   if (document.readyState === "loading") {

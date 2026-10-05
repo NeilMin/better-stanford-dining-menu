@@ -22,8 +22,10 @@ def test_overlay_files_exist():
 
     assert "fetch('/api/redraw-queue'" in js_text
     assert "stopPropagation" in js_text
+    assert "dataset.state" in js_text
 
 
+@pytest.mark.node
 def test_overlay_js_syntax():
     node = shutil.which("node")
     if not node:
