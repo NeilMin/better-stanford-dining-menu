@@ -1,0 +1,191 @@
+/* Local Redraw Selection Overlay Styles (Zero-Leak Dev Tool) */
+
+.card {
+  position: relative;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+/* Card active/selected state */
+.card.card-redraw-active {
+  outline: 3px solid #e11d48 !important;
+  outline-offset: -1px;
+  box-shadow: 0 0 16px rgba(225, 29, 72, 0.45) !important;
+}
+
+/* Corner toggle button */
+.btn-redraw-toggle {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 10;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 9999px;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  color: #f8fafc;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.12s ease, background 0.15s ease, border-color 0.15s ease;
+  line-height: 1;
+}
+
+.btn-redraw-toggle:hover {
+  transform: scale(1.06);
+  background: rgba(15, 23, 42, 0.9);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-redraw-toggle.is-selected {
+  background: #e11d48;
+  border-color: #fda4af;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(225, 29, 72, 0.5);
+}
+
+.btn-redraw-toggle svg {
+  width: 12px;
+  height: 12px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Floating dock at bottom-right */
+#bsdm-redraw-dock {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.redraw-dock-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  border-radius: 9999px;
+  background: #0f172a;
+  color: #f8fafc;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  border: 1px solid #334155;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.redraw-dock-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #f43f5e;
+  font-weight: 700;
+}
+
+.redraw-dock-count.has-items {
+  color: #fb7185;
+}
+
+.redraw-dock-btn {
+  background: #1e293b;
+  color: #e2e8f0;
+  border: 1px solid #475569;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.redraw-dock-btn:hover {
+  background: #334155;
+  color: #ffffff;
+}
+
+.redraw-dock-btn.btn-clear {
+  color: #94a3b8;
+}
+
+.redraw-dock-btn.btn-clear:hover {
+  background: #475569;
+  color: #fca5a5;
+}
+
+/* Drawer modal for reviewing selected items */
+.redraw-drawer {
+  width: 320px;
+  max-height: 400px;
+  margin-bottom: 10px;
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  color: #f8fafc;
+}
+
+.redraw-drawer.is-open {
+  display: flex;
+}
+
+.redraw-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-bottom: 1px solid #1e293b;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.redraw-drawer-list {
+  padding: 8px 12px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.redraw-drawer-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 8px;
+  background: #1e293b;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.redraw-drawer-item-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 220px;
+}
+
+.redraw-drawer-item-remove {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 2px 6px;
+  font-size: 14px;
+}
+
+.redraw-drawer-item-remove:hover {
+  color: #f43f5e;
+}
