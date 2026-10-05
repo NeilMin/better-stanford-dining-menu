@@ -42,7 +42,7 @@ catalog:                   ## re-derive data/dishes.json after tuning classifica
 	$(PY) scripts/build_site.py
 
 serve: site                ## preview at http://127.0.0.1:8777
-	@cd site && python3 -m http.server 8777 --bind 127.0.0.1
+	$(PY) scripts/serve.py
 
 hours-diff:                ## show how the R&DE hours page changed
 	$(PY) scripts/update.py --show-hours-diff
