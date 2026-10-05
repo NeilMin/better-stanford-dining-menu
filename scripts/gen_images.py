@@ -346,7 +346,13 @@ def main(argv: list[str] | None = None) -> int:
                     continue
             brief = briefs.get(did)
 
-            base_seed = args.seed if args.seed is not None else seed_for(did, entry)
+            if args.seed is not None:
+                base_seed = args.seed
+            elif queue_ids is not None and did in queue_ids:
+                stored = entry.get("seed")
+                base_seed = ((int(stored) + 7919 * 7 + 1) % 2**32) if stored is not None else seed_for(did, entry)
+            else:
+                base_seed = seed_for(did, entry)
             kept = None
             verdicts: list[dict] = []
             secs = 0.0
