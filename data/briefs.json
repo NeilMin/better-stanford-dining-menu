@@ -579,6 +579,42 @@
   "vessel": "bowl",
   "written_at": "2026-09-26T20:19:27+00:00"
  },
+ "07b77d580d7e": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "folded taco",
+   "soft tortilla",
+   "burrito",
+   "nacho chips"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish served on a flat, crisp tostada shell?",
+    "yes": true
+   },
+   {
+    "q": "Is the main topping shredded poultry or meat?",
+    "yes": false
+   },
+   {
+    "q": "Is the tortilla folded or rolled like a taco or burrito?",
+    "yes": false
+   }
+  ],
+  "dish": "mushroom tinga tostada",
+  "look": "crisp flat round corn tostada, spread of smooth refried beans, shredded mushrooms in smoky red-orange chipotle sauce, thinly sliced fresh avocado fans, thin drizzle of white crema",
+  "model": "gemini-flash-latest",
+  "name": "Tostada De Tinga De Hongos",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-05T00:45:03+00:00"
+ },
  "07f725616cbb": {
   "avoid": [
    "rice and peas",
@@ -5557,18 +5593,16 @@
  },
  "3eeb924e71d6": {
   "avoid": [
+   "meat chunks",
+   "beef cubes",
+   "cubed meat",
+   "steak chunks",
+   "beef",
    "meat",
    "chicken",
-   "beef",
    "pork",
    "fish",
-   "shrimp",
-   "green peas",
-   "legumes",
-   "parsley garnish",
-   "thin soup broth",
-   "noodles",
-   "rice"
+   "parsley garnish"
   ],
   "checks": [
    {
@@ -5584,14 +5618,14 @@
     "yes": false
    }
   ],
-  "dish": "vegetarian beef stew",
-  "look": "thick dark reddish-brown savory stew gravy, textured soy protein beefless crumbles, tender diced orange carrots, sliced green celery ribs, translucent diced onions, diced stewed red tomatoes, hearty thick vegetable stew",
-  "model": "gemini-3.7-flash",
+  "dish": "vegan ground beef stew",
+  "look": "small textured soy protein crumbles, finely crumbled plant-based mince, tender diced orange carrots, sliced green celery, translucent diced onions, crushed red stewed tomatoes, thick rich reddish-brown tomato-based savory stew gravy",
+  "model": "gemini-flash-latest",
   "name": "Plant-Forward Gardein \"Beef\" Stew",
   "rev": 6,
-  "revisions": 1,
+  "revisions": 2,
   "vessel": "bowl",
-  "written_at": "2026-10-04T19:43:54+00:00"
+  "written_at": "2026-10-05T00:03:49+00:00"
  },
  "3f271136568b": {
   "avoid": [
@@ -13247,6 +13281,42 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-10-03T07:52:08+00:00"
+ },
+ "a832d0743861": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "fried rice",
+   "brown rice",
+   "mixed vegetables",
+   "side dishes"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food cooked white rice?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat, chicken, or seafood visible?",
+    "yes": false
+   },
+   {
+    "q": "Is the rice stir-fried with vegetables or eggs like fried rice?",
+    "yes": false
+   }
+  ],
+  "dish": "butter rice",
+  "look": "mound of fluffy steamed white rice, glossy melted butter sheen, small melting pat of yellow butter resting on top, soft distinct grains, glistening surface",
+  "model": "gemini-flash-latest",
+  "name": "Butter Rice",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-05T00:45:03+00:00"
  },
  "a8b9b1a7939d": {
   "avoid": [
