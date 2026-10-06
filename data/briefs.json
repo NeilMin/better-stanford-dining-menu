@@ -888,6 +888,42 @@
   "vessel": "plate",
   "written_at": "2026-09-27T04:53:30+00:00"
  },
+ "0cfb2b304b0b": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "raw salad",
+   "creamy coleslaw dressing",
+   "mayonnaise",
+   "noodles"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food cooked shredded cabbage and carrots?",
+    "yes": true
+   },
+   {
+    "q": "Is there meat or seafood in the dish?",
+    "yes": false
+   },
+   {
+    "q": "Is the cabbage coated in a thick creamy white dressing?",
+    "yes": false
+   }
+  ],
+  "dish": "sautéed cabbage and carrots",
+  "look": "tender sautéed shredded green cabbage, julienned orange carrot strips, light brown soy glaze, sliced scallions, scattered toasted white sesame seeds",
+  "model": "gemini-3.7-flash",
+  "name": "Sesame Cabbage & Carrots",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-06T10:40:34+00:00"
+ },
  "0d4eca9c6cb3": {
   "avoid": [
    "meat",
@@ -1130,6 +1166,42 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-01T19:05:42+00:00"
+ },
+ "119fe7a4a3ae": {
+  "avoid": [
+   "meat",
+   "beef",
+   "chicken",
+   "pork",
+   "fish",
+   "shrimp",
+   "raw tofu",
+   "white uncooked tofu",
+   "noodles",
+   "rice"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item glazed or stir-fried tofu?",
+    "yes": true
+   },
+   {
+    "q": "Is there meat, poultry, or seafood in the dish?",
+    "yes": false
+   },
+   {
+    "q": "Is the tofu plain white and uncooked?",
+    "yes": false
+   }
+  ],
+  "dish": "Mongolian tofu",
+  "look": "crispy golden-brown tofu cubes, dark glossy savory soy glaze coating, tender sliced yellow onions, long cut green scallions, scattered red pepper flakes",
+  "model": "gemini-3.7-flash",
+  "name": "Mongolian Tofu",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-06T10:40:34+00:00"
  },
  "12460b3d8498": {
   "avoid": [
@@ -4082,6 +4154,42 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T04:27:22+00:00"
+ },
+ "30f2ca6650be": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "tortillas",
+   "wrap",
+   "tacos",
+   "melted cheese"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish composed of sliced cooked bell peppers and onions?",
+    "yes": true
+   },
+   {
+    "q": "Is there meat or poultry mixed into the vegetables?",
+    "yes": false
+   },
+   {
+    "q": "Are the vegetables served inside a tortilla or flatbread wrap?",
+    "yes": false
+   }
+  ],
+  "dish": "fajita peppers and onions",
+  "look": "charred sliced red bell peppers, charred green bell peppers, tender yellow bell pepper strips, caramelized sliced yellow onions, blackened grill marks, glossy sheen",
+  "model": "gemini-3.7-flash",
+  "name": "Grilled Peppers & Onions",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-06T10:40:34+00:00"
  },
  "30fe93f67618": {
   "avoid": [
@@ -7883,6 +7991,40 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T05:03:54+00:00"
+ },
+ "58633bcdf2dc": {
+  "avoid": [
+   "liquid cheese sauce",
+   "nacho cheese",
+   "bacon bits",
+   "meat",
+   "ketchup",
+   "burger",
+   "gravy",
+   "poutine curd"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a pile of seasoned french fries?",
+    "yes": true
+   },
+   {
+    "q": "Are the fries smothered in liquid cheese sauce or gravy?",
+    "yes": false
+   },
+   {
+    "q": "Is there meat or bacon topping the fries?",
+    "yes": false
+   }
+  ],
+  "dish": "garlic parmesan fries",
+  "look": "a mound of golden-brown crispy cut french fries, coating of finely grated white parmesan cheese, minced roasted garlic bits, flecks of chopped green parsley",
+  "model": "gemini-3.7-flash",
+  "name": "Garlic Parmesan Fries",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-06T10:40:34+00:00"
  },
  "592169116562": {
   "avoid": [
@@ -13394,6 +13536,42 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T07:30:19+00:00"
+ },
+ "a4eb9b2967ad": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "steak",
+   "pork",
+   "fish",
+   "shrimp",
+   "cream sauce",
+   "pasta",
+   "raw mushrooms"
+  ],
+  "checks": [
+   {
+    "q": "Is the main dish cooked browned mushrooms?",
+    "yes": true
+   },
+   {
+    "q": "Is there a steak or cut of meat under or next to the mushrooms?",
+    "yes": false
+   },
+   {
+    "q": "Are the mushrooms raw and unbrowned?",
+    "yes": false
+   }
+  ],
+  "dish": "caramelized mushrooms",
+  "look": "thick sliced button and cremini mushrooms, deep caramelized dark-brown edges, glossy browned surface, minced garlic, sprinkle of tiny green thyme leaves",
+  "model": "gemini-3.7-flash",
+  "name": "Caramelized Mushrooms",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-06T10:40:34+00:00"
  },
  "a53af3df10dd": {
   "avoid": [
