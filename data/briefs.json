@@ -3051,6 +3051,41 @@
   "vessel": "bowl",
   "written_at": "2026-09-29T16:49:13+00:00"
  },
+ "240f4f014226": {
+  "avoid": [
+   "tortilla",
+   "tacos",
+   "burrito",
+   "fajitas",
+   "ground meat",
+   "skewers",
+   "raw beef",
+   "rice",
+   "beans"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item sliced grilled meat?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat wrapped inside a tortilla, taco, or burrito?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat ground or crumbled like mince?",
+    "yes": false
+   }
+  ],
+  "dish": "carne asada",
+  "look": "sliced grilled skirt steak, dark charred grill marks, seared mahogany crust, tender pink medium-rare center, garnished with minced fresh cilantro, fresh lime wedge on the side",
+  "model": "gemini-3.6-flash",
+  "name": "Carne Asada",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-06T20:37:40+00:00"
+ },
  "244c70d82884": {
   "avoid": [
    "rice and peas",
@@ -14930,6 +14965,41 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T05:36:06+00:00"
+ },
+ "b3e9d632d351": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "marshmallows",
+   "whole sweet potatoes",
+   "french fries"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish smooth mashed orange yams?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat, chicken, or fish in or on the dish?",
+    "yes": false
+   },
+   {
+    "q": "Are the yams whole or sliced instead of mashed?",
+    "yes": false
+   }
+  ],
+  "dish": "mashed sweet potatoes",
+  "look": "creamy smooth mashed bright orange sweet potatoes, soft whipped texture, small well filled with melted golden butter, glossy drizzle of amber maple syrup, light sprinkle of ground cayenne pepper",
+  "model": "gemini-3.6-flash",
+  "name": "Smoked Mashed Yams",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-06T20:37:40+00:00"
  },
  "b3ea7da0ce10": {
   "avoid": [
