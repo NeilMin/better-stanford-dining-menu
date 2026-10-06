@@ -1,6 +1,6 @@
 {
  "date": "2026-10-10",
- "scraped_at": "2026-10-06T03:26:10-07:00",
+ "scraped_at": "2026-10-06T13:22:05-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -3733,28 +3733,48 @@
      "order": 2
     },
     {
-     "name": "Hard Boiled Eggs",
-     "recipe_id": "2612705",
+     "name": "Breakfast Taco Bar",
+     "recipe_id": "3200778",
      "description": "",
-     "ingredients": "eggs",
+     "ingredients": "",
      "allergens": [
-      "EGG"
+      "EGG",
+      "MILK"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "COCONUT",
+      "FISH",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "SOY",
+      "TREENUTS",
+      "WHEAT"
+     ],
      "tags": [
-      "gluten-free",
-      "vegetarian",
-      "halal"
+      "vegetarian"
      ],
      "order": 3
     },
     {
-     "name": "Chef's Choice Egg Special",
-     "recipe_id": "ChefsChoiceEgg",
+     "name": "Open Faced Breakfast Sandwich",
+     "recipe_id": "4887015",
      "description": "",
-     "ingredients": "Please refer to dining hall chef or manager for ingredient and allergen information",
-     "allergens": [],
-     "trace_allergens": [],
+     "ingredients": "english muffin, eggs, spinach, tomato, roasted red salsa (tomatoes, chipotle peppers, adobo sauce, garlic, canola/olive oil blend, salt), salt, pepper",
+     "allergens": [
+      "EGG",
+      "MILK",
+      "SOY",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "COCONUT",
+      "FISH",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "TREENUTS"
+     ],
      "tags": [
       "vegetarian"
      ],
@@ -3773,10 +3793,10 @@
      "order": 5
     },
     {
-     "name": "Hash Brown Patty",
-     "recipe_id": "6350846",
+     "name": "Breakfast Potatoes",
+     "recipe_id": "3829817",
      "description": "",
-     "ingredients": "potatoes, oil (canola oil, corn oil, cottonseed oil, palm oil, soybean oil, or sunflower oil), salt, onion powder, natural flavor, dextrose, disodium dihydrogen pyrophosphate",
+     "ingredients": "potatoes, onions, oil (canola oil, sunflower seed oil, cotton seed oil, palm oil, corn oil, or soybean oil), salt, disodium dihydrogen pyrophosphate, dextrose",
      "allergens": [
       "SOY"
      ],
@@ -3789,14 +3809,20 @@
      "order": 6
     },
     {
-     "name": "Chef's Choice Vegan Breakfast",
-     "recipe_id": "ChefsChoiceVGNBkfst",
+     "name": "Plant Powered \"Eggs”",
+     "recipe_id": "4433739",
      "description": "",
-     "ingredients": "Please refer to dining hall chef or manager for ingredient and allergen information",
-     "allergens": [],
-     "trace_allergens": [],
+     "ingredients": "mung bean protein, canola oil, onion, gellan gum, carrot extractives, natural flavors, turmeric extractives, potassium citrate, salt, soy lecithin, sugar, tapioca syrup, tetrasodium pyrophosphate, transglutaminase, nisin",
+     "allergens": [
+      "SOY"
+     ],
+     "trace_allergens": [
+      "EGG"
+     ],
      "tags": [
-      "vegan"
+      "gluten-free",
+      "vegan",
+      "halal"
      ],
      "order": 7
     },
