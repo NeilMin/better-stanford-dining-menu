@@ -2634,6 +2634,9 @@
  },
  "2036526025c6": {
   "avoid": [
+   "hollow dry bark rings",
+   "dried wood pieces",
+   "raw uncooked fennel",
    "meat",
    "chicken",
    "beef",
@@ -2642,12 +2645,11 @@
    "shrimp",
    "cheese",
    "pasta",
-   "rice",
-   "raw fennel"
+   "rice"
   ],
   "checks": [
    {
-    "q": "Is the main food roasted fennel and mushrooms?",
+    "q": "Is the main food roasted fennel wedges and mushrooms?",
     "yes": true
    },
    {
@@ -2659,14 +2661,14 @@
     "yes": false
    }
   ],
-  "dish": "herb-roasted fennel and mushrooms",
-  "look": "roasted wedges of tender fennel bulb with caramelized edges, roasted whole and halved brown cremini mushrooms, glistening browned surfaces, scattered minced garlic bits, chopped green rosemary, thyme leaves, fresh parsley",
-  "model": "gemini-flash-latest",
+  "dish": "herb-roasted fennel and cremini mushrooms",
+  "hand": true,
+  "look": "roasted tender thick wedges of white and pale-green fennel bulb with golden caramelized tips, roasted whole and halved juicy brown cremini mushrooms, glistening with roasted herb olive oil, fresh green thyme leaves, chopped rosemary, minced garlic, rustic savory roasted vegetable dish on a warm ceramic plate",
+  "model": "manual-culinary-fix",
   "name": "Herb Roasted Fennel & Mushrooms",
   "rev": 6,
   "revisions": 0,
-  "vessel": "plate",
-  "written_at": "2026-10-05T10:42:43+00:00"
+  "vessel": "plate"
  },
  "206c2e7a1875": {
   "avoid": [
@@ -4189,6 +4191,10 @@
  },
  "31872715d48f": {
   "avoid": [
+   "opaque black spheres",
+   "black marbles",
+   "black grapes",
+   "dark berries",
    "meat",
    "chicken",
    "beef",
@@ -4197,8 +4203,7 @@
    "shrimp",
    "large sliced onions",
    "raw onions",
-   "onion rings",
-   "skewers"
+   "onion rings"
   ],
   "checks": [
    {
@@ -4206,22 +4211,22 @@
     "yes": true
    },
    {
-    "q": "Are the onions sliced into large rings or raw?",
+    "q": "Do the onions look like solid black spheres or dark fruit like grapes?",
     "yes": false
    },
    {
-    "q": "Is there meat or fish in the dish?",
+    "q": "Are the onions sliced into large rings or raw?",
     "yes": false
    }
   ],
-  "dish": "balsamic glazed pearl onions",
-  "look": "whole peeled pearl onions, glossy dark mahogany balsamic reduction glaze, caramelized tender surface, whole rosemary needles, rich dark brown coating",
-  "model": "gemini-3.7-flash",
+  "dish": "balsamic roasted pearl onions",
+  "hand": true,
+  "look": "whole tender roasted pearl onions, translucent ivory and pale golden-brown onion layers clearly visible, sweet caramelized edges, lightly coated in a glossy dark balsamic vinegar glaze reduction, fresh green thyme leaves garnish, served in a shallow ceramic dish, clearly identifiable as whole cooked sweet onions",
+  "model": "manual-culinary-fix",
   "name": "Balsamic Glazed Pearl Onions",
   "rev": 6,
   "revisions": 0,
-  "vessel": "bowl",
-  "written_at": "2026-10-03T08:46:53+00:00"
+  "vessel": "bowl"
  },
  "318a9e6be867": {
   "avoid": [
@@ -6417,6 +6422,9 @@
  },
  "47abe930ce6f": {
   "avoid": [
+   "one giant uncut monolithic block",
+   "uncarved solid slab",
+   "meat brick",
    "sandwich bun",
    "slider bun",
    "taco",
@@ -6428,26 +6436,26 @@
   ],
   "checks": [
    {
-    "q": "Is the main item glazed pork belly?",
+    "q": "Is the main item glazed sliced pork belly?",
     "yes": true
+   },
+   {
+    "q": "Does the pork look like one giant solid uncarved block or slab?",
+    "yes": false
    },
    {
     "q": "Is the pork served inside bread or a bun?",
     "yes": false
-   },
-   {
-    "q": "Is the meat shredded or pulled?",
-    "yes": false
    }
   ],
-  "dish": "mustard-molasses glazed pork belly",
-  "look": "thick-cut slab of roasted pork belly, dark amber glossy sticky molasses glaze, visible whole-grain mustard seeds, seared caramelized edges, distinct layers of succulent meat and tender rendered white fat, chopped fresh parsley garnish",
-  "model": "gemini-flash-latest",
+  "dish": "sliced mustard-molasses glazed pork belly",
+  "hand": true,
+  "look": "several thick tender slices of roasted pork belly neatly fanned on a white ceramic plate, succulent distinct alternating layers of tender pinkish pork meat and rendered soft white fat, rich glossy dark-amber molasses glaze, visible whole-grain mustard seeds, golden caramelized seared edges, savory pan reduction drizzle",
+  "model": "manual-culinary-fix",
   "name": "Mustard Molasses Glazed Pork Belly",
   "rev": 6,
   "revisions": 0,
-  "vessel": "plate",
-  "written_at": "2026-10-05T10:42:43+00:00"
+  "vessel": "plate"
  },
  "4809ffb083b5": {
   "avoid": [
@@ -13701,24 +13709,21 @@
  },
  "a8de102949dc": {
   "avoid": [
-   "beef",
-   "pork",
-   "fresh herbs",
-   "parsley",
-   "cilantro",
-   "fried chicken",
-   "raw chicken",
+   "crispy deep-fried breading",
+   "dry grilled chicken",
+   "raw pink chicken",
    "skewers",
-   "rice",
-   "soup"
+   "white sauce",
+   "beef",
+   "pork"
   ],
   "checks": [
    {
-    "q": "Is the main food braised chicken pieces?",
+    "q": "Is the main food braised chicken pieces in a dark savory sauce?",
     "yes": true
    },
    {
-    "q": "Is the chicken deep-fried with crispy breading?",
+    "q": "Is the chicken deep-fried with crispy battered breading?",
     "yes": false
    },
    {
@@ -13727,13 +13732,13 @@
    }
   ],
   "dish": "Filipino chicken adobo",
-  "look": "braised skin-on chicken thighs with visible bones, glistening glossy dark-brown soy glaze, tender braised onion slices, crispy golden fried garlic flakes garnish, rich savory pan juices",
-  "model": "gemini-3.5-flash",
+  "hand": true,
+  "look": "braised bone-in chicken thighs and drumsticks with a glistening rich dark-brown soy sauce and vinegar glaze, tender simmered garlic cloves, whole black peppercorns, dried bay leaf resting in the savory pan reduction sauce, chopped green scallions garnish, served in a wide shallow bowl",
+  "model": "manual-culinary-fix",
   "name": "Soy-Vinegar Braised Chicken Adobo",
   "rev": 6,
-  "revisions": 1,
-  "vessel": "bowl",
-  "written_at": "2026-10-01T00:49:15+00:00"
+  "revisions": 0,
+  "vessel": "bowl"
  },
  "a9c64bca3f9a": {
   "avoid": [
@@ -15390,20 +15395,17 @@
   "avoid": [
    "whole roasted chicken",
    "whole bird",
-   "intact carcass",
-   "sauce",
-   "gravy",
+   "multiple chickens",
+   "platter",
+   "carcass",
+   "raw chicken",
    "fried chicken",
-   "breading",
-   "chicken nuggets",
-   "soup",
-   "sliced cold cuts",
-   "rotisserie skewer",
-   "french fries"
+   "nuggets",
+   "rotisserie skewer"
   ],
   "checks": [
    {
-    "q": "Is the main item a piece of roasted bone-in chicken?",
+    "q": "Is the main item a piece of roasted bone-in chicken with golden-brown skin?",
     "yes": true
    },
    {
@@ -15415,14 +15417,15 @@
     "yes": false
    }
   ],
-  "dish": "roast chicken quarter",
-  "look": "single bone-in roasted chicken leg quarter, whole bird not shown, cut carved edge exposing meat, deep golden-brown crispy skin, dry roasted surface, specks of roasted dried herbs, fresh rosemary sprig garnish",
-  "model": "claude-sonnet",
+  "dish": "roasted chicken quarter",
+  "hand": true,
+  "look": "single roasted chicken leg quarter, separated thigh and drumstick with glistening golden-brown blistered crispy skin, seasoned herb crust, natural pan roasting juices pooling underneath, fresh thyme sprigs, single portion on a round ceramic dinner plate",
+  "model": "gemini-flash-latest",
   "name": "Roasted Chicken",
   "rev": 6,
   "revisions": 1,
   "vessel": "plate",
-  "written_at": "2026-09-27T09:43:06+00:00"
+  "written_at": "2026-10-06T00:33:28+00:00"
  },
  "bbb5c1c6718a": {
   "avoid": [
@@ -19013,6 +19016,11 @@
  },
  "e6c75c131ad4": {
   "avoid": [
+   "round circular slices",
+   "cross-cut rounds",
+   "medallions",
+   "coins",
+   "horizontal slices",
    "meat",
    "chicken",
    "beef",
@@ -19026,26 +19034,26 @@
   ],
   "checks": [
    {
-    "q": "Is the main item seared sliced mushrooms?",
+    "q": "Is the main item mushrooms sliced in half lengthwise or long vertical planks?",
     "yes": true
+   },
+   {
+    "q": "Are the mushrooms cut into round circular coins or horizontal slices?",
+    "yes": false
    },
    {
     "q": "Is there real animal meat or seafood on the plate?",
     "yes": false
-   },
-   {
-    "q": "Are the mushrooms raw and unseared?",
-    "yes": false
    }
   ],
-  "dish": "pan-seared king oyster mushroom medallions",
-  "look": "thick sliced king oyster mushroom rounds, scored diamond crosshatch pattern, deep golden-brown caramelized seared tops, pale tender fibrous centers, minced golden garlic bits, fresh green thyme sprigs, yellow lemon wedge",
-  "model": "gemini-flash-latest",
+  "dish": "pan-seared king oyster mushrooms",
+  "hand": true,
+  "look": "king oyster mushrooms sliced in half lengthwise from rounded cap to base of thick stem, long flat cut side seared deeply golden brown with crisp caramelized edges, light scored diagonal diamond pattern on the flat surface, meaty thick white stalk silhouette, basted in herb garlic butter, fresh thyme sprigs, lemon wedge",
+  "model": "manual-culinary-fix",
   "name": "Seared King Oyster Mushroom",
   "rev": 6,
   "revisions": 0,
-  "vessel": "plate",
-  "written_at": "2026-10-03T07:52:08+00:00"
+  "vessel": "plate"
  },
  "e7579de20495": {
   "avoid": [
@@ -19508,20 +19516,19 @@
  },
  "ee2aeee45b10": {
   "avoid": [
-   "meat",
-   "chicken",
-   "beef",
-   "pork",
-   "fish",
-   "shrimp",
+   "pale white potatoes",
    "mashed potatoes",
    "french fries",
    "cheese",
-   "sour cream"
+   "sour cream",
+   "raw potatoes",
+   "meat",
+   "chicken",
+   "bacon"
   ],
   "checks": [
    {
-    "q": "Is the main food roasted chunks or cubes of orange sweet potato?",
+    "q": "Is the main food roasted chunks of vibrant orange sweet potato?",
     "yes": true
    },
    {
@@ -19534,13 +19541,13 @@
    }
   ],
   "dish": "roasted chili lime sweet potatoes",
-  "look": "chunky roasted orange sweet potato cubes, caramelized brown crisp edges, light coating of dark reddish chili powder, scatter of chopped cilantro leaves, fresh lime wedge",
-  "model": "gemini-3.6-flash",
+  "hand": true,
+  "look": "plump tender roasted chunks of vibrant orange sweet potato with blistered caramelized golden-brown edges, light dusting of reddish chili spice powder, scatter of fresh chopped green cilantro, fresh juicy green lime wedges on the side, rustic warm ceramic serving dish",
+  "model": "manual-culinary-fix",
   "name": "Roasted Sweet Potatoes with Chili & Lime",
   "rev": 6,
   "revisions": 0,
-  "vessel": "plate",
-  "written_at": "2026-09-30T20:17:23+00:00"
+  "vessel": "plate"
  },
  "ee33d2f59f86": {
   "avoid": [
