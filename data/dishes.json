@@ -10017,20 +10017,30 @@
   ]
  },
  "642597bb7589": {
+  "brief_rev": 6,
   "category": "vegan",
   "first_seen": "2026-10-05",
+  "generated_at": "2026-10-06T00:05:34+00:00",
   "icon": "salad",
-  "image": null,
+  "image": "642597bb7589.webp",
   "ingredients": "kale, strawberries, salt, pepper, balsamic vinaigrette (balsamic vinegar [wine vinegar, grape juice], vegetable oil [soybean oil, canola oil, and/or olive oil], sugar, salt, garlic, dijon mustard [vinegar, mustard seed, salt, white wine, fruit pectin, spice], xanthan gum, mustard flour, parsley, artificial flavor)",
   "is_station": false,
+  "judge": {
+   "at": "2026-10-06T00:05:34+00:00",
+   "judge": "gemma-4-26b-a4b-it",
+   "seen": "A salad made of dark green kale leaves topped with whole and sliced strawberries."
+  },
   "last_seen": "2026-10-05",
   "min_order": 9,
+  "model": "sdxl",
   "name": "Strawberry Fields Salad",
   "needs_image": true,
   "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, meat, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
   "placeholder": false,
   "priority": 2,
   "prompt": "Strawberry Fields Salad, made with kale, strawberries, balsamic vinaigrette, plant-based, no meat, no dairy, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "prompt_rev": 9,
+  "seed": 1680185275,
   "station_only": false,
   "tags": [
    "gluten-free",
@@ -10583,6 +10593,17 @@
   "placeholder": false,
   "priority": 2,
   "prompt": "Steamed Bok Choy, made with bok choy, plant-based, no meat, no dairy, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "rejected": {
+   "at": "2026-10-05T23:47:49+00:00",
+   "brief_rev": 6,
+   "failed": [
+    "Is the main item cooked green bok choy?",
+    "Would someone who ordered steamed bok choy recognise this as that dish?"
+   ],
+   "pictures": 4,
+   "seen": "Three heads of fresh green bok choy on a white plate.",
+   "tries": 1
+  },
   "station_only": false,
   "tags": [
    "gluten-free",
@@ -14367,20 +14388,30 @@
   ]
  },
  "8dbee8587bab": {
+  "brief_rev": 6,
   "category": "seafood",
   "first_seen": "2026-10-05",
+  "generated_at": "2026-10-05T22:35:50+00:00",
   "icon": "plate",
-  "image": null,
+  "image": "8dbee8587bab.webp",
   "ingredients": "potatoes, clams, clam juice, food starch, celery, soybean oil, margarine, and salt",
   "is_station": false,
+  "judge": {
+   "at": "2026-10-05T22:35:50+00:00",
+   "judge": "gemma-4-26b-a4b-it",
+   "seen": "A white bowl of thick, creamy white soup containing diced potatoes and dark pieces, garnished with a fresh green leaf."
+  },
   "last_seen": "2026-10-05",
   "min_order": 10,
+  "model": "sdxl",
   "name": "Boston Clam Chowder",
   "needs_image": true,
   "negative": "pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
   "placeholder": false,
   "priority": 0,
   "prompt": "Boston Clam Chowder, delicate flaky fish fillet or fresh seafood, glistening glaze, made with potatoes, clams, clam juice, food starch, celery, margarine, and salt, appetizing food photography, served in a simple white ceramic bowl, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "prompt_rev": 9,
+  "seed": 2378098776,
   "station_only": false,
   "tags": []
  },

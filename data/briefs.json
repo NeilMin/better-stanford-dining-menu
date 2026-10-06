@@ -8251,6 +8251,42 @@
   "vessel": "bowl",
   "written_at": "2026-09-29T17:11:14+00:00"
  },
+ "642597bb7589": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "cheese",
+   "feta",
+   "nuts",
+   "croutons"
+  ],
+  "checks": [
+   {
+    "q": "Is the main dish a salad with greens and strawberry slices?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat, chicken, or seafood?",
+    "yes": false
+   },
+   {
+    "q": "Is there visible cheese on the salad?",
+    "yes": false
+   }
+  ],
+  "dish": "strawberry kale salad",
+  "look": "fresh dark green torn kale leaves, sliced bright red ripe strawberries, subtle drizzle of dark glossy balsamic vinaigrette, lightly tossed leafy salad mixture",
+  "model": "gemini-3.6-flash",
+  "name": "Strawberry Fields Salad",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-05T22:15:46+00:00"
+ },
  "6454fa632bc7": {
   "avoid": [
    "meat",
@@ -8601,6 +8637,42 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-26T23:12:45+00:00"
+ },
+ "69dd99e63b55": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "raw bok choy",
+   "uncooked bok choy",
+   "crisp raw leaves",
+   "salad"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cooked green bok choy?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat or seafood on the plate?",
+    "yes": false
+   },
+   {
+    "q": "Is the vegetable raw and unheated?",
+    "yes": false
+   }
+  ],
+  "dish": "steamed bok choy",
+  "look": "steamed wilted tender halved heads of baby bok choy, soft glossy cooked dark green leaves, tender moist translucent pale white stalks, glistening freshly steamed vegetable",
+  "model": "gemini-3.6-flash",
+  "name": "Steamed Bok Choy",
+  "rev": 6,
+  "revisions": 1,
+  "vessel": "plate",
+  "written_at": "2026-10-05T23:12:14+00:00"
  },
  "69f4d2219aea": {
   "avoid": [
@@ -11433,6 +11505,39 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-28T17:10:56+00:00"
+ },
+ "8dbee8587bab": {
+  "avoid": [
+   "red broth",
+   "tomatoes",
+   "bread bowl",
+   "crackers",
+   "bacon",
+   "whole clamshells",
+   "clear broth"
+  ],
+  "checks": [
+   {
+    "q": "Is the main dish a thick cream-based white soup?",
+    "yes": true
+   },
+   {
+    "q": "Is the soup red or tomato-based?",
+    "yes": false
+   },
+   {
+    "q": "Is the soup served inside a bread bowl?",
+    "yes": false
+   }
+  ],
+  "dish": "New England clam chowder",
+  "look": "thick creamy white soup, tender diced potato cubes, chopped clam pieces, finely minced celery, rich velvety texture, light dusting of cracked black pepper",
+  "model": "gemini-3.6-flash",
+  "name": "Boston Clam Chowder",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-05T22:15:46+00:00"
  },
  "8ed0b23245c1": {
   "avoid": [
