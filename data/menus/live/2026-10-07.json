@@ -1,6 +1,6 @@
 {
  "date": "2026-10-07",
- "scraped_at": "2026-10-07T03:21:27-07:00",
+ "scraped_at": "2026-10-07T13:39:32-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -230,7 +230,7 @@
      "name": "Creamy Tarragon Chicken",
      "recipe_id": "TarrChx17",
      "description": "",
-     "ingredients": "Chicken Breast, Shallots, Garlic, White wine, Heavy Cream, Chicken Base, Tarragon, Dijon Mustard, Lemon Zest, Cornstarch, Salt, Black Pepper",
+     "ingredients": "Chicken Breast, Shallots, Garlic, Heavy Cream, Chicken Base, Tarragon, Dijon Mustard, Lemon Zest, Cornstarch, Salt, Black Pepper",
      "allergens": [
       "MILK",
       "WHEAT"
@@ -245,7 +245,7 @@
      "name": "Wild Mushroom with Tarragon Cream",
      "recipe_id": "MushTC17",
      "description": "",
-     "ingredients": "Chef Mix mushroom, White beans, Shallots, garlic, White wine, Heavy Cream, Tarragon, Vegetable Base, Dijon Mustard, Cornstarch, Salt, Black Pepper.",
+     "ingredients": "Chef Mix mushroom, White beans, Shallots, garlic, Heavy Cream, Tarragon, Vegetable Base, Dijon Mustard, Cornstarch, Salt, Black Pepper.",
      "allergens": [
       "MILK"
      ],
@@ -262,7 +262,8 @@
      "description": "",
      "ingredients": "Green Beans, Butter, Neutral oil, Shallots, Almonds, Salt, Black Pepper.",
      "allergens": [
-      "MILK"
+      "MILK",
+      "TREENUTS"
      ],
      "trace_allergens": [],
      "tags": [
@@ -1122,32 +1123,22 @@
    ],
    "Lunch": [
     {
-     "name": "Roast Pork Carving Station",
-     "recipe_id": "1000000",
+     "name": "Ranchera Pork",
+     "recipe_id": "6084508",
      "description": "",
-     "ingredients": "roast pig (sugar, msg, salt, vegetarian oyster sauce, hoisin sauce, pepper, peanut butter), pig sauce (soy sauce, sugar, shao sing wine, dark soy sauce, chicken drippings)",
-     "allergens": [
-      "PEANUTS",
-      "SESAME",
-      "SOY",
-      "WHEAT"
+     "ingredients": "pork, garlic, canola/olive oil blend, oregano, salt, pepper, roasted red salsa (tomatoes, onion, garlic, chipotle peppers)",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free"
      ],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "SHELLFISH",
-      "TREENUTS"
-     ],
-     "tags": [],
      "order": 0
     },
     {
      "name": "Wild Mushroom with Tarragon Cream",
      "recipe_id": "MushTC17",
      "description": "",
-     "ingredients": "Chef Mix mushroom, White beans, Shallots, garlic, White wine, Heavy Cream, Tarragon, Vegetable Base, Dijon Mustard, Cornstarch, Salt, Black Pepper.",
+     "ingredients": "Chef Mix mushroom, White beans, Shallots, garlic, Heavy Cream, Tarragon, Vegetable Base, Dijon Mustard, Cornstarch, Salt, Black Pepper.",
      "allergens": [
       "MILK"
      ],
@@ -1187,110 +1178,68 @@
      "order": 3
     },
     {
-     "name": "Smoked Mashed Yams",
-     "recipe_id": "5235188",
+     "name": "Perfectly Roasted Yams",
+     "recipe_id": "5826889",
      "description": "",
-     "ingredients": "yams, cream, butter, salt, cayenne pepper, maple syrup",
-     "allergens": [
-      "MILK"
-     ],
+     "ingredients": "yams, canola/olive oil blend, thyme, parsley, salt, pepper",
+     "allergens": [],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
-      "vegetarian",
+      "vegan",
       "halal"
      ],
      "order": 4
     },
     {
-     "name": "Assorted Dinner Rolls",
-     "recipe_id": "5344600",
+     "name": "Garlic Bread",
+     "recipe_id": "5398769",
      "description": "",
-     "ingredients": "unbleached wheat flour, malted barley flour, sour culture, salt, yeast, sesame seeds, amaranth, poppy seeds, whole wheat flour, dark rye flour, malt powder, honey, extra virgin olive oil, semolina, wheat germ",
+     "ingredients": "french baguette, unsalted butter, garlic, parsley",
      "allergens": [
       "MILK",
-      "SESAME",
       "WHEAT"
      ],
      "trace_allergens": [
+      "EGG",
       "SOY",
       "TREENUTS"
      ],
      "tags": [
-      "vegetarian",
-      "halal"
+      "vegetarian"
      ],
      "order": 5
     },
     {
-     "name": "Grilled Teriyaki Chicken Protein Bowl",
-     "recipe_id": "TCPB99",
+     "name": "Jerk Chicken with Pineapple Salsa",
+     "recipe_id": "4635494",
      "description": "",
-     "ingredients": "chicken thigh, garlic, ginger, sesame, tamari, rice, bell pepper, cucumber, carrot,",
+     "ingredients": "jerk chicken (chicken, jerk sauce (green onions, garlic, onions, chili, lime juice, tamari, salt, sugar, allspice, pepper, nutmeg, cinnamon, apple cider vinegar, canola/olive oil blend, ancho chili powder), cucumber, pineapple, salt, pepper, lemon, jalapeno",
      "allergens": [
-      "SESAME",
       "SOY"
      ],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SHELLFISH",
-      "TREENUTS",
-      "WHEAT"
-     ],
+     "trace_allergens": [],
      "tags": [
+      "gluten-free",
       "halal"
      ],
      "order": 6
     },
     {
-     "name": "Grilled Chicken",
-     "recipe_id": "520454-02",
+     "name": "Coconut Rice",
+     "recipe_id": "5218958",
      "description": "",
-     "ingredients": "chicken, canola/olive oil blend, salt, pepper",
-     "allergens": [],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
+     "ingredients": "jasmine rice, unsweetened coconut milk",
+     "allergens": [
+      "COCONUT"
      ],
+     "trace_allergens": [],
      "tags": [
+      "gluten-free",
+      "vegan",
       "halal"
      ],
      "order": 7
-    },
-    {
-     "name": "Grilled Vegan/Vegetarian",
-     "recipe_id": "13468741",
-     "description": "",
-     "ingredients": "chef's choice grilled vegan OR vegetarian option",
-     "allergens": [],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
-     ],
-     "tags": [
-      "halal"
-     ],
-     "order": 8
     },
     {
      "name": "Cheese Quesadilla",
@@ -1314,7 +1263,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 9
+     "order": 8
     },
     {
      "name": "Panini Station",
@@ -1332,29 +1281,43 @@
       "TREENUTS"
      ],
      "tags": [],
+     "order": 9
+    },
+    {
+     "name": "Potato Leek Soup",
+     "recipe_id": "5500606",
+     "description": "",
+     "ingredients": "potatoes, rosemary, salt, water, garlic, vegetable soup base (contains mushroom, carrot, celery), white pepper, cream, canola oil, leek",
+     "allergens": [
+      "MILK"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegetarian",
+      "halal"
+     ],
      "order": 10
     },
     {
-     "name": "Soup of the Day",
-     "recipe_id": "SoupoftheDay",
+     "name": "Caesar Salad",
+     "recipe_id": "5834444",
      "description": "",
-     "ingredients": "chef's choice soup of the day",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [],
-     "order": 11
-    },
-    {
-     "name": "Composed Salad",
-     "recipe_id": "123116546",
-     "description": "",
-     "ingredients": "chef's choice composed salad",
-     "allergens": [],
-     "trace_allergens": [],
+     "ingredients": "lettuce, tomatoes, caesar dressing (mayonnaise, parmesan cheese, garlic, lemon juice, anchovy, red wine vinegar, dijon mustard, worcestershire sauce [vinegar, molasses, corn syrup, anchovies, salt, garlic, tamarind concentrate, cloves, natural flavorings, chili pepper extract], hot sauce, salt, pepper), parmesan cheese, croutons (wheat flour, canola and/or sunflower oil, whey, salt, yeast, corn syrup, sugar, onion powder, parsley, paprika, turmeric)",
+     "allergens": [
+      "EGG",
+      "FISH",
+      "MILK",
+      "SOY",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "TREENUTS"
+     ],
      "tags": [
       "halal"
      ],
-     "order": 12
+     "order": 11
     },
     {
      "name": "Performance Bar",
@@ -1364,7 +1327,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 13
+     "order": 12
     },
     {
      "name": "Craveable Grains",
@@ -1378,7 +1341,7 @@
       "vegan",
       "halal"
      ],
-     "order": 14
+     "order": 13
     },
     {
      "name": "Flavor Forward Legumes",
@@ -1392,25 +1355,22 @@
       "vegan",
       "halal"
      ],
-     "order": 15
+     "order": 14
     },
     {
-     "name": "Pasta Alfredo",
-     "recipe_id": "5683556",
+     "name": "Kale Pesto",
+     "recipe_id": "5263031",
      "description": "",
-     "ingredients": "pasta, white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, parmesan cheese",
+     "ingredients": "kale vinaigrette (kale, canola oil, water, mustard seeds, vinegar, salt, sulfites, shallots, rice vinegar), beet sugar, red wine vinegar, potassium, parsley, garlic, basil, salt, ground pepper",
      "allergens": [
-      "MILK",
-      "WHEAT"
+      "MILK"
      ],
-     "trace_allergens": [
-      "EGG"
-     ],
+     "trace_allergens": [],
      "tags": [
-      "vegetarian",
-      "halal"
+      "gluten-free",
+      "vegetarian"
      ],
-     "order": 16
+     "order": 15
     },
     {
      "name": "Pasta Marinara",
@@ -1428,7 +1388,7 @@
       "vegan",
       "halal"
      ],
-     "order": 17
+     "order": 16
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -1442,7 +1402,7 @@
       "vegan",
       "halal"
      ],
-     "order": 18
+     "order": 17
     }
    ],
    "Dinner": [
@@ -1989,7 +1949,7 @@
      "name": "Creamy Tarragon Chicken",
      "recipe_id": "TarrChx17",
      "description": "",
-     "ingredients": "Chicken Breast, Shallots, Garlic, White wine, Heavy Cream, Chicken Base, Tarragon, Dijon Mustard, Lemon Zest, Cornstarch, Salt, Black Pepper",
+     "ingredients": "Chicken Breast, Shallots, Garlic, Heavy Cream, Chicken Base, Tarragon, Dijon Mustard, Lemon Zest, Cornstarch, Salt, Black Pepper",
      "allergens": [
       "MILK",
       "WHEAT"
@@ -2004,7 +1964,7 @@
      "name": "Wild Mushroom with Tarragon Cream",
      "recipe_id": "MushTC17",
      "description": "",
-     "ingredients": "Chef Mix mushroom, White beans, Shallots, garlic, White wine, Heavy Cream, Tarragon, Vegetable Base, Dijon Mustard, Cornstarch, Salt, Black Pepper.",
+     "ingredients": "Chef Mix mushroom, White beans, Shallots, garlic, Heavy Cream, Tarragon, Vegetable Base, Dijon Mustard, Cornstarch, Salt, Black Pepper.",
      "allergens": [
       "MILK"
      ],
@@ -2016,17 +1976,15 @@
      "order": 1
     },
     {
-     "name": "Haricot Verts with Brown Butter",
-     "recipe_id": "HVwBB17",
+     "name": "Seasonal Steamed Vegetables",
+     "recipe_id": "5561366",
      "description": "",
-     "ingredients": "Green Beans, Butter, Neutral oil, Shallots, Almonds, Salt, Black Pepper.",
-     "allergens": [
-      "MILK"
-     ],
+     "ingredients": "seasonal vegetables, salt",
+     "allergens": [],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
-      "vegetarian",
+      "vegan",
       "halal"
      ],
      "order": 2
@@ -2849,7 +2807,7 @@
      "name": "Creamy Tarragon Chicken",
      "recipe_id": "TarrChx17",
      "description": "",
-     "ingredients": "Chicken Breast, Shallots, Garlic, White wine, Heavy Cream, Chicken Base, Tarragon, Dijon Mustard, Lemon Zest, Cornstarch, Salt, Black Pepper",
+     "ingredients": "Chicken Breast, Shallots, Garlic, Heavy Cream, Chicken Base, Tarragon, Dijon Mustard, Lemon Zest, Cornstarch, Salt, Black Pepper",
      "allergens": [
       "MILK",
       "WHEAT"
@@ -2864,7 +2822,7 @@
      "name": "Wild Mushroom with Tarragon Cream",
      "recipe_id": "MushTC17",
      "description": "",
-     "ingredients": "Chef Mix mushroom, White beans, Shallots, garlic, White wine, Heavy Cream, Tarragon, Vegetable Base, Dijon Mustard, Cornstarch, Salt, Black Pepper.",
+     "ingredients": "Chef Mix mushroom, White beans, Shallots, garlic, Heavy Cream, Tarragon, Vegetable Base, Dijon Mustard, Cornstarch, Salt, Black Pepper.",
      "allergens": [
       "MILK"
      ],
@@ -2881,7 +2839,8 @@
      "description": "",
      "ingredients": "Green Beans, Butter, Neutral oil, Shallots, Almonds, Salt, Black Pepper.",
      "allergens": [
-      "MILK"
+      "MILK",
+      "TREENUTS"
      ],
      "trace_allergens": [],
      "tags": [
@@ -3613,7 +3572,7 @@
      "name": "Creamy Tarragon Chicken",
      "recipe_id": "TarrChx17",
      "description": "",
-     "ingredients": "Chicken Breast, Shallots, Garlic, White wine, Heavy Cream, Chicken Base, Tarragon, Dijon Mustard, Lemon Zest, Cornstarch, Salt, Black Pepper",
+     "ingredients": "Chicken Breast, Shallots, Garlic, Heavy Cream, Chicken Base, Tarragon, Dijon Mustard, Lemon Zest, Cornstarch, Salt, Black Pepper",
      "allergens": [
       "MILK",
       "WHEAT"
@@ -3628,7 +3587,7 @@
      "name": "Wild Mushroom with Tarragon Cream",
      "recipe_id": "MushTC17",
      "description": "",
-     "ingredients": "Chef Mix mushroom, White beans, Shallots, garlic, White wine, Heavy Cream, Tarragon, Vegetable Base, Dijon Mustard, Cornstarch, Salt, Black Pepper.",
+     "ingredients": "Chef Mix mushroom, White beans, Shallots, garlic, Heavy Cream, Tarragon, Vegetable Base, Dijon Mustard, Cornstarch, Salt, Black Pepper.",
      "allergens": [
       "MILK"
      ],
@@ -3645,7 +3604,8 @@
      "description": "",
      "ingredients": "Green Beans, Butter, Neutral oil, Shallots, Almonds, Salt, Black Pepper.",
      "allergens": [
-      "MILK"
+      "MILK",
+      "TREENUTS"
      ],
      "trace_allergens": [],
      "tags": [
@@ -5037,7 +4997,7 @@
      "name": "Creamy Tarragon Chicken",
      "recipe_id": "TarrChx17",
      "description": "",
-     "ingredients": "Chicken Breast, Shallots, Garlic, White wine, Heavy Cream, Chicken Base, Tarragon, Dijon Mustard, Lemon Zest, Cornstarch, Salt, Black Pepper",
+     "ingredients": "Chicken Breast, Shallots, Garlic, Heavy Cream, Chicken Base, Tarragon, Dijon Mustard, Lemon Zest, Cornstarch, Salt, Black Pepper",
      "allergens": [
       "MILK",
       "WHEAT"
@@ -5052,7 +5012,7 @@
      "name": "Wild Mushroom with Tarragon Cream",
      "recipe_id": "MushTC17",
      "description": "",
-     "ingredients": "Chef Mix mushroom, White beans, Shallots, garlic, White wine, Heavy Cream, Tarragon, Vegetable Base, Dijon Mustard, Cornstarch, Salt, Black Pepper.",
+     "ingredients": "Chef Mix mushroom, White beans, Shallots, garlic, Heavy Cream, Tarragon, Vegetable Base, Dijon Mustard, Cornstarch, Salt, Black Pepper.",
      "allergens": [
       "MILK"
      ],
