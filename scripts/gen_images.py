@@ -131,6 +131,49 @@ class Stop(Exception):
     """Something no later dish will get past tonight: quota, a missing server."""
 
 
+def write_briefs_only(pending: list[tuple[str, dict]], args) -> int:
+    """Write the queue's briefs and draw nothing: the `plan` job's work in draw.yml.
+
+    Briefs are batched eight to a call to stay inside Flash's free allowance, and
+    a batch only pays off over the whole queue. With one machine per dish or two,
+    a machine's own share is too small to batch, so the briefs are written once
+    here and handed to every machine. A dish whose brief fails is left for the
+    machine that draws it, which asks again on its own.
+    """
+    llm = pick_llm(args.llm, args.llm_model, role="brief")
+    if not llm.available():
+        print("No GEMINI_API_KEY (environment or .env): no briefs written.", file=sys.stderr)
+        return 0
+    briefs = brieflib.load(ROOT)
+    todo = [(d, e) for d, e in pending
+            if args.rewrite_briefs or not brieflib.is_current(briefs.get(d))]
+    wrote = 0
+    try:
+        for at in range(0, len(todo), args.brief_batch):
+            batch = todo[at:at + args.brief_batch]
+            try:
+                written = brieflib.write_many([e for _, e in batch], llm) if len(batch) > 1 else [None]
+            except Unavailable:
+                raise
+            except LLMError as exc:
+                print(f"batch of {len(batch)} briefs failed, writing them one by one: {exc}", file=sys.stderr)
+                written = [None] * len(batch)
+            for (did, entry), brief in zip(batch, written):
+                try:
+                    brief = brief or brieflib.write(entry, llm)
+                except Unavailable:
+                    raise
+                except LLMError as exc:
+                    print(f"no brief for {entry['name']}: {exc}", file=sys.stderr)
+                    continue
+                brieflib.record(ROOT, did, brief)
+                wrote += 1
+    except Unavailable as exc:
+        print(f"Out of briefs for tonight: {exc}", file=sys.stderr)
+    print(f"Wrote {wrote} of {len(todo)} briefs.")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--backend", choices=["auto", "comfyui", "cloudflare"], default="auto",
@@ -184,6 +227,8 @@ def main(argv: list[str] | None = None) -> int:
                          "the queue between them (see .github/workflows/draw.yml)")
     ap.add_argument("--minutes", type=float, metavar="M",
                     help="start no new dish after M minutes, so a CI job ends before it is killed")
+    ap.add_argument("--briefs-only", action="store_true",
+                    help="write the briefs for the queue and draw nothing (needs no ComfyUI)")
     ap.add_argument("--count", action="store_true",
                     help="print how many dishes would be drawn, and draw nothing")
     args = ap.parse_args(argv)
@@ -246,6 +291,9 @@ def main(argv: list[str] | None = None) -> int:
     if not pending:
         print("Nothing to draw -- every illustratable dish already has an image.")
         return 0
+
+    if args.briefs_only:
+        return write_briefs_only(pending, args)
 
     comfy = ComfyClient(args.url, max_wait=args.max_wait)
     cf = CloudflareClient()

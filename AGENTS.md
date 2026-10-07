@@ -209,7 +209,9 @@ placeholder icon, never to an unchecked picture. What each job runs on, and why:
 - *Drawing*: RealVisXL everywhere -- the local ComfyUI on the laptop, and in CI the same
   checkpoint on free GitHub runners' CPUs (`draw.yml`), at the laptop's 1344x768 and 12 steps
   instead of 20. A runner takes 17-19 minutes a picture at 15.3 GB of its 16, so the queue is
-  dealt across up to six machines (`--shard K/N`), each stops starting dishes after four hours
+  dealt across up to ten machines, two dishes each (`--shard K/N`; a machine cannot take work from
+  its neighbour, so the night ends with its unluckiest machine and a short share keeps that cheap),
+  each stops starting dishes after four hours
   (`--minutes`), and `scripts/merge_draws.py` folds their copies of `data/` back into main as it
   is by then. The runners are for the few new dishes a scrape brings; a backlog (a new
   `BRIEF_REV`, a term's first week of menus) is the laptop's, at a minute and a half a picture --
@@ -218,7 +220,9 @@ placeholder icon, never to an unchecked picture. What each job runs on, and why:
   too plastic; `--backend cloudflare` and `photo_style(close=True)` are what is left of it. The
   CPU route had been ruled out once already on the time per picture alone, before anyone counted
   machines -- a public repository's runners are free, twenty at a time, six hours each.
-- *Briefs* (the dish knowledge): a `bsdm.llm.Chain` of Gemini Flash versions, then Gemma, in CI and
+- *Briefs* (the dish knowledge): written once for the whole queue by `draw.yml`'s `plan` job
+  (`gen_images.py --briefs-only`) and handed to the machines as an artifact, since two dishes a
+  machine is too few to batch; a machine writes its own for any dish `plan` missed. A `bsdm.llm.Chain` of Gemini Flash versions, then Gemma, in CI and
   on the laptop alike -- Flash's free tier is 20 requests a day *per model*, so they
   take turns. Gemma 4 26B alone wrote briefs that said souvlaki is not on skewers. Briefs are
   written eight dishes to a call (`--brief-batch`), which is what keeps a night inside Flash's

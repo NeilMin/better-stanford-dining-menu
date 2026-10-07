@@ -51,15 +51,19 @@ env:
   CHECKPOINT_URL: https://huggingface.co/SG161222/RealVisXL_V5.0/resolve/main/RealVisXL_V5.0_fp16.safetensors
   # Measured on the slower runners: 18 minutes a picture, judging included, and
   # a picture and a half a dish on average -- 47 pictures for 30 dishes over
-  # the first four nights. Nine a machine was that average to the minute, and
-  # the night of 2026-09-28 drew 13 pictures for 6 dishes and ran out of time
-  # with 3 still waiting. Six is three hours at the average and still inside
-  # four at that night's rate; the machines are free. The unluckiest last dish,
-  # four pictures, still ends inside the step's five and a half.
-  DISHES_PER_MACHINE: 6
+  # the first four nights. Dishes are dealt round-robin and a machine cannot
+  # take work from its neighbour, so the night ends when the unluckiest machine
+  # does: on 2026-10-07 two machines took five dishes each, one finished in two
+  # hours and the other in three and a half, with a meat dish dropped. The
+  # fewer dishes a machine holds, the less one slow dish costs the rest, and the
+  # machines are free -- so two a machine, which ends the night about when its
+  # slowest dish does. The unluckiest last dish, four pictures, still ends
+  # inside the step's five and a half. Briefs are written once, in `plan`, so
+  # more machines do not mean more Gemini calls.
+  DISHES_PER_MACHINE: 2
   # Of the 20 jobs a free account may run at once; the scrape and the site
   # deploy need a few.
-  MAX_MACHINES: 6
+  MAX_MACHINES: 10
 
 jobs:
   plan:
@@ -91,6 +95,24 @@ jobs:
           echo "count=$n" >> "$GITHUB_OUTPUT"
           echo "shards=$(python3 -c "import json; print(json.dumps([f'{k}/$m' for k in range(1, $m + 1)]))")" >> "$GITHUB_OUTPUT"
 
+      # One call writes eight briefs; a machine holding two dishes could not
+      # batch, and ten of them asking alone would spend Flash's day. A failure
+      # here costs nothing: the machine that draws a dish writes its own brief.
+      - name: Write the briefs once, for every machine
+        if: steps.plan.outputs.count != '0'
+        continue-on-error: true
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: uv run python scripts/gen_images.py --llm gemini --briefs-only
+
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() && steps.plan.outputs.count != '0' }}
+        with:
+          name: briefs
+          path: data/briefs.json
+          if-no-files-found: ignore
+          retention-days: 3
+
   draw:
     needs: plan
     if: needs.plan.outputs.count != '0'
@@ -113,6 +135,17 @@ jobs:
           enable-cache: true
 
       - run: uv sync
+
+      - name: The briefs `plan` wrote
+        continue-on-error: true   # none: this machine writes its own
+        uses: actions/download-artifact@v4
+        with:
+          name: briefs
+          path: briefs
+
+      - name: Put them where the drawing looks
+        run: |
+          if [ -f briefs/briefs.json ]; then cp briefs/briefs.json data/briefs.json; fi
 
       - name: ComfyUI at the laptop's commit, CPU torch
         run: |

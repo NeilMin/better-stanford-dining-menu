@@ -313,3 +313,31 @@ def test_out_of_time_starts_no_new_dish(setup, monkeypatch, capsys):
     assert main(["--backend", "comfyui", "--minutes", "30"]) == 0
     assert setup.image("aaaa0001").exists() and not setup.image("bbbb0002").exists()
     assert "Out of time" in capsys.readouterr().out
+
+
+def test_briefs_only_writes_the_queues_briefs_in_one_call_and_draws_nothing(setup):
+    setup.llm.briefs += [BRIEF, BROCCOLI]
+    assert main(["--briefs-only"]) == 0
+    assert [kind for kind, _ in setup.llm.calls] == ["brief"]
+    assert set(brieflib.load(setup.root)) == {"aaaa0001", "bbbb0002"}
+    assert setup.drawn == [] and not setup.comfy.available.called
+
+
+def test_briefs_only_skips_a_brief_that_is_current(setup):
+    brieflib.record(setup.root, "aaaa0001", {**BRIEF, "rev": brieflib.BRIEF_REV})
+    setup.llm.briefs += [BROCCOLI]
+    assert main(["--briefs-only"]) == 0
+    assert len(setup.llm.calls) == 1
+    assert set(brieflib.load(setup.root)) == {"aaaa0001", "bbbb0002"}
+
+
+def test_briefs_only_leaves_a_failed_brief_to_the_machine_that_draws_it(setup):
+    setup.llm.briefs += [LLMError("Read timed out"), BRIEF, LLMError("Read timed out")]
+    assert main(["--briefs-only"]) == 0
+    assert set(brieflib.load(setup.root)) == {"aaaa0001"}
+
+
+def test_briefs_only_with_a_spent_quota_is_not_an_error(setup):
+    setup.llm.briefs += [Unavailable("quota")]
+    assert main(["--briefs-only"]) == 0
+    assert brieflib.load(setup.root) == {}
