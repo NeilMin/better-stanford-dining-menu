@@ -3057,35 +3057,38 @@
  },
  "226f47002661": {
   "avoid": [
-   "skewers",
-   "chicken wings",
-   "raw chicken",
-   "whole roast chicken",
+   "sliced meat",
    "beef",
-   "pork"
+   "pork chops",
+   "steak",
+   "shredded chicken",
+   "chicken nuggets",
+   "skewers",
+   "tacos",
+   "curry sauce"
   ],
   "checks": [
    {
-    "q": "Is the main item cooked poultry topped with fruit salsa?",
+    "q": "Is the main item seasoned cooked chicken pieces with fruit salsa?",
     "yes": true
    },
    {
-    "q": "Is the poultry raw or uncooked?",
+    "q": "Is the chicken deep-fried in breading or batter?",
     "yes": false
    },
    {
-    "q": "Is the meat ground or minced?",
+    "q": "Is the dish served in tortillas or tacos?",
     "yes": false
    }
   ],
-  "dish": "Jerk chicken with pineapple salsa",
-  "look": "charred grilled chicken thighs, dark spiced jerk seasoning rub, topped with bright pineapple salsa made of diced fresh pineapple, red onion, cilantro, red bell pepper",
+  "dish": "jerk chicken with pineapple salsa",
+  "look": "roasted bone-in chicken thigh with heavily charred Jamaican jerk spice rub, crispy blackened skin, juicy chicken meat, topped with vibrant diced fresh pineapple salsa, red onion bits, chopped cilantro",
   "model": "gemini-3.6-flash",
   "name": "Jerk Chicken with Pineapple Salsa",
   "rev": 6,
-  "revisions": 0,
+  "revisions": 1,
   "vessel": "plate",
-  "written_at": "2026-10-07T20:47:59+00:00"
+  "written_at": "2026-10-07T21:49:10+00:00"
  },
  "22add51f8555": {
   "avoid": [
@@ -4965,31 +4968,31 @@
    "shrimp",
    "pasta",
    "spaghetti",
-   "noodles",
-   "soup"
+   "bread",
+   "cheese"
   ],
   "checks": [
    {
-    "q": "Is the main item a thick green herb pesto sauce?",
+    "q": "Is the main item a thick green sauce?",
     "yes": true
    },
    {
-    "q": "Is the pesto served mixed into pasta?",
+    "q": "Is the sauce mixed with pasta?",
     "yes": false
    },
    {
-    "q": "Does the sauce contain meat or seafood?",
+    "q": "Are there pieces of meat or seafood?",
     "yes": false
    }
   ],
-  "dish": "Kale pesto",
-  "look": "thick emerald green kale pesto sauce, coarse grainy texture with blended herbs, minced garlic specks, thick spreadable herbal paste, topped with fresh basil leaves, rich glossy surface",
-  "model": "gemini-3.6-flash",
+  "dish": "kale pesto",
+  "look": "a thick, rustic, vibrant green pesto sauce with a textured consistency, showing tiny flecks of minced garlic and herbs, garnished with a fresh green basil leaf",
+  "model": "gemini-3.5-flash",
   "name": "Kale Pesto",
   "rev": 6,
-  "revisions": 1,
+  "revisions": 0,
   "vessel": "bowl",
-  "written_at": "2026-10-07T21:03:15+00:00"
+  "written_at": "2026-10-07T20:53:43+00:00"
  },
  "35146904e1f1": {
   "avoid": [
@@ -9107,38 +9110,37 @@
  },
  "6a276bb8a32b": {
   "avoid": [
-   "soup broth",
+   "broth",
+   "soup",
    "pho",
-   "steamed rice",
-   "fried egg rolls",
-   "spring roll wrapper",
+   "spring rolls",
+   "raw pork",
    "skewers",
-   "raw meat",
    "beef",
-   "tofu"
+   "chicken"
   ],
   "checks": [
    {
-    "q": "Is the dish a noodle bowl topped with grilled meat slices and fresh greens?",
+    "q": "Is the main item cooked meat with noodles?",
     "yes": true
    },
    {
-    "q": "Is the dish served in a hot soup or broth like pho?",
+    "q": "Is the dish a soup with broth?",
     "yes": false
    },
    {
-    "q": "Is the meat served over steamed rice instead of noodles?",
+    "q": "Is the meat raw or uncooked?",
     "yes": false
    }
   ],
-  "dish": "Vietnamese lemongrass pork noodle bowl",
-  "look": "chargrilled sliced pork with caramelized edges and dark grill marks, arranged over thin white rice vermicelli noodles, shredded crisp green lettuce, sliced fresh cucumbers, whole fresh mint leaves, fresh green cilantro sprigs",
-  "model": "gemini-3.7-flash",
+  "dish": "bun cha",
+  "look": "charred grilled pork patties and sliced pork belly, served over a bed of soft white rice vermicelli noodles, accompanied by crisp shredded lettuce, cucumber slices, fresh cilantro sprigs, and mint leaves",
+  "model": "gemini-3.5-flash",
   "name": "Vietnamese Bún Chả with Lemongrass Pork",
   "rev": 6,
   "revisions": 0,
   "vessel": "bowl",
-  "written_at": "2026-10-07T20:36:14+00:00"
+  "written_at": "2026-10-07T20:53:43+00:00"
  },
  "6a9199e0c3d9": {
   "avoid": [
@@ -10767,38 +10769,39 @@
  "804b3b3f6673": {
   "avoid": [
    "meat",
+   "bacon",
+   "sausage",
+   "ham",
    "chicken",
    "beef",
    "pork",
    "fish",
    "shrimp",
-   "bacon",
-   "sausage",
-   "pie crust",
-   "pastry crust"
+   "pastry crust",
+   "pie crust"
   ],
   "checks": [
    {
-    "q": "Is the main item a wedge of baked egg frittata?",
+    "q": "Is the dish a thick wedge of baked egg frittata?",
     "yes": true
    },
    {
-    "q": "Does the dish contain bacon, sausage, or meat?",
+    "q": "Is there any meat, bacon, or sausage visible?",
     "yes": false
    },
    {
-    "q": "Does the egg dish have a pastry crust?",
+    "q": "Is there a pastry or pie crust?",
     "yes": false
    }
   ],
-  "dish": "Spinach and mushroom frittata",
-  "look": "a thick baked wedge of fluffy egg frittata, golden surface, melted cheese, packed with wilted green spinach leaves, dark sautéed mushroom slices",
-  "model": "gemini-3.6-flash",
+  "dish": "spinach and mushroom frittata",
+  "look": "a thick wedge of baked egg frittata, golden brown melted cheese top, visible tender dark green spinach leaves, sautéed brown mushroom slices throughout the firm egg custard",
+  "model": "gemini-3.7-flash",
   "name": "Spinach and Mushroom Frittata",
   "rev": 6,
   "revisions": 0,
   "vessel": "plate",
-  "written_at": "2026-10-07T20:47:59+00:00"
+  "written_at": "2026-10-07T20:49:24+00:00"
  },
  "8077663be4a2": {
   "avoid": [
@@ -11009,36 +11012,36 @@
  },
  "847b4821a540": {
   "avoid": [
-   "crust",
    "pie crust",
-   "pastry",
-   "quiche crust",
+   "pastry crust",
+   "quiche shell",
    "scrambled eggs",
-   "omelet wrap",
-   "raw eggs"
+   "omelet fold",
+   "raw eggs",
+   "toast"
   ],
   "checks": [
    {
-    "q": "Is the main item a wedge of baked egg frittata?",
+    "q": "Is the dish a thick slice of baked frittata or baked egg casserole?",
     "yes": true
    },
    {
-    "q": "Does the egg dish have a pie crust or pastry?",
+    "q": "Is there a pastry crust or pie crust around the eggs?",
     "yes": false
    },
    {
-    "q": "Is the egg scrambled loosely in a bowl?",
+    "q": "Are the eggs loose and scrambled?",
     "yes": false
    }
   ],
-  "dish": "Bacon and sausage frittata",
-  "look": "a thick wedge of baked egg frittata, golden brown top, melted golden cheese, studded with crispy bacon crumbles, sliced pork sausage, sliced button mushrooms, diced onions",
-  "model": "gemini-3.6-flash",
+  "dish": "bacon and sausage frittata",
+  "look": "a thick slice of baked egg frittata, golden browned top, melted cheddar cheese crust, visible crumbles of cooked pork sausage, crispy bacon bits, sliced brown mushrooms, diced soft onions",
+  "model": "gemini-3.7-flash",
   "name": "Meat Lover's Breakfast Frittata",
   "rev": 6,
   "revisions": 0,
   "vessel": "plate",
-  "written_at": "2026-10-07T20:47:59+00:00"
+  "written_at": "2026-10-07T20:49:24+00:00"
  },
  "85194199bd6d": {
   "avoid": [
@@ -14278,32 +14281,31 @@
    "fish",
    "shrimp",
    "marshmallows",
-   "butter",
    "raw yams",
-   "french fries"
+   "sweet potato fries"
   ],
   "checks": [
    {
-    "q": "Is the main item roasted orange root vegetable cubes?",
+    "q": "Is the main item roasted orange root vegetables?",
     "yes": true
    },
    {
-    "q": "Are there marshmallows on top of the yams?",
+    "q": "Are there pieces of meat or seafood?",
     "yes": false
    },
    {
-    "q": "Does the dish contain meat or seafood?",
+    "q": "Are the vegetables raw or uncooked?",
     "yes": false
    }
   ],
-  "dish": "Roasted yams",
-  "look": "roasted orange yam cubes, golden brown caramelized edges, soft tender center, sprinkled with finely chopped green thyme leaves, minced fresh parsley",
-  "model": "gemini-3.6-flash",
+  "dish": "roasted yams",
+  "look": "chunky cubes of roasted orange yams with caramelized, browned edges, lightly glistening, garnished with scattered fresh green thyme leaves and finely chopped parsley",
+  "model": "gemini-3.5-flash",
   "name": "Perfectly Roasted Yams",
   "rev": 6,
   "revisions": 0,
   "vessel": "plate",
-  "written_at": "2026-10-07T20:47:59+00:00"
+  "written_at": "2026-10-07T20:53:43+00:00"
  },
  "a8b9b1a7939d": {
   "avoid": [
@@ -15919,35 +15921,36 @@
    "chicken",
    "beef",
    "pork",
+   "bacon",
    "fish",
    "shrimp",
-   "bacon",
-   "croutons",
-   "french fries",
-   "raw potatoes"
+   "raw whole potatoes",
+   "raw leek stalks",
+   "clear broth",
+   "chunky tomato soup"
   ],
   "checks": [
    {
-    "q": "Is the main item a bowl of creamy soup?",
+    "q": "Is the dish a bowl of creamy pale soup?",
     "yes": true
    },
    {
-    "q": "Are there bacon bits or meat floating in the soup?",
+    "q": "Is there any meat or bacon in or on the soup?",
     "yes": false
    },
    {
-    "q": "Is it a solid potato side dish like french fries?",
+    "q": "Is the soup clear and watery rather than creamy?",
     "yes": false
    }
   ],
-  "dish": "Potato leek soup",
-  "look": "creamy pale yellow potato soup, velvety texture, topped with sliced green leek rings, thin cream swirl, fine chopped fresh rosemary",
-  "model": "gemini-3.6-flash",
+  "dish": "potato leek soup",
+  "look": "smooth creamy pale-ivory potato leek soup, velvety texture, thin swirl of heavy cream, finely minced cooked leeks, flecks of fresh chopped green rosemary",
+  "model": "gemini-3.7-flash",
   "name": "Potato Leek Soup",
   "rev": 6,
   "revisions": 0,
   "vessel": "bowl",
-  "written_at": "2026-10-07T20:47:59+00:00"
+  "written_at": "2026-10-07T20:49:24+00:00"
  },
  "ba9659072afa": {
   "avoid": [
@@ -16699,36 +16702,35 @@
  },
  "c393055e50c7": {
   "avoid": [
-   "noodles",
    "rice",
-   "raw vegetables",
+   "noodles",
+   "raw chicken",
+   "chopsticks",
    "skewers",
-   "beef",
-   "pork",
-   "shrimp"
+   "egg rolls"
   ],
   "checks": [
    {
-    "q": "Is the main item stir-fried meat and vegetables?",
+    "q": "Is the main item cooked meat with vegetables?",
     "yes": true
    },
    {
-    "q": "Is the meat served on skewers?",
+    "q": "Is the meat raw or uncooked?",
     "yes": false
    },
    {
-    "q": "Is the dish served over noodles or rice?",
+    "q": "Is the dish a soup with broth?",
     "yes": false
    }
   ],
-  "dish": "Chicken stir-fry",
-  "look": "glossy bite-sized pieces of cooked chicken breast, mixed with sliced red bell peppers, green bell peppers, onion wedges, tender peas, diced carrots, wilted dark greens, coated in savory brown stir-fry sauce",
-  "model": "gemini-3.6-flash",
+  "dish": "chicken stir-fry",
+  "look": "tender bite-sized pieces of stir-fried chicken breast, tossed with crisp red and green bell pepper strips, sliced onions, green peas, diced carrots, and wilted dark greens, all coated in a glossy, savory brown stir-fry sauce",
+  "model": "gemini-3.5-flash",
   "name": "Chicken Stir-Fry",
   "rev": 6,
   "revisions": 0,
   "vessel": "bowl",
-  "written_at": "2026-10-07T20:47:59+00:00"
+  "written_at": "2026-10-07T20:53:43+00:00"
  },
  "c39361a9960f": {
   "avoid": [
@@ -21203,10 +21205,10 @@
    "pork",
    "fish",
    "shrimp",
-   "tofu",
    "rice",
-   "noodles",
-   "tempeh-only dish"
+   "grains",
+   "quinoa",
+   "tofu"
   ],
   "checks": [
    {
@@ -21223,13 +21225,13 @@
    }
   ],
   "dish": "stir-fried lemongrass tempeh and shiitake mushrooms",
-  "look": "a mixture of sliced dark brown shiitake mushrooms and golden-brown tempeh cubes, glossy translucent glaze coating the pieces, flecks of minced green herbs",
+  "look": "a mixture of equal parts sliced dark brown shiitake mushrooms and golden-brown cubed tempeh, coated in a glossy translucent brown glaze, garnished with finely chopped green scallions",
   "model": "gemini-3.5-flash",
   "name": "Lemongrass Tempeh & Shiitake Mushroom",
   "rev": 6,
-  "revisions": 1,
+  "revisions": 2,
   "vessel": "plate",
-  "written_at": "2026-10-07T11:37:43+00:00"
+  "written_at": "2026-10-07T21:42:55+00:00"
  },
  "f5e04336cbc3": {
   "avoid": [
