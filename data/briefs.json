@@ -9037,6 +9037,41 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T08:12:49+00:00"
  },
+ "6a276bb8a32b": {
+  "avoid": [
+   "soup broth",
+   "pho",
+   "steamed rice",
+   "fried egg rolls",
+   "spring roll wrapper",
+   "skewers",
+   "raw meat",
+   "beef",
+   "tofu"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a noodle bowl topped with grilled meat slices and fresh greens?",
+    "yes": true
+   },
+   {
+    "q": "Is the dish served in a hot soup or broth like pho?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat served over steamed rice instead of noodles?",
+    "yes": false
+   }
+  ],
+  "dish": "Vietnamese lemongrass pork noodle bowl",
+  "look": "chargrilled sliced pork with caramelized edges and dark grill marks, arranged over thin white rice vermicelli noodles, shredded crisp green lettuce, sliced fresh cucumbers, whole fresh mint leaves, fresh green cilantro sprigs",
+  "model": "gemini-3.7-flash",
+  "name": "Vietnamese Bún Chả with Lemongrass Pork",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-07T20:36:14+00:00"
+ },
  "6a9199e0c3d9": {
   "avoid": [
    "meat",
