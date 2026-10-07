@@ -431,6 +431,44 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T06:46:09+00:00"
  },
+ "04e94c5a2b65": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "paneer",
+   "naan",
+   "rice",
+   "raw spinach",
+   "soup",
+   "chips"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a thick green spinach curry?",
+    "yes": true
+   },
+   {
+    "q": "Is the spinach served as a raw salad?",
+    "yes": false
+   },
+   {
+    "q": "Are there chunks of meat or chicken in the curry?",
+    "yes": false
+   }
+  ],
+  "dish": "saag khumb",
+  "look": "thick, textured dark-green spinach curry, cooked sliced brown mushrooms, pale bamboo shoot strips, a swirl of white cream on top, flecks of green chili",
+  "model": "gemini-3.5-flash",
+  "name": "Saag Khumb",
+  "rev": 6,
+  "revisions": 1,
+  "vessel": "bowl",
+  "written_at": "2026-10-07T12:50:41+00:00"
+ },
  "0641992994cb": {
   "avoid": [
    "meat",
@@ -2371,6 +2409,41 @@
   "vessel": "bowl",
   "written_at": "2026-10-04T10:08:39+00:00"
  },
+ "1c5c853e245b": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "lettuce",
+   "tomatoes",
+   "creamy dressing"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food sliced cucumbers?",
+    "yes": true
+   },
+   {
+    "q": "Is the salad mostly leafy green lettuce?",
+    "yes": false
+   },
+   {
+    "q": "Are there pieces of meat, poultry, or seafood in the salad?",
+    "yes": false
+   }
+  ],
+  "dish": "Vietnamese cucumber salad",
+  "look": "Thinly sliced crisp green cucumbers, tossed with slivered green onions, fresh whole cilantro leaves, torn mint leaves, minced garlic, light translucent dressing",
+  "model": "gemini-3.5-flash",
+  "name": "Vietnamese Cucumber &Herb Salad",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-07T11:12:33+00:00"
+ },
  "1c926658dd7d": {
   "avoid": [
    "meat",
@@ -3593,6 +3666,41 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T07:54:50+00:00"
+ },
+ "2be1848576c1": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "raw green beans",
+   "soup",
+   "rice"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food cooked green beans?",
+    "yes": true
+   },
+   {
+    "q": "Is there meat, chicken, or seafood mixed with the beans?",
+    "yes": false
+   },
+   {
+    "q": "Are the green beans raw and bright green without any cooking marks?",
+    "yes": false
+   }
+  ],
+  "dish": "Stir-fried green beans",
+  "look": "Whole green beans, wrinkled and blistered skin, dark brown spots, glossy dark tamari sauce coating, minced golden fried garlic, red pepper flakes, sprinkle of white sesame seeds",
+  "model": "gemini-3.5-flash",
+  "name": "Garlic Stir-fried Green Beans",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-07T11:12:33+00:00"
  },
  "2c938bc82419": {
   "avoid": [
@@ -8061,6 +8169,41 @@
   "vessel": "plate",
   "written_at": "2026-10-06T10:40:34+00:00"
  },
+ "58b78ef4c5c4": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "french fries",
+   "mashed potatoes",
+   "raw onions"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish made of sliced pan-fried potatoes?",
+    "yes": true
+   },
+   {
+    "q": "Are the potatoes mashed or cut into long french fries?",
+    "yes": false
+   },
+   {
+    "q": "Is there meat or bacon mixed with the potatoes?",
+    "yes": false
+   }
+  ],
+  "dish": "lyonnaise potatoes",
+  "look": "thin round slices of pan-fried potatoes, golden brown crispy edges, translucent caramelized sliced onions, glistening melted butter, sprinkle of finely chopped green parsley",
+  "model": "gemini-3.5-flash",
+  "name": "Pommes Lyonnaise",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-07T10:59:28+00:00"
+ },
  "592169116562": {
   "avoid": [
    "bun",
@@ -12074,6 +12217,41 @@
   "vessel": "plate",
   "written_at": "2026-09-27T06:30:47+00:00"
  },
+ "91d3e24ff544": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "spring rolls",
+   "noodles",
+   "peanut sauce"
+  ],
+  "checks": [
+   {
+    "q": "Is the item a clear, watery dipping sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the sauce thick, opaque, or creamy like peanut sauce?",
+    "yes": false
+   },
+   {
+    "q": "Are there solid foods like noodles or spring rolls submerged in the sauce?",
+    "yes": false
+   }
+  ],
+  "dish": "Vegan nuoc cham",
+  "look": "Clear light-amber liquid dipping sauce, finely minced red Thai chilies floating on top, minced white garlic cloves, flecks of chili seeds",
+  "model": "gemini-3.5-flash",
+  "name": "Nuoc Cham",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-07T11:12:33+00:00"
+ },
  "9239279501ff": {
   "avoid": [
    "meat",
@@ -13033,6 +13211,39 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T04:50:08+00:00"
+ },
+ "9fa367ebfbac": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "curry",
+   "gravy",
+   "naan",
+   "raw rice",
+   "yellow turmeric rice"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food cooked white rice?",
+    "yes": true
+   },
+   {
+    "q": "Is the rice covered in a thick curry or gravy?",
+    "yes": false
+   },
+   {
+    "q": "Does the rice look yellow like saffron or turmeric rice?",
+    "yes": false
+   }
+  ],
+  "dish": "Jeera rice",
+  "look": "Fluffy long-grain basmati rice, glistening with ghee, scattered whole dark cumin seeds, a few whole green cardamom pods, one star anise, sliced green chilies, chopped fresh cilantro garnish",
+  "model": "gemini-3.5-flash",
+  "name": "Jeera Rice",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-07T11:12:33+00:00"
  },
  "9fbf83fc6102": {
   "avoid": [
@@ -14965,6 +15176,41 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T05:36:06+00:00"
+ },
+ "b3bcb759f6a7": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "flatbread",
+   "rice",
+   "raw potatoes"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a minced curry with peas and potatoes?",
+    "yes": true
+   },
+   {
+    "q": "Is the protein in large chunks or slices?",
+    "yes": false
+   },
+   {
+    "q": "Does the dish contain visible animal meat?",
+    "yes": false
+   }
+  ],
+  "dish": "Vegan Aloo Matar Keema",
+  "look": "crumbled vegan soy mince in a thick reddish-brown spiced tomato gravy, tender cubes of golden potato, bright green peas, flecks of green chili, garnished with fresh chopped cilantro leaves",
+  "model": "gemini-3.5-flash",
+  "name": "Aloo Matar Keema",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-07T10:48:39+00:00"
  },
  "b3e9d632d351": {
   "avoid": [
@@ -18183,6 +18429,42 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T04:46:15+00:00"
  },
+ "d7b0b5df40ae": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "white potatoes",
+   "gravy",
+   "marshmallows",
+   "pecans"
+  ],
+  "checks": [
+   {
+    "q": "Is the food orange mashed potatoes?",
+    "yes": true
+   },
+   {
+    "q": "Are the sweet potatoes cut into solid fries or wedges?",
+    "yes": false
+   },
+   {
+    "q": "Is there meat or gravy on top of the mash?",
+    "yes": false
+   }
+  ],
+  "dish": "mashed sweet potatoes",
+  "look": "smooth creamy orange mashed sweet potatoes, a melting pat of yellow butter in the center, soft whipped texture with gentle spoon swirls",
+  "model": "gemini-3.5-flash",
+  "name": "Sweet Potato Mash",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-07T10:59:28+00:00"
+ },
  "d7bd5cc28d8f": {
   "avoid": [
    "ground beef",
@@ -20635,6 +20917,42 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-05T10:42:43+00:00"
+ },
+ "f48a457eda09": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "tofu",
+   "rice",
+   "noodles",
+   "tempeh-only dish"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a mixture of cooked tempeh and mushrooms?",
+    "yes": true
+   },
+   {
+    "q": "Is there meat, chicken, or seafood in the dish?",
+    "yes": false
+   },
+   {
+    "q": "Does the tempeh look like soft white tofu blocks?",
+    "yes": false
+   }
+  ],
+  "dish": "stir-fried lemongrass tempeh and shiitake mushrooms",
+  "look": "a mixture of sliced dark brown shiitake mushrooms and golden-brown tempeh cubes, glossy translucent glaze coating the pieces, flecks of minced green herbs",
+  "model": "gemini-3.5-flash",
+  "name": "Lemongrass Tempeh & Shiitake Mushroom",
+  "rev": 6,
+  "revisions": 1,
+  "vessel": "plate",
+  "written_at": "2026-10-07T11:37:43+00:00"
  },
  "f5e04336cbc3": {
   "avoid": [
