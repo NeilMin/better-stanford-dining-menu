@@ -3055,6 +3055,38 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T06:30:47+00:00"
  },
+ "226f47002661": {
+  "avoid": [
+   "skewers",
+   "chicken wings",
+   "raw chicken",
+   "whole roast chicken",
+   "beef",
+   "pork"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cooked poultry topped with fruit salsa?",
+    "yes": true
+   },
+   {
+    "q": "Is the poultry raw or uncooked?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat ground or minced?",
+    "yes": false
+   }
+  ],
+  "dish": "Jerk chicken with pineapple salsa",
+  "look": "charred grilled chicken thighs, dark spiced jerk seasoning rub, topped with bright pineapple salsa made of diced fresh pineapple, red onion, cilantro, red bell pepper",
+  "model": "gemini-3.6-flash",
+  "name": "Jerk Chicken with Pineapple Salsa",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-07T20:47:59+00:00"
+ },
  "22add51f8555": {
   "avoid": [
    "meat",
@@ -4922,6 +4954,42 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T06:53:41+00:00"
+ },
+ "351105132b98": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "pasta",
+   "spaghetti",
+   "noodles",
+   "soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a thick green herb pesto sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the pesto served mixed into pasta?",
+    "yes": false
+   },
+   {
+    "q": "Does the sauce contain meat or seafood?",
+    "yes": false
+   }
+  ],
+  "dish": "Kale pesto",
+  "look": "thick emerald green kale pesto sauce, coarse grainy texture with blended herbs, minced garlic specks, thick spreadable herbal paste, topped with fresh basil leaves, rich glossy surface",
+  "model": "gemini-3.6-flash",
+  "name": "Kale Pesto",
+  "rev": 6,
+  "revisions": 1,
+  "vessel": "bowl",
+  "written_at": "2026-10-07T21:03:15+00:00"
  },
  "35146904e1f1": {
   "avoid": [
@@ -10696,6 +10764,42 @@
   "plate": "plate",
   "rev": 6
  },
+ "804b3b3f6673": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "bacon",
+   "sausage",
+   "pie crust",
+   "pastry crust"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a wedge of baked egg frittata?",
+    "yes": true
+   },
+   {
+    "q": "Does the dish contain bacon, sausage, or meat?",
+    "yes": false
+   },
+   {
+    "q": "Does the egg dish have a pastry crust?",
+    "yes": false
+   }
+  ],
+  "dish": "Spinach and mushroom frittata",
+  "look": "a thick baked wedge of fluffy egg frittata, golden surface, melted cheese, packed with wilted green spinach leaves, dark sautéed mushroom slices",
+  "model": "gemini-3.6-flash",
+  "name": "Spinach and Mushroom Frittata",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-07T20:47:59+00:00"
+ },
  "8077663be4a2": {
   "avoid": [
    "beef",
@@ -10902,6 +11006,39 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-03T08:46:53+00:00"
+ },
+ "847b4821a540": {
+  "avoid": [
+   "crust",
+   "pie crust",
+   "pastry",
+   "quiche crust",
+   "scrambled eggs",
+   "omelet wrap",
+   "raw eggs"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a wedge of baked egg frittata?",
+    "yes": true
+   },
+   {
+    "q": "Does the egg dish have a pie crust or pastry?",
+    "yes": false
+   },
+   {
+    "q": "Is the egg scrambled loosely in a bowl?",
+    "yes": false
+   }
+  ],
+  "dish": "Bacon and sausage frittata",
+  "look": "a thick wedge of baked egg frittata, golden brown top, melted golden cheese, studded with crispy bacon crumbles, sliced pork sausage, sliced button mushrooms, diced onions",
+  "model": "gemini-3.6-flash",
+  "name": "Meat Lover's Breakfast Frittata",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-07T20:47:59+00:00"
  },
  "85194199bd6d": {
   "avoid": [
@@ -14132,6 +14269,42 @@
   "vessel": "bowl",
   "written_at": "2026-10-05T00:45:03+00:00"
  },
+ "a872aea50d2f": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "marshmallows",
+   "butter",
+   "raw yams",
+   "french fries"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item roasted orange root vegetable cubes?",
+    "yes": true
+   },
+   {
+    "q": "Are there marshmallows on top of the yams?",
+    "yes": false
+   },
+   {
+    "q": "Does the dish contain meat or seafood?",
+    "yes": false
+   }
+  ],
+  "dish": "Roasted yams",
+  "look": "roasted orange yam cubes, golden brown caramelized edges, soft tender center, sprinkled with finely chopped green thyme leaves, minced fresh parsley",
+  "model": "gemini-3.6-flash",
+  "name": "Perfectly Roasted Yams",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-07T20:47:59+00:00"
+ },
  "a8b9b1a7939d": {
   "avoid": [
    "tortillas",
@@ -15740,6 +15913,42 @@
   "vessel": "plate",
   "written_at": "2026-09-26T23:04:37+00:00"
  },
+ "ba95779a369a": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "bacon",
+   "croutons",
+   "french fries",
+   "raw potatoes"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a bowl of creamy soup?",
+    "yes": true
+   },
+   {
+    "q": "Are there bacon bits or meat floating in the soup?",
+    "yes": false
+   },
+   {
+    "q": "Is it a solid potato side dish like french fries?",
+    "yes": false
+   }
+  ],
+  "dish": "Potato leek soup",
+  "look": "creamy pale yellow potato soup, velvety texture, topped with sliced green leek rings, thin cream swirl, fine chopped fresh rosemary",
+  "model": "gemini-3.6-flash",
+  "name": "Potato Leek Soup",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-07T20:47:59+00:00"
+ },
  "ba9659072afa": {
   "avoid": [
    "meat",
@@ -16487,6 +16696,39 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T08:12:49+00:00"
+ },
+ "c393055e50c7": {
+  "avoid": [
+   "noodles",
+   "rice",
+   "raw vegetables",
+   "skewers",
+   "beef",
+   "pork",
+   "shrimp"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item stir-fried meat and vegetables?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat served on skewers?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish served over noodles or rice?",
+    "yes": false
+   }
+  ],
+  "dish": "Chicken stir-fry",
+  "look": "glossy bite-sized pieces of cooked chicken breast, mixed with sliced red bell peppers, green bell peppers, onion wedges, tender peas, diced carrots, wilted dark greens, coated in savory brown stir-fry sauce",
+  "model": "gemini-3.6-flash",
+  "name": "Chicken Stir-Fry",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-07T20:47:59+00:00"
  },
  "c39361a9960f": {
   "avoid": [
