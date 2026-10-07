@@ -162,6 +162,22 @@ def test_a_failed_batch_falls_back_to_one_brief_at_a_time(setup):
     assert setup.image("aaaa0001").exists() and setup.image("bbbb0002").exists()
 
 
+def test_a_dish_whose_brief_timed_out_is_tried_again_at_the_end(setup):
+    """A timeout cost a meat dish its night once: skipped, and not tried until the next scrape."""
+    setup.llm.briefs += [LLMError("Read timed out"), BRIEF]
+    setup.llm.verdicts += [PASS]
+    assert run() == 0
+    assert [kind for kind, _ in setup.llm.calls].count("brief") == 2
+    assert setup.image("aaaa0001").exists()
+
+
+def test_a_brief_that_fails_twice_is_given_up_on_for_the_night(setup):
+    setup.llm.briefs += [LLMError("Read timed out"), LLMError("Read timed out")]
+    assert run() == 0
+    assert [kind for kind, _ in setup.llm.calls].count("brief") == 2
+    assert not setup.image("aaaa0001").exists()
+
+
 def test_a_picture_the_judge_could_not_read_is_not_kept(setup):
     setup.llm.briefs.append(BRIEF)
     setup.llm.verdicts += [LLMError("garbled"), PASS]

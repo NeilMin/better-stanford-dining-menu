@@ -305,6 +305,7 @@ def main(argv: list[str] | None = None) -> int:
     drawn = 0
     briefs = brieflib.load(ROOT)
     fresh: set[str] = set()  # written this run, so --rewrite-briefs writes each once
+    brief_failed: set[str] = set()  # sent to the back of the queue once; see below
 
     def needs_brief(did: str) -> bool:
         return bool(llm) and did not in fresh and (
@@ -342,7 +343,17 @@ def main(argv: list[str] | None = None) -> int:
                 except Unavailable:
                     raise
                 except LLMError as exc:
-                    print(f"{tag} no brief: {exc}", file=sys.stderr)
+                    # A timeout is the API having a bad minute, not a verdict on
+                    # the dish, and a meat dish skipped here waited for the next
+                    # scrape, ten hours on. Once, to the back of the queue: the
+                    # dishes drawn in between are the backoff, and `for` over a
+                    # list picks up what is appended while it runs.
+                    again = did not in brief_failed
+                    brief_failed.add(did)
+                    if again:
+                        pending.append((did, entry))
+                    print(f"{tag} no brief: {exc}"
+                          + (" -- will try again at the end" if again else ""), file=sys.stderr)
                     continue
             brief = briefs.get(did)
 
