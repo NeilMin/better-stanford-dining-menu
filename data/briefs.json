@@ -3959,6 +3959,40 @@
   "vessel": "plate",
   "written_at": "2026-09-29T16:28:29+00:00"
  },
+ "2d7a3fd5f5b5": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "raw radish",
+   "creamy white soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the food a vegetable stew in broth served in a bowl?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat or poultry in the stew?",
+    "yes": false
+   },
+   {
+    "q": "Is the broth thick and creamy white?",
+    "yes": false
+   }
+  ],
+  "dish": "Asian daikon radish stew",
+  "look": "chunky tender daikon radish cubes, sliced orange carrots, dark brown shiitake mushroom caps, savory dark amber broth, topped with sliced green scallions",
+  "model": "gemini-3.6-flash",
+  "name": "Daikon Radish Stew",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-08T10:50:06+00:00"
+ },
  "2df7f17a3a1a": {
   "avoid": [
    "pasta",
@@ -5861,6 +5895,41 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-02T10:06:48+00:00"
+ },
+ "3dbe16c37588": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "sausage",
+   "minced beef",
+   "raw rice"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food cooked seasoned rice?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of ground meat or sausage?",
+    "yes": false
+   },
+   {
+    "q": "Does the rice look dry and raw?",
+    "yes": false
+   }
+  ],
+  "dish": "vegetarian dirty rice",
+  "look": "steamed brown rice grains, flecks of wilted green spinach, small diced red tomatoes, diced bell pepper pieces, tender orange butternut squash cubes, fine green onion slices",
+  "model": "gemini-3.6-flash",
+  "name": "Veggie Dirty Rice",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-08T10:52:45+00:00"
  },
  "3dda86d35bac": {
   "avoid": [
@@ -7838,6 +7907,40 @@
   "revisions": 1,
   "vessel": "plate",
   "written_at": "2026-09-27T04:44:43+00:00"
+ },
+ "533c523ede7b": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "broth",
+   "soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish stir-fried noodles with vegetables?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat, chicken, or shrimp?",
+    "yes": false
+   },
+   {
+    "q": "Are the noodles served in liquid broth?",
+    "yes": false
+   }
+  ],
+  "dish": "vegetable chow mein",
+  "look": "stir-fried yellow thin wheat noodles, julienned orange carrots, thinly sliced red onion strips, chopped green celery pieces, glistening glossy brown stir-fry glaze",
+  "model": "gemini-3.6-flash",
+  "name": "Vegetable Chow Mein",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-08T10:52:45+00:00"
  },
  "535b7eb03506": {
   "avoid": [
@@ -10405,6 +10508,38 @@
   "vessel": "bowl",
   "written_at": "2026-10-03T07:52:08+00:00"
  },
+ "786c94a25851": {
+  "avoid": [
+   "hamburger bun",
+   "sandwich",
+   "raw meat",
+   "steak fillet",
+   "french fries",
+   "cheese slice"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a cooked oval patty covered in brown mushroom gravy?",
+    "yes": true
+   },
+   {
+    "q": "Is the patty served inside a burger bun?",
+    "yes": false
+   },
+   {
+    "q": "Is the main item a whole cut steak fillet like sirloin?",
+    "yes": false
+   }
+  ],
+  "dish": "Salisbury steak",
+  "look": "seared oval ground beef patty, rich brown mushroom gravy sauce, tender sliced brown button mushrooms, caramelized onion slices, fresh thyme flecks",
+  "model": "gemini-3.6-flash",
+  "name": "Salisbury Steak",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-08T10:50:06+00:00"
+ },
  "7896e25d76ba": {
   "avoid": [
    "rice",
@@ -10443,6 +10578,41 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-26T23:08:02+00:00"
+ },
+ "7a96dd54587f": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "hot dog bun",
+   "bread",
+   "raw meat"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a grilled or seared sausage link?",
+    "yes": true
+   },
+   {
+    "q": "Is the sausage served in a hot dog bun or sandwich roll?",
+    "yes": false
+   },
+   {
+    "q": "Is the sausage sliced into small round coins?",
+    "yes": false
+   }
+  ],
+  "dish": "vegan Italian hot link sausage",
+  "look": "plump seared plant-based sausage link, golden-brown charred grill marks, shiny taut outer skin, visible flecks of red pepper flakes and green herbs",
+  "model": "gemini-3.6-flash",
+  "name": "Beyond Italian Hot Link",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-08T10:50:06+00:00"
  },
  "7b3f9fe42911": {
   "avoid": [
@@ -10545,6 +10715,38 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T08:12:49+00:00"
+ },
+ "7bbae214b5dc": {
+  "avoid": [
+   "deep fried chicken",
+   "breadcrumbs",
+   "battered chicken",
+   "raw chicken",
+   "whole roast chicken",
+   "bone-in chicken legs"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a pan-seared cutlet?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken deep-fried or heavily breaded?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken whole or bone-in?",
+    "yes": false
+   }
+  ],
+  "dish": "chicken meunière",
+  "look": "pan-seared chicken breast cutlet, golden-brown crust, silky melted butter sheen, pan drippings, sprinkled chopped fresh parsley, lemon wedge garnish",
+  "model": "gemini-3.6-flash",
+  "name": "Chicken Meuniere",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-08T10:50:06+00:00"
  },
  "7c5f8eb934b3": {
   "avoid": [
@@ -10687,6 +10889,38 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-26T23:10:23+00:00"
+ },
+ "7d409e39dd28": {
+  "avoid": [
+   "pasta",
+   "noodles",
+   "red sauce",
+   "tomato",
+   "soup",
+   "raw spinach"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cooked meat or poultry in a cream sauce with spinach?",
+    "yes": true
+   },
+   {
+    "q": "Is the dish served over a bed of pasta or noodles?",
+    "yes": false
+   },
+   {
+    "q": "Is the sauce red or tomato-based?",
+    "yes": false
+   }
+  ],
+  "dish": "chicken Florentine",
+  "look": "seared chicken breast cutlet, smooth creamy garlic white sauce topping, wilted dark green spinach leaves, flecks of cracked black pepper",
+  "model": "gemini-3.6-flash",
+  "name": "Creamy Chicken Florentine",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-08T10:50:06+00:00"
  },
  "7ef2b4c7396f": {
   "avoid": [
@@ -14466,6 +14700,76 @@
   "vessel": "plate",
   "written_at": "2026-09-26T23:11:11+00:00"
  },
+ "a9e41a2fb74b": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "soup",
+   "deep fried egg rolls",
+   "raw dough"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item crescent-shaped dumplings with seared bottoms?",
+    "yes": true
+   },
+   {
+    "q": "Are the dumplings served floating in a bowl of soup?",
+    "yes": false
+   },
+   {
+    "q": "Are the dumplings deep-fried rolls?",
+    "yes": false
+   }
+  ],
+  "dish": "pan-seared vegetable potstickers",
+  "look": "row of crescent-shaped dumplings, crispy dark golden-brown pan-seared bottoms, pale soft steamed dough tops, sprinkle of toasted sesame seeds and chopped scallions",
+  "model": "gemini-3.6-flash",
+  "name": "Pan Seared Pot Stickers",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-08T10:50:06+00:00"
+ },
+ "aa09d16ef65c": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "rice",
+   "noodles",
+   "raw bok choy"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cooked bok choy?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat, poultry, or fish?",
+    "yes": false
+   },
+   {
+    "q": "Is the bok choy raw and uncut?",
+    "yes": false
+   }
+  ],
+  "dish": "stir-fried bok choy",
+  "look": "cooked baby bok choy halves, glossy bright green leafy tops, tender white tender stalks, sprinkle of toasted tan sesame seeds, light savory glaze",
+  "model": "gemini-3.6-flash",
+  "name": "Stir-Fried Bok Choy with Sesame",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-08T10:52:45+00:00"
+ },
  "aac111afd7e4": {
   "avoid": [
    "rice",
@@ -15441,6 +15745,41 @@
   "vessel": "plate",
   "written_at": "2026-09-27T05:36:06+00:00"
  },
+ "b3aed1999d84": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "rice",
+   "naan",
+   "flatbread"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food a yellow lentil stew with spinach?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat or poultry?",
+    "yes": false
+   },
+   {
+    "q": "Is it a dry rice or grain dish?",
+    "yes": false
+   }
+  ],
+  "dish": "dal palak",
+  "look": "thick golden yellow lentil stew, wilted dark green chopped spinach leaves, small diced cooked red tomato pieces, toasted dark cumin seeds, fresh green cilantro leaves",
+  "model": "gemini-3.6-flash",
+  "name": "Dal Palak",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-08T10:52:45+00:00"
+ },
  "b3bcb759f6a7": {
   "avoid": [
    "meat",
@@ -15861,6 +16200,41 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T04:33:15+00:00"
+ },
+ "b9171048e5a9": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "paneer",
+   "rice",
+   "naan"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a green curry with mushrooms?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat, chicken, or seafood?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a watery clear soup?",
+    "yes": false
+   }
+  ],
+  "dish": "spinach and mushroom curry",
+  "look": "thick dark green spinach puree curry, tender cooked cremini mushroom halves, glossy texture, swirl of cream on top, flecks of chopped green serrano chili garnish",
+  "model": "gemini-3.6-flash",
+  "name": "Saag Kumbh",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-08T10:52:45+00:00"
  },
  "b91b6ed40a40": {
   "avoid": [
@@ -19918,6 +20292,39 @@
   "revisions": 0,
   "vessel": "plate"
  },
+ "e73e962de194": {
+  "avoid": [
+   "pork chop",
+   "cubed pork",
+   "barbecue sauce",
+   "red sauce",
+   "bun",
+   "sandwich",
+   "pineapple slices"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food shredded or pulled meat?",
+    "yes": true
+   },
+   {
+    "q": "Is the pork cut into thick solid chops or steaks?",
+    "yes": false
+   },
+   {
+    "q": "Is the pork served inside a burger bun or sandwich roll?",
+    "yes": false
+   }
+  ],
+  "dish": "Kalua pork",
+  "look": "heap of tender shredded pulled pork, juicy moist strands of golden-brown meat, crispy seared edges, light savory pan dripping sheen",
+  "model": "gemini-3.6-flash",
+  "name": "Kahlua Pork",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-08T10:50:06+00:00"
+ },
  "e7579de20495": {
   "avoid": [
    "large meal",
@@ -20831,6 +21238,39 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T05:03:54+00:00"
+ },
+ "f052a7b77693": {
+  "avoid": [
+   "skewers",
+   "pork chops",
+   "ground pork",
+   "soup",
+   "noodles",
+   "rice",
+   "steamed buns"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food sliced roasted meat with a reddish glaze?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat skewered on sticks?",
+    "yes": false
+   },
+   {
+    "q": "Is the pork ground or minced?",
+    "yes": false
+   }
+  ],
+  "dish": "Cantonese char siu pork",
+  "look": "thick sliced roasted pork strips, glossy sticky red-brown caramel glaze, crisp charred edges, bright crimson rind, sprinkle of fresh chopped scallions",
+  "model": "gemini-3.6-flash",
+  "name": "Cantonese-Style Char Siu Pork",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-08T10:50:06+00:00"
  },
  "f05c4f259f50": {
   "avoid": [
@@ -22028,6 +22468,41 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T06:34:15+00:00"
+ },
+ "fdbf897dfc17": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "roast pork",
+   "ribs",
+   "skewers"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a dark dipping sauce?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of pork or meat coated in sauce?",
+    "yes": false
+   },
+   {
+    "q": "Is the sauce thin and watery like broth?",
+    "yes": false
+   }
+  ],
+  "dish": "char siu sauce",
+  "look": "thick glossy dark reddish-brown sweet barbecue dipping sauce, smooth sticky texture, deep mahogany sheen, rich viscous sweet glaze in a container",
+  "model": "gemini-3.6-flash",
+  "name": "Char Siu Sauce",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-08T10:52:45+00:00"
  },
  "fdc6d46ff7e9": {
   "avoid": [
