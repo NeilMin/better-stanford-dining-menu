@@ -4927,29 +4927,30 @@
  },
  "348bec54f2b0": {
   "avoid": [
-   "meat",
-   "chicken",
+   "thick steak",
+   "thick monolithic slab",
+   "giant single piece",
+   "meat steak",
+   "pork chop",
    "beef",
-   "pork",
-   "fish",
+   "chicken",
+   "meat",
+   "fish fillet",
    "pears",
-   "apples",
    "fruit",
-   "curled cups",
-   "cauliflower",
-   "alien shapes"
+   "cauliflower"
   ],
   "checks": [
    {
-    "q": "Is the main item a seared mushroom steak or thick mushroom cutlet?",
+    "q": "Is the main item thinly sliced king oyster mushrooms or mushroom strips?",
     "yes": true
    },
    {
-    "q": "Does the food look like fruit such as pears or apples?",
+    "q": "Does the dish look like a thick meat steak or pork chop?",
     "yes": false
    },
    {
-    "q": "Is the food real animal meat such as fish or pork?",
+    "q": "Does the food look like fruit such as pears or apples?",
     "yes": false
    },
    {
@@ -4957,15 +4958,15 @@
     "yes": false
    }
   ],
-  "dish": "pan-seared king oyster mushroom steak meunière",
+  "dish": "pan-seared thinly sliced king oyster mushrooms meunière",
   "hand": true,
-  "look": "a thick rectangular slab of king trumpet mushroom seared golden-brown with caramelized edges, visible vertical fibrous mushroom grain along the side, glistening in silky lemon herb butter meunière sauce, sprinkled with finely chopped fresh parsley, plated on a clean white ceramic plate with a lemon wedge and fresh parsley",
+  "look": "multiple thinly sliced flat rectangular strips of king trumpet mushroom arranged neatly across a white ceramic plate, delicate white fibrous mushroom stem texture with lightly caramelized golden-brown seared edges, glistening in glossy lemon herb butter meunière sauce, sprinkled with finely chopped fresh green parsley",
   "model": "manual-culinary-fix",
   "name": "King Oyster Mushroom Meunière",
   "rev": 6,
   "revisions": 0,
   "vessel": "plate",
-  "written_at": "2026-10-08T05:14:56+00:00"
+  "written_at": "2026-10-08T05:33:12+00:00"
  },
  "351105132b98": {
   "avoid": [
