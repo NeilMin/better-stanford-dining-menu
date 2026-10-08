@@ -759,7 +759,7 @@
    *  level across the halls whatever length the names beneath them run to; the
    *  box is reserved at its final size, so the name does not jump when it loads.
    *  A special is the same card, marked out: it is the dish you walk over for. */
-  function dishCard(rec, onlyHere, special = false) {
+  function dishCard(rec, onlyHere, special = false, aboveFold = false, lcp = false) {
     const card = el("article", {
       className: "card" + (PROTEIN[rec.category] ? " card-meat" : "") +
         (special ? " card-special" : ""),
@@ -779,15 +779,24 @@
 
     if (state.photos) {
       if (rec.image) {
-        const thumb = el("img", {
+        const imgProps = {
           className: "thumb",
           src: PAGE.root + "img/" + rec.image,
           alt: zh || rec.name,
-          loading: "lazy",
           decoding: "async",
           width: 1024,
           height: 576,
-        });
+        };
+        if (!aboveFold) {
+          imgProps.loading = "lazy";
+        }
+        if (aboveFold && lcp) {
+          imgProps.fetchPriority = "high";
+        }
+        const thumb = el("img", imgProps);
+        if (aboveFold && lcp) {
+          thumb.setAttribute("fetchpriority", "high");
+        }
         thumb.tabIndex = 0;
         thumb.setAttribute("role", "button");
         thumb.title = t("viewLargePhoto");
@@ -895,7 +904,9 @@
 
     const { spread, serving: servingHalls } = tally(matchesDiet);
 
-    for (const hallId of state.halls) board.append(column(hallId, spread, servingHalls.length));
+    for (const [colIndex, hallId] of state.halls.entries()) {
+      board.append(column(hallId, spread, servingHalls.length, colIndex));
+    }
 
     // The columns are laid on the board's own rows so that the slots line up
     // across the halls (.board, in the stylesheet). The deepest column decides
@@ -1033,7 +1044,7 @@
     return slot;
   }
 
-  function column(hallId, spread, servingCount = 0) {
+  function column(hallId, spread, servingCount = 0, colIndex = 0) {
     const hall = hallById.get(hallId);
     const col = el("section", { className: "column" });
     col.style.setProperty("--hall", hall.accent);
@@ -1131,9 +1142,24 @@
         }));
       }
     } else {
-      for (const rec of specials) col.append(dishCard(rec, isUnique(rec), true));
+      let cardCount = 0;
+      let imageCount = 0;
+      const isAboveFold = () => colIndex < 2 && cardCount < 2;
+      const isLcp = (rec) => colIndex === 0 && Boolean(rec.image) && imageCount === 0;
+
+      for (const rec of specials) {
+        col.append(dishCard(rec, isUnique(rec), true, isAboveFold(), isLcp(rec)));
+        if (rec.image) imageCount++;
+        cardCount++;
+      }
       for (const rec of daily) {
-        col.append(rec.isStationGroup ? stationRow(rec, isUnique(rec)) : dishCard(rec, isUnique(rec)));
+        if (rec.isStationGroup) {
+          col.append(stationRow(rec, isUnique(rec)));
+        } else {
+          col.append(dishCard(rec, isUnique(rec), false, isAboveFold(), isLcp(rec)));
+          if (rec.image) imageCount++;
+          cardCount++;
+        }
       }
     }
 

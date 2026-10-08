@@ -299,6 +299,49 @@ class TestPureHelpers:
             "不营业，或尚未发布菜单。",
         ]
 
+    def test_dish_card_image_loading_and_fetchpriority(self, tmp_path):
+        """Above-the-fold cards must not be lazy-loaded, and the LCP card gets high priority."""
+        prelude = """
+        const PROTEIN = {};
+        const state = { photos: true, meal: 'Dinner' };
+        const PAGE = { root: '' };
+        const t = (k) => k;
+        const zhName = (r) => null;
+        const badgesFor = () => null;
+        const detailsFor = () => [];
+        const openLightbox = () => {};
+        const el = (tag, props = {}, kids = []) => {
+          const node = Object.assign({
+            tag,
+            attrs: {},
+            children: [],
+            setAttribute(k, v) { this.attrs[k] = v; },
+            append(child) { if (child) this.children.push(child); },
+            addEventListener() {},
+          }, props);
+          return node;
+        };
+        """
+        code = """
+        const rec = { name: 'Roast Chicken', image: 'chicken.webp', category: 'poultry' };
+        const getThumb = (card) => card.children.find((c) => c.className === 'thumb');
+        const cardLcp = dishCard(rec, false, false, true, true);
+        const cardAbove = dishCard(rec, false, false, true, false);
+        const cardLazy = dishCard(rec, false, false, false, false);
+
+        return [
+          getThumb(cardLcp),
+          getThumb(cardAbove),
+          getThumb(cardLazy),
+        ].map((t) => ({ loading: t.loading, fetchpriority: t.attrs.fetchpriority, fetchPriority: t.fetchPriority }));
+        """
+        got = call(["dishCard"], code, prelude=prelude, tmp_path=tmp_path)
+        assert got == [
+            {"fetchpriority": "high", "fetchPriority": "high"},
+            {},
+            {"loading": "lazy"},
+        ]
+
 
 def test_the_script_keeps_the_title_the_build_wrote(tmp_path):
     """Google reads the title after the script has run, so it is app.js's

@@ -387,6 +387,43 @@ def hall_title(name: str) -> str:
     return f"{name} Menu · {SITE_NAME}"
 
 
+def find_lcp_image(payload: dict, hall_id: str | None) -> str | None:
+    """Find the image filename of the first dish card that will be rendered."""
+    if not payload.get("window"):
+        return None
+    date_iso = payload["window"][0]
+    day_menus = payload.get("menus", {}).get(date_iso, {})
+    if not day_menus:
+        return None
+
+    if hall_id:
+        target_halls = [hall_id]
+    else:
+        selected = set(payload.get("defaults", {}).get("selected", []))
+        target_halls = [h["id"] for h in payload.get("halls", []) if h["id"] in selected]
+        if not target_halls and payload.get("halls"):
+            target_halls = [payload["halls"][0]["id"]]
+
+    for hid in target_halls:
+        hall_meals = day_menus.get(hid, {})
+        if not hall_meals:
+            continue
+        meal = "Dinner" if "Dinner" in hall_meals else None
+        if not meal:
+            available = [m for m in MEAL_ORDER if m in hall_meals] or list(hall_meals.keys())
+            meal = available[-1] if available else None
+        if not meal:
+            continue
+        svc = hall_meals[meal]
+        for ref in svc.get("specials", []) + svc.get("daily", []):
+            if isinstance(ref, str):
+                did = ref.rsplit(".", 1)[0]
+                dish = payload.get("dishes", {}).get(did, {})
+                if dish.get("image"):
+                    return dish["image"]
+    return None
+
+
 def page_html(template: str, payload: dict, halls: list[dict], hall: dict | None) -> str:
     """One page of the site: the home board when `hall` is None, else that
     hall's page one directory down."""
@@ -394,6 +431,10 @@ def page_html(template: str, payload: dict, halls: list[dict], hall: dict | None
     root = "../" if hall else ""
     links = " · ".join(f'<a href="{root}{h["id"]}/">{esc(h["name"])}</a>' for h in halls)
     html = template.replace("<!--HALLS-->", links)
+    lcp_image = find_lcp_image(payload, hall["id"] if hall else None)
+    preload = (f'<link rel="preload" as="image" href="{root}img/{lcp_image}" fetchpriority="high">\n'
+               if lcp_image else "")
+    html = html.replace("<!--PRELOAD-->\n", preload).replace("<!--PRELOAD-->", preload)
     home = f"https://{DOMAIN}/"
     if hall is None:
         ld = {"@context": "https://schema.org", "@type": "WebSite",

@@ -410,6 +410,45 @@ class TestRender:
         assert not (out / "img" / "stale.webp").exists()
         assert (out / "img" / f"{did}.webp").exists()
 
+    def test_lcp_image_is_preloaded_on_home_and_hall_pages(self, site, tmp_path):
+        did = dish_id("Roast Chicken")
+        site.write_catalog({did: {"name": "Roast Chicken", "image": f"{did}.webp"}})
+        site.write_image(f"{did}.webp")
+        site.with_web()
+        out = tmp_path / "site"
+        buildlib.build(site.root, out)
+        home_html = (out / "index.html").read_text()
+        wilbur_html = (out / "wilbur" / "index.html").read_text()
+        assert f'<link rel="preload" as="image" href="img/{did}.webp" fetchpriority="high">' in home_html
+        assert f'<link rel="preload" as="image" href="../img/{did}.webp" fetchpriority="high">' in wilbur_html
+        assert "<!--PRELOAD-->" not in home_html and "<!--PRELOAD-->" not in wilbur_html
+
+    def test_preload_placeholder_cleaned_up_when_no_image_exists(self, site, tmp_path):
+        site.with_web()
+        out = tmp_path / "site"
+        buildlib.build(site.root, out)
+        home_html = (out / "index.html").read_text()
+        assert '<link rel="preload" as="image"' not in home_html
+        assert "<!--PRELOAD-->" not in home_html
+
+
+class TestFindLcpImage:
+    def test_returns_none_if_no_window(self):
+        assert buildlib.find_lcp_image({}, None) is None
+
+    def test_returns_none_if_no_image_available(self, site):
+        payload = buildlib.build_payload(site.root)
+        assert buildlib.find_lcp_image(payload, None) is None
+        assert buildlib.find_lcp_image(payload, "wilbur") is None
+
+    def test_returns_image_for_home_and_hall(self, site):
+        did = dish_id("Roast Chicken")
+        site.write_catalog({did: {"name": "Roast Chicken", "image": f"{did}.webp"}})
+        site.write_image(f"{did}.webp")
+        payload = buildlib.build_payload(site.root)
+        assert buildlib.find_lcp_image(payload, None) == f"{did}.webp"
+        assert buildlib.find_lcp_image(payload, "wilbur") == f"{did}.webp"
+
 
 def _script_body(html: str, marker: str) -> dict:
     start = html.index(marker)
