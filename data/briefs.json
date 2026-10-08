@@ -5860,6 +5860,42 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T04:40:44+00:00"
  },
+ "3cdb02279b97": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "boiled eggs",
+   "egg halves",
+   "noodles",
+   "rice"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a soup containing soft white tofu and egg ribbons?",
+    "yes": true
+   },
+   {
+    "q": "Is the broth bright red or orange?",
+    "yes": false
+   },
+   {
+    "q": "Does the soup contain noodles?",
+    "yes": false
+   }
+  ],
+  "dish": "Korean soft tofu egg soup",
+  "look": "wispy yellow egg ribbons swirled in a clear savory broth, large delicate blocks of silky white soft tofu, scattered chopped green onions, light soy sauce tint",
+  "model": "gemini-3.5-flash",
+  "name": "Korean Soft Tofu Egg Soup (FloMo)",
+  "rev": 6,
+  "revisions": 1,
+  "vessel": "bowl",
+  "written_at": "2026-10-08T22:49:41+00:00"
+ },
  "3d5c2144320f": {
   "avoid": [
    "meat",
@@ -6754,6 +6790,41 @@
   "revisions": 1,
   "vessel": "bowl",
   "written_at": "2026-09-29T03:37:55+00:00"
+ },
+ "4694fac52bcd": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "egg",
+   "scrambled egg",
+   "bacon"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food fried rice with tofu cubes?",
+    "yes": true
+   },
+   {
+    "q": "Are there scrambled eggs or egg ribbons in the rice?",
+    "yes": false
+   },
+   {
+    "q": "Is there any meat, chicken, or shrimp visible?",
+    "yes": false
+   }
+  ],
+  "dish": "vegan kimchi fried rice with tofu",
+  "look": "Stir-fried rice grains with a reddish-orange hue, mixed with cubed golden-brown pan-fried tofu, chopped kimchi, green peas, diced carrots, and sliced green onions, sprinkled with toasted sesame seeds",
+  "model": "gemini-3.5-flash",
+  "name": "Vegan fried rice (Flo0Mo)",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-08T20:56:03+00:00"
  },
  "471abbe0153c": {
   "avoid": [
@@ -7975,6 +8046,39 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T06:46:09+00:00"
+ },
+ "539ff0721ca5": {
+  "avoid": [
+   "tacos",
+   "tortillas",
+   "quesabirria",
+   "cheese",
+   "lime wedges",
+   "raw beef",
+   "ground beef"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish shredded meat in a reddish-brown broth?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat served inside a folded tortilla or taco?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat ground like mince?",
+    "yes": false
+   }
+  ],
+  "dish": "beef birria stew",
+  "look": "Tender shredded beef chunks swimming in a rich, deep reddish-brown consommé broth, glistening with a thin layer of reddish oil, garnished with finely chopped white onions and fresh cilantro",
+  "model": "gemini-3.5-flash",
+  "name": "Beef Birria",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-08T20:56:03+00:00"
  },
  "53a559318a58": {
   "avoid": [
@@ -10921,6 +11025,43 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-08T10:50:06+00:00"
+ },
+ "7dd5a5ea602e": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "hamburger",
+   "sandwich bread",
+   "raw sausage",
+   "sauerkraut",
+   "relish"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a hot dog sausage inside a hot dog bun?",
+    "yes": true
+   },
+   {
+    "q": "Is the bun sliced like sandwich bread?",
+    "yes": false
+   },
+   {
+    "q": "Is the sausage raw or uncooked?",
+    "yes": false
+   }
+  ],
+  "dish": "hot dog in a gluten-free bun",
+  "look": "A grilled plant-based hot dog sausage nestled inside a split, golden-brown, smooth gluten-free hot dog bun, with a neat zigzag drizzle of yellow mustard on top",
+  "model": "gemini-3.5-flash",
+  "name": "Schar Gluten-Free Hot Dog Bun",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-08T20:56:03+00:00"
  },
  "7ef2b4c7396f": {
   "avoid": [
@@ -17027,6 +17168,39 @@
   "vessel": "bowl",
   "written_at": "2026-10-01T00:09:14+00:00"
  },
+ "c0e9fa6bb841": {
+  "avoid": [
+   "raw egg",
+   "whole chicken breast",
+   "strips of bacon",
+   "sushi",
+   "chopsticks",
+   "shrimp",
+   "beef"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food fried rice?",
+    "yes": true
+   },
+   {
+    "q": "Is the rice white and plain without sauce?",
+    "yes": false
+   },
+   {
+    "q": "Are there whole, uncut chicken breasts or bacon strips on top?",
+    "yes": false
+   }
+  ],
+  "dish": "kimchi fried rice with chicken and bacon",
+  "look": "Stir-fried rice grains coated in reddish-orange gochujang sauce, mixed with small pieces of chopped bacon, diced chicken breast, chopped kimchi cabbage, scrambled egg ribbons, topped with sliced green onions",
+  "model": "gemini-3.5-flash",
+  "name": "Bacon, chicken and kimchi fried rice",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-08T20:56:03+00:00"
+ },
  "c1f05d8afceb": {
   "avoid": [
    "potato wedges",
@@ -17827,6 +18001,42 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T07:31:35+00:00"
+ },
+ "cb360cc898a2": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "mashed potatoes",
+   "pasta",
+   "bread",
+   "wine bottle"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a mushroom and vegetable stew in dark gravy?",
+    "yes": true
+   },
+   {
+    "q": "Is there beef or other meat in the stew?",
+    "yes": false
+   },
+   {
+    "q": "Is the stew served over a large bed of mashed potatoes or pasta?",
+    "yes": false
+   }
+  ],
+  "dish": "mushroom bourguignon",
+  "look": "Thick chunks of cremini and portobello mushrooms, sliced carrots, and green peas simmered in a rich, glossy, dark purple-brown gravy, garnished with fresh thyme sprigs",
+  "model": "gemini-3.5-flash",
+  "name": "Mushroom Bourguignon",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-08T20:56:03+00:00"
  },
  "cb72cee636b4": {
   "avoid": [
@@ -19247,6 +19457,42 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T06:13:25+00:00"
  },
+ "d9520ffeae92": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "raw egg yolk",
+   "sunny-side-up egg",
+   "fried egg",
+   "whole egg"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish sliced mushrooms and scrambled egg over rice?",
+    "yes": true
+   },
+   {
+    "q": "Is there real beef or meat in the bowl?",
+    "yes": false
+   },
+   {
+    "q": "Is the egg raw or served as a whole sunny-side-up egg?",
+    "yes": false
+   }
+  ],
+  "dish": "vegan mushroom gyudon",
+  "look": "Scrambled yellow egg, sliced brown shiitake mushrooms, tender translucent onions, savory dark brown sauce, served over a bed of steamed white rice",
+  "model": "gemini-3.5-flash",
+  "name": "Mushroom & Just Egg Gyudon",
+  "rev": 6,
+  "revisions": 1,
+  "vessel": "bowl",
+  "written_at": "2026-10-08T21:49:18+00:00"
+ },
  "d9a3f416baa8": {
   "avoid": [
    "meat",
@@ -19684,6 +19930,39 @@
   "vessel": "plate",
   "written_at": "2026-09-27T07:31:35+00:00"
  },
+ "df2e88852ace": {
+  "avoid": [
+   "pasta",
+   "spaghetti",
+   "bread",
+   "lobster",
+   "crab legs",
+   "raw fish",
+   "lemon slices"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a seafood stew with shellfish and fish in a red broth?",
+    "yes": true
+   },
+   {
+    "q": "Is the seafood served over pasta or spaghetti?",
+    "yes": false
+   },
+   {
+    "q": "Are the clams and mussels closed?",
+    "yes": false
+   }
+  ],
+  "dish": "cioppino seafood stew",
+  "look": "A rich tomato-based seafood broth filled with open clams in shells, mussels in dark shells, pink curled shrimp, chunks of white cod fish, diced tomatoes, celery, and fennel, garnished with chopped parsley",
+  "model": "gemini-3.5-flash",
+  "name": "Cioppino",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-08T20:56:03+00:00"
+ },
  "df418a74e349": {
   "avoid": [
    "meat",
@@ -19756,6 +20035,40 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T04:27:22+00:00"
+ },
+ "e0636d4775e1": {
+  "avoid": [
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "rice",
+   "roti",
+   "naan"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a yellow curry with chunks of vegetables and plant-based meat?",
+    "yes": true
+   },
+   {
+    "q": "Is the curry dry without sauce?",
+    "yes": false
+   },
+   {
+    "q": "Does the dish contain actual bone-in chicken or meat?",
+    "yes": false
+   }
+  ],
+  "dish": "Jamaican vegetable curry",
+  "look": "thick yellow coconut curry sauce, chunks of plant-based chicken, diced red bell peppers, sliced onions, chopped green onions, flecks of thyme",
+  "model": "gemini-3.5-flash",
+  "name": "Jamaican \"Gardein\" Vegetable Curry",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-08T20:56:11+00:00"
  },
  "e1203d92de6c": {
   "avoid": [
@@ -21305,6 +21618,41 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-03T07:52:08+00:00"
+ },
+ "f05db4e4239a": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "pulled pork",
+   "hamburger bun",
+   "rice"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food shredded jackfruit and vegetables in a glaze?",
+    "yes": true
+   },
+   {
+    "q": "Does the dish contain real meat like pork or chicken?",
+    "yes": false
+   },
+   {
+    "q": "Is the jackfruit served inside a sandwich bun?",
+    "yes": false
+   }
+  ],
+  "dish": "Hawaiian Huli Huli jackfruit",
+  "look": "Shredded young jackfruit pieces coated in a sticky, caramelized sweet brown glaze, tossed with roasted cauliflower florets, sliced red and green bell peppers, and caramelized onions",
+  "model": "gemini-3.5-flash",
+  "name": "Huli Huli Jackfruit (Branner)",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-08T20:56:03+00:00"
  },
  "f05ddad1b1af": {
   "avoid": [
