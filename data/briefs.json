@@ -9739,50 +9739,39 @@
  },
  "6ffc8fd6ef8e": {
   "avoid": [
-   "napkin",
-   "cloth",
-   "towel",
-   "second sandwich",
-   "two hot dogs",
-   "raw dill sprigs",
-   "raw dill weed",
-   "white mayonnaise",
-   "creamy white sauce",
-   "cup",
-   "mug",
-   "sauce cup",
-   "bowl",
+   "fully assembled hot dog with sausage inside the bun",
+   "closed hot dog sandwich",
+   "raw meat",
    "hamburger",
    "french fries",
    "chips",
-   "tacos",
-   "salad",
-   "raw meat",
-   "multiple plates"
+   "hands",
+   "people"
   ],
   "checks": [
    {
-    "q": "Is the main item a cooked sausage in a bun?",
+    "q": "Does the photo show cooked sausages and hot dog buns?",
     "yes": true
    },
    {
-    "q": "Is the main item a hamburger patty?",
+    "q": "Is there an already assembled hot dog with a sausage inside a bun covered in toppings?",
     "yes": false
    },
    {
-    "q": "Is the sausage raw or uncooked?",
+    "q": "Is the meat raw?",
     "yes": false
    }
   ],
-  "dish": "grilled bratwurst with sauerkraut",
+  "dish": "deconstructed sausage and hot dog platter",
   "hand": true,
-  "look": "a plump grilled bratwurst sausage in a soft toasted potato hot dog bun, lightly charred browned casing, topped with warm sauerkraut, fine sweet pickle relish, and a neat drizzle of red ketchup, centered on a white ceramic plate",
+  "look": "an unassembled sausage bar platter, grilled plump bratwurst and browned sausage links served beside an open empty split hot dog bun, small mounds of sauerkraut, diced pickle relish, round pickle slices, and a twist soft pretzel, all separate and ready to assemble, on a large white ceramic platter",
   "model": "hand",
   "name": "Sausage Bar Station",
   "rev": 6,
   "revisions": 0,
+  "spread": true,
   "vessel": "plate",
-  "written_at": "2026-10-08T06:03:00+00:00"
+  "written_at": "2026-10-08T08:35:00+00:00"
  },
  "700a7bdb30a4": {
   "avoid": [
