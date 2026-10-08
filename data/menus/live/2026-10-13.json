@@ -1,6 +1,6 @@
 {
  "date": "2026-10-13",
- "scraped_at": "2026-10-08T03:41:15-07:00",
+ "scraped_at": "2026-10-08T13:42:42-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -667,11 +667,11 @@
      "description": "",
      "ingredients": "rice, vegetable soup base, onions, butter, olive/canola oil blend, celery, garlic, parsley, thyme, chives, rosemary, bay leaves, salt, black pepper",
      "allergens": [
-      "MILK"
+      "MILK",
+      "WHEAT"
      ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
       "vegetarian",
       "halal"
      ],
@@ -1531,11 +1531,11 @@
      "description": "",
      "ingredients": "rice, vegetable soup base, onions, butter, olive/canola oil blend, celery, garlic, parsley, thyme, chives, rosemary, bay leaves, salt, black pepper",
      "allergens": [
-      "MILK"
+      "MILK",
+      "WHEAT"
      ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
       "vegetarian",
       "halal"
      ],
@@ -1984,17 +1984,16 @@
    ],
    "Lunch": [
     {
-     "name": "Vietnamese Bún Chả with Lemongrass Pork",
-     "recipe_id": "VietBunPork17",
+     "name": "Beef Birria",
+     "recipe_id": "BBirria17",
      "description": "",
-     "ingredients": "pork, lemongrass marinade(lemongrass, shallot, garlic, green onion, honey, tamari, fish sauce, oyster sauce, salt, black pepper), vermicelli noodles, lettuce, cilantro, mint, cucumber.",
-     "allergens": [
-      "FISH",
-      "SHELLFISH",
-      "SOY"
-     ],
+     "ingredients": "beef, vegetable base, birria sauce (ancho chili, guajillo chili, chipotle pepper, black peppercorn, whole clove, dried thyme, marjoram, dried oregano, bay leaves, ground cumin, cinnamon stick, onion, Roma tomatoes, apple cider vinegar, salt)",
+     "allergens": [],
      "trace_allergens": [],
-     "tags": [],
+     "tags": [
+      "gluten-free",
+      "halal"
+     ],
      "order": 0
     },
     {
@@ -2421,11 +2420,11 @@
      "description": "",
      "ingredients": "rice, vegetable soup base, onions, butter, olive/canola oil blend, celery, garlic, parsley, thyme, chives, rosemary, bay leaves, salt, black pepper",
      "allergens": [
-      "MILK"
+      "MILK",
+      "WHEAT"
      ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
       "vegetarian",
       "halal"
      ],
@@ -3301,11 +3300,11 @@
      "description": "",
      "ingredients": "rice, vegetable soup base, onions, butter, olive/canola oil blend, celery, garlic, parsley, thyme, chives, rosemary, bay leaves, salt, black pepper",
      "allergens": [
-      "MILK"
+      "MILK",
+      "WHEAT"
      ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
       "vegetarian",
       "halal"
      ],
@@ -4178,11 +4177,11 @@
      "description": "",
      "ingredients": "rice, vegetable soup base, onions, butter, olive/canola oil blend, celery, garlic, parsley, thyme, chives, rosemary, bay leaves, salt, black pepper",
      "allergens": [
-      "MILK"
+      "MILK",
+      "WHEAT"
      ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
       "vegetarian",
       "halal"
      ],
@@ -4973,11 +4972,11 @@
      "description": "",
      "ingredients": "rice, vegetable soup base, onions, butter, olive/canola oil blend, celery, garlic, parsley, thyme, chives, rosemary, bay leaves, salt, black pepper",
      "allergens": [
-      "MILK"
+      "MILK",
+      "WHEAT"
      ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
       "vegetarian",
       "halal"
      ],
@@ -5884,11 +5883,11 @@
      "description": "",
      "ingredients": "rice, vegetable soup base, onions, butter, olive/canola oil blend, celery, garlic, parsley, thyme, chives, rosemary, bay leaves, salt, black pepper",
      "allergens": [
-      "MILK"
+      "MILK",
+      "WHEAT"
      ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
       "vegetarian",
       "halal"
      ],
@@ -6161,6 +6160,20 @@
       "halal"
      ],
      "order": 1
+    },
+    {
+     "name": "Steamed Jasmine Rice",
+     "recipe_id": "5134594",
+     "description": "",
+     "ingredients": "jasmine rice, water, salt",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan",
+      "halal"
+     ],
+     "order": 2
     }
    ],
    "Dinner": [
@@ -6176,6 +6189,36 @@
       "halal"
      ],
      "order": 0
+    },
+    {
+     "name": "Mushroom Bourguignon",
+     "recipe_id": "12311233",
+     "description": "",
+     "ingredients": "mushroom, onion, garlic, carrots, peas, thyme, onion powder, thyme, paprika, mushroom seasoning, chicken seasoning, grape juice, liquid coconut aminos, veg base, oat milk, cornstarch",
+     "allergens": [
+      "COCONUT"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan",
+      "halal"
+     ],
+     "order": 1
+    },
+    {
+     "name": "Mashed Sweet Potatoes (Branner)",
+     "recipe_id": "MashSwePot1",
+     "description": "",
+     "ingredients": "sweet potatoes, oat milk, vegan butter, cinnamon",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan",
+      "halal"
+     ],
+     "order": 2
     }
    ]
   }
