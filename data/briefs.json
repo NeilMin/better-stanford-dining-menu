@@ -4927,40 +4927,29 @@
  },
  "348bec54f2b0": {
   "avoid": [
-   "cauliflower",
-   "broccoli",
-   "cabbage",
-   "round circular slices",
-   "cross-cut rounds",
-   "medallions",
-   "coins",
-   "horizontal slices",
-   "curled cups",
-   "hollow cups",
-   "alien shapes",
-   "scallops",
-   "fish",
    "meat",
    "chicken",
-   "shrimp",
-   "whole uncut mushrooms",
-   "raw mushrooms"
+   "beef",
+   "pork",
+   "fish",
+   "pears",
+   "apples",
+   "fruit",
+   "curled cups",
+   "cauliflower",
+   "alien shapes"
   ],
   "checks": [
    {
-    "q": "Is the main item king oyster mushrooms sliced in half lengthwise from cap to stem?",
+    "q": "Is the main item a seared mushroom steak or thick mushroom cutlet?",
     "yes": true
    },
    {
-    "q": "Is the dish primarily cauliflower or broccoli instead of mushrooms?",
+    "q": "Does the food look like fruit such as pears or apples?",
     "yes": false
    },
    {
-    "q": "Are the mushrooms cut into round circular coins, horizontal cross-cuts, or hollow cups?",
-    "yes": false
-   },
-   {
-    "q": "Does the main item look like seafood such as scallops or fish?",
+    "q": "Is the food real animal meat such as fish or pork?",
     "yes": false
    },
    {
@@ -4968,15 +4957,15 @@
     "yes": false
    }
   ],
-  "dish": "pan-seared king oyster mushroom meunière",
+  "dish": "pan-seared king oyster mushroom steak meunière",
   "hand": true,
-  "look": "king oyster mushrooms sliced in half lengthwise from rounded cap to base of thick stem showing the elongated vertical mushroom silhouette, long flat cut side seared deeply golden brown with crisp caramelized edges, light scored diagonal diamond crosshatch pattern on the flat surface, meaty thick white stalk, basted in glossy golden lemon vegan butter meunière sauce, scattered chopped fresh parsley, dill, and chives",
+  "look": "a thick rectangular slab of king trumpet mushroom seared golden-brown with caramelized edges, visible vertical fibrous mushroom grain along the side, glistening in silky lemon herb butter meunière sauce, sprinkled with finely chopped fresh parsley, plated on a clean white ceramic plate with a lemon wedge and fresh parsley",
   "model": "manual-culinary-fix",
   "name": "King Oyster Mushroom Meunière",
   "rev": 6,
   "revisions": 0,
   "vessel": "plate",
-  "written_at": "2026-10-08T04:28:00+00:00"
+  "written_at": "2026-10-08T05:14:56+00:00"
  },
  "351105132b98": {
   "avoid": [
