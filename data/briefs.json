@@ -2741,6 +2741,48 @@
   "vessel": "plate",
   "written_at": "2026-10-02T10:14:36+00:00"
  },
+ "1fc265acbeeb": {
+  "avoid": [
+   "sausage",
+   "hot dog",
+   "frankfurter",
+   "meat",
+   "filling",
+   "fillings",
+   "sauce",
+   "mustard",
+   "ketchup",
+   "sandwich",
+   "burger",
+   "vegetables",
+   "toppings",
+   "hot dog with sausage",
+   "multiple plates"
+  ],
+  "checks": [
+   {
+    "q": "Is the food plain bread buns or rolls?",
+    "yes": true
+   },
+   {
+    "q": "Is there a sausage, hot dog, or meat inside the bread?",
+    "yes": false
+   },
+   {
+    "q": "Is the bread filled with any toppings, vegetables, or sandwich fillings?",
+    "yes": false
+   }
+  ],
+  "dish": "plain hot dog buns",
+  "hand": true,
+  "look": "two fresh soft golden-brown hot dog buns, elongated bread rolls, plain unfilled bakery rolls, smooth golden crust, empty with no filling and no meat, centered on a simple white ceramic plate",
+  "model": "hand",
+  "name": "Hot Dog Bun",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-08T06:21:00+00:00"
+ },
  "1fef8a891f46": {
   "avoid": [
    "meat",
@@ -9697,18 +9739,30 @@
  },
  "6ffc8fd6ef8e": {
   "avoid": [
+   "napkin",
+   "cloth",
+   "towel",
+   "second sandwich",
+   "two hot dogs",
+   "raw dill sprigs",
+   "raw dill weed",
+   "white mayonnaise",
+   "creamy white sauce",
+   "cup",
+   "mug",
+   "sauce cup",
+   "bowl",
    "hamburger",
    "french fries",
    "chips",
    "tacos",
-   "pile of many sausages",
-   "chicken nuggets",
    "salad",
-   "buffet tray"
+   "raw meat",
+   "multiple plates"
   ],
   "checks": [
    {
-    "q": "Is the main item a cooked sausage?",
+    "q": "Is the main item a cooked sausage in a bun?",
     "yes": true
    },
    {
@@ -9716,18 +9770,19 @@
     "yes": false
    },
    {
-    "q": "Is the sausage sliced into small pieces or mixed into a pasta or stew?",
+    "q": "Is the sausage raw or uncooked?",
     "yes": false
    }
   ],
-  "dish": "sausage bar",
-  "look": "a grilled bratwurst sausage in a soft hot dog bun, browned casing with grill marks, topped with sauerkraut and a squiggle of aioli, a dill pickle spear alongside",
-  "model": "claude-sonnet",
+  "dish": "grilled bratwurst with sauerkraut",
+  "hand": true,
+  "look": "a plump grilled bratwurst sausage in a soft toasted potato hot dog bun, lightly charred browned casing, topped with warm sauerkraut, fine sweet pickle relish, and a neat drizzle of red ketchup, centered on a white ceramic plate",
+  "model": "hand",
   "name": "Sausage Bar Station",
   "rev": 6,
   "revisions": 0,
   "vessel": "plate",
-  "written_at": "2026-09-27T04:53:30+00:00"
+  "written_at": "2026-10-08T06:03:00+00:00"
  },
  "700a7bdb30a4": {
   "avoid": [
