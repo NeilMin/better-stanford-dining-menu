@@ -1,6 +1,6 @@
 {
  "date": "2026-10-09",
- "scraped_at": "2026-10-09T03:40:12-07:00",
+ "scraped_at": "2026-10-09T13:08:18-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -1110,12 +1110,16 @@
      "order": 0
     },
     {
-     "name": "Seared King Oyster Mushroom",
-     "recipe_id": "MushL&H17",
+     "name": "Meatless BBQ Chick'n",
+     "recipe_id": "5200381-2",
      "description": "",
-     "ingredients": "King Oyster mushroom, Lemon, Olive Oil, Thyme, Parsley, Garlic, Salt, Black Pepper.",
-     "allergens": [],
-     "trace_allergens": [],
+     "ingredients": "plant based chick’n (soy protein concentrate, canola oil, distilled vinegar, yeast extract, salt, seasoning [salt, natural flavors, citric acid, onion powder], sugar), allergy friendly bbq sauce (molasses, ketchup, chili powder, liquid smoke, garlic, ginger, chipotle pepper, dijon mustard, salt, black pepper, apple cider vinegar, lemon juice)",
+     "allergens": [
+      "SOY"
+     ],
+     "trace_allergens": [
+      "TREENUTS"
+     ],
      "tags": [
       "gluten-free",
       "vegan",
@@ -1152,16 +1156,15 @@
      "order": 3
     },
     {
-     "name": "Lemon Parmesan Orzo",
-     "recipe_id": "LPOrzo17",
+     "name": "Steamed Jasmine Rice",
+     "recipe_id": "5134594",
      "description": "",
-     "ingredients": "Orzo, Lemon Juice, Parsley, Parmesan Cheese, Vegetable Base, Garlic, Olive oil, Salt, Black Pepper.",
-     "allergens": [
-      "MILK",
-      "WHEAT"
-     ],
+     "ingredients": "jasmine rice, water, salt",
+     "allergens": [],
      "trace_allergens": [],
      "tags": [
+      "gluten-free",
+      "vegan",
       "halal"
      ],
      "order": 4
@@ -1216,29 +1219,6 @@
      "order": 7
     },
     {
-     "name": "Grilled Vegan/Vegetarian",
-     "recipe_id": "13468741",
-     "description": "",
-     "ingredients": "chef's choice grilled vegan OR vegetarian option",
-     "allergens": [],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
-     ],
-     "tags": [
-      "halal"
-     ],
-     "order": 8
-    },
-    {
      "name": "Baked Pasta Marinara",
      "recipe_id": "4662005",
      "description": "",
@@ -1253,7 +1233,7 @@
       "vegan",
       "halal"
      ],
-     "order": 9
+     "order": 8
     },
     {
      "name": "Panini Station",
@@ -1271,29 +1251,42 @@
       "TREENUTS"
      ],
      "tags": [],
+     "order": 9
+    },
+    {
+     "name": "Creamy Tomato Soup",
+     "recipe_id": "5408464",
+     "description": "",
+     "ingredients": "tomatoes, vegetable soup base, tomato sauce, carrots, celery, onions, cream, soy lecithin, garlic, salt, basil, canola/olive oil blend, vinegar, white pepper, sugar",
+     "allergens": [
+      "MILK",
+      "SOY"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "vegetarian"
+     ],
      "order": 10
     },
     {
-     "name": "Soup of the Day",
-     "recipe_id": "SoupoftheDay",
+     "name": "Caesar Salad",
+     "recipe_id": "5834444",
      "description": "",
-     "ingredients": "chef's choice soup of the day",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [],
-     "order": 11
-    },
-    {
-     "name": "Composed Salad",
-     "recipe_id": "123116546",
-     "description": "",
-     "ingredients": "chef's choice composed salad",
-     "allergens": [],
-     "trace_allergens": [],
+     "ingredients": "lettuce, tomatoes, caesar dressing (mayonnaise, parmesan cheese, garlic, lemon juice, anchovy, red wine vinegar, dijon mustard, worcestershire sauce [vinegar, molasses, corn syrup, anchovies, salt, garlic, tamarind concentrate, cloves, natural flavorings, chili pepper extract], hot sauce, salt, pepper), parmesan cheese, croutons (wheat flour, canola and/or sunflower oil, whey, salt, yeast, corn syrup, sugar, onion powder, parsley, paprika, turmeric)",
+     "allergens": [
+      "EGG",
+      "FISH",
+      "MILK",
+      "SOY",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "TREENUTS"
+     ],
      "tags": [
       "halal"
      ],
-     "order": 12
+     "order": 11
     },
     {
      "name": "Performance Bar",
@@ -1303,7 +1296,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 13
+     "order": 12
     },
     {
      "name": "Craveable Grains",
@@ -1317,7 +1310,7 @@
       "vegan",
       "halal"
      ],
-     "order": 14
+     "order": 13
     },
     {
      "name": "Flavor Forward Legumes",
@@ -1331,43 +1324,40 @@
       "vegan",
       "halal"
      ],
-     "order": 15
+     "order": 14
     },
     {
-     "name": "Pasta Alfredo",
-     "recipe_id": "5683556",
+     "name": "Creamy Spinach Sauce",
+     "recipe_id": "CreamySpin(lakeside)",
      "description": "",
-     "ingredients": "pasta, white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, parmesan cheese",
+     "ingredients": "cream, milk, spinach, milk powder, butter, parmesan cheese, flour, garlic, salt, white pepper, nutmeg, onion powder",
      "allergens": [
       "MILK",
       "WHEAT"
      ],
-     "trace_allergens": [
-      "EGG"
-     ],
+     "trace_allergens": [],
      "tags": [
       "vegetarian",
       "halal"
      ],
-     "order": 16
+     "order": 15
     },
     {
-     "name": "Pasta Marinara",
-     "recipe_id": "5095708",
+     "name": "Chicken Parmesan",
+     "recipe_id": "4383016",
      "description": "",
-     "ingredients": "pasta, marinara sauce, canola/olive oil blend",
+     "ingredients": "chicken, italian seasoning, garlic powder, eggs, milk, breadcrumbs, flour, mozzarella cheese, parmesan cheese, canola/olive oil blend, garlic powder, italian seasoning, salt, marinara sauce",
      "allergens": [
+      "EGG",
+      "MILK",
       "SOY",
       "WHEAT"
      ],
-     "trace_allergens": [
-      "EGG"
-     ],
+     "trace_allergens": [],
      "tags": [
-      "vegan",
       "halal"
      ],
-     "order": 17
+     "order": 16
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -1381,7 +1371,7 @@
       "vegan",
       "halal"
      ],
-     "order": 18
+     "order": 17
     }
    ],
    "Dinner": [
@@ -1905,14 +1895,20 @@
    ],
    "Lunch": [
     {
-     "name": "Seared Salmon",
-     "recipe_id": "SalH&T17",
+     "name": "Thai Lemongrass Chicken Curry",
+     "recipe_id": "3964659",
      "description": "",
-     "ingredients": "Salmon, Lemon, Parsley, Thyme, Cherry Tomatoes, Salt, Black Pepper, Paprika,",
+     "ingredients": "chicken, lemongrass ginger marinade (tamari, garlic, sugar, canola/olive oil blend, ginger, Thai green chili, green onions, makrut lime leaves, lemongrass, shallot), yellow curry sauce (onions, turmeric, canola oil, ginger, garlic, Thai yellow curry paste, tomato paste, coconut milk, sugar, lemongrass)",
      "allergens": [
-      "FISH"
+      "COCONUT",
+      "SOY"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "FISH",
+      "PEANUTS",
+      "SHELLFISH",
+      "WHEAT"
+     ],
      "tags": [
       "gluten-free",
       "halal"
@@ -2736,16 +2732,19 @@
    ],
    "Lunch": [
     {
-     "name": "Seared Salmon",
-     "recipe_id": "SalH&T17",
+     "name": "San Francisco Cioppino",
+     "recipe_id": "5371070",
      "description": "",
-     "ingredients": "Salmon, Lemon, Parsley, Thyme, Cherry Tomatoes, Salt, Black Pepper, Paprika,",
+     "ingredients": "clams, mussels, calamari, shrimp, onion, celery, garlic, bell peppers, fennel, tomatoes, clam juice, cioppino sauce (fennel, red pepper flake, tomatoes, tomato paste, white wine vinegar, bay leaf, parsley, oregano, pepper, clam paste, bell pepper, canola/olive oil blend, salt, garlic)",
      "allergens": [
-      "FISH"
+      "FISH",
+      "MILK",
+      "SHELLFISH",
+      "SOY",
+      "WHEAT"
      ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
       "halal"
      ],
      "order": 0
@@ -2862,6 +2861,19 @@
      "order": 7
     },
     {
+     "name": "Creamy Tomato Soup with Sausage",
+     "recipe_id": "52188599",
+     "description": "",
+     "ingredients": "tomatoes, vegetable soup base, Italian pork sausage, tomato sauce, carrots, celery, onions, cream, soy lecithin, garlic, salt, basil, canola/olive oil blend, vinegar, white pepper, sugar",
+     "allergens": [
+      "MILK",
+      "SOY"
+     ],
+     "trace_allergens": [],
+     "tags": [],
+     "order": 8
+    },
+    {
      "name": "Panini Station",
      "recipe_id": "4532805",
      "description": "",
@@ -2877,7 +2889,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 8
+     "order": 9
     },
     {
      "name": "Soup of the Day",
@@ -2887,7 +2899,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 9
+     "order": 10
     },
     {
      "name": "Composed Salad",
@@ -2899,7 +2911,7 @@
      "tags": [
       "halal"
      ],
-     "order": 10
+     "order": 11
     },
     {
      "name": "Performance Bar",
@@ -2909,7 +2921,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 11
+     "order": 12
     },
     {
      "name": "Craveable Grains",
@@ -2923,7 +2935,7 @@
       "vegan",
       "halal"
      ],
-     "order": 12
+     "order": 13
     },
     {
      "name": "Flavor Forward Legumes",
@@ -2937,7 +2949,7 @@
       "vegan",
       "halal"
      ],
-     "order": 13
+     "order": 14
     },
     {
      "name": "Pasta Alfredo",
@@ -2955,7 +2967,7 @@
       "vegetarian",
       "halal"
      ],
-     "order": 14
+     "order": 15
     },
     {
      "name": "Pasta Marinara",
@@ -2973,7 +2985,7 @@
       "vegan",
       "halal"
      ],
-     "order": 15
+     "order": 16
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -2987,7 +2999,7 @@
       "vegan",
       "halal"
      ],
-     "order": 16
+     "order": 17
     }
    ],
    "Dinner": [
@@ -5543,23 +5555,24 @@
   "branner": {
    "Lunch": [
     {
-     "name": "Mediterranean Shredded Beef",
-     "recipe_id": "12312221",
+     "name": "Roasted Spanish-Style Chicken",
+     "recipe_id": "RoastSpanChx1",
      "description": "",
-     "ingredients": "beef, onion, garlic, carrots, bell pepper, fire roasted tomatoes, Italian seasoning, red pepper flakes, grape juice, lemon juice, beef base",
+     "ingredients": "chicken, onions, garlic, chicken soup base, smoked paprika, white pepper, rosemary, olive/canola oil blend, salt",
      "allergens": [],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "WHEAT"
+     ],
      "tags": [
-      "gluten-free",
       "halal"
      ],
      "order": 0
     },
     {
-     "name": "Mediterranean Chickpea Stew",
-     "recipe_id": "5881044",
+     "name": "Chickpea Bravas with Veggies",
+     "recipe_id": "3951131",
      "description": "",
-     "ingredients": "spinach, chickpeas, bell peppers, tomatoes, onions, vegetable soup base (contains carrots, mushroom, celery), canola/olive oil blend, garlic powder, garlic, oregano, thyme, cumin, coriander, paprika",
+     "ingredients": "chickpeas, zucchini, yellow squash, bravas sauce (olive oil, garlic, tomato paste, paprika, ancho chili seasoning [salt, ancho chili pepper, garlic, bell peppers, onion, sugar, red pepper], corn starch, vegetable soup base (contains mushroom, carrot, celery), sherry vinegar, bell peppers, olives",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -5570,10 +5583,10 @@
      "order": 1
     },
     {
-     "name": "Saffron Rice",
-     "recipe_id": "5902263",
+     "name": "Paprika Roasted Potatoes",
+     "recipe_id": "5348883",
      "description": "",
-     "ingredients": "basmati rice, onions, saffron, peas, canola/olive oil blend, salt",
+     "ingredients": "fingerling potatoes, canola/olive oil blend, paprika, salt, black pepper",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -5664,24 +5677,23 @@
    ],
    "Dinner": [
     {
-     "name": "Roasted Spanish-Style Chicken",
-     "recipe_id": "RoastSpanChx1",
+     "name": "Mediterranean Shredded Beef",
+     "recipe_id": "12312221",
      "description": "",
-     "ingredients": "chicken, onions, garlic, chicken soup base, smoked paprika, white pepper, rosemary, olive/canola oil blend, salt",
+     "ingredients": "beef, onion, garlic, carrots, bell pepper, fire roasted tomatoes, Italian seasoning, red pepper flakes, grape juice, lemon juice, beef base",
      "allergens": [],
-     "trace_allergens": [
-      "WHEAT"
-     ],
+     "trace_allergens": [],
      "tags": [
+      "gluten-free",
       "halal"
      ],
      "order": 0
     },
     {
-     "name": "Chickpea Bravas with Veggies",
-     "recipe_id": "3951131",
+     "name": "Mediterranean Chickpea Stew",
+     "recipe_id": "5881044",
      "description": "",
-     "ingredients": "chickpeas, zucchini, yellow squash, bravas sauce (olive oil, garlic, tomato paste, paprika, ancho chili seasoning [salt, ancho chili pepper, garlic, bell peppers, onion, sugar, red pepper], corn starch, vegetable soup base (contains mushroom, carrot, celery), sherry vinegar, bell peppers, olives",
+     "ingredients": "spinach, chickpeas, bell peppers, tomatoes, onions, vegetable soup base (contains carrots, mushroom, celery), canola/olive oil blend, garlic powder, garlic, oregano, thyme, cumin, coriander, paprika",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -5692,10 +5704,10 @@
      "order": 1
     },
     {
-     "name": "Paprika Roasted Potatoes",
-     "recipe_id": "5348883",
+     "name": "Saffron Rice",
+     "recipe_id": "5045843",
      "description": "",
-     "ingredients": "fingerling potatoes, canola/olive oil blend, paprika, salt, black pepper",
+     "ingredients": "rice, onions, dill, saffron, canola/olive oil blend, salt",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
