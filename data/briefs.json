@@ -21226,37 +21226,85 @@
  },
  "e72d5c7283c4": {
   "avoid": [
+   "knife",
+   "butter knife",
+   "fork",
+   "cutlery",
+   "silverware",
+   "utensil",
+   "utensils",
+   "soup spoon",
+   "spoon",
+   "sauce spill",
+   "sauce puddle",
+   "spilled sauce",
+   "spilled liquid",
+   "puddle",
+   "splash",
+   "mess",
+   "stain",
+   "platter",
+   "large plate",
+   "multiple bowls",
+   "duplicate bowls",
+   "extra bowls",
+   "empty bowl",
    "meat chunks",
-   "bones",
-   "thick gravy",
-   "prime rib",
+   "roasted beef chunks",
+   "sliced meat",
+   "steak",
    "sandwich",
+   "bread",
    "french dip",
+   "garnish",
+   "vegetables",
    "carrots",
-   "celery"
+   "celery",
+   "onion",
+   "teacup",
+   "cup",
+   "mug",
+   "handle",
+   "pale broth",
+   "yellow broth",
+   "yellow soup",
+   "corn",
+   "corn chowder",
+   "cream",
+   "white soup",
+   "cloudy soup"
   ],
   "checks": [
    {
-    "q": "Is the food a clear liquid broth?",
+    "q": "Does the photo show a dark brown liquid sauce in a bowl?",
     "yes": true
    },
    {
-    "q": "Is the liquid a thick, opaque gravy?",
+    "q": "Is there spilled sauce or a puddle of liquid outside the bowl?",
     "yes": false
    },
    {
-    "q": "Are there large chunks of meat or vegetables in the liquid?",
+    "q": "Are there multiple bowls, extra cups, or meat chunks in the picture?",
+    "yes": false
+   },
+   {
+    "q": "Is there a knife, fork, or cutlery on the table?",
+    "yes": false
+   },
+   {
+    "q": "Is the liquid pale yellow, white, or cloudy like soup or chowder?",
     "yes": false
    }
   ],
-  "dish": "vegetable au jus broth",
-  "look": "clear dark golden-brown broth, glistening droplets of melted butter on the surface, tiny green flecks of thyme leaves, hot steam",
-  "model": "gemini-3.5-flash",
+  "dish": "savory brown au jus dipping sauce",
+  "hand": true,
+  "look": "a clean small white ceramic bowl filled with rich dark brown savory au jus dipping sauce, centered composition, smooth deep amber-brown roast meat jus, glossy surface with fine glistening golden droplets, hot gentle steam, isolated single bowl, clean empty table surface around the bowl",
+  "model": "manual-culinary-fix",
   "name": "Au Jus",
   "rev": 6,
   "revisions": 0,
   "vessel": "bowl",
-  "written_at": "2026-10-09T10:52:01+00:00"
+  "written_at": "2026-10-09T10:21:00+00:00"
  },
  "e73e962de194": {
   "avoid": [
