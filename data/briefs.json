@@ -3803,6 +3803,40 @@
   "vessel": "plate",
   "written_at": "2026-10-07T11:12:33+00:00"
  },
+ "2bf5e712f8ce": {
+  "avoid": [
+   "pepperoni",
+   "meat",
+   "sausage",
+   "ham",
+   "bacon",
+   "chicken",
+   "calzone",
+   "raw dough"
+  ],
+  "checks": [
+   {
+    "q": "Is the food a slice of pizza topped with melted white cheese and greens?",
+    "yes": true
+   },
+   {
+    "q": "Are there meat toppings like pepperoni, sausage, or bacon?",
+    "yes": false
+   },
+   {
+    "q": "Is the food folded like a calzone or stromboli?",
+    "yes": false
+   }
+  ],
+  "dish": "four-cheese pizza",
+  "look": "a triangular slice of thin-crust pizza, golden bubbly melted mozzarella and fontina cheese, soft white creamy dollops of burrata, toasted blistered crust edges, scattered fresh green baby arugula leaves, torn fresh basil",
+  "model": "gemini-3.7-flash",
+  "name": "Four-Cheese Pizza",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-09T20:12:31+00:00"
+ },
  "2c938bc82419": {
   "avoid": [
    "meat",
@@ -3838,6 +3872,39 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-03T08:46:53+00:00"
+ },
+ "2ca2347381d8": {
+  "avoid": [
+   "wrap",
+   "sandwich",
+   "bread",
+   "croutons",
+   "ground beef",
+   "pasta",
+   "taco shell"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a leafy green salad topped with sliced meats, cheese, and eggs?",
+    "yes": true
+   },
+   {
+    "q": "Is the food served inside a wrap or sandwich?",
+    "yes": false
+   },
+   {
+    "q": "Is there ground or minced meat?",
+    "yes": false
+   }
+  ],
+  "dish": "chef salad",
+  "look": "chopped crisp romaine lettuce, neatly arranged julienne strips of deli ham and roasted turkey breast, crumbled crispy bacon, hard-boiled egg quarters with bright yellow yolks, shredded orange cheddar cheese, halved red cherry tomatoes, sliced cucumbers, creamy white ranch dressing",
+  "model": "gemini-3.7-flash",
+  "name": "Chef's Salad",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-09T20:12:31+00:00"
  },
  "2ca542cb1674": {
   "avoid": [
@@ -8329,7 +8396,8 @@
    "shrimp",
    "burger bun",
    "cheese",
-   "raw egg"
+   "green beans",
+   "side dishes"
   ],
   "checks": [
    {
@@ -8346,13 +8414,13 @@
    }
   ],
   "dish": "Vegan loco moco",
-  "look": "a grilled plant-based burger patty topped with a yellow vegan fried egg, smothered in rich brown mushroom gravy, garnished with chopped green onions, sitting on a bed of white rice",
-  "model": "gemini-3.5-flash",
+  "look": "a dark brown plant-based patty, topped with a yellow vegan folded egg patty, smothered in brown mushroom gravy with sliced mushrooms, garnished with diced green onions, resting on a bed of steamed white rice",
+  "model": "gemini-3.6-flash",
   "name": "Plant-Forward Loco Moco & Gravy (Branner)",
   "rev": 6,
-  "revisions": 0,
+  "revisions": 1,
   "vessel": "plate",
-  "written_at": "2026-10-09T10:51:50+00:00"
+  "written_at": "2026-10-09T21:34:40+00:00"
  },
  "55bdc297193d": {
   "avoid": [
@@ -11190,6 +11258,41 @@
   "vessel": "bowl",
   "written_at": "2026-09-26T23:10:23+00:00"
  },
+ "7d378addf23e": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "feta cheese",
+   "goat cheese",
+   "croutons"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a green salad with orange slices and dried cranberries?",
+    "yes": true
+   },
+   {
+    "q": "Is there any meat, poultry, or seafood on the salad?",
+    "yes": false
+   },
+   {
+    "q": "Is there cheese sprinkled or crumbled on the salad?",
+    "yes": false
+   }
+  ],
+  "dish": "citrus spinach salad",
+  "look": "fresh dark green baby spinach leaves, bright orange mandarin segments, chewy dark red dried cranberries, thinly shaved purple red onion half-moons, glistening light coating of dark balsamic vinaigrette",
+  "model": "gemini-3.7-flash",
+  "name": "Sweet Citrus Salad",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-09T20:12:31+00:00"
+ },
  "7d409e39dd28": {
   "avoid": [
    "pasta",
@@ -12128,6 +12231,38 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T05:43:05+00:00"
+ },
+ "888b6b577d1f": {
+  "avoid": [
+   "pasta",
+   "tortellini",
+   "noodles",
+   "bread bowl",
+   "whole sausage links",
+   "clear broth"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a creamy red or orange soup?",
+    "yes": true
+   },
+   {
+    "q": "Are there noodles or pasta in the soup?",
+    "yes": false
+   },
+   {
+    "q": "Are the sausages whole unbroken links?",
+    "yes": false
+   }
+  ],
+  "dish": "creamy tomato sausage soup",
+  "look": "rich creamy orange-red tomato soup, crumbled browned Italian pork sausage bits, tender diced orange carrots, diced celery, a swirl of white cream on top, finely shredded fresh green basil",
+  "model": "gemini-3.7-flash",
+  "name": "Creamy Tomato Soup with Sausage",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-09T20:12:31+00:00"
  },
  "88c461a96f15": {
   "avoid": [
@@ -14219,6 +14354,41 @@
   "vessel": "bowl",
   "written_at": "2026-09-26T20:20:11+00:00"
  },
+ "a00fb80ddb88": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "chicken bones",
+   "burger bun",
+   "sandwich"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food strips of meat substitute coated in dark barbecue sauce?",
+    "yes": true
+   },
+   {
+    "q": "Are there visible bones or bone-in pieces?",
+    "yes": false
+   },
+   {
+    "q": "Is the food served inside a burger bun or sandwich?",
+    "yes": false
+   }
+  ],
+  "dish": "barbecue vegan chicken strips",
+  "look": "strips of plant-based chick'n, thick glossy dark reddish-brown barbecue sauce coating, caramelized charred grill edges, tender shredded texture, sprinkle of chopped scallions",
+  "model": "gemini-3.7-flash",
+  "name": "Meatless BBQ Chick'n",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-09T20:12:31+00:00"
+ },
  "a08b6d7f7e66": {
   "avoid": [
    "fried egg",
@@ -15895,6 +16065,40 @@
   "vessel": "plate",
   "written_at": "2026-09-27T07:17:51+00:00"
  },
+ "b058e911d5d2": {
+  "avoid": [
+   "creamy broth",
+   "thick stew",
+   "beef",
+   "chicken",
+   "shrimp",
+   "noodles",
+   "rice bowl",
+   "skewers"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a light broth soup with chunks of meat and vegetables?",
+    "yes": true
+   },
+   {
+    "q": "Is the broth thick, opaque, or creamy?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat served on skewers?",
+    "yes": false
+   }
+  ],
+  "dish": "pork sinigang",
+  "look": "tender chunks of simmered pork belly, clear sour tamarind broth, sliced Chinese eggplant, cut daikon radish rounds, whole green okra pods, cut green beans, halved red tomatoes, wilted dark spinach leaves",
+  "model": "gemini-3.7-flash",
+  "name": "Tamarind Pork Sinigang Stew",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-09T20:12:31+00:00"
+ },
  "b0af1687f4aa": {
   "avoid": [
    "meat",
@@ -16465,12 +16669,14 @@
  },
  "b4ffb1018dbb": {
   "avoid": [
-   "raw chicken",
-   "whole chicken",
+   "sauce on the side",
+   "ramekin",
+   "dipping cup",
+   "roasted vegetables",
+   "unbreaded chicken",
    "soup",
-   "ramen",
-   "skewers",
-   "sushi"
+   "noodles",
+   "skewers"
   ],
   "checks": [
    {
@@ -16487,13 +16693,13 @@
    }
   ],
   "dish": "chicken katsu curry",
-  "look": "sliced golden-brown panko-breaded chicken cutlet, thick dark brown Japanese curry sauce, chunks of soft cooked carrots and potatoes, served over white rice",
-  "model": "gemini-3.5-flash",
+  "look": "crispy golden-brown panko-crusted chicken cutlet sliced into strips, smothered in thick glossy dark brown Japanese curry sauce, stewed tender potato chunks and soft carrot pieces simmering in the curry, ladled directly over steamed white rice",
+  "model": "gemini-3.7-flash",
   "name": "Chicken Katsu with Japanese Curry",
   "rev": 6,
-  "revisions": 0,
-  "vessel": "plate",
-  "written_at": "2026-10-09T10:51:35+00:00"
+  "revisions": 1,
+  "vessel": "bowl",
+  "written_at": "2026-10-09T21:02:24+00:00"
  },
  "b5e04fbed525": {
   "avoid": [
@@ -20516,12 +20722,12 @@
   "avoid": [
    "pasta",
    "spaghetti",
-   "noodles",
    "bread",
-   "garlic bread",
-   "crab claws",
-   "lobster",
-   "closed shells"
+   "buffet",
+   "multiple bowls",
+   "side dishes",
+   "closed shells",
+   "crab legs"
   ],
   "checks": [
    {
@@ -20538,13 +20744,13 @@
    }
   ],
   "dish": "cioppino",
-  "look": "Chunky white cod fish fillets, curled pink shrimp, open clams in shells, dark mussels, rich reddish-orange tomato broth, stewed diced tomatoes, celery, sliced fennel, finely chopped parsley",
+  "look": "Seafood stew, vibrant red tomato broth, flaky white cod fish chunks, pink curled shrimp, open clams in shells, dark glossy mussels in shells, diced stewed tomatoes, sliced fennel, chopped green parsley garnish",
   "model": "gemini-3.7-flash",
   "name": "Cioppino",
   "rev": 6,
-  "revisions": 1,
+  "revisions": 2,
   "vessel": "bowl",
-  "written_at": "2026-10-09T11:35:30+00:00"
+  "written_at": "2026-10-09T20:42:52+00:00"
  },
  "df418a74e349": {
   "avoid": [
@@ -22150,6 +22356,41 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T04:56:29+00:00"
+ },
+ "ef8013c54058": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "bacon",
+   "fish",
+   "shrimp",
+   "taco",
+   "burrito"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item toasted, flat tortilla wedges filled with melted cheese and mushrooms?",
+    "yes": true
+   },
+   {
+    "q": "Is there meat like chicken, beef, or pork inside?",
+    "yes": false
+   },
+   {
+    "q": "Is the food rolled into a burrito or folded like a hard taco?",
+    "yes": false
+   }
+  ],
+  "dish": "mushroom and cheese quesadilla",
+  "look": "golden-brown toasted flour tortilla wedges with griddle char marks, melted gooey Monterey Jack cheese oozing from the cut edges, sautéed brown sliced mushrooms, tender translucent caramelized onions",
+  "model": "gemini-3.7-flash",
+  "name": "Mushroom & Jack Quesadilla",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-09T20:12:31+00:00"
  },
  "efbf6f0822af": {
   "avoid": [
