@@ -6539,6 +6539,38 @@
   "vessel": "plate",
   "written_at": "2026-09-26T20:19:52+00:00"
  },
+ "438c151799a5": {
+  "avoid": [
+   "hamburger bun",
+   "cheese",
+   "raw beef",
+   "steak on the bone",
+   "french fries",
+   "pasta"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a ground beef patty in gravy?",
+    "yes": true
+   },
+   {
+    "q": "Is the patty served inside a hamburger bun?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat a whole unground steak?",
+    "yes": false
+   }
+  ],
+  "dish": "Salisbury steak with mushroom gravy",
+  "look": "oval-shaped seared ground beef patty, smothered in a rich brown mushroom gravy, tender sliced wild mushrooms, caramelized onions, sprig of fresh thyme",
+  "model": "gemini-3.5-flash",
+  "name": "Salisbury Steak (Branner)",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-09T10:51:35+00:00"
+ },
  "43e100311ed0": {
   "avoid": [
    "meat",
@@ -6574,6 +6606,41 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-29T17:24:02+00:00"
+ },
+ "448ef9f273df": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "marshmallows",
+   "pecans",
+   "raw sweet potatoes"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food cooked sweet potatoes?",
+    "yes": true
+   },
+   {
+    "q": "Are there marshmallows on top?",
+    "yes": false
+   },
+   {
+    "q": "Is there meat mixed with the potatoes?",
+    "yes": false
+   }
+  ],
+  "dish": "candied sweet potatoes",
+  "look": "chunks of roasted orange sweet potatoes, glistening amber maple syrup glaze, caramelized dark edges, pool of melted butter, soft tender texture",
+  "model": "gemini-3.5-flash",
+  "name": "Candied Yams",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-09T10:52:01+00:00"
  },
  "44e750bff8d1": {
   "avoid": [
@@ -7062,6 +7129,41 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-29T16:28:29+00:00"
+ },
+ "488e08982bae": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "bacon",
+   "ketchup",
+   "gravy"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food french fries?",
+    "yes": true
+   },
+   {
+    "q": "Are the fries covered in gravy or chili?",
+    "yes": false
+   },
+   {
+    "q": "Are the fries made of sweet potatoes?",
+    "yes": false
+   }
+  ],
+  "dish": "Truffle parmesan french fries",
+  "look": "crispy golden-brown french fries, piled high, dusted with finely grated white parmesan cheese, minced garlic, and flecks of fresh green parsley",
+  "model": "gemini-3.5-flash",
+  "name": "Truffle Parmesan Fries",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-09T10:51:50+00:00"
  },
  "4928bd35dae8": {
   "avoid": [
@@ -8217,6 +8319,41 @@
   "vessel": "plate",
   "written_at": "2026-10-02T10:09:55+00:00"
  },
+ "55acf1b8e748": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "burger bun",
+   "cheese",
+   "raw egg"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a patty topped with a fried egg and gravy?",
+    "yes": true
+   },
+   {
+    "q": "Is the patty served inside a burger bun?",
+    "yes": false
+   },
+   {
+    "q": "Is the egg scrambled or boiled?",
+    "yes": false
+   }
+  ],
+  "dish": "Vegan loco moco",
+  "look": "a grilled plant-based burger patty topped with a yellow vegan fried egg, smothered in rich brown mushroom gravy, garnished with chopped green onions, sitting on a bed of white rice",
+  "model": "gemini-3.5-flash",
+  "name": "Plant-Forward Loco Moco & Gravy (Branner)",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-09T10:51:50+00:00"
+ },
  "55bdc297193d": {
   "avoid": [
    "chicken",
@@ -8892,6 +9029,41 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-29T16:49:13+00:00"
+ },
+ "6365c6d5ff7b": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "raw broccoli",
+   "rice",
+   "noodles"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food cooked broccoli florets?",
+    "yes": true
+   },
+   {
+    "q": "Is the broccoli raw or uncooked?",
+    "yes": false
+   },
+   {
+    "q": "Are there pieces of beef or chicken mixed with the broccoli?",
+    "yes": false
+   }
+  ],
+  "dish": "Stir-fried broccoli with black garlic",
+  "look": "tender-crisp green broccoli florets, coated in a dark glossy black garlic and tamari glaze, speckled with toasted white sesame seeds and slivers of ginger",
+  "model": "gemini-3.5-flash",
+  "name": "Black Garlic Broccoli",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-09T10:51:50+00:00"
  },
  "6372e656d9fa": {
   "avoid": [
@@ -12597,6 +12769,38 @@
   "vessel": "plate",
   "written_at": "2026-09-27T04:46:15+00:00"
  },
+ "8f132cc2192e": {
+  "avoid": [
+   "raw chicken",
+   "fried chicken",
+   "skewers",
+   "pineapple rings",
+   "rice bowl",
+   "whole chicken"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item grilled chicken pieces with a dark glaze?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken breaded and deep-fried?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken raw?",
+    "yes": false
+   }
+  ],
+  "dish": "Hawaiian huli huli chicken",
+  "look": "grilled chicken thighs, glossy dark reddish-brown caramelized glaze, charred grill marks, juicy tender meat, garnished with sliced green onions",
+  "model": "gemini-3.5-flash",
+  "name": "Hawaiian Huli Huli Chicken",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-09T10:51:35+00:00"
+ },
  "8f4c3fdf173a": {
   "avoid": [
    "french fries",
@@ -13615,6 +13819,41 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T05:33:17+00:00"
+ },
+ "9ccb683a9c46": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "burger bun",
+   "raw mushrooms",
+   "pasta"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a whole grilled mushroom cap?",
+    "yes": true
+   },
+   {
+    "q": "Is the mushroom sliced or chopped into small pieces?",
+    "yes": false
+   },
+   {
+    "q": "Is the mushroom served inside a burger bun?",
+    "yes": false
+   }
+  ],
+  "dish": "Grilled portobello mushroom",
+  "look": "large whole grilled portobello mushroom cap, dark brown with charred grill marks, drizzled with a vibrant green herb chimichurri sauce of minced parsley and garlic",
+  "model": "gemini-3.5-flash",
+  "name": "Grilled Portobello with Herb Sauce",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-09T10:51:50+00:00"
  },
  "9d4fb441b28a": {
   "avoid": [
@@ -14865,6 +15104,41 @@
   "vessel": "plate",
   "written_at": "2026-09-26T23:11:11+00:00"
  },
+ "a9e38981d2c0": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "bacon",
+   "hard-boiled eggs",
+   "raw potatoes"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a creamy potato salad?",
+    "yes": true
+   },
+   {
+    "q": "Are the potatoes mashed or pureed?",
+    "yes": false
+   },
+   {
+    "q": "Are there pieces of bacon or meat mixed in?",
+    "yes": false
+   }
+  ],
+  "dish": "Creole potato salad",
+  "look": "cubed tender yellow potatoes tossed in a creamy pale-yellow mayonnaise and mustard dressing, mixed with finely diced red bell peppers, green onions, and chives, dusted with reddish creole seasoning",
+  "model": "gemini-3.5-flash",
+  "name": "Creole Potato Salad",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-09T10:51:50+00:00"
+ },
  "a9e41a2fb74b": {
   "avoid": [
    "meat",
@@ -15239,6 +15513,41 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-10-01T10:36:25+00:00"
+ },
+ "adb94943a034": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "mayonnaise",
+   "creamy dressing",
+   "peanuts"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food shredded cabbage?",
+    "yes": true
+   },
+   {
+    "q": "Is the dressing thick and creamy?",
+    "yes": false
+   },
+   {
+    "q": "Are there pieces of chicken or meat?",
+    "yes": false
+   }
+  ],
+  "dish": "Japanese cabbage slaw",
+  "look": "shredded green and purple cabbage, thin slices of green onion, sprinkled white and black sesame seeds, light brown tamari dressing coating the leaves",
+  "model": "gemini-3.5-flash",
+  "name": "Japanese Cabbage Slaw",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-09T10:52:01+00:00"
  },
  "adbe86e4f624": {
   "avoid": [
@@ -16085,6 +16394,38 @@
   "vessel": "plate",
   "written_at": "2026-09-27T06:03:50+00:00"
  },
+ "b475ab3bada9": {
+  "avoid": [
+   "raw chicken",
+   "chicken wings",
+   "bones",
+   "skewers",
+   "soup",
+   "noodles"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item bite-sized glazed chicken pieces?",
+    "yes": true
+   },
+   {
+    "q": "Are there bones in the chicken pieces?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken dry and unglazed?",
+    "yes": false
+   }
+  ],
+  "dish": "sweet and spicy chicken",
+  "look": "bite-sized crispy fried chicken pieces, tossed in a glossy vibrant red sweet and spicy glaze, sprinkled with sesame seeds, chopped green scallions",
+  "model": "gemini-3.5-flash",
+  "name": "Sweet & Spicy Chicken",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-09T10:51:35+00:00"
+ },
  "b4c1fe2bf245": {
   "avoid": [
    "boneless meat",
@@ -16121,6 +16462,38 @@
   "revisions": 2,
   "vessel": "plate",
   "written_at": "2026-10-01T19:21:57+00:00"
+ },
+ "b4ffb1018dbb": {
+  "avoid": [
+   "raw chicken",
+   "whole chicken",
+   "soup",
+   "ramen",
+   "skewers",
+   "sushi"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a sliced breaded chicken cutlet with curry sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken unbreaded or grilled?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a soup with noodles?",
+    "yes": false
+   }
+  ],
+  "dish": "chicken katsu curry",
+  "look": "sliced golden-brown panko-breaded chicken cutlet, thick dark brown Japanese curry sauce, chunks of soft cooked carrots and potatoes, served over white rice",
+  "model": "gemini-3.5-flash",
+  "name": "Chicken Katsu with Japanese Curry",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-09T10:51:35+00:00"
  },
  "b5e04fbed525": {
   "avoid": [
@@ -16761,6 +17134,38 @@
   "vessel": "plate",
   "written_at": "2026-10-06T00:33:28+00:00"
  },
+ "bba74b8ff0fb": {
+  "avoid": [
+   "raw chicken",
+   "fried chicken",
+   "soup",
+   "skewers",
+   "bones",
+   "rice bowl"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item grilled chicken with a reddish-brown glaze?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken breaded and deep-fried?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken raw?",
+    "yes": false
+   }
+  ],
+  "dish": "sweet and spicy BBQ chicken",
+  "look": "grilled chicken pieces, coated in a thick reddish-brown sweet and spicy barbecue glaze, charred edges, scattered yellow onions, sliced scallions, red chile flakes",
+  "model": "gemini-3.5-flash",
+  "name": "Sweet & Spicy BBQ Chicken",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-09T10:51:35+00:00"
+ },
  "bbb5c1c6718a": {
   "avoid": [
    "loose salad in a bowl",
@@ -17052,6 +17457,38 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T04:50:08+00:00"
+ },
+ "bee76dfbf2d2": {
+  "avoid": [
+   "raw meat",
+   "whole sausage links",
+   "pizza",
+   "soup",
+   "seafood",
+   "shrimp"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item pasta with sausage in a red sauce?",
+    "yes": true
+   },
+   {
+    "q": "Are there whole unsliced sausage links?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a soup?",
+    "yes": false
+   }
+  ],
+  "dish": "spicy sausage pasta",
+  "look": "penne pasta tossed in a rich red tomato sauce, chunks of browned spicy sausage, melted parmesan cheese, flecks of red pepper flakes, fresh basil leaves",
+  "model": "gemini-3.5-flash",
+  "name": "Spicy Sausage Pasta",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-09T10:51:35+00:00"
  },
  "befb3aa4fe74": {
   "avoid": [
@@ -17461,6 +17898,41 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T06:57:19+00:00"
+ },
+ "c4f68d1824cd": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "raw carrots",
+   "carrot soup",
+   "peas"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food cooked carrot pieces?",
+    "yes": true
+   },
+   {
+    "q": "Are the carrots raw or shredded?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a soup or puree?",
+    "yes": false
+   }
+  ],
+  "dish": "Ginger-glazed carrots",
+  "look": "tender roasted carrot coins, coated in a glossy golden-brown honey and ginger glaze, garnished with a sprinkle of finely sliced green onions",
+  "model": "gemini-3.5-flash",
+  "name": "Ginger-Glazed Carrots",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-09T10:51:50+00:00"
  },
  "c55dfe6d0c41": {
   "avoid": [
@@ -17881,6 +18353,39 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T07:39:15+00:00"
+ },
+ "c85935338a81": {
+  "avoid": [
+   "bun",
+   "sandwich",
+   "hamburger",
+   "raw meat",
+   "bones",
+   "ribs",
+   "coleslaw"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item shredded or pulled beef?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat served in a bun or sandwich?",
+    "yes": false
+   },
+   {
+    "q": "Are there bones in the meat?",
+    "yes": false
+   }
+  ],
+  "dish": "BBQ beef brisket",
+  "look": "shredded beef brisket, dark brown bark, juicy tender meat fibers, glistening with a dark reddish-brown barbecue sauce, smoky charred edges",
+  "model": "gemini-3.5-flash",
+  "name": "BBQ Beef Brisket",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-09T10:51:35+00:00"
  },
  "c8ad011b6384": {
   "avoid": [
@@ -19011,6 +19516,38 @@
   "vessel": "plate",
   "written_at": "2026-09-27T04:50:49+00:00"
  },
+ "d3f6c35987ea": {
+  "avoid": [
+   "raw steak",
+   "bones",
+   "skewers",
+   "hamburger",
+   "gravy boat",
+   "french fries"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a sliced grilled steak?",
+    "yes": true
+   },
+   {
+    "q": "Is the steak completely raw or uncooked?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat ground or shaped like a patty?",
+    "yes": false
+   }
+  ],
+  "dish": "grilled New York strip steak with peppercorn sauce",
+  "look": "grilled New York strip steak, sliced to show a warm pink medium-rare center, seared dark brown crust with grill marks, rich creamy brown peppercorn sauce, whole green peppercorns, chopped parsley",
+  "model": "gemini-3.5-flash",
+  "name": "Grilled NY Steak with Peppercorn Sauce",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-09T10:51:35+00:00"
+ },
  "d447de85b4fc": {
   "avoid": [
    "rice",
@@ -19979,11 +20516,12 @@
   "avoid": [
    "pasta",
    "spaghetti",
+   "noodles",
    "bread",
+   "garlic bread",
+   "crab claws",
    "lobster",
-   "crab legs",
-   "raw fish",
-   "lemon slices"
+   "closed shells"
   ],
   "checks": [
    {
@@ -19999,14 +20537,14 @@
     "yes": false
    }
   ],
-  "dish": "cioppino seafood stew",
-  "look": "A rich tomato-based seafood broth filled with open clams in shells, mussels in dark shells, pink curled shrimp, chunks of white cod fish, diced tomatoes, celery, and fennel, garnished with chopped parsley",
-  "model": "gemini-3.5-flash",
+  "dish": "cioppino",
+  "look": "Chunky white cod fish fillets, curled pink shrimp, open clams in shells, dark mussels, rich reddish-orange tomato broth, stewed diced tomatoes, celery, sliced fennel, finely chopped parsley",
+  "model": "gemini-3.7-flash",
   "name": "Cioppino",
   "rev": 6,
-  "revisions": 0,
+  "revisions": 1,
   "vessel": "bowl",
-  "written_at": "2026-10-08T20:56:03+00:00"
+  "written_at": "2026-10-09T11:35:30+00:00"
  },
  "df418a74e349": {
   "avoid": [
@@ -20083,18 +20621,19 @@
  },
  "e0636d4775e1": {
   "avoid": [
-   "chicken",
-   "beef",
-   "pork",
-   "fish",
-   "shrimp",
    "rice",
+   "bread",
    "roti",
-   "naan"
+   "naan",
+   "lime wedges",
+   "cilantro",
+   "fruit",
+   "bone-in chicken",
+   "beef"
   ],
   "checks": [
    {
-    "q": "Is the dish a yellow curry with chunks of vegetables and plant-based meat?",
+    "q": "Is the dish a yellow curry with chunks of vegetables and protein?",
     "yes": true
    },
    {
@@ -20107,13 +20646,13 @@
    }
   ],
   "dish": "Jamaican vegetable curry",
-  "look": "thick yellow coconut curry sauce, chunks of plant-based chicken, diced red bell peppers, sliced onions, chopped green onions, flecks of thyme",
-  "model": "gemini-3.5-flash",
+  "look": "bite-sized plant-based protein chunks, thick golden-yellow coconut curry sauce, diced red bell peppers, tender sliced onions, chopped scallions, flecks of fresh green thyme",
+  "model": "gemini-3.7-flash",
   "name": "Jamaican \"Gardein\" Vegetable Curry",
   "rev": 6,
-  "revisions": 0,
+  "revisions": 1,
   "vessel": "bowl",
-  "written_at": "2026-10-08T20:56:11+00:00"
+  "written_at": "2026-10-09T11:38:11+00:00"
  },
  "e1203d92de6c": {
   "avoid": [
@@ -20154,6 +20693,41 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-01T19:05:42+00:00"
+ },
+ "e1ac48cf172f": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "meatballs",
+   "bacon",
+   "cream sauce"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food pasta coated in green sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the sauce red or white?",
+    "yes": false
+   },
+   {
+    "q": "Are there pieces of chicken or meat in the pasta?",
+    "yes": false
+   }
+  ],
+  "dish": "spinach pesto pasta",
+  "look": "penne pasta tossed in vibrant green spinach pesto sauce, wilted dark green spinach leaves, halved red cherry tomatoes, sliced brown mushrooms, grated parmesan cheese",
+  "model": "gemini-3.5-flash",
+  "name": "Spinach Pesto Pasta",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-09T10:52:01+00:00"
  },
  "e1b4760c09f9": {
   "avoid": [
@@ -20650,6 +21224,40 @@
   "revisions": 0,
   "vessel": "plate"
  },
+ "e72d5c7283c4": {
+  "avoid": [
+   "meat chunks",
+   "bones",
+   "thick gravy",
+   "prime rib",
+   "sandwich",
+   "french dip",
+   "carrots",
+   "celery"
+  ],
+  "checks": [
+   {
+    "q": "Is the food a clear liquid broth?",
+    "yes": true
+   },
+   {
+    "q": "Is the liquid a thick, opaque gravy?",
+    "yes": false
+   },
+   {
+    "q": "Are there large chunks of meat or vegetables in the liquid?",
+    "yes": false
+   }
+  ],
+  "dish": "vegetable au jus broth",
+  "look": "clear dark golden-brown broth, glistening droplets of melted butter on the surface, tiny green flecks of thyme leaves, hot steam",
+  "model": "gemini-3.5-flash",
+  "name": "Au Jus",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-09T10:52:01+00:00"
+ },
  "e73e962de194": {
   "avoid": [
    "pork chop",
@@ -20998,6 +21606,41 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-29T17:36:43+00:00"
+ },
+ "ec25d8202aa3": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "raw eggplant",
+   "eggplant parmesan",
+   "cheese"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food roasted eggplant halves with a glaze?",
+    "yes": true
+   },
+   {
+    "q": "Is the eggplant covered in melted cheese or tomato sauce?",
+    "yes": false
+   },
+   {
+    "q": "Is the eggplant raw or uncooked?",
+    "yes": false
+   }
+  ],
+  "dish": "Nasu dengaku",
+  "look": "halved Japanese eggplants, tender and roasted, topped with a thick caramelized dark-brown miso glaze, scored in a diamond pattern, lightly blistered on the edges",
+  "model": "gemini-3.5-flash",
+  "name": "Miso Glazed Eggplant",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-09T10:51:50+00:00"
  },
  "ec35f62fcf30": {
   "avoid": [
@@ -22791,6 +23434,41 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-29T16:49:13+00:00"
+ },
+ "fca06521888c": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "rice",
+   "raw tofu",
+   "tonkatsu"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item sliced breaded tofu cutlets in curry sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the main item a piece of pork or chicken?",
+    "yes": false
+   },
+   {
+    "q": "Is the curry sauce thin and watery like soup?",
+    "yes": false
+   }
+  ],
+  "dish": "Tofu katsu curry",
+  "look": "golden-brown breaded crispy tofu cutlets, sliced into thick strips, resting on a bed of thick brown Japanese curry sauce containing chunks of soft potato and carrot, sprinkled with sliced green onions",
+  "model": "gemini-3.5-flash",
+  "name": "Crispy Tofu Katsu with Japanese Curry",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-09T10:51:50+00:00"
  },
  "fd0eea6f082a": {
   "avoid": [
