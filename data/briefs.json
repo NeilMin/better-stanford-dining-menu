@@ -1,42 +1,66 @@
 {
  "000b8dcb26c0": {
   "avoid": [
-   "pork ribs",
-   "shredded pulled pork",
-   "ground meat",
-   "meatballs",
+   "multiple plates",
+   "duplicate plates",
+   "second plate",
+   "side plate",
+   "dipping bowl",
+   "sauce bowl",
+   "sauce dish",
+   "ramekin",
+   "small dish",
+   "cup",
+   "teacup",
+   "mug",
+   "drink",
+   "soup",
+   "rice",
    "noodles",
-   "fried rice",
-   "buns",
-   "chicken",
-   "skewers"
+   "vegetables",
+   "broccoli",
+   "citrus",
+   "lemon",
+   "mint",
+   "herbs",
+   "beef",
+   "dark red meat fibers",
+   "solid red meat center",
+   "uniformly red meat",
+   "completely red inside",
+   "raw meat",
+   "tuna",
+   "beets",
+   "gravy pool",
+   "sauce puddle"
   ],
   "checks": [
    {
-    "q": "Is the main item cooked sliced meat with a glaze?",
+    "q": "Is the main item sliced roasted meat with a glossy glaze on a single plate?",
     "yes": true
    },
    {
-    "q": "Is the meat shredded or ground like mince?",
+    "q": "Is the interior cross-section of the sliced meat uniformly red or dark like beef rather than pale cooked pork?",
     "yes": false
    },
    {
-    "q": "Is the meat served in a soup or broth?",
+    "q": "Is there a second plate, extra dish, or dipping sauce bowl in the photo?",
     "yes": false
    },
    {
-    "q": "Is the meat on bones like ribs?",
+    "q": "Is the meat shredded, ground, or served in soup?",
     "yes": false
    }
   ],
-  "dish": "Char siu pork",
-  "look": "sliced roasted pork strips, glossy deep red-brown sticky glaze, charred caramelized edges, juicy pink-tinged tender interior, fanned slices on a plate, sticky sheen on the surface",
-  "model": "claude-sonnet",
+  "dish": "authentic Cantonese Chinese BBQ char siu pork slices",
+  "hand": true,
+  "look": "thick diagonal slices of authentic Cantonese Chinese BBQ char siu roast pork, distinct (vibrant red outer smoke ring:1.35) around the edges of each slice, (pale white cooked pork meat center:1.35) cross section, glossy sweet ruby red char siu glaze on outer perimeter, caramelized charred edges, fanned slices neatly arranged on a single white ceramic plate",
+  "model": "manual-culinary-fix",
   "name": "Char Siu Pork",
   "rev": 6,
   "revisions": 0,
   "vessel": "plate",
-  "written_at": "2026-09-26T23:08:24+00:00"
+  "written_at": "2026-10-09T04:10:00+00:00"
  },
  "0049d73a4656": {
   "avoid": [
@@ -17860,24 +17884,44 @@
  },
  "c8ad011b6384": {
   "avoid": [
+   "greens",
+   "green leaves",
+   "vegetables",
+   "herbs",
+   "parsley",
+   "mint",
+   "scallions",
+   "asparagus",
+   "chicken breast",
+   "turkey",
+   "dry white poultry",
+   "chalky white meat",
+   "stringy raw meat fibers",
+   "translucent meat",
+   "gelatinous texture",
+   "jelly",
+   "raw tuna",
    "beef",
-   "roast beef",
-   "beef brisket",
    "steak",
    "dark red beef grain",
    "dark brown meat fibers",
    "ribs",
-   "bone-in meat",
    "raw meat",
    "sauce pool",
    "rice",
    "noodles",
    "soup",
-   "skewers"
+   "skewers",
+   "fork",
+   "cutlery clutter",
+   "duplicate plates",
+   "multiple dishes",
+   "table spread",
+   "feast"
   ],
   "checks": [
    {
-    "q": "Is the main item sliced Chinese BBQ char siu pork with glossy red-lacquered edges and tender pale pork meat?",
+    "q": "Is the main item sliced Chinese BBQ char siu pork with glossy red-lacquered edges and tender pork meat?",
     "yes": true
    },
    {
@@ -17890,13 +17934,14 @@
    }
   ],
   "dish": "Cantonese BBQ char siu pork",
-  "look": "thick diagonal slices of authentic Cantonese char siu roast pork, tender juicy pale-pink and white pork meat grain, glossy vibrant red-lacquered outer crust with charred caramelized dark edges, glistening sweet honey maltose glaze, fanned out neatly on a white ceramic plate",
-  "model": "gemini-3.8-flash",
+  "hand": true,
+  "look": "thick diagonal slices of authentic Cantonese char siu roast pork, succulent juicy pink-tinged tender cooked pork meat texture with delicate natural pork grain, glossy vibrant red-lacquered caramelized outer crust with charred dark edges, glistening sweet honey maltose glaze, fanned out neatly on a clean white ceramic plate",
+  "model": "manual-culinary-fix",
   "name": "Cantonese Char Siu Pork",
   "rev": 6,
   "revisions": 0,
   "vessel": "plate",
-  "written_at": "2026-10-01T07:35:00+00:00"
+  "written_at": "2026-10-09T04:41:00+00:00"
  },
  "c8bb9e6f877a": {
   "avoid": [
