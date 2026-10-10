@@ -1,6 +1,6 @@
 {
  "date": "2026-10-10",
- "scraped_at": "2026-10-10T02:56:18-07:00",
+ "scraped_at": "2026-10-10T12:19:24-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -1009,25 +1009,18 @@
    ],
    "Lunch": [
     {
-     "name": "Korean Fried Chicken",
-     "recipe_id": "336263",
+     "name": "Teriyaki Chicken",
+     "recipe_id": "5526578",
      "description": "",
-     "ingredients": "halal chicken, rice vinegar, tamari, honey, ginger, korean chili paste, garlic, canola oil, salt, bi bim bap sauce (tamari, orange juice, korean chili paste, beet sugar, sesame oil, garlic, ginger, alcohol-free mirin seasoning, korean red pepper), sesame seeds",
+     "ingredients": "chicken, onions, fish sauce, ginger, canola/olive oil blend, sweet soy sauce, caramel sauce, garlic, salt",
      "allergens": [
+      "FISH",
+      "MILK",
       "SOY",
       "WHEAT"
      ],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "SHELLFISH",
-      "TREENUTS"
-     ],
-     "tags": [
-      "halal"
-     ],
+     "trace_allergens": [],
+     "tags": [],
      "order": 0
     },
     {
@@ -1076,18 +1069,17 @@
      "order": 3
     },
     {
-     "name": "Japchae Glass Noodles",
-     "recipe_id": "4806374",
+     "name": "Scalloped Potatoes",
+     "recipe_id": "6621610",
      "description": "",
-     "ingredients": "sweet potato noodles, carrots, cabbage, onions, bell peppers, tamari, sesame oil, canola/olive oil blend, salt, sugar, garlic, pepper",
+     "ingredients": "sliced potatoes, whole milk, fontina, parmesan, monterey jack cheese, nutmeg, thyme, bay leaf, white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt)",
      "allergens": [
-      "SESAME",
-      "SOY"
+      "MILK",
+      "WHEAT"
      ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
-      "vegan",
+      "vegetarian",
       "halal"
      ],
      "order": 4
@@ -1132,26 +1124,19 @@
      "order": 6
     },
     {
-     "name": "Soup of the Day",
-     "recipe_id": "SoupoftheDay",
+     "name": "Sweet Citrus Salad",
+     "recipe_id": "5600237",
      "description": "",
-     "ingredients": "chef's choice soup of the day",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [],
-     "order": 7
-    },
-    {
-     "name": "Composed Salad",
-     "recipe_id": "123116546",
-     "description": "",
-     "ingredients": "chef's choice composed salad",
-     "allergens": [],
+     "ingredients": "baby spinach, oranges, dried cranberries, red onions, balsamic vinaigrette (balsamic vinegar [wine vinegar, grape juice], vegetable oil [soybean oil, canola oil, and/or olive oil], sugar, salt, garlic, dijon mustard [vinegar, mustard seed, salt, white wine, fruit pectin, spice], xanthan gum, mustard flour, parsley, artificial flavor)",
+     "allergens": [
+      "SOY"
+     ],
      "trace_allergens": [],
      "tags": [
-      "halal"
+      "gluten-free",
+      "vegan"
      ],
-     "order": 8
+     "order": 7
     },
     {
      "name": "Performance Bar",
@@ -1161,7 +1146,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 9
+     "order": 8
     },
     {
      "name": "Craveable Grains",
@@ -1175,7 +1160,7 @@
       "vegan",
       "halal"
      ],
-     "order": 10
+     "order": 9
     },
     {
      "name": "Flavor Forward Legumes",
@@ -1189,13 +1174,29 @@
       "vegan",
       "halal"
      ],
+     "order": 10
+    },
+    {
+     "name": "Marinara Sauce",
+     "recipe_id": "4079962",
+     "description": "",
+     "ingredients": "tomatoes, tomato paste, soybean oil, sugar, salt, onion, garlic, spices, citric acid, natural flavor",
+     "allergens": [
+      "SOY"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan",
+      "halal"
+     ],
      "order": 11
     },
     {
-     "name": "Creamy Pesto",
-     "recipe_id": "7728050",
+     "name": "Creamy Marinara",
+     "recipe_id": "CreamyMar(lakeside)",
      "description": "",
-     "ingredients": "pesto sauce (basil, canola oil, parmesan cheese, olive oil, garlic, salt, lemon juice concentrate, natural flavor, xanthan gum, soy lecithin, chamomile extract, rosemary extract, white sauce (flour, butter, cream, milk powder, onion powder, white pepper, garlic, nutmeg, salt), parmesan cheese, parsley",
+     "ingredients": "tomatoes, tomato paste, cream, milk powder, butter, parmesan cheese, flour, soybean oil, sugar, salt, onion, garlic, spices, citric acid, natural flavor",
      "allergens": [
       "MILK",
       "SOY",
@@ -1203,27 +1204,10 @@
      ],
      "trace_allergens": [],
      "tags": [
-      "vegetarian"
-     ],
-     "order": 12
-    },
-    {
-     "name": "Pasta Marinara",
-     "recipe_id": "5095708",
-     "description": "",
-     "ingredients": "pasta, marinara sauce, canola/olive oil blend",
-     "allergens": [
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "EGG"
-     ],
-     "tags": [
-      "vegan",
+      "vegetarian",
       "halal"
      ],
-     "order": 13
+     "order": 12
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -1237,7 +1221,7 @@
       "vegan",
       "halal"
      ],
-     "order": 14
+     "order": 13
     }
    ],
    "Dinner": [
