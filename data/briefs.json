@@ -5536,6 +5536,43 @@
   "vessel": "plate",
   "written_at": "2026-10-04T18:45:39+00:00"
  },
+ "388b30dd3c24": {
+  "avoid": [
+   "red tomato sauce",
+   "marinara",
+   "meat",
+   "chicken",
+   "shrimp",
+   "pork",
+   "beef",
+   "bacon",
+   "soup",
+   "salad"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish pasta thoroughly tossed in a creamy green basil pesto sauce?",
+    "yes": true
+   },
+   {
+    "q": "Does the dish contain any meat, chicken, beef, pork, or seafood?",
+    "yes": false
+   },
+   {
+    "q": "Is the pasta sauce red tomato marinara instead of green pesto?",
+    "yes": false
+   }
+  ],
+  "dish": "creamy pesto pasta",
+  "hand": true,
+  "look": "tender penne pasta thoroughly coated in a rich, vibrant green creamy basil pesto sauce, topped with shaved parmesan cheese and garnished with a sprig of fresh basil, plated in a simple white ceramic bowl, appetizing food photography",
+  "model": "manual-expert",
+  "name": "Creamy Pesto Pasta",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-10T21:35:00+00:00"
+ },
  "38ab2d878190": {
   "avoid": [
    "chicken tenders",
@@ -9581,6 +9618,43 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-29T23:55:14+00:00"
+ },
+ "613a39295421": {
+  "avoid": [
+   "whole loaves",
+   "unsliced bread",
+   "whole baguette",
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "sandwich"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish an assortment of sliced artisan bread and dinner rolls?",
+    "yes": true
+   },
+   {
+    "q": "Does this dish contain meat, poultry, or seafood?",
+    "yes": false
+   },
+   {
+    "q": "Is this a prepared sandwich with filling?",
+    "yes": false
+   }
+  ],
+  "dish": "assorted bread",
+  "hand": true,
+  "look": "cut slices of crusty sourdough bread, sliced multigrain baguette rounds, soft golden brown dinner rolls, exposed airy crumb texture, crisp browned crusts, varied sliced breads, arranged together on a flat white ceramic plate",
+  "model": "gemini-3.7-flash",
+  "name": "Assorted Bread",
+  "rev": 6,
+  "revisions": 1,
+  "vessel": "plate",
+  "written_at": "2026-10-10T21:43:06+00:00"
  },
  "617dc0125c50": {
   "avoid": [
@@ -14169,35 +14243,47 @@
  },
  "93b9b5247084": {
   "avoid": [
-   "sliced deli meat",
-   "ground loose meat",
-   "pasta",
    "spaghetti",
+   "pasta",
+   "pizza",
+   "sliced deli meat",
+   "hot dog sausage",
+   "single sausage link",
    "french fries",
-   "cold sub"
+   "salad",
+   "burger bun",
+   "round burger",
+   "disassembled bread slice",
+   "bread on the side",
+   "sauce puddle on empty plate"
   ],
   "checks": [
    {
-    "q": "Is the dish a sandwich containing whole round meatballs in a roll?",
+    "q": "Is the main item a sandwich in a long bread roll with round meatballs?",
     "yes": true
    },
    {
-    "q": "Is the dish a plate of spaghetti or pasta with meatballs?",
+    "q": "Are the meatballs replaced by a sausage, hot dog, or sliced flat meat?",
     "yes": false
    },
    {
-    "q": "Is the meat sliced or flat rather than round meatballs?",
+    "q": "Is there a plate of pasta or spaghetti?",
+    "yes": false
+   },
+   {
+    "q": "Is the food a round burger?",
     "yes": false
    }
   ],
   "dish": "meatball sub sandwich",
-  "look": "split toasted brioche sub roll, round seared beef meatballs nestled inside, rich red marinara sauce, melted gooey provolone cheese blanketed over meatballs, toasted golden crust",
-  "model": "gemini-flash-latest",
+  "hand": true,
+  "look": "a classic Italian meatball sub sandwich in a crusty long Italian sub roll sliced horizontally into top and bottom halves, showing top and bottom bread halves sandwiching round browned beef meatballs in the middle, rich thick red marinara sauce coating the meatballs, melted provolone and mozzarella cheese, golden baked bread crust, hearty filling between the two bread halves, plated on a simple white plate",
+  "model": "manual-expert",
   "name": "Meatball Sub Sandwich",
   "rev": 6,
   "revisions": 0,
   "vessel": "plate",
-  "written_at": "2026-10-10T10:02:59+00:00"
+  "written_at": "2026-10-10T21:35:00+00:00"
  },
  "9447e7380ead": {
   "avoid": [
