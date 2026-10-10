@@ -1410,6 +1410,41 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T08:27:45+00:00"
  },
+ "1429ac7cd993": {
+  "avoid": [
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "cauliflower soup",
+   "mashed cauliflower",
+   "raw cauliflower",
+   "rice"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cauliflower?",
+    "yes": true
+   },
+   {
+    "q": "Is the cauliflower in a soup or puree form?",
+    "yes": false
+   },
+   {
+    "q": "Is there any meat or fish in the dish?",
+    "yes": false
+   }
+  ],
+  "dish": "Roasted Cauliflower with Lemon and Thyme",
+  "look": "roasted cauliflower florets, golden-brown charred edges, tender creamy white centers, scattered fresh green thyme leaves, thin yellow lemon slices, glistening surface",
+  "model": "gemma-4-31b-it",
+  "name": "Lemon Thyme Roasted Cauliflower",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-10T19:47:12+00:00"
+ },
  "1473088ca909": {
   "avoid": [
    "croissant",
@@ -3623,6 +3658,44 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T04:56:29+00:00"
+ },
+ "29c9e78d37fd": {
+  "avoid": [
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "lettuce",
+   "pasta",
+   "whole cabbage"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item shredded cabbage?",
+    "yes": true
+   },
+   {
+    "q": "Is the main item lettuce leaves?",
+    "yes": false
+   },
+   {
+    "q": "Is it a soup or liquidy stew?",
+    "yes": false
+   },
+   {
+    "q": "Is there meat or fish in the dish?",
+    "yes": false
+   }
+  ],
+  "dish": "Creamy Coleslaw",
+  "look": "shredded green and white cabbage, thin orange carrot matchsticks, small white apple cubes, sliced green onions, chopped cilantro leaves, coated in a thick glossy white creamy ranch dressing",
+  "model": "gemma-4-31b-it",
+  "name": "Creamy Coleslaw",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-10T19:49:21+00:00"
  },
  "2ac8b92f32df": {
   "avoid": [
@@ -6981,6 +7054,41 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T07:30:19+00:00"
  },
+ "4623cd19cdd7": {
+  "avoid": [
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "chunks of squash",
+   "noodles",
+   "bread",
+   "crackers"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a smooth pureed soup?",
+    "yes": true
+   },
+   {
+    "q": "Is the soup a chunky stew with large vegetable pieces?",
+    "yes": false
+   },
+   {
+    "q": "Does the dish contain pieces of meat or fish?",
+    "yes": false
+   }
+  ],
+  "dish": "Apple Butternut Squash Soup",
+  "look": "smooth creamy orange-gold pureed soup, thick consistency, swirl of white cream on surface, dusting of brown cinnamon powder",
+  "model": "gemma-4-31b-it",
+  "name": "Apple Butternut Squash Soup",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-10T19:50:32+00:00"
+ },
  "4624c8061ddc": {
   "avoid": [
    "eggs",
@@ -9292,6 +9400,39 @@
   "vessel": "bowl",
   "written_at": "2026-10-10T10:04:34+00:00"
  },
+ "5fc381ac4cd8": {
+  "avoid": [
+   "shrimp",
+   "seafood",
+   "crab",
+   "raw chicken",
+   "raw vegetables",
+   "clear broth",
+   "dry meat"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food a thick brown stew with meat and vegetable chunks?",
+    "yes": true
+   },
+   {
+    "q": "Does the dish contain seafood or shrimp?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a clear thin broth soup?",
+    "yes": false
+   }
+  ],
+  "dish": "chicken and sausage gumbo",
+  "look": "thick dark brown stew, tender cooked chicken chunks, round browned sausage slices, sliced green okra rings, diced tomatoes, celery, green bell peppers, sprinkled with fresh chopped parsley",
+  "model": "gemini-3.6-flash",
+  "name": "Chicken & Andouille Sausage Gumbo",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-10T19:35:36+00:00"
+ },
  "606e8e026338": {
   "avoid": [
    "meat",
@@ -10033,6 +10174,41 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T08:12:49+00:00"
+ },
+ "6a25f5b37223": {
+  "avoid": [
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "spaghetti",
+   "penne",
+   "mashed potatoes",
+   "soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item small potato dumplings?",
+    "yes": true
+   },
+   {
+    "q": "Is the dish a thin liquid soup?",
+    "yes": false
+   },
+   {
+    "q": "Are there pieces of meat or fish in the dish?",
+    "yes": false
+   }
+  ],
+  "dish": "Baked Gnocchi with Butternut Squash",
+  "look": "small potato gnocchi dumplings, cubed orange butternut squash, diced green zucchini, small pieces of celery, translucent onions, thick savory golden-brown sauce, slightly browned edges from baking",
+  "model": "gemma-4-31b-it",
+  "name": "Baked Gnocchi with Butternut Squash",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-10T19:52:24+00:00"
  },
  "6a276bb8a32b": {
   "avoid": [
@@ -17345,6 +17521,41 @@
   "vessel": "plate",
   "written_at": "2026-10-10T08:41:25+00:00"
  },
+ "b5c82d78c302": {
+  "avoid": [
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "raw rice",
+   "quinoa",
+   "couscous",
+   "vegetable platter"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food cooked rice?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat or fish with the rice?",
+    "yes": false
+   },
+   {
+    "q": "Does the rice look raw or uncooked?",
+    "yes": false
+   }
+  ],
+  "dish": "Turmeric Cilantro Rice",
+  "look": "fluffy cooked rice grains, vibrant golden yellow color, mix of white and brown rice, scattered small dark mustard seeds, chopped fresh green cilantro leaves, moist texture",
+  "model": "gemma-4-31b-it",
+  "name": "Golden Cilantro Rice",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-10T19:48:22+00:00"
+ },
  "b5e04fbed525": {
   "avoid": [
    "rice",
@@ -21623,6 +21834,42 @@
   "vessel": "plate",
   "written_at": "2026-10-01T19:05:42+00:00"
  },
+ "e1611d88f6bf": {
+  "avoid": [
+   "beef",
+   "pork",
+   "chicken",
+   "fish",
+   "shrimp",
+   "tortilla",
+   "taco shell",
+   "hard shell",
+   "lettuce wrap",
+   "raw yams"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item ground-style crumbles?",
+    "yes": true
+   },
+   {
+    "q": "Is the food served inside a taco shell or tortilla?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a liquid soup or stew?",
+    "yes": false
+   }
+  ],
+  "dish": "vegan taco filling",
+  "look": "browned plant-based meat crumbles, small cubes of orange yams, translucent sautéed onions, chunky texture, reddish-brown chipotle sauce, moist glistening surface",
+  "model": "gemma-4-31b-it",
+  "name": "Taco Veggie Crumbles",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-10T19:44:32+00:00"
+ },
  "e1ac48cf172f": {
   "avoid": [
    "meat",
@@ -22045,6 +22292,41 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T05:30:31+00:00"
+ },
+ "e639cae5d3c2": {
+  "avoid": [
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "potatoes",
+   "carrots",
+   "bread",
+   "rice"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item chickpeas?",
+    "yes": true
+   },
+   {
+    "q": "Are there chunks of meat or fish in the stew?",
+    "yes": false
+   },
+   {
+    "q": "Does the spinach look raw and crisp like a salad?",
+    "yes": false
+   }
+  ],
+  "dish": "Chickpea and Spinach Stew",
+  "look": "whole cooked chickpeas, wilted dark green spinach leaves, thick reddish-brown tomato sauce, soft translucent onion pieces, a few fresh green coriander leaves on top",
+  "model": "gemma-4-31b-it",
+  "name": "Chickpea & Spinach Stew",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-10T19:43:28+00:00"
  },
  "e6876edfcd5a": {
   "avoid": [
@@ -22686,6 +22968,41 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T04:50:49+00:00"
+ },
+ "ecbebfcdae1d": {
+  "avoid": [
+   "chicken wings",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "raw cauliflower",
+   "celery sticks",
+   "dipping bowl"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cauliflower?",
+    "yes": true
+   },
+   {
+    "q": "Does the food look like chicken wings?",
+    "yes": false
+   },
+   {
+    "q": "Is the cauliflower raw?",
+    "yes": false
+   }
+  ],
+  "dish": "Buffalo Cauliflower",
+  "look": "cauliflower florets, bite-sized pieces, coated in glossy bright orange-red buffalo sauce, craggy textured breading, scattered chopped green onions, small clusters of florets",
+  "model": "gemma-4-31b-it",
+  "name": "Buffalo Cauliflower",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-10T19:45:39+00:00"
  },
  "ece18e08630f": {
   "avoid": [
