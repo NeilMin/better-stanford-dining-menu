@@ -6593,31 +6593,39 @@
    "fish",
    "shrimp",
    "meat",
+   "sausage",
+   "hot dog",
    "open bowl without bread",
-   "lettuce"
+   "lettuce",
+   "round burger bun",
+   "disassembled bread slice",
+   "sauce puddle on empty plate",
+   "spaghetti",
+   "pasta"
   ],
   "checks": [
    {
-    "q": "Is the main component meatballs with marinara sauce inside a sub roll?",
+    "q": "Is the main item a sandwich in a long bread roll with round meatballs?",
     "yes": true
    },
    {
-    "q": "Is the filling served loose in a bowl without any bread?",
+    "q": "Is the filling served loose in a bowl without any bread at all?",
     "yes": false
    },
    {
-    "q": "Is the filling a flat patty instead of round meatballs?",
+    "q": "Is the filling a flat burger patty instead of round meatballs?",
     "yes": false
    }
   ],
-  "dish": "meatball sub sandwich",
-  "look": "a toasted whole wheat sub roll filled with round meatballs coated in red marinara sauce, topped with melted golden cheese",
-  "model": "claude-sonnet",
+  "dish": "vegan meatball sub sandwich",
+  "hand": true,
+  "look": "a plant-based vegan meatball sub sandwich in a toasted long hoagie sub roll sliced horizontally, showing top and bottom bread halves sandwiching round plant-forward meatballs in the middle, thick red marinara sauce coating the meatballs, melted vegan cheese, savory round meatballs nestled between the two bread halves, garnished with chopped parsley, plated on a simple white plate",
+  "model": "manual-expert",
   "name": "Vegan Meatball Sub Sandwich",
   "rev": 6,
   "revisions": 0,
   "vessel": "plate",
-  "written_at": "2026-09-27T07:39:15+00:00"
+  "written_at": "2026-10-10T13:12:00+00:00"
  },
  "409b5de92145": {
   "avoid": [
@@ -11385,6 +11393,53 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-26T23:12:38+00:00"
+ },
+ "76de274cd428": {
+  "avoid": [
+   "soup",
+   "broth",
+   "watery liquid",
+   "stew",
+   "sauce puddle",
+   "liquid sauce",
+   "gravy",
+   "curry",
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "shrimp",
+   "plain white rice",
+   "noodles",
+   "pasta",
+   "burrito",
+   "taco",
+   "black beans as main",
+   "large vegetable chunks"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food dry, fluffy cooked rice grains tinted reddish-orange?",
+    "yes": true
+   },
+   {
+    "q": "Is the rice served in a liquid soup, broth, or watery stew?",
+    "yes": false
+   },
+   {
+    "q": "Is meat, chicken, or seafood mixed into the dish?",
+    "yes": false
+   }
+  ],
+  "dish": "Mexican rice",
+  "hand": true,
+  "look": "warm fluffy cooked Mexican rice grains tinted reddish-orange, dry loose tender long-grain rice pilaf seasoned with tomato and cumin, flecks of finely diced tomatoes and onions, steam rising, dry and fluffy texture with separate rice grains, no soup, no broth, served in a simple white ceramic bowl",
+  "model": "manual-expert",
+  "name": "Mexican Rice",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-10T13:12:00+00:00"
  },
  "76e925fd257c": {
   "avoid": [
@@ -19823,23 +19878,27 @@
    "spaghetti",
    "pasta",
    "pizza",
-   "sliced meat",
-   "hot dog",
+   "sliced deli meat",
+   "hot dog sausage",
+   "single sausage link",
    "french fries",
    "salad",
-   "burger bun"
+   "burger bun",
+   "round burger",
+   "disassembled bread slice",
+   "sauce puddle on empty plate"
   ],
   "checks": [
    {
-    "q": "Is the main item a sandwich in a long roll?",
+    "q": "Is the main item a sandwich in a long bread roll with round meatballs?",
     "yes": true
    },
    {
-    "q": "Are the meatballs replaced by sliced meat or sausage?",
+    "q": "Are the meatballs replaced by a sausage, hot dog, or sliced flat meat?",
     "yes": false
    },
    {
-    "q": "Is there a plate of spaghetti or pasta?",
+    "q": "Is there a plate of pasta or spaghetti?",
     "yes": false
    },
    {
@@ -19847,14 +19906,15 @@
     "yes": false
    }
   ],
-  "dish": "meatball marinara sub",
-  "look": "toasted long sub roll filled with several browned beef meatballs, chunky red marinara sauce, melted mozzarella cheese, sauce dripping over the meatballs, sandwich held whole",
-  "model": "claude-sonnet",
+  "dish": "meatball sub sandwich",
+  "hand": true,
+  "look": "a classic Italian meatball sub sandwich in a crusty long Italian sub roll sliced horizontally, showing top and bottom bread halves sandwiching round browned beef meatballs in the middle, rich thick red marinara sauce coating the meatballs, melted mozzarella cheese, golden baked bread crust, hearty filling between the two bread halves, plated on a simple white plate",
+  "model": "manual-expert",
   "name": "Marinara Meatball Sub",
   "rev": 6,
   "revisions": 0,
   "vessel": "plate",
-  "written_at": "2026-09-27T04:50:08+00:00"
+  "written_at": "2026-10-10T13:12:00+00:00"
  },
  "cce77b5c28c2": {
   "avoid": [
