@@ -5672,6 +5672,41 @@
   "vessel": "bowl",
   "written_at": "2026-09-30T10:02:01+00:00"
  },
+ "393b7df14aca": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "rice",
+   "pasta",
+   "cheese"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a warm lentil stew with diced zucchini and tomatoes?",
+    "yes": true
+   },
+   {
+    "q": "Are there chunks of meat or poultry in the bowl?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish mainly composed of rice or grains rather than lentils?",
+    "yes": false
+   }
+  ],
+  "dish": "stewed green lentils with zucchini and tomatoes",
+  "look": "tender cooked whole green-brown lentils, diced sautéed zucchini chunks, crushed fire-roasted red tomatoes, chopped black olives, diced onions, flecks of fresh green thyme and basil",
+  "model": "gemini-flash-latest",
+  "name": "Green Lentils with Tomatoes & Squash (Branner)",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-10T10:02:59+00:00"
+ },
  "394737c4ec01": {
   "avoid": [
    "meat",
@@ -6444,6 +6479,38 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-03T07:52:08+00:00"
+ },
+ "4076feda5beb": {
+  "avoid": [
+   "rice",
+   "noodles",
+   "raw broccoli",
+   "soup",
+   "stew",
+   "sesame seeds"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish composed of sliced beef strips and broccoli florets?",
+    "yes": true
+   },
+   {
+    "q": "Is the dish served as a soup or broth?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat ground or minced?",
+    "yes": false
+   }
+  ],
+  "dish": "beef and broccoli stir-fry",
+  "look": "thin strips of seared beef, glossy dark brown savory sauce, bright green tender-crisp broccoli florets, scrambled egg ribbons dispersed throughout, glistening stir-fry sauce coating",
+  "model": "gemini-flash-latest",
+  "name": "Beef & Broccoli Stir-Fry",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-10T10:02:59+00:00"
  },
  "40883b836820": {
   "avoid": [
@@ -7696,6 +7763,38 @@
   "vessel": "plate",
   "written_at": "2026-09-26T23:04:31+00:00"
  },
+ "4bd1bad80e86": {
+  "avoid": [
+   "red tomato sauce",
+   "marinara",
+   "peas",
+   "chicken",
+   "seafood",
+   "raw pasta"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish long pasta coated in a creamy pale sauce with browned pancetta bits?",
+    "yes": true
+   },
+   {
+    "q": "Is the pasta coated in a red tomato sauce?",
+    "yes": false
+   },
+   {
+    "q": "Does the dish feature large slices or chunks of chicken breast?",
+    "yes": false
+   }
+  ],
+  "dish": "spaghetti carbonara",
+  "look": "tangled mound of spaghetti pasta, glossy creamy pale yellow egg-and-cheese sauce, crispy browned cubes of pancetta bacon throughout, freshly grated parmesan cheese, finely chopped parsley",
+  "model": "gemini-flash-latest",
+  "name": "Pasta Carbonara with Pancetta",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-10T10:02:59+00:00"
+ },
  "4beb3d9a9bf8": {
   "avoid": [
    "chicken",
@@ -7946,6 +8045,39 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T05:20:07+00:00"
+ },
+ "4e7fbd0d3520": {
+  "avoid": [
+   "salmon",
+   "pink fish",
+   "raw fish",
+   "fried battered fish",
+   "fish sticks",
+   "tacos",
+   "tortillas"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a seared white fish fillet topped with tomato and olive sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the fish pink or orange like salmon?",
+    "yes": false
+   },
+   {
+    "q": "Is the fish deep-fried in golden batter?",
+    "yes": false
+   }
+  ],
+  "dish": "Veracruz-style cod",
+  "look": "pan-seared white cod fillet, golden-brown crust, chunky warm salsa of fire-roasted diced tomatoes, sliced green and black olives, briny capers, plump raisins, sautéed sliced onions",
+  "model": "gemini-flash-latest",
+  "name": "SEARED COD VERACRUZ STYLE",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-10T10:02:59+00:00"
  },
  "4f2e322f6094": {
   "avoid": [
@@ -8451,6 +8583,41 @@
   "vessel": "plate",
   "written_at": "2026-09-27T04:38:56+00:00"
  },
+ "54943e783d5f": {
+  "avoid": [
+   "beef patty",
+   "ground beef",
+   "meat",
+   "chicken",
+   "pork",
+   "fish",
+   "shrimp",
+   "burger bun",
+   "raw tempeh"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a seared patty topped with brown mushroom gravy?",
+    "yes": true
+   },
+   {
+    "q": "Is the patty served between burger buns?",
+    "yes": false
+   },
+   {
+    "q": "Is the patty made of ground minced beef?",
+    "yes": false
+   }
+  ],
+  "dish": "tempeh Salisbury steak",
+  "look": "seared golden-brown tempeh patty, rich dark brown mushroom gravy poured over top, sliced sautéed button mushrooms, caramelized translucent onion slices, sprinkle of finely chopped fresh parsley",
+  "model": "gemini-flash-latest",
+  "name": "Tempeh Salisbury Steak",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-10T10:04:34+00:00"
+ },
  "55092c8860c2": {
   "avoid": [
    "bacon",
@@ -8621,6 +8788,38 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T08:24:37+00:00"
+ },
+ "5651751b2c1d": {
+  "avoid": [
+   "deli cold cuts",
+   "french fries",
+   "salad",
+   "burger patty",
+   "raw tomatoes",
+   "untoasted white bread"
+  ],
+  "checks": [
+   {
+    "q": "Is there a toasted melted cheese sandwich next to a portion of red tomato soup?",
+    "yes": true
+   },
+   {
+    "q": "Is the sandwich cold and untoasted?",
+    "yes": false
+   },
+   {
+    "q": "Is the soup clear or noodle broth instead of red tomato soup?",
+    "yes": false
+   }
+  ],
+  "dish": "grilled cheese with sausage and tomato soup",
+  "look": "golden brown toasted thick Texas toast sandwich cut diagonally, melted cheddar and American cheese oozing with crumbled browned Italian pork sausage, alongside a cup of vibrant creamy tomato soup",
+  "model": "gemini-flash-latest",
+  "name": "Grilled Cheese & Fiery Tomato Soup",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-10T10:02:59+00:00"
  },
  "565248882b93": {
   "avoid": [
@@ -9056,6 +9255,42 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T05:33:17+00:00"
+ },
+ "5f78ede6761e": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "whole fish",
+   "raw jackfruit",
+   "tortillas",
+   "tacos"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item shredded or pulled plant chunks in a reddish tomato sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is there a whole fish or fish fillet in the dish?",
+    "yes": false
+   },
+   {
+    "q": "Is the food served inside tacos or wraps?",
+    "yes": false
+   }
+  ],
+  "dish": "Veracruz-style jackfruit stew",
+  "look": "shredded tender jackfruit in rich reddish tomato sauce, sliced green olives, capers, diced stewed roma tomatoes, sliced green bell peppers, translucent cooked onions, flecks of dried herbs",
+  "model": "gemini-flash-latest",
+  "name": "JACKFRUIT A LA VERACRUZANA",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-10T10:04:34+00:00"
  },
  "606e8e026338": {
   "avoid": [
@@ -12186,6 +12421,42 @@
   "vessel": "plate",
   "written_at": "2026-10-03T08:46:53+00:00"
  },
+ "863fb6f187e6": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "straight-cut fries",
+   "tater tots",
+   "cheese sauce",
+   "ketchup cup"
+  ],
+  "checks": [
+   {
+    "q": "Are the potatoes spiral or spring-shaped curly fries?",
+    "yes": true
+   },
+   {
+    "q": "Are the fries standard straight cut?",
+    "yes": false
+   },
+   {
+    "q": "Are the fries smothered in chili or liquid cheese sauce?",
+    "yes": false
+   }
+  ],
+  "dish": "curly fries",
+  "look": "spiral-cut curly potato fries, golden-orange seasoned exterior, crisp spiral coils, browned tips, dusted reddish paprika coating, tender potato interior",
+  "model": "gemini-flash-latest",
+  "name": "Curly Fries",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-10T10:04:34+00:00"
+ },
  "86ab20d5a48c": {
   "avoid": [
    "meat",
@@ -12323,6 +12594,39 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-01T00:09:14+00:00"
+ },
+ "877cfcccf8f9": {
+  "avoid": [
+   "tortillas",
+   "tacos",
+   "burrito",
+   "whole steak",
+   "meatballs",
+   "rice",
+   "fried eggs"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a skillet hash of crumbled ground beef with diced vegetables?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat served in large whole chunks or slices?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish served inside a tortilla or taco shell?",
+    "yes": false
+   }
+  ],
+  "dish": "beef picadillo",
+  "look": "crumbled savory ground beef hash, diced tender potatoes, golden cubed butternut squash, diced red bell pepper, rich cumin-spiced tomato sauce, glossy and hearty mixture",
+  "model": "gemini-flash-latest",
+  "name": "Chipotle Beef Picadillo",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-10T10:02:59+00:00"
  },
  "878e8beb3448": {
   "avoid": [
@@ -12681,6 +12985,41 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T04:56:29+00:00"
+ },
+ "8af17ed3f8af": {
+  "avoid": [
+   "corn on the cob",
+   "elote on a stick",
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "tortilla chips"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a bowl of loose corn kernels dressed with creamy sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the corn served whole on the cob?",
+    "yes": false
+   },
+   {
+    "q": "Is there bacon or meat mixed into the corn?",
+    "yes": false
+   }
+  ],
+  "dish": "esquites",
+  "look": "charred yellow sweet corn kernels, tossed with creamy white dressing, crumbled white queso fresco, dusting of vibrant red chili powder, finely diced jalapeños, lime wedge, chopped epazote leaves",
+  "model": "gemini-flash-latest",
+  "name": "Esquites",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-10T10:04:34+00:00"
  },
  "8b226e134133": {
   "avoid": [
@@ -13597,6 +13936,38 @@
   "vessel": "bowl",
   "written_at": "2026-10-05T10:51:19+00:00"
  },
+ "93b9b5247084": {
+  "avoid": [
+   "sliced deli meat",
+   "ground loose meat",
+   "pasta",
+   "spaghetti",
+   "french fries",
+   "cold sub"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a sandwich containing whole round meatballs in a roll?",
+    "yes": true
+   },
+   {
+    "q": "Is the dish a plate of spaghetti or pasta with meatballs?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat sliced or flat rather than round meatballs?",
+    "yes": false
+   }
+  ],
+  "dish": "meatball sub sandwich",
+  "look": "split toasted brioche sub roll, round seared beef meatballs nestled inside, rich red marinara sauce, melted gooey provolone cheese blanketed over meatballs, toasted golden crust",
+  "model": "gemini-flash-latest",
+  "name": "Meatball Sub Sandwich",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-10T10:02:59+00:00"
+ },
  "9447e7380ead": {
   "avoid": [
    "meatballs",
@@ -13910,6 +14281,40 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T06:30:47+00:00"
+ },
+ "98a5794a38d5": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "shredded beef",
+   "cheese",
+   "sour cream",
+   "tortillas"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a warm bean and vegetable stew in reddish broth?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of shredded beef or other meat in the dish?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish covered with melted dairy cheese or sour cream?",
+    "yes": false
+   }
+  ],
+  "dish": "stewed pinto beans and chayote",
+  "look": "tender whole pinto beans, tender translucent pale-green chayote squash cubes, rich chili-red birria broth, diced tender onions, glistening warm stew",
+  "model": "gemini-flash-latest",
+  "name": "Birria-Spiced Pinto Beans & Chayote",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-10T10:02:59+00:00"
  },
  "9916de4fffd2": {
   "avoid": [
@@ -14415,6 +14820,41 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T04:50:08+00:00"
+ },
+ "9f8b42a54953": {
+  "avoid": [
+   "chicken",
+   "pork",
+   "beef",
+   "meat",
+   "fish",
+   "shrimp",
+   "fried eggs",
+   "nacho cheese sauce",
+   "burrito"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish composed of sauce-coated tortilla chips?",
+    "yes": true
+   },
+   {
+    "q": "Is shredded chicken or meat visible on the chips?",
+    "yes": false
+   },
+   {
+    "q": "Are the tortilla chips served dry with salsa on the side?",
+    "yes": false
+   }
+  ],
+  "dish": "mushroom tinga chilaquiles",
+  "look": "crispy triangular corn tortilla chips smothered in rich red tinga sauce, shredded tender oyster mushrooms, lightly softened edges, glossy chipotle tomato glaze, scattered crumbled white cheese, fresh cilantro leaves",
+  "model": "gemini-flash-latest",
+  "name": "Mushroom Tinga Chilaquiles",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-10T10:04:34+00:00"
  },
  "9fa367ebfbac": {
   "avoid": [
@@ -17290,6 +17730,42 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-26T23:04:37+00:00"
+ },
+ "ba352d0b24ee": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "raw vegetables",
+   "salad greens",
+   "soup",
+   "creamy dressing"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a pile of roasted root vegetable chunks?",
+    "yes": true
+   },
+   {
+    "q": "Do the vegetables appear raw and unroasted?",
+    "yes": false
+   },
+   {
+    "q": "Is there meat mixed in with the vegetables?",
+    "yes": false
+   }
+  ],
+  "dish": "citrus roasted root vegetables",
+  "look": "roasted chunks of orange carrots, golden beets, parsnips, caramelized browned edges, glossy citrus glaze, scattered chopped fresh flat-leaf parsley, tender roasted texture",
+  "model": "gemini-flash-latest",
+  "name": "Citrus Roasted Root Vegetables",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-10T10:04:34+00:00"
  },
  "ba95779a369a": {
   "avoid": [
