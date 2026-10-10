@@ -1,6 +1,6 @@
 {
  "date": "2026-10-09",
- "scraped_at": "2026-10-09T13:08:18-07:00",
+ "scraped_at": "2026-10-09T17:04:24-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -1434,10 +1434,10 @@
      "order": 3
     },
     {
-     "name": "Saffron Rice",
-     "recipe_id": "5045843",
+     "name": "Cumin Spiced Rice Pilaf",
+     "recipe_id": "4085705",
      "description": "",
-     "ingredients": "rice, onions, dill, saffron, canola/olive oil blend, salt",
+     "ingredients": "basmati rice, cumin, onions, canola/olive oil blend, salt, pepper",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -1510,32 +1510,24 @@
      "order": 8
     },
     {
-     "name": "Hawaiian Roll",
-     "recipe_id": "5805958",
+     "name": "Assorted Dinner Rolls",
+     "recipe_id": "5344600",
      "description": "",
-     "ingredients": "enriched flour, sugar, liquid sugar, butter, eggs, potato flour, yeast, whey, nonfat milk, soy flour, salt, degerminated yellow corn flour, wheat gluten, sodium stearoyl lactylate, datem, monocalcium phosphate, wheat flour, calcium sulfate, sodium silicoaluminate, ascorbic acid, ammonium sulfate, wheat starch, sorbitan monostearate, enzymes, microcrystalline cellulose, calcium silicate",
+     "ingredients": "unbleached wheat flour, malted barley flour, sour culture, salt, yeast, sesame seeds, amaranth, poppy seeds, whole wheat flour, dark rye flour, malt powder, honey, extra virgin olive oil, semolina, wheat germ",
      "allergens": [
-      "EGG",
       "MILK",
-      "SOY",
+      "SESAME",
       "WHEAT"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "SOY",
+      "TREENUTS"
+     ],
      "tags": [
       "vegetarian",
       "halal"
      ],
      "order": 9
-    },
-    {
-     "name": "Soup of the Day",
-     "recipe_id": "SoupoftheDay",
-     "description": "",
-     "ingredients": "chef's choice soup of the day",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [],
-     "order": 10
     },
     {
      "name": "Assorted Dinner Rolls",
@@ -1555,19 +1547,31 @@
       "vegetarian",
       "halal"
      ],
-     "order": 11
+     "order": 10
     },
     {
-     "name": "Composed Salad",
-     "recipe_id": "123116546",
+     "name": "Garden Fresh Salad",
+     "recipe_id": "5482634",
      "description": "",
-     "ingredients": "chef's choice composed salad",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "halal"
+     "ingredients": "romaine lettuce, green onions, tomatoes, carrots, ranch dressing (soybean oil, vinegar, buttermilk, sugar, egg yolks, salt, food starch, whey, xanthan gum, garlic, onions, spice)",
+     "allergens": [
+      "EGG",
+      "MILK",
+      "SOY"
      ],
-     "order": 12
+     "trace_allergens": [
+      "COCONUT",
+      "FISH",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "TREENUTS",
+      "WHEAT"
+     ],
+     "tags": [
+      "vegetarian"
+     ],
+     "order": 11
     },
     {
      "name": "Performance Bar",
@@ -1577,7 +1581,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 13
+     "order": 12
     },
     {
      "name": "Craveable Grains",
@@ -1591,7 +1595,7 @@
       "vegan",
       "halal"
      ],
-     "order": 14
+     "order": 13
     },
     {
      "name": "Flavor Forward Legumes",
@@ -1605,43 +1609,40 @@
       "vegan",
       "halal"
      ],
+     "order": 14
+    },
+    {
+     "name": "Marinara Sauce",
+     "recipe_id": "4079962",
+     "description": "",
+     "ingredients": "tomatoes, tomato paste, soybean oil, sugar, salt, onion, garlic, spices, citric acid, natural flavor",
+     "allergens": [
+      "SOY"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan",
+      "halal"
+     ],
      "order": 15
     },
     {
-     "name": "Pasta Alfredo",
-     "recipe_id": "5683556",
+     "name": "Creamy Marinara",
+     "recipe_id": "CreamyMar(lakeside)",
      "description": "",
-     "ingredients": "pasta, white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, parmesan cheese",
+     "ingredients": "tomatoes, tomato paste, cream, milk powder, butter, parmesan cheese, flour, soybean oil, sugar, salt, onion, garlic, spices, citric acid, natural flavor",
      "allergens": [
       "MILK",
+      "SOY",
       "WHEAT"
      ],
-     "trace_allergens": [
-      "EGG"
-     ],
+     "trace_allergens": [],
      "tags": [
       "vegetarian",
       "halal"
      ],
      "order": 16
-    },
-    {
-     "name": "Pasta Marinara",
-     "recipe_id": "5095708",
-     "description": "",
-     "ingredients": "pasta, marinara sauce, canola/olive oil blend",
-     "allergens": [
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "EGG"
-     ],
-     "tags": [
-      "vegan",
-      "halal"
-     ],
-     "order": 17
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -1655,7 +1656,7 @@
       "vegan",
       "halal"
      ],
-     "order": 18
+     "order": 17
     }
    ]
   },

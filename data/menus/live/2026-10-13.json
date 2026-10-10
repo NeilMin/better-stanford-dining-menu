@@ -1,6 +1,6 @@
 {
  "date": "2026-10-13",
- "scraped_at": "2026-10-09T13:08:18-07:00",
+ "scraped_at": "2026-10-09T17:04:24-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -4289,14 +4289,14 @@
    ],
    "Lunch": [
     {
-     "name": "Vietnamese Bún Chả with Lemongrass Pork",
-     "recipe_id": "VietBunPork17",
+     "name": "Grilled Ginger Lemongrass Chicken",
+     "recipe_id": "10091960",
      "description": "",
-     "ingredients": "pork, lemongrass marinade(lemongrass, shallot, garlic, green onion, honey, tamari, fish sauce, oyster sauce, salt, black pepper), vermicelli noodles, lettuce, cilantro, mint, cucumber.",
+     "ingredients": "CHICEKN, FINGER, LEMONGRASS, TAMARI, GARLIC, SUGAR, CANOLA OIL, GREEN CHILI, GREEN ONION, ONION, SHALLOTS, LIME LEAF, SALT, PEPPER",
      "allergens": [
-      "FISH",
-      "SHELLFISH",
-      "SOY"
+      "SOY",
+      "WHEAT",
+      "TRACEALLERGENS"
      ],
      "trace_allergens": [],
      "tags": [],
@@ -4545,20 +4545,32 @@
    ],
    "Dinner": [
     {
-     "name": "King Oyster Mushroom Meunière",
-     "recipe_id": "MushMeuniere1",
+     "name": "BBQ Pulled Pork",
+     "recipe_id": "4155360",
      "description": "",
-     "ingredients": "king oyster mushrooms, assorted mushrooms, cauliflower, cornstarch, vegan butter, parsley, dill, chives, lemon juice, oil, salt, pepper",
+     "ingredients": "pork, onions, garlic, salt, pepper, bbq sauce (ketchup, water, apple cider vinegar, lemon juice, molasses, dijon mustard, chipotle peppers in adobo sauce, alcohol free tamari, ginger, garlic, chili powder, liquid smoke, salt, black pepper)",
      "allergens": [
       "SOY"
      ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
-      "vegan",
-      "halal"
+      "gluten-free"
      ],
      "order": 0
+    },
+    {
+     "name": "BLACKENED BBQ TOFU STEAK",
+     "recipe_id": "02231979",
+     "description": "",
+     "ingredients": "Tofu, soy, maple syrup, rosemary, Worcestershire sauce, salt , pepper, cayenne pepper",
+     "allergens": [
+      "FISH",
+      "SOY",
+      "WHEAT"
+     ],
+     "trace_allergens": [],
+     "tags": [],
+     "order": 1
     },
     {
      "name": "Seasonal Steamed Vegetables",
@@ -4572,7 +4584,7 @@
       "vegan",
       "halal"
      ],
-     "order": 1
+     "order": 2
     },
     {
      "name": "Seasonal Vegetable Board",
@@ -4586,7 +4598,7 @@
       "vegan",
       "halal"
      ],
-     "order": 2
+     "order": 3
     },
     {
      "name": "Haricots Verts with Shallots",
@@ -4602,67 +4614,83 @@
       "vegetarian",
       "halal"
      ],
-     "order": 3
-    },
-    {
-     "name": "Charred Broccolini",
-     "recipe_id": "CharrBroccolini1",
-     "description": "",
-     "ingredients": "broccolini, lemon juice, lemon zest, garlic, olive/canola oil blend, salt, pepper",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan",
-      "halal"
-     ],
      "order": 4
     },
     {
-     "name": "French Herb Rice Pilaf",
-     "recipe_id": "FrenHerbRicePil1",
+     "name": "Grilled Corn on the Cob",
+     "recipe_id": "GrlldCorn17",
      "description": "",
-     "ingredients": "rice, vegetable soup base, onions, butter, olive/canola oil blend, celery, garlic, parsley, thyme, chives, rosemary, bay leaves, salt, black pepper",
-     "allergens": [
+     "ingredients": "corn, salt, paprika, cayenne pepper, olive/canola blended oil, lime juice",
+     "allergens": [],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
       "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "SOY",
+      "TREENUTS",
       "WHEAT"
      ],
-     "trace_allergens": [],
      "tags": [
-      "vegetarian",
+      "vegan",
       "halal"
      ],
      "order": 5
     },
     {
-     "name": "Pommes Lyonnaise",
-     "recipe_id": "PommLyon1",
+     "name": "Baked Beans",
+     "recipe_id": "3185057",
      "description": "",
-     "ingredients": "potatoes, onions, butter, parsley, garlic, olive/canola oil blend, salt, black pepper",
-     "allergens": [
-      "MILK"
+     "ingredients": "beans, ketchup, onions, molasses, brown sugar, mustard, salt, pepper",
+     "allergens": [],
+     "trace_allergens": [
+      "WHEAT"
      ],
-     "trace_allergens": [],
      "tags": [
-      "gluten-free",
-      "vegetarian",
+      "vegan",
       "halal"
      ],
      "order": 6
     },
     {
-     "name": "Sauce Meunière",
-     "recipe_id": "MeuniereSauce1",
+     "name": "Southern Pimento Mac & Cheese",
+     "recipe_id": "2988321",
      "description": "",
-     "ingredients": "vegetable stock, lemon juice, shallots, garlic, capers, cornstarch, oil, salt, black pepper, lemon zest, parsley",
-     "allergens": [],
-     "trace_allergens": [],
+     "ingredients": "mac & cheese (macaroni, parmesan cheese, white cheddar cheese, fontina cheese, whole milk, unsalted butter, flour, dijon mustard, onions, salt, nutmeg, bay leaf), bread crumbs, parsley, cheddar cheese, parmesan cheese, pimento cheese, cajun seasoning, cayenne pepper",
+     "allergens": [
+      "MILK",
+      "SOY",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "EGG"
+     ],
      "tags": [
-      "gluten-free",
-      "vegan",
+      "vegetarian",
       "halal"
      ],
      "order": 7
+    },
+    {
+     "name": "Honey Butter Biscuit",
+     "recipe_id": "5930228",
+     "description": "",
+     "ingredients": "buttermilk biscuit (enriched bleached flour, shortening [palm oil, monoglycerides, diglycerides, polysorbate 60], buttermilk powder, sugar, baking powder, salt), honey, butter",
+     "allergens": [
+      "MILK",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "EGG",
+      "SESAME"
+     ],
+     "tags": [
+      "vegetarian"
+     ],
+     "order": 8
     },
     {
      "name": "Panini Station",
@@ -4680,7 +4708,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 8
+     "order": 9
     },
     {
      "name": "Soup of the Day",
@@ -4690,7 +4718,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 9
+     "order": 10
     },
     {
      "name": "Assorted Dinner Rolls",
@@ -4710,7 +4738,7 @@
       "vegetarian",
       "halal"
      ],
-     "order": 10
+     "order": 11
     },
     {
      "name": "Composed Salad",
@@ -4722,7 +4750,7 @@
      "tags": [
       "halal"
      ],
-     "order": 11
+     "order": 12
     },
     {
      "name": "Performance Bar",
@@ -4732,7 +4760,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 12
+     "order": 13
     },
     {
      "name": "Craveable Grains",
@@ -4746,7 +4774,7 @@
       "vegan",
       "halal"
      ],
-     "order": 13
+     "order": 14
     },
     {
      "name": "Flavor Forward Legumes",
@@ -4760,7 +4788,7 @@
       "vegan",
       "halal"
      ],
-     "order": 14
+     "order": 15
     },
     {
      "name": "Pasta Marinara",
@@ -4778,7 +4806,7 @@
       "vegan",
       "halal"
      ],
-     "order": 15
+     "order": 16
     }
    ]
   },
