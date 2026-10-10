@@ -8488,38 +8488,38 @@
  },
  "55acf1b8e748": {
   "avoid": [
-   "meat",
-   "beef",
-   "chicken",
-   "pork",
-   "fish",
-   "shrimp",
-   "sunny-side up egg",
-   "raw egg yolk",
-   "burger bun"
+   "burger bun",
+   "hamburger bun",
+   "sandwich",
+   "cheese slice",
+   "lettuce",
+   "french fries",
+   "raw egg",
+   "scrambled egg",
+   "bacon"
   ],
   "checks": [
    {
-    "q": "Is the dish a patty topped with a fried egg and gravy?",
+    "q": "Is the dish a burger patty over rice, topped with a fried egg and brown gravy?",
     "yes": true
    },
    {
-    "q": "Is the patty served inside a burger bun?",
+    "q": "Is the patty served inside a burger bun like a sandwich?",
     "yes": false
    },
    {
-    "q": "Is the egg scrambled or boiled?",
+    "q": "Is the egg scrambled or completely missing?",
     "yes": false
    }
   ],
-  "dish": "Vegan loco moco",
-  "look": "a dark plant-based burger patty, topped with a square folded yellow vegan egg, smothered in brown mushroom gravy with sliced mushrooms, resting on a bed of steamed white rice, garnished with sliced green onions",
-  "model": "gemini-3.7-flash",
+  "dish": "loco moco",
+  "look": "Hawaiian loco moco, a seared savory burger patty resting on a bed of steamed white rice, topped with a sunny-side up fried egg with a bright yellow yolk, smothered in rich glossy brown mushroom gravy, sprinkled with chopped green scallions",
+  "model": "gemini-3.5-flash",
   "name": "Plant-Forward Loco Moco & Gravy (Branner)",
   "rev": 6,
-  "revisions": 2,
-  "vessel": "bowl",
-  "written_at": "2026-10-10T00:56:19+00:00"
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-10T08:45:00+00:00"
  },
  "55bdc297193d": {
   "avoid": [
@@ -16871,37 +16871,39 @@
  },
  "b4ffb1018dbb": {
   "avoid": [
-   "sauce on the side",
-   "ramekin",
-   "dipping cup",
-   "roasted vegetables",
-   "unbreaded chicken",
+   "side bowl",
+   "sauce ramekin",
+   "separate sauce dish",
+   "leafy greens",
+   "salad",
+   "whole carrots",
+   "dry cutlet",
    "soup",
-   "noodles",
-   "skewers"
+   "ramen",
+   "raw chicken"
   ],
   "checks": [
    {
-    "q": "Is the main item a sliced breaded chicken cutlet with curry sauce?",
+    "q": "Is the dish a single plate of chicken katsu curry served with generous thick dark brown curry sauce?",
     "yes": true
    },
    {
-    "q": "Is the chicken unbreaded or grilled?",
+    "q": "Are there multiple bowls, side bowls, or is the sauce served separately in a ramekin?",
     "yes": false
    },
    {
-    "q": "Is the dish a soup with noodles?",
+    "q": "Is the curry sauce missing, minimal, or is the dish a noodle soup?",
     "yes": false
    }
   ],
-  "dish": "chicken katsu curry",
-  "look": "crispy golden-brown panko-crusted chicken cutlet sliced into strips, smothered in thick glossy dark brown Japanese curry sauce, stewed tender potato chunks and soft carrot pieces simmering in the curry, ladled directly over steamed white rice",
-  "model": "gemini-3.7-flash",
+  "dish": "Japanese chicken katsu curry",
+  "look": "thick glossy dark brown Japanese curry sauce with tender potato cubes and carrot pieces, generously ladled over steamed white rice, sliced crispy golden panko-crusted chicken cutlet resting directly in the brown gravy, single serving on a white plate",
+  "model": "gemini-flash-latest",
   "name": "Chicken Katsu with Japanese Curry",
   "rev": 6,
   "revisions": 1,
-  "vessel": "bowl",
-  "written_at": "2026-10-09T21:02:24+00:00"
+  "vessel": "plate",
+  "written_at": "2026-10-10T08:41:25+00:00"
  },
  "b5e04fbed525": {
   "avoid": [
@@ -19960,35 +19962,42 @@
  },
  "d3f6c35987ea": {
   "avoid": [
+   "giant pile of parsley",
+   "large salad",
+   "salad greens",
+   "herbs side dish",
    "raw steak",
    "bones",
    "skewers",
    "hamburger",
    "gravy boat",
-   "french fries"
+   "french fries",
+   "misaligned slices",
+   "split steak",
+   "deformed meat"
   ],
   "checks": [
    {
-    "q": "Is the main item a sliced grilled steak?",
+    "q": "Is the main item a neatly sliced grilled steak with peppercorn sauce?",
     "yes": true
    },
    {
-    "q": "Is the steak completely raw or uncooked?",
+    "q": "Is there a large pile of salad greens or parsley taking up the plate?",
     "yes": false
    },
    {
-    "q": "Is the meat ground or shaped like a patty?",
+    "q": "Is the steak raw, ground, or shaped like a patty?",
     "yes": false
    }
   ],
   "dish": "grilled New York strip steak with peppercorn sauce",
-  "look": "grilled New York strip steak, sliced to show a warm pink medium-rare center, seared dark brown crust with grill marks, rich creamy brown peppercorn sauce, whole green peppercorns, chopped parsley",
+  "look": "thick grilled juicy New York strip steak, neatly sliced into even slices showing a tender pink medium-rare center, seared crust with grill marks, generously spooned with creamy peppercorn sauce and whole green peppercorns",
   "model": "gemini-3.5-flash",
   "name": "Grilled NY Steak with Peppercorn Sauce",
   "rev": 6,
   "revisions": 0,
   "vessel": "plate",
-  "written_at": "2026-10-09T10:51:35+00:00"
+  "written_at": "2026-10-10T08:34:00+00:00"
  },
  "d447de85b4fc": {
   "avoid": [
@@ -20958,35 +20967,37 @@
   "avoid": [
    "pasta",
    "spaghetti",
+   "noodles",
    "bread",
-   "buffet",
-   "multiple bowls",
-   "side dishes",
+   "garlic bread",
+   "crab claws",
+   "lobster",
    "closed shells",
-   "crab legs"
+   "creamy chowder",
+   "white sauce"
   ],
   "checks": [
    {
-    "q": "Is the dish a seafood stew with shellfish and fish in a red broth?",
+    "q": "Is the dish a seafood stew with shellfish like shrimp, clams or mussels in a rich red tomato broth?",
     "yes": true
    },
    {
-    "q": "Is the seafood served over pasta or spaghetti?",
+    "q": "Is the seafood served over pasta, noodles, or spaghetti?",
     "yes": false
    },
    {
-    "q": "Are the clams and mussels closed?",
+    "q": "Is the broth a white creamy chowder instead of red tomato broth?",
     "yes": false
    }
   ],
-  "dish": "cioppino",
-  "look": "Seafood stew, vibrant red tomato broth, flaky white cod fish chunks, pink curled shrimp, open clams in shells, dark glossy mussels in shells, diced stewed tomatoes, sliced fennel, chopped green parsley garnish",
-  "model": "gemini-3.7-flash",
+  "dish": "cioppino seafood stew",
+  "look": "San Francisco cioppino seafood stew, generous red tomato wine broth filled with tender pink shrimp, open clams and mussels in shells, and flaky white fish, garnished with fresh parsley, served in a wide white ceramic bowl",
+  "model": "gemini-3.5-flash",
   "name": "Cioppino",
   "rev": 6,
-  "revisions": 2,
+  "revisions": 0,
   "vessel": "bowl",
-  "written_at": "2026-10-09T20:42:52+00:00"
+  "written_at": "2026-10-10T08:45:00+00:00"
  },
  "df418a74e349": {
   "avoid": [
