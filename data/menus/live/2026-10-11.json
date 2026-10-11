@@ -1,6 +1,6 @@
 {
  "date": "2026-10-11",
- "scraped_at": "2026-10-11T12:35:24-07:00",
+ "scraped_at": "2026-10-11T16:42:54-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -579,10 +579,10 @@
      "order": 6
     },
     {
-     "name": "Herb Roasted Fennel & Mushrooms",
-     "recipe_id": "RoastFennMush1",
+     "name": "Maple Roasted Brussels Sprouts",
+     "recipe_id": "MapRoastBrus1",
      "description": "",
-     "ingredients": "fennel bulbs, mushrooms, oil, garlic, thyme, rosemary, parsley, black pepper, kosher salt, lemon juice",
+     "ingredients": "brussels sprouts, maple syrup, olive/canola oil blend, black pepper, salt",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -1286,10 +1286,10 @@
      "order": 4
     },
     {
-     "name": "Roasted Sweet Potatoes with Chili & Lime",
-     "recipe_id": "3210201",
+     "name": "Roasted Potatoes",
+     "recipe_id": "5018531",
      "description": "",
-     "ingredients": "sweet potatoes, guajillo chili powder, lime, cilantro, canola/olive oil, pepper, salt",
+     "ingredients": "potatoes, salt, pepper, canola/olive oil blend",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -1328,11 +1328,15 @@
      "order": 7
     },
     {
-     "name": "Soup of the Day",
-     "recipe_id": "SoupoftheDay",
+     "name": "Hearty Minestrone",
+     "recipe_id": "4633186",
      "description": "",
-     "ingredients": "chef's choice soup of the day",
-     "allergens": [],
+     "ingredients": "tomato puree, diced tomatoes in tomato juice, potatoes, kidney beans, carrots, green beans, celery, garbanzo beans, zucchini, peas, spinach, pasta, modified food starch, salt, parmesan cheese, gelatin, yeast extract, flour, flavoring, beef stock, spices, corn oil, canola oil, garlic, disodium inosinate, disodium guanylate, dextrose",
+     "allergens": [
+      "EGG",
+      "MILK",
+      "WHEAT"
+     ],
      "trace_allergens": [],
      "tags": [],
      "order": 8
@@ -1408,17 +1412,19 @@
      "order": 13
     },
     {
-     "name": "Tri Color Cheese Tortellini",
-     "recipe_id": "6188353",
+     "name": "Marinara Sauce",
+     "recipe_id": "3612835",
      "description": "",
-     "ingredients": "enriched semolina flour, romano cheese (cow's milk, sheep's milk), ricotta cheese, wheat flour, parmesan cheese, pasteurized eggs, corn starch, salt, paprika oleoresin, asiago cheese, spinach powder, garlic powder, spices, onion powder, fontina cheese, xanthan gum, locust bean gum, guar gum, beta carotene",
+     "ingredients": "italian tomatoes, diced tomatoes, fresh onions, extra virgin olive oil, garlic, sea salt, oregano, black pepper",
      "allergens": [
-      "EGG",
-      "MILK",
-      "WHEAT"
+      "SOY"
      ],
      "trace_allergens": [],
-     "tags": [],
+     "tags": [
+      "gluten-free",
+      "vegan",
+      "halal"
+     ],
      "order": 14
     },
     {
@@ -3185,33 +3191,35 @@
    ],
    "Lunch": [
     {
-     "name": "Bacon Egg & Sausage Quiche Slab",
-     "recipe_id": "4575239",
+     "name": "Beef Kalbi",
+     "recipe_id": "7327692",
      "description": "",
-     "ingredients": "eggs, bacon, pork sausage crumbles, cheddar cheese, mushrooms, heavy cream, milk, spinach, puff pastry dough, onions, garlic, nutmeg, salt & pepper.",
+     "ingredients": "beef, tamari sauce, rice vinegar, sesame oil, ginger root, green onions, sugar, sesame seeds, garlic",
      "allergens": [
       "EGG",
+      "SESAME",
+      "SOY"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "halal"
+     ],
+     "order": 0
+    },
+    {
+     "name": "Cheese Enchilada Plate",
+     "recipe_id": "COV6061122",
+     "description": "",
+     "ingredients": "Cheese Enchiladas (corn masa flour, monterey jack cheese, cheddar cheese, onions, green chile peppers, red jalapeno peppers, vinegar, salt, dehydrated garlic, dehydrated onion, spices, natural flavor, modified food starch, wheat flour, cellulose gum, guar gum, soybean oil), Enchilada Sauce, Corn, Seasoned Black Beans, Spanish Rice",
+     "allergens": [
       "MILK",
       "SOY",
       "WHEAT"
      ],
      "trace_allergens": [],
-     "tags": [],
-     "order": 0
-    },
-    {
-     "name": "Spinach & Mushroom Quiche Slab",
-     "recipe_id": "4059116",
-     "description": "",
-     "ingredients": "plant-based egg substitute, vegan cheese, mushrooms, spinach, puff pastry dough, onions, garlic, nutmeg, salt & pepper.",
-     "allergens": [
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [],
      "tags": [
-      "vegan",
-      "halal"
+      "vegetarian"
      ],
      "order": 1
     },
@@ -3434,17 +3442,18 @@
      "order": 0
     },
     {
-     "name": "Palak Paneer",
-     "recipe_id": "4918631",
+     "name": "Matar Paneer",
+     "recipe_id": "4068722",
      "description": "",
-     "ingredients": "spinach, paneer, onion, tomato, ginger, garlic, onion, coriander, garam masala, turmeric, red pepper, flake, curry powder, cuminseed, canola/olive oil blend",
+     "ingredients": "cream, peas, paneer, salt, carrots, curry sauce /CPK> (onions, cumin seeds, garam masala, coriander seed, curry powder, chili powder, garlic, ginger, ketchup, tomato sauce, tomato paste, tomato puree, salt, turmeric)",
      "allergens": [
       "MILK"
      ],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
-      "vegetarian"
+      "vegetarian",
+      "halal"
      ],
      "order": 1
     },
@@ -3477,14 +3486,20 @@
      "order": 3
     },
     {
-     "name": "Aloo Gobi",
-     "recipe_id": "4997549",
+     "name": "Chana Masala",
+     "recipe_id": "2924672",
      "description": "",
-     "ingredients": "potatoes, cauliflower, garlic, canola/olive oil blend, onions, chili powder, cuminseed, corianderseed, turmeric, garam masala, ginger, salt",
+     "ingredients": "chickpeas, tomatoes, onions, garlic, ginger, cumin, chana masala (coriander, dry mango, salt, red chili, pomegranate seeds, kachri, cumin, black pepper, black salt, cinnamon, dry ginger, fenugreek leaves, mint leaves, clove, nutmeg, big cardamom, caraway, mace), canola/olive oil blend, bay leaf, curry sauce (onions, cumin seeds, garam masala, coriander seed, curry powder, chili powder, garlic, ginger, ketchup, tomato sauce, tomato paste, tomato puree, salt, turmeric)",
      "allergens": [],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SOY",
+      "TREENUTS",
+      "WHEAT"
+     ],
      "tags": [
-      "gluten-free",
       "vegan",
       "halal"
      ],
