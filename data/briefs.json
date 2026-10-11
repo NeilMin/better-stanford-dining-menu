@@ -20941,6 +20941,41 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T07:30:19+00:00"
  },
+ "d505e355af4e": {
+  "avoid": [
+   "pork",
+   "chicken",
+   "beef",
+   "meat",
+   "fish",
+   "shrimp",
+   "hard-boiled egg",
+   "raw tofu",
+   "skewers"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a braised stew of tofu and mushrooms in dark sauce?",
+    "yes": true
+   },
+   {
+    "q": "Does the dish contain visible meat like chicken or pork?",
+    "yes": false
+   },
+   {
+    "q": "Is the tofu served raw or in a clear broth?",
+    "yes": false
+   }
+  ],
+  "dish": "tofu and mushroom adobo",
+  "look": "golden-brown seared tofu cubes, tender dark cremini mushroom chunks, braised potato chunks, glistening in rich dark brown adobo glaze, softened translucent sliced onions, scattered fresh green cilantro leaves",
+  "model": "gemini-flash-latest",
+  "name": "Filipino Mushroom Tofu Adobo",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-10T23:39:45+00:00"
+ },
  "d50f397b480c": {
   "avoid": [
    "bowl of loose pasta",
