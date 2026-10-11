@@ -1,6 +1,6 @@
 {
  "date": "2026-10-11",
- "scraped_at": "2026-10-11T03:05:59-07:00",
+ "scraped_at": "2026-10-11T12:35:24-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -261,17 +261,16 @@
      "order": 4
     },
     {
-     "name": "Pomme Gratin",
-     "recipe_id": "4100035",
+     "name": "Roasted Potatoes",
+     "recipe_id": "5018531",
      "description": "",
-     "ingredients": "yukon gold potato, cream, parmesan, thyme, white cheddar",
-     "allergens": [
-      "MILK",
-      "WHEAT"
-     ],
+     "ingredients": "potatoes, salt, pepper, canola/olive oil blend",
+     "allergens": [],
      "trace_allergens": [],
      "tags": [
-      "vegetarian"
+      "gluten-free",
+      "vegan",
+      "halal"
      ],
      "order": 5
     },
@@ -1056,17 +1055,17 @@
      "order": 3
     },
     {
-     "name": "Pomme Gratin",
-     "recipe_id": "4100035",
+     "name": "Pommes Gratin",
+     "recipe_id": "PommGrat1",
      "description": "",
-     "ingredients": "yukon gold potato, cream, parmesan, thyme, white cheddar",
+     "ingredients": "Yukon gold potato, heavy cream, whole milk, parmesan, white cheddar, butter, garlic powder, thyme, nutmeg, salt, pepper",
      "allergens": [
-      "MILK",
-      "WHEAT"
+      "MILK"
      ],
      "trace_allergens": [],
      "tags": [
-      "vegetarian"
+      "vegetarian",
+      "halal"
      ],
      "order": 4
     },
@@ -1158,17 +1157,19 @@
      "order": 10
     },
     {
-     "name": "Tri Color Cheese Tortellini",
-     "recipe_id": "6188353",
+     "name": "Marinara Sauce",
+     "recipe_id": "3612835",
      "description": "",
-     "ingredients": "enriched semolina flour, romano cheese (cow's milk, sheep's milk), ricotta cheese, wheat flour, parmesan cheese, pasteurized eggs, corn starch, salt, paprika oleoresin, asiago cheese, spinach powder, garlic powder, spices, onion powder, fontina cheese, xanthan gum, locust bean gum, guar gum, beta carotene",
+     "ingredients": "italian tomatoes, diced tomatoes, fresh onions, extra virgin olive oil, garlic, sea salt, oregano, black pepper",
      "allergens": [
-      "EGG",
-      "MILK",
-      "WHEAT"
+      "SOY"
      ],
      "trace_allergens": [],
-     "tags": [],
+     "tags": [
+      "gluten-free",
+      "vegan",
+      "halal"
+     ],
      "order": 11
     },
     {
@@ -1730,17 +1731,17 @@
      "order": 4
     },
     {
-     "name": "Sweet Potato Mash",
-     "recipe_id": "3849626",
+     "name": "Pommes Gratin",
+     "recipe_id": "PommGrat1",
      "description": "",
-     "ingredients": "sweet potato, butter, salt, olive oil",
+     "ingredients": "Yukon gold potato, heavy cream, whole milk, parmesan, white cheddar, butter, garlic powder, thyme, nutmeg, salt, pepper",
      "allergens": [
       "MILK"
      ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
-      "vegetarian"
+      "vegetarian",
+      "halal"
      ],
      "order": 5
     },
@@ -1894,17 +1895,21 @@
      "order": 15
     },
     {
-     "name": "Tri Color Cheese Tortellini",
-     "recipe_id": "6188353",
+     "name": "Pasta Marinara",
+     "recipe_id": "5095708",
      "description": "",
-     "ingredients": "enriched semolina flour, romano cheese (cow's milk, sheep's milk), ricotta cheese, wheat flour, parmesan cheese, pasteurized eggs, corn starch, salt, paprika oleoresin, asiago cheese, spinach powder, garlic powder, spices, onion powder, fontina cheese, xanthan gum, locust bean gum, guar gum, beta carotene",
+     "ingredients": "pasta, marinara sauce, canola/olive oil blend",
      "allergens": [
-      "EGG",
-      "MILK",
+      "SOY",
       "WHEAT"
      ],
-     "trace_allergens": [],
-     "tags": [],
+     "trace_allergens": [
+      "EGG"
+     ],
+     "tags": [
+      "vegan",
+      "halal"
+     ],
      "order": 16
     },
     {
@@ -2008,10 +2013,10 @@
      "order": 3
     },
     {
-     "name": "Steamed Bok Choy",
-     "recipe_id": "4182774",
+     "name": "Sauteed Broccoli Rabe",
+     "recipe_id": "3009751",
      "description": "",
-     "ingredients": "bok choy, salt",
+     "ingredients": "broccoli rabe, onions, canola/olive oil blend, garlic, red pepper flakes, pepper, salt",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -2022,10 +2027,10 @@
      "order": 4
     },
     {
-     "name": "Steamed Rice",
-     "recipe_id": "5121297",
+     "name": "Garlic Rice",
+     "recipe_id": "4505728",
      "description": "",
-     "ingredients": "white rice, salt",
+     "ingredients": "rice, canola/olive oil blend, garlic, salt",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -2036,32 +2041,35 @@
      "order": 5
     },
     {
-     "name": "Japchae Glass Noodles",
-     "recipe_id": "4806374",
+     "name": "Hawaiian Macaroni Salad",
+     "recipe_id": "HawMacSalad1",
      "description": "",
-     "ingredients": "sweet potato noodles, carrots, cabbage, onions, bell peppers, tamari, sesame oil, canola/olive oil blend, salt, sugar, garlic, pepper",
+     "ingredients": "elbow macaroni, mayonnaise, tuna, carrots, whole milk, sweet onion, apple cider vinegar, sugar, salt, black pepper",
      "allergens": [
-      "SESAME",
-      "SOY"
+      "EGG",
+      "FISH",
+      "MILK",
+      "SOY",
+      "WHEAT"
      ],
      "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan",
-      "halal"
-     ],
+     "tags": [],
      "order": 6
     },
     {
-     "name": "Herb Roasted Fennel & Mushrooms",
-     "recipe_id": "RoastFennMush1",
+     "name": "Hawaiian Roll",
+     "recipe_id": "5805958",
      "description": "",
-     "ingredients": "fennel bulbs, mushrooms, oil, garlic, thyme, rosemary, parsley, black pepper, kosher salt, lemon juice",
-     "allergens": [],
+     "ingredients": "enriched flour, sugar, liquid sugar, butter, eggs, potato flour, yeast, whey, nonfat milk, soy flour, salt, degerminated yellow corn flour, wheat gluten, sodium stearoyl lactylate, datem, monocalcium phosphate, wheat flour, calcium sulfate, sodium silicoaluminate, ascorbic acid, ammonium sulfate, wheat starch, sorbitan monostearate, enzymes, microcrystalline cellulose, calcium silicate",
+     "allergens": [
+      "EGG",
+      "MILK",
+      "SOY",
+      "WHEAT"
+     ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
-      "vegan",
+      "vegetarian",
       "halal"
      ],
      "order": 7
@@ -2221,17 +2229,21 @@
      "order": 17
     },
     {
-     "name": "Tri Color Cheese Tortellini",
-     "recipe_id": "6188353",
+     "name": "Pasta Marinara",
+     "recipe_id": "5095708",
      "description": "",
-     "ingredients": "enriched semolina flour, romano cheese (cow's milk, sheep's milk), ricotta cheese, wheat flour, parmesan cheese, pasteurized eggs, corn starch, salt, paprika oleoresin, asiago cheese, spinach powder, garlic powder, spices, onion powder, fontina cheese, xanthan gum, locust bean gum, guar gum, beta carotene",
+     "ingredients": "pasta, marinara sauce, canola/olive oil blend",
      "allergens": [
-      "EGG",
-      "MILK",
+      "SOY",
       "WHEAT"
      ],
-     "trace_allergens": [],
-     "tags": [],
+     "trace_allergens": [
+      "EGG"
+     ],
+     "tags": [
+      "vegan",
+      "halal"
+     ],
      "order": 18
     },
     {
@@ -2562,17 +2574,17 @@
      "order": 4
     },
     {
-     "name": "Pomme Gratin",
-     "recipe_id": "4100035",
+     "name": "Pommes Gratin",
+     "recipe_id": "PommGrat1",
      "description": "",
-     "ingredients": "yukon gold potato, cream, parmesan, thyme, white cheddar",
+     "ingredients": "Yukon gold potato, heavy cream, whole milk, parmesan, white cheddar, butter, garlic powder, thyme, nutmeg, salt, pepper",
      "allergens": [
-      "MILK",
-      "WHEAT"
+      "MILK"
      ],
      "trace_allergens": [],
      "tags": [
-      "vegetarian"
+      "vegetarian",
+      "halal"
      ],
      "order": 5
     },
@@ -3246,17 +3258,17 @@
      "order": 4
     },
     {
-     "name": "Pomme Gratin",
-     "recipe_id": "4100035",
+     "name": "Pommes Gratin",
+     "recipe_id": "PommGrat1",
      "description": "",
-     "ingredients": "yukon gold potato, cream, parmesan, thyme, white cheddar",
+     "ingredients": "Yukon gold potato, heavy cream, whole milk, parmesan, white cheddar, butter, garlic powder, thyme, nutmeg, salt, pepper",
      "allergens": [
-      "MILK",
-      "WHEAT"
+      "MILK"
      ],
      "trace_allergens": [],
      "tags": [
-      "vegetarian"
+      "vegetarian",
+      "halal"
      ],
      "order": 5
     },
@@ -3981,18 +3993,16 @@
      "order": 3
     },
     {
-     "name": "Buttered Egg Noodles",
-     "recipe_id": "G&HNood17",
+     "name": "Steamed Jasmine Rice",
+     "recipe_id": "5134594",
      "description": "",
-     "ingredients": "Egg Noodle, Butter, Tarragon, Parsley, Salt, Black Pepper.",
-     "allergens": [
-      "EGG",
-      "MILK",
-      "WHEAT"
-     ],
+     "ingredients": "jasmine rice, water, salt",
+     "allergens": [],
      "trace_allergens": [],
      "tags": [
-      "vegetarian"
+      "gluten-free",
+      "vegan",
+      "halal"
      ],
      "order": 4
     },
@@ -4015,6 +4025,22 @@
      "order": 5
     },
     {
+     "name": "Pear & Watercress Salad",
+     "recipe_id": "4255209",
+     "description": "",
+     "ingredients": "watercress, pears, salt, pepper,italian dressing (soybean oil, distilled vinegar, high fructose corn syrup, corn syrup, salt, garlic, corn syrup solids, xanthan gum, lemon juice concentrate, spice, red bell pepper, paprika, fd&c yellow no.5, fd&c yellow No.6)",
+     "allergens": [
+      "SOY"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan",
+      "halal"
+     ],
+     "order": 6
+    },
+    {
      "name": "Performance Bar",
      "recipe_id": "4992007",
      "description": "",
@@ -4022,7 +4048,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 6
+     "order": 7
     },
     {
      "name": "Craveable Grains",
@@ -4036,7 +4062,7 @@
       "vegan",
       "halal"
      ],
-     "order": 7
+     "order": 8
     },
     {
      "name": "Flavor Forward Legumes",
@@ -4050,21 +4076,25 @@
       "vegan",
       "halal"
      ],
-     "order": 8
+     "order": 9
     },
     {
-     "name": "Tri Color Cheese Tortellini",
-     "recipe_id": "6188353",
+     "name": "Pasta Marinara",
+     "recipe_id": "5095708",
      "description": "",
-     "ingredients": "enriched semolina flour, romano cheese (cow's milk, sheep's milk), ricotta cheese, wheat flour, parmesan cheese, pasteurized eggs, corn starch, salt, paprika oleoresin, asiago cheese, spinach powder, garlic powder, spices, onion powder, fontina cheese, xanthan gum, locust bean gum, guar gum, beta carotene",
+     "ingredients": "pasta, marinara sauce, canola/olive oil blend",
      "allergens": [
-      "EGG",
-      "MILK",
+      "SOY",
       "WHEAT"
      ],
-     "trace_allergens": [],
-     "tags": [],
-     "order": 9
+     "trace_allergens": [
+      "EGG"
+     ],
+     "tags": [
+      "vegan",
+      "halal"
+     ],
+     "order": 10
     }
    ],
    "Dinner": [
@@ -4492,6 +4522,23 @@
       "vegan"
      ],
      "order": 12
+    }
+   ],
+   "Lunch": [
+    {
+     "name": "Pommes Gratin",
+     "recipe_id": "PommGrat1",
+     "description": "",
+     "ingredients": "Yukon gold potato, heavy cream, whole milk, parmesan, white cheddar, butter, garlic powder, thyme, nutmeg, salt, pepper",
+     "allergens": [
+      "MILK"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "vegetarian",
+      "halal"
+     ],
+     "order": 0
     }
    ]
   }
