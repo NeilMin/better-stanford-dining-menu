@@ -6060,6 +6060,41 @@
   "vessel": "plate",
   "written_at": "2026-09-27T04:50:49+00:00"
  },
+ "39d07bf0ea27": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "cheese",
+   "walnuts",
+   "creamy dressing"
+  ],
+  "checks": [
+   {
+    "q": "Is the main component fresh leafy greens topped with pear slices?",
+    "yes": true
+   },
+   {
+    "q": "Does the salad contain meat, poultry, or seafood?",
+    "yes": false
+   },
+   {
+    "q": "Is the dressing thick and creamy white?",
+    "yes": false
+   }
+  ],
+  "dish": "pear and watercress salad",
+  "look": "tangled bunch of fresh dark green watercress sprigs, fan of thin sliced ripe pale pear wedges, glistening clear Italian vinaigrette dressing",
+  "model": "gemini-flash-latest",
+  "name": "Pear & Watercress Salad",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-11T19:38:05+00:00"
+ },
  "39d1f2351eda": {
   "avoid": [
    "chicken",
@@ -9935,6 +9970,41 @@
   "vessel": "bowl",
   "written_at": "2026-09-29T16:49:13+00:00"
  },
+ "61c126187015": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "sausage",
+   "pasta",
+   "raw broccoli rabe"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food cooked leafy greens with florets?",
+    "yes": true
+   },
+   {
+    "q": "Does the green vegetable appear raw and unwilted?",
+    "yes": false
+   },
+   {
+    "q": "Is the broccoli rabe tossed with pasta or sausage?",
+    "yes": false
+   }
+  ],
+  "dish": "sauteed broccoli rabe",
+  "look": "heap of wilted dark green broccoli rabe, tender slender stalks, leafy greens, small florets, translucent sliced onions, slivers of toasted garlic, scattered red pepper flakes",
+  "model": "gemini-flash-latest",
+  "name": "Sauteed Broccoli Rabe",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-11T19:38:05+00:00"
+ },
  "628253461907": {
   "avoid": [
    "meat",
@@ -10680,6 +10750,42 @@
   "revisions": 1,
   "vessel": "plate",
   "written_at": "2026-09-27T07:48:48+00:00"
+ },
+ "6be9bb6705b6": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "bacon",
+   "mashed potatoes",
+   "french fries",
+   "casserole dish"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a baked layered potato gratin?",
+    "yes": true
+   },
+   {
+    "q": "Are the potatoes mashed rather than sliced?",
+    "yes": false
+   },
+   {
+    "q": "Is there visible bacon or meat in or on the potatoes?",
+    "yes": false
+   }
+  ],
+  "dish": "potatoes au gratin",
+  "look": "square portion of potato gratin, thinly sliced layered golden potatoes, creamy white cheese filling, browned bubbly melted cheese crust on top, sprinkle of fresh green thyme flecks",
+  "model": "gemini-flash-latest",
+  "name": "Pommes Gratin",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-11T19:38:05+00:00"
  },
  "6bf6fcc2d89c": {
   "avoid": [
