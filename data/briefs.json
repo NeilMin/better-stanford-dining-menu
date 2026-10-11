@@ -1123,6 +1123,39 @@
   "vessel": "plate",
   "written_at": "2026-09-27T14:22:11+00:00"
  },
+ "0f4cc9050c41": {
+  "avoid": [
+   "whole turkey",
+   "raw poultry",
+   "stuffing",
+   "cranberry sauce",
+   "mashed potatoes",
+   "bone-in turkey leg",
+   "carving knife"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food sliced or carved poultry?",
+    "yes": true
+   },
+   {
+    "q": "Is there a whole uncut bird on the plate?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat shredded or ground like mince?",
+    "yes": false
+   }
+  ],
+  "dish": "roast turkey breast with gravy",
+  "look": "thick carved slices of roast turkey breast, golden-brown herb-flecked edges, pale juicy meat, smothered in warm glossy brown caramelized onion gravy, scattered chopped fresh parsley",
+  "model": "gemini-flash-latest",
+  "name": "Caramelized Herb Roasted Turkey",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-11T10:10:28+00:00"
+ },
  "0fc2b8ff45b2": {
   "avoid": [
    "pita bread",
@@ -1797,6 +1830,42 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-10-02T10:04:59+00:00"
+ },
+ "18a59428a79d": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "cotija cheese",
+   "sour cream",
+   "burrito",
+   "soft taco"
+  ],
+  "checks": [
+   {
+    "q": "Is the food served on a flat crispy tostada shell?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of real meat or seafood?",
+    "yes": false
+   },
+   {
+    "q": "Is the food rolled or folded inside a soft tortilla?",
+    "yes": false
+   }
+  ],
+  "dish": "cauliflower tinga tostada",
+  "look": "crispy flat golden corn tostada shell, heaped with crumbly dark red soyrizo, tender shredded cauliflower coated in glossy orange-red chipotle adobo sauce, chopped fresh cilantro",
+  "model": "gemini-flash-latest",
+  "name": "Soyrizo Cauliflower Tinga Tostada",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-11T10:10:28+00:00"
  },
  "19342ed7ddc3": {
   "avoid": [
@@ -3944,6 +4013,42 @@
   "vessel": "plate",
   "written_at": "2026-10-09T20:12:31+00:00"
  },
+ "2c0af202ed41": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "corn on the cob",
+   "mayonnaise",
+   "cheese",
+   "salad"
+  ],
+  "checks": [
+   {
+    "q": "Is the food loose charred corn kernels?",
+    "yes": true
+   },
+   {
+    "q": "Is the corn served on a whole cob?",
+    "yes": false
+   },
+   {
+    "q": "Are there pieces of meat or seafood?",
+    "yes": false
+   }
+  ],
+  "dish": "charred corn kernels",
+  "look": "warm golden-yellow roasted sweet corn kernels, smoky dark brown charred speckles, dusted with reddish-orange paprika, glossy finish, scatter of finely minced fresh cilantro",
+  "model": "gemini-flash-latest",
+  "name": "Charred corn",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-11T10:10:28+00:00"
+ },
  "2c938bc82419": {
   "avoid": [
    "meat",
@@ -5130,6 +5235,41 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T04:53:30+00:00"
  },
+ "341ec05d9c1d": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "bacon",
+   "refried bean paste",
+   "tortilla chips"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food whole cooked black beans?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat or bacon?",
+    "yes": false
+   },
+   {
+    "q": "Are the beans mashed into a smooth refried paste?",
+    "yes": false
+   }
+  ],
+  "dish": "simmered black beans",
+  "look": "tender whole cooked black beans, thick glossy dark bean broth, small diced translucent onions, flecks of green jalapeño, pinch of chopped fresh cilantro",
+  "model": "gemini-flash-latest",
+  "name": "Black Beans",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-11T10:10:28+00:00"
+ },
  "34369ecf86aa": {
   "avoid": [
    "meat",
@@ -6130,6 +6270,41 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T05:33:17+00:00"
+ },
+ "3cbe33a6bb4f": {
+  "avoid": [
+   "bacon",
+   "pancetta",
+   "guanciale",
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food pasta tossed in a creamy sauce?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of bacon, pancetta, or other meat in the dish?",
+    "yes": false
+   },
+   {
+    "q": "Is the pasta served dry without a cream sauce?",
+    "yes": false
+   }
+  ],
+  "dish": "creamy tomato pasta",
+  "look": "pasta strands thoroughly coated in silky pale-orange tomato cream sauce, soft sautéed onions, diced red tomatoes, dark green capers, ribbon-cut fresh basil, dried oregano flakes, light pinch of red pepper flakes",
+  "model": "gemini-flash-latest",
+  "name": "Vegetarian Carbonara Pasta",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-11T10:11:53+00:00"
  },
  "3cc68fcaf88e": {
   "avoid": [
@@ -8806,6 +8981,42 @@
   "vessel": "plate",
   "written_at": "2026-10-02T10:09:55+00:00"
  },
+ "5582dc2d6e3b": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "refried beans",
+   "shredded lettuce",
+   "cheese",
+   "salsa toppings"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a flat crispy corn tostada?",
+    "yes": true
+   },
+   {
+    "q": "Is it folded into a taco shape or rolled into a burrito?",
+    "yes": false
+   },
+   {
+    "q": "Is it covered in meat, beans, or heavy toppings?",
+    "yes": false
+   }
+  ],
+  "dish": "crispy corn tostada shell",
+  "look": "crisp round golden-yellow fried corn tostada shell, blistered bubbly texture across the surface, slightly curved crunchy edges, dry toasted finish",
+  "model": "gemini-flash-latest",
+  "name": "Crispy Corn Tostada",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-11T10:11:53+00:00"
+ },
  "55acf1b8e748": {
   "avoid": [
    "burger bun",
@@ -9340,6 +9551,41 @@
   "look": "creamy chilled overnight rolled oats layered with chia seeds in a clean glass jar or bowl, topped with fresh blueberries, sliced strawberries, and pumpkin seeds",
   "plate": "bowl",
   "rev": 6
+ },
+ "5c3e86b9f7a4": {
+  "avoid": [
+   "chicken",
+   "meat",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "parmesan cheese",
+   "meatballs",
+   "bacon"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish pasta tossed in a red tomato-based sauce?",
+    "yes": true
+   },
+   {
+    "q": "Does the pasta contain chicken, sausage, or other meat?",
+    "yes": false
+   },
+   {
+    "q": "Is the pasta served plain without sauce?",
+    "yes": false
+   }
+  ],
+  "dish": "pasta cacciatore with white beans",
+  "look": "short ridged pasta tossed in chunky red tomato cacciatore sauce, whole tender white cannellini beans, wilted dark green baby spinach leaves, crushed red pepper flakes, chopped fresh Italian parsley",
+  "model": "gemini-flash-latest",
+  "name": "Cacciatore Pasta with Spinach",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-11T10:11:53+00:00"
  },
  "5d107d0e8f99": {
   "avoid": [
@@ -11927,6 +12173,42 @@
   "vessel": "bowl",
   "written_at": "2026-10-01T00:09:14+00:00"
  },
+ "7d208fd83922": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "paneer",
+   "heavy cream",
+   "rice",
+   "naan"
+  ],
+  "checks": [
+   {
+    "q": "Is the food mixed vegetables in curry sauce?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat or seafood in the dish?",
+    "yes": false
+   },
+   {
+    "q": "Are the vegetables served dry or raw like a salad?",
+    "yes": false
+   }
+  ],
+  "dish": "vegetable vindaloo",
+  "look": "tender golden potato chunks, red bell pepper strips, cauliflower florets, simmered in thick glossy vibrant red vindaloo curry sauce, scattered chopped fresh cilantro",
+  "model": "gemini-flash-latest",
+  "name": "Seasonal Vegetable Vindaloo",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-11T10:10:28+00:00"
+ },
  "7d2854dbce3f": {
   "avoid": [
    "tortilla",
@@ -13111,6 +13393,39 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-01T10:25:41+00:00"
+ },
+ "88d619b4f6d8": {
+  "avoid": [
+   "burrito",
+   "soft taco",
+   "flour tortilla",
+   "nacho cheese sauce",
+   "chicken wings",
+   "raw chicken",
+   "tortilla soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the main dish tortilla chips topped with shredded chicken?",
+    "yes": true
+   },
+   {
+    "q": "Is the food rolled inside a tortilla like a burrito or enchilada?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken in whole bone-in pieces?",
+    "yes": false
+   }
+  ],
+  "dish": "chicken tinga chilaquiles",
+  "look": "crisp triangular corn tortilla chips tossed in glossy red salsa roja, topped with moist shredded reddish-orange chicken tinga, crumbled white cotija cheese, drizzle of Mexican crema, fresh cilantro leaves",
+  "model": "gemini-flash-latest",
+  "name": "Chicken Tinga Chilaquiles",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-11T10:10:28+00:00"
  },
  "88e673e12cba": {
   "avoid": [
@@ -14389,6 +14704,42 @@
   "vessel": "plate",
   "written_at": "2026-10-02T12:29:21+00:00"
  },
+ "95db273ed70f": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "mashed potatoes",
+   "biscuits",
+   "roast beef",
+   "sausages"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a dark brown gravy or sauce?",
+    "yes": true
+   },
+   {
+    "q": "Are there chunks of meat or meatballs in the gravy?",
+    "yes": false
+   },
+   {
+    "q": "Is the gravy poured over potatoes, bread, or meat?",
+    "yes": false
+   }
+  ],
+  "dish": "caramelized onion gravy",
+  "look": "glossy rich brown savory gravy, tender soft caramelized sliced onions, smooth velvety texture, scattered tiny flecks of fresh thyme leaves",
+  "model": "gemini-flash-latest",
+  "name": "Caramelized Onion Gravy",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-11T10:11:53+00:00"
+ },
  "96f238647ae5": {
   "avoid": [
    "meat",
@@ -14810,6 +15161,41 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-10-02T10:06:48+00:00"
+ },
+ "9b3dbd3ad93a": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "noodles",
+   "rice",
+   "raw tofu block"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish cooked tofu and mushrooms?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat or seafood?",
+    "yes": false
+   },
+   {
+    "q": "Is the tofu an uncooked plain white block?",
+    "yes": false
+   }
+  ],
+  "dish": "glazed mushrooms and tofu",
+  "look": "browned pan-seared firm tofu cubes, sauteed sliced brown cremini mushrooms, glossy dark amber tamari glaze, charred edges, pinch of crushed red chili flakes, finely chopped fresh parsley",
+  "model": "gemini-flash-latest",
+  "name": "Smoked Mushrooms & Tofu",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-11T10:10:28+00:00"
  },
  "9bed9f3e67d7": {
   "avoid": [
@@ -15888,6 +16274,41 @@
   "revisions": 1,
   "vessel": "plate",
   "written_at": "2026-09-28T19:20:51+00:00"
+ },
+ "a585ea9027c0": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "curry stew",
+   "yellow turmeric rice",
+   "gravy"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food cooked rice?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat or seafood mixed into the rice?",
+    "yes": false
+   },
+   {
+    "q": "Is the rice drowned in a thick stew or curry sauce?",
+    "yes": false
+   }
+  ],
+  "dish": "Goan coconut rice",
+  "look": "fluffy long-grain basmati rice, grated white coconut flakes, golden toasted cashews, tender translucent sliced onions, scattered dark brown mustard seeds, whole cumin seeds, wilted dark green curry leaves, sliced green chilies",
+  "model": "gemini-flash-latest",
+  "name": "Goan Coconut Rice",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-11T10:11:53+00:00"
  },
  "a5f2564e62fa": {
   "avoid": [
@@ -17838,6 +18259,42 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T06:30:47+00:00"
+ },
+ "b7183c8e7b22": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "pita bread",
+   "naan",
+   "chips",
+   "curry"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a creamy yogurt-based dip?",
+    "yes": true
+   },
+   {
+    "q": "Does the dish contain meat or seafood?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a cooked dry food or flatbread?",
+    "yes": false
+   }
+  ],
+  "dish": "cucumber raita",
+  "look": "chilled creamy white yogurt dip, finely diced crisp green cucumbers stirred throughout, light dusting of ground roasted cumin, chopped fresh mint leaves, finely minced cilantro garnish",
+  "model": "gemini-flash-latest",
+  "name": "Cucumber Raita",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-11T10:11:53+00:00"
  },
  "b7dda503a49e": {
   "avoid": [
@@ -25013,6 +25470,40 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T05:36:06+00:00"
+ },
+ "fd8bda42233f": {
+  "avoid": [
+   "chicken",
+   "fish",
+   "tofu",
+   "dry steak",
+   "ground beef",
+   "skewers",
+   "noodles",
+   "pita bread"
+  ],
+  "checks": [
+   {
+    "q": "Is the food meat chunks in curry sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat served dry without curry sauce?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat ground or minced?",
+    "yes": false
+   }
+  ],
+  "dish": "Goan beef vindaloo",
+  "look": "tender bite-sized chunks of braised beef, coated in thick glossy dark-red vindaloo curry sauce, flecks of chopped red chili, sprinkle of fresh green cilantro",
+  "model": "gemini-flash-latest",
+  "name": "Goan Beef Vindaloo",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-11T10:10:28+00:00"
  },
  "fdbe712294e0": {
   "avoid": [
