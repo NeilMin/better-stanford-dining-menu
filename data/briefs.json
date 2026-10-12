@@ -3478,6 +3478,39 @@
   "vessel": "bowl",
   "written_at": "2026-09-26T20:19:40+00:00"
  },
+ "25033f3776ad": {
+  "avoid": [
+   "crisp green beans",
+   "raw green beans",
+   "salad",
+   "sliced roasted turkey breast",
+   "whole turkey leg",
+   "creamy sauce",
+   "casserole with fried onions"
+  ],
+  "checks": [
+   {
+    "q": "Are the green beans cooked and braised rather than crisp and bright green?",
+    "yes": true
+   },
+   {
+    "q": "Is the dish a dry fresh vegetable salad?",
+    "yes": false
+   },
+   {
+    "q": "Is the turkey served as large carved roast slices?",
+    "yes": false
+   }
+  ],
+  "dish": "Southern braised green beans with smoked turkey",
+  "look": "tender olive-green braised green beans, bite-sized yellow potato chunks, shredded smoked turkey pieces, diced red bell pepper, softened chopped tomatoes, translucent onions, glistening savory broth pot liquor",
+  "model": "gemini-flash-latest",
+  "name": "Southern Braised Green Bean",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-12T11:13:20+00:00"
+ },
  "2678fe03bfd8": {
   "avoid": [
    "corn on the cob",
@@ -7240,6 +7273,42 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T04:46:15+00:00"
+ },
+ "4517bb7c1d28": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "parmesan cheese",
+   "grated cheese",
+   "soup broth",
+   "cream sauce"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food pasta mixed with beans and roasted vegetables?",
+    "yes": true
+   },
+   {
+    "q": "Does the dish contain meat or seafood?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish served as a watery soup or broth?",
+    "yes": false
+   }
+  ],
+  "dish": "pasta with white beans and roasted vegetables",
+  "look": "cooked short tubular pasta, plump creamy white cannellini beans, tender roasted zucchini half-moons, charred red bell pepper strips, blistered cherry tomatoes, roasted red onion slices, light olive oil sheen, flecks of fresh chopped basil",
+  "model": "gemini-flash-latest",
+  "name": "Fagioli Pasta with Roasted Vegetables",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-12T11:13:58+00:00"
  },
  "458e1f275ab4": {
   "avoid": [
@@ -12831,6 +12900,38 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-02T10:04:59+00:00"
+ },
+ "82fe2d41e436": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "oysters",
+   "crawfish",
+   "burger bun",
+   "tortilla wrap"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a sandwich served on a long split roll?",
+    "yes": true
+   },
+   {
+    "q": "Does the sandwich contain meat, shrimp, or seafood?",
+    "yes": false
+   }
+  ],
+  "dish": "fried artichoke po' boy",
+  "look": "a split crusty French roll sandwich stuffed with golden-brown cornmeal-crusted fried artichoke hearts, drizzled with creamy spiced remoulade sauce, topped with shredded green lettuce, sliced red tomatoes, crinkle-cut pickle chips",
+  "model": "gemini-flash-latest",
+  "name": "Fried Artichoke Po Boy",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-12T11:13:32+00:00"
  },
  "83d194f65ad7": {
   "avoid": [
@@ -21257,6 +21358,42 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T06:03:50+00:00"
  },
+ "d1bf15a7c58a": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "paneer",
+   "tofu",
+   "watery broth",
+   "rice"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food a medley of vegetables in a curry sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is there any meat, poultry, or seafood in the dish?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a thin, liquid soup?",
+    "yes": false
+   }
+  ],
+  "dish": "vegetable jhalfrezi",
+  "look": "thick-cut batons of zucchini and yellow squash, sliced red and green bell peppers, baby corn pieces, asparagus spears, tossed in a thick clingy reddish-brown spiced tomato curry sauce, garnished with chopped fresh cilantro",
+  "model": "gemini-flash-latest",
+  "name": "Vegetable Jhalfrezi",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-12T11:13:38+00:00"
+ },
  "d1eb726162bf": {
   "avoid": [
    "chicken",
@@ -21459,6 +21596,42 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T04:50:49+00:00"
+ },
+ "d3cfba7da265": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "rice",
+   "flatbread",
+   "naan",
+   "green peas"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food beans in a curry sauce?",
+    "yes": true
+   },
+   {
+    "q": "Are there chunks of meat, poultry, or seafood visible?",
+    "yes": false
+   },
+   {
+    "q": "Are the beans bright green sweet peas?",
+    "yes": false
+   }
+  ],
+  "dish": "black-eyed pea curry",
+  "look": "tender plump black-eyed peas with distinct dark spots, simmered in a thick golden-amber curry gravy, whole dark green curry leaves scattered on top, tiny black mustard seeds flecked throughout the sauce, glossy stew texture",
+  "model": "gemini-flash-latest",
+  "name": "Curried Black Eyed Peas",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-12T11:13:26+00:00"
  },
  "d3f6c35987ea": {
   "avoid": [
@@ -22421,6 +22594,43 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T05:20:07+00:00"
+ },
+ "de365e9377c3": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "bacon",
+   "sausage",
+   "pancetta",
+   "parmesan cheese",
+   "grated cheese",
+   "fish",
+   "shrimp"
+  ],
+  "checks": [
+   {
+    "q": "Is the main dish pasta and beans mixed in a red tomato sauce?",
+    "yes": true
+   },
+   {
+    "q": "Are there visible pieces of meat, bacon, or sausage?",
+    "yes": false
+   },
+   {
+    "q": "Is there grated or melted cheese sprinkled over the dish?",
+    "yes": false
+   }
+  ],
+  "dish": "pasta e fagioli",
+  "look": "small tubular ditalini pasta, tender plump white cannellini beans, rich rustic red tomato sauce, chopped wilted dark green kale ribbons, diced fire-roasted tomatoes, minced herbs, specks of chopped fresh parsley",
+  "model": "gemini-flash-latest",
+  "name": "Fagioli Pasta",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-12T11:15:36+00:00"
  },
  "de812546212b": {
   "avoid": [
@@ -23430,6 +23640,44 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-28T17:10:34+00:00"
+ },
+ "e799bf6421d6": {
+  "avoid": [
+   "fried egg",
+   "poached egg",
+   "scrambled eggs",
+   "cheese",
+   "tortillas",
+   "pork sausage links",
+   "sliced sausage rounds",
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a skillet hash of cubed potatoes and crumbled red soyrizo?",
+    "yes": true
+   },
+   {
+    "q": "Is there an egg on top or mixed in?",
+    "yes": false
+   },
+   {
+    "q": "Is the sausage served as whole links or sliced coins rather than crumbles?",
+    "yes": false
+   }
+  ],
+  "dish": "soyrizo potato hash",
+  "look": "golden browned crispy diced potatoes tossed with crumbled dark red soyrizo, diced sautéed red bell peppers, soft translucent diced onions, paprika-tinted sheen, flecks of garlic",
+  "model": "gemini-flash-latest",
+  "name": "Soyrizo Hash",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-12T11:13:42+00:00"
  },
  "e7f69acf1c33": {
   "avoid": [
