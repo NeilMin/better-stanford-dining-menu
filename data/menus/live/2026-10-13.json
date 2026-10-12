@@ -1,6 +1,6 @@
 {
  "date": "2026-10-13",
- "scraped_at": "2026-10-12T03:58:46-07:00",
+ "scraped_at": "2026-10-12T15:30:54-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -94,18 +94,16 @@
      "order": 4
     },
     {
-     "name": "Chicken Apple Sausage",
-     "recipe_id": "7217325",
+     "name": "Beef Breakfast Sausage",
+     "recipe_id": "BeefBreakSaus1",
      "description": "",
-     "ingredients": "chicken, apples, salt, sugar, dextrose, spices, cultured whey, paprika, soybean oil, sheep casing",
-     "allergens": [
-      "MILK",
-      "SOY"
+     "ingredients": "beef, water, cane sugar, salt, spices, maltodextrin, yeast extract",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "halal"
      ],
-     "trace_allergens": [
-      "WHEAT"
-     ],
-     "tags": [],
      "order": 5
     },
     {
@@ -237,7 +235,8 @@
      "allergens": [
       "FISH",
       "SHELLFISH",
-      "SOY"
+      "SOY",
+      "WHEAT"
      ],
      "trace_allergens": [],
      "tags": [],
@@ -303,11 +302,11 @@
      "ingredients": "green beans, tamari, vegan oyster sauce, vegan fish sauce, brown sugar, olive/canola blended oil, garlic, red pepper flakes, water, sesame seeds.",
      "allergens": [
       "SESAME",
-      "SOY"
+      "SOY",
+      "WHEAT"
      ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
       "vegan",
       "halal"
      ],
@@ -472,11 +471,20 @@
      "description": "",
      "ingredients": "cucumber, green onion, cilantro, mint, garlic, lime juice, rice vinegar, vegan fish sauce, sugar, salt, olive/canola blended oil",
      "allergens": [
-      "SOY"
+      "SOY",
+      "WHEAT"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "TREENUTS"
+     ],
      "tags": [
-      "gluten-free",
       "vegan"
      ],
      "order": 14
@@ -1208,7 +1216,8 @@
      "allergens": [
       "FISH",
       "SHELLFISH",
-      "SOY"
+      "SOY",
+      "WHEAT"
      ],
      "trace_allergens": [],
      "tags": [],
@@ -2145,16 +2154,6 @@
      "order": 6
     },
     {
-     "name": "Burger Bar",
-     "recipe_id": "5964436",
-     "description": "",
-     "ingredients": "",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [],
-     "order": 7
-    },
-    {
      "name": "Grilled Chicken",
      "recipe_id": "520454-02",
      "description": "",
@@ -2175,7 +2174,7 @@
      "tags": [
       "halal"
      ],
-     "order": 8
+     "order": 7
     },
     {
      "name": "Grilled Vegan/Vegetarian",
@@ -2198,7 +2197,7 @@
      "tags": [
       "halal"
      ],
-     "order": 9
+     "order": 8
     },
     {
      "name": "Handmade Pizza",
@@ -2214,7 +2213,7 @@
       "vegetarian",
       "halal"
      ],
-     "order": 10
+     "order": 9
     },
     {
      "name": "Panini Station",
@@ -2232,7 +2231,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 11
+     "order": 10
     },
     {
      "name": "Soup of the Day",
@@ -2242,7 +2241,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 12
+     "order": 11
     },
     {
      "name": "Composed Salad",
@@ -2254,7 +2253,7 @@
      "tags": [
       "halal"
      ],
-     "order": 13
+     "order": 12
     },
     {
      "name": "Performance Bar",
@@ -2264,7 +2263,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 14
+     "order": 13
     },
     {
      "name": "Craveable Grains",
@@ -2278,7 +2277,7 @@
       "vegan",
       "halal"
      ],
-     "order": 15
+     "order": 14
     },
     {
      "name": "Flavor Forward Legumes",
@@ -2292,7 +2291,7 @@
       "vegan",
       "halal"
      ],
-     "order": 16
+     "order": 15
     },
     {
      "name": "Pasta Marinara",
@@ -2310,7 +2309,7 @@
       "vegan",
       "halal"
      ],
-     "order": 17
+     "order": 16
     },
     {
      "name": "Pasta Pesto",
@@ -2328,7 +2327,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 18
+     "order": 17
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -2342,18 +2341,18 @@
       "vegan",
       "halal"
      ],
-     "order": 19
+     "order": 18
     }
    ],
    "Dinner": [
     {
-     "name": "Salmon Meunière",
-     "recipe_id": "404915",
+     "name": "Seared Cod",
+     "recipe_id": "SearCodDL90",
      "description": "",
-     "ingredients": "salmon, cornstarch, butter, parsley, dill, chive, capers, lemon, canola oil blend, salt, pepper, lemon zest",
+     "ingredients": "Cod, Lemon, Parsley, Thyme, Cherry tomatoes, Salt, Black pepper, Paprika",
      "allergens": [
       "FISH",
-      "MILK"
+      "SOY"
      ],
      "trace_allergens": [],
      "tags": [
@@ -2483,16 +2482,6 @@
      "order": 8
     },
     {
-     "name": "Burger Bar",
-     "recipe_id": "5964436",
-     "description": "",
-     "ingredients": "",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [],
-     "order": 9
-    },
-    {
      "name": "Grilled Chicken",
      "recipe_id": "520454-02",
      "description": "",
@@ -2513,7 +2502,7 @@
      "tags": [
       "halal"
      ],
-     "order": 10
+     "order": 9
     },
     {
      "name": "Grilled Vegan/Vegetarian",
@@ -2536,7 +2525,7 @@
      "tags": [
       "halal"
      ],
-     "order": 11
+     "order": 10
     },
     {
      "name": "Panini Station",
@@ -2554,7 +2543,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 12
+     "order": 11
     },
     {
      "name": "Soup of the Day",
@@ -2564,7 +2553,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 13
+     "order": 12
     },
     {
      "name": "Assorted Dinner Rolls",
@@ -2584,7 +2573,7 @@
       "vegetarian",
       "halal"
      ],
-     "order": 14
+     "order": 13
     },
     {
      "name": "Composed Salad",
@@ -2596,7 +2585,7 @@
      "tags": [
       "halal"
      ],
-     "order": 15
+     "order": 14
     },
     {
      "name": "Performance Bar",
@@ -2606,7 +2595,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 16
+     "order": 15
     },
     {
      "name": "Craveable Grains",
@@ -2620,7 +2609,7 @@
       "vegan",
       "halal"
      ],
-     "order": 17
+     "order": 16
     },
     {
      "name": "Flavor Forward Legumes",
@@ -2634,7 +2623,7 @@
       "vegan",
       "halal"
      ],
-     "order": 18
+     "order": 17
     },
     {
      "name": "Pasta Marinara",
@@ -2652,7 +2641,7 @@
       "vegan",
       "halal"
      ],
-     "order": 19
+     "order": 18
     },
     {
      "name": "Pasta Pesto",
@@ -2670,7 +2659,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 20
+     "order": 19
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -2684,7 +2673,7 @@
       "vegan",
       "halal"
      ],
-     "order": 21
+     "order": 20
     }
    ]
   },
@@ -2892,7 +2881,8 @@
      "allergens": [
       "FISH",
       "SHELLFISH",
-      "SOY"
+      "SOY",
+      "WHEAT"
      ],
      "trace_allergens": [],
      "tags": [],
@@ -2958,11 +2948,11 @@
      "ingredients": "green beans, tamari, vegan oyster sauce, vegan fish sauce, brown sugar, olive/canola blended oil, garlic, red pepper flakes, water, sesame seeds.",
      "allergens": [
       "SESAME",
-      "SOY"
+      "SOY",
+      "WHEAT"
      ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
       "vegan",
       "halal"
      ],
@@ -3079,11 +3069,20 @@
      "description": "",
      "ingredients": "cucumber, green onion, cilantro, mint, garlic, lime juice, rice vinegar, vegan fish sauce, sugar, salt, olive/canola blended oil",
      "allergens": [
-      "SOY"
+      "SOY",
+      "WHEAT"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "TREENUTS"
+     ],
      "tags": [
-      "gluten-free",
       "vegan"
      ],
      "order": 11
@@ -3110,7 +3109,7 @@
      "name": "Creamy Pasta with Vegetables",
      "recipe_id": "4649084",
      "description": "",
-     "ingredients": "whole grain pasta, broccoli, collard greens, onion, garlic, canola/olive oil blend, butter, parmesan cheese, salt, pepper",
+     "ingredients": "whole grain pasta, broccoli, collard greens, onion, garlic, canola/olive oil blend, butter, non-halal parmesan cheese, salt, pepper",
      "allergens": [
       "MILK",
       "WHEAT"
@@ -3119,8 +3118,7 @@
       "EGG"
      ],
      "tags": [
-      "vegetarian",
-      "halal"
+      "vegetarian"
      ],
      "order": 13
     }
@@ -3758,11 +3756,20 @@
      "description": "",
      "ingredients": "cucumber, green onion, cilantro, mint, garlic, lime juice, rice vinegar, vegan fish sauce, sugar, salt, olive/canola blended oil",
      "allergens": [
-      "SOY"
+      "SOY",
+      "WHEAT"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "TREENUTS"
+     ],
      "tags": [
-      "gluten-free",
       "vegan"
      ],
      "order": 13
@@ -4971,7 +4978,8 @@
      "allergens": [
       "FISH",
       "SHELLFISH",
-      "SOY"
+      "SOY",
+      "WHEAT"
      ],
      "trace_allergens": [],
      "tags": [],
@@ -5023,11 +5031,11 @@
      "ingredients": "green beans, tamari, vegan oyster sauce, vegan fish sauce, brown sugar, olive/canola blended oil, garlic, red pepper flakes, water, sesame seeds.",
      "allergens": [
       "SESAME",
-      "SOY"
+      "SOY",
+      "WHEAT"
      ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
       "vegan",
       "halal"
      ],
@@ -5176,11 +5184,20 @@
      "description": "",
      "ingredients": "cucumber, green onion, cilantro, mint, garlic, lime juice, rice vinegar, vegan fish sauce, sugar, salt, olive/canola blended oil",
      "allergens": [
-      "SOY"
+      "SOY",
+      "WHEAT"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "TREENUTS"
+     ],
      "tags": [
-      "gluten-free",
       "vegan"
      ],
      "order": 12

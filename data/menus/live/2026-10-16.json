@@ -1,6 +1,6 @@
 {
  "date": "2026-10-16",
- "scraped_at": "2026-10-12T03:58:46-07:00",
+ "scraped_at": "2026-10-12T15:30:54-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -492,7 +492,7 @@
      "name": "Pasta Alfredo",
      "recipe_id": "5683556",
      "description": "",
-     "ingredients": "pasta, white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, parmesan cheese",
+     "ingredients": "pasta, white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, non-halal parmesan cheese",
      "allergens": [
       "MILK",
       "WHEAT"
@@ -501,8 +501,7 @@
       "EGG"
      ],
      "tags": [
-      "vegetarian",
-      "halal"
+      "vegetarian"
      ],
      "order": 17
     },
@@ -890,7 +889,7 @@
      "name": "Pasta Alfredo",
      "recipe_id": "5683556",
      "description": "",
-     "ingredients": "pasta, white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, parmesan cheese",
+     "ingredients": "pasta, white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, non-halal parmesan cheese",
      "allergens": [
       "MILK",
       "WHEAT"
@@ -899,8 +898,7 @@
       "EGG"
      ],
      "tags": [
-      "vegetarian",
-      "halal"
+      "vegetarian"
      ],
      "order": 22
     },
@@ -1263,8 +1261,8 @@
      "order": 5
     },
     {
-     "name": "Burger Bar",
-     "recipe_id": "5964436",
+     "name": "Baked Potato Bar",
+     "recipe_id": "6827028",
      "description": "",
      "ingredients": "",
      "allergens": [],
@@ -1319,19 +1317,19 @@
      "order": 8
     },
     {
-     "name": "Beef Bolognese Lasagna",
-     "recipe_id": "3791182",
+     "name": "Butternut Squash Lasagna",
+     "recipe_id": "5364364",
      "description": "",
-     "ingredients": "lasagna noodles, beef bolognese sauce (beef and mushroom blend, marinara sauce, tomato paste, vegetable soup base, carrots, celery, onions, italian seasoning, parsley, garlic, canola/olive oil blend, bay leaf, pepper, salt), white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, parmesan cheese, basil, parsley, olive oil, pepper, salt",
+     "ingredients": "lasagna noodles, mozzarella cheese, non-halal parmesan cheese, butternut squash filling (yams, butternut squash, bell peppers, spinach, onions, garlic, ricotta cheese, goat cheese, butter, sage, black pepper salt), white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt)",
      "allergens": [
-      "EGG",
       "MILK",
-      "SOY",
       "WHEAT"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "EGG"
+     ],
      "tags": [
-      "halal"
+      "vegetarian"
      ],
      "order": 9
     },
@@ -1417,7 +1415,7 @@
      "name": "Pasta Alfredo",
      "recipe_id": "5683556",
      "description": "",
-     "ingredients": "pasta, white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, parmesan cheese",
+     "ingredients": "pasta, white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, non-halal parmesan cheese",
      "allergens": [
       "MILK",
       "WHEAT"
@@ -1426,8 +1424,7 @@
       "EGG"
      ],
      "tags": [
-      "vegetarian",
-      "halal"
+      "vegetarian"
      ],
      "order": 16
     },
@@ -1721,7 +1718,7 @@
      "name": "Pasta Alfredo",
      "recipe_id": "5683556",
      "description": "",
-     "ingredients": "pasta, white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, parmesan cheese",
+     "ingredients": "pasta, white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, non-halal parmesan cheese",
      "allergens": [
       "MILK",
       "WHEAT"
@@ -1730,8 +1727,7 @@
       "EGG"
      ],
      "tags": [
-      "vegetarian",
-      "halal"
+      "vegetarian"
      ],
      "order": 17
     },
@@ -2073,16 +2069,25 @@
      "order": 3
     },
     {
-     "name": "Calabasitas",
-     "recipe_id": "Calab17",
+     "name": "Sauteed Garlic Broccolini",
+     "recipe_id": "3770761",
      "description": "",
-     "ingredients": "zucchini, onion, garlic, jalapeno, Roma tomatoes, corn, Mexican oregano, poblano pepper, cilantro, salt, black pepper,",
+     "ingredients": "broccolini, garlic, onion, canola/olive oil blend, salt",
      "allergens": [],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "SOY",
+      "TREENUTS",
+      "WHEAT"
+     ],
      "tags": [
-      "gluten-free",
-      "vegan",
-      "halal"
+      "vegan"
      ],
      "order": 4
     },
@@ -2150,16 +2155,6 @@
      "order": 7
     },
     {
-     "name": "Burger Bar",
-     "recipe_id": "5964436",
-     "description": "",
-     "ingredients": "",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [],
-     "order": 8
-    },
-    {
      "name": "Grilled Chicken",
      "recipe_id": "520454-02",
      "description": "",
@@ -2180,7 +2175,7 @@
      "tags": [
       "halal"
      ],
-     "order": 9
+     "order": 8
     },
     {
      "name": "Grilled Vegan/Vegetarian",
@@ -2203,7 +2198,7 @@
      "tags": [
       "halal"
      ],
-     "order": 10
+     "order": 9
     },
     {
      "name": "Handmade Pizza",
@@ -2219,7 +2214,7 @@
       "vegetarian",
       "halal"
      ],
-     "order": 11
+     "order": 10
     },
     {
      "name": "Panini Station",
@@ -2237,7 +2232,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 12
+     "order": 11
     },
     {
      "name": "Soup of the Day",
@@ -2247,7 +2242,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 13
+     "order": 12
     },
     {
      "name": "Vietnamese Cucumber &Herb Salad",
@@ -2255,14 +2250,23 @@
      "description": "",
      "ingredients": "cucumber, green onion, cilantro, mint, garlic, lime juice, rice vinegar, vegan fish sauce, sugar, salt, olive/canola blended oil",
      "allergens": [
-      "SOY"
+      "SOY",
+      "WHEAT"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "TREENUTS"
+     ],
      "tags": [
-      "gluten-free",
       "vegan"
      ],
-     "order": 14
+     "order": 13
     },
     {
      "name": "Performance Bar",
@@ -2272,7 +2276,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 15
+     "order": 14
     },
     {
      "name": "Craveable Grains",
@@ -2286,7 +2290,7 @@
       "vegan",
       "halal"
      ],
-     "order": 16
+     "order": 15
     },
     {
      "name": "Flavor Forward Legumes",
@@ -2300,13 +2304,13 @@
       "vegan",
       "halal"
      ],
-     "order": 17
+     "order": 16
     },
     {
      "name": "Pasta Alfredo",
      "recipe_id": "5683556",
      "description": "",
-     "ingredients": "pasta, white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, parmesan cheese",
+     "ingredients": "pasta, white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, non-halal parmesan cheese",
      "allergens": [
       "MILK",
       "WHEAT"
@@ -2315,10 +2319,9 @@
       "EGG"
      ],
      "tags": [
-      "vegetarian",
-      "halal"
+      "vegetarian"
      ],
-     "order": 18
+     "order": 17
     },
     {
      "name": "Pasta Marinara",
@@ -2336,7 +2339,7 @@
       "vegan",
       "halal"
      ],
-     "order": 19
+     "order": 18
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -2350,7 +2353,7 @@
       "vegan",
       "halal"
      ],
-     "order": 20
+     "order": 19
     }
    ],
    "Dinner": [
@@ -2644,7 +2647,7 @@
      "name": "Pasta Alfredo",
      "recipe_id": "5683556",
      "description": "",
-     "ingredients": "pasta, white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, parmesan cheese",
+     "ingredients": "pasta, white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, non-halal parmesan cheese",
      "allergens": [
       "MILK",
       "WHEAT"
@@ -2653,8 +2656,7 @@
       "EGG"
      ],
      "tags": [
-      "vegetarian",
-      "halal"
+      "vegetarian"
      ],
      "order": 19
     },
@@ -3221,7 +3223,7 @@
      "name": "Pasta Alfredo",
      "recipe_id": "5683556",
      "description": "",
-     "ingredients": "pasta, white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, parmesan cheese",
+     "ingredients": "pasta, white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, non-halal parmesan cheese",
      "allergens": [
       "MILK",
       "WHEAT"
@@ -3230,8 +3232,7 @@
       "EGG"
      ],
      "tags": [
-      "vegetarian",
-      "halal"
+      "vegetarian"
      ],
      "order": 11
     },
@@ -3745,7 +3746,7 @@
      "name": "Pasta Alfredo",
      "recipe_id": "5683556",
      "description": "",
-     "ingredients": "pasta, white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, parmesan cheese",
+     "ingredients": "pasta, white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, non-halal parmesan cheese",
      "allergens": [
       "MILK",
       "WHEAT"
@@ -3754,8 +3755,7 @@
       "EGG"
      ],
      "tags": [
-      "vegetarian",
-      "halal"
+      "vegetarian"
      ],
      "order": 17
     },
@@ -4030,7 +4030,7 @@
      "name": "Pasta Alfredo",
      "recipe_id": "5683556",
      "description": "",
-     "ingredients": "pasta, white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, parmesan cheese",
+     "ingredients": "pasta, white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, non-halal parmesan cheese",
      "allergens": [
       "MILK",
       "WHEAT"
@@ -4039,8 +4039,7 @@
       "EGG"
      ],
      "tags": [
-      "vegetarian",
-      "halal"
+      "vegetarian"
      ],
      "order": 15
     },
@@ -4283,11 +4282,11 @@
      "ingredients": "green beans, tamari, vegan oyster sauce, vegan fish sauce, brown sugar, olive/canola blended oil, garlic, red pepper flakes, water, sesame seeds.",
      "allergens": [
       "SESAME",
-      "SOY"
+      "SOY",
+      "WHEAT"
      ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
       "vegan",
       "halal"
      ],
@@ -4647,7 +4646,7 @@
      "name": "Pasta Alfredo",
      "recipe_id": "5683556",
      "description": "",
-     "ingredients": "pasta, white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, parmesan cheese",
+     "ingredients": "pasta, white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, non-halal parmesan cheese",
      "allergens": [
       "MILK",
       "WHEAT"
@@ -4656,8 +4655,7 @@
       "EGG"
      ],
      "tags": [
-      "vegetarian",
-      "halal"
+      "vegetarian"
      ],
      "order": 13
     }
@@ -5070,7 +5068,7 @@
      "name": "Pesto Chicken Pizza",
      "recipe_id": "4438693",
      "description": "",
-     "ingredients": "pizza dough, chicken breast, pesto sauce, mozzarella cheese, parmesan cheese, canola/olive oil blend, salt, pepper",
+     "ingredients": "pizza dough, chicken breast, pesto sauce, mozzarella cheese, non-halal parmesan cheese, canola/olive oil blend, salt, pepper",
      "allergens": [
       "MILK",
       "SOY",
@@ -5080,9 +5078,7 @@
       "EGG",
       "SESAME"
      ],
-     "tags": [
-      "halal"
-     ],
+     "tags": [],
      "order": 10
     },
     {
@@ -5398,7 +5394,7 @@
      "name": "Pasta Alfredo",
      "recipe_id": "5683556",
      "description": "",
-     "ingredients": "pasta, white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, parmesan cheese",
+     "ingredients": "pasta, white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, non-halal parmesan cheese",
      "allergens": [
       "MILK",
       "WHEAT"
@@ -5407,8 +5403,7 @@
       "EGG"
      ],
      "tags": [
-      "vegetarian",
-      "halal"
+      "vegetarian"
      ],
      "order": 13
     },

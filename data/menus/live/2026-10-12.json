@@ -1,6 +1,6 @@
 {
  "date": "2026-10-12",
- "scraped_at": "2026-10-12T03:58:46-07:00",
+ "scraped_at": "2026-10-12T15:30:54-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -235,25 +235,13 @@
    "Lunch": [
     {
      "name": "Hot Dog",
-     "recipe_id": "5520685",
+     "recipe_id": "NonHalalHotDog1",
      "description": "",
-     "ingredients": "beef sausage, whole wheat bun",
-     "allergens": [
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "TREENUTS"
-     ],
+     "ingredients": "(non-halal) beef, water, salt, paprika, soy protein, garlic powder, flavoring, sodium nitrate",
+     "allergens": [],
+     "trace_allergens": [],
      "tags": [
-      "halal"
+      "gluten-free"
      ],
      "order": 0
     },
@@ -532,7 +520,7 @@
      "name": "Marinara Cheese Ravioli",
      "recipe_id": "3581918",
      "description": "",
-     "ingredients": "ravioli, marinara sauce, parmesan cheese",
+     "ingredients": "ravioli, marinara sauce, non-halal parmesan cheese",
      "allergens": [
       "EGG",
       "MILK",
@@ -541,8 +529,7 @@
      ],
      "trace_allergens": [],
      "tags": [
-      "vegetarian",
-      "halal"
+      "vegetarian"
      ],
      "order": 18
     },
@@ -558,8 +545,7 @@
      "trace_allergens": [],
      "tags": [
       "gluten-free",
-      "vegetarian",
-      "halal"
+      "vegetarian"
      ],
      "order": 19
     },
@@ -925,7 +911,7 @@
      "name": "Marinara Cheese Ravioli",
      "recipe_id": "3581918",
      "description": "",
-     "ingredients": "ravioli, marinara sauce, parmesan cheese",
+     "ingredients": "ravioli, marinara sauce, non-halal parmesan cheese",
      "allergens": [
       "EGG",
       "MILK",
@@ -934,8 +920,7 @@
      ],
      "trace_allergens": [],
      "tags": [
-      "vegetarian",
-      "halal"
+      "vegetarian"
      ],
      "order": 20
     },
@@ -951,8 +936,7 @@
      "trace_allergens": [],
      "tags": [
       "gluten-free",
-      "vegetarian",
-      "halal"
+      "vegetarian"
      ],
      "order": 21
     },
@@ -1450,7 +1434,7 @@
      "name": "Marinara Cheese Ravioli",
      "recipe_id": "3581918",
      "description": "",
-     "ingredients": "ravioli, marinara sauce, parmesan cheese",
+     "ingredients": "ravioli, marinara sauce, non-halal parmesan cheese",
      "allergens": [
       "EGG",
       "MILK",
@@ -1459,8 +1443,7 @@
      ],
      "trace_allergens": [],
      "tags": [
-      "vegetarian",
-      "halal"
+      "vegetarian"
      ],
      "order": 16
     },
@@ -1476,8 +1459,7 @@
      "trace_allergens": [],
      "tags": [
       "gluten-free",
-      "vegetarian",
-      "halal"
+      "vegetarian"
      ],
      "order": 17
     },
@@ -1764,36 +1746,33 @@
      "order": 16
     },
     {
-     "name": "Marinara Cheese Ravioli",
-     "recipe_id": "3581918",
+     "name": "Creamy Pesto",
+     "recipe_id": "7728050",
      "description": "",
-     "ingredients": "ravioli, marinara sauce, parmesan cheese",
+     "ingredients": "pesto sauce (basil, canola oil, parmesan cheese, olive oil, garlic, salt, lemon juice concentrate, natural flavor, xanthan gum, soy lecithin, chamomile extract, rosemary extract, white sauce (flour, butter, cream, milk powder, onion powder, white pepper, garlic, nutmeg, salt), parmesan cheese, parsley",
      "allergens": [
-      "EGG",
       "MILK",
       "SOY",
       "WHEAT"
      ],
      "trace_allergens": [],
      "tags": [
-      "vegetarian",
-      "halal"
+      "vegetarian"
      ],
      "order": 17
     },
     {
-     "name": "Pesto Sauce",
-     "recipe_id": "6128910",
+     "name": "Marinara Sauce",
+     "recipe_id": "4079962",
      "description": "",
-     "ingredients": "basil, canola oil, parmesan cheese (milk, bacterial culture, salt, microbial enzymes, extra virgin olive oil, garlic, salt, lemon juice concentrate, natural flavor, ascorbic acid, xanthan gum, soy lecithin, chamomile extract, rosemary extract)",
+     "ingredients": "tomatoes, tomato paste, soybean oil, sugar, salt, onion, garlic, spices, citric acid, natural flavor",
      "allergens": [
-      "MILK",
       "SOY"
      ],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
-      "vegetarian",
+      "vegan",
       "halal"
      ],
      "order": 18
@@ -2191,16 +2170,6 @@
      "order": 7
     },
     {
-     "name": "Burger Bar",
-     "recipe_id": "5964436",
-     "description": "",
-     "ingredients": "",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [],
-     "order": 8
-    },
-    {
      "name": "Grilled Chicken",
      "recipe_id": "520454-02",
      "description": "",
@@ -2221,7 +2190,7 @@
      "tags": [
       "halal"
      ],
-     "order": 9
+     "order": 8
     },
     {
      "name": "Grilled Vegan/Vegetarian",
@@ -2244,7 +2213,7 @@
      "tags": [
       "halal"
      ],
-     "order": 10
+     "order": 9
     },
     {
      "name": "Handmade Pizza",
@@ -2260,7 +2229,7 @@
       "vegetarian",
       "halal"
      ],
-     "order": 11
+     "order": 10
     },
     {
      "name": "Panini Station",
@@ -2278,7 +2247,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 12
+     "order": 11
     },
     {
      "name": "Soup of the Day",
@@ -2288,7 +2257,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 13
+     "order": 12
     },
     {
      "name": "Composed Salad",
@@ -2300,7 +2269,7 @@
      "tags": [
       "halal"
      ],
-     "order": 14
+     "order": 13
     },
     {
      "name": "Performance Bar",
@@ -2310,7 +2279,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 15
+     "order": 14
     },
     {
      "name": "Craveable Grains",
@@ -2324,7 +2293,7 @@
       "vegan",
       "halal"
      ],
-     "order": 16
+     "order": 15
     },
     {
      "name": "Flavor Forward Legumes",
@@ -2338,25 +2307,25 @@
       "vegan",
       "halal"
      ],
-     "order": 17
+     "order": 16
     },
     {
-     "name": "Marinara Cheese Ravioli",
-     "recipe_id": "3581918",
+     "name": "Pasta Marinara",
+     "recipe_id": "5095708",
      "description": "",
-     "ingredients": "ravioli, marinara sauce, parmesan cheese",
+     "ingredients": "pasta, marinara sauce, canola/olive oil blend",
      "allergens": [
-      "EGG",
-      "MILK",
       "SOY",
       "WHEAT"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "EGG"
+     ],
      "tags": [
-      "vegetarian",
+      "vegan",
       "halal"
      ],
-     "order": 18
+     "order": 17
     },
     {
      "name": "Pesto Sauce",
@@ -2370,10 +2339,9 @@
      "trace_allergens": [],
      "tags": [
       "gluten-free",
-      "vegetarian",
-      "halal"
+      "vegetarian"
      ],
-     "order": 19
+     "order": 18
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -2387,7 +2355,7 @@
       "vegan",
       "halal"
      ],
-     "order": 20
+     "order": 19
     }
    ],
    "Dinner": [
@@ -2532,16 +2500,6 @@
      "order": 7
     },
     {
-     "name": "Burger Bar",
-     "recipe_id": "5964436",
-     "description": "",
-     "ingredients": "",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [],
-     "order": 8
-    },
-    {
      "name": "Grilled Chicken",
      "recipe_id": "520454-02",
      "description": "",
@@ -2562,7 +2520,7 @@
      "tags": [
       "halal"
      ],
-     "order": 9
+     "order": 8
     },
     {
      "name": "Grilled Vegan/Vegetarian",
@@ -2585,7 +2543,7 @@
      "tags": [
       "halal"
      ],
-     "order": 10
+     "order": 9
     },
     {
      "name": "Panini Station",
@@ -2603,7 +2561,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 11
+     "order": 10
     },
     {
      "name": "Soup of the Day",
@@ -2613,7 +2571,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 12
+     "order": 11
     },
     {
      "name": "Assorted Dinner Rolls",
@@ -2633,7 +2591,7 @@
       "vegetarian",
       "halal"
      ],
-     "order": 13
+     "order": 12
     },
     {
      "name": "Performance Bar",
@@ -2643,7 +2601,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 14
+     "order": 13
     },
     {
      "name": "Craveable Grains",
@@ -2657,7 +2615,7 @@
       "vegan",
       "halal"
      ],
-     "order": 15
+     "order": 14
     },
     {
      "name": "Flavor Forward Legumes",
@@ -2671,42 +2629,42 @@
       "vegan",
       "halal"
      ],
-     "order": 16
+     "order": 15
     },
     {
-     "name": "Marinara Cheese Ravioli",
-     "recipe_id": "3581918",
+     "name": "Pasta Marinara",
+     "recipe_id": "5095708",
      "description": "",
-     "ingredients": "ravioli, marinara sauce, parmesan cheese",
+     "ingredients": "pasta, marinara sauce, canola/olive oil blend",
      "allergens": [
-      "EGG",
-      "MILK",
       "SOY",
       "WHEAT"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "EGG"
+     ],
      "tags": [
-      "vegetarian",
+      "vegan",
       "halal"
      ],
-     "order": 17
+     "order": 16
     },
     {
-     "name": "Pesto Sauce",
-     "recipe_id": "6128910",
+     "name": "Pasta Alfredo",
+     "recipe_id": "5683556",
      "description": "",
-     "ingredients": "basil, canola oil, parmesan cheese (milk, bacterial culture, salt, microbial enzymes, extra virgin olive oil, garlic, salt, lemon juice concentrate, natural flavor, ascorbic acid, xanthan gum, soy lecithin, chamomile extract, rosemary extract)",
+     "ingredients": "pasta, white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, non-halal parmesan cheese",
      "allergens": [
       "MILK",
-      "SOY"
+      "WHEAT"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "EGG"
+     ],
      "tags": [
-      "gluten-free",
-      "vegetarian",
-      "halal"
+      "vegetarian"
      ],
-     "order": 18
+     "order": 17
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -2720,7 +2678,7 @@
       "vegan",
       "halal"
      ],
-     "order": 19
+     "order": 18
     }
    ]
   },
@@ -3062,7 +3020,7 @@
      "name": "Pepperoni Pizza",
      "recipe_id": "5666748",
      "description": "",
-     "ingredients": "sourdough pizza crust, pizza sauce (tomatoes, salt, soybean oil, olive oil, spices, garlic powder and citric acid), mozzarella cheese, pepperoni, canola oil, parmesan cheese",
+     "ingredients": "sourdough pizza crust, pizza sauce (tomatoes, salt, soybean oil, olive oil, spices, garlic powder and citric acid), mozzarella cheese, pepperoni, canola oil, non-halal parmesan cheese",
      "allergens": [
       "MILK",
       "SOY",
@@ -3098,7 +3056,7 @@
      "name": "Marinara Cheese Ravioli",
      "recipe_id": "3581918",
      "description": "",
-     "ingredients": "ravioli, marinara sauce, parmesan cheese",
+     "ingredients": "ravioli, marinara sauce, non-halal parmesan cheese",
      "allergens": [
       "EGG",
       "MILK",
@@ -3107,8 +3065,7 @@
      ],
      "trace_allergens": [],
      "tags": [
-      "vegetarian",
-      "halal"
+      "vegetarian"
      ],
      "order": 12
     },
@@ -3116,7 +3073,7 @@
      "name": "Spinach Pesto Pasta",
      "recipe_id": "4620313",
      "description": "",
-     "ingredients": "pasta, spinach, pesto sauce, tomatoes, mushrooms, parmesan cheese, garlic, canola/olive oil blend",
+     "ingredients": "pasta, spinach, pesto sauce, tomatoes, mushrooms, non-halal parmesan cheese, garlic, canola/olive oil blend",
      "allergens": [
       "MILK",
       "SOY",
@@ -3126,8 +3083,7 @@
       "EGG"
      ],
      "tags": [
-      "vegetarian",
-      "halal"
+      "vegetarian"
      ],
      "order": 13
     }
@@ -3299,7 +3255,7 @@
      "name": "Marinara Cheese Ravioli",
      "recipe_id": "3581918",
      "description": "",
-     "ingredients": "ravioli, marinara sauce, parmesan cheese",
+     "ingredients": "ravioli, marinara sauce, non-halal parmesan cheese",
      "allergens": [
       "EGG",
       "MILK",
@@ -3308,8 +3264,7 @@
      ],
      "trace_allergens": [],
      "tags": [
-      "vegetarian",
-      "halal"
+      "vegetarian"
      ],
      "order": 10
     },
@@ -3325,8 +3280,7 @@
      "trace_allergens": [],
      "tags": [
       "gluten-free",
-      "vegetarian",
-      "halal"
+      "vegetarian"
      ],
      "order": 11
     }
@@ -3862,7 +3816,7 @@
      "name": "Marinara Cheese Ravioli",
      "recipe_id": "3581918",
      "description": "",
-     "ingredients": "ravioli, marinara sauce, parmesan cheese",
+     "ingredients": "ravioli, marinara sauce, non-halal parmesan cheese",
      "allergens": [
       "EGG",
       "MILK",
@@ -3871,8 +3825,7 @@
      ],
      "trace_allergens": [],
      "tags": [
-      "vegetarian",
-      "halal"
+      "vegetarian"
      ],
      "order": 18
     },
@@ -3888,8 +3841,7 @@
      "trace_allergens": [],
      "tags": [
       "gluten-free",
-      "vegetarian",
-      "halal"
+      "vegetarian"
      ],
      "order": 19
     },
@@ -4162,7 +4114,7 @@
      "name": "Marinara Cheese Ravioli",
      "recipe_id": "3581918",
      "description": "",
-     "ingredients": "ravioli, marinara sauce, parmesan cheese",
+     "ingredients": "ravioli, marinara sauce, non-halal parmesan cheese",
      "allergens": [
       "EGG",
       "MILK",
@@ -4171,8 +4123,7 @@
      ],
      "trace_allergens": [],
      "tags": [
-      "vegetarian",
-      "halal"
+      "vegetarian"
      ],
      "order": 15
     },
@@ -4188,8 +4139,7 @@
      "trace_allergens": [],
      "tags": [
       "gluten-free",
-      "vegetarian",
-      "halal"
+      "vegetarian"
      ],
      "order": 16
     },
@@ -5308,7 +5258,7 @@
      "name": "Marinara Cheese Ravioli",
      "recipe_id": "3581918",
      "description": "",
-     "ingredients": "ravioli, marinara sauce, parmesan cheese",
+     "ingredients": "ravioli, marinara sauce, non-halal parmesan cheese",
      "allergens": [
       "EGG",
       "MILK",
@@ -5317,8 +5267,7 @@
      ],
      "trace_allergens": [],
      "tags": [
-      "vegetarian",
-      "halal"
+      "vegetarian"
      ],
      "order": 15
     },
@@ -5571,7 +5520,7 @@
      "name": "Marinara Cheese Ravioli",
      "recipe_id": "3581918",
      "description": "",
-     "ingredients": "ravioli, marinara sauce, parmesan cheese",
+     "ingredients": "ravioli, marinara sauce, non-halal parmesan cheese",
      "allergens": [
       "EGG",
       "MILK",
@@ -5580,8 +5529,7 @@
      ],
      "trace_allergens": [],
      "tags": [
-      "vegetarian",
-      "halal"
+      "vegetarian"
      ],
      "order": 13
     },
@@ -5597,8 +5545,7 @@
      "trace_allergens": [],
      "tags": [
       "gluten-free",
-      "vegetarian",
-      "halal"
+      "vegetarian"
      ],
      "order": 14
     },
