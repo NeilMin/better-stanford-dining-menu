@@ -5487,6 +5487,41 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T04:40:44+00:00"
  },
+ "35864ebf6b64": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "tacos",
+   "burrito",
+   "tortilla chips"
+  ],
+  "checks": [
+   {
+    "q": "Are the main items rolled tortillas covered in sauce and cheese?",
+    "yes": true
+   },
+   {
+    "q": "Is there meat, chicken, or seafood visible on the plate?",
+    "yes": false
+   },
+   {
+    "q": "Are the tortillas folded or shaped as crispy tacos?",
+    "yes": false
+   }
+  ],
+  "dish": "cheese enchiladas with rice and beans",
+  "look": "two rolled corn tortillas smothered in red chile sauce and melted shredded cheese, scoop of orange-red Spanish rice, scoop of black beans, spoonful of sweet yellow corn",
+  "model": "gemini-flash-latest",
+  "name": "Cheese Enchilada Plate",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-11T23:45:48+00:00"
+ },
  "35d9a834ef63": {
   "avoid": [
    "raw chicken",
@@ -7661,6 +7696,40 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-01T20:34:12+00:00"
+ },
+ "487b3b177907": {
+  "avoid": [
+   "thick steak",
+   "ground beef",
+   "meatballs",
+   "skewers",
+   "lettuce wraps",
+   "raw meat",
+   "soup",
+   "rice bowl"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item grilled sliced meat?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat ground or crumbled like mince?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat served on skewers?",
+    "yes": false
+   }
+  ],
+  "dish": "Korean grilled beef short ribs",
+  "look": "flanken-cut grilled beef short ribs, dark charred edges, glossy brown glaze, cross-sections of small oval bones along the edges, sliced green onions, toasted sesame seeds",
+  "model": "gemini-flash-latest",
+  "name": "Beef Kalbi",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-11T23:45:48+00:00"
  },
  "488daa5009e7": {
   "avoid": [
@@ -11005,6 +11074,41 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T08:12:49+00:00"
+ },
+ "6d650962671b": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "bacon bits",
+   "raw cabbage",
+   "whole unroasted sprouts"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item roasted Brussels sprouts?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat or bacon mixed in?",
+    "yes": false
+   },
+   {
+    "q": "Do the vegetables appear pale and raw rather than roasted?",
+    "yes": false
+   }
+  ],
+  "dish": "maple roasted Brussels sprouts",
+  "look": "halved roasted Brussels sprouts, deeply browned caramelized flat edges, crisp dark outer leaves, glistening glossy sweet glaze, tender charred green surfaces",
+  "model": "gemini-flash-latest",
+  "name": "Maple Roasted Brussels Sprouts",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-11T23:45:48+00:00"
  },
  "6dad564a51d7": {
   "avoid": [
