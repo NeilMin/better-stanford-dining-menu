@@ -5666,6 +5666,42 @@
   "vessel": "plate",
   "written_at": "2026-09-26T23:04:05+00:00"
  },
+ "3722edb7d01f": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "bacon",
+   "raw asparagus",
+   "cheese sauce",
+   "hollandaise"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food cooked green asparagus spears?",
+    "yes": true
+   },
+   {
+    "q": "Is there meat, bacon, or seafood present?",
+    "yes": false
+   },
+   {
+    "q": "Does the asparagus look raw and uncooked?",
+    "yes": false
+   }
+  ],
+  "dish": "honey glazed asparagus",
+  "look": "slender green asparagus spears, tender pointed tips, glistening rich amber honey glaze coating, lightly charred blistered spots along stalks, subtle translucent sheen",
+  "model": "gemini-flash-latest",
+  "name": "Honey-Kissed Asparagus",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-13T10:53:24+00:00"
+ },
  "37354abb6d07": {
   "avoid": [
    "meat",
@@ -9893,6 +9929,41 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T05:33:17+00:00"
  },
+ "5e67d04e8728": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "tomato sauce",
+   "marinara",
+   "cream sauce"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item pasta noodles tossed in oil?",
+    "yes": true
+   },
+   {
+    "q": "Is there meat, poultry, or seafood with the pasta?",
+    "yes": false
+   },
+   {
+    "q": "Is the pasta covered in red tomato sauce?",
+    "yes": false
+   }
+  ],
+  "dish": "linguine aglio e olio",
+  "look": "tangled nest of long flat linguine pasta, glossy olive oil coating, toasted golden-brown sliced garlic chips, minced fresh green parsley flecks, scattered red pepper chili flakes",
+  "model": "gemini-flash-latest",
+  "name": "Linguine Aglio e Olio",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-13T10:53:24+00:00"
+ },
  "5f78ede6761e": {
   "avoid": [
    "meat",
@@ -11908,6 +11979,40 @@
   "vessel": "bowl",
   "written_at": "2026-09-26T23:10:44+00:00"
  },
+ "7559986e1da1": {
+  "avoid": [
+   "white fish",
+   "tofu",
+   "raw salmon",
+   "sashimi",
+   "creamy sauce",
+   "rice",
+   "side salad",
+   "lemon slices"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a cooked salmon fillet?",
+    "yes": true
+   },
+   {
+    "q": "Is the salmon raw like sashimi?",
+    "yes": false
+   },
+   {
+    "q": "Is the fish white-fleshed?",
+    "yes": false
+   }
+  ],
+  "dish": "crispy skin salmon fillet",
+  "look": "crisp seared salmon fillet, golden-brown crackling salmon skin facing up, flaky moist pinkish-orange fish meat, coarse flaky sea salt crystals scattered on crisp skin",
+  "model": "gemini-flash-latest",
+  "name": "Crispy Skinned Salmon",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-13T10:53:24+00:00"
+ },
  "7596f807e76b": {
   "avoid": [
    "omelet",
@@ -12788,6 +12893,41 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-08T10:50:06+00:00"
+ },
+ "7d73d641d8dd": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "cubed tofu",
+   "raw white tofu",
+   "rice bowl"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a slab or steak of seasoned tofu?",
+    "yes": true
+   },
+   {
+    "q": "Is the main protein animal meat or fish?",
+    "yes": false
+   },
+   {
+    "q": "Is the tofu diced into small bite-sized cubes?",
+    "yes": false
+   }
+  ],
+  "dish": "blackened tofu steak",
+  "look": "thick rectangular slab of blackened tofu steak, deeply charred reddish-dark cajun spice crust, seared browned edges, firm white-soy interior showing along sliced edge, subtle dry spice rub texture",
+  "model": "gemini-flash-latest",
+  "name": "Charred Blackened Tofu Steak",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-13T10:53:24+00:00"
  },
  "7dd5a5ea602e": {
   "avoid": [
@@ -17774,6 +17914,42 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-10-05T10:51:19+00:00"
+ },
+ "ae22677e5df3": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "onion rings",
+   "raw onions",
+   "diced onions",
+   "gravy"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food cooked whole flat onions?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat or poultry?",
+    "yes": false
+   },
+   {
+    "q": "Are the onions breaded and fried like onion rings?",
+    "yes": false
+   }
+  ],
+  "dish": "caramelized cipollini onions",
+  "look": "whole flattened cipollini onions, glossy deep golden-brown caramelized surface, tender translucent layers, whole fresh thyme leaves, scattered minced green parsley",
+  "model": "gemini-flash-latest",
+  "name": "Caramelized Cipollini Onions",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-13T10:53:24+00:00"
  },
  "ae77b32c45b7": {
   "avoid": [
@@ -24105,6 +24281,42 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-08T10:50:06+00:00"
+ },
+ "e74e8a439e1a": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "salmon fillet",
+   "pasta",
+   "vegetables",
+   "mashed potatoes"
+  ],
+  "checks": [
+   {
+    "q": "Is the food a creamy pale sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the sauce served over a piece of fish or meat?",
+    "yes": false
+   },
+   {
+    "q": "Is the sauce a red or dark brown gravy?",
+    "yes": false
+   }
+  ],
+  "dish": "lemon beurre blanc",
+  "look": "smooth velvety pale ivory-yellow butter sauce, warm emulsified cream texture, glossy reflective sheen, tiny specks of translucent minced shallot, rich creamy consistency with subtle ripples",
+  "model": "gemini-flash-latest",
+  "name": "Lemon Beurre Blanc",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-13T10:53:24+00:00"
  },
  "e7579de20495": {
   "avoid": [
