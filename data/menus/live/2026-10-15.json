@@ -1,6 +1,6 @@
 {
  "date": "2026-10-15",
- "scraped_at": "2026-10-13T03:42:59-07:00",
+ "scraped_at": "2026-10-13T13:42:58-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -610,6 +610,7 @@
      "description": "",
      "ingredients": "broccoli, black garlic, tamari, rice vinegar, ginger, sesame seeds, olive/canola oil blend, salt, black pepper",
      "allergens": [
+      "SESAME",
       "SOY"
      ],
      "trace_allergens": [],
@@ -644,9 +645,10 @@
      "allergens": [
       "MILK"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "WHEAT"
+     ],
      "tags": [
-      "gluten-free",
       "vegetarian",
       "halal"
      ],
@@ -2409,6 +2411,7 @@
      "description": "",
      "ingredients": "broccoli, black garlic, tamari, rice vinegar, ginger, sesame seeds, olive/canola oil blend, salt, black pepper",
      "allergens": [
+      "SESAME",
       "SOY"
      ],
      "trace_allergens": [],
@@ -2443,9 +2446,10 @@
      "allergens": [
       "MILK"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "WHEAT"
+     ],
      "tags": [
-      "gluten-free",
       "vegetarian",
       "halal"
      ],
@@ -3150,6 +3154,7 @@
      "description": "",
      "ingredients": "broccoli, black garlic, tamari, rice vinegar, ginger, sesame seeds, olive/canola oil blend, salt, black pepper",
      "allergens": [
+      "SESAME",
       "SOY"
      ],
      "trace_allergens": [],
@@ -3184,9 +3189,10 @@
      "allergens": [
       "MILK"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "WHEAT"
+     ],
      "tags": [
-      "gluten-free",
       "vegetarian",
       "halal"
      ],
@@ -3825,29 +3831,34 @@
    ],
    "Dinner": [
     {
-     "name": "Grilled NY Steak with Peppercorn Sauce",
-     "recipe_id": "NYSteakPepperSauce1",
+     "name": "Carne Asada Tacos",
+     "recipe_id": "4553405",
      "description": "",
-     "ingredients": "New York strip steak, beef soup base, onions, garlic, green peppercorns, Dijon mustard, butter, parsley, olive/canola oil blend, salt, black pepper",
+     "ingredients": "flour tortilla, carne asada (beef, canola/olive oil blend, lime juice, garlic, oregano, cilantro, pepper, cumin, chili powder, salt), ancho chili powder, smoked paprika, cilantro, black beans, salsa roja (tomatoes, jalapeno chilis, de arbol chili pepper, puya chili pepper, red onion, garlic, cilantro, lime juice, salt, sugar), salt, pepper",
      "allergens": [
-      "MILK"
+      "WHEAT"
      ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
       "halal"
      ],
      "order": 0
     },
     {
-     "name": "Grilled Portobello with Herb Sauce",
-     "recipe_id": "PortHerbSauce1",
+     "name": "Cauliflower Taco with Chilies",
+     "recipe_id": "5709101",
      "description": "",
-     "ingredients": "portobello mushrooms, parsley, garlic, lemon juice, thyme, oregano, dijon mustard, olive/canola oil blend, salt, black pepper",
+     "ingredients": "cauliflower, corn tortilla, pinto beans, al pastor marinade (achiote paste, salt, sugar, garlic, onions, vinegar, cumin seed, orange juice, guajillo chili, ancho chili), pineapples, onions, cilantro",
      "allergens": [],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "EGG",
+      "MILK",
+      "PEANUTS",
+      "SOY",
+      "TREENUTS",
+      "WHEAT"
+     ],
      "tags": [
-      "gluten-free",
       "vegan",
       "halal"
      ],
@@ -3882,13 +3893,11 @@
      "order": 3
     },
     {
-     "name": "Black Garlic Broccoli",
-     "recipe_id": "BlkGarlicBroc1",
+     "name": "Guacamole",
+     "recipe_id": "3256337",
      "description": "",
-     "ingredients": "broccoli, black garlic, tamari, rice vinegar, ginger, sesame seeds, olive/canola oil blend, salt, black pepper",
-     "allergens": [
-      "SOY"
-     ],
+     "ingredients": "haas avocados, white onions, jalapeno, tomatoes, cilantro, lime, salt",
+     "allergens": [],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
@@ -3898,63 +3907,59 @@
      "order": 4
     },
     {
-     "name": "Creamed Spinach",
-     "recipe_id": "4458869",
+     "name": "Pico De Gallo",
+     "recipe_id": "3122814",
      "description": "",
-     "ingredients": "spinach, flour, sour cream, butter, onions, nutmeg, salt",
-     "allergens": [
-      "MILK",
-      "WHEAT"
-     ],
+     "ingredients": "tomatoes, onions, cilantro, jalapeno peppers, lime juice, salt",
+     "allergens": [],
      "trace_allergens": [],
      "tags": [
-      "vegetarian",
+      "gluten-free",
+      "vegan",
       "halal"
      ],
      "order": 5
     },
     {
-     "name": "Truffle Parmesan Fries",
-     "recipe_id": "TruffParmFries1",
+     "name": "Beans and Rice",
+     "recipe_id": "Beans&Rice1",
      "description": "",
-     "ingredients": "potatoes, parmesan cheese, parsley, truffle oil, garlic, olive/canola oil blend, salt, black pepper",
-     "allergens": [
-      "MILK"
-     ],
+     "ingredients": "beans, rice, salt",
+     "allergens": [],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
-      "vegetarian",
+      "vegan",
       "halal"
      ],
      "order": 6
     },
     {
-     "name": "Creamy Mac & Cheese",
-     "recipe_id": "4233582",
+     "name": "Salsa Roja",
+     "recipe_id": "5395491",
      "description": "",
-     "ingredients": "macaroni, cheese sauce (non-halal parmesan cheese, white cheddar cheese, fontina cheese, whole milk, butter, flour, dijon mustard, onions, salt, nutmeg, bay leaf)",
-     "allergens": [
-      "MILK",
-      "WHEAT"
-     ],
+     "ingredients": "tomatoes, jalapeno chilis, chili de arbol, onions, garlic, cilantro, lime juice, salt, sugar",
+     "allergens": [],
      "trace_allergens": [],
      "tags": [
-      "vegetarian"
+      "gluten-free",
+      "vegan",
+      "halal"
      ],
      "order": 7
     },
     {
-     "name": "Au Jus",
-     "recipe_id": "3861833",
+     "name": "Tomatillo Salsa",
+     "recipe_id": "4381917",
      "description": "",
-     "ingredients": "chicken soup base, carrots, celery, onion, canola/olive oil blend, thyme, bay leaf, butter, flour, salt, pepper",
-     "allergens": [
-      "MILK",
-      "WHEAT"
-     ],
+     "ingredients": "tomatillo, cilantro, serrano chile, onions, garlic, salt",
+     "allergens": [],
      "trace_allergens": [],
-     "tags": [],
+     "tags": [
+      "gluten-free",
+      "vegan",
+      "halal"
+     ],
      "order": 8
     },
     {

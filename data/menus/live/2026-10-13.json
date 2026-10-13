@@ -1,6 +1,6 @@
 {
  "date": "2026-10-13",
- "scraped_at": "2026-10-13T03:42:59-07:00",
+ "scraped_at": "2026-10-13T13:42:58-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -243,26 +243,17 @@
      "order": 0
     },
     {
-     "name": "Lemongrass Tempeh & Shiitake Mushroom",
-     "recipe_id": "LmgTnM17",
+     "name": "Lemongrass Tofu & Shiitake Mushrooms",
+     "recipe_id": "LmnTofuMush1",
      "description": "",
-     "ingredients": "tempeh, shiitake mushrooms, lemongrass marinade (lemongrass, vegan fish sauce, tamari, green onions, salt, black pepper, olive/canola blended oil)",
+     "ingredients": "tofu, shiitake mushrooms, lemongrass marinade (lemongrass, vegan fish sauce, tamari, green onions, salt, black pepper, olive/canola blended oil)",
      "allergens": [
-      "SOY",
-      "WHEAT"
+      "SOY"
      ],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "TREENUTS"
-     ],
+     "trace_allergens": [],
      "tags": [
-      "vegetarian",
+      "gluten-free",
+      "vegan",
       "halal"
      ],
      "order": 1
@@ -1319,73 +1310,41 @@
      "order": 6
     },
     {
-     "name": "Grilled Chicken",
-     "recipe_id": "520454-02",
+     "name": "White Corn Tortilla",
+     "recipe_id": "TORFP_CASE",
      "description": "",
-     "ingredients": "chicken, canola/olive oil blend, salt, pepper",
+     "ingredients": "ground corn treated with lime, propionic acid, sodium phosphate, dextrose",
      "allergens": [],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
-     ],
+     "trace_allergens": [],
      "tags": [
+      "gluten-free",
+      "vegan",
       "halal"
      ],
      "order": 7
     },
     {
-     "name": "Grilled Vegan/Vegetarian",
-     "recipe_id": "13468741",
+     "name": "Soft Shell Crab Sando BLT",
+     "recipe_id": "SSCSBLT99",
      "description": "",
-     "ingredients": "chef's choice grilled vegan OR vegetarian option",
-     "allergens": [],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
-     ],
-     "tags": [
-      "halal"
-     ],
-     "order": 8
-    },
-    {
-     "name": "Crispy Fish Sandwich",
-     "recipe_id": "CFS99",
-     "description": "",
-     "ingredients": "Brioche bun, fish, panko, tartar sauce,",
+     "ingredients": "wheat, tomato, lettuce, mayo, garlic, thyme, hot sauce, egg, crab, bacon, honey pepper, pickles",
      "allergens": [
       "EGG",
-      "FISH",
+      "MILK",
+      "SHELLFISH",
       "SOY",
       "WHEAT",
       "TRACEALLERGENS"
      ],
      "trace_allergens": [
       "COCONUT",
-      "MILK",
+      "FISH",
       "PEANUTS",
       "SESAME",
-      "SHELLFISH",
       "TREENUTS"
      ],
      "tags": [],
-     "order": 9
+     "order": 8
     },
     {
      "name": "Panini Station",
@@ -1403,17 +1362,23 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 10
+     "order": 9
     },
     {
-     "name": "Soup of the Day",
-     "recipe_id": "SoupoftheDay",
+     "name": "New England Clam Chowder",
+     "recipe_id": "5850149",
      "description": "",
-     "ingredients": "chef's choice soup of the day",
-     "allergens": [],
+     "ingredients": "potato, clam meat, onion, celery, whole milk, clam soup base, clam juice, flour, unsalted butter, cream, shallot, garlic, bay leaf, thyme, white vinegar",
+     "allergens": [
+      "MILK",
+      "SHELLFISH",
+      "WHEAT"
+     ],
      "trace_allergens": [],
-     "tags": [],
-     "order": 11
+     "tags": [
+      "halal"
+     ],
+     "order": 10
     },
     {
      "name": "Composed Salad",
@@ -1425,7 +1390,7 @@
      "tags": [
       "halal"
      ],
-     "order": 12
+     "order": 11
     },
     {
      "name": "Performance Bar",
@@ -1435,7 +1400,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 13
+     "order": 12
     },
     {
      "name": "Craveable Grains",
@@ -1449,7 +1414,7 @@
       "vegan",
       "halal"
      ],
-     "order": 14
+     "order": 13
     },
     {
      "name": "Flavor Forward Legumes",
@@ -1463,7 +1428,7 @@
       "vegan",
       "halal"
      ],
-     "order": 15
+     "order": 14
     },
     {
      "name": "Pasta Marinara",
@@ -1481,25 +1446,23 @@
       "vegan",
       "halal"
      ],
-     "order": 16
+     "order": 15
     },
     {
-     "name": "Pasta Pesto",
-     "recipe_id": "3857040",
+     "name": "Creamy Spinach Sauce",
+     "recipe_id": "CreamySpin(lakeside)",
      "description": "",
-     "ingredients": "pasta, pesto sauce (basil, canola oil, parmesan cheese, extra virgin olive oil, garlic, lemon juice concentrate, natural flavor, ascorbic acid, xanthan gum, soy lecithin, chamomile extract, rosemary extract, salt)",
+     "ingredients": "cream, milk, spinach, milk powder, butter, parmesan cheese, flour, garlic, salt, white pepper, nutmeg, onion powder",
      "allergens": [
       "MILK",
-      "SOY",
       "WHEAT"
      ],
-     "trace_allergens": [
-      "EGG"
-     ],
+     "trace_allergens": [],
      "tags": [
-      "vegetarian"
+      "vegetarian",
+      "halal"
      ],
-     "order": 17
+     "order": 16
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -1513,7 +1476,7 @@
       "vegan",
       "halal"
      ],
-     "order": 18
+     "order": 17
     }
    ],
    "Dinner": [

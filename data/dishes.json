@@ -1187,7 +1187,7 @@
   "image": "0bccc85d0934.webp",
   "ingredients": "cream, milk, spinach, milk powder, butter, parmesan cheese, flour, garlic, salt, white pepper, nutmeg, onion powder",
   "is_station": false,
-  "last_seen": "2026-10-09",
+  "last_seen": "2026-10-13",
   "min_order": 9,
   "model": "sdxl",
   "name": "Creamy Spinach Sauce",
@@ -3307,6 +3307,28 @@
   "station_only": false,
   "tags": [
    "vegan"
+  ]
+ },
+ "1c772e7ff575": {
+  "category": "vegan",
+  "first_seen": "2026-10-15",
+  "icon": "plate",
+  "image": null,
+  "ingredients": "haas avocados, white onions, jalapeno, tomatoes, cilantro, lime, salt",
+  "is_station": false,
+  "last_seen": "2026-10-15",
+  "min_order": 4,
+  "name": "Guacamole",
+  "needs_image": true,
+  "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, meat, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
+  "placeholder": false,
+  "priority": 2,
+  "prompt": "Guacamole, made with haas avocados, white onions, jalapeno, tomatoes, cilantro, lime, plant-based, no meat, no dairy, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "station_only": false,
+  "tags": [
+   "gluten-free",
+   "vegan",
+   "halal"
   ]
  },
  "1c926658dd7d": {
@@ -5746,17 +5768,15 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "A stack of round flat corn tortillas topped with lime slices on a white plate."
   },
-  "last_seen": "2026-09-24",
+  "last_seen": "2026-10-13",
   "min_order": 3,
   "model": "sdxl",
   "name": "White Corn Tortilla",
   "needs_image": true,
-  "negative": "tortilla with additives, preservatives, sodium phosphate, dextrose, propionic acid, meat, cheese, eggs, dairy, gluten, non-vegan ingredients, burrito, wrap, taco, noodles, soup, messy, blurry, low detail",
+  "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, meat, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
   "placeholder": false,
   "priority": 1,
-  "prompt": "A single, freshly made white corn tortilla, made from ground corn and lime, plated on a simple white ceramic plate, overhead three-quarter view, centered composition, generous empty margin around plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail.",
-  "prompt_compiled": true,
-  "prompt_compiler_rev": 1,
+  "prompt": "White Corn Tortilla, made with ground corn treated with lime, plant-based, no meat, no dairy, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
   "prompt_rev": 5,
   "seed": 821990390,
   "station_only": false,
@@ -9050,7 +9070,6 @@
   "seed": 1217267864,
   "station_only": false,
   "tags": [
-   "gluten-free",
    "vegetarian",
    "halal"
   ]
@@ -10124,8 +10143,8 @@
   "image": "51f9f0b5ef8c.webp",
   "ingredients": "tomatoes, onions, cilantro, jalapeno peppers, lime juice, salt",
   "is_station": false,
-  "last_seen": "2026-09-18",
-  "min_order": 7,
+  "last_seen": "2026-10-15",
+  "min_order": 5,
   "model": "sdxl",
   "name": "Pico De Gallo",
   "needs_image": true,
@@ -10501,7 +10520,7 @@
  },
  "5582dc2d6e3b": {
   "brief_rev": 6,
-  "category": "vegan",
+  "category": "other",
   "first_seen": "2026-10-17",
   "generated_at": "2026-10-11T10:52:22+00:00",
   "icon": "plate",
@@ -10518,16 +10537,14 @@
   "model": "sdxl",
   "name": "Crispy Corn Tostada",
   "needs_image": true,
-  "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, meat, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
+  "negative": "text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
   "placeholder": false,
   "priority": 2,
-  "prompt": "Crispy Corn Tostada, made with corn, lime, phosphonic acid, plant-based, no meat, no dairy, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "prompt": "Crispy Corn Tostada, made with corn, lime, phosphonic acid, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
   "prompt_rev": 9,
   "seed": 1434639405,
   "station_only": false,
-  "tags": [
-   "vegan"
-  ]
+  "tags": []
  },
  "55acf1b8e748": {
   "brief_rev": 6,
@@ -15977,6 +15994,27 @@
    "halal"
   ]
  },
+ "87c03fe72a08": {
+  "category": "vegan",
+  "first_seen": "2026-10-15",
+  "icon": "plate",
+  "image": null,
+  "ingredients": "cauliflower, corn tortilla, pinto beans, al pastor marinade (achiote paste, salt, sugar, garlic, onions, vinegar, cumin seed, orange juice, guajillo chili, ancho chili), pineapples, onions, cilantro",
+  "is_station": false,
+  "last_seen": "2026-10-15",
+  "min_order": 1,
+  "name": "Cauliflower Taco with Chilies",
+  "needs_image": true,
+  "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, meat, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
+  "placeholder": false,
+  "priority": 1,
+  "prompt": "Cauliflower Taco with Chilies, made with cauliflower, corn tortilla, pinto beans, al pastor marinade, pineapples, onions, cilantro, plant-based, no meat, no dairy, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "station_only": false,
+  "tags": [
+   "vegan",
+   "halal"
+  ]
+ },
  "87c1dec4052f": {
   "category": "vegan",
   "first_seen": "2026-09-20",
@@ -18318,6 +18356,28 @@
    "vegan"
   ]
  },
+ "98eef9154b9b": {
+  "category": "vegan",
+  "first_seen": "2026-10-15",
+  "icon": "plate",
+  "image": null,
+  "ingredients": "tomatillo, cilantro, serrano chile, onions, garlic, salt",
+  "is_station": false,
+  "last_seen": "2026-10-15",
+  "min_order": 8,
+  "name": "Tomatillo Salsa",
+  "needs_image": true,
+  "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, meat, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
+  "placeholder": false,
+  "priority": 2,
+  "prompt": "Tomatillo Salsa, made with tomatillo, cilantro, serrano chile, onions, garlic, plant-based, no meat, no dairy, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "station_only": false,
+  "tags": [
+   "gluten-free",
+   "vegan",
+   "halal"
+  ]
+ },
  "9916de4fffd2": {
   "brief_rev": 6,
   "category": "vegan",
@@ -18724,6 +18784,27 @@
    "halal"
   ]
  },
+ "9cf7695a8a3e": {
+  "category": "vegetarian",
+  "first_seen": "2026-10-17",
+  "icon": "plate",
+  "image": null,
+  "ingredients": "flour tortilla, eggs, onion, cilantro, cojita cheese, sour cream, tomatillo salsa (tomatillos, onion, serrano chile, garlic, cilantro, salt), radish, garlic, canola/olive oil blend, salt",
+  "is_station": false,
+  "last_seen": "2026-10-17",
+  "min_order": 0,
+  "name": "Chilaquiles with Tomatillo Salsa",
+  "needs_image": true,
+  "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, meat, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
+  "placeholder": false,
+  "priority": 1,
+  "prompt": "Chilaquiles with Tomatillo Salsa, made with flour tortilla, eggs, onion, cilantro, cojita cheese, sour cream, tomatillo salsa, radish, vegetarian, no meat, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "station_only": false,
+  "tags": [
+   "vegetarian",
+   "halal"
+  ]
+ },
  "9cfb031aed34": {
   "category": "vegan",
   "first_seen": "2026-09-22",
@@ -18939,8 +19020,8 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "Four soft tacos filled with dark meat, black beans, white cream, and fresh cilantro, served with a side of red salsa and lime."
   },
-  "last_seen": "2026-10-13",
-  "min_order": 5,
+  "last_seen": "2026-10-15",
+  "min_order": 0,
   "model": "sdxl",
   "name": "Carne Asada Tacos",
   "needs_image": true,
@@ -20836,7 +20917,7 @@
   "image": "acfb63cd10c2.webp",
   "ingredients": "beans, rice, salt",
   "is_station": false,
-  "last_seen": "2026-09-18",
+  "last_seen": "2026-10-15",
   "min_order": 5,
   "model": "sdxl",
   "name": "Beans and Rice",
@@ -22612,6 +22693,28 @@
   "seed": 3120162552,
   "station_only": false,
   "tags": [
+   "halal"
+  ]
+ },
+ "b9fa6e1de1d6": {
+  "category": "vegan",
+  "first_seen": "2026-10-15",
+  "icon": "plate",
+  "image": null,
+  "ingredients": "tomatoes, jalapeno chilis, chili de arbol, onions, garlic, cilantro, lime juice, salt, sugar",
+  "is_station": false,
+  "last_seen": "2026-10-15",
+  "min_order": 7,
+  "name": "Salsa Roja",
+  "needs_image": true,
+  "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, meat, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
+  "placeholder": false,
+  "priority": 2,
+  "prompt": "Salsa Roja, made with tomatoes, jalapeno chilis, chili de arbol, onions, garlic, cilantro, plant-based, no meat, no dairy, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "station_only": false,
+  "tags": [
+   "gluten-free",
+   "vegan",
    "halal"
   ]
  },
@@ -25298,6 +25401,28 @@
   "station_only": false,
   "tags": [
    "vegetarian",
+   "halal"
+  ]
+ },
+ "cfd6ef0cb952": {
+  "category": "vegan",
+  "first_seen": "2026-10-13",
+  "icon": "plate",
+  "image": null,
+  "ingredients": "tofu, shiitake mushrooms, lemongrass marinade (lemongrass, vegan fish sauce, tamari, green onions, salt, black pepper, olive/canola blended oil)",
+  "is_station": false,
+  "last_seen": "2026-10-13",
+  "min_order": 1,
+  "name": "Lemongrass Tofu & Shiitake Mushrooms",
+  "needs_image": true,
+  "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, meat, potato, potatoes, sweet potato, sweet potato cubes, potato cubes, potato chunks, french fries, cheese cubes, yellow cheddar, noodles, pasta, shredded cabbage bed, white sauce base, puree, mash, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
+  "placeholder": false,
+  "priority": 1,
+  "prompt": "Lemongrass Tofu & Shiitake Mushrooms, crispy golden pan-seared firm tofu cubes with tender curd interior, made with tofu, shiitake mushrooms, lemongrass marinade, plant-based, no meat, no dairy, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "station_only": false,
+  "tags": [
+   "gluten-free",
+   "vegan",
    "halal"
   ]
  },
@@ -28952,7 +29077,7 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "A fried patty topped with a soft-cooked egg and sauce, served on a bun with lettuce."
   },
-  "last_seen": "2026-09-24",
+  "last_seen": "2026-10-13",
   "min_order": 8,
   "model": "cf-flux",
   "name": "Soft Shell Crab Sando BLT",
