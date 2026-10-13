@@ -1867,6 +1867,39 @@
   "vessel": "plate",
   "written_at": "2026-10-11T10:10:28+00:00"
  },
+ "18d97ee10480": {
+  "avoid": [
+   "yellow curry",
+   "green curry",
+   "shrimp",
+   "chicken",
+   "uncut beef steak",
+   "noodles",
+   "fried rice"
+  ],
+  "checks": [
+   {
+    "q": "Is the main dish sliced meat in a red curry sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the curry sauce green or bright yellow?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat a whole un-sliced steak?",
+    "yes": false
+   }
+  ],
+  "dish": "Thai red beef curry with jasmine rice",
+  "look": "tender thin slices of beef simmered in rich red coconut curry sauce, sliced red bell peppers, fresh Thai basil leaves, paired with steamed white jasmine rice and blistered green beans tossed in minced garlic",
+  "model": "gemini-flash-latest",
+  "name": "Thai Red Curry Beef with Steamed Jasmine Rice and Garlic Green Beans",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-12T22:42:49+00:00"
+ },
  "19342ed7ddc3": {
   "avoid": [
    "noodles",
@@ -8973,6 +9006,38 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T06:46:09+00:00"
  },
+ "5363b4bf31ec": {
+  "avoid": [
+   "thick red curry",
+   "creamy soup",
+   "beef steak",
+   "chicken wings",
+   "ramen noodles",
+   "fried rice"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a broth-based soup or stew with meat and greens?",
+    "yes": true
+   },
+   {
+    "q": "Is the broth a thick creamy red or orange sauce?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat breaded and deep-fried?",
+    "yes": false
+   }
+  ],
+  "dish": "pork sinigang",
+  "look": "tender simmered pork belly chunks, clear sour tamarind broth, wilted water spinach leaves, tender eggplant slices, whole green chili, served over a mound of fluffy steamed white jasmine rice",
+  "model": "gemini-flash-latest",
+  "name": "Pork Sinigang Over Jasmine Rice",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-12T22:42:49+00:00"
+ },
  "539ff0721ca5": {
   "avoid": [
    "tacos",
@@ -10392,6 +10457,38 @@
   "vessel": "plate",
   "written_at": "2026-09-28T17:10:56+00:00"
  },
+ "65fa6f31dbe4": {
+  "avoid": [
+   "glazed round donuts",
+   "pancakes",
+   "waffles",
+   "whipped cream tower",
+   "iced beverage",
+   "meat"
+  ],
+  "checks": [
+   {
+    "q": "Are there long ridged fried pastries served with chocolate?",
+    "yes": true
+   },
+   {
+    "q": "Are the pastries round ring donuts?",
+    "yes": false
+   },
+   {
+    "q": "Is the beverage a clear iced drink?",
+    "yes": false
+   }
+  ],
+  "dish": "churros with spiced hot chocolate",
+  "look": "golden-brown crispy fried churros with star-shaped ridges, generous coating of cinnamon sugar, paired with a small ceramic cup of thick dark glossy spiced hot chocolate, pinch of cinnamon on top",
+  "model": "gemini-flash-latest",
+  "name": "Spiced Hot Chocolate with Churros",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-12T22:42:49+00:00"
+ },
  "66192846a159": {
   "avoid": [
    "meat",
@@ -11464,6 +11561,40 @@
   "vessel": "plate",
   "written_at": "2026-09-27T04:53:30+00:00"
  },
+ "70446c063eaf": {
+  "avoid": [
+   "salmon",
+   "pink fish",
+   "battered fried fish",
+   "fish sticks",
+   "tofu",
+   "rice",
+   "pasta",
+   "shrimp"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a seared fillet of white-fleshed fish?",
+    "yes": true
+   },
+   {
+    "q": "Is the fish pink or orange like salmon?",
+    "yes": false
+   },
+   {
+    "q": "Is the fish deep-fried in thick batter or breadcrumbs?",
+    "yes": false
+   }
+  ],
+  "dish": "seared cod fillet",
+  "look": "pan-seared white cod fillet, golden-brown crust with reddish paprika dusting, flaky white fish interior, roasted blistered cherry tomatoes on the side, fresh lemon wedge, chopped parsley and thyme",
+  "model": "gemini-flash-latest",
+  "name": "Seared Cod",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-12T22:42:49+00:00"
+ },
  "70ff9361bd69": {
   "avoid": [
    "meat",
@@ -11993,6 +12124,38 @@
   "vessel": "bowl",
   "written_at": "2026-09-26T23:12:38+00:00"
  },
+ "76bcbd5fdd9f": {
+  "avoid": [
+   "raw chicken",
+   "bone-in chicken legs",
+   "skewered dry chicken",
+   "french fries",
+   "burger bun",
+   "noodles"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item chicken chunks in an orange curry sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken dry roasted on skewers without sauce?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish served as a wrap or sandwich?",
+    "yes": false
+   }
+  ],
+  "dish": "butter chicken with rice and naan",
+  "look": "tender chicken chunks in rich orange butter chicken curry, vibrant vegetable florets in spiced sauce, fluffy steamed white basmati rice, warm charred triangle of naan bread, sprinkle of chopped fresh cilantro",
+  "model": "gemini-flash-latest",
+  "name": "Butter Chicken and Butter Vegetables with Steamed Basmati Rice and Naan Bread",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-12T22:40:49+00:00"
+ },
  "76de274cd428": {
   "avoid": [
    "soup",
@@ -12316,6 +12479,38 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T08:12:49+00:00"
+ },
+ "7b8739c7ff7f": {
+  "avoid": [
+   "whole pork chops",
+   "ground pork mince",
+   "battered deep fried pork",
+   "chicken breast",
+   "noodle soup broth",
+   "skewers"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish sliced meat and vegetables in a dark stir-fry sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat ground or crumbled like mince?",
+    "yes": false
+   },
+   {
+    "q": "Is the pork a single uncut chop or steak?",
+    "yes": false
+   }
+  ],
+  "dish": "Mongolian pork stir-fry",
+  "look": "thinly sliced tender pork strips in glossy dark brown Mongolian sauce, crinkle-cut carrot slices, sliced yellow onions, green bell pepper strips, sliced zucchini rounds, sprinkle of toasted sesame seeds, chopped scallions",
+  "model": "gemini-flash-latest",
+  "name": "Mongolian Pork Stir Fry",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-12T22:40:49+00:00"
  },
  "7bbae214b5dc": {
   "avoid": [
@@ -12834,6 +13029,38 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-10-01T10:25:41+00:00"
+ },
+ "811c35c98d4a": {
+  "avoid": [
+   "pork chop",
+   "sandwich bun",
+   "burger roll",
+   "french fries",
+   "ground meat",
+   "whole rack of ribs"
+  ],
+  "checks": [
+   {
+    "q": "Is shredded pulled meat served with macaroni and cheese?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat served inside a sandwich bun or roll?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat a whole un-shredded chop or steak?",
+    "yes": false
+   }
+  ],
+  "dish": "pulled pork with macaroni and cheese",
+  "look": "shredded tender smoked pulled pork, glossy reddish-brown barbecue sauce coating, paired with elbow macaroni in rich creamy melted cheddar cheese sauce, golden toasted breadcrumb crust",
+  "model": "gemini-flash-latest",
+  "name": "Pulled Pork with Creamy Mac and Cheese",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-12T22:42:49+00:00"
  },
  "81f15f5b56f3": {
   "avoid": [
@@ -13811,6 +14038,41 @@
   "revisions": 1,
   "vessel": "plate",
   "written_at": "2026-09-27T07:34:00+00:00"
+ },
+ "89e329bf440f": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "whole oysters",
+   "flat open soft tacos",
+   "large flour burrito"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish tightly rolled, fried crispy tortillas?",
+    "yes": true
+   },
+   {
+    "q": "Is the filling made of visible seafood fillets, whole oysters, or shrimp?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish served as open flat soft tacos?",
+    "yes": false
+   }
+  ],
+  "dish": "mushroom and jackfruit taquitos",
+  "look": "crispy golden rolled fried corn tortillas, shredded seasoned oyster mushroom and pulled jackfruit filling, generous drizzle of pale-green cilantro crema, crumbled cotija cheese, chopped fresh cilantro",
+  "model": "gemini-flash-latest",
+  "name": "Oyster Mushroom and Jackfruit Taquitos with Cilantro Crema",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-12T22:40:49+00:00"
  },
  "8a7b5b080c36": {
   "avoid": [
@@ -15507,6 +15769,41 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-10-11T10:10:28+00:00"
+ },
+ "9b798f559507": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "churros",
+   "spherical doughnut balls",
+   "pancake stack"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food flat, crispy fried pastry discs?",
+    "yes": true
+   },
+   {
+    "q": "Is the pastry shaped into spherical round balls?",
+    "yes": false
+   },
+   {
+    "q": "Are there any meat or savory toppings on the food?",
+    "yes": false
+   }
+  ],
+  "dish": "Mexican buñuelos with piloncillo syrup",
+  "look": "crispy golden-brown fried dough discs, bubbled thin pastry surface, fine dusting of cinnamon sugar, generous drizzle of glossy dark amber piloncillo syrup, pool of spiced syrup at base",
+  "model": "gemini-flash-latest",
+  "name": "Buñuelos & Piloncillo Syrup",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-12T22:40:49+00:00"
  },
  "9bed9f3e67d7": {
   "avoid": [
@@ -19565,6 +19862,39 @@
   "vessel": "bowl",
   "written_at": "2026-09-30T10:09:22+00:00"
  },
+ "bf2d3e810d6e": {
+  "avoid": [
+   "savory pizza",
+   "tomato sauce",
+   "cheese pizza",
+   "round pie",
+   "fruit tart",
+   "meat",
+   "chicken"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a thick baked cookie or cookie bar?",
+    "yes": true
+   },
+   {
+    "q": "Does the dish look like a savory cheese or pepperoni pizza?",
+    "yes": false
+   },
+   {
+    "q": "Is the dessert a slice of frosted sponge cake?",
+    "yes": false
+   }
+  ],
+  "dish": "chocolate chip pizookie",
+  "look": "thick warm golden-brown chocolate chip cookie bar square, gooey center, melted semi-sweet chocolate chips, scoop of vanilla ice cream melting on top, glossy chocolate fudge drizzle",
+  "model": "gemini-flash-latest",
+  "name": "Pizookie Dessert Bar",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-12T22:42:49+00:00"
+ },
  "bfa7e58d345b": {
   "avoid": [
    "meat",
@@ -20180,6 +20510,41 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T08:27:45+00:00"
+ },
+ "c659350003bb": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "red tomato sauce",
+   "marinara",
+   "raw pasta"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a slice of layered pasta?",
+    "yes": true
+   },
+   {
+    "q": "Is there visible red tomato sauce or meat sauce?",
+    "yes": false
+   },
+   {
+    "q": "Does the dish contain visible meat or seafood?",
+    "yes": false
+   }
+  ],
+  "dish": "butternut squash lasagna",
+  "look": "a square slice of baked lasagna, layered wavy pasta sheets, creamy golden-orange butternut squash filling, rich white bechamel sauce, melted bubbly mozzarella cheese topping with toasted golden-brown spots",
+  "model": "gemini-flash-latest",
+  "name": "Butternut Squash Lasagna",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-12T22:44:35+00:00"
  },
  "c68fde5b1223": {
   "avoid": [
@@ -21190,6 +21555,38 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-30T10:02:25+00:00"
+ },
+ "ced668d6aecc": {
+  "avoid": [
+   "marshmallows on skewers",
+   "campfire sticks",
+   "ice cream cone",
+   "round layer cake",
+   "meat",
+   "savory pastry"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a square layered dessert bar with toasted marshmallow topping?",
+    "yes": true
+   },
+   {
+    "q": "Are the marshmallows served on a wooden skewer or stick?",
+    "yes": false
+   },
+   {
+    "q": "Is the dessert a round frosted layer cake?",
+    "yes": false
+   }
+  ],
+  "dish": "s'mores bars",
+  "look": "thick layered dessert bar square, golden graham cracker crumb crust, dense dark chocolate fudge middle, toasted golden-brown puffy marshmallow topping with charred caramelized peaks",
+  "model": "gemini-flash-latest",
+  "name": "S'mores Bar",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-12T22:42:49+00:00"
  },
  "cfbec1603e6f": {
   "avoid": [
@@ -22414,6 +22811,38 @@
   "vessel": "plate",
   "written_at": "2026-09-30T10:06:09+00:00"
  },
+ "dc5e1403d970": {
+  "avoid": [
+   "bread bun",
+   "tortilla wrap",
+   "steamed rice",
+   "beef patties",
+   "fried crab cakes",
+   "hot soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the food shredded seafood salad served in fresh lettuce cups?",
+    "yes": true
+   },
+   {
+    "q": "Is the food served inside a sandwich bun or flatbread wrap?",
+    "yes": false
+   },
+   {
+    "q": "Is the seafood deep-fried into round cakes?",
+    "yes": false
+   }
+  ],
+  "dish": "crab Louis lettuce cups",
+  "look": "crisp butterhead lettuce cups, shredded red-and-white imitation crab meat salad, creamy pale-pink Louis dressing drizzle, quartered hard-boiled eggs, ripe diced red tomatoes, sprinkle of minced chives",
+  "model": "gemini-flash-latest",
+  "name": "Imitation Crab Louis Lettuce Cups",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-12T22:40:49+00:00"
+ },
  "dc80a7c19291": {
   "avoid": [
    "tortillas",
@@ -22448,6 +22877,41 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T06:14:59+00:00"
+ },
+ "dc84500374b2": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "baked whole pie",
+   "savory soup",
+   "ice cream cone"
+  ],
+  "checks": [
+   {
+    "q": "Is the food a layered dessert of sponge cake and cream?",
+    "yes": true
+   },
+   {
+    "q": "Is it a savory dish containing meat or vegetables?",
+    "yes": false
+   },
+   {
+    "q": "Is it a single sliced wedge of baked pie?",
+    "yes": false
+   }
+  ],
+  "dish": "autumn spiced trifle",
+  "look": "layered dessert of spiced pumpkin custard, cubed golden sponge cake, fluffy whipped cream, cinnamon-spiced cooked apple compote, chopped toasted pecans, dusting of ground nutmeg on cream rosettes",
+  "model": "gemini-flash-latest",
+  "name": "Fall Trifle",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-12T22:40:49+00:00"
  },
  "dc9ea5f39a91": {
   "avoid": [
@@ -23351,6 +23815,40 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T05:30:31+00:00"
  },
+ "e6394ffa4195": {
+  "avoid": [
+   "hot dog bun",
+   "bread",
+   "eggs",
+   "pancakes",
+   "pork",
+   "bacon",
+   "raw sausage",
+   "sauce"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item sausage links?",
+    "yes": true
+   },
+   {
+    "q": "Is the sausage served in a hot dog bun or sandwich?",
+    "yes": false
+   },
+   {
+    "q": "Is the sausage raw or uncooked?",
+    "yes": false
+   }
+  ],
+  "dish": "beef breakfast sausage links",
+  "look": "three plump browned beef breakfast sausage links, taut caramelized casings, deep golden-brown sear marks, savory glistening surface, rounded tips, juicy roasted texture",
+  "model": "gemini-flash-latest",
+  "name": "Beef Breakfast Sausage",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-12T22:44:35+00:00"
+ },
  "e639cae5d3c2": {
   "avoid": [
    "chicken",
@@ -23643,22 +24141,20 @@
  },
  "e799bf6421d6": {
   "avoid": [
-   "fried egg",
-   "poached egg",
-   "scrambled eggs",
+   "red cabbage",
+   "red onions",
+   "leafy herbs",
+   "egg",
    "cheese",
    "tortillas",
-   "pork sausage links",
-   "sliced sausage rounds",
    "meat",
    "chicken",
-   "beef",
    "pork",
    "fish"
   ],
   "checks": [
    {
-    "q": "Is the dish a skillet hash of cubed potatoes and crumbled red soyrizo?",
+    "q": "Is the main dish a potato hash with red sausage crumbles?",
     "yes": true
    },
    {
@@ -23671,13 +24167,13 @@
    }
   ],
   "dish": "soyrizo potato hash",
-  "look": "golden browned crispy diced potatoes tossed with crumbled dark red soyrizo, diced sautéed red bell peppers, soft translucent diced onions, paprika-tinted sheen, flecks of garlic",
-  "model": "gemini-flash-latest",
+  "look": "crumbled dark red spicy soyrizo mixed thoroughly with golden browned crispy cubed potatoes, sautéed diced red bell peppers, translucent diced onions, paprika-tinted reddish sheen, flecks of minced garlic",
+  "model": "gemini-3.5-flash",
   "name": "Soyrizo Hash",
   "rev": 6,
-  "revisions": 0,
+  "revisions": 1,
   "vessel": "plate",
-  "written_at": "2026-10-12T11:13:42+00:00"
+  "written_at": "2026-10-13T00:06:37+00:00"
  },
  "e7f69acf1c33": {
   "avoid": [
@@ -24527,6 +25023,38 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-09T20:12:31+00:00"
+ },
+ "efa6cc2f7a15": {
+  "avoid": [
+   "thick pizza dough",
+   "yeast crust",
+   "folded taco",
+   "rolled burrito",
+   "tortilla chips nachos",
+   "soft raw tortillas"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish flat crisp tortillas topped with melted cheese and red sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the crust made of thick Italian yeast pizza dough?",
+    "yes": false
+   },
+   {
+    "q": "Is the tortilla folded or rolled like a burrito or taco?",
+    "yes": false
+   }
+  ],
+  "dish": "Mexican pizza",
+  "look": "two stacked round crispy fried flour tortillas, refried bean filling, layer of smooth red enchilada pizza sauce, melted shredded cheddar and Monterey Jack cheese, diced fresh red tomatoes, sliced black olives, chopped scallions",
+  "model": "gemini-flash-latest",
+  "name": "Mexican Pizza",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-12T22:40:49+00:00"
  },
  "efbf6f0822af": {
   "avoid": [
@@ -25614,6 +26142,38 @@
   "vessel": "bowl",
   "written_at": "2026-09-26T23:07:13+00:00"
  },
+ "fa040cad1d6e": {
+  "avoid": [
+   "whole pork chops",
+   "sliced beef steak",
+   "uncooked white rice",
+   "noodle broth soup",
+   "fried eggs",
+   "raw eggplant"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish minced meat and eggplant over yellow rice?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat served as large sliced steaks or whole cutlets?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a broth-based noodle soup?",
+    "yes": false
+   }
+  ],
+  "dish": "Cambodian eggplant and minced pork stir-fry",
+  "look": "crumbled browned minced pork, tender sauteed purple-skinned eggplant chunks, glossy dark garlic soy glaze, thinly sliced green onions, fluffy steamed bright yellow turmeric rice",
+  "model": "gemini-flash-latest",
+  "name": "Chha Trob - Cambodian Minced Pork and Eggplant Stir-Fry Over Turmeric Rice",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-12T22:40:49+00:00"
+ },
  "fa38633fd9bb": {
   "avoid": [
    "chicken",
@@ -25826,6 +26386,40 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-28T01:14:44+00:00"
+ },
+ "fc542e687e43": {
+  "avoid": [
+   "flour tortilla burrito",
+   "hard shell yellow taco kit",
+   "meat",
+   "ground beef",
+   "shredded chicken",
+   "pork",
+   "fish",
+   "shrimp"
+  ],
+  "checks": [
+   {
+    "q": "Are the main items crispy folded corn tacos?",
+    "yes": true
+   },
+   {
+    "q": "Do the tacos contain visible ground beef, chicken, or other meat?",
+    "yes": false
+   },
+   {
+    "q": "Are they large rolled cylindrical burritos?",
+    "yes": false
+   }
+  ],
+  "dish": "tacos de papa",
+  "look": "crispy golden-brown folded corn tortillas stuffed with seasoned mashed potatoes, topped with shredded green cabbage, crumbled white cotija cheese, drizzle of crema, spoonful of red salsa",
+  "model": "gemini-flash-latest",
+  "name": "Tacos de Papa",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-12T22:42:49+00:00"
  },
  "fc857dc2c40c": {
   "avoid": [
