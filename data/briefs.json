@@ -3613,6 +3613,41 @@
   "vessel": "bowl",
   "written_at": "2026-10-02T10:14:36+00:00"
  },
+ "26b9e9a818aa": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "tofu",
+   "rice",
+   "noodles"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a stir-fry of mixed vegetables in a dark sauce?",
+    "yes": true
+   },
+   {
+    "q": "Does the dish contain meat, chicken, or seafood?",
+    "yes": false
+   },
+   {
+    "q": "Does the dish contain large cubes of tofu?",
+    "yes": false
+   }
+  ],
+  "dish": "Kung Pao vegetables",
+  "look": "sliced shiitake mushroom caps, sautéed green zucchini rounds, diced red bell peppers, sliced carrots, and translucent onions, tossed in a glossy dark kung pao sauce with scattered whole soybeans",
+  "model": "gemini-flash-latest",
+  "name": "Kung Pao Vegetables",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-14T08:53:40+00:00"
+ },
  "2753e4945094": {
   "avoid": [
    "meat",
@@ -11093,6 +11128,41 @@
   "vessel": "plate",
   "written_at": "2026-09-27T07:48:48+00:00"
  },
+ "6baa74529746": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "white uncooked tofu",
+   "rice",
+   "noodles"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cubes of tofu in a dark sauce?",
+    "yes": true
+   },
+   {
+    "q": "Does the dish contain any meat, chicken, or seafood?",
+    "yes": false
+   },
+   {
+    "q": "Is the tofu a single large uncooked white block?",
+    "yes": false
+   }
+  ],
+  "dish": "Kung Pao tofu",
+  "look": "golden-brown seared tofu cubes tossed in glossy dark savory kung pao sauce, tender green zucchini chunks, diced red bell peppers, sliced translucent onions, scattered sliced green scallions",
+  "model": "gemini-flash-latest",
+  "name": "Kung Pao Tofu",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-14T08:53:40+00:00"
+ },
  "6be9bb6705b6": {
   "avoid": [
    "meat",
@@ -13976,12 +14046,11 @@
    "shrimp",
    "hard shell taco",
    "burrito",
-   "shredded cheese",
-   "sour cream"
+   "cheese"
   ],
   "checks": [
    {
-    "q": "Are the main items soft tacos filled with roasted cauliflower florets?",
+    "q": "Are the main items soft tacos filled with cauliflower?",
     "yes": true
    },
    {
@@ -13993,14 +14062,14 @@
     "yes": false
    }
   ],
-  "dish": "cauliflower al pastor tacos",
-  "look": "two warm yellow corn tortillas, filled with spiced charred reddish-orange cauliflower florets, whole simmered pinto beans, small diced caramelized pineapple cubes, finely chopped white onions, fresh green cilantro",
+  "dish": "cauliflower tacos",
+  "look": "cauliflower tacos, visible white and reddish-glazed cauliflower florets showing distinct branching curd texture, warm folded yellow corn tortillas, whole cooked pinto beans, charred pineapple tidbits, minced raw white onions, fresh green cilantro leaves",
   "model": "gemini-flash-latest",
   "name": "Cauliflower Taco with Chilies",
   "rev": 6,
-  "revisions": 0,
+  "revisions": 1,
   "vessel": "plate",
-  "written_at": "2026-10-13T20:50:13+00:00"
+  "written_at": "2026-10-14T09:21:08+00:00"
  },
  "87d5db3ace4c": {
   "avoid": [
@@ -16625,6 +16694,41 @@
   "vessel": "plate",
   "written_at": "2026-10-09T20:12:31+00:00"
  },
+ "a01526b0aab4": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "pepperoni",
+   "sausage",
+   "bacon"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a pizza slice topped with green arugula?",
+    "yes": true
+   },
+   {
+    "q": "Does the pizza have meat toppings such as pepperoni or sausage?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a folded calzone or sandwich?",
+    "yes": false
+   }
+  ],
+  "dish": "arugula and balsamic cheese pizza",
+  "look": "a slice of baked pizza, crisp bubbly golden melted mozzarella cheese over red tomato sauce, browned crust edge, topped with fresh green arugula leaves and a glossy dark balsamic reduction drizzle",
+  "model": "gemini-flash-latest",
+  "name": "Balsamic Glazed Cheese Pizza",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-14T08:53:40+00:00"
+ },
  "a08b6d7f7e66": {
   "avoid": [
    "fried egg",
@@ -18066,9 +18170,9 @@
    "pork",
    "fish",
    "shrimp",
+   "round globe onions",
    "onion rings",
    "raw onions",
-   "diced onions",
    "gravy"
   ],
   "checks": [
@@ -18086,13 +18190,13 @@
    }
   ],
   "dish": "caramelized cipollini onions",
-  "look": "whole flattened cipollini onions, glossy deep golden-brown caramelized surface, tender translucent layers, whole fresh thyme leaves, scattered minced green parsley",
-  "model": "gemini-flash-latest",
+  "look": "flattened disc-shaped cipollini onions, coin-like flat button onions, glossy deep golden-brown caramelized surface, tender translucent onion layers, whole fresh thyme leaves, scattered minced green parsley",
+  "model": "gemini-3.6-flash",
   "name": "Caramelized Cipollini Onions",
   "rev": 6,
-  "revisions": 0,
+  "revisions": 1,
   "vessel": "plate",
-  "written_at": "2026-10-13T10:53:24+00:00"
+  "written_at": "2026-10-14T10:29:13+00:00"
  },
  "ae77b32c45b7": {
   "avoid": [
@@ -20419,6 +20523,40 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T09:50:49+00:00"
+ },
+ "c21f3133a34d": {
+  "avoid": [
+   "tofu",
+   "shrimp",
+   "beef",
+   "peanuts",
+   "rice",
+   "noodles",
+   "raw chicken",
+   "skewers"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item stir-fried chicken in a dark sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the dish made with tofu instead of chicken?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken breaded and deep-fried like nuggets?",
+    "yes": false
+   }
+  ],
+  "dish": "Kung Pao chicken",
+  "look": "diced chicken pieces coated in glossy dark amber kung pao sauce, sautéed green zucchini chunks, diced red bell peppers, sliced yellow onions, chopped green scallions, dried red chili pods",
+  "model": "gemini-flash-latest",
+  "name": "Kung Pao Chicken",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-14T08:53:40+00:00"
  },
  "c2420fa4c57f": {
   "avoid": [

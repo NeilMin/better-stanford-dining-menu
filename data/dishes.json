@@ -12699,20 +12699,30 @@
   ]
  },
  "6baa74529746": {
+  "brief_rev": 6,
   "category": "vegan",
   "first_seen": "2026-10-20",
+  "generated_at": "2026-10-14T09:13:22+00:00",
   "icon": "plate",
-  "image": null,
+  "image": "6baa74529746.webp",
   "ingredients": "tofu, onions, bell peppers, zucchini, green onions, kung pao sauce (no soy tamari sauce, sesame oil, rice vinegar, garlic, ginger, hoisin sauce, plum sauce [contains corn starch], chili paste)",
   "is_station": false,
+  "judge": {
+   "at": "2026-10-14T09:13:22+00:00",
+   "judge": "gemma-4-26b-a4b-it",
+   "seen": "A bowl of cubed tofu in a dark sauce mixed with cucumbers, red peppers, and red onions."
+  },
   "last_seen": "2026-10-20",
   "min_order": 1,
+  "model": "sdxl",
   "name": "Kung Pao Tofu",
   "needs_image": true,
   "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, meat, potato, potatoes, sweet potato, sweet potato cubes, potato cubes, potato chunks, french fries, cheese cubes, yellow cheddar, noodles, pasta, shredded cabbage bed, white sauce base, puree, mash, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
   "placeholder": false,
   "priority": 1,
   "prompt": "Kung Pao Tofu, crispy golden pan-seared firm tofu cubes with tender curd interior, made with tofu, onions, bell peppers, zucchini, green onions, kung pao sauce, plant-based, no meat, no dairy, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "prompt_rev": 9,
+  "seed": 1806333010,
   "station_only": false,
   "tags": [
    "vegan",
@@ -19452,20 +19462,30 @@
   ]
  },
  "a01526b0aab4": {
+  "brief_rev": 6,
   "category": "vegetarian",
   "first_seen": "2026-10-20",
+  "generated_at": "2026-10-14T09:42:30+00:00",
   "icon": "pizza",
-  "image": null,
+  "image": "a01526b0aab4.webp",
   "ingredients": "wheat flour, yeast, sugar, olive oil, mozzarella cheese, balsamic vinegar, arugula, marinara sauce",
   "is_station": false,
+  "judge": {
+   "at": "2026-10-14T09:42:30+00:00",
+   "judge": "gemma-4-26b-a4b-it",
+   "seen": "A slice of pizza with tomato sauce, topped with fresh green arugula and a dark balsamic glaze."
+  },
   "last_seen": "2026-10-20",
   "min_order": 9,
+  "model": "sdxl",
   "name": "Balsamic Glazed Cheese Pizza",
   "needs_image": true,
   "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, meat, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
   "placeholder": false,
   "priority": 2,
   "prompt": "Balsamic Glazed Cheese Pizza, made with mozzarella cheese, arugula, marinara sauce, vegetarian, no meat, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "prompt_rev": 9,
+  "seed": 2685748639,
   "station_only": false,
   "tags": [
    "vegetarian",
@@ -21231,6 +21251,16 @@
   "placeholder": false,
   "priority": 2,
   "prompt": "Caramelized Cipollini Onions, made with Cipollini onions, vegetable base, fresh thyme, garlic, parsley, plant-based, no meat, no dairy, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "rejected": {
+   "at": "2026-10-14T10:54:23+00:00",
+   "brief_rev": 6,
+   "failed": [
+    "Is the main food cooked whole flat onions?"
+   ],
+   "pictures": 4,
+   "seen": "A plate of whole roasted onions garnished with fresh green herbs.",
+   "tries": 1
+  },
   "station_only": false,
   "tags": [
    "gluten-free",
@@ -23854,6 +23884,16 @@
   "placeholder": false,
   "priority": 0,
   "prompt": "Kung Pao Chicken, tender cooked chicken, succulent poultry texture, made with chicken, onion, zucchini, bell peppers, garlic, chili garlic sauce, tamari, green onions, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "rejected": {
+   "at": "2026-10-14T09:56:35+00:00",
+   "brief_rev": 6,
+   "failed": [
+    "Is the main item stir-fried chicken in a dark sauce?"
+   ],
+   "pictures": 3,
+   "seen": "A bowl of dark, glazed meat chunks mixed with red and yellow peppers and green onions.",
+   "tries": 1
+  },
   "station_only": false,
   "tags": [
    "halal"
