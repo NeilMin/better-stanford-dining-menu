@@ -6234,6 +6234,38 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T05:03:54+00:00"
  },
+ "39aa71b552e2": {
+  "avoid": [
+   "bone-in chicken wings",
+   "skewers",
+   "rice",
+   "noodles",
+   "breaded fried chicken tenders",
+   "soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the main dish pieces of chicken coated in a red sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat served on skewers?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish served as a soup or broth?",
+    "yes": false
+   }
+  ],
+  "dish": "spicy Korean gochujang chicken",
+  "look": "bite-sized cooked chicken pieces, thick glossy deep-red chili glaze, caramelized dark edges, sprinkled toasted white sesame seeds, garnish of thinly sliced green scallions",
+  "model": "gemini-3.7-flash",
+  "name": "Gochujang Spiced Chicken",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-14T19:34:23+00:00"
+ },
  "39c295adcf19": {
   "avoid": [
    "fried fish and chips",
@@ -7425,7 +7457,7 @@
    "parmesan cheese",
    "grated cheese",
    "soup broth",
-   "olives"
+   "plain tomato sauce"
   ],
   "checks": [
    {
@@ -7442,13 +7474,13 @@
    }
   ],
   "dish": "pasta with white beans and roasted vegetables",
-  "look": "cooked tubular penne pasta, abundant plump white cannellini beans, roasted zucchini half-moons, charred red bell pepper strips, blistered cherry tomatoes, roasted red onion slices, chopped flat-leaf parsley",
+  "look": "plump creamy white cannellini beans scattered heavily through ridged penne pasta, roasted zucchini half-moons, charred red bell pepper strips, roasted red onion wedges, blistered cherry tomatoes, prominent white beans visible throughout, light olive oil sheen, chopped fresh parsley",
   "model": "gemini-flash-latest",
   "name": "Fagioli Pasta with Roasted Vegetables",
   "rev": 6,
-  "revisions": 1,
+  "revisions": 2,
   "vessel": "bowl",
-  "written_at": "2026-10-13T21:55:12+00:00"
+  "written_at": "2026-10-14T20:54:13+00:00"
  },
  "458e1f275ab4": {
   "avoid": [
@@ -14044,9 +14076,10 @@
    "pork",
    "fish",
    "shrimp",
-   "hard shell taco",
-   "burrito",
-   "cheese"
+   "sour cream",
+   "crema",
+   "cheese",
+   "black beans"
   ],
   "checks": [
    {
@@ -14063,13 +14096,13 @@
    }
   ],
   "dish": "cauliflower tacos",
-  "look": "cauliflower tacos, visible white and reddish-glazed cauliflower florets showing distinct branching curd texture, warm folded yellow corn tortillas, whole cooked pinto beans, charred pineapple tidbits, minced raw white onions, fresh green cilantro leaves",
+  "look": "roasted spiced cauliflower florets with visible bumpy curd heads filling warm folded soft corn tortillas, whole pinto beans, diced charred yellow pineapple chunks, finely chopped white onions, fresh cilantro leaves, on a plate",
   "model": "gemini-flash-latest",
   "name": "Cauliflower Taco with Chilies",
   "rev": 6,
-  "revisions": 1,
+  "revisions": 2,
   "vessel": "plate",
-  "written_at": "2026-10-14T09:21:08+00:00"
+  "written_at": "2026-10-14T20:05:37+00:00"
  },
  "87d5db3ace4c": {
   "avoid": [
@@ -19149,6 +19182,39 @@
   "vessel": "bowl",
   "written_at": "2026-10-10T19:48:22+00:00"
  },
+ "b5dffa31dcd7": {
+  "avoid": [
+   "bacon",
+   "breakfast sausage",
+   "croissant",
+   "biscuit",
+   "sliced sandwich bread",
+   "hash browns",
+   "french fries"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a breakfast sandwich on an English muffin?",
+    "yes": true
+   },
+   {
+    "q": "Is the sandwich made with a croissant, bagel, or sliced bread?",
+    "yes": false
+   },
+   {
+    "q": "Is the sandwich served open-faced?",
+    "yes": false
+   }
+  ],
+  "dish": "ham, egg, and cheese English muffin",
+  "look": "toasted split English muffin, folded yellow egg patty, layered thin slices of pink ham, melted orange cheddar cheese dripping over the sides, golden browned cornmeal-dusted muffin top",
+  "model": "gemini-3.7-flash",
+  "name": "Eggs, Ham & Cheese on English Muffin",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-14T19:34:23+00:00"
+ },
  "b5e04fbed525": {
   "avoid": [
    "rice",
@@ -20529,11 +20595,12 @@
    "tofu",
    "shrimp",
    "beef",
+   "pork",
    "peanuts",
    "rice",
    "noodles",
-   "raw chicken",
-   "skewers"
+   "vegetable stir fry without meat",
+   "breaded nuggets"
   ],
   "checks": [
    {
@@ -20550,13 +20617,13 @@
    }
   ],
   "dish": "Kung Pao chicken",
-  "look": "diced chicken pieces coated in glossy dark amber kung pao sauce, sautéed green zucchini chunks, diced red bell peppers, sliced yellow onions, chopped green scallions, dried red chili pods",
+  "look": "stir-fried diced chicken thigh cubes coated in glossy dark brown savory glaze, prominent glazed chicken pieces filling the bowl, diced red bell peppers, chopped green zucchini chunks, sliced yellow onions, chopped green scallions, whole dried red chili pods",
   "model": "gemini-flash-latest",
   "name": "Kung Pao Chicken",
   "rev": 6,
-  "revisions": 0,
+  "revisions": 1,
   "vessel": "bowl",
-  "written_at": "2026-10-14T08:53:40+00:00"
+  "written_at": "2026-10-14T20:20:59+00:00"
  },
  "c2420fa4c57f": {
   "avoid": [
