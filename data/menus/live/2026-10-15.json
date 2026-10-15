@@ -1,6 +1,6 @@
 {
  "date": "2026-10-15",
- "scraped_at": "2026-10-15T01:23:22-07:00",
+ "scraped_at": "2026-10-15T12:12:55-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -1255,22 +1255,6 @@
      "order": 4
     },
     {
-     "name": "Miso Glazed Eggplant",
-     "recipe_id": "MisoEgg17",
-     "description": "",
-     "ingredients": "Japanese eggplant, miso, mirin, sesame oil, sugar, salt",
-     "allergens": [
-      "SESAME",
-      "SOY"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan"
-     ],
-     "order": 5
-    },
-    {
      "name": "Grilled Cajun Steak Protein Bowl",
      "recipe_id": "GSPB99",
      "description": "",
@@ -1294,53 +1278,35 @@
       "gluten-free",
       "halal"
      ],
+     "order": 5
+    },
+    {
+     "name": "Roasted Broccoli",
+     "recipe_id": "5808050",
+     "description": "",
+     "ingredients": "broccoli, olive oil, salt, pepper",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan",
+      "halal"
+     ],
      "order": 6
     },
     {
-     "name": "Grilled Chicken",
-     "recipe_id": "520454-02",
+     "name": "Wild Rice",
+     "recipe_id": "WildRice1",
      "description": "",
-     "ingredients": "chicken, canola/olive oil blend, salt, pepper",
+     "ingredients": "wild rice, salt, water",
      "allergens": [],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
-     ],
+     "trace_allergens": [],
      "tags": [
+      "gluten-free",
+      "vegan",
       "halal"
      ],
      "order": 7
-    },
-    {
-     "name": "Grilled Vegan/Vegetarian",
-     "recipe_id": "13468741",
-     "description": "",
-     "ingredients": "chef's choice grilled vegan OR vegetarian option",
-     "allergens": [],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
-     ],
-     "tags": [
-      "halal"
-     ],
-     "order": 8
     },
     {
      "name": "Cheese Quesadilla",
@@ -1364,7 +1330,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 9
+     "order": 8
     },
     {
      "name": "Panini Station",
@@ -1382,17 +1348,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 10
-    },
-    {
-     "name": "Soup of the Day",
-     "recipe_id": "SoupoftheDay",
-     "description": "",
-     "ingredients": "chef's choice soup of the day",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [],
-     "order": 11
+     "order": 9
     },
     {
      "name": "Composed Salad",
@@ -1404,7 +1360,7 @@
      "tags": [
       "halal"
      ],
-     "order": 12
+     "order": 10
     },
     {
      "name": "Performance Bar",
@@ -1414,7 +1370,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 13
+     "order": 11
     },
     {
      "name": "Craveable Grains",
@@ -1428,7 +1384,7 @@
       "vegan",
       "halal"
      ],
-     "order": 14
+     "order": 12
     },
     {
      "name": "Flavor Forward Legumes",
@@ -1442,7 +1398,7 @@
       "vegan",
       "halal"
      ],
-     "order": 15
+     "order": 13
     },
     {
      "name": "Pasta Marinara",
@@ -1460,24 +1416,24 @@
       "vegan",
       "halal"
      ],
-     "order": 16
+     "order": 14
     },
     {
-     "name": "Pasta Alfredo",
-     "recipe_id": "5683556",
+     "name": "Creamy Marinara",
+     "recipe_id": "CreamyMar(lakeside)",
      "description": "",
-     "ingredients": "pasta, white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, parmesan cheese",
+     "ingredients": "tomatoes, tomato paste, cream, milk powder, butter, parmesan cheese, flour, soybean oil, sugar, salt, onion, garlic, spices, citric acid, natural flavor",
      "allergens": [
       "MILK",
+      "SOY",
       "WHEAT"
      ],
-     "trace_allergens": [
-      "EGG"
-     ],
+     "trace_allergens": [],
      "tags": [
-      "vegetarian"
+      "vegetarian",
+      "halal"
      ],
-     "order": 17
+     "order": 15
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -1491,7 +1447,7 @@
       "vegan",
       "halal"
      ],
-     "order": 18
+     "order": 16
     }
    ],
    "Dinner": [
@@ -3082,17 +3038,14 @@
    ],
    "Dinner": [
     {
-     "name": "Grilled NY Steak with Peppercorn Sauce",
-     "recipe_id": "NYSteakPepperSauce1",
+     "name": "Braised Beef Stew & Potatoes",
+     "recipe_id": "3435062",
      "description": "",
-     "ingredients": "New York strip steak, beef soup base, onions, garlic, green peppercorns, Dijon mustard, butter, parsley, olive/canola oil blend, salt, black pepper",
-     "allergens": [
-      "MILK"
-     ],
+     "ingredients": "beef, potatoes, carrots, celery, tomatoes, beef soup base, canola/olive oil blend, onions, garlic, tomato paste, creole spice mix (herb de provence, cumin, cayenne pepper, paprika, pepper, salt), bay leaf, black pepper, salt",
+     "allergens": [],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
-      "halal"
+      "gluten-free"
      ],
      "order": 0
     },
