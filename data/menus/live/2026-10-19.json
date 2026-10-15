@@ -1,6 +1,6 @@
 {
  "date": "2026-10-19",
- "scraped_at": "2026-10-15T12:12:55-07:00",
+ "scraped_at": "2026-10-15T16:05:26-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -97,7 +97,7 @@
      "name": "Double Smoked Bacon",
      "recipe_id": "5781155",
      "description": "",
-     "ingredients": "bacon, salt, sugar, sodium phosphate, sodium erythorbate, sodium nitrite",
+     "ingredients": "(non-halal) bacon, salt, sugar, sodium phosphate, sodium erythorbate, sodium nitrite",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -345,7 +345,7 @@
      "name": "Lemon Beurre Blanc",
      "recipe_id": "LBB17",
      "description": "",
-     "ingredients": "Lemon Juice, Dry white wine, Shallots, Heavy Cream, Butter, Salt",
+     "ingredients": "Lemon Juice, (non-halal) Dry white wine, Shallots, Heavy Cream, Butter, Salt",
      "allergens": [
       "MILK"
      ],
@@ -994,7 +994,7 @@
      "name": "Double Smoked Bacon",
      "recipe_id": "5781155",
      "description": "",
-     "ingredients": "bacon, salt, sugar, sodium phosphate, sodium erythorbate, sodium nitrite",
+     "ingredients": "(non-halal) bacon, salt, sugar, sodium phosphate, sodium erythorbate, sodium nitrite",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -1485,20 +1485,6 @@
      "order": 3
     },
     {
-     "name": "Charred Broccolini",
-     "recipe_id": "CharrBroccolini1",
-     "description": "",
-     "ingredients": "broccolini, lemon juice, lemon zest, garlic, olive/canola oil blend, salt, pepper",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan",
-      "halal"
-     ],
-     "order": 4
-    },
-    {
      "name": "Roasted Garlic Herb Fingerling Potatoes",
      "recipe_id": "HerbedPotatoes1",
      "description": "",
@@ -1510,7 +1496,7 @@
       "vegan",
       "halal"
      ],
-     "order": 5
+     "order": 4
     },
     {
      "name": "Wild Rice Pilaf with Cranberries",
@@ -1524,20 +1510,66 @@
       "vegan",
       "halal"
      ],
+     "order": 5
+    },
+    {
+     "name": "Chicken & Andouille Sausage Gumbo",
+     "recipe_id": "8466847",
+     "description": "",
+     "ingredients": "chicken, (non-halal) beef pork sausage, celery, onions, bell peppers, okra, flour, canola oil, tomato sauce, tomatoes, chicken soup base, gumbo spice, parsley, thyme, bay leaf, cayenne pepper, salt, pepper",
+     "allergens": [
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "SESAME"
+     ],
+     "tags": [],
      "order": 6
     },
     {
-     "name": "Caramelized Cipollini Onions",
-     "recipe_id": "CipolliniOnions1",
+     "name": "White Rice",
+     "recipe_id": "5386027",
      "description": "",
-     "ingredients": "Cipollini onions, vegetable base, olive/canola oil blend, brown sugar, balsamic vinegar, fresh thyme, garlic, parsley, salt, pepper",
+     "ingredients": "white rice",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
-      "vegan"
+      "vegan",
+      "halal"
      ],
      "order": 7
+    },
+    {
+     "name": "Fire Cornbread",
+     "recipe_id": "4493130",
+     "description": "",
+     "ingredients": "cornmeal, flour, buttermilk, milk, eggs, maple syrup, baking powder, baking soda, sugar, salt",
+     "allergens": [
+      "EGG",
+      "MILK",
+      "WHEAT"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "vegetarian",
+      "halal"
+     ],
+     "order": 8
+    },
+    {
+     "name": "Seasonal Steamed Vegetables",
+     "recipe_id": "5561366",
+     "description": "",
+     "ingredients": "seasonal vegetables, salt",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan",
+      "halal"
+     ],
+     "order": 9
     },
     {
      "name": "Panini Station",
@@ -1555,7 +1587,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 8
+     "order": 10
     },
     {
      "name": "Soup of the Day",
@@ -1565,7 +1597,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 9
+     "order": 11
     },
     {
      "name": "Assorted Bread",
@@ -1582,7 +1614,7 @@
       "vegan",
       "halal"
      ],
-     "order": 10
+     "order": 12
     },
     {
      "name": "Composed Salad",
@@ -1594,7 +1626,7 @@
      "tags": [
       "halal"
      ],
-     "order": 11
+     "order": 13
     },
     {
      "name": "Performance Bar",
@@ -1604,7 +1636,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 12
+     "order": 14
     },
     {
      "name": "Craveable Grains",
@@ -1618,7 +1650,7 @@
       "vegan",
       "halal"
      ],
-     "order": 13
+     "order": 15
     },
     {
      "name": "Flavor Forward Legumes",
@@ -1632,7 +1664,7 @@
       "vegan",
       "halal"
      ],
-     "order": 14
+     "order": 16
     },
     {
      "name": "Pasta Pesto",
@@ -1650,7 +1682,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 15
+     "order": 17
     },
     {
      "name": "Pasta Marinara",
@@ -1668,7 +1700,7 @@
       "vegan",
       "halal"
      ],
-     "order": 16
+     "order": 18
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -1682,7 +1714,7 @@
       "vegan",
       "halal"
      ],
-     "order": 17
+     "order": 19
     }
    ]
   },
@@ -1781,7 +1813,7 @@
      "name": "Double Smoked Bacon",
      "recipe_id": "5781155",
      "description": "",
-     "ingredients": "bacon, salt, sugar, sodium phosphate, sodium erythorbate, sodium nitrite",
+     "ingredients": "(non-halal) bacon, salt, sugar, sodium phosphate, sodium erythorbate, sodium nitrite",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -1921,7 +1953,7 @@
      "name": "Carolina Pulled Pork",
      "recipe_id": "CaroPullPork1",
      "description": "",
-     "ingredients": "pork, apple cider vinegar, onions, brown sugar, mustard powder, crushed red pepper, olive/canola oil blend, salt, black pepper",
+     "ingredients": "(non-halal) pork, apple cider vinegar, onions, brown sugar, mustard powder, crushed red pepper, olive/canola oil blend, salt, black pepper",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -2616,7 +2648,7 @@
      "name": "Bacon Scramble",
      "recipe_id": "5222525",
      "description": "",
-     "ingredients": "eggs, bacon, seasonal vegetables, canola/olive oil blend, herbs, salt, pepper",
+     "ingredients": "eggs, (non-halal) bacon, seasonal vegetables, canola/olive oil blend, herbs, salt, pepper",
      "allergens": [
       "EGG"
      ],
@@ -2654,7 +2686,7 @@
      "name": "Pork Sausage Link",
      "recipe_id": "4899163",
      "description": "",
-     "ingredients": "pork, sea salt, spices, turbinado sugar, sage oil, sage extract, rosemary extract",
+     "ingredients": "(non-halal) pork, sea salt, spices, turbinado sugar, sage oil, sage extract, rosemary extract",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -2867,7 +2899,7 @@
      "name": "Lemon Beurre Blanc",
      "recipe_id": "LBB17",
      "description": "",
-     "ingredients": "Lemon Juice, Dry white wine, Shallots, Heavy Cream, Butter, Salt",
+     "ingredients": "Lemon Juice, (non-halal) Dry white wine, Shallots, Heavy Cream, Butter, Salt",
      "allergens": [
       "MILK"
      ],
@@ -3516,7 +3548,7 @@
      "name": "Double Smoked Bacon",
      "recipe_id": "5781155",
      "description": "",
-     "ingredients": "bacon, salt, sugar, sodium phosphate, sodium erythorbate, sodium nitrite",
+     "ingredients": "(non-halal) bacon, salt, sugar, sodium phosphate, sodium erythorbate, sodium nitrite",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -3764,7 +3796,7 @@
      "name": "Lemon Beurre Blanc",
      "recipe_id": "LBB17",
      "description": "",
-     "ingredients": "Lemon Juice, Dry white wine, Shallots, Heavy Cream, Butter, Salt",
+     "ingredients": "Lemon Juice, (non-halal) Dry white wine, Shallots, Heavy Cream, Butter, Salt",
      "allergens": [
       "MILK"
      ],
@@ -4116,6 +4148,16 @@
      "order": 7
     },
     {
+     "name": "Burger Bar",
+     "recipe_id": "5964436",
+     "description": "",
+     "ingredients": "",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [],
+     "order": 8
+    },
+    {
      "name": "Grilled Chicken",
      "recipe_id": "520454-02",
      "description": "",
@@ -4136,7 +4178,7 @@
      "tags": [
       "halal"
      ],
-     "order": 8
+     "order": 9
     },
     {
      "name": "Grilled Vegan/Vegetarian",
@@ -4159,7 +4201,7 @@
      "tags": [
       "halal"
      ],
-     "order": 9
+     "order": 10
     },
     {
      "name": "Panini Station",
@@ -4177,7 +4219,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 10
+     "order": 11
     },
     {
      "name": "Soup of the Day",
@@ -4187,7 +4229,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 11
+     "order": 12
     },
     {
      "name": "Assorted Bread",
@@ -4204,7 +4246,7 @@
       "vegan",
       "halal"
      ],
-     "order": 12
+     "order": 13
     },
     {
      "name": "Composed Salad",
@@ -4216,7 +4258,7 @@
      "tags": [
       "halal"
      ],
-     "order": 13
+     "order": 14
     },
     {
      "name": "Performance Bar",
@@ -4226,7 +4268,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 14
+     "order": 15
     },
     {
      "name": "Craveable Grains",
@@ -4240,7 +4282,7 @@
       "vegan",
       "halal"
      ],
-     "order": 15
+     "order": 16
     },
     {
      "name": "Flavor Forward Legumes",
@@ -4254,7 +4296,7 @@
       "vegan",
       "halal"
      ],
-     "order": 16
+     "order": 17
     },
     {
      "name": "Pasta Pesto",
@@ -4272,7 +4314,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 17
+     "order": 18
     },
     {
      "name": "Pasta Marinara",
@@ -4290,7 +4332,7 @@
       "vegan",
       "halal"
      ],
-     "order": 18
+     "order": 19
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -4304,7 +4346,7 @@
       "vegan",
       "halal"
      ],
-     "order": 19
+     "order": 20
     }
    ]
   },
@@ -4403,7 +4445,7 @@
      "name": "Double Smoked Bacon",
      "recipe_id": "5781155",
      "description": "",
-     "ingredients": "bacon, salt, sugar, sodium phosphate, sodium erythorbate, sodium nitrite",
+     "ingredients": "(non-halal) bacon, salt, sugar, sodium phosphate, sodium erythorbate, sodium nitrite",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -4651,7 +4693,7 @@
      "name": "Lemon Beurre Blanc",
      "recipe_id": "LBB17",
      "description": "",
-     "ingredients": "Lemon Juice, Dry white wine, Shallots, Heavy Cream, Butter, Salt",
+     "ingredients": "Lemon Juice, (non-halal) Dry white wine, Shallots, Heavy Cream, Butter, Salt",
      "allergens": [
       "MILK"
      ],
@@ -5108,7 +5150,7 @@
      "name": "Double Smoked Bacon",
      "recipe_id": "5781155",
      "description": "",
-     "ingredients": "bacon, salt, sugar, sodium phosphate, sodium erythorbate, sodium nitrite",
+     "ingredients": "(non-halal) bacon, salt, sugar, sodium phosphate, sodium erythorbate, sodium nitrite",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -5248,7 +5290,7 @@
      "name": "Chicken & Andouille Sausage Gumbo",
      "recipe_id": "8466847",
      "description": "",
-     "ingredients": "chicken, beef pork sausage, celery, onions, bell peppers, okra, flour, canola oil, tomato sauce, tomatoes, chicken soup base, gumbo spice, parsley, thyme, bay leaf, cayenne pepper, salt, pepper",
+     "ingredients": "chicken, (non-halal) beef pork sausage, celery, onions, bell peppers, okra, flour, canola oil, tomato sauce, tomatoes, chicken soup base, gumbo spice, parsley, thyme, bay leaf, cayenne pepper, salt, pepper",
      "allergens": [
       "WHEAT"
      ],
@@ -5410,7 +5452,7 @@
      "name": "Meat Lover’s Pizza",
      "recipe_id": "5384040",
      "description": "",
-     "ingredients": "pizza dough (enriched unbleached wheat flour [wheat flour, yeast], sugar, soybean oil, hydrogenated soybean oil, baking soda, salt, buttermilk, wheat gluten, mozzarella cheese, cheddar cheese, whey powder, guar gum, xanthan gum, garlic powder, datem, malted barley flour), pizza sauce, mozzarella cheese, parmesan cheese, beef pork pepperoni, ham, bacon, pork sausage, canola/olive oil blend",
+     "ingredients": "pizza dough (enriched unbleached wheat flour [wheat flour, yeast], sugar, soybean oil, hydrogenated soybean oil, baking soda, salt, buttermilk, wheat gluten, mozzarella cheese, cheddar cheese, whey powder, guar gum, xanthan gum, garlic powder, datem, malted barley flour), pizza sauce, mozzarella cheese, parmesan cheese, (non-halal) beef pork pepperoni, (non-halal) ham, (non-halal) bacon, (non-halal) pork sausage, canola/olive oil blend",
      "allergens": [
       "MILK",
       "SOY",
@@ -5673,24 +5715,26 @@
      "order": 7
     },
     {
-     "name": "Grilled Vegan/Vegetarian",
-     "recipe_id": "13468741",
+     "name": "Grilled Tofu Patty",
+     "recipe_id": "GrilledTofu1",
      "description": "",
-     "ingredients": "chef's choice grilled vegan OR vegetarian option",
-     "allergens": [],
+     "ingredients": "tofu, canola oil, salt, and pepper",
+     "allergens": [
+      "SOY"
+     ],
      "trace_allergens": [
-      "COCONUT",
       "EGG",
       "FISH",
       "MILK",
       "PEANUTS",
       "SESAME",
       "SHELLFISH",
-      "SOY",
       "TREENUTS",
       "WHEAT"
      ],
      "tags": [
+      "gluten-free",
+      "vegan",
       "halal"
      ],
      "order": 8
@@ -5714,14 +5758,36 @@
      "order": 9
     },
     {
-     "name": "Soup of the Day",
-     "recipe_id": "SoupoftheDay",
+     "name": "Bebida Caliente (Hot Chocolate)",
+     "recipe_id": "7902974",
      "description": "",
-     "ingredients": "chef's choice soup of the day",
-     "allergens": [],
+     "ingredients": "hot chocolate mix (sugar, cocoa liquor, cinnamon, soy lecithin, caramel, sodium bicarbonate, polyglycerol polyricinoleate, sorbic acid, salt), sugar, cinnamon spice, corn flour",
+     "allergens": [
+      "SOY"
+     ],
      "trace_allergens": [],
-     "tags": [],
+     "tags": [
+      "gluten-free",
+      "vegan",
+      "halal"
+     ],
      "order": 10
+    },
+    {
+     "name": "Miso Soup",
+     "recipe_id": "3902989",
+     "description": "",
+     "ingredients": "vegetable soup base, onions, swiss chard, white miso, tofu",
+     "allergens": [
+      "SOY"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan",
+      "halal"
+     ],
+     "order": 11
     },
     {
      "name": "Assorted Bread",
@@ -5738,7 +5804,7 @@
       "vegan",
       "halal"
      ],
-     "order": 11
+     "order": 12
     },
     {
      "name": "Composed Salad",
@@ -5750,7 +5816,7 @@
      "tags": [
       "halal"
      ],
-     "order": 12
+     "order": 13
     },
     {
      "name": "Performance Bar",
@@ -5760,24 +5826,6 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 13
-    },
-    {
-     "name": "Pasta Pesto",
-     "recipe_id": "3857040",
-     "description": "",
-     "ingredients": "pasta, pesto sauce (basil, canola oil, parmesan cheese, extra virgin olive oil, garlic, lemon juice concentrate, natural flavor, ascorbic acid, xanthan gum, soy lecithin, chamomile extract, rosemary extract, salt)",
-     "allergens": [
-      "MILK",
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "EGG"
-     ],
-     "tags": [
-      "vegetarian"
-     ],
      "order": 14
     },
     {
@@ -5811,6 +5859,173 @@
       "halal"
      ],
      "order": 16
+    }
+   ]
+  },
+  "branner": {
+   "Lunch": [
+    {
+     "name": "Greek Lemon Chicken & Potatoes",
+     "recipe_id": "123111233",
+     "description": "",
+     "ingredients": "chicken, potatoes, oil, lemon, garlic, oregano, thyme, honey, Dijon mustard, salt, pepper",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "halal"
+     ],
+     "order": 0
+    },
+    {
+     "name": "Rosemary Garlic White Bean Stew",
+     "recipe_id": "RoseWhiteStew1",
+     "description": "",
+     "ingredients": "white beans, stewed tomatoes, onions, carrots, celery, garlic, vegetable base, rosemary, bay leaf, crushed red pepper flakes, oil, salt, and pepper",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan",
+      "halal"
+     ],
+     "order": 1
+    },
+    {
+     "name": "Lemon Herb Rice Pilaf",
+     "recipe_id": "LemonHerbPilaf1",
+     "description": "",
+     "ingredients": "long grain rice, vegetable soup base, onions, celery, garlic, lemon zest, fresh lemon juice, parsley, green onions, thyme, oregano, bay leaf, olive/canola oil blend, butter, black pepper, salt",
+     "allergens": [
+      "MILK"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegetarian",
+      "halal"
+     ],
+     "order": 2
+    }
+   ],
+   "Dinner": [
+    {
+     "name": "Vietnamese Grilled Pork",
+     "recipe_id": "5711361",
+     "description": "",
+     "ingredients": "(non-halal) pork, vietnamese bbq rub (garlic powder, salt, pepper, chinese five spice powder, instant espresso), lemongrass ginger marinade (soy-free sauce [canola/olive oil blend, cinnamon, molasses, star anise, chili pepper, five spice powder (cloves, pepper, fennel, cinnamon, anise), shiitake mushroom, garlic, ginger, mushroom seasoning], garlic, sugar, canola/olive oil blend, ginger, thai green chili, green onions, kaffir lime leaves, lemongrass, shallot)",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free"
+     ],
+     "order": 0
+    },
+    {
+     "name": "Lemongrass Tofu & Mushrooms",
+     "recipe_id": "131234",
+     "description": "",
+     "ingredients": "prime roots tofu (mycoprotein, koji), mushrooms, cornstarch, lemongrass, onion, garlic, ginger, bell pepper, coconut liquid aminos, mushroom seasoning, lime juice",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "vegan"
+     ],
+     "order": 1
+    },
+    {
+     "name": "Seasoned Rice Noodles with Veggies",
+     "recipe_id": "4088911",
+     "description": "",
+     "ingredients": "vermicelli rice noodle, mushroom seasoning, ginger, onions, bell peppers, mushrooms, carrot, green onion, salt, cabbage, pea shoots, snap peas, black pepper, canola/olive oil blend, brown sugar, garlic, chili paste",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan",
+      "halal"
+     ],
+     "order": 2
+    },
+    {
+     "name": "Seasonal Roasted Vegetables",
+     "recipe_id": "5643782",
+     "description": "",
+     "ingredients": "seasonal vegetables, oil blend, salt, pepper",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan",
+      "halal"
+     ],
+     "order": 3
+    },
+    {
+     "name": "Seasonal Steamed Vegetables",
+     "recipe_id": "5561366",
+     "description": "",
+     "ingredients": "seasonal vegetables, salt",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan",
+      "halal"
+     ],
+     "order": 4
+    },
+    {
+     "name": "Allergen-Friendly Pasta Station",
+     "recipe_id": "AlFrPasStat1",
+     "description": "",
+     "ingredients": "Gluten-Free Penne Pasta (brown rice, rice bran, water) Sauce of the Day: Marinara Sauce (tomatoes, tomato paste, oil, sugar, salt, onion, garlic, spices, citric acid, natural flavor) Pesto Sauce (olive oil, basil, spinach, kale, nutritional yeast, sunflower seeds) Alfredo Sauce (allergen free vegan butter, garbanzo flour, oat milk, nutritional yeast, lemon juice, salt)",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan",
+      "halal"
+     ],
+     "order": 5
+    },
+    {
+     "name": "Grilled Cheese & Tomato Basil Soup",
+     "recipe_id": "1222111222",
+     "description": "",
+     "ingredients": "Chef's Line gluten-free bread, Daiya sliced cheddar cheese, non allergen plant based butter Tomato, tomato paste, red onion, coconut milk, basil, veg base, salt",
+     "allergens": [
+      "COCONUT"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "vegan"
+     ],
+     "order": 6
+    },
+    {
+     "name": "Panini Station (Branner)",
+     "recipe_id": "100100001",
+     "description": "",
+     "ingredients": "Gluten Free Bread Sliced Turkey Sliced Ham Roasted Vegetables (Eggplant, Squash, Bell Pepper) Sliced Daiya Cheese Guacamole Spread",
+     "allergens": [
+      "COCONUT"
+     ],
+     "trace_allergens": [],
+     "tags": [],
+     "order": 7
+    },
+    {
+     "name": "Composed Salad",
+     "recipe_id": "123116546",
+     "description": "",
+     "ingredients": "chef's choice composed salad",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "halal"
+     ],
+     "order": 8
     }
    ]
   }

@@ -1,6 +1,6 @@
 {
  "date": "2026-10-18",
- "scraped_at": "2026-10-15T12:12:55-07:00",
+ "scraped_at": "2026-10-15T16:05:26-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -85,7 +85,7 @@
      "name": "Pork Sausage Link",
      "recipe_id": "4899163",
      "description": "",
-     "ingredients": "pork, sea salt, spices, turbinado sugar, sage oil, sage extract, rosemary extract",
+     "ingredients": "(non-halal) pork, sea salt, spices, turbinado sugar, sage oil, sage extract, rosemary extract",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -607,7 +607,7 @@
      "name": "Crispy Corn Tostada",
      "recipe_id": "hispanicheritage6",
      "description": "",
-     "ingredients": "corn, lime, phosphonic acid, calcium propionate, sugar, soybean oil, salt",
+     "ingredients": "(non-halal) lard (in refried beans), corn, lime, phosphonic acid, calcium propionate, sugar, soybean oil, salt",
      "allergens": [
       "SOY"
      ],
@@ -939,7 +939,7 @@
      "name": "Pork Sausage Link",
      "recipe_id": "4899163",
      "description": "",
-     "ingredients": "pork, sea salt, spices, turbinado sugar, sage oil, sage extract, rosemary extract",
+     "ingredients": "(non-halal) pork, sea salt, spices, turbinado sugar, sage oil, sage extract, rosemary extract",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -1302,42 +1302,42 @@
    ],
    "Dinner": [
     {
-     "name": "Creole Beef Daube",
-     "recipe_id": "CBD99",
+     "name": "Chicken Gyros",
+     "recipe_id": "4527327",
      "description": "",
-     "ingredients": "beef, celery, onion, garlic, bay leaf, tomato, bell pepper, carrot, thyme, beef stock, worcestershire sauce, flour, oil, salt, pepper, creole spice, sugar",
+     "ingredients": "chicken, tzatziki (cucumber, mint, garlic, greek yogurt, sugar, salt, pepper, lemon juice), pickled red onion (red wine vinegar, pickling spice, red onions), whole wheat pita bread, cabbage salad (cabbage, canola/olive oil blend, lemon juice, garlic)",
      "allergens": [
-      "FISH",
-      "WHEAT"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "halal"
-     ],
-     "order": 0
-    },
-    {
-     "name": "Fried Artichoke Po Boy",
-     "recipe_id": "4319473",
-     "description": "",
-     "ingredients": "french roll (wheat flour, yeast, sea salt, all-purpose flour), pickles, artichokes, lemon, flour, creole spice, cornmeal, canola oil, mayonnaise, dijon mustard, hot sauce (cayenne peppers, vinegar, water, salt, garlic powder), eggs, lemon juice, horseradish, lettuce, tomatoes, capers, paprika, parsley",
-     "allergens": [
-      "EGG",
+      "MILK",
       "SOY",
       "WHEAT"
      ],
      "trace_allergens": [
       "COCONUT",
+      "EGG",
       "FISH",
-      "MILK",
       "PEANUTS",
       "SESAME",
       "SHELLFISH",
       "TREENUTS"
      ],
      "tags": [
-      "vegetarian",
       "halal"
+     ],
+     "order": 0
+    },
+    {
+     "name": "Veggie Gyro Plate",
+     "recipe_id": "COV3719382",
+     "description": "",
+     "ingredients": "Veggie Gyros (gardein chick'n, bell pepper, onions, tomatoes, garlic, oregano, lemon juice, garlic, canola/olive oil blend, salt, pepper), Sauteed Greens (seasonal leafy greens, canola/olive oil blend, garlic, lemon juice, salt, pepper), Greek Style Pita (whole wheat flour, enriched wheat flour, soybean, canola oil, sugar, salt, baking powder, yeast, blackstrap molasses, calcium propionate, sodium stearoyl lactylate, guar gum, amylase)",
+     "allergens": [
+      "SOY",
+      "WHEAT",
+      "TRACEALLERGENS"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "vegan"
      ],
      "order": 1
     },
@@ -1370,46 +1370,18 @@
      "order": 3
     },
     {
-     "name": "Southern Braised Green Bean",
-     "recipe_id": "SBGB99",
+     "name": "French Fries",
+     "recipe_id": "4363431",
      "description": "",
-     "ingredients": "Green bean, onion, potato, tomato, garlic, turkey, chicken stock, bell pepper, cajun seasoning, butter",
+     "ingredients": "potatoes, canola oil, corn oil, cottonseed oil, palm oil, soybean oil, sunflower oil, modified food starch, rice flour, dextrin, dextrose, xanthan gum, sea salt, sugar, leavening, garlic powder, spices, natural flavors, onion powder",
      "allergens": [
-      "MILK"
-     ],
-     "trace_allergens": [],
-     "tags": [],
-     "order": 4
-    },
-    {
-     "name": "7 Cheesy Mac",
-     "recipe_id": "7CM99",
-     "description": "",
-     "ingredients": "pasta, milk, butter, flour, sharp cheddar, white cheddar, monterey, pepper jack, swiss, provolone, parmesan, sour cream, cream cheese, garlic, cajun spice, onion, salt, pepper, sherry vinegar",
-     "allergens": [
-      "EGG",
-      "MILK",
-      "WHEAT"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "vegetarian"
-     ],
-     "order": 5
-    },
-    {
-     "name": "Fried Chicken Wings",
-     "recipe_id": "6300731",
-     "description": "",
-     "ingredients": "chicken, carrots, celery, garlic, buffalo sauce, ranch dressing (nonfat greek yogurt, lowfat buttermilk, mayonnaise, ranch dressing spice mix [parsley, dill, onion powder, mushroom seasoning, milk powder, garlic powder, salt, pepper]), fried in canola oil",
-     "allergens": [
-      "EGG",
-      "MILK",
       "SOY"
      ],
      "trace_allergens": [
       "COCONUT",
+      "EGG",
       "FISH",
+      "MILK",
       "PEANUTS",
       "SESAME",
       "SHELLFISH",
@@ -1417,9 +1389,23 @@
       "WHEAT"
      ],
      "tags": [
-      "halal"
+      "vegan"
      ],
-     "order": 6
+     "order": 4
+    },
+    {
+     "name": "Zesty Meatballs in Marinara",
+     "recipe_id": "4891285",
+     "description": "",
+     "ingredients": "beef meatball(beef, mushroom, panko bread crumbs, egg, onion, garlic, salt, pepper, parsley, basil, italian spice), marinara sauce, tomato puree, onions, garlic, mushrooms, thyme, beef soup base, basil, canola/olive oil blend, salt, pepper",
+     "allergens": [
+      "EGG",
+      "SOY",
+      "WHEAT"
+     ],
+     "trace_allergens": [],
+     "tags": [],
+     "order": 5
     },
     {
      "name": "Garlic Mashed Potatoes",
@@ -1435,7 +1421,7 @@
       "vegetarian",
       "halal"
      ],
-     "order": 7
+     "order": 6
     },
     {
      "name": "Hush-puppies",
@@ -1456,6 +1442,22 @@
       "SHELLFISH",
       "TREENUTS"
      ],
+     "tags": [
+      "vegetarian"
+     ],
+     "order": 7
+    },
+    {
+     "name": "7 Cheesy Mac",
+     "recipe_id": "7CM99",
+     "description": "",
+     "ingredients": "pasta, milk, butter, flour, sharp cheddar, white cheddar, monterey, pepper jack, swiss, provolone, parmesan, sour cream, cream cheese, garlic, cajun spice, onion, salt, pepper, sherry vinegar",
+     "allergens": [
+      "EGG",
+      "MILK",
+      "WHEAT"
+     ],
+     "trace_allergens": [],
      "tags": [
       "vegetarian"
      ],
@@ -1692,7 +1694,7 @@
      "name": "Pork Sausage Link",
      "recipe_id": "4899163",
      "description": "",
-     "ingredients": "pork, sea salt, spices, turbinado sugar, sage oil, sage extract, rosemary extract",
+     "ingredients": "(non-halal) pork, sea salt, spices, turbinado sugar, sage oil, sage extract, rosemary extract",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -2208,7 +2210,7 @@
      "name": "Crispy Corn Tostada",
      "recipe_id": "hispanicheritage6",
      "description": "",
-     "ingredients": "corn, lime, phosphonic acid, calcium propionate, sugar, soybean oil, salt",
+     "ingredients": "(non-halal) lard (in refried beans), corn, lime, phosphonic acid, calcium propionate, sugar, soybean oil, salt",
      "allergens": [
       "SOY"
      ],
@@ -2572,7 +2574,7 @@
      "name": "Double Smoked Bacon",
      "recipe_id": "5781155",
      "description": "",
-     "ingredients": "bacon, salt, sugar, sodium phosphate, sodium erythorbate, sodium nitrite",
+     "ingredients": "(non-halal) bacon, salt, sugar, sodium phosphate, sodium erythorbate, sodium nitrite",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -2937,7 +2939,7 @@
      "name": "Crispy Corn Tostada",
      "recipe_id": "hispanicheritage6",
      "description": "",
-     "ingredients": "corn, lime, phosphonic acid, calcium propionate, sugar, soybean oil, salt",
+     "ingredients": "(non-halal) lard (in refried beans), corn, lime, phosphonic acid, calcium propionate, sugar, soybean oil, salt",
      "allergens": [
       "SOY"
      ],
@@ -3123,7 +3125,7 @@
      "name": "Pork Sausage Link",
      "recipe_id": "4899163",
      "description": "",
-     "ingredients": "pork, sea salt, spices, turbinado sugar, sage oil, sage extract, rosemary extract",
+     "ingredients": "(non-halal) pork, sea salt, spices, turbinado sugar, sage oil, sage extract, rosemary extract",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -3936,7 +3938,7 @@
      "name": "Pork Sausage Link",
      "recipe_id": "4899163",
      "description": "",
-     "ingredients": "pork, sea salt, spices, turbinado sugar, sage oil, sage extract, rosemary extract",
+     "ingredients": "(non-halal) pork, sea salt, spices, turbinado sugar, sage oil, sage extract, rosemary extract",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -4349,7 +4351,7 @@
      "name": "Crispy Corn Tostada",
      "recipe_id": "hispanicheritage6",
      "description": "",
-     "ingredients": "corn, lime, phosphonic acid, calcium propionate, sugar, soybean oil, salt",
+     "ingredients": "(non-halal) lard (in refried beans), corn, lime, phosphonic acid, calcium propionate, sugar, soybean oil, salt",
      "allergens": [
       "SOY"
      ],
@@ -4604,7 +4606,7 @@
      "name": "Pork Sausage Link",
      "recipe_id": "4899163",
      "description": "",
-     "ingredients": "pork, sea salt, spices, turbinado sugar, sage oil, sage extract, rosemary extract",
+     "ingredients": "(non-halal) pork, sea salt, spices, turbinado sugar, sage oil, sage extract, rosemary extract",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
