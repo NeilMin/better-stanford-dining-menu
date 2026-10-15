@@ -916,6 +916,39 @@
   "vessel": "plate",
   "written_at": "2026-09-28T17:10:34+00:00"
  },
+ "0bdb2dacf98f": {
+  "avoid": [
+   "rice",
+   "noodles",
+   "wrap",
+   "sandwich",
+   "whole chicken",
+   "raw chicken",
+   "salad with no protein"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item chicken?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken served in a wrap or sandwich?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken raw or unseasoned?",
+    "yes": false
+   }
+  ],
+  "dish": "blackened chicken protein bowl",
+  "look": "seasoned blackened chicken thighs, roasted sweet potato chunks, wilted green kale, sliced red onion, diced tomato, light citrus glaze",
+  "model": "gemma-4-26b-a4b-it",
+  "name": "Blackened Chicken Protein Bowl",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-15T19:30:40+00:00"
+ },
  "0bfcdb7add10": {
   "avoid": [
    "white fish",
@@ -13477,6 +13510,42 @@
   "vessel": "bowl",
   "written_at": "2026-10-01T10:25:41+00:00"
  },
+ "809cae46a762": {
+  "avoid": [
+   "white rice",
+   "brown rice",
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "grains in a sauce",
+   "soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item wild rice?",
+    "yes": true
+   },
+   {
+    "q": "Is the rice white or short-grain?",
+    "yes": false
+   },
+   {
+    "q": "Is the rice served as a soup or in a heavy sauce?",
+    "yes": false
+   }
+  ],
+  "dish": "wild rice",
+  "look": "long dark grains of wild rice, varied shades of deep brown and black, fluffy cooked texture",
+  "model": "gemma-4-26b-a4b-it",
+  "name": "Wild Rice",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-15T19:30:40+00:00"
+ },
  "811c35c98d4a": {
   "avoid": [
    "pork chop",
@@ -15970,6 +16039,39 @@
   "vessel": "bowl",
   "written_at": "2026-09-30T20:39:41+00:00"
  },
+ "9850ad9a40a4": {
+  "avoid": [
+   "ground meat",
+   "shredded meat",
+   "whole potatoes",
+   "rice",
+   "noodles",
+   "crusty bread",
+   "steak"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item chunks of beef?",
+    "yes": true
+   },
+   {
+    "q": "Is the beef ground or minced?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a dry roast without gravy?",
+    "yes": false
+   }
+  ],
+  "dish": "beef stew",
+  "look": "chunks of tender braised beef, large soft potato cubes, sliced orange carrots, celery bits, thick reddish-brown tomato gravy, small pieces of onion",
+  "model": "gemma-4-26b-a4b-it",
+  "name": "Braised Beef Stew & Potatoes",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-15T19:30:40+00:00"
+ },
  "9883089b31c8": {
   "avoid": [
    "meat",
@@ -16218,6 +16320,41 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T05:36:06+00:00"
+ },
+ "9a6bfa9465aa": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "mashed potatoes",
+   "french fries",
+   "boiled whole potatoes"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cubed potatoes?",
+    "yes": true
+   },
+   {
+    "q": "Is the potato mashed or pureed?",
+    "yes": false
+   },
+   {
+    "q": "Is there meat or fish mixed in?",
+    "yes": false
+   }
+  ],
+  "dish": "potato salad",
+  "look": "cubed boiled potatoes, creamy white mayonnaise dressing, chopped hard-boiled eggs, small bits of sweet relish, diced red bell peppers, celery, parsley",
+  "model": "gemma-4-26b-a4b-it",
+  "name": "Picnic Potato Salad",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-15T19:30:40+00:00"
  },
  "9ae90503d4eb": {
   "avoid": [
@@ -21064,6 +21201,41 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-09T10:51:50+00:00"
+ },
+ "c534c5bef986": {
+  "avoid": [
+   "skewers",
+   "meatballs",
+   "whole chicken",
+   "wings",
+   "drumsticks",
+   "ground meat",
+   "pork",
+   "beef",
+   "shrimp"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item chicken?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken on wooden skewers?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken ground or shaped into nuggets?",
+    "yes": false
+   }
+  ],
+  "dish": "chicken satay",
+  "look": "strips of grilled chicken, golden-brown charred edges, glossy yellowish marinade, tender poultry pieces",
+  "model": "gemma-4-26b-a4b-it",
+  "name": "Chicken Satay",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-15T19:30:40+00:00"
  },
  "c55dfe6d0c41": {
   "avoid": [
@@ -26402,6 +26574,42 @@
   "vessel": "plate",
   "written_at": "2026-10-04T10:08:39+00:00"
  },
+ "f153a611a96e": {
+  "avoid": [
+   "beef",
+   "chicken",
+   "pork",
+   "shrimp",
+   "fish",
+   "ground meat",
+   "burger",
+   "wrap",
+   "salad",
+   "herbs"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item sliced plant-based meat in a roll?",
+    "yes": true
+   },
+   {
+    "q": "Is there real beef or chicken in the sandwich?",
+    "yes": false
+   },
+   {
+    "q": "Is the filling ground or crumbled?",
+    "yes": false
+   }
+  ],
+  "dish": "vegetarian cheesesteak",
+  "look": "thinly sliced dark brown plant-based beef strips, shaved seitan steak slices, smothered in melted white cheese, sautéed sliced mushrooms, grilled sweet onions, piled inside a crusty split sourdough hoagie roll",
+  "model": "gemini-3.7-flash",
+  "name": "Plant-Forward Philly Cheesesteak",
+  "rev": 6,
+  "revisions": 1,
+  "vessel": "plate",
+  "written_at": "2026-10-15T20:22:16+00:00"
+ },
  "f19ef3f4af91": {
   "avoid": [
    "real chicken meat",
@@ -27486,6 +27694,40 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T05:36:06+00:00"
+ },
+ "fd6502cd7003": {
+  "avoid": [
+   "ground beef",
+   "meatballs",
+   "burger patty",
+   "wrap",
+   "taco",
+   "sliced steak",
+   "chicken",
+   "pork"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item shaved beef in a roll?",
+    "yes": true
+   },
+   {
+    "q": "Is the beef in a ground or patty form?",
+    "yes": false
+   },
+   {
+    "q": "Is the beef served as a whole steak?",
+    "yes": false
+   }
+  ],
+  "dish": "philly cheesesteak",
+  "look": "thinly shaved strips of beef, melted white cheese, sautéed onions, tucked inside a long toasted hoagie roll",
+  "model": "gemma-4-26b-a4b-it",
+  "name": "Philly Cheesesteak Station",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-15T19:30:40+00:00"
  },
  "fd8bda42233f": {
   "avoid": [
