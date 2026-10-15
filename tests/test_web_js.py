@@ -406,21 +406,106 @@ class TestSharedLinks:
                        {}]
 
     def test_a_friends_link_does_not_overwrite_your_halls(self, tmp_path):
-        """What a link put on screen is written back as what you had, key by
-        key, until you touch that control yourself. The date is never kept."""
-        got = call(["save"],
-                   "return INPUT.map((keys) => { borrowed.clear(); "
-                   "keys.forEach((k) => borrowed.add(k)); save(); return SAVED.prefs; });",
-                   payload=[["meal", "halls"], ["meal"], []],
+        """What a link put on screen is written back as what you had until you
+        touch the hall chips yourself. The date and the meal are never kept,
+        and neither is a selection that is only the defaults."""
+        got = call(["hallOrder", "save"],
+                   "return INPUT.map(([keys, halls]) => { borrowed.clear(); "
+                   "keys.forEach((k) => borrowed.add(k)); state.halls = halls; "
+                   "save(); return SAVED.prefs; });",
+                   payload=[[["halls"], ["wilbur"]],
+                            [[], ["wilbur"]],
+                            [[], ["arrillaga", "wilbur"]]],
                    prelude=(
+                       LINK_PRELUDE + "\nDATA.defaults = { selected: ['arrillaga', 'wilbur'] };\n"
                        "const STORE = 'prefs'; const SAVED = {};\n"
                        "const localStorage = { setItem: (k, v) => { SAVED[k] = JSON.parse(v); } };\n"
-                       "const state = { date: '2026-09-25', meal: 'Lunch', halls: ['wilbur'], lang: 'zh' };\n"
-                       "const own = { meal: 'Dinner', halls: ['arrillaga', 'florencemoore'] };\n"
+                       "const state = { date: '2026-09-25', meal: 'Lunch', lang: 'zh' };\n"
+                       "const own = { halls: ['arrillaga', 'florencemoore'] };\n"
                        "const borrowed = new Set();"),
                    tmp_path=tmp_path)
         assert got == [
-            {"meal": "Dinner", "halls": ["arrillaga", "florencemoore"], "lang": "zh"},
-            {"meal": "Dinner", "halls": ["wilbur"], "lang": "zh"},
-            {"meal": "Lunch", "halls": ["wilbur"], "lang": "zh"},
+            {"halls": ["arrillaga", "florencemoore"], "lang": "zh"},
+            {"halls": ["wilbur"], "lang": "zh"},
+            {"lang": "zh"},
         ]
+
+    def test_an_untouched_v4_selection_follows_the_new_defaults(self, tmp_path):
+        """v4 saved Arrillaga, Wilbur and FloMo for everyone who never picked a
+        hall; that, and the meal it remembered, are dropped on the way to v5.
+        A selection somebody made, and a v5 save, come through as they are."""
+        got = call(["legacy", "load"],
+                   "return INPUT.map((stores) => { STORED = stores; return load(); });",
+                   payload=[{"bsdm.prefs.v4": {"halls": ["arrillaga", "wilbur", "florencemoore"],
+                                               "meal": "Lunch", "date": "2026-09-01", "lang": "zh"}},
+                            {"bsdm.prefs.v4": {"halls": ["lakeside"], "meal": "Lunch"}},
+                            {"bsdm.prefs.v5": {"halls": ["wilbur"], "meal": "Lunch"},
+                             "bsdm.prefs.v4": {"halls": ["lakeside"]}},
+                            {}],
+                   prelude=(
+                       "const STORE = 'bsdm.prefs.v5'; let STORED = {};\n"
+                       "const localStorage = { getItem: (k) => k in STORED ? JSON.stringify(STORED[k]) : null };\n"
+                       "const fallback = { halls: ['arrillaga', 'lakeside', 'wilbur'], lang: 'en' };"),
+                   tmp_path=tmp_path)
+        assert got == [
+            {"halls": ["arrillaga", "lakeside", "wilbur"], "lang": "zh"},
+            {"halls": ["lakeside"], "lang": "en"},
+            {"halls": ["wilbur"], "lang": "en"},
+            {"halls": ["arrillaga", "lakeside", "wilbur"], "lang": "en"},
+        ]
+
+
+UPCOMING_PRELUDE = (
+    "const MEALS = ['Breakfast', 'Lunch', 'Dinner'];\n"
+    "const TODAY = '2026-10-15'; const TOMORROW = '2026-10-16';\n"
+    "let NOW;\n"
+    "Date = class extends Date { constructor() { super(NOW); } };\n"
+    "const all = { Breakfast: {}, Lunch: {}, Dinner: {} };\n"
+    "const DATA = {\n"
+    "  window: ['2026-10-15', '2026-10-16'],\n"
+    "  menus: { '2026-10-15': { arrillaga: all, wilbur: all, branner: { Lunch: {}, Dinner: {} } },\n"
+    "           '2026-10-16': { arrillaga: all, wilbur: all, branner: { Lunch: {}, Dinner: {} } } },\n"
+    "  hours: { '2026-10-15': {\n"
+    "    arrillaga: { Breakfast: ['07:30', '10:00'], Lunch: ['11:00', '15:00'], Dinner: ['17:00', '20:30'] },\n"
+    "    wilbur: { Breakfast: ['07:30', '09:00'], Lunch: ['11:00', '13:30'], Dinner: ['17:00', '20:00'] } } },\n"
+    "};"
+)
+
+
+class TestOpeningMeal:
+    """The page opens on the next meal the chosen halls are still serving,
+    read off the viewer's clock, and on tomorrow once tonight's is over."""
+
+    def _at(self, tmp_path, cases):
+        return call(["hoursFor", "upcoming"],
+                    "return INPUT.map(([now, halls]) => { NOW = now; return upcoming(halls); });",
+                    payload=cases, prelude=UPCOMING_PRELUDE, tmp_path=tmp_path)
+
+    def test_each_meal_holds_until_the_last_chosen_hall_stops_serving_it(self, tmp_path):
+        got = self._at(tmp_path, [["2026-10-15T06:00", ["arrillaga", "wilbur"]],
+                                  ["2026-10-15T09:30", ["arrillaga", "wilbur"]],
+                                  ["2026-10-15T09:30", ["wilbur"]],
+                                  ["2026-10-15T14:30", ["arrillaga", "wilbur"]],
+                                  ["2026-10-15T14:30", ["wilbur"]],
+                                  ["2026-10-15T20:15", ["arrillaga"]]])
+        assert [g["meal"] for g in got] == ["Breakfast", "Breakfast", "Lunch",
+                                           "Lunch", "Dinner", "Dinner"]
+        assert {g["date"] for g in got} == {"2026-10-15"}
+
+    def test_after_dinner_it_is_tomorrows_first_meal(self, tmp_path):
+        """Branner serves no breakfast, so its first meal tomorrow is lunch."""
+        got = self._at(tmp_path, [["2026-10-15T20:45", ["arrillaga", "wilbur"]],
+                                  ["2026-10-15T23:30", ["branner"]]])
+        assert got == [{"date": "2026-10-16", "meal": "Breakfast"},
+                       {"date": "2026-10-16", "meal": "Lunch"}]
+
+    def test_a_hall_with_no_hours_on_file_closes_at_the_usual_time(self, tmp_path):
+        got = self._at(tmp_path, [["2026-10-15T09:45", ["branner"]],
+                                  ["2026-10-15T14:15", ["branner"]]])
+        assert got == [{"date": "2026-10-15", "meal": "Lunch"},
+                       {"date": "2026-10-15", "meal": "Dinner"}]
+
+    def test_a_day_nobody_serves_stays_today(self, tmp_path):
+        """A break is for the board to explain, not a reason to skip ahead."""
+        got = self._at(tmp_path, [["2026-10-15T12:00", ["stern"]]])
+        assert got == [{"date": "2026-10-15", "meal": "Dinner"}]

@@ -420,7 +420,7 @@ JSON block so a dish name cannot close the script tag early.
   name in the masthead fitted at 1710 px and lost "Side by Side" to an ellipsis at 390, which
   is why it is set in two lines. `scrollWidth > clientWidth` on an element finds a clipped line
   faster than a screenshot does.
-- **Bump `STORE` in `web/app.js`** (currently `bsdm.prefs.v4`) whenever the persisted state shape
+- **Bump `STORE` in `web/app.js`** (currently `bsdm.prefs.v5`) whenever the persisted state shape
   changes. Stale localStorage once looked exactly like a scraper bug, because the MCP browser
   shares the user's Chrome profile.
 - **The language of a first visit comes from the browser, not from a constant.** `fallback.lang`
@@ -428,15 +428,24 @@ JSON block so a dish name cannot close the script tag early.
   has a table for, English otherwise. It is a default, so a saved preference still wins on the
   way back in and the tour inherits it for free (it reads `t()` like everything else). Adding a
   third language is a new key in `UI` and nothing here.
-- **The date is deliberately not persisted**; everything else in `state` is. `load()` and `save()`
-  both strip it, so old saves that carry one still open on today.
+- **The date and the meal are deliberately not persisted**; everything else in `state` is.
+  `upcoming()` opens the page on the next meal the chosen halls are still serving, by the
+  viewer's clock and the halls' hours, and on tomorrow's first meal once tonight's is over.
+  The meal used to be fixed at Dinner and remembered, and GA showed four visitors in ten
+  switching it by hand, mostly to Lunch at lunchtime. `load()` and `save()` both strip the two,
+  so old saves that carry them still open on the meal coming up. The build's LCP preload
+  (`find_lcp_image()`) still assumes Dinner: the build cannot know the viewer's clock, and
+  dinner is the busiest window.
+- **A selection that is only the defaults is not saved**, so changing `defaults.selected` in
+  `config/halls.json` reaches everyone who never picked a hall. v4 saved it regardless; `legacy()`
+  drops the old Arrillaga/Wilbur/FloMo default on the way to v5, keeping any other selection.
 - **A shared link is shown, not adopted.** The share button beside the headline sends
   `?d=&m=&h=` — the day, the meal and the halls, never a preference — and `readLink()` drops
-  whatever the build does not publish. The halls and the meal are remembered, so a friend's
-  link must not overwrite yours: they go into `borrowed`, `save()` writes `own` back for each,
-  and a key leaves `borrowed` only when its own control is clicked (hall chip, meal chip,
-  Reset). A new control that sets a borrowed key has to do the same. The query is cleared on
-  arrival, which keeps the date unremembered through a reload or a bookmark.
+  whatever the build does not publish. The halls are remembered, so a friend's link must not
+  overwrite yours: they go into `borrowed`, `save()` writes `own` back, and they leave
+  `borrowed` only when a hall chip or Reset is clicked. A new control that sets the halls has
+  to do the same. The query is cleared on arrival, which keeps the day and meal unremembered
+  through a reload or a bookmark.
 - **Every active hall also has its own page, `/<hallId>/`,** written by `build.page_html()`
   from the same template: its own title, description, canonical and `og:url`, a
   `FoodEstablishment` JSON-LD block, and the week written out as plain HTML (`#prerender`) for

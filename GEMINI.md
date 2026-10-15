@@ -122,4 +122,4 @@ uv run python scripts/fetch_specials.py --show
 - **CSS Grid & Subgrid**: `.board` defines row templates and each `.column` uses CSS `subgrid`. Standing counters use `grid-row: auto / -1` to fill unused rows without expanding dish card heights.
 - **Pinned Headers (`.pinned`)**: `.board` has `overflow-x: auto`, which makes `overflow-y` compute to `auto` and breaks standard `position: sticky`. The sticky hall row is a `position: fixed` overlay synchronized via `syncPins()`.
 - **Light/Dark Scheme**: Colors use CSS `light-dark()` pairs on `:root` in `web/app.css`, controlled by the `[data-theme]` attribute.
-- **LocalStorage Storage Keys**: State is stored in `bsdm.prefs.v4`. Tour state is stored in `bsdm.tour.v1`. Dates are **never** persisted to localStorage.
+- **LocalStorage Storage Keys**: State is stored in `bsdm.prefs.v5`. Tour state is stored in `bsdm.tour.v1`. The date and the meal are **never** persisted: `upcoming()` picks the next meal still being served.

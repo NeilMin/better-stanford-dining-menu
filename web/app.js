@@ -7,8 +7,8 @@
   // the site's top, which every picture and logo path starts from.
   const PAGE = DATA.page || { hall: null, root: "" };
   const MEALS = ["Breakfast", "Lunch", "Dinner"];
-  // v4 added `lang` to the persisted shape.
-  const STORE = "bsdm.prefs.v4";
+  // v4 added `lang` to the persisted shape; v5 stopped keeping `meal`.
+  const STORE = "bsdm.prefs.v5";
 
   const DIET = [
     { key: "vegetarian", label: "Vegetarian", zh: "素食", cls: "badge-v", short: "Veg", shortZh: "素" },
@@ -260,8 +260,6 @@
 
   const fallback = {
     halls: DATA.defaults.selected.slice(),
-    date: DATA.window.includes(TODAY) ? TODAY : DATA.window[0],
-    meal: "Dinner",
     diet: [],
     meatFirst: true,
     photos: true,
@@ -270,12 +268,53 @@
     lang: preferredLang(),
   };
 
-  // The date is the one choice that is not remembered: you open the page to see
-  // what is on today, and a day picked last Tuesday is a stale answer to that.
-  // Older saves still carry one, so it is dropped on the way in as well as out.
+  // Which day and meal the page opens on is a question about the clock, not a
+  // preference: the next meal the chosen halls are still serving, and once
+  // tonight's dinner is over, the first meal tomorrow. The meal used to be
+  // fixed at Dinner and then remembered, and four visitors in ten changed it
+  // by hand -- mostly to Lunch, at lunchtime. A meal counts as over when the
+  // last of the chosen halls stops serving it; a hall with no hours on file
+  // for it is read against the usual campus close.
+  function upcoming(halls) {
+    const now = new Date();
+    const clock = [now.getHours(), now.getMinutes()]
+      .map((n) => String(n).padStart(2, "0")).join(":");
+    const usual = { Breakfast: "10:00", Lunch: "14:00", Dinner: "20:00" };
+    const offered = (date) => MEALS.filter((meal) =>
+      halls.some((id) => meal in ((DATA.menus[date] || {})[id] || {})));
+
+    if (!DATA.window.includes(TODAY)) {
+      const first = DATA.window[0];
+      return { date: first, meal: offered(first)[0] || "Dinner" };
+    }
+    const today = offered(TODAY);
+    for (const meal of today) {
+      const closes = halls.map((id) => hoursFor(TODAY, id, meal)?.[1]).filter(Boolean);
+      if (clock <= (closes.length ? closes.sort().at(-1) : usual[meal])) return { date: TODAY, meal };
+    }
+    // Nobody serving today is a break, and the board says so; jumping to
+    // tomorrow is only for a day whose meals have all been served.
+    const next = DATA.window.includes(TOMORROW) ? offered(TOMORROW)[0] : null;
+    if (today.length && next) return { date: TOMORROW, meal: next };
+    return { date: TODAY, meal: today.at(-1) || "Dinner" };
+  }
+
+  // v4 kept the meal, and kept the halls even when nobody had picked any, so
+  // a reader who never touched a chip carried the defaults of the day --
+  // Arrillaga, Wilbur and FloMo -- for good. Read once on the way to v5, with
+  // that selection dropped so it follows the defaults like a new visitor.
+  function legacy() {
+    const saved = JSON.parse(localStorage.getItem("bsdm.prefs.v4") || "{}");
+    if (String(saved.halls) === "arrillaga,wilbur,florencemoore") delete saved.halls;
+    return saved;
+  }
+
+  // Neither the date nor the meal is remembered (upcoming() above). Older
+  // saves still carry them, so they are dropped on the way in as well as out.
   function load() {
     try {
-      const { date, ...saved } = JSON.parse(localStorage.getItem(STORE) || "{}");
+      const stored = localStorage.getItem(STORE);
+      const { date, meal, ...saved } = stored === null ? legacy() : JSON.parse(stored);
       return { ...fallback, ...saved };
     } catch {
       return { ...fallback };
@@ -284,9 +323,12 @@
 
   function save() {
     try {
-      const { date, ...kept } = state;
+      const { date, meal, ...kept } = state;
       // What a shared link put on screen is shown, not adopted (see readLink).
       for (const key of borrowed) kept[key] = own[key];
+      // A selection that is just the defaults is not kept, so that it moves
+      // when they do rather than pinning whatever they were on the day.
+      if (String(kept.halls) === String(hallOrder(DATA.defaults.selected))) delete kept.halls;
       localStorage.setItem(STORE, JSON.stringify(kept));
     } catch {
       /* private browsing or blocked storage -- preferences just don't persist */
@@ -312,6 +354,7 @@
 
   state.halls = hallOrder(state.halls);
   if (!state.halls.length) state.halls = hallOrder(DATA.defaults.selected);
+  Object.assign(state, upcoming(state.halls));
   if (!UI[state.lang]) state.lang = fallback.lang;
   const validDiets = new Set(DIET.map((d) => d.key));
   state.diet = Array.isArray(state.diet) ? state.diet.filter((d) => validDiets.has(d)) : [];
@@ -431,18 +474,19 @@
       `&h=${view.halls.map(encodeURIComponent).join(",")}`;
   }
 
-  // Your halls and your meal are remembered, and a friend's link must not
-  // overwrite them: until you touch that control yourself, save() writes back
-  // what you had. The query is cleared on arrival, so a reload or a bookmark
-  // does not pin the page to one day -- the date is never remembered either.
-  const own = { meal: state.meal, halls: state.halls };
+  // Your halls are remembered, and a friend's link must not overwrite them:
+  // until you touch the hall chips yourself, save() writes back what you had.
+  // The day and the meal it names are simply shown, since neither is ever
+  // remembered. The query is cleared on arrival, so a reload or a bookmark
+  // does not pin the page to one day.
+  const own = { halls: state.halls };
   const borrowed = new Set();
   {
     const query = new URLSearchParams(location.search);
     const arrived = readLink(query);
     if (Object.keys(arrived).length) {
       Object.assign(state, arrived);
-      for (const key of ["meal", "halls"]) if (key in arrived) borrowed.add(key);
+      if ("halls" in arrived) borrowed.add("halls");
       trackEvent("open_shared_link", {
         meal: state.meal,
         hall_count: state.halls.length,
@@ -455,6 +499,8 @@
     if (PAGE.hall && !("halls" in arrived) && hallById.has(PAGE.hall)) {
       state.halls = [PAGE.hall];
       borrowed.add("halls");
+      // Its meals, not those of the halls you had: Branner serves no breakfast.
+      if (!("date" in arrived) && !("meal" in arrived)) Object.assign(state, upcoming(state.halls));
     }
     if (["d", "m", "h"].some((k) => query.has(k))) {
       // GA4 has read the utm tags by now, as it has the rest of the address.
@@ -1324,7 +1370,6 @@
       chip(t("meal", m), m === state.meal, () => {
         if (state.meal !== m) {
           state.meal = m;
-          borrowed.delete("meal");
           trackEvent("select_meal", { meal: m });
           render();
         }
