@@ -1625,6 +1625,41 @@
   "vessel": "plate",
   "written_at": "2026-09-26T20:19:32+00:00"
  },
+ "15dc7ab06773": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "seafood",
+   "red tomato sauce",
+   "rice"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item pasta?",
+    "yes": true
+   },
+   {
+    "q": "Is the main item a soup or stew?",
+    "yes": false
+   },
+   {
+    "q": "Is there meat or seafood in the pasta?",
+    "yes": false
+   }
+  ],
+  "dish": "Tuscan White Bean Pasta",
+  "look": "whole grain penne pasta, creamy pale-green pesto sauce, plump white beans, diced red tomatoes, thin slices of red onion, fresh green basil leaves",
+  "model": "gemma-4-31b-it",
+  "name": "Tuscan White Bean Pasta",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-15T08:39:24+00:00"
+ },
  "16be004676dc": {
   "avoid": [
    "whole chicken breasts",
@@ -4777,6 +4812,40 @@
   "vessel": "plate",
   "written_at": "2026-10-01T23:12:32+00:00"
  },
+ "303fee8398e3": {
+  "avoid": [
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "black beans",
+   "soup",
+   "stew"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item black eyed peas?",
+    "yes": true
+   },
+   {
+    "q": "Is it a hot stew?",
+    "yes": false
+   },
+   {
+    "q": "Is the main item meat?",
+    "yes": false
+   }
+  ],
+  "dish": "Black Eyed Pea Salad",
+  "look": "cooked black eyed peas, diced red and green bell peppers, finely chopped red onion, bits of green parsley and cilantro, glossy vinegar dressing",
+  "model": "gemma-4-31b-it",
+  "name": "Black Eyed Peas Salad",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-15T08:38:16+00:00"
+ },
  "3095445b5e1b": {
   "avoid": [
    "chicken tenders",
@@ -4814,6 +4883,40 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-26T23:11:33+00:00"
+ },
+ "30bfc870782c": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "corn on the cob",
+   "corn muffin"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a piece of cornbread?",
+    "yes": true
+   },
+   {
+    "q": "Is the main item a corn muffin?",
+    "yes": false
+   },
+   {
+    "q": "Is there meat in the cornbread?",
+    "yes": false
+   }
+  ],
+  "dish": "Jalapeño Cornbread",
+  "look": "a square slice of golden-yellow cornbread, moist crumb, small diced green jalapeño pieces, browned crust, coarse cornmeal texture",
+  "model": "gemma-4-31b-it",
+  "name": "Jalapeno Cornbread",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-15T08:39:24+00:00"
  },
  "30f17fdd3912": {
   "avoid": [
@@ -5847,6 +5950,38 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-10-10T00:10:11+00:00"
+ },
+ "378d0e55d0e1": {
+  "avoid": [
+   "pepperoni",
+   "bell peppers",
+   "olives",
+   "whole sausage links",
+   "raw dough",
+   "pasta"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item pizza?",
+    "yes": true
+   },
+   {
+    "q": "Is it a calzone or a wrap?",
+    "yes": false
+   },
+   {
+    "q": "Is it a bowl of pasta?",
+    "yes": false
+   }
+  ],
+  "dish": "Sausage and Mushroom Pizza",
+  "look": "round pizza slice, melted bubbly mozzarella cheese, browned Italian sausage crumbles, sliced brown mushrooms, red tomato sauce, golden brown crust",
+  "model": "gemma-4-31b-it",
+  "name": "Sausage & Mushroom Pizza",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-15T08:38:16+00:00"
  },
  "37bb4e5a3fef": {
   "avoid": [
@@ -12117,6 +12252,40 @@
   "vessel": "bowl",
   "written_at": "2026-09-26T23:10:44+00:00"
  },
+ "74a43fd0b07f": {
+  "avoid": [
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "broccoli soup",
+   "raw broccoli",
+   "carrots"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item broccoli florets?",
+    "yes": true
+   },
+   {
+    "q": "Is it a soup?",
+    "yes": false
+   },
+   {
+    "q": "Is the main item meat?",
+    "yes": false
+   }
+  ],
+  "dish": "Sauteed Broccoli",
+  "look": "small broccoli florets, vibrant green color, glistening with oil, translucent sautéed onion bits, minced garlic pieces",
+  "model": "gemma-4-31b-it",
+  "name": "Sauteed Broccoli Decicco",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-15T08:38:16+00:00"
+ },
  "7559986e1da1": {
   "avoid": [
    "white fish",
@@ -17610,6 +17779,40 @@
   "vessel": "bowl",
   "written_at": "2026-10-03T07:52:08+00:00"
  },
+ "a8c6545f0fbd": {
+  "avoid": [
+   "chicken",
+   "beef",
+   "pork",
+   "lamb",
+   "fish",
+   "shrimp",
+   "rice",
+   "naan"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cubes of cheese and potato in sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the main item meat?",
+    "yes": false
+   },
+   {
+    "q": "Is it a dry salad?",
+    "yes": false
+   }
+  ],
+  "dish": "Aloo Matar Paneer",
+  "look": "cubes of white paneer cheese, chunks of soft yellow potato, bright green peas, thick creamy yellow-orange curry sauce",
+  "model": "gemma-4-31b-it",
+  "name": "Potato & Sweet Pea Curry with Paneer",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-15T08:38:16+00:00"
+ },
  "a8de102949dc": {
   "avoid": [
    "crispy deep-fried breading",
@@ -20895,6 +21098,40 @@
   "vessel": "plate",
   "written_at": "2026-09-28T17:10:34+00:00"
  },
+ "c572b6b661ee": {
+  "avoid": [
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "raw spinach",
+   "salad",
+   "cabbage"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cooked leafy greens?",
+    "yes": true
+   },
+   {
+    "q": "Is it a fresh raw salad?",
+    "yes": false
+   },
+   {
+    "q": "Is the main item meat?",
+    "yes": false
+   }
+  ],
+  "dish": "Braised Greens",
+  "look": "dark green leafy vegetables, wilted and tender, glossy dark green sauce, small yellow mustard seeds, tiny red pepper flakes",
+  "model": "gemma-4-31b-it",
+  "name": "Braised Greens",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-15T08:38:16+00:00"
+ },
  "c579474200a3": {
   "avoid": [
    "beef",
@@ -22946,6 +23183,38 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T04:50:08+00:00"
+ },
+ "d6a949b9815e": {
+  "avoid": [
+   "rice",
+   "naan",
+   "cilantro",
+   "whole spices",
+   "chicken wings",
+   "chicken legs"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item chicken chunks in sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is it a dry dish without sauce?",
+    "yes": false
+   },
+   {
+    "q": "Is it a thin soup?",
+    "yes": false
+   }
+  ],
+  "dish": "Chicken Tikka Masala",
+  "look": "chunks of grilled chicken breast, thick creamy orange-red curry sauce, glossy texture, small swirls of white cream on top",
+  "model": "gemma-4-31b-it",
+  "name": "Chicken Tikka Masala",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-15T08:38:16+00:00"
  },
  "d7136f0eaed2": {
   "avoid": [
@@ -25157,6 +25426,39 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T07:17:51+00:00"
  },
+ "ec4072989281": {
+  "avoid": [
+   "chicken",
+   "pork",
+   "beef",
+   "fish",
+   "shrimp",
+   "whole tofu block",
+   "raw tofu"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item tofu cubes?",
+    "yes": true
+   },
+   {
+    "q": "Is the main item meat?",
+    "yes": false
+   },
+   {
+    "q": "Is it a whole block of tofu?",
+    "yes": false
+   }
+  ],
+  "dish": "Cajun Tofu",
+  "look": "cubed firm tofu, coated in a thick reddish-brown spicy tomato glaze, seared edges, glossy finish",
+  "model": "gemma-4-31b-it",
+  "name": "Cajun Tofu",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-15T08:38:16+00:00"
+ },
  "ecbc2cfda5cb": {
   "avoid": [
    "beef steak",
@@ -25998,6 +26300,38 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-26T23:11:18+00:00"
+ },
+ "f0f0364d4ce9": {
+  "avoid": [
+   "veggie burger",
+   "chicken burger",
+   "fish burger",
+   "french fries",
+   "slider",
+   "open-faced sandwich"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a burger on a bun?",
+    "yes": true
+   },
+   {
+    "q": "Is the patty made of tofu or beans?",
+    "yes": false
+   },
+   {
+    "q": "Is it a wrap or a taco?",
+    "yes": false
+   }
+  ],
+  "dish": "Hamburger",
+  "look": "thick grilled beef patty, toasted golden-brown potato bun, melted cheese slice, crisp lettuce leaf, slice of tomato",
+  "model": "gemma-4-31b-it",
+  "name": "Hamburger Potato Bun",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-15T08:38:16+00:00"
  },
  "f13bc4e91841": {
   "avoid": [
