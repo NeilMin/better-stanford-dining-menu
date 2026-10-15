@@ -14074,12 +14074,11 @@
    "chicken",
    "beef",
    "pork",
-   "fish",
-   "shrimp",
-   "sour cream",
-   "crema",
    "cheese",
-   "black beans"
+   "crema",
+   "sour cream",
+   "avocado",
+   "mango"
   ],
   "checks": [
    {
@@ -14096,13 +14095,13 @@
    }
   ],
   "dish": "cauliflower tacos",
-  "look": "roasted spiced cauliflower florets with visible bumpy curd heads filling warm folded soft corn tortillas, whole pinto beans, diced charred yellow pineapple chunks, finely chopped white onions, fresh cilantro leaves, on a plate",
-  "model": "gemini-flash-latest",
+  "look": "prominent roasted cauliflower florets with reddish-orange al pastor marinade, visible bumpy cauliflower heads filling warm folded soft yellow corn tortillas, whole cooked pinto beans, diced charred yellow pineapple cubes, minced raw white onions, fresh green cilantro leaves, on a plate",
+  "model": "gemini-3.7-flash",
   "name": "Cauliflower Taco with Chilies",
   "rev": 6,
-  "revisions": 2,
+  "revisions": 3,
   "vessel": "plate",
-  "written_at": "2026-10-14T20:05:37+00:00"
+  "written_at": "2026-10-15T01:13:52+00:00"
  },
  "87d5db3ace4c": {
   "avoid": [
@@ -20592,19 +20591,18 @@
  },
  "c21f3133a34d": {
   "avoid": [
-   "tofu",
-   "shrimp",
-   "beef",
-   "pork",
+   "breaded nuggets",
+   "deep-fried chicken",
+   "battered chicken",
+   "crispy coating",
    "peanuts",
+   "tofu",
    "rice",
-   "noodles",
-   "vegetable stir fry without meat",
-   "breaded nuggets"
+   "noodles"
   ],
   "checks": [
    {
-    "q": "Is the main item stir-fried chicken in a dark sauce?",
+    "q": "Is the main item meat chunks in a dark sauce?",
     "yes": true
    },
    {
@@ -20617,13 +20615,13 @@
    }
   ],
   "dish": "Kung Pao chicken",
-  "look": "stir-fried diced chicken thigh cubes coated in glossy dark brown savory glaze, prominent glazed chicken pieces filling the bowl, diced red bell peppers, chopped green zucchini chunks, sliced yellow onions, chopped green scallions, whole dried red chili pods",
-  "model": "gemini-flash-latest",
+  "look": "stir-fried sliced chicken pieces with browned edges, glossy dark brown savory sauce, diced red bell peppers, chopped green zucchini chunks, sliced white onions, whole dried red chili peppers, sliced green scallions",
+  "model": "gemini-3.7-flash",
   "name": "Kung Pao Chicken",
   "rev": 6,
-  "revisions": 1,
+  "revisions": 2,
   "vessel": "bowl",
-  "written_at": "2026-10-14T20:20:59+00:00"
+  "written_at": "2026-10-15T00:02:49+00:00"
  },
  "c2420fa4c57f": {
   "avoid": [
