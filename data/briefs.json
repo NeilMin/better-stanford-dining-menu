@@ -16885,6 +16885,42 @@
   "vessel": "plate",
   "written_at": "2026-09-27T07:17:51+00:00"
  },
+ "9f4992616d78": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "squash soup",
+   "puree",
+   "raw squash",
+   "whole uncut squash"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food roasted pieces of orange squash?",
+    "yes": true
+   },
+   {
+    "q": "Is the squash blended into a smooth soup or puree?",
+    "yes": false
+   },
+   {
+    "q": "Does the squash appear completely raw or uncut?",
+    "yes": false
+   }
+  ],
+  "dish": "roasted butternut squash",
+  "look": "tender roasted butternut squash cubes, vibrant orange flesh, caramelized golden-brown charred edges, soft roasted interior, light sprinkle of chopped fresh parsley",
+  "model": "gemini-flash-latest",
+  "name": "Roasted Butternut Squash",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-16T08:21:02+00:00"
+ },
  "9f89c4239fd7": {
   "avoid": [
    "black cod",
@@ -22660,6 +22696,42 @@
   "vessel": "plate",
   "written_at": "2026-09-27T05:30:31+00:00"
  },
+ "ce6193a5885c": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "burrito wrap",
+   "dairy cheese",
+   "sour cream",
+   "taco shell"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish served as an open bowl with rice, beans, and fajita toppings?",
+    "yes": true
+   },
+   {
+    "q": "Is the food rolled inside a closed burrito wrap?",
+    "yes": false
+   },
+   {
+    "q": "Is there shredded dairy cheese or white sour cream on the food?",
+    "yes": false
+   }
+  ],
+  "dish": "fajita bowl",
+  "look": "strips of seared plant-based beef tossed with grilled bell pepper strips and caramelized onions, fluffy cilantro lime rice, whole black beans, scoop of green avocado salsa, red tomato salsa, folded warm flour tortilla on the side",
+  "model": "gemini-flash-latest",
+  "name": "Sizzlin \"Beef\" Fajita Bowl",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-16T08:21:02+00:00"
+ },
  "ce9f888db3b4": {
   "avoid": [
    "meat",
@@ -23936,6 +24008,42 @@
   "revisions": 1,
   "vessel": "bowl",
   "written_at": "2026-10-08T21:49:18+00:00"
+ },
+ "d96bd4c63a09": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "sausage",
+   "seafood",
+   "rice",
+   "raw okra"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a vegetable stew with sliced okra and tomatoes?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat or seafood such as sausage or shrimp visible?",
+    "yes": false
+   },
+   {
+    "q": "Is the okra raw and uncooked?",
+    "yes": false
+   }
+  ],
+  "dish": "okra ratatouille",
+  "look": "sliced green okra rounds, stewed in a chunky rich red tomato sauce with diced red and yellow bell peppers, tender red onions, minced garlic, flecks of dried herbs, fresh green basil garnish",
+  "model": "gemini-flash-latest",
+  "name": "Creole Okra Ratatouille",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-16T08:21:02+00:00"
  },
  "d9a3f416baa8": {
   "avoid": [
@@ -26852,11 +26960,11 @@
    "pork",
    "fish",
    "mushroom sandwich",
-   "white spread",
-   "mayo",
+   "mushroom melt",
+   "fresh herbs",
+   "parsley",
    "ground meat",
-   "burger",
-   "wrap"
+   "burger"
   ],
   "checks": [
    {
@@ -26873,13 +26981,13 @@
    }
   ],
   "dish": "vegetarian cheesesteak",
-  "look": "heaping pile of charred sliced plant-based beef strips, browned shaved vegan steak pieces, melted white provolone cheese, caramelized onion slices, scattered sautéed mushrooms, stuffed inside a split crusty sourdough hoagie roll",
-  "model": "gemini-3.7-flash",
+  "look": "abundant griddled thin strips of plant-based beef substitute, browned sliced faux steak strips, melted white provolone cheese drape, caramelized onion slices, scattered sautéed mushroom pieces, packed inside a split toasted sourdough hoagie roll",
+  "model": "gemini-flash-latest",
   "name": "Plant-Forward Philly Cheesesteak",
   "rev": 6,
-  "revisions": 2,
+  "revisions": 3,
   "vessel": "plate",
-  "written_at": "2026-10-16T00:46:37+00:00"
+  "written_at": "2026-10-16T09:13:42+00:00"
  },
  "f19ef3f4af91": {
   "avoid": [
