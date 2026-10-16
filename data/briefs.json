@@ -16767,6 +16767,41 @@
   "vessel": "plate",
   "written_at": "2026-10-13T20:50:13+00:00"
  },
+ "9d0428707988": {
+  "avoid": [
+   "ground beef",
+   "meatballs",
+   "skewers",
+   "tacos",
+   "lettuce wraps",
+   "rice",
+   "noodles",
+   "raw beef",
+   "soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item sliced meat?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat ground or crumbled like mince?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat wrapped in a tortilla, pita, or flatbread?",
+    "yes": false
+   }
+  ],
+  "dish": "beef bulgogi",
+  "look": "thin marinated beef strips, glistening dark brown glaze, caramelized edges, tender translucent sliced onions, scattered bright green scallion rings, rich glossy soy sauce coating",
+  "model": "gemini-flash-latest",
+  "name": "Beef Bulgogi FloMo",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-16T22:57:09+00:00"
+ },
  "9d4fb441b28a": {
   "avoid": [
    "meat",
@@ -19156,6 +19191,41 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-10-15T23:11:09+00:00"
+ },
+ "b053bab30248": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "cheese",
+   "tortilla chips",
+   "tacos"
+  ],
+  "checks": [
+   {
+    "q": "Is the main dish a stew of mixed vegetables and beans?",
+    "yes": true
+   },
+   {
+    "q": "Does the dish contain any meat, chicken, or seafood?",
+    "yes": false
+   },
+   {
+    "q": "Is the sauce red or tomato-based?",
+    "yes": false
+   }
+  ],
+  "dish": "vegetable stew in salsa verde",
+  "look": "stewed vegetable mixture, chunky diced tender potatoes, sliced brown mushrooms, whole black beans, plump garbanzo beans, sliced orange carrots, diced bell peppers, generous pool of tangy green salsa verde broth",
+  "model": "gemini-flash-latest",
+  "name": "Vegetables in Salsa Verde",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-16T22:57:09+00:00"
  },
  "b058e911d5d2": {
   "avoid": [
