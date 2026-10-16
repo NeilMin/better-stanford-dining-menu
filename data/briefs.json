@@ -387,6 +387,41 @@
   "vessel": "plate",
   "written_at": "2026-09-29T17:11:14+00:00"
  },
+ "03adc8e4d678": {
+  "avoid": [
+   "whipped cream",
+   "marshmallows",
+   "coffee beans",
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a dark brown chocolate drink?",
+    "yes": true
+   },
+   {
+    "q": "Is the drink topped with whipped cream or marshmallows?",
+    "yes": false
+   },
+   {
+    "q": "Is the liquid coffee or tea?",
+    "yes": false
+   }
+  ],
+  "dish": "hot chocolate",
+  "look": "rich dark brown cocoa liquid, smooth velvety surface, delicate light foam on top, fine sprinkle of reddish-brown ground cinnamon, soft steam rising",
+  "model": "gemini-3.5-flash",
+  "name": "Bebida Caliente (Hot Chocolate)",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-15T23:23:39+00:00"
+ },
  "03d318467e61": {
   "avoid": [
    "meat",
@@ -13306,6 +13341,39 @@
   "vessel": "plate",
   "written_at": "2026-10-08T20:56:03+00:00"
  },
+ "7ed0ce4b49c0": {
+  "avoid": [
+   "chicken wings",
+   "sauce on side",
+   "waffles",
+   "burger bun",
+   "sandwich",
+   "french fries",
+   "raw chicken"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item fried chicken coated in a reddish spiced glaze?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken served inside a burger bun or sandwich?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken unbreaded and grilled?",
+    "yes": false
+   }
+  ],
+  "dish": "Nashville hot chicken",
+  "look": "crispy fried chicken breast fillet, craggy deep reddish-amber seasoned cayenne coating, glistening hot chili oil glaze, topped with round crinkle-cut pickled cucumber slices, thinly sliced pickled carrots",
+  "model": "gemini-flash-latest",
+  "name": "Nashville Chicken with Pickled Veggies",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-15T23:11:09+00:00"
+ },
  "7ef2b4c7396f": {
   "avoid": [
    "meat",
@@ -15724,6 +15792,39 @@
   "vessel": "plate",
   "written_at": "2026-10-10T21:35:00+00:00"
  },
+ "93d7f5f7f711": {
+  "avoid": [
+   "spaghetti",
+   "pasta",
+   "noodles",
+   "sub sandwich",
+   "bread roll",
+   "melted cheese layer",
+   "raw meat"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item round meatballs in red tomato sauce?",
+    "yes": true
+   },
+   {
+    "q": "Are the meatballs served over spaghetti or pasta?",
+    "yes": false
+   },
+   {
+    "q": "Are the meatballs served inside a sandwich bun or roll?",
+    "yes": false
+   }
+  ],
+  "dish": "beef meatballs in marinara sauce",
+  "look": "tender browned beef meatballs, thick rustic red tomato marinara sauce, visible sauteed sliced button mushrooms, rich glossy coating, garnished with torn fresh green basil leaves",
+  "model": "gemini-flash-latest",
+  "name": "Zesty Meatballs in Marinara",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-15T23:11:09+00:00"
+ },
  "9447e7380ead": {
   "avoid": [
    "meatballs",
@@ -17101,6 +17202,40 @@
   "vessel": "plate",
   "written_at": "2026-09-27T05:20:07+00:00"
  },
+ "a10381ee8278": {
+  "avoid": [
+   "pork chops on the bone",
+   "skewers",
+   "spring rolls",
+   "baguette",
+   "broth",
+   "noodles",
+   "raw meat",
+   "ground meat"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item sliced grilled meat with char marks?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat served in a broth or soup?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat skewered on wooden sticks?",
+    "yes": false
+   }
+  ],
+  "dish": "Vietnamese grilled pork",
+  "look": "thin slices of charbroiled pork shoulder, dark caramelized char marks, glossy amber marinade glaze, tender juicy texture, scattered thin strips of fresh red chili, chopped green scallions",
+  "model": "gemini-flash-latest",
+  "name": "Vietnamese Grilled Pork",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-15T23:11:09+00:00"
+ },
  "a16044ca8279": {
   "avoid": [
    "meat",
@@ -17388,6 +17523,39 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T06:01:04+00:00"
+ },
+ "a4c19062c365": {
+  "avoid": [
+   "whole unsliced loaf",
+   "hamburger bun",
+   "burger patty",
+   "meatballs",
+   "steak",
+   "raw meat",
+   "gravy boat"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item slices of baked glazed meatloaf?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat served as a burger patty between buns?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat shaped into round meatballs?",
+    "yes": false
+   }
+  ],
+  "dish": "glazed beef meatloaf",
+  "look": "thick cut slices of baked ground beef meatloaf, coarse texture with flecks of onion, coated with glossy spiced reddish-brown tomato glaze, garnished with finely chopped fresh parsley",
+  "model": "gemini-flash-latest",
+  "name": "Creole Meatloaf",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-15T23:11:09+00:00"
  },
  "a4c4bf761aa0": {
   "avoid": [
@@ -18847,6 +19015,43 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T07:17:51+00:00"
+ },
+ "b0318fd4539a": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "fried rice",
+   "vegetables",
+   "soy sauce",
+   "sauce",
+   "chopsticks"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a mound of plain cooked white rice?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat, poultry, or seafood visible?",
+    "yes": false
+   },
+   {
+    "q": "Is the rice brown or fried with seasonings and vegetables?",
+    "yes": false
+   }
+  ],
+  "dish": "steamed white rice",
+  "look": "mound of fluffy steamed long-grain white rice, separate tender white grains, light sheen of moisture, softly mounded in a serving portion",
+  "model": "gemini-flash-latest",
+  "name": "White Rice",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-15T23:11:09+00:00"
  },
  "b058e911d5d2": {
   "avoid": [
@@ -21590,6 +21795,39 @@
   "vessel": "bowl",
   "written_at": "2026-10-01T10:25:41+00:00"
  },
+ "c6de0c928041": {
+  "avoid": [
+   "tortilla chips",
+   "tacos",
+   "burrito",
+   "dry meat",
+   "pasta noodles",
+   "black beans",
+   "creamy soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a soup with red broth and hominy kernels?",
+    "yes": true
+   },
+   {
+    "q": "Is the dish served dry as a taco or burrito?",
+    "yes": false
+   },
+   {
+    "q": "Does the dish contain noodles or pasta?",
+    "yes": false
+   }
+  ],
+  "dish": "chicken pozole rojo",
+  "look": "steaming deep red guajillo chili broth, shredded tender chicken pieces, puffed white hominy kernels, topped with crisp sliced radishes, shredded green cabbage, dried oregano flecks",
+  "model": "gemini-flash-latest",
+  "name": "Pozole Rojo",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-15T23:11:09+00:00"
+ },
  "c77693105729": {
   "avoid": [
    "meat",
@@ -21855,6 +22093,39 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-04T10:08:39+00:00"
+ },
+ "c8c0ab0d74b2": {
+  "avoid": [
+   "mashed potatoes",
+   "french fries",
+   "chicken nuggets",
+   "soup",
+   "pita bread",
+   "raw chicken",
+   "skewers"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food roasted chicken pieces and roasted potatoes?",
+    "yes": true
+   },
+   {
+    "q": "Are the potatoes mashed or puréed?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken breaded and deep-fried?",
+    "yes": false
+   }
+  ],
+  "dish": "Greek lemon roasted chicken and potatoes",
+  "look": "roasted bone-in chicken thighs, golden-brown blistered skin, tender roasted potato wedges with crispy browned edges, glossy light lemon herb pan juices, charred lemon wheel slice, flecks of chopped green herbs",
+  "model": "gemini-flash-latest",
+  "name": "Greek Lemon Chicken & Potatoes",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-15T23:11:09+00:00"
  },
  "c8dd8ea4d1f0": {
   "avoid": [
@@ -26579,13 +26850,13 @@
    "beef",
    "chicken",
    "pork",
-   "shrimp",
    "fish",
+   "mushroom sandwich",
+   "white spread",
+   "mayo",
    "ground meat",
    "burger",
-   "wrap",
-   "salad",
-   "herbs"
+   "wrap"
   ],
   "checks": [
    {
@@ -26602,13 +26873,13 @@
    }
   ],
   "dish": "vegetarian cheesesteak",
-  "look": "thinly sliced dark brown plant-based beef strips, shaved seitan steak slices, smothered in melted white cheese, sautéed sliced mushrooms, grilled sweet onions, piled inside a crusty split sourdough hoagie roll",
+  "look": "heaping pile of charred sliced plant-based beef strips, browned shaved vegan steak pieces, melted white provolone cheese, caramelized onion slices, scattered sautéed mushrooms, stuffed inside a split crusty sourdough hoagie roll",
   "model": "gemini-3.7-flash",
   "name": "Plant-Forward Philly Cheesesteak",
   "rev": 6,
-  "revisions": 1,
+  "revisions": 2,
   "vessel": "plate",
-  "written_at": "2026-10-15T20:22:16+00:00"
+  "written_at": "2026-10-16T00:46:37+00:00"
  },
  "f19ef3f4af91": {
   "avoid": [
@@ -26714,6 +26985,42 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-01T10:36:25+00:00"
+ },
+ "f2f9dada2bb7": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "raw carrots",
+   "carrot soup",
+   "mashed carrots",
+   "salad greens"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cooked glazed carrots?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat, poultry, or seafood on the plate?",
+    "yes": false
+   },
+   {
+    "q": "Are the carrots raw or puréed into soup?",
+    "yes": false
+   }
+  ],
+  "dish": "glazed roasted carrots",
+  "look": "roasted whole baby carrots, glossy amber maple orange citrus glaze, tender caramelized edges, sprinkled with finely chopped fresh green parsley, curled shreds of bright orange zest",
+  "model": "gemini-flash-latest",
+  "name": "Twisted Citrus Glazed Carrots",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-15T23:11:09+00:00"
  },
  "f337c3568e54": {
   "avoid": [
