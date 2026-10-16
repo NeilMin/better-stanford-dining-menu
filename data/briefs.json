@@ -4184,6 +4184,41 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T07:54:50+00:00"
  },
+ "2b6632be0f8e": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "tortilla chips",
+   "guacamole",
+   "salsa"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a smooth pale green creamy sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the dish chunky like guacamole or salsa?",
+    "yes": false
+   },
+   {
+    "q": "Are there chips, tacos, or other foods plated with the sauce?",
+    "yes": false
+   }
+  ],
+  "dish": "cilantro crema",
+  "look": "smooth creamy pale green emulsion, thick whipped texture, fine flecks of bright green minced cilantro, velvety surface with a gentle swirl",
+  "model": "gemini-flash-latest",
+  "name": "Cilantro Crema",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-16T18:54:33+00:00"
+ },
  "2be1848576c1": {
   "avoid": [
    "meat",
@@ -15155,6 +15190,39 @@
   "vessel": "bowl",
   "written_at": "2026-10-05T22:15:46+00:00"
  },
+ "8ec3caf344e0": {
+  "avoid": [
+   "large meatballs",
+   "spaghetti",
+   "tomato soup",
+   "creamy soup",
+   "bread rolls",
+   "raw meat",
+   "croutons"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a broth-based soup with small meatballs and greens?",
+    "yes": true
+   },
+   {
+    "q": "Is the soup a thick red tomato soup?",
+    "yes": false
+   },
+   {
+    "q": "Are the meatballs large full-sized meatballs instead of mini meatballs?",
+    "yes": false
+   }
+  ],
+  "dish": "Italian wedding soup",
+  "look": "clear golden broth, miniature round browned beef meatballs, tender small macaroni pasta, wilted dark green spinach leaves, diced orange carrots, light dusting of grated parmesan cheese",
+  "model": "gemini-flash-latest",
+  "name": "Italian Wedding Soup",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-16T18:54:33+00:00"
+ },
  "8ed0b23245c1": {
   "avoid": [
    "boneless nuggets",
@@ -24365,6 +24433,41 @@
   "vessel": "bowl",
   "written_at": "2026-09-28T01:30:01+00:00"
  },
+ "dcbbf938d2ca": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "tacos",
+   "tortillas",
+   "raw mushrooms"
+  ],
+  "checks": [
+   {
+    "q": "Is the main dish shredded food coated in a reddish sauce?",
+    "yes": true
+   },
+   {
+    "q": "Does the dish contain visible pieces of meat or poultry?",
+    "yes": false
+   },
+   {
+    "q": "Is the food served inside folded or rolled tortillas?",
+    "yes": false
+   }
+  ],
+  "dish": "mushroom tinga",
+  "look": "pile of shredded oyster mushrooms, glossy reddish-brown chipotle tomato sauce, softened sliced white onions, tender shredded texture resembling pulled meat, thick rich adobo glaze",
+  "model": "gemini-flash-latest",
+  "name": "Shredded Oyster Mushroom Tinga",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-16T18:54:33+00:00"
+ },
  "dcccf92d99b0": {
   "avoid": [
    "meat",
@@ -26574,6 +26677,41 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-29T17:24:02+00:00"
+ },
+ "efe63b23db6f": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "burrito",
+   "soft tacos",
+   "flour tortilla"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish crispy rolled cylindrical tortillas?",
+    "yes": true
+   },
+   {
+    "q": "Are the tortillas soft folded tacos or large wrapped burritos?",
+    "yes": false
+   },
+   {
+    "q": "Does the filling contain visible pieces of animal meat?",
+    "yes": false
+   }
+  ],
+  "dish": "taquitos",
+  "look": "three tightly rolled golden-brown corn taquitos, crisp blistered fried tortilla shells, savory shredded filling visible at the open ends, crispy edges",
+  "model": "gemini-flash-latest",
+  "name": "Oyster Mushroom & Jackfruit Taquitos",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-16T18:54:33+00:00"
  },
  "f0173d429d11": {
   "avoid": [
