@@ -1,6 +1,6 @@
 {
  "date": "2026-10-16",
- "scraped_at": "2026-10-16T06:20:45-07:00",
+ "scraped_at": "2026-10-16T11:49:59-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -1187,16 +1187,26 @@
      "order": 0
     },
     {
-     "name": "Birria-Spiced Pinto Beans & Chayote",
-     "recipe_id": "VgBirria17",
+     "name": "Refried Black Beans",
+     "recipe_id": "4252943",
      "description": "",
-     "ingredients": "pinto beans, chayote, onion, garlic, birria sauce (ancho chili, guajillo chili, chipotle pepper, black peppercorn, whole clove, dried thyme, marjoram, vegetable base, dried oregano, bay leaves, ground cumin, garlic, cinnamon stick, onion, carrot, Roma tomatoes, apple cider vinegar, salt)",
-     "allergens": [],
-     "trace_allergens": [],
+     "ingredients": "black beans (beans, onions, garlic, canola oil, extra virgin olive oil, cumin, coriander, cilantro, salt), canola/olive oil blend, queso fresco, queso panela",
+     "allergens": [
+      "MILK"
+     ],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "SOY",
+      "TREENUTS",
+      "WHEAT"
+     ],
      "tags": [
-      "gluten-free",
-      "vegan",
-      "halal"
+      "vegetarian"
      ],
      "order": 1
     },
@@ -1243,20 +1253,6 @@
      "order": 4
     },
     {
-     "name": "White Corn Tortilla",
-     "recipe_id": "TORFP_CASE",
-     "description": "",
-     "ingredients": "ground corn treated with lime, propionic acid, sodium phosphate, dextrose",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan",
-      "halal"
-     ],
-     "order": 5
-    },
-    {
      "name": "Baked Potato Bar",
      "recipe_id": "6827028",
      "description": "",
@@ -1264,7 +1260,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 6
+     "order": 5
     },
     {
      "name": "Grilled Chicken",
@@ -1287,47 +1283,7 @@
      "tags": [
       "halal"
      ],
-     "order": 7
-    },
-    {
-     "name": "Grilled Vegan/Vegetarian",
-     "recipe_id": "13468741",
-     "description": "",
-     "ingredients": "chef's choice grilled vegan OR vegetarian option",
-     "allergens": [],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
-     ],
-     "tags": [
-      "halal"
-     ],
-     "order": 8
-    },
-    {
-     "name": "Butternut Squash Lasagna",
-     "recipe_id": "5364364",
-     "description": "",
-     "ingredients": "lasagna noodles, mozzarella cheese, parmesan cheese, butternut squash filling (yams, butternut squash, bell peppers, spinach, onions, garlic, ricotta cheese, goat cheese, butter, sage, black pepper salt), white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt)",
-     "allergens": [
-      "MILK",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "EGG"
-     ],
-     "tags": [
-      "vegetarian"
-     ],
-     "order": 9
+     "order": 6
     },
     {
      "name": "Panini Station",
@@ -1345,17 +1301,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 10
-    },
-    {
-     "name": "Soup of the Day",
-     "recipe_id": "SoupoftheDay",
-     "description": "",
-     "ingredients": "chef's choice soup of the day",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [],
-     "order": 11
+     "order": 7
     },
     {
      "name": "Composed Salad",
@@ -1367,7 +1313,7 @@
      "tags": [
       "halal"
      ],
-     "order": 12
+     "order": 8
     },
     {
      "name": "Performance Bar",
@@ -1377,7 +1323,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 13
+     "order": 9
     },
     {
      "name": "Craveable Grains",
@@ -1391,7 +1337,7 @@
       "vegan",
       "halal"
      ],
-     "order": 14
+     "order": 10
     },
     {
      "name": "Flavor Forward Legumes",
@@ -1405,24 +1351,23 @@
       "vegan",
       "halal"
      ],
-     "order": 15
+     "order": 11
     },
     {
-     "name": "Pasta Alfredo",
-     "recipe_id": "5683556",
+     "name": "Creamy Pesto",
+     "recipe_id": "7728050",
      "description": "",
-     "ingredients": "pasta, white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, parmesan cheese",
+     "ingredients": "pesto sauce (basil, canola oil, parmesan cheese, olive oil, garlic, salt, lemon juice concentrate, natural flavor, xanthan gum, soy lecithin, chamomile extract, rosemary extract, white sauce (flour, butter, cream, milk powder, onion powder, white pepper, garlic, nutmeg, salt), parmesan cheese, parsley",
      "allergens": [
       "MILK",
+      "SOY",
       "WHEAT"
      ],
-     "trace_allergens": [
-      "EGG"
-     ],
+     "trace_allergens": [],
      "tags": [
       "vegetarian"
      ],
-     "order": 16
+     "order": 12
     },
     {
      "name": "Pasta Marinara",
@@ -1440,7 +1385,7 @@
       "vegan",
       "halal"
      ],
-     "order": 17
+     "order": 13
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -1454,7 +1399,7 @@
       "vegan",
       "halal"
      ],
-     "order": 18
+     "order": 14
     }
    ],
    "Dinner": [
@@ -5005,18 +4950,26 @@
      "order": 8
     },
     {
-     "name": "Crispy Fried \"Chick'n\" Tenders",
-     "recipe_id": "FriedChickn1",
+     "name": "Chicken Tenders",
+     "recipe_id": "3763205",
      "description": "",
-     "ingredients": "soy protein isolate, vital wheat gluten, natural flavors, yeast extract, cane sugar, expeller pressed/canola oil, sea salt, ancient grains flour (kamut, amaranth, millet, quinoa), pea protein (carrot fiber, beetroot fiber, onion powder, paprika, turmeric), panko, egg, flour, salt, and pepper",
+     "ingredients": "chicken tenderloins, water, corn starch, sea salt, rice flour, pea protein isolate, dextrose, baking soda, yellow corn flour, cream of tartar, spice, sunflower oil, guar gum, soybean oil, fried in canola oil",
      "allergens": [
+      "SOY"
+     ],
+     "trace_allergens": [
+      "COCONUT",
       "EGG",
-      "SOY",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "TREENUTS",
       "WHEAT"
      ],
-     "trace_allergens": [],
      "tags": [
-      "vegetarian"
+      "halal"
      ],
      "order": 9
     },
@@ -5056,14 +5009,12 @@
      "order": 11
     },
     {
-     "name": "Boston Clam Chowder",
-     "recipe_id": "4055703",
+     "name": "Italian Wedding Soup",
+     "recipe_id": "ItalianWeddSoup1",
      "description": "",
-     "ingredients": "potatoes, clams, clam juice, food starch, celery, soybean oil, margarine, and salt",
+     "ingredients": "chicken broth, cooked Italian-style beef meatballs, enriched macaroni, spinach, carrots, food starch, salt, chicken seasoning, parmesan cheese, dehydrated onion, annatto color, white pepper",
      "allergens": [
-      "FISH",
-      "SHELLFISH",
-      "SOY",
+      "MILK",
       "WHEAT"
      ],
      "trace_allergens": [],
@@ -5413,7 +5364,7 @@
      "order": 0
     },
     {
-     "name": "Shredded Oster Mushroom Tinga",
+     "name": "Shredded Oyster Mushroom Tinga",
      "recipe_id": "12123112",
      "description": "",
      "ingredients": "oyster mushroom, chicken seasoning, oil, onion, garlic, oregano, cumin, adobo chipotle peppers, fire roasted tomatoes, veg base",
