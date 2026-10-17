@@ -1,6 +1,6 @@
 {
  "date": "2026-10-19",
- "scraped_at": "2026-10-17T10:52:27-07:00",
+ "scraped_at": "2026-10-17T15:24:17-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -4582,33 +4582,40 @@
    ],
    "Lunch": [
     {
-     "name": "Crispy Skinned Salmon",
-     "recipe_id": "CrispSalmon1",
+     "name": "Sweet & Sour Pork",
+     "recipe_id": "5726380",
      "description": "",
-     "ingredients": "salmon, lemon juice, olive/canola oil blend, flaky sea salt, black pepper",
-     "allergens": [
-      "FISH"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "halal"
-     ],
-     "order": 0
-    },
-    {
-     "name": "Herb-Marinated Lemon Tofu",
-     "recipe_id": "8327042",
-     "description": "",
-     "ingredients": "lemon herb tofu (tofu, lemon juice, canola/olive oil, garlic, oregano, rosemary, thyme, parsley, salt, pepper), squash, zucchini",
+     "ingredients": "pork, bell peppers, potato starch, corn starch, ketchup, vinegar, brown sugar, canola/olive oil blend, tamari sauce, pineapples",
      "allergens": [
       "SOY"
      ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
-      "vegan",
-      "halal"
+      "gluten-free"
+     ],
+     "order": 0
+    },
+    {
+     "name": "Stir Fried Tofu with Eggplant",
+     "recipe_id": "4081035",
+     "description": "",
+     "ingredients": "eggplant, tofu, seasonal vegetables, canola oil, garlic, tamari, stir fry sauce (canola oil/olive oil blend, vegetarian oyster sauce, shallot, brown sugar, onion, red pepper flakes, tamari)",
+     "allergens": [
+      "SOY",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "TREENUTS"
+     ],
+     "tags": [
+      "vegan"
      ],
      "order": 1
     },
@@ -4627,10 +4634,10 @@
      "order": 2
     },
     {
-     "name": "Seasonal Vegetable Board",
-     "recipe_id": "4503514",
+     "name": "Sauteed Green Beans",
+     "recipe_id": "5259610",
      "description": "",
-     "ingredients": "seasonal roasted vegetables with olive/canola oil blend, salt, pepper",
+     "ingredients": "green beans, shallots, canola/olive oil blend, garlic, salt",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -4641,18 +4648,26 @@
      "order": 3
     },
     {
-     "name": "Honey-Kissed Asparagus",
-     "recipe_id": "HonKissAsp1",
+     "name": "Roasted Carrots",
+     "recipe_id": "boxlunch-evgr38",
      "description": "",
-     "ingredients": "asparagus, white miso, garlic, olive/canola oil blend, honey, salt, black pepper",
+     "ingredients": "carrots, soybean oil, olive oil, salt, seasoned pepper (black pepper, red bell peppers, sugar, spices, paprika), thyme",
      "allergens": [
       "SOY"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "TREENUTS",
+      "WHEAT"
+     ],
      "tags": [
-      "gluten-free",
-      "vegetarian",
-      "halal"
+      "vegan"
      ],
      "order": 4
     },
@@ -4673,17 +4688,14 @@
      "order": 5
     },
     {
-     "name": "Linguine Aglio e Olio",
-     "recipe_id": "LingAglioOlio1",
+     "name": "Jasmine Rice",
+     "recipe_id": "4960536",
      "description": "",
-     "ingredients": "linguine pasta, garlic, olive/canola oil blend, parsley, red pepper flakes, salt, black pepper",
-     "allergens": [
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "EGG"
-     ],
+     "ingredients": "jasmine rice, salt",
+     "allergens": [],
+     "trace_allergens": [],
      "tags": [
+      "gluten-free",
       "vegan",
       "halal"
      ],
@@ -4819,43 +4831,17 @@
    ],
    "Dinner": [
     {
-     "name": "Grilled NY Strip Steak",
-     "recipe_id": "5390197-1",
+     "name": "Chipotle Chicken",
+     "recipe_id": "4527710",
      "description": "",
-     "ingredients": "steak, canola/olive oil blend, salt, pepper",
+     "ingredients": "chicken, chipotle pepper in adobo sauce, apple cider vinegar, canola/olive oil blend, garlic, salt, oregano, cumin",
      "allergens": [],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
-     ],
+     "trace_allergens": [],
      "tags": [
+      "gluten-free",
       "halal"
      ],
      "order": 0
-    },
-    {
-     "name": "Charred Blackened Tofu Steak",
-     "recipe_id": "6294264",
-     "description": "",
-     "ingredients": "tofu, oat milk, canola/olive oil blend, blackened seasoning (salt, chili pepper, paprika, garlic, red pepper), chicken flavor seasoning (garlic, salt, onion, spices, orange peel, paprika, bell peppers), onion, garlic, flour, cajun seasoning (garlic, black pepper, cayenne pepper, oregano, chili pepper, sea salt), nutritional yeast, vegetable soup base (contains carrots, celery, mushroom)",
-     "allergens": [
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "vegan",
-      "halal"
-     ],
-     "order": 1
     },
     {
      "name": "Seasonal Steamed Vegetables",
@@ -4869,7 +4855,7 @@
       "vegan",
       "halal"
      ],
-     "order": 2
+     "order": 1
     },
     {
      "name": "Seasonal Vegetable Board",
@@ -4883,7 +4869,7 @@
       "vegan",
       "halal"
      ],
-     "order": 3
+     "order": 2
     },
     {
      "name": "Charred Broccolini",
@@ -4897,7 +4883,7 @@
       "vegan",
       "halal"
      ],
-     "order": 4
+     "order": 3
     },
     {
      "name": "Roasted Garlic Herb Fingerling Potatoes",
@@ -4911,7 +4897,7 @@
       "vegan",
       "halal"
      ],
-     "order": 5
+     "order": 4
     },
     {
      "name": "Wild Rice Pilaf with Cranberries",
@@ -4925,7 +4911,7 @@
       "vegan",
       "halal"
      ],
-     "order": 6
+     "order": 5
     },
     {
      "name": "Caramelized Cipollini Onions",
@@ -4938,7 +4924,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 7
+     "order": 6
     },
     {
      "name": "Panini Station",
@@ -4956,7 +4942,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 8
+     "order": 7
     },
     {
      "name": "Soup of the Day",
@@ -4966,7 +4952,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 9
+     "order": 8
     },
     {
      "name": "Assorted Bread",
@@ -4983,7 +4969,7 @@
       "vegan",
       "halal"
      ],
-     "order": 10
+     "order": 9
     },
     {
      "name": "Composed Salad",
@@ -4995,7 +4981,7 @@
      "tags": [
       "halal"
      ],
-     "order": 11
+     "order": 10
     },
     {
      "name": "Performance Bar",
@@ -5005,7 +4991,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 12
+     "order": 11
     },
     {
      "name": "Craveable Grains",
@@ -5019,7 +5005,7 @@
       "vegan",
       "halal"
      ],
-     "order": 13
+     "order": 12
     },
     {
      "name": "Flavor Forward Legumes",
@@ -5033,7 +5019,7 @@
       "vegan",
       "halal"
      ],
-     "order": 14
+     "order": 13
     },
     {
      "name": "Pasta Pesto",
@@ -5051,7 +5037,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 15
+     "order": 14
     }
    ]
   },

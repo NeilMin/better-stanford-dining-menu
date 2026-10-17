@@ -1,6 +1,6 @@
 {
  "date": "2026-10-22",
- "scraped_at": "2026-10-17T10:52:27-07:00",
+ "scraped_at": "2026-10-17T15:24:17-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -4582,10 +4582,10 @@
    ],
    "Lunch": [
     {
-     "name": "Peruvian Aji Chicken",
-     "recipe_id": "PeruAjiChx1",
+     "name": "The Farm Burger",
+     "recipe_id": "4210222",
      "description": "",
-     "ingredients": "chicken, orange juice, lime juice, aji amarillo paste, garlic, onions, cilantro, cumin, smoked paprika, dried oregano, olive/canola oil blend, salt, black pepper",
+     "ingredients": "beef, mushroom mix (garlic powder, onion powder, mushroom seasoning, salt, pepper)",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -4595,18 +4595,19 @@
      "order": 0
     },
     {
-     "name": "Aji Marinated Crispy Tofu",
-     "recipe_id": "AjiTofu1",
+     "name": "Chipotle Black Bean Patty",
+     "recipe_id": "USF_6321106",
      "description": "",
-     "ingredients": "tofu, cornstarch, aji amarillo paste, lime juice, orange juice, garlic, onions, cilantro, cumin, smoked paprika, dried oregano, olive/canola oil blend, salt, black pepper",
+     "ingredients": "cooked black beans, cooked brown rice, onions, vegetable oil (corn, canola and/or sunflower oil), corn, soy flour, tomatoes, onion powder, wheat gluten, egg whites, bulgur wheat, green chiles, calcium caseinate (milk), corn starch, tomato powder, tomato juice, salt, garlic powder, natural flavor, soy sauce powder (soybeans, wheat, salt), jalapeno peppers, gum arabic, cooked onion, carrot juice concentrate, xanthan gum",
      "allergens": [
-      "SOY"
+      "EGG",
+      "MILK",
+      "SOY",
+      "WHEAT"
      ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
-      "vegan",
-      "halal"
+      "vegetarian"
      ],
      "order": 1
     },
@@ -4625,10 +4626,10 @@
      "order": 2
     },
     {
-     "name": "Seasonal Vegetable Board",
-     "recipe_id": "4503514",
+     "name": "Seasoned Black Beans",
+     "recipe_id": "5111980",
      "description": "",
-     "ingredients": "seasonal roasted vegetables with olive/canola oil blend, salt, pepper",
+     "ingredients": "black beans, canola/olive oil blend, salt",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -4667,14 +4668,25 @@
      "order": 5
     },
     {
-     "name": "Aji Amarillo Roasted Potatoes",
-     "recipe_id": "AjiAmaPots1",
+     "name": "Shoestring Fries",
+     "recipe_id": "4851222",
      "description": "",
-     "ingredients": "potatoes, aji amarillo paste, garlic, lime juice, cumin, cilantro, olive/canola oil blend, salt, black pepper",
-     "allergens": [],
-     "trace_allergens": [],
+     "ingredients": "potatoes, fried in soybean oil",
+     "allergens": [
+      "SOY"
+     ],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "TREENUTS",
+      "WHEAT"
+     ],
      "tags": [
-      "gluten-free",
       "vegan",
       "halal"
      ],
@@ -4820,30 +4832,6 @@
    ],
    "Dinner": [
     {
-     "name": "Grilled Jamaican Jerk Chicken",
-     "recipe_id": "6062497",
-     "description": "",
-     "ingredients": "chicken, green onions, Scotch bonnet peppers, fresh thyme, allspice, garlic, ginger, onion, brown sugar, tamari, cinnamon, nutmeg, black pepper, kosher salt, canola/olive oil blend",
-     "allergens": [
-      "SOY"
-     ],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "TREENUTS",
-      "WHEAT"
-     ],
-     "tags": [
-      "halal"
-     ],
-     "order": 0
-    },
-    {
      "name": "Jamaican Jerk Jackfruit",
      "recipe_id": "3927334",
      "description": "",
@@ -4855,7 +4843,7 @@
       "vegan",
       "halal"
      ],
-     "order": 1
+     "order": 0
     },
     {
      "name": "Seasonal Steamed Vegetables",
@@ -4869,7 +4857,7 @@
       "vegan",
       "halal"
      ],
-     "order": 2
+     "order": 1
     },
     {
      "name": "Seasonal Vegetable Board",
@@ -4883,7 +4871,7 @@
       "vegan",
       "halal"
      ],
-     "order": 3
+     "order": 2
     },
     {
      "name": "Citrus-Charred Asparagus",
@@ -4897,7 +4885,7 @@
       "vegan",
       "halal"
      ],
-     "order": 4
+     "order": 3
     },
     {
      "name": "Caribbean Dirty Rice",
@@ -4911,7 +4899,7 @@
       "vegan",
       "halal"
      ],
-     "order": 5
+     "order": 4
     },
     {
      "name": "Cinnamon Citrus Sweet Potatoes",
@@ -4925,7 +4913,7 @@
       "vegan",
       "halal"
      ],
-     "order": 6
+     "order": 5
     },
     {
      "name": "Pineapple Salsa",
@@ -4939,7 +4927,7 @@
       "vegan",
       "halal"
      ],
-     "order": 7
+     "order": 6
     },
     {
      "name": "Panini Station",
@@ -4957,7 +4945,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 8
+     "order": 7
     },
     {
      "name": "Soup of the Day",
@@ -4967,7 +4955,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 9
+     "order": 8
     },
     {
      "name": "Assorted Bread",
@@ -4984,7 +4972,7 @@
       "vegan",
       "halal"
      ],
-     "order": 10
+     "order": 9
     },
     {
      "name": "Composed Salad",
@@ -4996,7 +4984,7 @@
      "tags": [
       "halal"
      ],
-     "order": 11
+     "order": 10
     },
     {
      "name": "Performance Bar",
@@ -5006,7 +4994,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 12
+     "order": 11
     },
     {
      "name": "Craveable Grains",
@@ -5020,7 +5008,7 @@
       "vegan",
       "halal"
      ],
-     "order": 13
+     "order": 12
     },
     {
      "name": "Flavor Forward Legumes",
@@ -5034,7 +5022,7 @@
       "vegan",
       "halal"
      ],
-     "order": 14
+     "order": 13
     },
     {
      "name": "Pasta Marinara",
@@ -5052,7 +5040,7 @@
       "vegan",
       "halal"
      ],
-     "order": 15
+     "order": 14
     }
    ]
   },

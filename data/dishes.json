@@ -864,17 +864,15 @@
   "image": "085ffb887ff4.webp",
   "ingredients": "potatoes, fried in soybean oil",
   "is_station": false,
-  "last_seen": "2026-09-24",
-  "min_order": 7,
+  "last_seen": "2026-10-22",
+  "min_order": 6,
   "model": "sdxl",
   "name": "Shoestring Fries",
   "needs_image": true,
-  "negative": "batter bits, cheese shreds, meat scraps, gravy, ketchup smudges, messy serving, dark shadows, overcooked fries, soggy texture, non-vegan ingredients",
+  "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, meat, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
   "placeholder": false,
   "priority": 2,
-  "prompt": "A plate of crispy shoestring fries, made from potatoes and fried in oil, plated on a simple white ceramic plate, overhead three-quarter view, centered composition, generous empty margin around plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
-  "prompt_compiled": true,
-  "prompt_compiler_rev": 1,
+  "prompt": "Shoestring Fries, made with potatoes, plant-based, no meat, no dairy, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
   "prompt_rev": 3,
   "seed": 140508040,
   "station_only": false,
@@ -940,6 +938,24 @@
   "prompt": "Tony's Pepperoni Pizza, tender cooked pork cuts, succulent meat texture, browned edges, made with mozzarella cheese, pepperoni, tomato paste, soybean oi, carrot fiber, diced garlic, wheat starch, ammonium sulfate, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
   "prompt_rev": 9,
   "seed": 145909412,
+  "station_only": false,
+  "tags": []
+ },
+ "09407b03ef6f": {
+  "category": "pork",
+  "first_seen": "2026-10-23",
+  "icon": "plate",
+  "image": null,
+  "ingredients": "whole milk, cream, (non-halal) italian pork sausage, butter, roasted bell peppers, parmesan cheese, flour, garlic, salt",
+  "is_station": false,
+  "last_seen": "2026-10-23",
+  "min_order": 12,
+  "name": "Spicy Sausage Sauce",
+  "needs_image": true,
+  "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
+  "placeholder": false,
+  "priority": 0,
+  "prompt": "Spicy Sausage Sauce, tender cooked pork cuts, succulent meat texture, browned edges, made with whole milk, cream, italian pork sausage, butter, roasted bell peppers, parmesan cheese, garlic, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
   "station_only": false,
   "tags": []
  },
@@ -3913,7 +3929,7 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "A bowl of glazed meat chunks with red and yellow peppers in a dark sauce."
   },
-  "last_seen": "2026-10-14",
+  "last_seen": "2026-10-19",
   "min_order": 0,
   "model": "sdxl",
   "name": "Sweet & Sour Pork",
@@ -4815,6 +4831,27 @@
   "station_only": false,
   "tags": [
    "gluten-free",
+   "vegan",
+   "halal"
+  ]
+ },
+ "28a3f4daab6b": {
+  "category": "vegan",
+  "first_seen": "2026-10-17",
+  "icon": "bread",
+  "image": null,
+  "ingredients": "enriched flour, soybean oil, corn syrup solids, guar gum, salt, sesame flour, soy flour, sugar, vegetable monoglycerides, diglycerides, vegetable l-cysteine, wheat enzymes, whole wheat flour, yeast",
+  "is_station": false,
+  "last_seen": "2026-10-17",
+  "min_order": 4,
+  "name": "Pita Bread",
+  "needs_image": true,
+  "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, meat, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
+  "placeholder": false,
+  "priority": 2,
+  "prompt": "Pita Bread, made with corn syrup solids, vegetable monoglycerides, diglycerides, vegetable l-cysteine, wheat enzymes, plant-based, no meat, no dairy, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "station_only": false,
+  "tags": [
    "vegan",
    "halal"
   ]
@@ -7570,13 +7607,13 @@
   "ingredients": "asparagus, orange juice, lemon juice, garlic, orange zest, olive/canola oil blend, salt, black pepper",
   "is_station": false,
   "last_seen": "2026-10-22",
-  "min_order": 4,
+  "min_order": 3,
   "model": "sdxl",
   "name": "Citrus-Charred Asparagus",
   "needs_image": true,
   "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, meat, meat, pork, steak, beef, poultry, chicken, ribs, bacon, ham, sausage, barbecue meat, meat cuts, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
   "placeholder": false,
-  "priority": 2,
+  "priority": 1,
   "prompt": "Citrus-Charred Asparagus, made with asparagus, garlic, orange zest, plant-based, no meat, no dairy, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
   "prompt_rev": 2,
   "seed": 976562625,
@@ -11107,6 +11144,27 @@
    "gluten-free"
   ]
  },
+ "5658448b6a44": {
+  "category": "beef",
+  "first_seen": "2026-10-22",
+  "icon": "grill",
+  "image": null,
+  "ingredients": "beef, mushroom mix (garlic powder, onion powder, mushroom seasoning, salt, pepper)",
+  "is_station": false,
+  "last_seen": "2026-10-22",
+  "min_order": 0,
+  "name": "The Farm Burger",
+  "needs_image": true,
+  "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, lamb, mutton, chicken, chicken breast, turkey, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
+  "placeholder": false,
+  "priority": 0,
+  "prompt": "The Farm Burger, juicy grilled beef patty with melted cheese, made with beef, mushroom mix, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "station_only": false,
+  "tags": [
+   "gluten-free",
+   "halal"
+  ]
+ },
  "56a63739d996": {
   "category": "vegan",
   "first_seen": "2026-09-30",
@@ -11522,8 +11580,8 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "Two ears of grilled corn on the cob on a white plate."
   },
-  "last_seen": "2026-10-18",
-  "min_order": 3,
+  "last_seen": "2026-10-23",
+  "min_order": 1,
   "model": "sdxl",
   "name": "Grilled Corn on the Cob",
   "needs_image": true,
@@ -16191,7 +16249,7 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "A stir-fry of tofu cubes, broccoli, and eggplant pieces in a dark sauce, topped with sesame seeds."
   },
-  "last_seen": "2026-10-06",
+  "last_seen": "2026-10-19",
   "min_order": 1,
   "model": "sdxl",
   "name": "Stir Fried Tofu with Eggplant",
@@ -16272,7 +16330,7 @@
   "image": "863bbacd2f06.webp",
   "ingredients": "plantains, canola/olive oil blend, salt, pepper",
   "is_station": false,
-  "last_seen": "2026-10-22",
+  "last_seen": "2026-10-23",
   "min_order": 3,
   "model": "sdxl",
   "name": "Roasted Plantains",
@@ -17493,14 +17551,14 @@
   "image": "8d2aa577d0b7.webp",
   "ingredients": "white corn, lime, sodium propionate, cellulose gum, fumaric acid, sorbic acid",
   "is_station": false,
-  "last_seen": "2026-10-22",
-  "min_order": 5,
+  "last_seen": "2026-10-23",
+  "min_order": 2,
   "model": "sdxl",
   "name": "Corn Tortilla",
   "needs_image": true,
   "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, meat, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
   "placeholder": false,
-  "priority": 2,
+  "priority": 1,
   "prompt": "Corn Tortilla, made with white corn, lime, plant-based, no meat, no dairy, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
   "prompt_rev": 2,
   "seed": 2368382327,
@@ -20128,7 +20186,7 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "Breaded strips coated in a dark sauce and garnished with green herbs, served on a white rectangular plate with a side of dark sauce."
   },
-  "last_seen": "2026-10-09",
+  "last_seen": "2026-10-21",
   "min_order": 1,
   "model": "sdxl",
   "name": "Meatless BBQ Chick'n",
@@ -20550,6 +20608,26 @@
    "gluten-free",
    "vegan",
    "halal"
+  ]
+ },
+ "a2b72087c3eb": {
+  "category": "vegan",
+  "first_seen": "2026-10-19",
+  "icon": "plate",
+  "image": null,
+  "ingredients": "carrots, soybean oil, olive oil, salt, seasoned pepper (black pepper, red bell peppers, sugar, spices, paprika), thyme",
+  "is_station": false,
+  "last_seen": "2026-10-19",
+  "min_order": 4,
+  "name": "Roasted Carrots",
+  "needs_image": true,
+  "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, meat, meat, pork, steak, beef, poultry, chicken, ribs, bacon, ham, sausage, barbecue meat, meat cuts, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
+  "placeholder": false,
+  "priority": 2,
+  "prompt": "Roasted Carrots, made with carrots, seasoned pepper, thyme, plant-based, no meat, no dairy, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "station_only": false,
+  "tags": [
+   "vegan"
   ]
  },
  "a2f6beb0d3dc": {
@@ -22026,7 +22104,7 @@
    "seen": "A plate of whole roasted onions garnished with fresh herbs."
   },
   "last_seen": "2026-10-19",
-  "min_order": 7,
+  "min_order": 6,
   "model": "sdxl",
   "name": "Caramelized Cipollini Onions",
   "needs_image": true,
@@ -22562,6 +22640,27 @@
   "station_only": false,
   "tags": [
    "gluten-free",
+   "halal"
+  ]
+ },
+ "b157a334db5b": {
+  "category": "vegan",
+  "first_seen": "2026-10-20",
+  "icon": "plate",
+  "image": null,
+  "ingredients": "plant-forward \"beef\" strips, canola/olive oil blend, pepper, salt, fajita seasoning, bell peppers, onions, garlic, cilantro",
+  "is_station": false,
+  "last_seen": "2026-10-20",
+  "min_order": 1,
+  "name": "Sizzlin' \"Beef\" Fajita",
+  "needs_image": true,
+  "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, meat, burrito, tortilla wrap, taco, noodles, pasta, soup, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
+  "placeholder": false,
+  "priority": 1,
+  "prompt": "Sizzlin' \"Beef\" Fajita, tender seasoned grilled beef steak strips with caramelized edges, tossed with sautéed sliced red and green bell peppers and caramelized onions, made with plant-forward \"beef\" strips, fajita seasoning, bell peppers, onions, garlic, cilantro, plant-based, no meat, no dairy, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "station_only": false,
+  "tags": [
+   "vegan",
    "halal"
   ]
  },
@@ -24067,8 +24166,8 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "Glazed chicken pieces served with sautéed onions on a white plate."
   },
-  "last_seen": "2026-10-15",
-  "min_order": 8,
+  "last_seen": "2026-10-18",
+  "min_order": 5,
   "model": "sdxl",
   "name": "Sweet & Spicy BBQ Chicken",
   "needs_image": true,
@@ -24089,8 +24188,8 @@
   "image": "bba97d40dbf9.webp",
   "ingredients": "sour cream, mayonnaise, lime juice, chipotle peppers in adobo, garlic, cumin, sugar, salt",
   "is_station": false,
-  "last_seen": "2026-10-22",
-  "min_order": 7,
+  "last_seen": "2026-10-23",
+  "min_order": 4,
   "model": "sdxl",
   "name": "Chipotle-Lime Crema",
   "needs_image": true,
@@ -26823,7 +26922,7 @@
    "seen": "A bowl of dark noodles topped with orange cubes and purple flower petals, served with extra orange cubes and green leaves on the side."
   },
   "last_seen": "2026-10-22",
-  "min_order": 1,
+  "min_order": 0,
   "model": "sdxl",
   "name": "Jamaican Jerk Jackfruit",
   "needs_image": true,
@@ -28334,6 +28433,28 @@
    "halal"
   ]
  },
+ "dd075a809709": {
+  "category": "vegan",
+  "first_seen": "2026-10-19",
+  "icon": "plate",
+  "image": null,
+  "ingredients": "jasmine rice, salt",
+  "is_station": false,
+  "last_seen": "2026-10-19",
+  "min_order": 6,
+  "name": "Jasmine Rice",
+  "needs_image": true,
+  "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, meat, raw rice, uncooked rice, dry rice grains, raw grains, sack of rice, paddy, field, raw rice, uncooked rice, dry rice grains, dry grains, uncooked, sack of rice, burlap sack, grain field, paddy, bulk rice, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
+  "placeholder": false,
+  "priority": 2,
+  "prompt": "Jasmine Rice, steamed fluffy cooked rice grains, glistening and tender, served warm in a ceramic bowl, made with jasmine rice, plant-based, no meat, no dairy, appetizing food photography, served in a simple white ceramic bowl, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "station_only": false,
+  "tags": [
+   "gluten-free",
+   "vegan",
+   "halal"
+  ]
+ },
  "dd3bf5d9dd78": {
   "brief_rev": 6,
   "category": "beef",
@@ -29118,13 +29239,13 @@
   "ingredients": "broccolini, lemon juice, lemon zest, garlic, olive/canola oil blend, salt, pepper",
   "is_station": false,
   "last_seen": "2026-10-19",
-  "min_order": 4,
+  "min_order": 3,
   "model": "sdxl",
   "name": "Charred Broccolini",
   "needs_image": true,
   "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, meat, meat, pork, steak, beef, poultry, chicken, ribs, bacon, ham, sausage, barbecue meat, meat cuts, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
   "placeholder": false,
-  "priority": 2,
+  "priority": 1,
   "prompt": "Charred Broccolini, made with broccolini, lemon zest, garlic, plant-based, no meat, no dairy, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
   "prompt_rev": 2,
   "seed": 3816518773,
@@ -30196,7 +30317,7 @@
    "seen": "A plate containing a white flatbread topped with shredded cabbage next to a thick reddish-brown bean and shredded mixture garnished with a green leaf."
   },
   "last_seen": "2026-10-23",
-  "min_order": 1,
+  "min_order": 0,
   "model": "sdxl",
   "name": "Smoky BBQ Jackfruit & Pinto Bean",
   "needs_image": true,
@@ -30610,7 +30731,7 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "Chicken pieces in a red-brown sauce served over white rice and topped with fresh cilantro."
   },
-  "last_seen": "2026-10-14",
+  "last_seen": "2026-10-19",
   "min_order": 0,
   "model": "sdxl",
   "name": "Chipotle Chicken",
@@ -30686,6 +30807,26 @@
   "station_only": false,
   "tags": [
    "halal"
+  ]
+ },
+ "ef64e03d926e": {
+  "category": "vegetarian",
+  "first_seen": "2026-10-22",
+  "icon": "plate",
+  "image": null,
+  "ingredients": "cooked black beans, cooked brown rice, onions, vegetable oil (corn, canola and/or sunflower oil), corn, soy flour, tomatoes, onion powder, wheat gluten, egg whites, bulgur wheat, green chiles, calcium caseinate (milk), corn starch, tomato powder, tomato juice, salt, garlic powder, natural flavor, soy sauce powder (soybeans, wheat, salt), jalapeno peppers, gum arabic, cooked onion, carrot juice concentrate, xanthan gum",
+  "is_station": false,
+  "last_seen": "2026-10-22",
+  "min_order": 1,
+  "name": "Chipotle Black Bean Patty",
+  "needs_image": true,
+  "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, meat, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
+  "placeholder": false,
+  "priority": 1,
+  "prompt": "Chipotle Black Bean Patty, made with cooked black beans, cooked brown rice, onions, corn, tomatoes, egg whites, bulgur wheat, green chiles, vegetarian, no meat, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "station_only": false,
+  "tags": [
+   "vegetarian"
   ]
  },
  "ef7ddc09261a": {
@@ -31445,7 +31586,7 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "A piece of fried fish topped with white sauce, served with french fries and two small bowls of white sauce."
   },
-  "last_seen": "2026-09-25",
+  "last_seen": "2026-10-20",
   "min_order": 0,
   "model": "sdxl",
   "name": "Fish & Chips with Remoulade",
@@ -31771,8 +31912,8 @@
   "image": "f660fc6c212e.webp",
   "ingredients": "black beans, canola/olive oil blend, salt",
   "is_station": false,
-  "last_seen": "2026-10-15",
-  "min_order": 4,
+  "last_seen": "2026-10-22",
+  "min_order": 3,
   "model": "sdxl",
   "name": "Seasoned Black Beans",
   "needs_image": true,
@@ -32303,7 +32444,7 @@
   "image": "faed1595d080.webp",
   "ingredients": "coleslaw blend (cabbage, carrots), onions, red wine vinegar, garlic, jalapeno chili pepper, canola/olive oil blend, cilantro, celery seeds, cayenne pepper, salt",
   "is_station": false,
-  "last_seen": "2026-09-30",
+  "last_seen": "2026-10-23",
   "min_order": 5,
   "model": "sdxl",
   "name": "Spicy Coleslaw",

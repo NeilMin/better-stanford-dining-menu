@@ -1,6 +1,6 @@
 {
  "date": "2026-10-23",
- "scraped_at": "2026-10-17T10:52:27-07:00",
+ "scraped_at": "2026-10-17T15:24:17-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -4581,18 +4581,6 @@
    ],
    "Lunch": [
     {
-     "name": "Carolina Pulled Pork",
-     "recipe_id": "CaroPullPork1",
-     "description": "",
-     "ingredients": "pork, apple cider vinegar, onions, brown sugar, mustard powder, crushed red pepper, olive/canola oil blend, salt, black pepper",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free"
-     ],
-     "order": 0
-    },
-    {
      "name": "Smoky BBQ Jackfruit & Pinto Bean",
      "recipe_id": "BBQJackPinto1",
      "description": "",
@@ -4604,13 +4592,37 @@
       "vegan",
       "halal"
      ],
+     "order": 0
+    },
+    {
+     "name": "Grilled Corn on the Cob",
+     "recipe_id": "GrlldCorn17",
+     "description": "",
+     "ingredients": "corn, salt, paprika, cayenne pepper, olive/canola blended oil, lime juice",
+     "allergens": [],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "SOY",
+      "TREENUTS",
+      "WHEAT"
+     ],
+     "tags": [
+      "vegan",
+      "halal"
+     ],
      "order": 1
     },
     {
-     "name": "Seasonal Steamed Vegetables",
-     "recipe_id": "5561366",
+     "name": "Corn Tortilla",
+     "recipe_id": "3537943",
      "description": "",
-     "ingredients": "seasonal vegetables, salt",
+     "ingredients": "white corn, lime, sodium propionate, cellulose gum, fumaric acid, sorbic acid",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -4621,10 +4633,10 @@
      "order": 2
     },
     {
-     "name": "Seasonal Vegetable Board",
-     "recipe_id": "4503514",
+     "name": "Roasted Plantains",
+     "recipe_id": "3445905",
      "description": "",
-     "ingredients": "seasonal roasted vegetables with olive/canola oil blend, salt, pepper",
+     "ingredients": "plantains, canola/olive oil blend, salt, pepper",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -4635,62 +4647,21 @@
      "order": 3
     },
     {
-     "name": "Charred Corn & Okra Succotash",
-     "recipe_id": "CornOkraSucc1",
+     "name": "Chipotle-Lime Crema",
+     "recipe_id": "ChipLimeCrem1",
      "description": "",
-     "ingredients": "corn, okra, onions, bell peppers, tomatoes, garlic, parsley, olive/canola oil blend, salt, black pepper",
-     "allergens": [],
+     "ingredients": "sour cream, mayonnaise, lime juice, chipotle peppers in adobo, garlic, cumin, sugar, salt",
+     "allergens": [
+      "EGG",
+      "MILK"
+     ],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
-      "vegan",
+      "vegetarian",
       "halal"
      ],
      "order": 4
-    },
-    {
-     "name": "Hoppin’ John Black-Eyed Peas & Rice",
-     "recipe_id": "HoppJohnPeaRice1",
-     "description": "",
-     "ingredients": "rice, black-eyed peas, onions, celery, bell peppers, vegetable soup base, garlic, smoked paprika, dried thyme, crushed red pepper, olive/canola oil blend, salt, black pepper",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan",
-      "halal"
-     ],
-     "order": 5
-    },
-    {
-     "name": "Cajun Sweet Potato Wedges",
-     "recipe_id": "CajunSweetPots1",
-     "description": "",
-     "ingredients": "sweet potatoes, olive/canola oil blend, paprika, garlic powder, onion powder, cayenne pepper, dried oregano, dried thyme, salt, black pepper",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan",
-      "halal"
-     ],
-     "order": 6
-    },
-    {
-     "name": "Brioche Bun",
-     "recipe_id": "6002656",
-     "description": "",
-     "ingredients": "enriched flour [wheat, malted barley], sugar, yeast, palm oil, salt, cultured wheat, vinegar, wheat gluten, natural flavors, soybean oil, guar gum, enzymes, corn flour, turmeric, paprika, dextrose, corn starch maltodextrin, dextrin, triglycerides, pea protein, dextrose, maltodextrin, modified food starch",
-     "allergens": [
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "vegan",
-      "halal"
-     ],
-     "order": 7
     },
     {
      "name": "Panini Station",
@@ -4708,7 +4679,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 8
+     "order": 5
     },
     {
      "name": "Soup of the Day",
@@ -4718,7 +4689,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 9
+     "order": 6
     },
     {
      "name": "Assorted Bread",
@@ -4735,20 +4706,21 @@
       "vegan",
       "halal"
      ],
-     "order": 10
+     "order": 7
     },
     {
-     "name": "Carolina Vinegar Slaw",
-     "recipe_id": "CaroSlaw1",
+     "name": "Spicy Coleslaw",
+     "recipe_id": "4703341",
      "description": "",
-     "ingredients": "cabbage, onions, apple cider vinegar, sugar, celery seed, Dijon mustard, olive/canola oil blend, salt, black pepper",
+     "ingredients": "coleslaw blend (cabbage, carrots), onions, red wine vinegar, garlic, jalapeno chili pepper, canola/olive oil blend, cilantro, celery seeds, cayenne pepper, salt",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
-      "vegan"
+      "vegan",
+      "halal"
      ],
-     "order": 11
+     "order": 8
     },
     {
      "name": "Performance Bar",
@@ -4758,7 +4730,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 12
+     "order": 9
     },
     {
      "name": "Craveable Grains",
@@ -4772,7 +4744,7 @@
       "vegan",
       "halal"
      ],
-     "order": 13
+     "order": 10
     },
     {
      "name": "Flavor Forward Legumes",
@@ -4786,24 +4758,20 @@
       "vegan",
       "halal"
      ],
-     "order": 14
+     "order": 11
     },
     {
-     "name": "Pasta Alfredo",
-     "recipe_id": "5683556",
+     "name": "Spicy Sausage Sauce",
+     "recipe_id": "5649633",
      "description": "",
-     "ingredients": "pasta, white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, parmesan cheese",
+     "ingredients": "whole milk, cream, (non-halal) italian pork sausage, butter, roasted bell peppers, parmesan cheese, flour, garlic, salt",
      "allergens": [
       "MILK",
       "WHEAT"
      ],
-     "trace_allergens": [
-      "EGG"
-     ],
-     "tags": [
-      "vegetarian"
-     ],
-     "order": 15
+     "trace_allergens": [],
+     "tags": [],
+     "order": 12
     }
    ],
    "Dinner": [

@@ -1,6 +1,6 @@
 {
  "date": "2026-10-21",
- "scraped_at": "2026-10-17T10:52:27-07:00",
+ "scraped_at": "2026-10-17T15:24:17-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -4680,13 +4680,21 @@
      "order": 0
     },
     {
-     "name": "BBQ Jackfruit",
-     "recipe_id": "BBQJackfruit1",
+     "name": "Meatless BBQ Chick'n",
+     "recipe_id": "5200381-2",
      "description": "",
-     "ingredients": "jackfruit, barbecue sauce, garbanzo beans, apple cider vinegar, paprika, chili powder, oil, garlic, salt, and pepper",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [],
+     "ingredients": "plant based chick’n (soy protein concentrate, canola oil, distilled vinegar, yeast extract, salt, seasoning [salt, natural flavors, citric acid, onion powder], sugar), allergy friendly bbq sauce (molasses, ketchup, chili powder, liquid smoke, garlic, ginger, chipotle pepper, dijon mustard, salt, black pepper, apple cider vinegar, lemon juice)",
+     "allergens": [
+      "SOY"
+     ],
+     "trace_allergens": [
+      "TREENUTS"
+     ],
+     "tags": [
+      "gluten-free",
+      "vegan",
+      "halal"
+     ],
      "order": 1
     },
     {
@@ -4891,6 +4899,20 @@
    ],
    "Dinner": [
     {
+     "name": "Pork Carnitas Burrito Bowl",
+     "recipe_id": "3855817",
+     "description": "",
+     "ingredients": "(non-halal) pork carnitas (pork, onions, garlic, bay leaf, salt), flour tortilla, spanish rice (brown rice, vegetable soup base, onions, bell peppers, garlic, jalapeno peppers, canola/olive oil blend, tomato juice, coriander, cumin, black pepper, cilantro, salt), seasoned pinto beans (pinto beans, onions, garlic salt), avocado salsa, roasted tomato salsa, queso fresco, chipotle crema (cream, milk, chipotle peppers, salt)",
+     "allergens": [
+      "MILK",
+      "SOY",
+      "WHEAT"
+     ],
+     "trace_allergens": [],
+     "tags": [],
+     "order": 0
+    },
+    {
      "name": "Furikake-Crusted Tofu",
      "recipe_id": "FurikakeTofu1",
      "description": "",
@@ -4907,7 +4929,7 @@
       "vegan",
       "halal"
      ],
-     "order": 0
+     "order": 1
     },
     {
      "name": "Seasonal Steamed Vegetables",
@@ -4921,7 +4943,7 @@
       "vegan",
       "halal"
      ],
-     "order": 1
+     "order": 2
     },
     {
      "name": "Seasonal Vegetable Board",
@@ -4935,7 +4957,7 @@
       "vegan",
       "halal"
      ],
-     "order": 2
+     "order": 3
     },
     {
      "name": "Shell-On Toasted Sesame Edamame",
@@ -4952,7 +4974,7 @@
       "vegan",
       "halal"
      ],
-     "order": 3
+     "order": 4
     },
     {
      "name": "Vegetable Yakisoba",
@@ -4976,7 +4998,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 4
+     "order": 5
     },
     {
      "name": "Seasoned Brown Rice",
@@ -4992,7 +5014,7 @@
       "vegan",
       "halal"
      ],
-     "order": 5
+     "order": 6
     },
     {
      "name": "Shredded Napa Cabbage Slaw",
@@ -5009,7 +5031,7 @@
       "vegan",
       "halal"
      ],
-     "order": 6
+     "order": 7
     },
     {
      "name": "Panini Station",
@@ -5027,7 +5049,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 7
+     "order": 8
     },
     {
      "name": "Soup of the Day",
@@ -5037,7 +5059,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 8
+     "order": 9
     },
     {
      "name": "Assorted Bread",
@@ -5054,7 +5076,7 @@
       "vegan",
       "halal"
      ],
-     "order": 9
+     "order": 10
     },
     {
      "name": "Composed Salad",
@@ -5066,7 +5088,7 @@
      "tags": [
       "halal"
      ],
-     "order": 10
+     "order": 11
     },
     {
      "name": "Performance Bar",
@@ -5076,7 +5098,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 11
+     "order": 12
     },
     {
      "name": "Craveable Grains",
@@ -5090,7 +5112,7 @@
       "vegan",
       "halal"
      ],
-     "order": 12
+     "order": 13
     },
     {
      "name": "Flavor Forward Legumes",
@@ -5104,7 +5126,7 @@
       "vegan",
       "halal"
      ],
-     "order": 13
+     "order": 14
     },
     {
      "name": "Pasta Alfredo",
@@ -5121,7 +5143,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 14
+     "order": 15
     }
    ]
   },
