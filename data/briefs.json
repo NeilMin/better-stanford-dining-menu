@@ -2927,6 +2927,42 @@
   "vessel": "plate",
   "written_at": "2026-09-30T20:17:36+00:00"
  },
+ "1df799c04e23": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "sour cream",
+   "cream swirl",
+   "cheese",
+   "rice"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a thick stew of lentils, potatoes, and spinach in broth?",
+    "yes": true
+   },
+   {
+    "q": "Is there any diced meat, bacon, or poultry in the stew?",
+    "yes": false
+   },
+   {
+    "q": "Is the stew smooth and completely pureed like a bisque?",
+    "yes": false
+   }
+  ],
+  "dish": "spicy potato and lentil stew",
+  "look": "thick hearty reddish-brown stew, tender brown lentils, diced yellow potato chunks, wilted dark green spinach leaves, crushed stewed tomatoes, rich chili-spiced savory broth, chopped fresh cilantro",
+  "model": "gemini-flash-latest",
+  "name": "Spicy Potato & Lentil Stew",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-17T07:55:50+00:00"
+ },
  "1e5910e94d34": {
   "avoid": [
    "meat",
@@ -11005,6 +11041,42 @@
   "vessel": "plate",
   "written_at": "2026-09-27T05:17:39+00:00"
  },
+ "68a8d7e3ef91": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "fried egg",
+   "raw egg yolk",
+   "raw tofu",
+   "nori sheet"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a rice bowl topped with tofu and distinct mounds of vegetables?",
+    "yes": true
+   },
+   {
+    "q": "Is there an egg on top of the bowl?",
+    "yes": false
+   },
+   {
+    "q": "Are the ingredients scrambled together like fried rice?",
+    "yes": false
+   }
+  ],
+  "dish": "tofu bibimbap",
+  "look": "warm steamed white rice base, golden pan-seared tofu cubes, separate arranged mounds of cooked spinach, julienned sautéed carrots, seasoned bean sprouts, sliced shiitake mushrooms, spoonful of glossy red bibimbap sauce, sprinkle of sesame seeds",
+  "model": "gemini-flash-latest",
+  "name": "Miso Tofu Bibimbap Bowl",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-17T07:55:50+00:00"
+ },
  "6954cce63bc4": {
   "avoid": [
    "meat",
@@ -13126,6 +13198,42 @@
   "vessel": "plate",
   "written_at": "2026-09-27T06:46:09+00:00"
  },
+ "7cb3380b8b0f": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "burger bun",
+   "waffles",
+   "tofu cubes in broth",
+   "raw tofu"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item crispy deep-fried battered cutlets?",
+    "yes": true
+   },
+   {
+    "q": "Is the food bone-in poultry or real meat?",
+    "yes": false
+   },
+   {
+    "q": "Is the tofu soft, white, and unbreaded?",
+    "yes": false
+   }
+  ],
+  "dish": "Southern fried tofu",
+  "look": "thick golden-brown battered tofu slabs, crispy craggy fried crust, speckled with ground red pepper and dried herbs, served alongside charred grilled pineapple rings with caramelized grill marks",
+  "model": "gemini-flash-latest",
+  "name": "Southern Fried Tofu",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-17T07:55:50+00:00"
+ },
  "7ce093c83e43": {
   "avoid": [
    "meat",
@@ -14302,6 +14410,42 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-03T23:28:48+00:00"
+ },
+ "8761616bd07e": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "tortillas",
+   "taco shells",
+   "burrito wrap",
+   "nachos"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item shredded, pulled plant-based meat alternative?",
+    "yes": true
+   },
+   {
+    "q": "Is the food served wrapped inside a tortilla or taco shell?",
+    "yes": false
+   },
+   {
+    "q": "Is the food in large un-shredded solid blocks or cubes?",
+    "yes": false
+   }
+  ],
+  "dish": "jackfruit carnitas",
+  "look": "pile of shredded tender jackfruit strands, charred crispy golden-brown edges, glistening smoky reddish-brown spice glaze, tender diced onions, sprinkle of chopped fresh cilantro, lime wedges",
+  "model": "gemini-flash-latest",
+  "name": "Jackfruit Carnitas",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-17T07:55:50+00:00"
  },
  "87752afe95de": {
   "avoid": [
@@ -19967,6 +20111,40 @@
   "vessel": "plate",
   "written_at": "2026-09-27T04:33:15+00:00"
  },
+ "b5e89ef54d67": {
+  "avoid": [
+   "raw beef",
+   "ground beef",
+   "meatballs",
+   "dry roast",
+   "noodles",
+   "rice",
+   "bread loaf",
+   "pie crust"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a bowl of stew with chunks of meat and vegetables in gravy?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat ground or minced like a chili?",
+    "yes": false
+   },
+   {
+    "q": "Is the stew topped with a pie crust like a pot pie?",
+    "yes": false
+   }
+  ],
+  "dish": "beef stew",
+  "look": "tender seared beef chuck chunks, thick glossy dark brown tomato gravy, tender-cooked orange carrot rounds, diced celery chunks, translucent stewed onion pieces, scattered chopped parsley",
+  "model": "gemini-flash-latest",
+  "name": "Homestyle Beef Stew",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-17T07:55:50+00:00"
+ },
  "b6cf6ab4c1fa": {
   "avoid": [
    "bone-in chicken",
@@ -23732,6 +23910,39 @@
   "vessel": "plate",
   "written_at": "2026-10-01T07:22:00+00:00"
  },
+ "d52eb82f4547": {
+  "avoid": [
+   "seafood soup",
+   "gumbo",
+   "rice",
+   "pasta",
+   "raw fish",
+   "bread bowl",
+   "skewers"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a mix of seafood, sausage, corn, and potatoes in spiced sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is it a liquid soup or broth with submerged ingredients?",
+    "yes": false
+   },
+   {
+    "q": "Is the seafood breaded or deep-fried?",
+    "yes": false
+   }
+  ],
+  "dish": "Cajun seafood boil",
+  "look": "steamed shell-on pink shrimp, chunks of white pollock fish, red crab meat clusters, sliced browned smoked sausage rounds, yellow corn cob segments, tender red potato halves, glistening reddish-orange spiced butter sauce",
+  "model": "gemini-flash-latest",
+  "name": "Southern Seafood Boil",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-17T07:55:50+00:00"
+ },
  "d5350ce0369e": {
   "avoid": [
    "meat",
@@ -24216,6 +24427,42 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T14:22:11+00:00"
+ },
+ "da469b376374": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "corn off the cob in a cup",
+   "canned corn",
+   "esquites",
+   "tortilla chips"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a whole ear of grilled corn on the cob covered in toppings?",
+    "yes": true
+   },
+   {
+    "q": "Is the corn served cut off the cob in a cup or bowl?",
+    "yes": false
+   },
+   {
+    "q": "Is the corn plain and unadorned without cheese or sauce?",
+    "yes": false
+   }
+  ],
+  "dish": "Mexican street corn",
+  "look": "whole grilled ear of sweet corn on the cob, charred golden kernels, slather of creamy white mayonnaise and crema, thick coating of finely crumbled cotija cheese, dusting of red chile seasoning, chopped fresh cilantro, lime wedge",
+  "model": "gemini-flash-latest",
+  "name": "Elote",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-17T07:55:50+00:00"
  },
  "da48c9dfa5ad": {
   "avoid": [
