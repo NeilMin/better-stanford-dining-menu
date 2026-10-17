@@ -9736,6 +9736,42 @@
   "vessel": "plate",
   "written_at": "2026-09-27T04:40:44+00:00"
  },
+ "55cd28f8457c": {
+  "avoid": [
+   "tortillas",
+   "tortilla wrap",
+   "burrito",
+   "taco",
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "cheese",
+   "sour cream"
+  ],
+  "checks": [
+   {
+    "q": "Is the main protein seared tofu?",
+    "yes": true
+   },
+   {
+    "q": "Is the food wrapped or rolled inside a tortilla?",
+    "yes": false
+   },
+   {
+    "q": "Does the dish contain meat, chicken, or seafood?",
+    "yes": false
+   }
+  ],
+  "dish": "tofu fajitas",
+  "look": "seared firm tofu strips, golden-brown caramelized edges, sautéed sliced red bell peppers, sliced green bell peppers, tender caramelized onion strips, tossed together, sprinkle of fresh chopped cilantro",
+  "model": "gemini-flash-latest",
+  "name": "Tofu Fajitas",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-17T18:02:05+00:00"
+ },
  "55e09c8871cf": {
   "avoid": [
    "meat",
@@ -23552,6 +23588,40 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-29T16:49:13+00:00"
+ },
+ "d2c2ebabdbf7": {
+  "avoid": [
+   "refried beans",
+   "mashed beans",
+   "raw beans",
+   "rice",
+   "tortilla chips",
+   "tacos",
+   "hot dog slices",
+   "whole sausages"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a bowl of cooked whole beans in broth?",
+    "yes": true
+   },
+   {
+    "q": "Are the beans mashed or smooth like refried beans?",
+    "yes": false
+   },
+   {
+    "q": "Are there sliced hot dogs or sausage coins in the bowl?",
+    "yes": false
+   }
+  ],
+  "dish": "frijoles borrachos",
+  "look": "cooked whole pinto beans, rich glossy reddish-brown bean broth, diced tender pork belly chunks, sautéed diced onions, diced red bell peppers, chopped jalapeño pieces, finely chopped fresh cilantro garnish",
+  "model": "gemini-flash-latest",
+  "name": "Borracho Pinto Beans",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-17T18:02:05+00:00"
  },
  "d2e5cd41c668": {
   "avoid": [
