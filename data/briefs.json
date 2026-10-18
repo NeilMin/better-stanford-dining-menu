@@ -1435,6 +1435,40 @@
   "vessel": "bowl",
   "written_at": "2026-10-06T10:40:34+00:00"
  },
+ "11fa78f982ba": {
+  "avoid": [
+   "fried chicken",
+   "battered chicken",
+   "skewers",
+   "chicken wings",
+   "rice",
+   "pasta",
+   "fries",
+   "salad bowl"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cooked chicken?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken deep-fried in batter or heavy breading?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken on skewers or bone-in wings?",
+    "yes": false
+   }
+  ],
+  "dish": "Cajun grilled chicken breast",
+  "look": "sliced grilled chicken breast, reddish-brown Cajun spice crust, charred grill marks, tender white meat interior, creamy pale yellow lemon caper aioli drizzled over top, whole dark capers, fresh lemon slice",
+  "model": "gemini-flash-latest",
+  "name": "Lemon Garlic Cajun Chicken",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-18T22:30:07+00:00"
+ },
  "12460b3d8498": {
   "avoid": [
    "meat",
