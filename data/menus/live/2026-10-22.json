@@ -1,6 +1,6 @@
 {
  "date": "2026-10-22",
- "scraped_at": "2026-10-18T05:38:22-07:00",
+ "scraped_at": "2026-10-18T11:10:04-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -1536,29 +1536,42 @@
      "order": 5
     },
     {
-     "name": "Spaghetti and Meatballs",
-     "recipe_id": "6337932",
+     "name": "Shrimp, Chicken & Pork Sausage Jambalaya",
+     "recipe_id": "6484833",
      "description": "",
-     "ingredients": "spaghetti, marinara sauce, salt, parsley, parmesan cheese, canola/olive oil blend, meatballs (beef, [non-halal] pork, breadcrumbs, romano cheese, garlic powder, oregano, basil, parsley, vegetable oil)",
+     "ingredients": "spicy tomato sauce (tomato sauce, butter, beef soup base, tomato, cayenne pepper, black pepper, onion), dirty rice (rice, butter, parsley, vegetable soup base [contains mushroom, celery], garlic, onion, celery, bay leaf, sage, cayenne pepper, oregano, thyme, pepper, salt, canola/olive oil blend), chicken soup base, chicken, shrimp, okra, (non-halal) beef pork andouille sausage, green onion",
      "allergens": [
+      "FISH",
       "MILK",
-      "SOY",
-      "WHEAT"
+      "SHELLFISH"
      ],
      "trace_allergens": [],
-     "tags": [],
+     "tags": [
+      "gluten-free"
+     ],
      "order": 6
     },
     {
-     "name": "Creole Okra Ratatouille",
-     "recipe_id": "5731788",
+     "name": "Fried Okra",
+     "recipe_id": "6159363",
      "description": "",
-     "ingredients": "okra, bell peppers, tomatoes, red onions, canola/olive oil blend, garlic, thyme, oregano, paprika, cayenne pepper, basil, balsamic vinegar, salt, pepper",
-     "allergens": [],
-     "trace_allergens": [],
+     "ingredients": "okra, flour, corn meal, buttermilk, creole spice, salt, canola/olive oil blend, fried in canola oil",
+     "allergens": [
+      "MILK",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "SOY",
+      "TREENUTS"
+     ],
      "tags": [
-      "gluten-free",
-      "vegan",
+      "vegetarian",
       "halal"
      ],
      "order": 7
@@ -1597,19 +1610,22 @@
      "order": 9
     },
     {
-     "name": "Panini Station",
-     "recipe_id": "4532805",
+     "name": "Noodle Stir Fry Bar",
+     "recipe_id": "noodles",
      "description": "",
-     "ingredients": "(assorted) breads, cheeses, deli meats, lettuce, tomatoes, and onions",
-     "allergens": [
-      "EGG",
-      "SOY",
-      "WHEAT"
-     ],
+     "ingredients": "",
+     "allergens": [],
      "trace_allergens": [
       "COCONUT",
+      "EGG",
+      "FISH",
       "MILK",
-      "TREENUTS"
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "SOY",
+      "TREENUTS",
+      "WHEAT"
      ],
      "tags": [],
      "order": 10
@@ -2932,76 +2948,14 @@
      "order": 7
     },
     {
-     "name": "Burger Bar",
-     "recipe_id": "5964436",
+     "name": "Nacho Bar",
+     "recipe_id": "3506903",
      "description": "",
      "ingredients": "",
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
      "order": 8
-    },
-    {
-     "name": "Grilled Chicken",
-     "recipe_id": "520454-02",
-     "description": "",
-     "ingredients": "chicken, canola/olive oil blend, salt, pepper",
-     "allergens": [],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
-     ],
-     "tags": [
-      "halal"
-     ],
-     "order": 9
-    },
-    {
-     "name": "Grilled Vegan/Vegetarian",
-     "recipe_id": "13468741",
-     "description": "",
-     "ingredients": "chef's choice grilled vegan OR vegetarian option",
-     "allergens": [],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
-     ],
-     "tags": [
-      "halal"
-     ],
-     "order": 10
-    },
-    {
-     "name": "Handmade Pizza",
-     "recipe_id": "afdcpizza2",
-     "description": "",
-     "ingredients": "wheat flour, yeast, sugar, olive oil, mozzarella cheese, marinara sauce",
-     "allergens": [
-      "MILK",
-      "WHEAT"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "vegetarian",
-      "halal"
-     ],
-     "order": 11
     },
     {
      "name": "Panini Station",
@@ -3019,7 +2973,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 12
+     "order": 9
     },
     {
      "name": "Soup of the Day",
@@ -3029,7 +2983,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 13
+     "order": 10
     },
     {
      "name": "Assorted Bread",
@@ -3046,7 +3000,7 @@
       "vegan",
       "halal"
      ],
-     "order": 14
+     "order": 11
     },
     {
      "name": "Composed Salad",
@@ -3058,7 +3012,7 @@
      "tags": [
       "halal"
      ],
-     "order": 15
+     "order": 12
     },
     {
      "name": "Performance Bar",
@@ -3068,7 +3022,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 16
+     "order": 13
     },
     {
      "name": "Craveable Grains",
@@ -3082,7 +3036,7 @@
       "vegan",
       "halal"
      ],
-     "order": 17
+     "order": 14
     },
     {
      "name": "Flavor Forward Legumes",
@@ -3096,7 +3050,7 @@
       "vegan",
       "halal"
      ],
-     "order": 18
+     "order": 15
     },
     {
      "name": "Pasta Marinara",
@@ -3114,7 +3068,7 @@
       "vegan",
       "halal"
      ],
-     "order": 19
+     "order": 16
     },
     {
      "name": "Pasta Alfredo",
@@ -3131,7 +3085,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 20
+     "order": 17
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -3145,7 +3099,7 @@
       "vegan",
       "halal"
      ],
-     "order": 21
+     "order": 18
     }
    ],
    "Dinner": [
@@ -3272,78 +3226,27 @@
      "order": 7
     },
     {
-     "name": "Burger Bar",
-     "recipe_id": "5964436",
+     "name": "Mushroom Tinga Chilaquiles",
+     "recipe_id": "MushTChi17",
      "description": "",
-     "ingredients": "",
+     "ingredients": "chips (tortilla, canola oil, salt), oyster mushroom, tinga sauce (tomato, chipotle in adobo, onion, garlic, oregano, cumin, paprika, cinnamon, salt, olive/canola blended oil)",
      "allergens": [],
-     "trace_allergens": [],
-     "tags": [],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "SOY",
+      "TREENUTS",
+      "WHEAT"
+     ],
+     "tags": [
+      "vegetarian"
+     ],
      "order": 8
-    },
-    {
-     "name": "Grilled Chicken",
-     "recipe_id": "520454-02",
-     "description": "",
-     "ingredients": "chicken, canola/olive oil blend, salt, pepper",
-     "allergens": [],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
-     ],
-     "tags": [
-      "halal"
-     ],
-     "order": 9
-    },
-    {
-     "name": "Grilled Vegan/Vegetarian",
-     "recipe_id": "13468741",
-     "description": "",
-     "ingredients": "chef's choice grilled vegan OR vegetarian option",
-     "allergens": [],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
-     ],
-     "tags": [
-      "halal"
-     ],
-     "order": 10
-    },
-    {
-     "name": "Panini Station",
-     "recipe_id": "4532805",
-     "description": "",
-     "ingredients": "(assorted) breads, cheeses, deli meats, lettuce, tomatoes, and onions",
-     "allergens": [
-      "EGG",
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "COCONUT",
-      "MILK",
-      "TREENUTS"
-     ],
-     "tags": [],
-     "order": 11
     },
     {
      "name": "Soup of the Day",
@@ -3353,7 +3256,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 12
+     "order": 9
     },
     {
      "name": "Assorted Bread",
@@ -3370,7 +3273,7 @@
       "vegan",
       "halal"
      ],
-     "order": 13
+     "order": 10
     },
     {
      "name": "Composed Salad",
@@ -3382,7 +3285,7 @@
      "tags": [
       "halal"
      ],
-     "order": 14
+     "order": 11
     },
     {
      "name": "Performance Bar",
@@ -3392,35 +3295,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 15
-    },
-    {
-     "name": "Craveable Grains",
-     "recipe_id": "CraveableGrains1",
-     "description": "",
-     "ingredients": "** No Alliums: this includes garlic, onion, shallots, leeks, chives, scallions/ green onions, and any similar wild varieties, such as ramps. ** No Root vegetables/Tubers: this includes potatoes of any variety, beets, carrots, radishes, turnips, ginger, and fresh turmeric root. ** No Mushrooms/Fungi of any kind.",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan",
-      "halal"
-     ],
-     "order": 16
-    },
-    {
-     "name": "Flavor Forward Legumes",
-     "recipe_id": "FlavForLegumes1",
-     "description": "",
-     "ingredients": "** No Alliums: this includes garlic, onion, shallots, leeks, chives, scallions/ green onions, and any similar wild varieties, such as ramps. ** No Root vegetables/Tubers: this includes potatoes of any variety, beets, carrots, radishes, turnips, ginger, and fresh turmeric root. ** No Mushrooms/Fungi of any kind.",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan",
-      "halal"
-     ],
-     "order": 17
+     "order": 12
     },
     {
      "name": "Pasta Marinara",
@@ -3438,7 +3313,7 @@
       "vegan",
       "halal"
      ],
-     "order": 18
+     "order": 13
     },
     {
      "name": "Pasta Alfredo",
@@ -3455,21 +3330,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 19
-    },
-    {
-     "name": "Penne Pasta (Gluten-Free)",
-     "recipe_id": "3189216",
-     "description": "",
-     "ingredients": "brown rice, rice bran, water",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan",
-      "halal"
-     ],
-     "order": 20
+     "order": 14
     }
    ]
   },
