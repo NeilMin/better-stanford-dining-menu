@@ -1,6 +1,6 @@
 {
  "date": "2026-10-18",
- "scraped_at": "2026-10-18T11:10:04-07:00",
+ "scraped_at": "2026-10-18T15:27:22-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -1313,18 +1313,16 @@
      "order": 0
     },
     {
-     "name": "Veggie Gyro Plate",
-     "recipe_id": "COV3719382",
+     "name": "Seasonal Vegetable Vindaloo",
+     "recipe_id": "VegVindaloo1",
      "description": "",
-     "ingredients": "Veggie Gyros (gardein chick'n, bell pepper, onions, tomatoes, garlic, oregano, lemon juice, garlic, canola/olive oil blend, salt, pepper), Sauteed Greens (seasonal leafy greens, canola/olive oil blend, garlic, lemon juice, salt, pepper), Greek Style Pita (whole wheat flour, enriched wheat flour, soybean, canola oil, sugar, salt, baking powder, yeast, blackstrap molasses, calcium propionate, sodium stearoyl lactylate, guar gum, amylase)",
-     "allergens": [
-      "SOY",
-      "WHEAT",
-      "TRACEALLERGENS"
-     ],
+     "ingredients": "potatoes, seasonal vegetables, bell peppers, onions, tomatoes, garlic, ginger, white vinegar, vegetable soup base, cumin, coriander, turmeric, paprika, cinnamon, cloves, Kashmiri red chilies, red chilies, olive/canola oil blend, salt, black pepper",
+     "allergens": [],
      "trace_allergens": [],
      "tags": [
-      "vegan"
+      "gluten-free",
+      "vegan",
+      "halal"
      ],
      "order": 1
     },
@@ -1381,24 +1379,16 @@
      "order": 4
     },
     {
-     "name": "Sweet & Spicy BBQ Chicken",
-     "recipe_id": "5773326",
+     "name": "Lemon Garlic Cajun Chicken",
+     "recipe_id": "6128996",
      "description": "",
-     "ingredients": "chicken, tamari, vinegar, black pepper, yellow onions, lemon juice, scallions, red chile flakes, annatto seeds, sprite, sazon goya (garlic, coriander seeds, cumin, oregano, annatto seeds, achiote), finadene sauce (lemon juice, tamari, onions, hot peppers, cherry tomatoes, cucumbers)",
+     "ingredients": "chicken, cajun spice, lemon caper aioli (capers, lemon juice, garlic, mayonnaise, canola/olive oil blend), salt, pepper",
      "allergens": [
-      "SOY"
-     ],
-     "trace_allergens": [
-      "COCONUT",
       "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "TREENUTS",
+      "SOY",
       "WHEAT"
      ],
+     "trace_allergens": [],
      "tags": [],
      "order": 5
     },
@@ -1419,30 +1409,6 @@
      "order": 6
     },
     {
-     "name": "Hush-puppies",
-     "recipe_id": "6185433",
-     "description": "",
-     "ingredients": "onions, enriched yellow corn meal, enriched bleached flour, soybean oil with dimethylpolysiloxane, sugar, buttermilk, salt, leavening, spice, dried parsley, guar gum, fried in canola oil",
-     "allergens": [
-      "MILK",
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "TREENUTS"
-     ],
-     "tags": [
-      "vegetarian"
-     ],
-     "order": 7
-    },
-    {
      "name": "7 Cheesy Mac",
      "recipe_id": "7CM99",
      "description": "",
@@ -1456,7 +1422,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 8
+     "order": 7
     },
     {
      "name": "Fried Rice Bar",
@@ -1477,17 +1443,21 @@
       "WHEAT"
      ],
      "tags": [],
-     "order": 9
+     "order": 8
     },
     {
-     "name": "Soup of the Day",
-     "recipe_id": "SoupoftheDay",
+     "name": "Hearty Minestrone",
+     "recipe_id": "4633186",
      "description": "",
-     "ingredients": "chef's choice soup of the day",
-     "allergens": [],
+     "ingredients": "tomato puree, diced tomatoes in tomato juice, potatoes, kidney beans, carrots, green beans, celery, garbanzo beans, zucchini, peas, spinach, pasta, modified food starch, salt, parmesan cheese, gelatin, yeast extract, flour, flavoring, beef stock, spices, corn oil, canola oil, garlic, disodium inosinate, disodium guanylate, dextrose",
+     "allergens": [
+      "EGG",
+      "MILK",
+      "WHEAT"
+     ],
      "trace_allergens": [],
      "tags": [],
-     "order": 10
+     "order": 9
     },
     {
      "name": "Assorted Dinner Rolls",
@@ -1507,7 +1477,7 @@
       "vegetarian",
       "halal"
      ],
-     "order": 11
+     "order": 10
     },
     {
      "name": "Composed Salad",
@@ -1519,7 +1489,7 @@
      "tags": [
       "halal"
      ],
-     "order": 12
+     "order": 11
     },
     {
      "name": "Performance Bar",
@@ -1529,7 +1499,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 13
+     "order": 12
     },
     {
      "name": "Craveable Grains",
@@ -1543,7 +1513,7 @@
       "vegan",
       "halal"
      ],
-     "order": 14
+     "order": 13
     },
     {
      "name": "Flavor Forward Legumes",
@@ -1557,38 +1527,39 @@
       "vegan",
       "halal"
      ],
-     "order": 15
+     "order": 14
     },
     {
-     "name": "Tri Color Cheese Tortellini",
-     "recipe_id": "6188353",
+     "name": "Creamy Pesto",
+     "recipe_id": "7728050",
      "description": "",
-     "ingredients": "enriched semolina flour, romano cheese (cow's milk, sheep's milk), ricotta cheese, wheat flour, parmesan cheese, pasteurized eggs, corn starch, salt, paprika oleoresin, asiago cheese, spinach powder, garlic powder, spices, onion powder, fontina cheese, xanthan gum, locust bean gum, guar gum, beta carotene",
+     "ingredients": "pesto sauce (basil, canola oil, parmesan cheese, olive oil, garlic, salt, lemon juice concentrate, natural flavor, xanthan gum, soy lecithin, chamomile extract, rosemary extract, white sauce (flour, butter, cream, milk powder, onion powder, white pepper, garlic, nutmeg, salt), parmesan cheese, parsley",
      "allergens": [
-      "EGG",
       "MILK",
+      "SOY",
       "WHEAT"
      ],
      "trace_allergens": [],
-     "tags": [],
-     "order": 16
-    },
-    {
-     "name": "Pasta Alfredo",
-     "recipe_id": "5683556",
-     "description": "",
-     "ingredients": "pasta, white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, parmesan cheese",
-     "allergens": [
-      "MILK",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "EGG"
-     ],
      "tags": [
       "vegetarian"
      ],
-     "order": 17
+     "order": 15
+    },
+    {
+     "name": "Marinara Sauce",
+     "recipe_id": "4079962",
+     "description": "",
+     "ingredients": "tomatoes, tomato paste, soybean oil, sugar, salt, onion, garlic, spices, citric acid, natural flavor",
+     "allergens": [
+      "SOY"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan",
+      "halal"
+     ],
+     "order": 16
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -1602,7 +1573,7 @@
       "vegan",
       "halal"
      ],
-     "order": 18
+     "order": 17
     }
    ]
   },
