@@ -1,6 +1,6 @@
 {
  "date": "2026-10-23",
- "scraped_at": "2026-10-17T15:24:17-07:00",
+ "scraped_at": "2026-10-18T01:07:04-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -4581,10 +4581,24 @@
    ],
    "Lunch": [
     {
-     "name": "Smoky BBQ Jackfruit & Pinto Bean",
-     "recipe_id": "BBQJackPinto1",
+     "name": "Chicken Piccata",
+     "recipe_id": "6058342",
      "description": "",
-     "ingredients": "jackfruit, pinto beans, tomato sauce, onions, apple cider vinegar, brown sugar, smoked paprika, garlic, chili powder, mustard powder, cumin, olive/canola oil blend, salt, black pepper",
+     "ingredients": "chicken, chicken soup base, flour, parsley, garlic, canola/olive oil blend, onions, corn starch",
+     "allergens": [
+      "WHEAT"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "halal"
+     ],
+     "order": 0
+    },
+    {
+     "name": "Hearty Three Bean Stew",
+     "recipe_id": "4713833",
+     "description": "",
+     "ingredients": "great northern beans, chickpeas, pinto beans, celery, carrot, red onion, tomato, canola oil, olive oil, garlic, curry powder, cumin, pepper, cilantro, mint, salt",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -4592,13 +4606,13 @@
       "vegan",
       "halal"
      ],
-     "order": 0
+     "order": 1
     },
     {
-     "name": "Grilled Corn on the Cob",
-     "recipe_id": "GrlldCorn17",
+     "name": "Sauteed Greens",
+     "recipe_id": "5279550",
      "description": "",
-     "ingredients": "corn, salt, paprika, cayenne pepper, olive/canola blended oil, lime juice",
+     "ingredients": "seasonal leafy greens, salt, pepper, canola/olive oil blend",
      "allergens": [],
      "trace_allergens": [
       "COCONUT",
@@ -4616,52 +4630,60 @@
       "vegan",
       "halal"
      ],
-     "order": 1
-    },
-    {
-     "name": "Corn Tortilla",
-     "recipe_id": "3537943",
-     "description": "",
-     "ingredients": "white corn, lime, sodium propionate, cellulose gum, fumaric acid, sorbic acid",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan",
-      "halal"
-     ],
      "order": 2
     },
     {
-     "name": "Roasted Plantains",
-     "recipe_id": "3445905",
+     "name": "Roasted Carrots & Brussel Sprouts",
+     "recipe_id": "4878149",
      "description": "",
-     "ingredients": "plantains, canola/olive oil blend, salt, pepper",
+     "ingredients": "brussels sprouts, carrots, onions, olive oil, honey, garlic, salt, rosemary, pepper",
      "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan",
-      "halal"
-     ],
-     "order": 3
-    },
-    {
-     "name": "Chipotle-Lime Crema",
-     "recipe_id": "ChipLimeCrem1",
-     "description": "",
-     "ingredients": "sour cream, mayonnaise, lime juice, chipotle peppers in adobo, garlic, cumin, sugar, salt",
-     "allergens": [
-      "EGG",
-      "MILK"
-     ],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
       "vegetarian",
-      "halal"
+      "kosher"
+     ],
+     "order": 3
+    },
+    {
+     "name": "Scalloped Potatoes",
+     "recipe_id": "6621610",
+     "description": "",
+     "ingredients": "sliced potatoes, whole milk, fontina, parmesan, monterey jack cheese, nutmeg, thyme, bay leaf, white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt)",
+     "allergens": [
+      "MILK",
+      "WHEAT"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "vegetarian"
      ],
      "order": 4
+    },
+    {
+     "name": "Garlic Bread",
+     "recipe_id": "boxlunch-evgr27",
+     "description": "",
+     "ingredients": "flour, water, salt, yeast, butter, garlic, olive oil",
+     "allergens": [
+      "MILK",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "SOY",
+      "TREENUTS"
+     ],
+     "tags": [
+      "vegetarian"
+     ],
+     "order": 5
     },
     {
      "name": "Panini Station",
@@ -4679,7 +4701,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 5
+     "order": 6
     },
     {
      "name": "Soup of the Day",
@@ -4689,7 +4711,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 6
+     "order": 7
     },
     {
      "name": "Assorted Bread",
@@ -4706,7 +4728,7 @@
       "vegan",
       "halal"
      ],
-     "order": 7
+     "order": 8
     },
     {
      "name": "Spicy Coleslaw",
@@ -4720,7 +4742,7 @@
       "vegan",
       "halal"
      ],
-     "order": 8
+     "order": 9
     },
     {
      "name": "Performance Bar",
@@ -4730,7 +4752,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 9
+     "order": 10
     },
     {
      "name": "Craveable Grains",
@@ -4744,7 +4766,7 @@
       "vegan",
       "halal"
      ],
-     "order": 10
+     "order": 11
     },
     {
      "name": "Flavor Forward Legumes",
@@ -4758,19 +4780,6 @@
       "vegan",
       "halal"
      ],
-     "order": 11
-    },
-    {
-     "name": "Spicy Sausage Sauce",
-     "recipe_id": "5649633",
-     "description": "",
-     "ingredients": "whole milk, cream, (non-halal) italian pork sausage, butter, roasted bell peppers, parmesan cheese, flour, garlic, salt",
-     "allergens": [
-      "MILK",
-      "WHEAT"
-     ],
-     "trace_allergens": [],
-     "tags": [],
      "order": 12
     }
    ],
@@ -4882,22 +4891,6 @@
      "order": 6
     },
     {
-     "name": "Caper Beurre Blanc",
-     "recipe_id": "CaperBeurreBlanc1",
-     "description": "",
-     "ingredients": "shallots, white wine vinegar, vegetable soup base, heavy cream, butter, capers, lemon juice, lemon zest, fresh parsley, salt, white pepper, chives",
-     "allergens": [
-      "MILK"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegetarian",
-      "halal"
-     ],
-     "order": 7
-    },
-    {
      "name": "Panini Station",
      "recipe_id": "4532805",
      "description": "",
@@ -4913,7 +4906,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 8
+     "order": 7
     },
     {
      "name": "Soup of the Day",
@@ -4923,7 +4916,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 9
+     "order": 8
     },
     {
      "name": "Assorted Bread",
@@ -4940,7 +4933,7 @@
       "vegan",
       "halal"
      ],
-     "order": 10
+     "order": 9
     },
     {
      "name": "Composed Salad",
@@ -4952,7 +4945,7 @@
      "tags": [
       "halal"
      ],
-     "order": 11
+     "order": 10
     },
     {
      "name": "Performance Bar",
@@ -4962,7 +4955,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 12
+     "order": 11
     },
     {
      "name": "Craveable Grains",
@@ -4976,7 +4969,7 @@
       "vegan",
       "halal"
      ],
-     "order": 13
+     "order": 12
     },
     {
      "name": "Flavor Forward Legumes",
@@ -4990,7 +4983,7 @@
       "vegan",
       "halal"
      ],
-     "order": 14
+     "order": 13
     },
     {
      "name": "Pasta Alfredo",
@@ -5007,7 +5000,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 15
+     "order": 14
     }
    ]
   },
