@@ -984,6 +984,42 @@
   "vessel": "plate",
   "written_at": "2026-09-28T17:10:34+00:00"
  },
+ "0bc8919ce350": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "taco shells",
+   "tortillas",
+   "empanada crust",
+   "rice"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a saucy mix of crumbles, olives, and diced vegetables?",
+    "yes": true
+   },
+   {
+    "q": "Is the food stuffed inside an empanada, taco, or pastry crust?",
+    "yes": false
+   },
+   {
+    "q": "Is the protein served as large cutlets or chunks rather than loose crumbles?",
+    "yes": false
+   }
+  ],
+  "dish": "vegan picadillo",
+  "look": "loose simmered plant-based beef crumbles, rich reddish-brown tomato sauce, diced green bell peppers, diced onions, plump dark raisins, sliced green Spanish olives with pimento, glistening with spiced sauce",
+  "model": "gemini-flash-latest",
+  "name": "Hearty Veggie Picadillo",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-18T08:10:17+00:00"
+ },
  "0bdb2dacf98f": {
   "avoid": [
    "rice",
@@ -3965,6 +4001,39 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T06:53:41+00:00"
  },
+ "283878457c8b": {
+  "avoid": [
+   "white fish",
+   "chicken",
+   "meat",
+   "rice bowl",
+   "sushi",
+   "raw salmon",
+   "skewers"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a cooked pink or orange salmon fillet?",
+    "yes": true
+   },
+   {
+    "q": "Is the salmon raw or in sushi form?",
+    "yes": false
+   },
+   {
+    "q": "Is the fish white-fleshed or breaded?",
+    "yes": false
+   }
+  ],
+  "dish": "teriyaki salmon",
+  "look": "pan-seared salmon fillet, flaky pink-orange flesh, glossy dark brown sticky teriyaki glaze, caramelized edges, sprinkled white sesame seeds, thin green scallion slices",
+  "model": "gemini-flash-latest",
+  "name": "Teriyaki Salmon",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-18T08:10:17+00:00"
+ },
  "2848360ada68": {
   "avoid": [
    "meat",
@@ -4536,6 +4605,41 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-26T23:09:50+00:00"
+ },
+ "2cd1bb486126": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "parmesan cheese",
+   "meatballs",
+   "bread"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish pasta topped with a chunky red sauce?",
+    "yes": true
+   },
+   {
+    "q": "Are there whole meatballs or sliced meat cutlets on the pasta?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish covered in grated dairy cheese?",
+    "yes": false
+   }
+  ],
+  "dish": "pasta with vegan bolognese",
+  "look": "cooked tangled pasta, coated and topped with thick chunky red marinara sauce, plant-based ground crumbles, visible diced sauteed onions, flecks of dried herbs, pinch of red pepper flakes",
+  "model": "gemini-flash-latest",
+  "name": "Plant-Forward \"Bolognese\" Pasta",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-18T08:10:17+00:00"
  },
  "2d19e0035732": {
   "avoid": [
@@ -8524,6 +8628,42 @@
   "vessel": "bowl",
   "written_at": "2026-09-26T20:19:53+00:00"
  },
+ "49b7acff88a0": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "couscous",
+   "rice",
+   "raw vegetables",
+   "soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a mix of roasted vegetables?",
+    "yes": true
+   },
+   {
+    "q": "Is there meat, poultry, or fish present?",
+    "yes": false
+   },
+   {
+    "q": "Is it a liquid soup or stew?",
+    "yes": false
+   }
+  ],
+  "dish": "harissa roasted vegetables",
+  "look": "roasted chunks of green zucchini, tender dark eggplant cubes, red and yellow bell pepper slices, coated in reddish-orange spiced paste with charred edges, sprinkled with fresh chopped cilantro leaves",
+  "model": "gemini-flash-latest",
+  "name": "Harissa Roasted Vegetables",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-18T08:10:56+00:00"
+ },
  "4a1f2e2ecb67": {
   "avoid": [
    "meat",
@@ -8627,6 +8767,40 @@
   "revisions": 1,
   "vessel": "bowl",
   "written_at": "2026-10-01T07:08:18+00:00"
+ },
+ "4aaf1b0a8b44": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "soup broth",
+   "fried egg"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food stir-fried noodles?",
+    "yes": true
+   },
+   {
+    "q": "Are the noodles served in soup or broth?",
+    "yes": false
+   },
+   {
+    "q": "Is there visible meat, poultry, or seafood?",
+    "yes": false
+   }
+  ],
+  "dish": "vegetable yakisoba",
+  "look": "tangled stir-fried wheat noodles coated in dark glossy brown sauce, sauteed sliced green cabbage, dark shiitake mushrooms, thin strips of red bell pepper and orange carrots, fine zigzag drizzle of pale mayonnaise, sprinkle of sliced green onions, flecks of dark furikake",
+  "model": "gemini-flash-latest",
+  "name": "Yakisoba Noodles",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-18T08:11:18+00:00"
  },
  "4ac68252b436": {
   "avoid": [
@@ -10144,6 +10318,41 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T05:03:54+00:00"
+ },
+ "580580e120b7": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "rice",
+   "bread bowl",
+   "pasta"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a chunky bean stew in broth?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat, chicken, or seafood visible in the stew?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish dry without broth or sauce?",
+    "yes": false
+   }
+  ],
+  "dish": "three bean stew",
+  "look": "thick hearty bean stew, visible plump white beans, round chickpeas, brown pinto beans, tender diced orange carrots, diced celery, simmered in a warm golden-brown curry-tinted tomato broth, chopped fresh cilantro and mint",
+  "model": "gemini-flash-latest",
+  "name": "Hearty Three Bean Stew",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-18T08:10:17+00:00"
  },
  "58633bcdf2dc": {
   "avoid": [
@@ -12071,6 +12280,40 @@
   "vessel": "plate",
   "written_at": "2026-09-30T20:17:23+00:00"
  },
+ "6e8a57291f8f": {
+  "avoid": [
+   "pita bread",
+   "flatbread",
+   "wrap",
+   "skewers",
+   "curry stew",
+   "french fries",
+   "raw chicken",
+   "ground chicken"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item chicken coated in a red sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken served wrapped in a flatbread or pita?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken on skewers?",
+    "yes": false
+   }
+  ],
+  "dish": "harissa chicken",
+  "look": "roasted chicken pieces coated in thick fiery red-orange harissa chili sauce, charred blistered edges, glossy spiced red glaze, scattered chopped fresh cilantro",
+  "model": "gemini-flash-latest",
+  "name": "Harissa Chicken",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-18T08:10:17+00:00"
+ },
  "6e9382f3e7ed": {
   "avoid": [
    "pork",
@@ -13067,6 +13310,78 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-26T23:08:02+00:00"
+ },
+ "7929159068c7": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "french fries",
+   "raw onions",
+   "calamari",
+   "sauce cups"
+  ],
+  "checks": [
+   {
+    "q": "Is the food fried onion rings?",
+    "yes": true
+   },
+   {
+    "q": "Are these calamari rings or seafood?",
+    "yes": false
+   },
+   {
+    "q": "Are the onions raw and unbreaded?",
+    "yes": false
+   }
+  ],
+  "dish": "breaded onion rings",
+  "look": "a stacked pile of thick-cut circular onion rings, crispy golden-brown breadcrumb coating, crunchy rough textured exterior, distinct hollow circular centers",
+  "model": "gemini-flash-latest",
+  "name": "Breaded Onion Rings",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-18T08:10:56+00:00"
+ },
+ "7a96dc2899be": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "bacon",
+   "fish",
+   "shrimp",
+   "raw salad",
+   "dressing",
+   "cheese"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish cooked leafy greens?",
+    "yes": true
+   },
+   {
+    "q": "Does the dish look like a raw salad?",
+    "yes": false
+   },
+   {
+    "q": "Is there bacon or meat in the greens?",
+    "yes": false
+   }
+  ],
+  "dish": "sauteed leafy greens",
+  "look": "tender wilted dark green leafy greens, glossy cooked collard and spinach leaves, tender stems, glistening surface, loose warm leafy tangle",
+  "model": "gemini-flash-latest",
+  "name": "Sauteed Greens",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-18T08:10:56+00:00"
  },
  "7a96dd54587f": {
   "avoid": [
@@ -15852,6 +16167,40 @@
   "vessel": "plate",
   "written_at": "2026-09-27T05:30:31+00:00"
  },
+ "90df5dee67e5": {
+  "avoid": [
+   "pasta",
+   "spaghetti",
+   "noodles",
+   "rice",
+   "skewers",
+   "raw chicken",
+   "bread",
+   "thick gravy"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item seared or pan-fried chicken cutlets?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken served on or mixed with pasta or noodles?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken shredded, ground, or skewered?",
+    "yes": false
+   }
+  ],
+  "dish": "chicken piccata",
+  "look": "pan-seared golden brown chicken cutlets, glossy light yellow lemon butter sauce, scattered briny green capers, minced translucent garlic bits, finely chopped fresh parsley",
+  "model": "gemini-flash-latest",
+  "name": "Chicken Piccata",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-18T08:10:17+00:00"
+ },
  "911ebf6f19cd": {
   "avoid": [
    "meat",
@@ -16944,6 +17293,41 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T06:53:41+00:00"
+ },
+ "9c2074f141e8": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "bacon",
+   "fish",
+   "shrimp",
+   "raw vegetables",
+   "steamed vegetables"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish roasted Brussels sprouts and carrots?",
+    "yes": true
+   },
+   {
+    "q": "Are the vegetables raw?",
+    "yes": false
+   },
+   {
+    "q": "Is there bacon or meat in the dish?",
+    "yes": false
+   }
+  ],
+  "dish": "roasted carrots and Brussels sprouts",
+  "look": "halved charred Brussels sprouts with crisp browned edges, thick sliced roasted orange carrot rounds, tender caramelized onion wedges, glossy honey sheen, scattered minced garlic",
+  "model": "gemini-flash-latest",
+  "name": "Roasted Carrots & Brussel Sprouts",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-18T08:10:56+00:00"
  },
  "9c502f89c312": {
   "avoid": [
@@ -18607,6 +18991,41 @@
   "revisions": 0,
   "vessel": "bowl"
  },
+ "a90acc231899": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "bacon",
+   "fish",
+   "shrimp",
+   "mashed potatoes",
+   "french fries"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish potato salad?",
+    "yes": true
+   },
+   {
+    "q": "Are the potatoes smooth mashed potatoes?",
+    "yes": false
+   },
+   {
+    "q": "Is there meat or bacon in the salad?",
+    "yes": false
+   }
+  ],
+  "dish": "Southern potato salad",
+  "look": "chunky cubes of tender yellow potatoes, creamy thick mayonnaise dressing with relish specks, finely diced red bell pepper bits, minced white onions, black pepper flecks, chopped fresh parsley",
+  "model": "gemini-flash-latest",
+  "name": "Southern Style Potato Salad",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-18T08:10:56+00:00"
+ },
  "a9c64bca3f9a": {
   "avoid": [
    "chicken wings",
@@ -18816,6 +19235,77 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-29T00:31:05+00:00"
+ },
+ "ab5c8b097ae4": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "burger",
+   "french fries",
+   "salad",
+   "sandwich"
+  ],
+  "checks": [
+   {
+    "q": "Is the item a creamy pink sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the sauce served on a burger or sandwich?",
+    "yes": false
+   },
+   {
+    "q": "Are there french fries in the sauce?",
+    "yes": false
+   }
+  ],
+  "dish": "special burger sauce",
+  "look": "smooth creamy pastel-pink sauce, tiny suspended green pickle relish specks, smooth velvety dollop, glossy surface texture, opaque creamy emulsion, small swirl on top",
+  "model": "gemini-flash-latest",
+  "name": "The Sauce",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-18T08:10:56+00:00"
+ },
+ "abe9ae227eec": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "bacon bits",
+   "cheddar cheese sauce",
+   "sour cream"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish composed of filled halved potato skins?",
+    "yes": true
+   },
+   {
+    "q": "Is there shredded meat, bacon, or ground meat visible?",
+    "yes": false
+   },
+   {
+    "q": "Is there melted dairy cheese or sour cream covering the top?",
+    "yes": false
+   }
+  ],
+  "dish": "chipotle chickpea stuffed potato skins",
+  "look": "halved baked potato skins, crispy roasted brown potato rims, filled with cooked golden chickpeas tossed in reddish-brown fire-roasted tomato and chipotle sauce, chopped red onion, scattered fresh cilantro leaves",
+  "model": "gemini-flash-latest",
+  "name": "Chipotle Chickpea Potato Skins",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-18T08:10:17+00:00"
  },
  "ac1e0c38ce07": {
   "avoid": [
@@ -20498,6 +20988,42 @@
   "vessel": "bowl",
   "written_at": "2026-10-11T10:11:53+00:00"
  },
+ "b74942749b68": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "noodles",
+   "rice",
+   "cheese sauce",
+   "raw broccoli"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food broccoli and mushrooms?",
+    "yes": true
+   },
+   {
+    "q": "Is there meat or seafood in the dish?",
+    "yes": false
+   },
+   {
+    "q": "Is the broccoli raw?",
+    "yes": false
+   }
+  ],
+  "dish": "stir-fried broccoli and mushrooms",
+  "look": "bright green broccoli florets, tender cooked broccoli stalks, sliced browned cremini mushroom caps, minced garlic bits, light glossy savory sheen",
+  "model": "gemini-flash-latest",
+  "name": "Stir Fried Brocooli",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-18T08:10:56+00:00"
+ },
  "b7dda503a49e": {
   "avoid": [
    "white creamy sauce covering everything",
@@ -21240,6 +21766,39 @@
   "vessel": "plate",
   "written_at": "2026-10-01T00:14:24+00:00"
  },
+ "bc80aa7c5b3f": {
+  "avoid": [
+   "raw chicken",
+   "skewers",
+   "breaded chicken",
+   "fried chicken",
+   "curry sauce",
+   "shredded meat",
+   "potatoes"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a piece of roasted bone-in chicken?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken breaded and deep-fried?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken shredded or ground?",
+    "yes": false
+   }
+  ],
+  "dish": "garlic herb roast chicken",
+  "look": "roasted bone-in chicken piece, crispy golden-brown roasted skin, flecks of dark green dried oregano and thyme leaves, roasted garlic bits, glistening pan drippings",
+  "model": "gemini-flash-latest",
+  "name": "Garlic Herb Roasted Chicken",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-18T08:10:17+00:00"
+ },
  "bdc3480b4ef9": {
   "avoid": [
    "scrambled eggs",
@@ -21967,6 +22526,41 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-09T10:51:50+00:00"
+ },
+ "c5203660599d": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "noodles",
+   "rice",
+   "raw eggplant"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food cooked eggplant?",
+    "yes": true
+   },
+   {
+    "q": "Is there meat or fish in the dish?",
+    "yes": false
+   },
+   {
+    "q": "Is the eggplant raw?",
+    "yes": false
+   }
+  ],
+  "dish": "crispy stir-fried eggplant",
+  "look": "bite-sized chunks of crispy battered eggplant, dark glossy savory brown tamari glaze, sliced red bell pepper strips, minced garlic bits, chopped green scallions, shiny cooked vegetable surfaces",
+  "model": "gemini-flash-latest",
+  "name": "Twice Fried Eggplant",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-18T08:10:56+00:00"
  },
  "c534c5bef986": {
   "avoid": [
