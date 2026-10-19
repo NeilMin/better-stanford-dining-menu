@@ -745,6 +745,40 @@
   "vessel": "plate",
   "written_at": "2026-09-27T04:40:44+00:00"
  },
+ "083edce3959f": {
+  "avoid": [
+   "chicken",
+   "paneer",
+   "tofu",
+   "beef",
+   "naan bread",
+   "rice",
+   "raw shrimp",
+   "shellfish shells"
+  ],
+  "checks": [
+   {
+    "q": "Are there whole cooked shrimp in a creamy orange-red curry sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the main protein chicken or red meat?",
+    "yes": false
+   },
+   {
+    "q": "Does the curry appear thin and clear like broth?",
+    "yes": false
+   }
+  ],
+  "dish": "shrimp makhani",
+  "look": "curled pink tail-on shrimp, rich glossy orange-red makhani tomato butter sauce, strips of red bell pepper, light cream drizzle, chopped fresh green cilantro",
+  "model": "gemini-flash-latest",
+  "name": "Shrimp Makhani (FloMo)",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-19T09:03:51+00:00"
+ },
  "084198f8e0a3": {
   "avoid": [
    "chicken",
@@ -3141,6 +3175,39 @@
   "vessel": "bowl",
   "written_at": "2026-09-29T16:28:29+00:00"
  },
+ "1edf8e708f15": {
+  "avoid": [
+   "plain white rice",
+   "noodles",
+   "beef",
+   "pork",
+   "shrimp",
+   "curry sauce in a separate bowl",
+   "flatbread"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a spiced rice dish with visible chicken pieces?",
+    "yes": true
+   },
+   {
+    "q": "Is the rice plain uniform white rice?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat red meat or seafood?",
+    "yes": false
+   }
+  ],
+  "dish": "chicken biryani",
+  "look": "mound of long-grain basmati rice, golden yellow saffron streaks, tender roasted chicken pieces, scattered green peas, orange diced carrots, caramelized dark brown onions, fresh mint leaves",
+  "model": "gemini-flash-latest",
+  "name": "Chicken Biryani",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-19T09:03:51+00:00"
+ },
  "1f0eee8cb27f": {
   "avoid": [
    "pepperoni",
@@ -3639,6 +3706,40 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-29T00:31:05+00:00"
+ },
+ "235d699c7e1b": {
+  "avoid": [
+   "burger bun",
+   "sandwich",
+   "french fries",
+   "melted cheese",
+   "lettuce",
+   "tomato slice",
+   "raw beef",
+   "scrambled eggs"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish composed of a burger patty and a fried egg over rice with brown gravy?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat served inside a burger bun or sandwich bread?",
+    "yes": false
+   },
+   {
+    "q": "Are the eggs scrambled or hard-boiled?",
+    "yes": false
+   }
+  ],
+  "dish": "Loco Moco",
+  "look": "grilled ground beef hamburger patty, bed of fluffy steamed white rice, ladle of dark brown onion mushroom gravy, sunny-side-up fried egg, runny yellow yolk, chopped green scallions, sprinkle of black and white furikake sesame seeds",
+  "model": "gemini-flash-latest",
+  "name": "Loco Moco",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-19T09:03:51+00:00"
  },
  "24042a7e6508": {
   "avoid": [
@@ -15359,6 +15460,42 @@
   "vessel": "plate",
   "written_at": "2026-10-12T22:40:49+00:00"
  },
+ "8a1eb1fec787": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "french fries",
+   "mashed potatoes",
+   "melted cheese",
+   "bacon bits"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish composed of roasted potato chunks?",
+    "yes": true
+   },
+   {
+    "q": "Are the potatoes mashed, puréed, or shaped like french fries?",
+    "yes": false
+   },
+   {
+    "q": "Are there pieces of bacon, cheese, or meat visible?",
+    "yes": false
+   }
+  ],
+  "dish": "roasted garlic herb potatoes",
+  "look": "cubed roasted red-skin potatoes, crisp blistered golden-brown edges, soft white potato flesh, golden roasted garlic cloves, specks of cracked black pepper, chopped fresh green parsley and rosemary",
+  "model": "gemini-flash-latest",
+  "name": "Roasted Garlic Herb Potatoes",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-19T09:03:51+00:00"
+ },
  "8a7b5b080c36": {
   "avoid": [
    "chicken",
@@ -19753,6 +19890,41 @@
   "vessel": "plate",
   "written_at": "2026-09-27T04:57:12+00:00"
  },
+ "ae7c5cf965cd": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "curry sauce",
+   "yellow turmeric rice",
+   "peas"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food cooked rice with visible whole spices?",
+    "yes": true
+   },
+   {
+    "q": "Are there chunks of meat or poultry mixed with the rice?",
+    "yes": false
+   },
+   {
+    "q": "Is the rice drenched in a thick sauce or curry?",
+    "yes": false
+   }
+  ],
+  "dish": "jeera rice",
+  "look": "steamed long-grain basmati rice, glistening translucent grains, toasted dark brown whole cumin seeds, delicate slivers of ginger, whole brown cinnamon stick garnish",
+  "model": "gemini-flash-latest",
+  "name": "Ghee Basmati Rice (FloMo)",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-19T09:03:51+00:00"
+ },
  "ae97ecf5c3ab": {
   "avoid": [
    "ground beef",
@@ -20102,6 +20274,42 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-10-09T20:12:31+00:00"
+ },
+ "b081c86e47d2": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "spring rolls",
+   "tortilla chips",
+   "soup",
+   "curry sauce"
+  ],
+  "checks": [
+   {
+    "q": "Are the main items triangular fried stuffed pastries?",
+    "yes": true
+   },
+   {
+    "q": "Is the filling ground meat?",
+    "yes": false
+   },
+   {
+    "q": "Are the pastries shaped like cylindrical rolls or flat chips?",
+    "yes": false
+   }
+  ],
+  "dish": "vegetable samosas",
+  "look": "crispy golden-brown triangular fried pastry samosas, blistered flaky crust, one pastry cracked open displaying spiced yellow potato filling and tender green peas, fresh green coriander leaves",
+  "model": "gemini-flash-latest",
+  "name": "Samosas",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-19T09:03:51+00:00"
  },
  "b0af1687f4aa": {
   "avoid": [
