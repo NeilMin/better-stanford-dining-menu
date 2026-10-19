@@ -21451,6 +21451,46 @@
   "vessel": "plate",
   "written_at": "2026-10-02T23:59:27+00:00"
  },
+ "babf77c2d9d3": {
+  "avoid": [
+   "stems",
+   "carrot tops",
+   "greens",
+   "leaves",
+   "hybrid vegetables",
+   "fused vegetables",
+   "chimera",
+   "half asparagus half carrot",
+   "citrus"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a mix of roasted green asparagus and roasted carrots?",
+    "yes": true
+   },
+   {
+    "q": "Are there any fused vegetables, two-toned stalks, or carrots with green asparagus tips?",
+    "yes": false
+   },
+   {
+    "q": "Is each vegetable clearly either pure asparagus or pure carrot?",
+    "yes": true
+   },
+   {
+    "q": "Is there any meat, poultry, or seafood on the plate?",
+    "yes": false
+   }
+  ],
+  "dish": "roasted asparagus and baby carrots",
+  "hand": true,
+  "look": "roasted green asparagus spears and roasted baby carrots on a plate, whole green asparagus stalks, thick slices of roasted orange baby carrot with caramelized edges, two distinctly separate vegetables, roasted garlic flecks, glistening olive oil",
+  "model": "manual-culinary-fix",
+  "name": "Roasted Asparagus & Baby Carrots",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-11T18:58:00+00:00"
+ },
  "bacbacfbc4f6": {
   "avoid": [
    "fish sticks",
