@@ -6430,6 +6430,39 @@
   "vessel": "plate",
   "written_at": "2026-10-15T08:38:16+00:00"
  },
+ "37980e628b73": {
+  "avoid": [
+   "french fries",
+   "onion rings",
+   "potato chips",
+   "raw chicken",
+   "grilled chicken",
+   "sliced sandwich bread",
+   "beef burger patty"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a fried chicken sandwich in a bun?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken smooth and grilled rather than craggy and battered?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat a ground burger patty?",
+    "yes": false
+   }
+  ],
+  "dish": "fried chicken sandwich",
+  "look": "golden-brown crispy fried chicken cutlet, glossy toasted brioche bun, shredded purple and green cabbage coleslaw, creamy dijon aioli dripping over craggy crunchy crust",
+  "model": "gemini-flash-latest",
+  "name": "Buttermilk Fried Chicken Sandwich",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-19T20:40:49+00:00"
+ },
  "37bb4e5a3fef": {
   "avoid": [
    "meat",
@@ -8621,6 +8654,43 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-09T10:51:50+00:00"
+ },
+ "490687d05e3f": {
+  "avoid": [
+   "hard shell tacos",
+   "flour tortilla wrap",
+   "burrito",
+   "ground beef",
+   "shredded cheddar cheese",
+   "sour cream",
+   "rice and beans"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish soft tacos filled with pieces of steak?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat ground like mince?",
+    "yes": false
+   },
+   {
+    "q": "Are the tacos in hard yellow U-shaped shells?",
+    "yes": false
+   },
+   {
+    "q": "Is the food rolled into a closed burrito or wrap?",
+    "yes": false
+   }
+  ],
+  "dish": "carne asada tacos",
+  "look": "seared chopped beef steak chunks, charred brown edges, folded warm small yellow corn tortillas, finely diced white onions, sprinkle of chopped green herbs, lime wedges",
+  "model": "gemini-flash-latest",
+  "name": "Tacos De Carne Asada",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-19T20:40:49+00:00"
  },
  "4928bd35dae8": {
   "avoid": [
