@@ -95,6 +95,14 @@
        board rather than drawn inside it; see .pinned in app.css. It says again
        what the headers above it say, so it is hidden from screen readers. -->
   <div class="pinned" id="pinned" aria-hidden="true"></div>
+  <!-- A hall at a time sideways, for a mouse, which has no sideways wheel.
+       Laid over the board's edges like the strip above; see .pager in app.css. -->
+  <button class="pager pager-prev" id="pager-prev" type="button">
+    <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5"/></svg>
+  </button>
+  <button class="pager pager-next" id="pager-next" type="button">
+    <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5"/></svg>
+  </button>
 </main>
 
 <dialog id="lightbox" class="lightbox" closedby="any" aria-label="Dish photo preview">

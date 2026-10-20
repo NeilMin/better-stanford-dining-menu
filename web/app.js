@@ -106,6 +106,7 @@
       identical: "These menus are identical — go wherever is closest.",
       share: "Share",
       shareTip: "Share this day, meal and these halls",
+      pager: (dir) => (dir < 0 ? "Previous hall" : "Next hall"),
       hallTitle: (name) => `${name} Menu · Stanford Dining, Side by Side`,
       footHalls: "Each hall on its own page:",
       shareWhen: (meal, day) => `${day.toLocaleDateString(undefined, { weekday: "long" })} ` +
@@ -194,6 +195,7 @@
       identical: "这几家的菜单完全相同——去离你最近的那家就好。",
       share: "分享",
       shareTip: "分享当前的日期、餐次和食堂",
+      pager: (dir) => (dir < 0 ? "上一个食堂" : "下一个食堂"),
       hallTitle: (name) => `${name} 菜单 · 舌尖上的斯坦福`,
       footHalls: "各食堂单独页面：",
       shareWhen: (meal, day) => `${day.toLocaleDateString("zh-CN", { month: "long", day: "numeric" })}` +
@@ -1044,8 +1046,10 @@
     board.style.setProperty("--cols", String(columns || 3));
 
     // Drawn again with the board: the strip stands in for these headers once
-    // they have scrolled away.
+    // they have scrolled away. The board's width changes with it, and with
+    // that whether there is a hall off either edge.
     renderPins();
+    syncPagers();
 
     renderDigest(spread, servingHalls.length);
     renderNotices();
@@ -1347,6 +1351,17 @@
     syncPins();
   }
 
+  /** Where the window stops being covered by what is pinned at its top. The
+   *  whole top bar on a desktop; on a phone that bar is display: contents and
+   *  has no box of its own, and only the day and meal row stays pinned.
+   *  Whichever of the two is really there reaches furthest down the page. */
+  function stickyLine() {
+    return Math.max(...[".top", ".bar"].map((sel) => {
+      const node = document.querySelector(sel);
+      return node.getClientRects().length ? node.getBoundingClientRect().bottom : 0;
+    }));
+  }
+
   /** Hang the strip off whatever is pinned at the top of the page and lay each
    *  tile over its column. */
   function syncPins() {
@@ -1356,13 +1371,7 @@
       return;
     }
 
-    // The whole top bar on a desktop; on a phone that bar is display: contents
-    // and has no box of its own, and only the day and meal row stays pinned.
-    // Whichever of the two is really there reaches furthest down the page.
-    const line = Math.max(...[".top", ".bar"].map((sel) => {
-      const node = document.querySelector(sel);
-      return node.getClientRects().length ? node.getBoundingClientRect().bottom : 0;
-    }));
+    const line = stickyLine();
 
     // Every header is in the board's first row, so one of them answers for all.
     const head = cols[0].querySelector(".col-head").getBoundingClientRect();
@@ -1387,7 +1396,84 @@
     requestAnimationFrame(() => {
       pinQueued = false;
       syncPins();
+      syncPagers();
     });
+  }
+
+  // ---------- sideways, with a mouse ----------
+  //
+  // A mouse wheel only scrolls down, and the board's scrollbar is under its
+  // last row, so with more halls up than the window holds a mouse had no way
+  // across short of scrolling to the bottom of the menu and back. A button on
+  // each edge steps one hall that way. Like the strip, it is an overlay placed
+  // from measurements, and CSS keeps it off anything without a fine pointer
+  // (see .pager).
+
+  const pagers = [
+    [document.getElementById("pager-prev"), -1],
+    [document.getElementById("pager-next"), 1],
+  ];
+  // Where the last step is headed while it is still sliding there, so a second
+  // click goes one hall past it rather than to the same hall again. It expires
+  // instead of waiting on scrollend, which Safari has only lately had.
+  let aim = null;
+
+  /** Where each column starts, in the board's own scroll coordinates: the
+   *  scrollLeft that puts it at the snapping edge. */
+  function columnStarts(board) {
+    const edge = board.getBoundingClientRect().left +
+      parseFloat(getComputedStyle(board).paddingLeft);
+    return [...columns()].map((col) =>
+      col.getBoundingClientRect().left - edge + board.scrollLeft);
+  }
+
+  function step(dir) {
+    const board = document.getElementById("board");
+    const from = aim && performance.now() < aim.until ? aim.left : board.scrollLeft;
+    const starts = columnStarts(board);
+    const to = dir > 0
+      ? starts.find((x) => x > from + 2)
+      : starts.filter((x) => x < from - 2).pop();
+    if (to === undefined) return;
+    const left = Math.max(0, Math.min(to, board.scrollWidth - board.clientWidth));
+    aim = { left, until: performance.now() + 600 };
+    const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    board.scrollTo({ left, behavior: still ? "auto" : "smooth" });
+  }
+
+  for (const [button, dir] of pagers) button.addEventListener("click", () => step(dir));
+
+  /** Show a button only while there is a hall its way, and hold the pair in the
+   *  middle of the window below the top bar -- carried down with the headers at
+   *  the top of the page and up with the board's last row at the bottom, so it
+   *  never hangs over the footer or the title. */
+  function syncPagers() {
+    const board = document.getElementById("board");
+    // The stylesheet decides where they exist at all (never on a phone); a
+    // button it has hidden has no height and nothing here to place.
+    const size = pagers[0][0].offsetHeight;
+    if (!size) return;
+    const box = board.getBoundingClientRect();
+    const head = board.querySelector(".col-head");
+    const line = stickyLine();
+    const y = Math.min(
+      Math.max((line + innerHeight) / 2, (head ? head.getBoundingClientRect().bottom : box.top) + size),
+      box.bottom - 2 * size,
+    );
+    const inView = y >= line + size / 2 && y <= innerHeight - size;
+    const room = board.scrollWidth - board.clientWidth;
+    const inset = parseFloat(getComputedStyle(board).paddingLeft);
+
+    for (const [button, dir] of pagers) {
+      const more = dir < 0 ? board.scrollLeft > 2 : board.scrollLeft < room - 2;
+      const on = Boolean(head) && inView && room > 2 && more;
+      button.classList.toggle("is-on", on);
+      if (!on) continue;
+      // Centred on the edge the columns are cut at.
+      const x = dir < 0 ? box.left + inset : box.right - inset;
+      button.style.left = `${x - size / 2}px`;
+      button.style.top = `${y - size / 2}px`;
+    }
   }
 
   // Captured, because the board scrolling sideways does not bubble its scroll.
@@ -1536,6 +1622,12 @@
 
     document.getElementById("share-label").textContent = t("share");
     document.getElementById("share").title = t("shareTip");
+
+    // Icons only, so the name is the button's label and, for a mouse, its tooltip.
+    for (const [button, dir] of pagers) {
+      button.title = t("pager", dir);
+      button.setAttribute("aria-label", t("pager", dir));
+    }
   }
 
   // ---------- first-visit tour ----------

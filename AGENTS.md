@@ -497,6 +497,13 @@ JSON block so a dish name cannot close the script tag early.
   The same scroller clips anything past the first and last column, so `.board` carries a
   negative margin and matching padding of `--bleed`: that is the room a special's panel reaches
   out into. Change one and the other.
+- **A mouse crosses the board with the `.pager` buttons, not the scrollbar.** A wheel only goes
+  down and the board's scrollbar is under its last row, so with more halls up than the window
+  holds a mouse had no way across short of the bottom of the menu. `syncPagers()` lays a button
+  on each cut edge, held mid-window below the top bar, only while there is a hall that way; a
+  click steps to the next column start. They must never appear on a phone, which has no room
+  for them: CSS shows them only on `(hover: hover) and (pointer: fine)` *and* above the 720 px
+  phone layout, two locks so that either one alone keeps them off.
 - **`.board` is the only thing allowed to be wider than `--page`.** `<main>` spans the window and
   hands the cap back to `.notices`; the masthead, the title, the chips and the footer keep
   `--page` and do not move, whatever is selected — controls that shift under the cursor when you

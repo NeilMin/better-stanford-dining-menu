@@ -365,6 +365,25 @@ def test_the_stored_preferences_key_is_versioned(tmp_path):
     assert match and int(match.group(1)) >= 1
 
 
+def test_the_hall_pager_never_shows_on_a_phone():
+    """The buttons that step the board a hall sideways are for a mouse. A phone
+    has no room for them and swipes instead, so the one rule that shows them
+    must ask for a fine pointer *and* a window wider than the phone layout --
+    either lock alone keeps them off."""
+    import re
+
+    from jsbridge import APP_JS
+
+    css = (APP_JS.parent / "app.css").read_text()
+    shown = re.findall(r"@media ([^{]*)\{\s*\.pager \{ display: grid; \}", css)
+    assert len(shown) == 1
+    assert "(pointer: fine)" in shown[0] and "(min-width: 721px)" in shown[0]
+    # ...and that the default it overrides is hidden.
+    base = re.search(r"\n\.pager \{(.*?)\n\}", css, re.S)
+    assert base and "display: none;" in base.group(1)
+    assert "max-width: 720px" in css
+
+
 LINK_PRELUDE = (
     "const MEALS = ['Breakfast', 'Lunch', 'Dinner'];\n"
     "const DATA = { window: ['2026-09-24', '2026-09-25'], "

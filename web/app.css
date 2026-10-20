@@ -792,6 +792,62 @@ main { margin: 0; padding: 36px var(--gutter) 88px; }
   height: calc(var(--logo-h) * .66);
 }
 
+/* ---------- sideways, with a mouse ---------- */
+
+/* Six halls are wider than the window. A swipe or a trackpad moves the board
+   sideways, but a mouse wheel only goes down, and the board's own scrollbar is
+   under its last row -- a whole menu below whatever you are reading. So a mouse
+   gets a button on each edge of the board that steps one hall that way, held in
+   the middle of the window the way the pinned strip is held at its top, and
+   shown only while there is a hall that way. Placed by syncPagers().
+
+   Never on a phone, whose screen has no room for it, and where the board is
+   swiped and the next hall peeks in at the edge to say so. Two locks, either
+   of which keeps it off: a fine pointer that can hover, and a window wider
+   than the phone layout (720px, below), so a phone that misreports its pointer
+   still never gets one. A desktop window dragged that narrow goes without. */
+.pager {
+  --pager: 40px;
+
+  appearance: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* With the pinned strip, under the top bar it is kept clear of. */
+  z-index: 20;
+  display: none;
+  place-items: center;
+  width: var(--pager);
+  height: var(--pager);
+  padding: 0;
+  border: 1px solid var(--rule-strong);
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--bg) 86%, transparent);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  box-shadow: 0 2px 10px rgb(0 0 0 / .14);
+  color: var(--ink);
+  cursor: pointer;
+  /* Away, like the strip: invisible, so it cannot be clicked or tabbed to. */
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .18s ease, visibility .18s, border-color .15s;
+}
+@media (hover: hover) and (pointer: fine) and (min-width: 721px) {
+  .pager { display: grid; }
+}
+.pager.is-on { visibility: visible; opacity: 1; }
+.pager:hover { border-color: var(--ink-3); background: var(--bg); }
+.pager svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 /* ---------- dish cards: picture, then name ---------- */
 
 .card {
