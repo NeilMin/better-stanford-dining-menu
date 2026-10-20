@@ -5204,6 +5204,39 @@
   "vessel": "bowl",
   "written_at": "2026-09-30T20:19:16+00:00"
  },
+ "2f4c2433034f": {
+  "avoid": [
+   "rice",
+   "skewers",
+   "raw chicken",
+   "bread",
+   "tortilla",
+   "tacos",
+   "soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cooked chicken in a yellow-orange sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken served on skewers or wrapped in flatbread?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat raw or undercooked?",
+    "yes": false
+   }
+  ],
+  "dish": "aji amarillo chicken",
+  "look": "roasted chicken thigh pieces, glossy bright yellow-orange chili pepper sauce, browned edges, sauteed red bell pepper strips, yellow sweet pepper slices, chopped fresh green cilantro leaves",
+  "model": "gemini-flash-latest",
+  "name": "Aji Amarillo Spiced Chicken",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-20T19:24:48+00:00"
+ },
  "2f6cb7175dec": {
   "avoid": [
    "rice",
@@ -16030,6 +16063,42 @@
   "vessel": "bowl",
   "written_at": "2026-09-26T23:07:37+00:00"
  },
+ "8d099b6e2ada": {
+  "avoid": [
+   "salad",
+   "leafy greens",
+   "seaweed",
+   "raw vegetables",
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cooked translucent glass noodles?",
+    "yes": true
+   },
+   {
+    "q": "Are the noodles submerged in soup broth?",
+    "yes": false
+   },
+   {
+    "q": "Does the dish contain visible pieces of meat or seafood?",
+    "yes": false
+   }
+  ],
+  "dish": "spicy stir-fried glass noodles",
+  "look": "tangled pile of long translucent sweet potato glass noodles, glossy clear brownish glass noodle strands, slick reddish-brown spicy sauce glaze, scattered thin julienned carrots, sliced shiitake mushrooms, shredded cabbage, sliced green scallions",
+  "model": "gemini-flash-latest",
+  "name": "Spicy Glass Noodles with Veggies",
+  "rev": 6,
+  "revisions": 1,
+  "vessel": "bowl",
+  "written_at": "2026-10-20T20:06:00+00:00"
+ },
  "8d1133014288": {
   "avoid": [
    "ice cream scoops",
@@ -19402,6 +19471,41 @@
   "revisions": 1,
   "vessel": "bowl",
   "written_at": "2026-10-18T13:24:29+00:00"
+ },
+ "a9508821427a": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "chicken bones",
+   "skewers",
+   "rice"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item glazed plant-based strips mixed with pineapple and peppers?",
+    "yes": true
+   },
+   {
+    "q": "Does the dish contain real bone-in chicken or animal meat?",
+    "yes": false
+   },
+   {
+    "q": "Is the food served on skewers?",
+    "yes": false
+   }
+  ],
+  "dish": "Hawaiian plant-based chicken stir-fry",
+  "look": "bite-sized plant-based chick'n strips, glossy amber sweet barbecue glaze, charred golden pineapple chunks, sauteed red bell pepper strips, tender sliced yellow onion, sliced scallions",
+  "model": "gemini-flash-latest",
+  "name": "Huli Huli Chick’n",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-20T19:24:48+00:00"
  },
  "a9c64bca3f9a": {
   "avoid": [
@@ -28978,6 +29082,40 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-01T10:36:25+00:00"
+ },
+ "f25a996017a9": {
+  "avoid": [
+   "fried chicken",
+   "breaded chicken",
+   "skewers",
+   "bun",
+   "burger",
+   "rice",
+   "pineapple rings",
+   "raw chicken"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item grilled glazed chicken?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken breaded or deep-fried?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken served as a burger or sandwich in a bun?",
+    "yes": false
+   }
+  ],
+  "dish": "Hawaiian Huli Huli chicken",
+  "look": "grilled chicken thighs, glossy dark-red barbecue glaze, deep black grill marks, caramelized charred skin, juicy meat, sprinkle of sliced green onions",
+  "model": "gemini-flash-latest",
+  "name": "Huli Huli Chicken",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-20T19:24:48+00:00"
  },
  "f2f9dada2bb7": {
   "avoid": [
