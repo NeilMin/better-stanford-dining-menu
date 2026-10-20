@@ -1399,6 +1399,41 @@
   "vessel": "plate",
   "written_at": "2026-09-27T07:31:35+00:00"
  },
+ "10fa13ab3571": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "spaghetti",
+   "ramen",
+   "raw dough"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cooked noodles?",
+    "yes": true
+   },
+   {
+    "q": "Is there meat mixed with the noodles?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a soup or broth?",
+    "yes": false
+   }
+  ],
+  "dish": "Egg Noodles",
+  "look": "thick curly ribbons of cooked egg noodles, pale yellow color, soft texture, glistening butter sheen",
+  "model": "gemma-4-31b-it",
+  "name": "Egg Noodles",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-20T08:52:07+00:00"
+ },
  "113682ebb57b": {
   "avoid": [
    "boneless nuggets",
@@ -3922,6 +3957,38 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-10-12T11:13:20+00:00"
+ },
+ "2666d3b7effb": {
+  "avoid": [
+   "tofu",
+   "rice",
+   "noodles",
+   "soup",
+   "skewers",
+   "raw chicken"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item pieces of cooked meat?",
+    "yes": true
+   },
+   {
+    "q": "Is the main item a block of tofu?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat served on a skewer?",
+    "yes": false
+   }
+  ],
+  "dish": "Lemongrass Chicken",
+  "look": "bite-sized pieces of chicken, golden-brown sear, glossy light-brown lemongrass glaze, minced lemongrass bits, sliced green onions, red chili flakes",
+  "model": "gemma-4-31b-it",
+  "name": "Vietnamese Lemongrass Chicken or Tofu",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-20T08:52:07+00:00"
  },
  "2678fe03bfd8": {
   "avoid": [
@@ -9649,6 +9716,40 @@
   "vessel": "plate",
   "written_at": "2026-10-01T10:31:58+00:00"
  },
+ "505b1f413e7a": {
+  "avoid": [
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "soft tacos",
+   "burrito",
+   "raw tortillas"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item rolled tortillas?",
+    "yes": true
+   },
+   {
+    "q": "Is the filling made of meat?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a soft taco or burrito?",
+    "yes": false
+   }
+  ],
+  "dish": "Jackfruit and Chickpea Taquitos",
+  "look": "rolled corn tortillas, golden-brown fried exterior, crispy texture, shredded jackfruit and mashed chickpeas filling peeking from ends, light dusting of chili powder",
+  "model": "gemma-4-31b-it",
+  "name": "Jackfruit & Chickpea Taquitos",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-20T08:52:07+00:00"
+ },
  "50ea6a72eb85": {
   "avoid": [
    "pork sausage",
@@ -10823,6 +10924,40 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-10T00:10:11+00:00"
+ },
+ "5d811882c1b7": {
+  "avoid": [
+   "chicken",
+   "beef",
+   "pork",
+   "bacon",
+   "sausage",
+   "fish",
+   "shrimp",
+   "raw eggs"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a folded tortilla?",
+    "yes": true
+   },
+   {
+    "q": "Is there meat inside the tortilla?",
+    "yes": false
+   },
+   {
+    "q": "Is the egg raw or liquid?",
+    "yes": false
+   }
+  ],
+  "dish": "Breakfast Quesadilla",
+  "look": "folded flour tortilla, toasted golden-brown surface, melted yellow cheddar cheese, fluffy yellow scrambled eggs, diced red and green bell peppers, red salsa roja",
+  "model": "gemma-4-31b-it",
+  "name": "Breakfast Quesadilla",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-20T08:52:07+00:00"
  },
  "5dc6dacce93e": {
   "avoid": [
@@ -20380,6 +20515,41 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-19T09:03:51+00:00"
+ },
+ "b0a4035eb216": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "mashed potatoes",
+   "sweet potato fries",
+   "raw potato"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item roasted orange potato?",
+    "yes": true
+   },
+   {
+    "q": "Is the potato mashed into a puree?",
+    "yes": false
+   },
+   {
+    "q": "Is the potato cut into thin fries?",
+    "yes": false
+   }
+  ],
+  "dish": "Roasted Sweet Potato",
+  "look": "large chunks of roasted sweet potato, deep orange flesh, caramelized browned edges, matte skin, soft interior",
+  "model": "gemma-4-31b-it",
+  "name": "Roasted Sweet Potato",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-20T08:52:07+00:00"
  },
  "b0af1687f4aa": {
   "avoid": [
