@@ -1,6 +1,6 @@
 {
  "date": "2026-10-25",
- "scraped_at": "2026-10-20T12:19:52-07:00",
+ "scraped_at": "2026-10-20T16:13:11-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -1023,19 +1023,19 @@
    ],
    "Lunch": [
     {
-     "name": "Crispy Cod Fish Tacos",
-     "recipe_id": "5515269",
+     "name": "Chicken & Waffles with Apple Syrup",
+     "recipe_id": "3229585",
      "description": "",
-     "ingredients": "battered cod (cod, wheat flour, canola oil, corn flour, whey (milk), sugar, turmeric, paprika, salt, white pepper, black pepper)",
+     "ingredients": "Fried Chicken (chicken, buttermilk, flour, thyme, oregano, pepper, garlic powder, cayenne pepper, salt, onion powder, tarragon, parsley), Belgian Waffles (wheat flour, eggs, sugar, soybean oil, canola oil, leavening, malted barley flour, salt, soy lecithin, glycerides, natural flavor, artificial flavors [milk]), Apple Cider Syrup (apple cider vinegar, apple cider, cinnamon, butter, brown sugar), deep fried in canola oil",
      "allergens": [
-      "FISH",
+      "EGG",
       "MILK",
       "SOY",
       "WHEAT"
      ],
      "trace_allergens": [
       "COCONUT",
-      "EGG",
+      "FISH",
       "PEANUTS",
       "SESAME",
       "SHELLFISH",
@@ -1045,22 +1045,15 @@
      "order": 0
     },
     {
-     "name": "Artichoke & Shiitake Mushroom Taco Filling",
-     "recipe_id": "5264876",
+     "name": "Chick'n Strips",
+     "recipe_id": "4951414",
      "description": "",
-     "ingredients": "breaded artichoke (breaded artichoke [artichoke, breadcrumbs, batter, potato starch, salt, seasoning]), mushroom, guajillo chili, ancho chili, chili de arbol, onions, garlic, tomatoes, cumin seeds, oregano leaf, coriander seeds, clove, vegetable soup base (contains carrots, celery), white vinegar, maple syrup, cilantro, canola/olive oil blend, lime, salt",
+     "ingredients": "soy protein isolate, vital wheat gluten, natural flavors, yeast extract, cane sugar, expeller pressed/canola oil, sea salt, ancient grains flour (kamut, amaranth, millet, quinoa), pea protein, carrot fiber, beetroot fiber, onion powder, paprika, turmeric",
      "allergens": [
+      "SOY",
       "WHEAT"
      ],
-     "trace_allergens": [
-      "EGG",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS"
-     ],
+     "trace_allergens": [],
      "tags": [
       "vegan"
      ],
@@ -1093,30 +1086,134 @@
      "order": 3
     },
     {
-     "name": "Corn Tortilla",
-     "recipe_id": "3537943",
+     "name": "Chilaquiles with Roasted Tomato Salsa",
+     "recipe_id": "4199856",
      "description": "",
-     "ingredients": "white corn, lime, sodium propionate, cellulose gum, fumaric acid, sorbic acid",
-     "allergens": [],
-     "trace_allergens": [],
+     "ingredients": "flour tortilla, eggs, onion, cilantro, cojita cheese, sour cream, roasted tomato salsa (tomatoes, chipotle peppers, adobo sauce, garlic, canola/olive oil blend, salt), radish, garlic, canola/olive oil blend, salt",
+     "allergens": [
+      "EGG",
+      "MILK",
+      "SOY",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "COCONUT",
+      "FISH",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "TREENUTS"
+     ],
      "tags": [
-      "gluten-free",
-      "vegan"
+      "vegetarian"
      ],
      "order": 4
     },
     {
-     "name": "Seasoned Black Beans",
-     "recipe_id": "5111980",
+     "name": "Buttermilk Biscuits & Gravy",
+     "recipe_id": "3067945",
      "description": "",
-     "ingredients": "black beans, canola/olive oil blend, salt",
+     "ingredients": "buttermilk biscuit (flour, shortening, buttermilk powder, sugar, baking powder, salt), caramelized onion gravy (onions, vegetable soup base, canola/olive oil blend, thyme, bay leaf, butter, flour, salt, pepper)",
+     "allergens": [
+      "MILK",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "SOY",
+      "TREENUTS"
+     ],
+     "tags": [
+      "vegetarian"
+     ],
+     "order": 5
+    },
+    {
+     "name": "Scrambled Eggs",
+     "recipe_id": "3975106",
+     "description": "",
+     "ingredients": "eggs, canola/olive oil blend, salt",
+     "allergens": [
+      "EGG"
+     ],
+     "trace_allergens": [
+      "COCONUT",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "SOY",
+      "TREENUTS",
+      "WHEAT"
+     ],
+     "tags": [
+      "vegetarian"
+     ],
+     "order": 6
+    },
+    {
+     "name": "Pork Sausage Patty",
+     "recipe_id": "3942305",
+     "description": "",
+     "ingredients": "(non-halal) pork, salt, potassium chloride, dextrose, spices, monosodium glutamate, sodium phosphates, bht, citric acid, caramel color",
      "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free"
+     ],
+     "order": 7
+    },
+    {
+     "name": "Turkey Sausage Patty",
+     "recipe_id": "5961158",
+     "description": "",
+     "ingredients": "turkey, salt, dextrose, spice, spice extractives, hydrolyzed corn protein, citric acid, rosemary extract, calcium lactate",
+     "allergens": [],
+     "trace_allergens": [
+      "WHEAT"
+     ],
+     "tags": [],
+     "order": 8
+    },
+    {
+     "name": "Triangle Hash Browns",
+     "recipe_id": "5802689",
+     "description": "",
+     "ingredients": "potatoes, soybean, corn oil, sunflower oil, salt, disodium dihydrogen pyrophosphate, dextrose, fried in canola oil",
+     "allergens": [
+      "SOY"
+     ],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
       "vegan"
      ],
-     "order": 5
+     "order": 9
+    },
+    {
+     "name": "Crepe Station",
+     "recipe_id": "crepestation(lake)",
+     "description": "",
+     "ingredients": "",
+     "allergens": [
+      "COCONUT",
+      "EGG",
+      "MILK",
+      "PEANUTS",
+      "SOY",
+      "TREENUTS"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "vegetarian"
+     ],
+     "order": 10
     },
     {
      "name": "Omelet Station",
@@ -1138,7 +1235,7 @@
       "WHEAT"
      ],
      "tags": [],
-     "order": 6
+     "order": 11
     },
     {
      "name": "Baja Lime Cilantro Slaw",
@@ -1153,7 +1250,7 @@
       "gluten-free",
       "vegetarian"
      ],
-     "order": 7
+     "order": 12
     },
     {
      "name": "Performance Bar",
@@ -1163,7 +1260,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 8
+     "order": 13
     },
     {
      "name": "Craveable Grains",
@@ -1176,7 +1273,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 9
+     "order": 14
     },
     {
      "name": "Flavor Forward Legumes",
@@ -1189,7 +1286,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 10
+     "order": 15
     },
     {
      "name": "Pasta Marinara",
@@ -1206,7 +1303,7 @@
      "tags": [
       "vegan"
      ],
-     "order": 11
+     "order": 16
     },
     {
      "name": "Pasta Alfredo",
@@ -1223,7 +1320,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 12
+     "order": 17
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -1236,7 +1333,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 13
+     "order": 18
     }
    ],
    "Dinner": [

@@ -1423,7 +1423,7 @@
   "image": "0c87e83fabdc.webp",
   "ingredients": "pizza dough, tomato sauce, mozzarella cheese, parmesan cheese",
   "is_station": false,
-  "last_seen": "2026-10-19",
+  "last_seen": "2026-10-26",
   "min_order": 8,
   "model": "sdxl",
   "name": "Cheese Pizza",
@@ -1644,7 +1644,7 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "Two cooked round patties stacked on a white plate garnished with small green herbs."
   },
-  "last_seen": "2026-10-24",
+  "last_seen": "2026-10-25",
   "min_order": 5,
   "model": "sdxl",
   "name": "Pork Sausage Patty",
@@ -5058,6 +5058,26 @@
    "halal"
   ]
  },
+ "2867922f6a55": {
+  "category": "vegetarian",
+  "first_seen": "2026-10-25",
+  "icon": "plate",
+  "image": null,
+  "ingredients": "buttermilk biscuit (flour, shortening, buttermilk powder, sugar, baking powder, salt), caramelized onion gravy (onions, vegetable soup base, canola/olive oil blend, thyme, bay leaf, butter, flour, salt, pepper)",
+  "is_station": false,
+  "last_seen": "2026-10-25",
+  "min_order": 5,
+  "name": "Buttermilk Biscuits & Gravy",
+  "needs_image": true,
+  "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, meat, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
+  "placeholder": false,
+  "priority": 2,
+  "prompt": "Buttermilk Biscuits & Gravy, made with buttermilk biscuit, caramelized onion gravy, vegetarian, no meat, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "station_only": false,
+  "tags": [
+   "vegetarian"
+  ]
+ },
  "28a3f4daab6b": {
   "brief_rev": 6,
   "category": "vegan",
@@ -5461,8 +5481,8 @@
   "image": "2bd644299254.webp",
   "ingredients": "plantain, fried in canola oil",
   "is_station": false,
-  "last_seen": "2026-10-22",
-  "min_order": 6,
+  "last_seen": "2026-10-26",
+  "min_order": 5,
   "model": "sdxl",
   "name": "Fried Plantain",
   "needs_image": true,
@@ -9163,7 +9183,7 @@
   "image": "45f09e61f4ea.webp",
   "ingredients": "lettuce, tomatoes, caesar dressing (mayonnaise, parmesan cheese, garlic, lemon juice, anchovy, red wine vinegar, dijon mustard, worcestershire sauce [vinegar, molasses, corn syrup, anchovies, salt, garlic, tamarind concentrate, cloves, natural flavorings, chili pepper extract], hot sauce, salt, pepper), parmesan cheese, croutons (wheat flour, canola and/or sunflower oil, whey, salt, yeast, corn syrup, sugar, onion powder, parsley, paprika, turmeric)",
   "is_station": false,
-  "last_seen": "2026-10-19",
+  "last_seen": "2026-10-26",
   "min_order": 8,
   "model": "sdxl",
   "name": "Caesar Salad",
@@ -11085,7 +11105,7 @@
   "image": "53704ce0eea3.webp",
   "ingredients": "butternut squash, vegetable soup base, carrots, onions, celery, butter, rice vinegar, cream, whole milk, flour, lemon, garlic, pepper, cinnamon, beet sugar, salt",
   "is_station": false,
-  "last_seen": "2026-09-21",
+  "last_seen": "2026-10-26",
   "min_order": 11,
   "model": "sdxl",
   "name": "Butternut Squash Bisque",
@@ -11098,8 +11118,7 @@
   "seed": 1399868640,
   "station_only": false,
   "tags": [
-   "vegetarian",
-   "halal"
+   "vegetarian"
   ]
  },
  "539ff0721ca5": {
@@ -11803,6 +11822,26 @@
   "seed": 1482898381,
   "station_only": false,
   "tags": []
+ },
+ "58a5ca6d41b8": {
+  "category": "station",
+  "first_seen": "2026-10-25",
+  "icon": "plate",
+  "image": null,
+  "ingredients": "",
+  "is_station": true,
+  "last_seen": "2026-10-25",
+  "min_order": 10,
+  "name": "Crepe Station",
+  "needs_image": false,
+  "negative": null,
+  "placeholder": true,
+  "priority": 2,
+  "prompt": null,
+  "station_only": false,
+  "tags": [
+   "vegetarian"
+  ]
  },
  "58b78ef4c5c4": {
   "brief_rev": 6,
@@ -13345,7 +13384,7 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "Cooked dark leafy greens topped with small tan seeds in a light broth."
   },
-  "last_seen": "2026-10-20",
+  "last_seen": "2026-10-26",
   "min_order": 2,
   "model": "sdxl",
   "name": "Slow-Braised Collard Greens",
@@ -15694,7 +15733,7 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "Shredded meat in a reddish sauce topped with white cream and fresh cilantro leaves, served on top of tortillas."
   },
-  "last_seen": "2026-10-17",
+  "last_seen": "2026-10-26",
   "min_order": 0,
   "model": "sdxl",
   "name": "Chicken Tinga",
@@ -15707,8 +15746,7 @@
   "seed": 2099795163,
   "station_only": false,
   "tags": [
-   "gluten-free",
-   "halal"
+   "gluten-free"
   ]
  },
  "7d378addf23e": {
@@ -17206,7 +17244,7 @@
   "ingredients": "yuca/cassava, mashed potato, vegetable palm oil, yuca/cassava starch, salt, dextrose, xanthan gum",
   "is_station": false,
   "last_seen": "2026-10-26",
-  "min_order": 7,
+  "min_order": 5,
   "model": "sdxl",
   "name": "Yuca Fries",
   "needs_image": true,
@@ -17584,7 +17622,7 @@
   "image": "89ebc0f35eb2.webp",
   "ingredients": "potatoes, soybean, corn oil, sunflower oil, salt, disodium dihydrogen pyrophosphate, dextrose, fried in canola oil",
   "is_station": false,
-  "last_seen": "2026-09-20",
+  "last_seen": "2026-10-25",
   "min_order": 6,
   "model": "sdxl",
   "name": "Triangle Hash Browns",
@@ -17598,8 +17636,7 @@
   "station_only": false,
   "tags": [
    "gluten-free",
-   "vegan",
-   "halal"
+   "vegan"
   ]
  },
  "8a1606f95aa9": {
@@ -20098,7 +20135,7 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "A single cooked, round, flat patty with visible green herbs on a white plate."
   },
-  "last_seen": "2026-10-16",
+  "last_seen": "2026-10-25",
   "min_order": 6,
   "model": "sdxl",
   "name": "Turkey Sausage Patty",
@@ -21086,7 +21123,7 @@
   "image": "a1f1e1b0d3b7.webp",
   "ingredients": "potatoes, canola oil, sunflower oil, cottonseed oil, palm oil, corn oil, soybean oil, enriched bleached flour, salt, modified food starch, spices, corn meal, garlic powder, onion powder, leavening, dried yeast, paprika, dextrose",
   "is_station": false,
-  "last_seen": "2026-10-14",
+  "last_seen": "2026-10-26",
   "min_order": 4,
   "model": "sdxl",
   "name": "Seasoned Potato Wedges",
@@ -21099,8 +21136,7 @@
   "seed": 2716983728,
   "station_only": false,
   "tags": [
-   "vegan",
-   "halal"
+   "vegan"
   ]
  },
  "a23a018dd204": {
@@ -25482,7 +25518,7 @@
   "image": "bf1974689202.webp",
   "ingredients": "tofu, canola oil, salt, and pepper",
   "is_station": false,
-  "last_seen": "2026-10-23",
+  "last_seen": "2026-10-26",
   "min_order": 7,
   "model": "sdxl",
   "name": "Grilled Tofu Patty",
@@ -25621,7 +25657,7 @@
   "ingredients": "long-grain white rice, chicken soup base, onion, garlic, bell pepper, olive oil, annatto powder, cumin, oregano, lime juice, lime zest, orange juice, cilantro, parsley, salt",
   "is_station": false,
   "last_seen": "2026-10-26",
-  "min_order": 6,
+  "min_order": 4,
   "model": "sdxl",
   "name": "Citrus Herb Yellow Rice",
   "needs_image": true,
@@ -25934,7 +25970,7 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "A plate of golden-brown breaded strips served with a small garnish of green leafy vegetables."
   },
-  "last_seen": "2026-09-27",
+  "last_seen": "2026-10-25",
   "min_order": 1,
   "model": "sdxl",
   "name": "Chick'n Strips",
@@ -25947,8 +25983,7 @@
   "seed": 3281215913,
   "station_only": false,
   "tags": [
-   "vegan",
-   "halal"
+   "vegan"
   ]
  },
  "c3d4691b2e6c": {
@@ -27355,7 +27390,7 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "Fried chicken pieces served on top of waffles with syrup."
   },
-  "last_seen": "2026-10-18",
+  "last_seen": "2026-10-25",
   "min_order": 0,
   "model": "sdxl",
   "name": "Chicken & Waffles with Apple Syrup",
@@ -27367,9 +27402,7 @@
   "prompt_rev": 7,
   "seed": 3453055268,
   "station_only": false,
-  "tags": [
-   "halal"
-  ]
+  "tags": []
  },
  "ce5e909d4a4d": {
   "category": "station",
@@ -30183,6 +30216,26 @@
    "halal"
   ]
  },
+ "e3c4c7463e72": {
+  "category": "poultry",
+  "first_seen": "2026-10-26",
+  "icon": "plate",
+  "image": null,
+  "ingredients": "chicken, cuban citrus marinade (orange juice, lime juice, canola/olive oil blend, garlic, pepper, oregano, salt, cumin, paprika)",
+  "is_station": false,
+  "last_seen": "2026-10-26",
+  "min_order": 0,
+  "name": "Citrus Cuban Chicken",
+  "needs_image": true,
+  "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
+  "placeholder": false,
+  "priority": 0,
+  "prompt": "Citrus Cuban Chicken, tender cooked chicken, succulent poultry texture, made with chicken, cuban citrus marinade, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "station_only": false,
+  "tags": [
+   "gluten-free"
+  ]
+ },
  "e3f94b0624ca": {
   "brief_rev": 6,
   "category": "vegan",
@@ -30603,6 +30656,27 @@
   "prompt": "Assorted Allergy-Friendly Items, made with sliced bread, alternative milk, vegan yogurt, chia seed puddings, overnight oats, seed bars, granola, plant-based, no meat, no dairy, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
   "prompt_rev": 9,
   "seed": 3881278946,
+  "station_only": false,
+  "tags": [
+   "gluten-free",
+   "vegan"
+  ]
+ },
+ "e777fc70b498": {
+  "category": "vegan",
+  "first_seen": "2026-10-26",
+  "icon": "plate",
+  "image": null,
+  "ingredients": "black beans, onions, carrots, celery, garlic, chili powder, bay leaf, cumin seeds, cayenne pepper, jalapeno chili, salt, white pepper",
+  "is_station": false,
+  "last_seen": "2026-10-26",
+  "min_order": 3,
+  "name": "Spicy Black Beans",
+  "needs_image": true,
+  "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, meat, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
+  "placeholder": false,
+  "priority": 2,
+  "prompt": "Spicy Black Beans, made with black beans, onions, carrots, celery, garlic, chili powder, cumin seeds, cayenne pepper, plant-based, no meat, no dairy, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
   "station_only": false,
   "tags": [
    "gluten-free",
@@ -34004,7 +34078,7 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "A burger with a green patty, melted orange cheese, and lettuce on a sesame seed bun."
   },
-  "last_seen": "2026-10-21",
+  "last_seen": "2026-10-26",
   "min_order": 5,
   "model": "sdxl",
   "name": "Turkey Burger with Bun",
