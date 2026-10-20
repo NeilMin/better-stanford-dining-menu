@@ -3573,15 +3573,23 @@
    "shrimp",
    "egg strips",
    "carrots",
+   "shredded carrot",
+   "shredded potato",
+   "orange noodles",
    "cabbage",
    "thick wheat noodles",
-   "rice noodles",
-   "broth soup"
+   "broth soup",
+   "metal wire",
+   "grey wire"
   ],
   "checks": [
    {
     "q": "Are the noodles thin and translucent glass-like strands?",
     "yes": true
+   },
+   {
+    "q": "Are the strands orange or opaque, like shredded carrot or shredded potato?",
+    "yes": false
    },
    {
     "q": "Is the dish a soup with broth?",
@@ -3593,8 +3601,9 @@
    }
   ],
   "dish": "glass noodles",
-  "look": "translucent grey-brown glass noodles, thin and chewy strands, glossy sheen, tangled together, plain unadorned noodle strands",
-  "model": "claude-sonnet",
+  "hand": true,
+  "look": "a loose tangle of cooked glass noodles, long slippery clear translucent strands like vermicelli, light soy-brown tint, glossy wet sheen of sesame oil, soft and limp, lightly dressed with soy sauce, a few toasted sesame seeds",
+  "model": "hand",
   "name": "Glass Noodles",
   "rev": 6,
   "revisions": 0,
