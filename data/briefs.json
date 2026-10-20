@@ -4279,6 +4279,42 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T07:54:50+00:00"
  },
+ "2867922f6a55": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "sausage",
+   "bacon",
+   "white sausage gravy",
+   "raw dough"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish biscuits covered in gravy?",
+    "yes": true
+   },
+   {
+    "q": "Are there chunks of sausage, bacon, or other meat in the gravy?",
+    "yes": false
+   },
+   {
+    "q": "Do the biscuits look like raw or unbaked dough?",
+    "yes": false
+   }
+  ],
+  "dish": "buttermilk biscuits and onion gravy",
+  "look": "split golden brown flaky buttermilk biscuits, smothered in glossy warm amber caramelized onion gravy, soft tangled caramelized onion ribbons, coarse cracked black pepper",
+  "model": "gemini-flash-latest",
+  "name": "Buttermilk Biscuits & Gravy",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-20T23:16:43+00:00"
+ },
  "28a3f4daab6b": {
   "avoid": [
    "meat",
@@ -27024,6 +27060,40 @@
   "vessel": "plate",
   "written_at": "2026-10-02T10:04:59+00:00"
  },
+ "e3c4c7463e72": {
+  "avoid": [
+   "pork",
+   "beef",
+   "raw chicken",
+   "sandwich",
+   "tacos",
+   "skewers",
+   "rice",
+   "black beans"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cooked chicken?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken inside a sandwich, taco, or wrap?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat ground or minced?",
+    "yes": false
+   }
+  ],
+  "dish": "Cuban mojo chicken",
+  "look": "roasted chicken quarters, golden brown blistered skin, dark roasted char marks, glistening citrus garlic pan sauce, scattered chopped fresh cilantro, fresh lime wedge",
+  "model": "gemini-flash-latest",
+  "name": "Citrus Cuban Chicken",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-20T23:16:43+00:00"
+ },
  "e3f94b0624ca": {
   "avoid": [
    "meat",
@@ -27523,6 +27593,42 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-28T17:10:34+00:00"
+ },
+ "e777fc70b498": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "bacon",
+   "cheese",
+   "sour cream",
+   "rice"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food cooked black beans in gravy?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat or bacon visible in the beans?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish topped with cheese or dairy sour cream?",
+    "yes": false
+   }
+  ],
+  "dish": "spicy stewed black beans",
+  "look": "simmered whole tender black beans in thick dark rich bean gravy, tender finely diced orange carrots, translucent minced onions and celery, thin sliced green jalapeno rounds",
+  "model": "gemini-flash-latest",
+  "name": "Spicy Black Beans",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-20T23:16:43+00:00"
  },
  "e799bf6421d6": {
   "avoid": [
