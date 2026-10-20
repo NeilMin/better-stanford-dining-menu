@@ -16074,21 +16074,27 @@
  },
  "8d099b6e2ada": {
   "avoid": [
+   "shredded carrot",
+   "carrot strips",
+   "julienned carrots",
+   "orange noodles",
+   "shredded potato",
    "salad",
    "leafy greens",
    "seaweed",
    "raw vegetables",
    "meat",
-   "chicken",
-   "beef",
-   "pork",
-   "fish",
-   "shrimp"
+   "shrimp",
+   "broth soup"
   ],
   "checks": [
    {
     "q": "Is the main item cooked translucent glass noodles?",
     "yes": true
+   },
+   {
+    "q": "Are most of the strands orange or opaque, like shredded carrot or shredded potato?",
+    "yes": false
    },
    {
     "q": "Are the noodles submerged in soup broth?",
@@ -16100,8 +16106,9 @@
    }
   ],
   "dish": "spicy stir-fried glass noodles",
-  "look": "tangled pile of long translucent sweet potato glass noodles, glossy clear brownish glass noodle strands, slick reddish-brown spicy sauce glaze, scattered thin julienned carrots, sliced shiitake mushrooms, shredded cabbage, sliced green scallions",
-  "model": "gemini-flash-latest",
+  "hand": true,
+  "look": "a tangle of cooked glass noodles, long slippery clear translucent strands like vermicelli, light soy-brown tint, glossy dark savory sauce, tossed with sliced shiitake mushrooms, a few pieces of green bok choy, sliced green scallions, a few red chili flakes, toasted sesame seeds",
+  "model": "hand",
   "name": "Spicy Glass Noodles with Veggies",
   "rev": 6,
   "revisions": 1,
