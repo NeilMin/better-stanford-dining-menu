@@ -1094,6 +1094,20 @@ dialog.lightbox {
 .more summary:hover { color: var(--ink); }
 .ingredients { margin: 6px 0 0; font-size: 14px; line-height: 1.55; color: var(--ink-2); }
 
+/* The way to the feedback form from one dish, under its ingredients and under
+   the big picture. Quieter than the text above it; the padding is for a thumb. */
+.report-line { margin: 4px 0 0; font-size: 13px; line-height: 1.45; }
+.lightbox-info .report-line { margin: 0; }
+.report {
+  display: inline-block;
+  padding: 6px 0;
+  color: var(--ink-3);
+  text-decoration: underline;
+  text-decoration-color: var(--rule-strong);
+  text-underline-offset: 3px;
+}
+.report:hover { color: var(--ink); text-decoration-color: currentColor; }
+
 .placeholder-note { margin: 0; font-size: 14px; color: var(--ink-2); }
 
 /* ---------- standing stations ---------- */

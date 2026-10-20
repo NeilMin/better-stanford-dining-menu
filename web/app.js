@@ -125,6 +125,8 @@
       // 语言 in the title so a Chinese reader spots the stop meant for them.
       tourLang: ["Language · 语言", "Switch to another language here."],
       tourNext: "Next", tourDone: "Got it", tourSkip: "Skip",
+      footerFeedback: (a) => ["Something wrong? ", a("Tell me here"), "."],
+      reportDish: "Something wrong with this dish? Tell me here",
       footerSrc: (a, built) => [
         "Menus scraped from the ",
         a("https://rdeapps.stanford.edu/dininghallmenu/", "R&DE Dining Hall Menu"),
@@ -206,6 +208,8 @@
       tourShare: ["发给朋友", "分享会带上当前的日期、餐次和食堂，朋友打开就是同一个视图；你的其他设置不会跟着发出去。"],
       tourLang: ["语言 · Language", "在这里可以切换成其他语言。"],
       tourNext: "下一步", tourDone: "知道了", tourSkip: "跳过",
+      footerFeedback: (a) => ["有问题就", a("点这里告诉我"), "。"],
+      reportDish: "这道菜有问题？点这里告诉我",
       footerSrc: (a, built) => [
         "菜单抓取自 ",
         a("https://rdeapps.stanford.edu/dininghallmenu/", "R&DE 食堂菜单"),
@@ -474,6 +478,33 @@
       `&h=${view.halls.map(encodeURIComponent).join(",")}`;
   }
 
+  // The feedback form: Google Forms on the owner's account, because it takes
+  // no sign-in and most readers have no GitHub account. The entry is its
+  // "page info" question, which the link fills in with the view on screen and,
+  // from a dish, the dish and its hall, so "this picture is wrong" arrives
+  // saying which one. Remake that question and its id changes; the page info
+  // then just arrives empty.
+  const FEEDBACK = "https://docs.google.com/forms/d/e/" +
+    "1FAIpQLSfyfNV88WrqzPeE1CX2G51WM-iRTr-SHSqo9b5zOe5f9wjmtA/viewform";
+  const FEEDBACK_VIEW = "entry.1018217171";
+
+  /** The form, filled in with what is on screen; `dish` is { name, hall }. */
+  function feedbackUrl(dish) {
+    const view = [
+      ...(dish ? [dish.hall ? `${dish.name} (${dish.hall})` : dish.name] : []),
+      location.origin + location.pathname + linkFor(state),
+      state.lang,
+      `${window.innerWidth}px`,
+      ...(/MicroMessenger/i.test(navigator.userAgent) ? ["WeChat"] : []),
+      `built ${DATA.generated_at}`,
+    ].join(" · ");
+    // hl puts Google's own words on the form (Submit, Other) in the same language.
+    const query = new URLSearchParams({
+      usp: "pp_url", hl: state.lang === "zh" ? "zh-CN" : "en", [FEEDBACK_VIEW]: view,
+    });
+    return `${FEEDBACK}?${query}`;
+  }
+
   // Your halls are remembered, and a friend's link must not overwrite them:
   // until you touch the hall chips yourself, save() writes back what you had.
   // The day and the meal it names are simply shown, since neither is ever
@@ -704,6 +735,16 @@
     return badges;
   }
 
+  /** A way into the feedback form. `from` is which one, for GA; a dish's
+   *  link carries its name, and the click listener at the bottom of the file
+   *  fills in the address when it is followed. */
+  function reportLink(from, text, dish) {
+    const a = el("a", { href: FEEDBACK, target: "_blank", rel: "noopener", textContent: text });
+    a.dataset.feedback = from;
+    if (dish) a.dataset.dish = dish;
+    return a;
+  }
+
   function detailsFor(rec, special = false) {
     const out = [];
     // The poster names the dish and nothing else. Saying so is better than an
@@ -726,6 +767,11 @@
       if (rec.trace && rec.trace.length) {
         more.append(el("p", { className: "ingredients", textContent: t("traces", rec.trace) }));
       }
+      // Here rather than on the card: whoever opens the ingredients is already
+      // checking this dish, and a closed list costs the board nothing.
+      const report = reportLink("ingredients", t("reportDish"), rec.name);
+      report.className = "report";
+      more.append(el("p", { className: "report-line" }, [report]));
       out.push(more);
     }
     return out;
@@ -740,8 +786,11 @@
   const lightboxSubtitle = document.getElementById("lightbox-subtitle");
   const lightboxBadges = document.getElementById("lightbox-badges");
   const lightboxIng = document.getElementById("lightbox-ingredients");
+  const lightboxReport = document.getElementById("lightbox-report");
 
-  function openLightbox(rec, onlyHere = false, special = false) {
+  /** `hall` is the column the picture was opened from: the dialog sits outside
+   *  the board, so its report link cannot read it off the page itself. */
+  function openLightbox(rec, onlyHere = false, special = false, hall) {
     if (!lightbox || !rec.image) return;
     const zh = zhName(rec);
     if (lightboxImg) {
@@ -772,6 +821,13 @@
         lightboxIng.textContent = "";
         lightboxIng.style.display = "none";
       }
+    }
+    if (lightboxReport) {
+      // The big picture is where a wrong one gets noticed.
+      const report = reportLink("photo", t("reportDish"), rec.name);
+      report.className = "report";
+      if (hall) report.dataset.hall = hall;
+      lightboxReport.replaceChildren(report);
     }
     if (typeof lightbox.showModal === "function") {
       lightbox.showModal();
@@ -847,11 +903,13 @@
         thumb.setAttribute("role", "button");
         thumb.title = t("viewLargePhoto");
         thumb.setAttribute("aria-label", (zh || rec.name) + " - " + t("viewLargePhoto"));
-        thumb.addEventListener("click", () => openLightbox(rec, onlyHere, special));
+        const open = () =>
+          openLightbox(rec, onlyHere, special, thumb.closest("[data-hall]")?.dataset.hall);
+        thumb.addEventListener("click", open);
         thumb.addEventListener("keydown", (e) => {
           if (e.key === "Enter" || e.key === " ") {
             e.preventDefault();
-            openLightbox(rec, onlyHere, special);
+            open();
           }
         });
         card.append(thumb);
@@ -1464,6 +1522,8 @@
     const link = (href, text) =>
       el("a", { href, target: "_blank", rel: "noopener", textContent: text });
     const built = (state.lang === "zh" && DATA.generated_at_zh) || DATA.generated_at;
+    document.getElementById("foot-feedback").replaceChildren(
+      ...t("footerFeedback", (text) => reportLink("footer", text)));
     document.getElementById("foot-src").replaceChildren(...t("footerSrc", link, built));
     document.getElementById("foot-note").replaceChildren(
       ...t("footerNote", (text) => el("strong", { textContent: text })));
@@ -1695,6 +1755,19 @@
     trackEvent("share", { method: copied ? "copy" : "failed", ...stats });
     if (copied) say(t("copied"));
     else say(url, 12000);
+  });
+
+  // Every way into the feedback form (see reportLink): the address is written
+  // on the way out, because render() can still move the meal after a link is
+  // drawn and a dish's hall is only known from the column it sits in. `method`
+  // says which way in -- GA already reports it, for the share button.
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest("a[data-feedback]");
+    if (!a) return;
+    const dish = a.dataset.dish &&
+      { name: a.dataset.dish, hall: a.dataset.hall || a.closest("[data-hall]")?.dataset.hall };
+    a.href = feedbackUrl(dish);
+    trackEvent("open_feedback", { method: a.dataset.feedback, app_lang: state.lang, meal: state.meal });
   });
 
   document.getElementById("lang").addEventListener("click", () => {

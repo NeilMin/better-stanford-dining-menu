@@ -446,6 +446,17 @@ JSON block so a dish name cannot close the script tag early.
   `borrowed` only when a hall chip or Reset is clicked. A new control that sets the halls has
   to do the same. The query is cleared on arrival, which keeps the day and meal unremembered
   through a reload or a bookmark.
+- **Feedback goes to a Google Form, not to GitHub issues,** because most readers have no
+  GitHub account. The form is on the owner's Google account and emails the owner on every
+  response. The way in is on the dish, where a problem is noticed: a line at the foot of each
+  dish's ingredients and under the big picture (`reportLink()`), with the footer line for
+  everything else. One click listener writes every link's address on the way out, pre-filling
+  the form's "page info" question with the dish and its hall (read off the column's
+  `data-hall`; the lightbox is handed it, being outside the board) and the view on screen
+  (the `?d=&m=&h=` link, the language, the width, the build). It goes through `FEEDBACK_VIEW`
+  in `web/app.js`, an `entry.` id that belongs to that one question: remake the question and
+  the page info arrives empty, without an error. After editing the form, read the ids back
+  off `FB_PUBLIC_LOAD_DATA_` in its public `viewform` page.
 - **Every active hall also has its own page, `/<hallId>/`,** written by `build.page_html()`
   from the same template: its own title, description, canonical and `og:url`, a
   `FoodEstablishment` JSON-LD block, and the week written out as plain HTML (`#prerender`) for
