@@ -1,6 +1,6 @@
 {
  "date": "2026-10-26",
- "scraped_at": "2026-10-21T01:39:36-07:00",
+ "scraped_at": "2026-10-21T12:20:14-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -2156,12 +2156,17 @@
    ],
    "Dinner": [
     {
-     "name": "Cuban Style Ropa Vieja",
-     "recipe_id": "CubanRopaVieja1",
+     "name": "Mexicali Chicken Bowl",
+     "recipe_id": "7160345",
      "description": "",
-     "ingredients": "beef, beef soup base, russet potatoes, green and red bell peppers, onions, garlic, green olives, tomatoes, tomato paste, oregano, cumin, bay leaf, olive/canola oil blend, salt, black pepper",
-     "allergens": [],
-     "trace_allergens": [],
+     "ingredients": "baked chicken (chicken, canola/olive oil blend, herbs, garlic, salt, pepper), quinoa, black beans, roasted corn and bell peppers, roasted red salsa, pumpkin seeds, cotija cheese, italian dressing (red wine vinegar, rice vinegar, canola oil, beet sugar, shallots, garlic, dijon mustard, black pepper, italian parsley, dried basil, onion powder, garlic powder, crushed red pepper flakes, dried thyme, dried oregano, dried basil, salt)",
+     "allergens": [
+      "MILK"
+     ],
+     "trace_allergens": [
+      "PEANUTS",
+      "TREENUTS"
+     ],
      "tags": [
       "gluten-free"
      ],
@@ -2262,16 +2267,6 @@
      "order": 7
     },
     {
-     "name": "Burger Bar",
-     "recipe_id": "5964436",
-     "description": "",
-     "ingredients": "",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [],
-     "order": 8
-    },
-    {
      "name": "Grilled Chicken",
      "recipe_id": "520454-02",
      "description": "",
@@ -2290,7 +2285,7 @@
       "WHEAT"
      ],
      "tags": [],
-     "order": 9
+     "order": 8
     },
     {
      "name": "Grilled Vegan/Vegetarian",
@@ -2311,7 +2306,7 @@
       "WHEAT"
      ],
      "tags": [],
-     "order": 10
+     "order": 9
     },
     {
      "name": "Panini Station",
@@ -2329,7 +2324,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 11
+     "order": 10
     },
     {
      "name": "Soup of the Day",
@@ -2339,7 +2334,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 12
+     "order": 11
     },
     {
      "name": "Assorted Dinner Rolls",
@@ -2358,7 +2353,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 13
+     "order": 12
     },
     {
      "name": "Composed Salad",
@@ -2368,7 +2363,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 14
+     "order": 13
     },
     {
      "name": "Performance Bar",
@@ -2378,7 +2373,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 15
+     "order": 14
     },
     {
      "name": "Craveable Grains",
@@ -2391,7 +2386,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 16
+     "order": 15
     },
     {
      "name": "Flavor Forward Legumes",
@@ -2404,7 +2399,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 17
+     "order": 16
     },
     {
      "name": "Marinara Cheese Ravioli",
@@ -2421,7 +2416,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 18
+     "order": 17
     },
     {
      "name": "Pesto Sauce",
@@ -2437,7 +2432,7 @@
       "gluten-free",
       "vegetarian"
      ],
-     "order": 19
+     "order": 18
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -2450,7 +2445,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 20
+     "order": 19
     }
    ]
   },
@@ -3452,27 +3447,47 @@
    ],
    "Lunch": [
     {
-     "name": "Greek Chicken Gyro Meat",
-     "recipe_id": "ChxGyroMeat1",
+     "name": "Seared Honey Mustard Pork Belly",
+     "recipe_id": "4580914",
      "description": "",
-     "ingredients": "chicken, water, soy protein, nonfat dry milk, salt, spices, garlic, paprika, corn oil, lemon juice",
+     "ingredients": "(non-halal) pork belly, (non-halal) dijon mustard, milk, honey, kosher salt, black pepper, creole spice (herb de provence, kosher salt, cumin seed, cayenne pepper, black pepper, paprika)",
      "allergens": [
-      "MILK",
-      "SOY"
+      "MILK"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "SOY",
+      "TREENUTS",
+      "WHEAT"
+     ],
      "tags": [],
      "order": 0
     },
     {
-     "name": "Greek-Spiced Chickpea & Eggplant",
-     "recipe_id": "GreekChickEgg1",
+     "name": "Popcorn Tofu",
+     "recipe_id": "6387599",
      "description": "",
-     "ingredients": "eggplant, chickpeas, onions, tomatoes, garlic, lemon juice, parsley, oregano, cumin, paprika, olive/canola oil blend, salt, black pepper",
-     "allergens": [],
-     "trace_allergens": [],
+     "ingredients": "tofu, tamari sauce, garlic, onion powder, paprika, soy milk, apple cider vinegar, flour, bread crumbs, italian seasoning, canola/olive oil blend, salt, fried in canola oil",
+     "allergens": [
+      "SOY",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "TREENUTS"
+     ],
      "tags": [
-      "gluten-free",
       "vegan"
      ],
      "order": 1
@@ -3504,41 +3519,40 @@
      "order": 3
     },
     {
-     "name": "Lemony Garlic Green Beans",
-     "recipe_id": "LemonGarlicBeans1",
+     "name": "Miso Honey Glazed Cabbage",
+     "recipe_id": "MisoHoneyCabbage1",
      "description": "",
-     "ingredients": "green beans, garlic, lemon juice, lemon zest, canola/olive oil blend, salt, pepper",
-     "allergens": [],
+     "ingredients": "cabbage, honey, white miso, garlic, ginger, tamari, rice vinegar, olive/canola oil blend, salt, black pepper",
+     "allergens": [
+      "SOY"
+     ],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
-      "vegan"
+      "vegetarian"
      ],
      "order": 4
     },
     {
-     "name": "Warm Pita",
-     "recipe_id": "3675181",
+     "name": "Cream of Cauliflower Soup",
+     "recipe_id": "5919185",
      "description": "",
-     "ingredients": "whole wheat flour, enriched wheat flour, soybean, canola oil, sugar, salt, baking powder, yeast, blackstrap molasses, calcium propionate, sodium stearoyl lactylate, guar gum, amylase",
+     "ingredients": "yukon potatoes, cauliflower, cream, water, onion, garlic, nutmeg, canola oil, extra virgin olive oil, salt, pepper",
      "allergens": [
-      "SOY",
-      "WHEAT"
+      "MILK"
      ],
-     "trace_allergens": [
-      "EGG",
-      "TREENUTS"
-     ],
+     "trace_allergens": [],
      "tags": [
-      "vegan"
+      "gluten-free",
+      "vegetarian"
      ],
      "order": 5
     },
     {
-     "name": "Greek Lemon Roasted Potatoes",
-     "recipe_id": "GreekLemPots1",
+     "name": "Mashed Potatoes with Olive Oil",
+     "recipe_id": "4784631",
      "description": "",
-     "ingredients": "potatoes, lemon juice, garlic, oregano, olive/canola oil blend, salt, black pepper",
+     "ingredients": "potatoes, olive oil, salt, pepper, paprika, garlic",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -3548,10 +3562,10 @@
      "order": 6
     },
     {
-     "name": "Lemon Herb Rice Pilaf",
-     "recipe_id": "LemonHerbPilaf1",
+     "name": "Honey Glazed Carrots",
+     "recipe_id": "3652253",
      "description": "",
-     "ingredients": "long grain rice, vegetable soup base, onions, celery, garlic, lemon zest, fresh lemon juice, parsley, green onions, thyme, oregano, bay leaf, olive/canola oil blend, butter, black pepper, salt",
+     "ingredients": "carrots, thyme, unsalted butter, honey, champagne vinegar, salt, pepper",
      "allergens": [
       "MILK"
      ],

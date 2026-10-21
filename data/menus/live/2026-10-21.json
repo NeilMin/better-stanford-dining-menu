@@ -1,6 +1,6 @@
 {
  "date": "2026-10-21",
- "scraped_at": "2026-10-21T01:39:36-07:00",
+ "scraped_at": "2026-10-21T12:20:14-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -1113,13 +1113,18 @@
      "order": 0
     },
     {
-     "name": "BBQ Jackfruit",
-     "recipe_id": "BBQJackfruit1",
+     "name": "Sizzlin' \"Beef\" Fajita",
+     "recipe_id": "6272291",
      "description": "",
-     "ingredients": "jackfruit, barbecue sauce, garbanzo beans, apple cider vinegar, paprika, chili powder, oil, garlic, salt, and pepper",
-     "allergens": [],
+     "ingredients": "plant-forward \"beef\" strips, canola/olive oil blend, pepper, salt, fajita seasoning, bell peppers, onions, garlic, cilantro",
+     "allergens": [
+      "SOY",
+      "WHEAT"
+     ],
      "trace_allergens": [],
-     "tags": [],
+     "tags": [
+      "vegan"
+     ],
      "order": 1
     },
     {
@@ -1279,13 +1284,18 @@
      "order": 10
     },
     {
-     "name": "Soup of the Day",
-     "recipe_id": "SoupoftheDay",
+     "name": "Potato Leek Soup",
+     "recipe_id": "5500606",
      "description": "",
-     "ingredients": "chef's choice soup of the day",
-     "allergens": [],
+     "ingredients": "potatoes, rosemary, salt, water, garlic, vegetable soup base (contains mushroom, carrot, celery), white pepper, cream, canola oil, leek",
+     "allergens": [
+      "MILK"
+     ],
      "trace_allergens": [],
-     "tags": [],
+     "tags": [
+      "gluten-free",
+      "vegetarian"
+     ],
      "order": 11
     },
     {
@@ -1351,36 +1361,33 @@
      "order": 16
     },
     {
-     "name": "Pasta Alfredo",
-     "recipe_id": "5683556",
+     "name": "Creamy Spinach Sauce",
+     "recipe_id": "CreamySpin(lakeside)",
      "description": "",
-     "ingredients": "pasta, white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, parmesan cheese",
+     "ingredients": "cream, milk, spinach, milk powder, butter, parmesan cheese, flour, garlic, salt, white pepper, nutmeg, onion powder",
      "allergens": [
       "MILK",
       "WHEAT"
      ],
-     "trace_allergens": [
-      "EGG"
-     ],
+     "trace_allergens": [],
      "tags": [
       "vegetarian"
      ],
      "order": 17
     },
     {
-     "name": "Pasta Marinara",
-     "recipe_id": "5095708",
+     "name": "Creamy Marinara",
+     "recipe_id": "CreamyMar(lakeside)",
      "description": "",
-     "ingredients": "pasta, marinara sauce, canola/olive oil blend",
+     "ingredients": "tomatoes, tomato paste, cream, milk powder, butter, parmesan cheese, flour, soybean oil, sugar, salt, onion, garlic, spices, citric acid, natural flavor",
      "allergens": [
+      "MILK",
       "SOY",
       "WHEAT"
      ],
-     "trace_allergens": [
-      "EGG"
-     ],
+     "trace_allergens": [],
      "tags": [
-      "vegan"
+      "vegetarian"
      ],
      "order": 18
     },
