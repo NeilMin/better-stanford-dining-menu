@@ -12270,6 +12270,42 @@
   "vessel": "plate",
   "written_at": "2026-09-27T07:48:48+00:00"
  },
+ "6b4ced435bbc": {
+  "avoid": [
+   "chicken",
+   "beef",
+   "lamb",
+   "pork",
+   "fish",
+   "shrimp",
+   "wrap",
+   "rolled flatbread",
+   "sandwich",
+   "avocado"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item sliced mushrooms?",
+    "yes": true
+   },
+   {
+    "q": "Is there any meat or fish in the dish?",
+    "yes": false
+   },
+   {
+    "q": "Is the food inside a wrap or sandwich?",
+    "yes": false
+   }
+  ],
+  "dish": "Mushroom Shawarma",
+  "look": "large mound of spiced roasted brown mushroom slices, pita bread wedges on the side, diced red tomatoes, diced green cucumbers, shredded lettuce, pickled red onions, creamy white tahini sauce drizzle, chopped fresh cilantro",
+  "model": "gemini-flash-latest",
+  "name": "Mushroom Shawarma with Pita",
+  "rev": 6,
+  "revisions": 1,
+  "vessel": "plate",
+  "written_at": "2026-10-21T20:11:17+00:00"
+ },
  "6baa74529746": {
   "avoid": [
    "meat",
@@ -13394,6 +13430,40 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-01T20:45:15+00:00"
+ },
+ "75d4e713d8d1": {
+  "avoid": [
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "chunks of cauliflower",
+   "clear broth",
+   "salad"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a creamy soup?",
+    "yes": true
+   },
+   {
+    "q": "Is the soup a clear broth?",
+    "yes": false
+   },
+   {
+    "q": "Are there pieces of meat in the soup?",
+    "yes": false
+   }
+  ],
+  "dish": "Cream of Cauliflower Soup",
+  "look": "thick smooth white cauliflower puree, creamy texture, pale ivory color, small bubbles on surface",
+  "model": "gemma-4-31b-it",
+  "name": "Cream of Cauliflower Soup",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-21T19:36:56+00:00"
  },
  "75f6c9e945a1": {
   "avoid": [
@@ -17927,6 +17997,40 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-18T08:10:56+00:00"
+ },
+ "9c2752f15a0c": {
+  "avoid": [
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "carrot cake",
+   "sliced carrot coins",
+   "raw carrots"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item whole carrots?",
+    "yes": true
+   },
+   {
+    "q": "Are the carrots raw?",
+    "yes": false
+   },
+   {
+    "q": "Is there any meat or fish on the plate?",
+    "yes": false
+   }
+  ],
+  "dish": "Honey Glazed Carrots",
+  "look": "whole baby carrots, glossy orange honey glaze, glistening surface, small green thyme leaves",
+  "model": "gemma-4-31b-it",
+  "name": "Honey Glazed Carrots",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-21T19:36:56+00:00"
  },
  "9c502f89c312": {
   "avoid": [
@@ -30110,6 +30214,38 @@
   "vessel": "bowl",
   "written_at": "2026-10-12T22:40:49+00:00"
  },
+ "fa26f48a8eac": {
+  "avoid": [
+   "wrap",
+   "sandwich",
+   "skewers",
+   "beef",
+   "lamb",
+   "raw chicken"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item sliced meat?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat in a wrap or sandwich?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat ground or crumbled?",
+    "yes": false
+   }
+  ],
+  "dish": "Chicken Shawarma",
+  "look": "sliced grilled chicken strips, yellow-brown seasoning, fluffy white rice, warm pita bread, diced cucumbers, diced tomatoes, shredded lettuce, pickled red onions, dollops of white yogurt and creamy tahini",
+  "model": "gemma-4-31b-it",
+  "name": "Chicken Shawarma with Pita",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-21T19:36:56+00:00"
+ },
  "fa38633fd9bb": {
   "avoid": [
    "chicken",
@@ -30214,6 +30350,39 @@
   "revisions": 1,
   "vessel": "bowl",
   "written_at": "2026-09-27T05:07:50+00:00"
+ },
+ "fb08f332a205": {
+  "avoid": [
+   "tortilla",
+   "taco",
+   "burrito",
+   "rice",
+   "beef",
+   "pork",
+   "raw chicken"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a bowl of grains and chicken?",
+    "yes": true
+   },
+   {
+    "q": "Is the food inside a tortilla or taco shell?",
+    "yes": false
+   },
+   {
+    "q": "Is the main protein beef or pork?",
+    "yes": false
+   }
+  ],
+  "dish": "Mexican Chicken Quinoa Bowl",
+  "look": "cubed baked chicken breast, cooked quinoa, black beans, roasted yellow corn, roasted red and green bell peppers, red salsa, sprinkled white cotija cheese, toasted pumpkin seeds",
+  "model": "gemma-4-31b-it",
+  "name": "Mexicali Chicken Bowl",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-21T19:36:56+00:00"
  },
  "fb63f0f4bcf5": {
   "avoid": [
