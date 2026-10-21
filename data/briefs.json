@@ -8590,6 +8590,41 @@
   "vessel": "plate",
   "written_at": "2026-09-27T04:56:29+00:00"
  },
+ "474d867358ea": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "brown rice",
+   "wild rice",
+   "vegetables"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food cooked white rice?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat or vegetables mixed in?",
+    "yes": false
+   },
+   {
+    "q": "Does the rice look brown or black?",
+    "yes": false
+   }
+  ],
+  "dish": "Steamed Calrose Rice",
+  "look": "fluffy mound of short-grain white rice, sticky texture, glistening white grains, clean edges",
+  "model": "gemma-4-31b-it",
+  "name": "Calrose Rice",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-21T09:04:04+00:00"
+ },
  "479ceb40a2da": {
   "avoid": [
    "meat",
@@ -16216,6 +16251,39 @@
   "vessel": "bowl",
   "written_at": "2026-10-02T10:14:36+00:00"
  },
+ "8d84abc63b07": {
+  "avoid": [
+   "rice",
+   "naan",
+   "roti",
+   "ground meat",
+   "beef",
+   "chicken",
+   "pork"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item meat chunks in a yellow sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat ground or shredded?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish served as a dry roast?",
+    "yes": false
+   }
+  ],
+  "dish": "Jamaican Curry Lamb",
+  "look": "chunks of tender lamb, thick yellow-gold curry sauce, cubed potatoes, sliced carrots, garnish of chopped green onions",
+  "model": "gemma-4-31b-it",
+  "name": "Jamaican Curry Lamb",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-21T09:04:04+00:00"
+ },
  "8d8cf25e24e2": {
   "avoid": [
    "meat",
@@ -17124,6 +17192,40 @@
   "revisions": 1,
   "vessel": "plate",
   "written_at": "2026-10-02T12:29:21+00:00"
+ },
+ "95932d2288db": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "spring rolls",
+   "red sauce"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item fried pastry triangles?",
+    "yes": true
+   },
+   {
+    "q": "Are the pastries cylindrical like spring rolls?",
+    "yes": false
+   },
+   {
+    "q": "Is there meat visible inside the pastry?",
+    "yes": false
+   }
+  ],
+  "dish": "Vegetable Samosas with Cilantro Chutney",
+  "look": "golden-brown fried pastry triangles, crisp flaky crust, side of bright green cilantro chutney, smooth sauce texture",
+  "model": "gemma-4-31b-it",
+  "name": "Samosas with Cilantro Chutney",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-21T09:04:04+00:00"
  },
  "95db273ed70f": {
   "avoid": [
@@ -25944,6 +26046,39 @@
   "vessel": "plate",
   "written_at": "2026-09-27T14:22:11+00:00"
  },
+ "da2b28adcc57": {
+  "avoid": [
+   "beef",
+   "lamb",
+   "chicken",
+   "cream",
+   "noodles",
+   "bread",
+   "rice"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item meat chunks in a reddish broth?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat ground or sliced thin?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a clear soup?",
+    "yes": false
+   }
+  ],
+  "dish": "Southern Pork Stew",
+  "look": "cubed pork shoulder, thick reddish-brown tomato-based broth, chunks of potato, sliced carrots, diced celery, soft onions",
+  "model": "gemma-4-31b-it",
+  "name": "Southern Pork Stew",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-21T09:04:04+00:00"
+ },
  "da469b376374": {
   "avoid": [
    "meat",
@@ -28368,6 +28503,41 @@
   "vessel": "bowl",
   "written_at": "2026-10-02T10:03:48+00:00"
  },
+ "eec8f44cbaad": {
+  "avoid": [
+   "meat",
+   "beef",
+   "pork",
+   "sausage",
+   "chicken",
+   "fish",
+   "shrimp",
+   "spaghetti",
+   "ravioli"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a layered pasta cake?",
+    "yes": true
+   },
+   {
+    "q": "Is there ground meat visible in the sauce?",
+    "yes": false
+   },
+   {
+    "q": "Is the pasta served as loose noodles?",
+    "yes": false
+   }
+  ],
+  "dish": "Vegetable Lasagna",
+  "look": "layered pasta sheets, rich red marinara sauce, melted white parmesan cheese, visible layers of white ricotta and green spinach",
+  "model": "gemma-4-31b-it",
+  "name": "Classic Lasagna",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-21T09:04:04+00:00"
+ },
  "ef1552985343": {
   "avoid": [
    "tortilla",
@@ -29447,6 +29617,40 @@
   "revisions": 2,
   "vessel": "plate",
   "written_at": "2026-10-07T21:42:55+00:00"
+ },
+ "f502288a267b": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "short-grain rice",
+   "white rice"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food cooked yellow rice?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat or fish with the rice?",
+    "yes": false
+   },
+   {
+    "q": "Is the rice short-grain and sticky?",
+    "yes": false
+   }
+  ],
+  "dish": "Turmeric Basmati Rice",
+  "look": "long-grain basmati rice, bright yellow color, fluffy separated grains, chopped fresh cilantro, small dark mustard seeds",
+  "model": "gemma-4-31b-it",
+  "name": "Citrus Scented Basmati Rice",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-21T09:04:04+00:00"
  },
  "f5e04336cbc3": {
   "avoid": [
