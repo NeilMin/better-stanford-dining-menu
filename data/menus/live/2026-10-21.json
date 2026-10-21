@@ -1,6 +1,6 @@
 {
  "date": "2026-10-21",
- "scraped_at": "2026-10-21T12:20:14-07:00",
+ "scraped_at": "2026-10-21T16:24:50-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -1420,17 +1420,16 @@
      "order": 0
     },
     {
-     "name": "Plant Forward Beef Stroganoff",
-     "recipe_id": "867512",
+     "name": "Vegetable Curry",
+     "recipe_id": "6639878",
      "description": "",
-     "ingredients": "",
-     "allergens": [
-      "MILK",
-      "SOY",
-      "WHEAT"
-     ],
+     "ingredients": "tomato puree, tamarind puree, zucchini, onions, carrots, chickpeas, bay leaf, celery, apple sauce, vegetable soup base (contains mushrooms, celery), ginger, garam masala, cayenne pepper, canola/olive oil blend",
+     "allergens": [],
      "trace_allergens": [],
-     "tags": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
      "order": 1
     },
     {
@@ -1475,10 +1474,10 @@
      "order": 4
     },
     {
-     "name": "Garlic Rice",
-     "recipe_id": "4505728",
+     "name": "Steamed Rice",
+     "recipe_id": "5121297",
      "description": "",
-     "ingredients": "rice, canola/olive oil blend, garlic, salt",
+     "ingredients": "white rice, salt",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -1533,15 +1532,24 @@
      "order": 7
     },
     {
-     "name": "Creamy Mac & Cheese",
-     "recipe_id": "4233582",
+     "name": "Fried Okra",
+     "recipe_id": "6159363",
      "description": "",
-     "ingredients": "macaroni, cheese sauce (parmesan cheese, white cheddar cheese, fontina cheese, whole milk, butter, flour, dijon mustard, onions, salt, nutmeg, bay leaf)",
+     "ingredients": "okra, flour, corn meal, buttermilk, creole spice, salt, canola/olive oil blend, fried in canola oil",
      "allergens": [
       "MILK",
       "WHEAT"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "SOY",
+      "TREENUTS"
+     ],
      "tags": [
       "vegetarian"
      ],
@@ -1573,40 +1581,22 @@
      "order": 10
     },
     {
-     "name": "Soup of the Day",
-     "recipe_id": "SoupoftheDay",
+     "name": "Caesar Salad",
+     "recipe_id": "5834444",
      "description": "",
-     "ingredients": "chef's choice soup of the day",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [],
-     "order": 11
-    },
-    {
-     "name": "Assorted Bread",
-     "recipe_id": "AssortSlicBread1",
-     "description": "",
-     "ingredients": "",
+     "ingredients": "lettuce, tomatoes, caesar dressing (mayonnaise, parmesan cheese, garlic, lemon juice, anchovy, red wine vinegar, dijon mustard, worcestershire sauce [vinegar, molasses, corn syrup, anchovies, salt, garlic, tamarind concentrate, cloves, natural flavorings, chili pepper extract], hot sauce, salt, pepper), parmesan cheese, croutons (wheat flour, canola and/or sunflower oil, whey, salt, yeast, corn syrup, sugar, onion powder, parsley, paprika, turmeric)",
      "allergens": [
-      "SESAME",
+      "EGG",
+      "FISH",
+      "MILK",
       "SOY",
       "WHEAT"
      ],
-     "trace_allergens": [],
-     "tags": [
-      "vegan"
+     "trace_allergens": [
+      "TREENUTS"
      ],
-     "order": 12
-    },
-    {
-     "name": "Composed Salad",
-     "recipe_id": "123116546",
-     "description": "",
-     "ingredients": "chef's choice composed salad",
-     "allergens": [],
-     "trace_allergens": [],
      "tags": [],
-     "order": 13
+     "order": 11
     },
     {
      "name": "Performance Bar",
@@ -1616,7 +1606,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 14
+     "order": 12
     },
     {
      "name": "Craveable Grains",
@@ -1629,7 +1619,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 15
+     "order": 13
     },
     {
      "name": "Flavor Forward Legumes",
@@ -1642,7 +1632,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 16
+     "order": 14
     },
     {
      "name": "Pasta Alfredo",
@@ -1659,7 +1649,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 17
+     "order": 15
     },
     {
      "name": "Pasta Marinara",
@@ -1676,7 +1666,7 @@
      "tags": [
       "vegan"
      ],
-     "order": 18
+     "order": 16
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -1689,7 +1679,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 19
+     "order": 17
     }
    ]
   },
@@ -4427,17 +4417,17 @@
    ],
    "Dinner": [
     {
-     "name": "Pork Carnitas Burrito Bowl",
-     "recipe_id": "3855817",
+     "name": "Pork Chili Colorado",
+     "recipe_id": "7555169",
      "description": "",
-     "ingredients": "(non-halal) pork carnitas (pork, onions, garlic, bay leaf, salt), flour tortilla, spanish rice (brown rice, vegetable soup base, onions, bell peppers, garlic, jalapeno peppers, canola/olive oil blend, tomato juice, coriander, cumin, black pepper, cilantro, salt), seasoned pinto beans (pinto beans, onions, garlic salt), avocado salsa, roasted tomato salsa, queso fresco, chipotle crema (cream, milk, chipotle peppers, salt)",
+     "ingredients": "(non-halal) pork, onion, salt, chili powder, cumin, canola oil, vegetable soup base (contains mushrooms, celery, carrots), chili seasoning, tomato, Guajillo chili powder, garlic",
      "allergens": [
-      "MILK",
-      "SOY",
-      "WHEAT"
+      "SOY"
      ],
      "trace_allergens": [],
-     "tags": [],
+     "tags": [
+      "gluten-free"
+     ],
      "order": 0
     },
     {
