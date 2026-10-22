@@ -19528,6 +19528,40 @@
   "vessel": "plate",
   "written_at": "2026-10-02T23:59:27+00:00"
  },
+ "a4dbcab17535": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "raw fava beans",
+   "soup can"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a thick stew with beans and vegetables in broth?",
+    "yes": true
+   },
+   {
+    "q": "Does the dish contain meat, chicken, or seafood?",
+    "yes": false
+   },
+   {
+    "q": "Are the beans raw or uncooked?",
+    "yes": false
+   }
+  ],
+  "dish": "Peruvian fava bean stew",
+  "look": "thick orange-red stew, plump tender fava beans, chunky diced potatoes, charred fire-roasted tomato pieces, shredded dark green kale leaves, rich creamy coconut aji paste broth, sprinkled with nutritional yeast flakes",
+  "model": "gemini-3.6-flash",
+  "name": "Peruvian Fava Bean Stew",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-22T19:22:39+00:00"
+ },
  "a4e5a2b1bd5c": {
   "avoid": [
    "chicken",
@@ -19741,6 +19775,41 @@
   "revisions": 1,
   "vessel": "plate",
   "written_at": "2026-10-02T21:11:53+00:00"
+ },
+ "a69a0195e536": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "french fries",
+   "mashed potatoes",
+   "raw potatoes"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food roasted chunks of potato?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat, poultry, or fish mixed with the potatoes?",
+    "yes": false
+   },
+   {
+    "q": "Are the potatoes mashed into a smooth puree?",
+    "yes": false
+   }
+  ],
+  "dish": "Aji panca roasted potatoes",
+  "look": "roasted yellow potato chunks, glossy deep reddish-orange aji panca chili paste coating, charred crispy edges, soft tender center, sprinkled with finely chopped green cilantro",
+  "model": "gemini-3.6-flash",
+  "name": "Aji Panca Roasted Potatoes",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-22T19:22:39+00:00"
  },
  "a6be9de8b9e3": {
   "avoid": [
