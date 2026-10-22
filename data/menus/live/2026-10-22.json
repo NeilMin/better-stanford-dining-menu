@@ -1,6 +1,6 @@
 {
  "date": "2026-10-22",
- "scraped_at": "2026-10-22T12:14:50-07:00",
+ "scraped_at": "2026-10-22T16:26:20-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -1330,16 +1330,24 @@
      "order": 0
     },
     {
-     "name": "Jamaican Jerk Jackfruit",
-     "recipe_id": "3927334",
+     "name": "Grilled Vegan/Vegetarian",
+     "recipe_id": "13468741",
      "description": "",
-     "ingredients": "jackfruit, jackfruit marinade (Scotch bonnet peppers, green onions, allspice, fresh thyme, garlic, ginger, white onion, salt, black pepper), sweet potatoes, carrots, bell peppers, onions, jackfruit sauce (Scotch bonnet peppers, allspice, fresh thyme, green onions, garlic, ginger, onion, apple cider vinegar, brown sugar, black pepper)",
+     "ingredients": "chef's choice grilled vegan OR vegetarian option",
      "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan"
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "SOY",
+      "TREENUTS",
+      "WHEAT"
      ],
+     "tags": [],
      "order": 1
     },
     {
@@ -1435,25 +1443,6 @@
      "order": 7
     },
     {
-     "name": "Garlic Bread",
-     "recipe_id": "5398769",
-     "description": "",
-     "ingredients": "french baguette, unsalted butter, garlic, parsley",
-     "allergens": [
-      "MILK",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "EGG",
-      "SOY",
-      "TREENUTS"
-     ],
-     "tags": [
-      "vegetarian"
-     ],
-     "order": 8
-    },
-    {
      "name": "Seasonal Steamed Vegetables",
      "recipe_id": "5561366",
      "description": "",
@@ -1464,7 +1453,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 9
+     "order": 8
     },
     {
      "name": "Noodle Stir Fry Bar",
@@ -1485,33 +1474,22 @@
       "WHEAT"
      ],
      "tags": [],
-     "order": 10
+     "order": 9
     },
     {
-     "name": "Soup of the Day",
-     "recipe_id": "SoupoftheDay",
+     "name": "Chicken Noodle Soup",
+     "recipe_id": "MollyChxNoodleSoup1",
      "description": "",
-     "ingredients": "chef's choice soup of the day",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [],
-     "order": 11
-    },
-    {
-     "name": "Assorted Bread",
-     "recipe_id": "AssortSlicBread1",
-     "description": "",
-     "ingredients": "",
+     "ingredients": "chicken stock, chicken meat, carrots, celery, enriched egg noodles, peas, onions, modified food starch, bleached enriched flour, salt, chicken fat, yeast extract, sugar, chicken meat including chicken juices, maltodextrin, water, vegetables (celery, onions, carrots), dehydrated whey (milk), garlic, soy protein isolate, spices, turmeric, cornstarch, beta carotene, dehydrated chicken, citric acid",
      "allergens": [
-      "SESAME",
+      "EGG",
+      "MILK",
       "SOY",
       "WHEAT"
      ],
      "trace_allergens": [],
-     "tags": [
-      "vegan"
-     ],
-     "order": 12
+     "tags": [],
+     "order": 10
     },
     {
      "name": "Composed Salad",
@@ -1521,7 +1499,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 13
+     "order": 11
     },
     {
      "name": "Performance Bar",
@@ -1531,7 +1509,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 14
+     "order": 12
     },
     {
      "name": "Craveable Grains",
@@ -1544,7 +1522,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 15
+     "order": 13
     },
     {
      "name": "Flavor Forward Legumes",
@@ -1557,24 +1535,23 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 16
+     "order": 14
     },
     {
-     "name": "Pasta Marinara",
-     "recipe_id": "5095708",
+     "name": "Creamy Marinara",
+     "recipe_id": "CreamyMar(lakeside)",
      "description": "",
-     "ingredients": "pasta, marinara sauce, canola/olive oil blend",
+     "ingredients": "tomatoes, tomato paste, cream, milk powder, butter, parmesan cheese, flour, soybean oil, sugar, salt, onion, garlic, spices, citric acid, natural flavor",
      "allergens": [
+      "MILK",
       "SOY",
       "WHEAT"
      ],
-     "trace_allergens": [
-      "EGG"
-     ],
+     "trace_allergens": [],
      "tags": [
-      "vegan"
+      "vegetarian"
      ],
-     "order": 17
+     "order": 15
     },
     {
      "name": "Pasta Alfredo",
@@ -1591,7 +1568,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 18
+     "order": 16
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -1604,7 +1581,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 19
+     "order": 17
     }
    ]
   },
@@ -2211,10 +2188,10 @@
      "order": 4
     },
     {
-     "name": "Caribbean Dirty Rice",
-     "recipe_id": "CaribbeanDirtyRice1",
+     "name": "Cilantro Lime Rice",
+     "recipe_id": "4960003",
      "description": "",
-     "ingredients": "long grain rice, vegetable soup base, onions, celery, bell peppers, green onions, garlic, canola/olive oil blend, thyme, oregano, parsley, sage, bay leaf, allspice, smoked paprika, habanero pepper, cayenne pepper, lime zest, lime juice, salt, pepper",
+     "ingredients": "brown rice, onion, canola/olive oil blend, lime, cilantro, garlic, salt",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -4289,31 +4266,33 @@
    ],
    "Dinner": [
     {
-     "name": "Chicken Cacciatore",
-     "recipe_id": "3454943",
+     "name": "Chicken Parmesan",
+     "recipe_id": "4383016",
      "description": "",
-     "ingredients": "chicken, italian marinade (paprika, basil, oregano, canola/olive oil blend, thyme, garlic, salt, pepper), cacciatore sauce (tomato sauce, carrots, celery, onions, mushrooms, garlic, tomato paste, tomatoes, capers, red wine vinegar, balsamic vinegar, brown sugar, canola/olive oil blend, black pepper, oregano, red pepper flakes, basil)",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free"
-     ],
-     "order": 0
-    },
-    {
-     "name": "Plant-Forward \"Bolognese\" Pasta",
-     "recipe_id": "4360200",
-     "description": "",
-     "ingredients": "pasta, marinara sauce, plant-forward \"beef\" crumbles (pea protein, sunflower oil, spices, caramel color), onions, garlic, italian seasoning, red pepper flakes, canola/olive oil blend",
+     "ingredients": "chicken, italian seasoning, garlic powder, eggs, milk, breadcrumbs, flour, mozzarella cheese, parmesan cheese, canola/olive oil blend, garlic powder, italian seasoning, salt, marinara sauce",
      "allergens": [
+      "EGG",
+      "MILK",
       "SOY",
       "WHEAT"
      ],
-     "trace_allergens": [
-      "EGG"
+     "trace_allergens": [],
+     "tags": [],
+     "order": 0
+    },
+    {
+     "name": "Eggplant Parmesan",
+     "recipe_id": "4464496",
+     "description": "",
+     "ingredients": "eggplant, mushrooms, onions, marinara sauce, bread crumbs, mozzarella cheese, parmesan cheese, canola/olive oil blend, oregano, pepper",
+     "allergens": [
+      "MILK",
+      "SOY",
+      "WHEAT"
      ],
+     "trace_allergens": [],
      "tags": [
-      "vegan"
+      "vegetarian"
      ],
      "order": 1
     },
@@ -4344,34 +4323,6 @@
      "order": 3
     },
     {
-     "name": "Citrus-Charred Asparagus",
-     "recipe_id": "CitCharrAsp1",
-     "description": "",
-     "ingredients": "asparagus, orange juice, lemon juice, garlic, orange zest, olive/canola oil blend, salt, black pepper",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan"
-     ],
-     "order": 4
-    },
-    {
-     "name": "Creamy Yukon Gold Mashed Potatoes",
-     "recipe_id": "5498764",
-     "description": "",
-     "ingredients": "Yukon Gold potatoes, cream, butter, milk, salt",
-     "allergens": [
-      "MILK"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegetarian"
-     ],
-     "order": 5
-    },
-    {
      "name": "Garlic Bread",
      "recipe_id": "3192879",
      "description": "",
@@ -4384,7 +4335,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 6
+     "order": 4
     },
     {
      "name": "Panini Station",
@@ -4402,7 +4353,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 7
+     "order": 5
     },
     {
      "name": "Soup of the Day",
@@ -4412,7 +4363,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 8
+     "order": 6
     },
     {
      "name": "Assorted Bread",
@@ -4428,7 +4379,7 @@
      "tags": [
       "vegan"
      ],
-     "order": 9
+     "order": 7
     },
     {
      "name": "Composed Salad",
@@ -4438,7 +4389,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 10
+     "order": 8
     },
     {
      "name": "Performance Bar",
@@ -4448,7 +4399,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 11
+     "order": 9
     },
     {
      "name": "Craveable Grains",
@@ -4461,7 +4412,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 12
+     "order": 10
     },
     {
      "name": "Flavor Forward Legumes",
@@ -4474,7 +4425,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 13
+     "order": 11
     },
     {
      "name": "Pasta Marinara",
@@ -4491,7 +4442,7 @@
      "tags": [
       "vegan"
      ],
-     "order": 14
+     "order": 12
     }
    ]
   },

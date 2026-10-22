@@ -1,6 +1,6 @@
 {
  "date": "2026-10-26",
- "scraped_at": "2026-10-22T12:14:50-07:00",
+ "scraped_at": "2026-10-22T16:26:20-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -526,22 +526,24 @@
    ],
    "Dinner": [
     {
-     "name": "Cuban Style Ropa Vieja",
-     "recipe_id": "CubanRopaVieja1",
+     "name": "Cuban Lemon Chicken",
+     "recipe_id": "3174958",
      "description": "",
-     "ingredients": "beef, beef soup base, russet potatoes, green and red bell peppers, onions, garlic, green olives, tomatoes, tomato paste, oregano, cumin, bay leaf, olive/canola oil blend, salt, black pepper",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free"
+     "ingredients": "chicken, cuban lemon glaze (tamari, lemon juice, rice vinegar, brown sugar, ginger, garlic, corn starch, lemon zest), au jus sauce (canola/olive oil blend, flour, butter, carrot, celery, onion, thyme, chicken soup base, pepper, salt, bay leaf), canola/olive oil blend, garlic",
+     "allergens": [
+      "MILK",
+      "SOY",
+      "WHEAT"
      ],
+     "trace_allergens": [],
+     "tags": [],
      "order": 0
     },
     {
-     "name": "Plant-Forward \"Beef\" Ropa Vieja",
-     "recipe_id": "Plant-Forward Ropa1",
+     "name": "Plant Forward Cuban Lemon \"Chick'n\"",
+     "recipe_id": "PFLemonChx1",
      "description": "",
-     "ingredients": "plant-forward gardein beef, veggie soup base, potatoes, green bell peppers, carrots, onions, celery, olive oil, tomatoes, garlic, tomato paste, canola/olive oil blend, bay leaf, cumin, salt, pepper",
+     "ingredients": "plant-forward \"chick'n\", Cuban lemon glaze (tamari, lemon juice, rice vinegar, brown sugar, ginger, garlic, cornstarch, lemon zest), au jus sauce (canola/olive oil blend, vegan butter, flour, carrot, celery, onion, thyme, veggie soup base, pepper, salt, bay leaf), canola/olive oil blend, garlic",
      "allergens": [
       "SOY",
       "WHEAT"
@@ -632,6 +634,46 @@
      "order": 7
     },
     {
+     "name": "Honey Citrus Glazed Pork Belly",
+     "recipe_id": "HonCitPorkBelly1",
+     "description": "",
+     "ingredients": "pork belly, honey, orange juice, tamari sauce, cornstarch, ground cumin, onion powder, garlic powder, smoked paprika, olive/canola blended oil, salt, black pepper",
+     "allergens": [
+      "SOY"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free"
+     ],
+     "order": 8
+    },
+    {
+     "name": "Steamed Jasmine Rice",
+     "recipe_id": "5134594",
+     "description": "",
+     "ingredients": "jasmine rice, water, salt",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
+     "order": 9
+    },
+    {
+     "name": "Roasted Seasonal Vegetables",
+     "recipe_id": "3810155",
+     "description": "",
+     "ingredients": "seasonal vegetables, canola/olive oil blend, garlic, creole spices (herbs de provence, cumin, cayenne pepper, paprika, pepper, salt)",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
+     "order": 10
+    },
+    {
      "name": "Burger Bar",
      "recipe_id": "5964436",
      "description": "",
@@ -639,7 +681,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 8
+     "order": 11
     },
     {
      "name": "Grilled Chicken",
@@ -660,7 +702,7 @@
       "WHEAT"
      ],
      "tags": [],
-     "order": 9
+     "order": 12
     },
     {
      "name": "Grilled Vegan/Vegetarian",
@@ -681,7 +723,7 @@
       "WHEAT"
      ],
      "tags": [],
-     "order": 10
+     "order": 13
     },
     {
      "name": "Panini Station",
@@ -699,7 +741,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 11
+     "order": 14
     },
     {
      "name": "Soup of the Day",
@@ -709,7 +751,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 12
+     "order": 15
     },
     {
      "name": "Assorted Dinner Rolls",
@@ -728,7 +770,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 13
+     "order": 16
     },
     {
      "name": "Composed Salad",
@@ -738,7 +780,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 14
+     "order": 17
     },
     {
      "name": "Performance Bar",
@@ -748,7 +790,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 15
+     "order": 18
     },
     {
      "name": "Craveable Grains",
@@ -761,7 +803,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 16
+     "order": 19
     },
     {
      "name": "Flavor Forward Legumes",
@@ -774,7 +816,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 17
+     "order": 20
     },
     {
      "name": "Marinara Cheese Ravioli",
@@ -791,7 +833,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 18
+     "order": 21
     },
     {
      "name": "Pesto Sauce",
@@ -807,7 +849,7 @@
       "gluten-free",
       "vegetarian"
      ],
-     "order": 19
+     "order": 22
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -820,7 +862,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 20
+     "order": 23
     }
    ]
   },
@@ -4297,16 +4339,17 @@
    ],
    "Lunch": [
     {
-     "name": "Greek Chicken Gyro Meat",
-     "recipe_id": "ChxGyroMeat1",
+     "name": "Star Ginger Teriyaki Chicken",
+     "recipe_id": "5840235",
      "description": "",
-     "ingredients": "chicken, water, soy protein, nonfat dry milk, salt, spices, garlic, paprika, corn oil, lemon juice",
+     "ingredients": "chicken, teriyaki marinade (canola oil, alcohol free mirin, alcohol free tamari, garlic, chili powder), teriyaki glaze (beet sugar, alcohol free tamari, cornstarch, canola oil), onions, bok choy",
      "allergens": [
-      "MILK",
       "SOY"
      ],
      "trace_allergens": [],
-     "tags": [],
+     "tags": [
+      "gluten-free"
+     ],
      "order": 0
     },
     {
@@ -5638,6 +5681,120 @@
      "order": 6
     },
     {
+     "name": "Grilled Cheese & Tomato Basil Soup",
+     "recipe_id": "1222111222",
+     "description": "",
+     "ingredients": "Chef's Line gluten-free bread, Daiya sliced cheddar cheese, non allergen plant based butter Tomato, tomato paste, red onion, coconut milk, basil, veg base, salt",
+     "allergens": [
+      "COCONUT"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "vegan"
+     ],
+     "order": 7
+    },
+    {
+     "name": "Panini Station (Branner)",
+     "recipe_id": "100100001",
+     "description": "",
+     "ingredients": "Gluten Free Bread Sliced Turkey Sliced Ham Roasted Vegetables (Eggplant, Squash, Bell Pepper) Sliced Daiya Cheese Guacamole Spread",
+     "allergens": [
+      "COCONUT"
+     ],
+     "trace_allergens": [],
+     "tags": [],
+     "order": 8
+    }
+   ],
+   "Dinner": [
+    {
+     "name": "Beef Bourguignon",
+     "recipe_id": "12341234",
+     "description": "",
+     "ingredients": "beef, onion, garlic, carrots, peas, thyme, onion powder, paprika, beef base, mushroom seasoning, grape juice, liquid coconut aminos, oat milk, cornstarch",
+     "allergens": [
+      "COCONUT"
+     ],
+     "trace_allergens": [],
+     "tags": [],
+     "order": 0
+    },
+    {
+     "name": "Mushroom Meuniere (Branner)",
+     "recipe_id": "10101001",
+     "description": "",
+     "ingredients": "king oyster mushroom, steak and grill seasoning, garbanzo flour, non allergen vegan butter, garlic, lemon juice, veg base, oil",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "vegan"
+     ],
+     "order": 1
+    },
+    {
+     "name": "Creamy Mashed Potatoes",
+     "recipe_id": "111001",
+     "description": "",
+     "ingredients": "potatoes, oil, oat milk, non allergen vegan butter, garlic, salt",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
+     "order": 2
+    },
+    {
+     "name": "Wendy's Pork Posole",
+     "recipe_id": "43214321",
+     "description": "",
+     "ingredients": "pork, oil, onion, garlic, bay leaf, oregano, chicken base, guajillo, hominy, salt, pepper, toppings: cabbage, radish, lemon",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [],
+     "order": 3
+    },
+    {
+     "name": "Seasonal Roasted Vegetables",
+     "recipe_id": "5643782",
+     "description": "",
+     "ingredients": "seasonal vegetables, oil blend, salt, pepper",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
+     "order": 4
+    },
+    {
+     "name": "Seasonal Steamed Vegetables",
+     "recipe_id": "5561366",
+     "description": "",
+     "ingredients": "seasonal vegetables, salt",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
+     "order": 5
+    },
+    {
+     "name": "Allergen-Friendly Pasta Station",
+     "recipe_id": "AlFrPasStat1",
+     "description": "",
+     "ingredients": "Gluten-Free Penne Pasta (brown rice, rice bran, water) Sauce of the Day: Marinara Sauce (tomatoes, tomato paste, oil, sugar, salt, onion, garlic, spices, citric acid, natural flavor) Pesto Sauce (olive oil, basil, spinach, kale, nutritional yeast, sunflower seeds) Alfredo Sauce (allergen free vegan butter, garbanzo flour, oat milk, nutritional yeast, lemon juice, salt)",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
+     "order": 6
+    },
+    {
      "name": "Allergen Friendly Pizza Station",
      "recipe_id": "10100011110",
      "description": "",
@@ -5662,73 +5819,6 @@
      "trace_allergens": [],
      "tags": [],
      "order": 8
-    }
-   ],
-   "Dinner": [
-    {
-     "name": "Seasonal Roasted Vegetables",
-     "recipe_id": "5643782",
-     "description": "",
-     "ingredients": "seasonal vegetables, oil blend, salt, pepper",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan"
-     ],
-     "order": 0
-    },
-    {
-     "name": "Seasonal Steamed Vegetables",
-     "recipe_id": "5561366",
-     "description": "",
-     "ingredients": "seasonal vegetables, salt",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan"
-     ],
-     "order": 1
-    },
-    {
-     "name": "Allergen-Friendly Pasta Station",
-     "recipe_id": "AlFrPasStat1",
-     "description": "",
-     "ingredients": "Gluten-Free Penne Pasta (brown rice, rice bran, water) Sauce of the Day: Marinara Sauce (tomatoes, tomato paste, oil, sugar, salt, onion, garlic, spices, citric acid, natural flavor) Pesto Sauce (olive oil, basil, spinach, kale, nutritional yeast, sunflower seeds) Alfredo Sauce (allergen free vegan butter, garbanzo flour, oat milk, nutritional yeast, lemon juice, salt)",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan"
-     ],
-     "order": 2
-    },
-    {
-     "name": "Grilled Cheese & Tomato Basil Soup",
-     "recipe_id": "1222111222",
-     "description": "",
-     "ingredients": "Chef's Line gluten-free bread, Daiya sliced cheddar cheese, non allergen plant based butter Tomato, tomato paste, red onion, coconut milk, basil, veg base, salt",
-     "allergens": [
-      "COCONUT"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "vegan"
-     ],
-     "order": 3
-    },
-    {
-     "name": "Panini Station (Branner)",
-     "recipe_id": "100100001",
-     "description": "",
-     "ingredients": "Gluten Free Bread Sliced Turkey Sliced Ham Roasted Vegetables (Eggplant, Squash, Bell Pepper) Sliced Daiya Cheese Guacamole Spread",
-     "allergens": [
-      "COCONUT"
-     ],
-     "trace_allergens": [],
-     "tags": [],
-     "order": 4
     }
    ]
   }

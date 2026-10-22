@@ -1,6 +1,6 @@
 {
  "date": "2026-10-25",
- "scraped_at": "2026-10-22T12:14:50-07:00",
+ "scraped_at": "2026-10-22T16:26:20-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -1338,31 +1338,40 @@
    ],
    "Dinner": [
     {
-     "name": "German Chicken Schnitzel",
-     "recipe_id": "GerChxSchn1",
+     "name": "Soy-Vinegar Braised Chicken Adobo",
+     "recipe_id": "SoyVinChxAdobo1",
      "description": "",
-     "ingredients": "chicken, flour, eggs, panko, paprika, garlic powder, onion powder, parsley, lemon zest, olive/canola oil blend, salt, black pepper, lemon wedges",
+     "ingredients": "chicken thighs, vinegar, tamari, garlic, onions, water, bay leaves, black peppercorns, sugar, olive/canola oil blend, salt",
      "allergens": [
-      "EGG",
-      "WHEAT"
-     ],
-     "trace_allergens": [],
-     "tags": [],
-     "order": 0
-    },
-    {
-     "name": "Plant-Forward Schnitzel",
-     "recipe_id": "PlaForSchn1",
-     "description": "",
-     "ingredients": "meatless breaded \"chicken\" cutlet, paprika, garlic powder, onion powder, parsley, lemon zest, olive/canola oil blend, salt, black pepper, lemon wedges",
-     "allergens": [
-      "EGG",
-      "MILK",
-      "WHEAT"
+      "SOY"
      ],
      "trace_allergens": [],
      "tags": [
-      "vegetarian"
+      "gluten-free"
+     ],
+     "order": 0
+    },
+    {
+     "name": "Meatless Chick’n Fajita",
+     "recipe_id": "5586519",
+     "description": "",
+     "ingredients": "meatless chick’n strips, cilantro, fajita seasoning, onions, bell peppers, canola/olive oil blend, salt, pepper",
+     "allergens": [
+      "SOY",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "TREENUTS"
+     ],
+     "tags": [
+      "vegan"
      ],
      "order": 1
     },
@@ -1393,37 +1402,76 @@
      "order": 3
     },
     {
-     "name": "Dill Potato Salad",
-     "recipe_id": "5806724-1",
+     "name": "Garlic Rice",
+     "recipe_id": "4505728",
      "description": "",
-     "ingredients": "potato, mayonnaise (soybean oil, egg yolk, distilled vinegar, mustard seed, salt), sweet relish (pickles, sugar, distilled vinegar, salt, xanthan gum, spices, bell pepper, natural flavoring, turmeric), salt, onion, bell pepper, vinegar, parsley, black pepper, potassium sorbate, guar gum, dill",
-     "allergens": [
-      "EGG",
-      "SOY"
-     ],
-     "trace_allergens": [
-      "SESAME"
-     ],
+     "ingredients": "rice, canola/olive oil blend, garlic, salt",
+     "allergens": [],
+     "trace_allergens": [],
      "tags": [
       "gluten-free",
-      "vegetarian"
+      "vegan"
      ],
      "order": 4
     },
     {
-     "name": "Spätzle",
-     "recipe_id": "Spatzle1",
+     "name": "Braised Beef Stew & Potatoes",
+     "recipe_id": "3435062",
      "description": "",
-     "ingredients": "water, enriched wheat flour, eggs, enriched durum wheat flour, wheat gluten, salt, turmeric",
+     "ingredients": "beef, potatoes, carrots, celery, tomatoes, beef soup base, canola/olive oil blend, onions, garlic, tomato paste, creole spice mix (herb de provence, cumin, cayenne pepper, paprika, pepper, salt), bay leaf, black pepper, salt",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free"
+     ],
+     "order": 5
+    },
+    {
+     "name": "Garlic Mashed Potatoes",
+     "recipe_id": "5280474",
+     "description": "",
+     "ingredients": "potatoes, cream, butter, canola/olive oil blend, garlic, salt, pepper",
      "allergens": [
-      "EGG",
-      "WHEAT"
+      "MILK"
      ],
      "trace_allergens": [],
      "tags": [
+      "gluten-free",
       "vegetarian"
      ],
-     "order": 5
+     "order": 6
+    },
+    {
+     "name": "Assorted Dinner Rolls",
+     "recipe_id": "5344600",
+     "description": "",
+     "ingredients": "unbleached wheat flour, malted barley flour, sour culture, salt, yeast, sesame seeds, amaranth, poppy seeds, whole wheat flour, dark rye flour, malt powder, honey, extra virgin olive oil, semolina, wheat germ",
+     "allergens": [
+      "MILK",
+      "SESAME",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "SOY",
+      "TREENUTS"
+     ],
+     "tags": [
+      "vegetarian"
+     ],
+     "order": 7
+    },
+    {
+     "name": "Seasonal Steamed Vegetables",
+     "recipe_id": "5561366",
+     "description": "",
+     "ingredients": "seasonal vegetables, salt",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
+     "order": 8
     },
     {
      "name": "Fried Rice Bar",
@@ -1444,7 +1492,7 @@
       "WHEAT"
      ],
      "tags": [],
-     "order": 6
+     "order": 9
     },
     {
      "name": "Soup of the Day",
@@ -1454,7 +1502,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 7
+     "order": 10
     },
     {
      "name": "Assorted Bread",
@@ -1470,7 +1518,7 @@
      "tags": [
       "vegan"
      ],
-     "order": 8
+     "order": 11
     },
     {
      "name": "Composed Salad",
@@ -1480,7 +1528,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 9
+     "order": 12
     },
     {
      "name": "Performance Bar",
@@ -1490,7 +1538,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 10
+     "order": 13
     },
     {
      "name": "Craveable Grains",
@@ -1503,7 +1551,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 11
+     "order": 14
     },
     {
      "name": "Flavor Forward Legumes",
@@ -1516,7 +1564,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 12
+     "order": 15
     },
     {
      "name": "Pasta Marinara",
@@ -1533,7 +1581,7 @@
      "tags": [
       "vegan"
      ],
-     "order": 13
+     "order": 16
     },
     {
      "name": "Pasta Alfredo",
@@ -1550,7 +1598,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 14
+     "order": 17
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -1563,7 +1611,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 15
+     "order": 18
     }
    ]
   },
