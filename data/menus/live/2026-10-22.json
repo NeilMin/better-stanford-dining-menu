@@ -1,6 +1,6 @@
 {
  "date": "2026-10-22",
- "scraped_at": "2026-10-22T01:42:03-07:00",
+ "scraped_at": "2026-10-22T12:14:50-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -231,14 +231,23 @@
      "order": 0
     },
     {
-     "name": "Aji Marinated Crispy Tofu",
-     "recipe_id": "AjiTofu1",
+     "name": "Spicy Aji Panca Tofu",
+     "recipe_id": "AjiPancaTofu1",
      "description": "",
-     "ingredients": "tofu, cornstarch, aji amarillo paste, lime juice, orange juice, garlic, onions, cilantro, cumin, smoked paprika, dried oregano, olive/canola oil blend, salt, black pepper",
+     "ingredients": "tofu, cornstarch, aji panca paste, lime juice, orange juice, garlic, onions, cilantro, cumin, smoked paprika, dried oregano, olive/canola oil blend, salt, black pepper",
      "allergens": [
       "SOY"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "WHEAT"
+     ],
      "tags": [
       "gluten-free",
       "vegan"
@@ -298,10 +307,10 @@
      "order": 5
     },
     {
-     "name": "Aji Amarillo Roasted Potatoes",
-     "recipe_id": "AjiAmaPots1",
+     "name": "Aji Panca Roasted Potatoes",
+     "recipe_id": "AjiPancaPots1",
      "description": "",
-     "ingredients": "potatoes, aji amarillo paste, garlic, lime juice, cumin, cilantro, olive/canola oil blend, salt, black pepper",
+     "ingredients": "potatoes, aji panca paste, garlic, lime juice, cumin, cilantro, olive/canola oil blend, salt, black pepper",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -1127,10 +1136,10 @@
      "order": 4
     },
     {
-     "name": "Aji Amarillo Roasted Potatoes",
-     "recipe_id": "AjiAmaPots1",
+     "name": "Roasted Potatoes",
+     "recipe_id": "5018531",
      "description": "",
-     "ingredients": "potatoes, aji amarillo paste, garlic, lime juice, cumin, cilantro, olive/canola oil blend, salt, black pepper",
+     "ingredients": "potatoes, salt, pepper, canola/olive oil blend",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -1165,48 +1174,6 @@
      "order": 6
     },
     {
-     "name": "Grilled Chicken",
-     "recipe_id": "520454-02",
-     "description": "",
-     "ingredients": "chicken, canola/olive oil blend, salt, pepper",
-     "allergens": [],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
-     ],
-     "tags": [],
-     "order": 7
-    },
-    {
-     "name": "Grilled Vegan/Vegetarian",
-     "recipe_id": "13468741",
-     "description": "",
-     "ingredients": "chef's choice grilled vegan OR vegetarian option",
-     "allergens": [],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
-     ],
-     "tags": [],
-     "order": 8
-    },
-    {
      "name": "Tomato Soup with Grilled Cheese",
      "recipe_id": "5218597-1",
      "description": "",
@@ -1225,7 +1192,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 9
+     "order": 7
     },
     {
      "name": "Panini Station",
@@ -1243,33 +1210,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 10
-    },
-    {
-     "name": "Soup of the Day",
-     "recipe_id": "SoupoftheDay",
-     "description": "",
-     "ingredients": "chef's choice soup of the day",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [],
-     "order": 11
-    },
-    {
-     "name": "Assorted Bread",
-     "recipe_id": "AssortSlicBread1",
-     "description": "",
-     "ingredients": "",
-     "allergens": [
-      "SESAME",
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "vegan"
-     ],
-     "order": 12
+     "order": 8
     },
     {
      "name": "Composed Salad",
@@ -1279,7 +1220,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 13
+     "order": 9
     },
     {
      "name": "Performance Bar",
@@ -1289,7 +1230,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 14
+     "order": 10
     },
     {
      "name": "Craveable Grains",
@@ -1302,7 +1243,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 15
+     "order": 11
     },
     {
      "name": "Flavor Forward Legumes",
@@ -1315,7 +1256,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 16
+     "order": 12
     },
     {
      "name": "Pasta Marinara",
@@ -1332,7 +1273,7 @@
      "tags": [
       "vegan"
      ],
-     "order": 17
+     "order": 13
     },
     {
      "name": "Pasta Alfredo",
@@ -1349,7 +1290,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 18
+     "order": 14
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -1362,7 +1303,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 19
+     "order": 15
     }
    ],
    "Dinner": [
@@ -4949,15 +4890,17 @@
      "order": 9
     },
     {
-     "name": "Tomato Basil Soup",
-     "recipe_id": "3433260",
+     "name": "Butternut Squash Bisque",
+     "recipe_id": "3085330",
      "description": "",
-     "ingredients": "vegetable soup base (contains mushrooms), tomato sauce, carrots, onions, celery, sugar, canola/olive oil blend, rice vinegar, garlic, basil, salt, white pepper",
-     "allergens": [],
+     "ingredients": "butternut squash, vegetable soup base, carrots, onions, celery, butter, rice vinegar, cream, whole milk, flour, lemon, garlic, pepper, cinnamon, beet sugar, salt",
+     "allergens": [
+      "MILK",
+      "WHEAT"
+     ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
-      "vegan"
+      "vegetarian"
      ],
      "order": 10
     },
@@ -5312,13 +5255,16 @@
      "order": 0
     },
     {
-     "name": "Lomo Saltado Portobello",
-     "recipe_id": "1321231",
+     "name": "Peruvian Fava Bean Stew",
+     "recipe_id": "13513",
      "description": "",
-     "ingredients": "portobello mushroom, oil, red onion, tomato, cumin, coconut aminos, mushroom seasoning, aji amarillo paste, veg base, white vinegar, bell pepper, french fries/potatoes, cilantro",
-     "allergens": [],
+     "ingredients": "Fava beans, oil, red onion, garlic, aji paste, veg base, nutritional yeast, fire roasted tomatoes, diced potatoes, coconut cream, shredded kale",
+     "allergens": [
+      "COCONUT"
+     ],
      "trace_allergens": [],
      "tags": [
+      "gluten-free",
       "vegan"
      ],
      "order": 1
