@@ -6354,6 +6354,44 @@
   "vessel": "plate",
   "written_at": "2026-10-11T23:45:48+00:00"
  },
+ "35a579cc64c3": {
+  "avoid": [
+   "chicken",
+   "pork",
+   "tofu",
+   "steak cubes",
+   "taco",
+   "wrap",
+   "raw beef",
+   "mashed potatoes"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item sliced meat?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat ground or crumbled?",
+    "yes": false
+   },
+   {
+    "q": "Is the food in a wrap or taco?",
+    "yes": false
+   },
+   {
+    "q": "Is the main item fish or tofu?",
+    "yes": false
+   }
+  ],
+  "dish": "Chimichurri Flank Steak Bowl",
+  "look": "sliced grilled flank steak, bright green chunky chimichurri sauce, fluffy white rice with cilantro flecks, golden roasted corn kernels, sautéed green zucchini half-moons, charred halved brussel sprouts",
+  "model": "gemma-4-31b-it",
+  "name": "Chimichurri Flank Steak Bowl",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-21T23:36:47+00:00"
+ },
  "35d9a834ef63": {
   "avoid": [
    "raw chicken",
@@ -6508,6 +6546,42 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-26T20:19:44+00:00"
+ },
+ "373c8e18fb85": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "spaghetti",
+   "penne",
+   "long pasta noodles",
+   "mashed potatoes"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item small potato dumplings?",
+    "yes": true
+   },
+   {
+    "q": "Is the main item long pasta noodles?",
+    "yes": false
+   },
+   {
+    "q": "Are there pieces of meat or seafood in the dish?",
+    "yes": false
+   }
+  ],
+  "dish": "Truffle Butter Gnocchi",
+  "look": "small pillowy potato gnocchi dumplings, lightly browned edges, glossy pale yellow butter sauce, glistening texture, sprinkle of grated parmesan cheese, chopped fresh parsley",
+  "model": "gemma-4-31b-it",
+  "name": "Truffle Butter Gnocchi",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-21T23:40:21+00:00"
  },
  "376f903e513c": {
   "avoid": [
@@ -11106,6 +11180,42 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T05:33:17+00:00"
  },
+ "5df61256c6f9": {
+  "avoid": [
+   "beef",
+   "chicken",
+   "pork",
+   "fish",
+   "shrimp",
+   "sweet potatoes",
+   "orange wedges",
+   "mashed plantains",
+   "puree",
+   "plantain chips"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cooked plantain?",
+    "yes": true
+   },
+   {
+    "q": "Is the food mashed or pureed?",
+    "yes": false
+   },
+   {
+    "q": "Are there pieces of meat or fish?",
+    "yes": false
+   }
+  ],
+  "dish": "Roasted Plantains with Chimichurri",
+  "look": "slanted oval slices of roasted ripe plantain, yellow flesh with caramelized brown spots, glossy light drizzle of green herb chimichurri olive oil, fresh cilantro garnish",
+  "model": "gemini-3.6-flash",
+  "name": "Chimichurri Roasted Plantains",
+  "rev": 6,
+  "revisions": 1,
+  "vessel": "plate",
+  "written_at": "2026-10-22T00:48:55+00:00"
+ },
  "5e67d04e8728": {
   "avoid": [
    "meat",
@@ -14564,6 +14674,41 @@
   "vessel": "plate",
   "written_at": "2026-09-27T04:56:29+00:00"
  },
+ "7f3eff8f6a7c": {
+  "avoid": [
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "naan",
+   "rice",
+   "raw vegetables",
+   "soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a vegetable curry or stew?",
+    "yes": true
+   },
+   {
+    "q": "Are there chunks of meat or chicken in the sauce?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a thin soup or a dry stir-fry?",
+    "yes": false
+   }
+  ],
+  "dish": "Vegetable Curry",
+  "look": "thick reddish-brown curry sauce, whole chickpeas, chunks of zucchini, sliced carrots, soft translucent onions, diced celery, glossy texture, hearty vegetable stew",
+  "model": "gemma-4-31b-it",
+  "name": "Vegetable Curry",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-21T23:41:04+00:00"
+ },
  "7ffd2f1c4de7": {
   "avoid": [
    "meat",
@@ -15284,6 +15429,41 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-10T10:04:34+00:00"
+ },
+ "863fc25a2ecb": {
+  "avoid": [
+   "beef",
+   "steak",
+   "chicken",
+   "pork",
+   "fish",
+   "shrimp",
+   "burger bun",
+   "sandwich",
+   "raw mushrooms"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a large grilled mushroom?",
+    "yes": true
+   },
+   {
+    "q": "Is there any meat like beef or chicken?",
+    "yes": false
+   },
+   {
+    "q": "Is the mushroom served in a bun or as a sandwich?",
+    "yes": false
+   }
+  ],
+  "dish": "Chimichurri Portobello Mushroom Bowl",
+  "look": "large grilled portobello mushroom cap, vibrant green herby chimichurri sauce drizzled on top, charred yellow corn kernels, roasted green zucchini chunks, roasted broccoli florets, glistening roasted vegetables",
+  "model": "gemma-4-31b-it",
+  "name": "Chimichurri Portobello Steak Bowl",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-21T23:38:56+00:00"
  },
  "86ab20d5a48c": {
   "avoid": [
@@ -16835,6 +17015,40 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-18T08:10:17+00:00"
+ },
+ "90fdada42647": {
+  "avoid": [
+   "ground meat",
+   "beef",
+   "chicken",
+   "tortilla",
+   "taco",
+   "burrito",
+   "rice",
+   "beans"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item meat chunks in a red sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat ground or crumbled like mince?",
+    "yes": false
+   },
+   {
+    "q": "Is the food served inside a tortilla or wrap?",
+    "yes": false
+   }
+  ],
+  "dish": "Pork Chile Colorado",
+  "look": "tender cubes of stewed pork, thick glossy deep-red chili sauce, soft translucent pieces of cooked onion, rich hearty texture",
+  "model": "gemma-4-31b-it",
+  "name": "Pork Chili Colorado",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-21T23:38:11+00:00"
  },
  "911ebf6f19cd": {
   "avoid": [
@@ -26796,6 +27010,40 @@
   "vessel": "plate",
   "written_at": "2026-09-27T07:31:35+00:00"
  },
+ "df18d10146b5": {
+  "avoid": [
+   "beef",
+   "pork",
+   "tofu",
+   "rice",
+   "noodles",
+   "soup",
+   "skewers",
+   "raw chicken"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item chunks of meat and vegetables?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat ground or crumbled like mince?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a soup or broth?",
+    "yes": false
+   }
+  ],
+  "dish": "Mongolian Chicken Stir-Fry",
+  "look": "bite-sized chunks of browned chicken, glossy dark brown savory sauce, sliced red and green bell peppers, cut asparagus spears, translucent sautéed onion slices, scattered sliced green onions",
+  "model": "gemma-4-31b-it",
+  "name": "Mongolian Chicken Stir-Fry",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-21T23:37:27+00:00"
+ },
  "df2e88852ace": {
   "avoid": [
    "pasta",
@@ -30353,13 +30601,16 @@
  },
  "fb08f332a205": {
   "avoid": [
+   "breaded chicken",
+   "fried chicken",
+   "avocado",
+   "white cream sauce",
    "tortilla",
    "taco",
    "burrito",
    "rice",
    "beef",
-   "pork",
-   "raw chicken"
+   "platter"
   ],
   "checks": [
    {
@@ -30375,14 +30626,14 @@
     "yes": false
    }
   ],
-  "dish": "Mexican Chicken Quinoa Bowl",
-  "look": "cubed baked chicken breast, cooked quinoa, black beans, roasted yellow corn, roasted red and green bell peppers, red salsa, sprinkled white cotija cheese, toasted pumpkin seeds",
-  "model": "gemma-4-31b-it",
+  "dish": "Mexican chicken quinoa bowl",
+  "look": "golden-brown sliced baked chicken breast piled prominently over fluffy cooked quinoa, black beans, roasted sweet corn kernels, diced red bell peppers, spoonful of red tomato salsa, crumbled white cotija cheese, toasted green pumpkin seeds",
+  "model": "gemini-3.7-flash",
   "name": "Mexicali Chicken Bowl",
   "rev": 6,
-  "revisions": 0,
+  "revisions": 1,
   "vessel": "bowl",
-  "written_at": "2026-10-21T19:36:56+00:00"
+  "written_at": "2026-10-22T00:24:14+00:00"
  },
  "fb63f0f4bcf5": {
   "avoid": [
