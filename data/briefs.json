@@ -8664,6 +8664,40 @@
   "vessel": "plate",
   "written_at": "2026-09-27T04:56:29+00:00"
  },
+ "472f4206cd45": {
+  "avoid": [
+   "noodles",
+   "jjajangmyeon",
+   "pork",
+   "beef",
+   "shrimp",
+   "fried egg",
+   "raw vegetables",
+   "skewers"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a rice bowl topped with thick black bean sauce and chicken?",
+    "yes": true
+   },
+   {
+    "q": "Is the dish served over noodles instead of rice?",
+    "yes": false
+   },
+   {
+    "q": "Is the sauce red or clear instead of black?",
+    "yes": false
+   }
+  ],
+  "dish": "chicken jjajangbap",
+  "look": "steamed white rice, smothered in thick glossy dark black bean sauce, bite-sized cooked chicken thigh pieces, tender diced potatoes, diced zucchini, soft onions, chopped cabbage, rich dark sheen",
+  "model": "gemini-flash-latest",
+  "name": "Jjajang Chicken Rice Bowl",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-22T08:46:00+00:00"
+ },
  "474d867358ea": {
   "avoid": [
    "meat",
@@ -10046,6 +10080,43 @@
   "vessel": "plate",
   "written_at": "2026-09-28T18:08:01+00:00"
  },
+ "529902cdc508": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "chili",
+   "beans",
+   "skillet",
+   "frosting",
+   "muffins"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a slice of golden cornbread?",
+    "yes": true
+   },
+   {
+    "q": "Does the cornbread have meat or chili poured over it?",
+    "yes": false
+   },
+   {
+    "q": "Is the item frosted like a cupcake or cake?",
+    "yes": false
+   }
+  ],
+  "dish": "honey butter cornbread",
+  "look": "thick square slice of golden-yellow cornbread, coarse crumb, browned crust, melting square pat of pale butter on top, glossy amber honey drizzle running down the sides",
+  "model": "gemini-flash-latest",
+  "name": "Honey Butter Cornbread",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-22T08:46:00+00:00"
+ },
  "530923e310e8": {
   "avoid": [
    "rice",
@@ -11394,6 +11465,41 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-26T20:10:26+00:00"
+ },
+ "60e31dd804c2": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "noodles",
+   "jjajangmyeon",
+   "fried egg"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a rice bowl topped with dark black bean sauce and tofu?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat, chicken, or seafood visible?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish served over noodles instead of rice?",
+    "yes": false
+   }
+  ],
+  "dish": "tofu jjajangbap",
+  "look": "steamed white rice, generous ladle of thick glossy black bean sauce, golden pan-fried tofu cubes, tender diced zucchini, sautéed diced yellow onions, soft green cabbage pieces",
+  "model": "gemini-flash-latest",
+  "name": "jjajang tofu and vegetables rice bowl",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-22T08:46:00+00:00"
  },
  "61200815510a": {
   "avoid": [
@@ -12989,6 +13095,40 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-26T23:15:26+00:00"
+ },
+ "6f477dbab410": {
+  "avoid": [
+   "red chili sauce",
+   "gochujang",
+   "buffalo sauce",
+   "rice bowl",
+   "soup",
+   "salad",
+   "raw chicken",
+   "skewers"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item glazed browned chicken pieces?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken coated in a bright red sauce?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish served as a soup or broth?",
+    "yes": false
+   }
+  ],
+  "dish": "Korean soy garlic chicken",
+  "look": "glazed golden-brown chicken pieces, glossy amber soy garlic sauce coating, caramelized dark edges, sticky sheen, light sprinkle of toasted white sesame seeds, sliced green scallions",
+  "model": "gemini-flash-latest",
+  "name": "Soy Garlic Chicken",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-22T08:46:00+00:00"
  },
  "6ffc8fd6ef8e": {
   "avoid": [
