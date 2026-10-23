@@ -745,6 +745,42 @@
   "vessel": "plate",
   "written_at": "2026-09-27T04:40:44+00:00"
  },
+ "0834c532ff54": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "chunky soup",
+   "clear broth",
+   "noodles",
+   "grilled cheese sandwich"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a creamy orange or red soup?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat or seafood in the soup?",
+    "yes": false
+   },
+   {
+    "q": "Is the soup clear or full of large chunks?",
+    "yes": false
+   }
+  ],
+  "dish": "tomato bisque",
+  "look": "smooth velvety orange-red puréed tomato soup, delicate swirl of white heavy cream on the surface, glossy texture, rich deep reddish-orange color, light dusting of ground red paprika",
+  "model": "gemini-flash-latest",
+  "name": "Tomato Bisque",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-23T08:45:49+00:00"
+ },
  "083edce3959f": {
   "avoid": [
    "chicken",
@@ -7412,6 +7448,38 @@
   "vessel": "plate",
   "written_at": "2026-09-27T05:33:17+00:00"
  },
+ "3c4c777a6541": {
+  "avoid": [
+   "raw chicken",
+   "french fries",
+   "ranch dressing",
+   "celery sticks",
+   "rice",
+   "soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item fried chicken wings?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken raw or pale boiled meat?",
+    "yes": false
+   },
+   {
+    "q": "Are the wings dry without sauce or glaze?",
+    "yes": false
+   }
+  ],
+  "dish": "Korean fried chicken wings",
+  "look": "crispy fried chicken wings and drumettes, glossy reddish-brown sticky glaze, scattered toasted white sesame seeds, finely sliced green onions, crunchy caramelized exterior",
+  "model": "gemini-flash-latest",
+  "name": "Crispy Korean Chicken Wings",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-23T08:44:54+00:00"
+ },
  "3c60e7f1e1f1": {
   "avoid": [
    "raw chicken",
@@ -10116,11 +10184,13 @@
    "fish",
    "shrimp",
    "bones",
-   "raw meat"
+   "breading",
+   "breadcrumbs",
+   "batter"
   ],
   "checks": [
    {
-    "q": "Is the main item a plant-based chick'n piece?",
+    "q": "Is the main item cutlet pieces?",
     "yes": true
    },
    {
@@ -10132,14 +10202,14 @@
     "yes": false
    }
   ],
-  "dish": "vegan lemon chick'n",
-  "look": "golden plant-based grilled chick'n cutlet strips, glossy citrus lemon glaze, savory light brown pan jus, roasted garlic cloves",
-  "model": "gemini-3.6-flash",
+  "dish": "Cuban lemon chicken",
+  "look": "grilled plant-based chick'n cutlet strips, dark char marks, seared golden edges, glossy Cuban lemon citrus glaze, savory amber pan jus, tender roasted garlic cloves, fresh lemon wheel garnish",
+  "model": "gemini-3.7-flash",
   "name": "Plant Forward Cuban Lemon \"Chick'n\"",
   "rev": 6,
-  "revisions": 0,
+  "revisions": 1,
   "vessel": "plate",
-  "written_at": "2026-10-22T23:38:35+00:00"
+  "written_at": "2026-10-23T09:36:06+00:00"
  },
  "5237eebdff4f": {
   "avoid": [
@@ -11488,6 +11558,38 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-10-10T19:35:36+00:00"
+ },
+ "600e9af40dc5": {
+  "avoid": [
+   "tacos",
+   "tortilla chips",
+   "bowl",
+   "soup",
+   "salad",
+   "burger"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a rolled burrito?",
+    "yes": true
+   },
+   {
+    "q": "Is the food served as open tacos or nachos?",
+    "yes": false
+   },
+   {
+    "q": "Is the food a salad or rice bowl without a tortilla wrap?",
+    "yes": false
+   }
+  ],
+  "dish": "beef and chicken burrito",
+  "look": "large flour tortilla burrito, toasted golden-brown exterior, cut in half to reveal filling, tender seared beef strips, diced cooked chicken breast, wrapped tightly, warm savory filling",
+  "model": "gemini-flash-latest",
+  "name": "FloMo's Burrito Bar",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-23T08:44:54+00:00"
  },
  "606e8e026338": {
   "avoid": [
@@ -14771,6 +14873,41 @@
   "vessel": "plate",
   "written_at": "2026-10-13T10:53:24+00:00"
  },
+ "7dbc3e77a309": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "cheese",
+   "cream",
+   "rice"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food cooked lentils or beans?",
+    "yes": true
+   },
+   {
+    "q": "Does the dish contain meat or bacon?",
+    "yes": false
+   },
+   {
+    "q": "Does the dish contain cheese or dairy cream?",
+    "yes": false
+   }
+  ],
+  "dish": "braised lentils",
+  "look": "tender simmered brown and green lentils, rich savory vegetable broth, finely diced orange carrots, diced celery, minced onions, garnished with chopped fresh flat-leaf parsley",
+  "model": "gemini-flash-latest",
+  "name": "Flavor Forward Legumes",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-23T08:44:54+00:00"
+ },
  "7dd5a5ea602e": {
   "avoid": [
    "meat",
@@ -17426,6 +17563,41 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-10-01T20:34:12+00:00"
+ },
+ "9282501c292b": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "cheese",
+   "sour cream",
+   "bacon"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food a bean stew?",
+    "yes": true
+   },
+   {
+    "q": "Does the dish contain meat or bacon?",
+    "yes": false
+   },
+   {
+    "q": "Does the dish contain cheese or dairy cream?",
+    "yes": false
+   }
+  ],
+  "dish": "black beans with vegetables",
+  "look": "black bean stew, tender black beans in rich dark savory broth, diced pale-green chayote squash, chopped red tomatoes, sliced green jalapeno peppers, chopped fresh cilantro, sliced green onions",
+  "model": "gemini-flash-latest",
+  "name": "Frijoles Con Verduras",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-23T08:44:54+00:00"
  },
  "93695a59d399": {
   "avoid": [
@@ -23792,6 +23964,41 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T05:33:17+00:00"
  },
+ "c373b4c6a34b": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "whole uncut persimmons",
+   "croutons",
+   "pasta"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a leafy green salad topped with sliced fruit?",
+    "yes": true
+   },
+   {
+    "q": "Are there slices of meat, poultry, or seafood on the salad?",
+    "yes": false
+   },
+   {
+    "q": "Are the persimmons whole and uncut?",
+    "yes": false
+   }
+  ],
+  "dish": "grilled persimmon salad",
+  "look": "fresh dark green watercress, spiky arugula leaves, charred grilled orange persimmon slices with dark grill marks, crumbled creamy white goat cheese curds, toasted brown walnut pieces, glossy dressing flecked with tiny black poppyseeds",
+  "model": "gemini-flash-latest",
+  "name": "Grilled Persimmon Salad",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-23T08:45:49+00:00"
+ },
  "c391bc87a5d0": {
   "avoid": [
    "meat",
@@ -23961,6 +24168,38 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T06:57:19+00:00"
+ },
+ "c460a09a7385": {
+  "avoid": [
+   "full size hamburger patty",
+   "ground beef patty",
+   "hot dog",
+   "french fries",
+   "bacon slices",
+   "sliced deli meat"
+  ],
+  "checks": [
+   {
+    "q": "Is the food a slider sandwich?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat a solid ground burger patty?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat sliced deli cold cuts?",
+    "yes": false
+   }
+  ],
+  "dish": "pulled pork sliders",
+  "look": "slider sandwich, split golden-brown brioche bun, mound of shredded tender barbecue pulled pork, rich dark-red barbecue sauce, topped with shredded green and purple cabbage coleslaw",
+  "model": "gemini-flash-latest",
+  "name": "Mini Pulled Pork Sliders",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-23T08:44:54+00:00"
  },
  "c4f68d1824cd": {
   "avoid": [
@@ -28701,6 +28940,40 @@
   "vessel": "plate",
   "written_at": "2026-10-03T08:46:53+00:00"
  },
+ "eb2932382f79": {
+  "avoid": [
+   "meat",
+   "beef",
+   "chicken",
+   "pork",
+   "fish",
+   "shrimp",
+   "bacon",
+   "tacos"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food a rolled burrito?",
+    "yes": true
+   },
+   {
+    "q": "Does the burrito contain meat or seafood?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish served as open tacos or nachos?",
+    "yes": false
+   }
+  ],
+  "dish": "vegetable burrito",
+  "look": "warm flour tortilla burrito, halved on diagonal showing filling, sauteed green zucchini, yellow squash, red bell pepper slices, whole pinto beans, white jasmine rice, yellow corn kernels, melted shredded cheddar and jack cheese, green salsa verde",
+  "model": "gemini-flash-latest",
+  "name": "Vegetable Burrito",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-23T08:44:54+00:00"
+ },
  "eb2b0b0c3ca7": {
   "avoid": [
    "meat",
@@ -29543,6 +29816,41 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-29T17:24:02+00:00"
+ },
+ "efc78115feff": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "fillings",
+   "tacos",
+   "chips"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a flat round tortilla?",
+    "yes": true
+   },
+   {
+    "q": "Are there fillings wrapped or rolled inside?",
+    "yes": false
+   },
+   {
+    "q": "Is the tortilla cut or fried into chips?",
+    "yes": false
+   }
+  ],
+  "dish": "whole wheat tortilla",
+  "look": "single round whole wheat tortilla, warm light-brown color, pale tan flecks, toasted light-brown char spots across surface, soft pliable flatbread, served flat",
+  "model": "gemini-flash-latest",
+  "name": "Wheat Tortilla",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-23T08:44:54+00:00"
  },
  "efe63b23db6f": {
   "avoid": [
@@ -31666,6 +31974,41 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T05:30:31+00:00"
+ },
+ "ff852043fefe": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "sandwich fillings",
+   "burger patty",
+   "sliced loaf bread"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a single bread roll?",
+    "yes": true
+   },
+   {
+    "q": "Is the roll made into a filled sandwich or burger?",
+    "yes": false
+   },
+   {
+    "q": "Is the bread sliced sandwich loaf bread?",
+    "yes": false
+   }
+  ],
+  "dish": "French roll",
+  "look": "individual French roll, crisp golden-brown crust, elongated oval shape, deep diagonal score mark down center, soft pale interior crumb showing through crust slash, dusted lightly with flour",
+  "model": "gemini-flash-latest",
+  "name": "Plain French Roll",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-23T08:44:54+00:00"
  },
  "ffaa271f2b1f": {
   "avoid": [
