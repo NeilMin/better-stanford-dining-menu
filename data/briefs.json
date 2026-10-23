@@ -6102,6 +6102,41 @@
   "vessel": "plate",
   "written_at": "2026-09-27T04:33:15+00:00"
  },
+ "3413233b9880": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "noodles",
+   "broth",
+   "raw vegetables"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a stir-fry of protein strips and vegetables?",
+    "yes": true
+   },
+   {
+    "q": "Is the dish submerged in soup or liquid broth?",
+    "yes": false
+   },
+   {
+    "q": "Are the vegetables raw and uncooked?",
+    "yes": false
+   }
+  ],
+  "dish": "plant-based beef stir-fry",
+  "look": "browned strips of plant-based protein, cut green beans, sliced red bell peppers, dark purple eggplant chunks, sautéed onion ribbons, glossy dark brown savory glaze coating every piece",
+  "model": "gemini-flash-latest",
+  "name": "Plant-Forward \"Beef\" Stir Fry",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-23T19:26:54+00:00"
+ },
  "341aaf40891f": {
   "avoid": [
    "pumpkin pie",
@@ -22445,6 +22480,40 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-10-17T07:55:50+00:00"
+ },
+ "b675336aab22": {
+  "avoid": [
+   "tacos",
+   "tortillas",
+   "shredded meat",
+   "pulled pork",
+   "sandwiches",
+   "skewers",
+   "raw meat",
+   "uncut roast"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item sliced meat in a red sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat shredded or pulled?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat wrapped in a tortilla or flatbread?",
+    "yes": false
+   }
+  ],
+  "dish": "pork loin in adobo sauce",
+  "look": "thick medallions of roasted pork loin, coated in a rich deep reddish-brown ancho chile sauce, tender meat fibers visible along cut edges, glistening sauce pooling at the base, roasted onion slivers",
+  "model": "gemini-flash-latest",
+  "name": "LOMO DE CERDO ADOBADO",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-23T19:26:54+00:00"
  },
  "b6cf6ab4c1fa": {
   "avoid": [
