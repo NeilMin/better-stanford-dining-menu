@@ -1138,20 +1138,30 @@
   ]
  },
  "09d579a78a5a": {
+  "brief_rev": 6,
   "category": "pork",
   "first_seen": "2026-10-28",
+  "generated_at": "2026-10-23T00:02:14+00:00",
   "icon": "plate",
-  "image": null,
+  "image": "09d579a78a5a.webp",
   "ingredients": "(non-halal) pork, pibil marinade (onion, achiote paste, lime juice, orange juice, allspice, clove, cumin, oregano, cinnamon, garlic, salt, black pepper), pibil sauce (annatto seed, spices, vinegar, salt, water, garlic, cornmeal, cuminseed, onions, garlic, oregano leaves, limes, oranges, allspice, cinnamon sticks, black pepper, cloves, salt)",
   "is_station": false,
+  "judge": {
+   "at": "2026-10-23T00:02:14+00:00",
+   "judge": "gemma-4-26b-a4b-it",
+   "seen": "Shredded meat in a red sauce topped with pickled red onions, served with lime slices and cucumber slices."
+  },
   "last_seen": "2026-10-28",
   "min_order": 0,
+  "model": "sdxl",
   "name": "Pork Pibil",
   "needs_image": true,
   "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
   "placeholder": false,
   "priority": 0,
   "prompt": "Pork Pibil, tender cooked pork cuts, succulent meat texture, browned edges, made with pork, pibil marinade, pibil sauce, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "prompt_rev": 9,
+  "seed": 164985255,
   "station_only": false,
   "tags": []
  },
@@ -8186,20 +8196,30 @@
   "tags": []
  },
  "3c60e7f1e1f1": {
+  "brief_rev": 6,
   "category": "poultry",
   "first_seen": "2026-10-26",
+  "generated_at": "2026-10-23T00:04:00+00:00",
   "icon": "plate",
-  "image": null,
+  "image": "3c60e7f1e1f1.webp",
   "ingredients": "chicken, cuban lemon glaze (tamari, lemon juice, rice vinegar, brown sugar, ginger, garlic, corn starch, lemon zest), au jus sauce (canola/olive oil blend, flour, butter, carrot, celery, onion, thyme, chicken soup base, pepper, salt, bay leaf), canola/olive oil blend, garlic",
   "is_station": false,
+  "judge": {
+   "at": "2026-10-23T00:03:59+00:00",
+   "judge": "gemma-4-26b-a4b-it",
+   "seen": "Two roasted chicken legs served in a light sauce with rosemary sprigs and lemon slices on a white plate."
+  },
   "last_seen": "2026-10-26",
   "min_order": 0,
+  "model": "sdxl",
   "name": "Cuban Lemon Chicken",
   "needs_image": true,
   "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
   "placeholder": false,
   "priority": 0,
   "prompt": "Cuban Lemon Chicken, tender cooked chicken, succulent poultry texture, made with chicken, cuban lemon glaze, au jus sauce, garlic, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "prompt_rev": 9,
+  "seed": 1012983793,
   "station_only": false,
   "tags": []
  },
@@ -11086,6 +11106,17 @@
   "placeholder": false,
   "priority": 1,
   "prompt": "Plant Forward Cuban Lemon \"Chick'n\", made with plant-forward \"chick'n\", Cuban lemon glaze, au jus sauce, garlic, plant-based, no meat, no dairy, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "rejected": {
+   "at": "2026-10-23T01:16:53+00:00",
+   "brief_rev": 6,
+   "failed": [
+    "Is the main item a plant-based chick'n piece?",
+    "Does the food contain real meat or chicken bones?"
+   ],
+   "pictures": 4,
+   "seen": "Roasted chicken pieces served with lemon slices in a light sauce.",
+   "tries": 1
+  },
   "station_only": false,
   "tags": [
    "vegan"
@@ -21517,20 +21548,30 @@
   ]
  },
  "a15f4b832811": {
+  "brief_rev": 6,
   "category": "pork",
   "first_seen": "2026-10-26",
+  "generated_at": "2026-10-23T00:20:29+00:00",
   "icon": "plate",
-  "image": null,
+  "image": "a15f4b832811.webp",
   "ingredients": "pork, oil, onion, garlic, bay leaf, oregano, chicken base, guajillo, hominy, salt, pepper, toppings: cabbage, radish, lemon",
   "is_station": false,
+  "judge": {
+   "at": "2026-10-23T00:20:29+00:00",
+   "judge": "gemma-4-26b-a4b-it",
+   "seen": "A bowl of red broth soup topped with meat, corn kernels, sliced radishes, white cream, and cilantro."
+  },
   "last_seen": "2026-10-28",
   "min_order": 3,
+  "model": "sdxl",
   "name": "Wendy's Pork Posole",
   "needs_image": true,
   "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
   "placeholder": false,
   "priority": 0,
   "prompt": "Wendy's Pork Posole, tender cooked pork cuts, succulent meat texture, browned edges, made with pork, onion, garlic, oregano, guajillo, hominy, toppings: cabbage, radish, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "prompt_rev": 9,
+  "seed": 2707377027,
   "station_only": false,
   "tags": []
  },
@@ -24241,20 +24282,30 @@
   ]
  },
  "b232bafdcd81": {
+  "brief_rev": 6,
   "category": "pork",
   "first_seen": "2026-10-26",
+  "generated_at": "2026-10-23T00:18:41+00:00",
   "icon": "plate",
-  "image": null,
+  "image": "b232bafdcd81.webp",
   "ingredients": "pork belly, honey, orange juice, tamari sauce, cornstarch, ground cumin, onion powder, garlic powder, smoked paprika, olive/canola blended oil, salt, black pepper",
   "is_station": false,
+  "judge": {
+   "at": "2026-10-23T00:18:41+00:00",
+   "judge": "gemma-4-26b-a4b-it",
+   "seen": "Three thick pieces of glazed meat sitting in a dark sauce on a white rectangular plate."
+  },
   "last_seen": "2026-10-28",
   "min_order": 8,
+  "model": "sdxl",
   "name": "Honey Citrus Glazed Pork Belly",
   "needs_image": true,
   "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
   "placeholder": false,
   "priority": 0,
   "prompt": "Honey Citrus Glazed Pork Belly, tender cooked pork cuts, succulent meat texture, browned edges, made with pork belly, honey, tamari sauce, ground cumin, smoked paprika, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "prompt_rev": 9,
+  "seed": 2989669117,
   "station_only": false,
   "tags": [
    "gluten-free"
@@ -34182,20 +34233,30 @@
   ]
  },
  "fae6e9edfe5f": {
+  "brief_rev": 6,
   "category": "poultry",
   "first_seen": "2026-10-26",
+  "generated_at": "2026-10-23T00:01:38+00:00",
   "icon": "plate",
-  "image": null,
+  "image": "fae6e9edfe5f.webp",
   "ingredients": "chicken, teriyaki marinade (canola oil, alcohol free mirin, alcohol free tamari, garlic, chili powder), teriyaki glaze (beet sugar, alcohol free tamari, cornstarch, canola oil), onions, bok choy",
   "is_station": false,
+  "judge": {
+   "at": "2026-10-23T00:01:38+00:00",
+   "judge": "gemma-4-26b-a4b-it",
+   "seen": "Sliced meat in a dark sauce served over white rice with a side of green leafy vegetables."
+  },
   "last_seen": "2026-10-26",
   "min_order": 0,
+  "model": "sdxl",
   "name": "Star Ginger Teriyaki Chicken",
   "needs_image": true,
   "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
   "placeholder": false,
   "priority": 0,
   "prompt": "Star Ginger Teriyaki Chicken, tender cooked chicken, succulent poultry texture, made with chicken, teriyaki marinade, teriyaki glaze, onions, bok choy, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "prompt_rev": 9,
+  "seed": 4209437165,
   "station_only": false,
   "tags": [
    "gluten-free"
@@ -34875,20 +34936,30 @@
   ]
  },
  "fe3fc34c6795": {
+  "brief_rev": 6,
   "category": "seafood",
   "first_seen": "2026-10-23",
+  "generated_at": "2026-10-23T00:00:54+00:00",
   "icon": "plate",
-  "image": null,
+  "image": "fe3fc34c6795.webp",
   "ingredients": "salmon, canola/olive oil blend, dill, parsley, breadcrumbs, salt, black pepper, remoulade (mayonnaise, lemon juice, dijon mustard, ketchup, pickle relish, shallot, red wine vinegar, parsley, salt, pepper)",
   "is_station": false,
+  "judge": {
+   "at": "2026-10-23T00:00:54+00:00",
+   "judge": "gemma-4-26b-a4b-it",
+   "seen": "A piece of pink fish topped with a green herb sauce, served on a white plate with a side of fresh green herbs."
+  },
   "last_seen": "2026-10-23",
   "min_order": 0,
+  "model": "sdxl",
   "name": "Herb Crusted Salmon with Remoulade",
   "needs_image": true,
   "negative": "pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
   "placeholder": false,
   "priority": 0,
   "prompt": "Herb Crusted Salmon with Remoulade, delicate flaky fish fillet or fresh seafood, glistening glaze, made with salmon, dill, parsley, remoulade, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "prompt_rev": 9,
+  "seed": 4265591628,
   "station_only": false,
   "tags": []
  },

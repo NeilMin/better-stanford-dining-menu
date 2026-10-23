@@ -950,6 +950,38 @@
   "vessel": "plate",
   "written_at": "2026-10-01T20:14:18+00:00"
  },
+ "09d579a78a5a": {
+  "avoid": [
+   "tacos",
+   "tortillas",
+   "burrito",
+   "nachos",
+   "pork chop",
+   "raw pork"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item shredded or braised meat in red sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat served inside a taco shell or wrap?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat an intact un-shredded steak or chop?",
+    "yes": false
+   }
+  ],
+  "dish": "cochinita pibil",
+  "look": "tender shredded braised pork, rich reddish-orange achiote pibil sauce, moist juicy meat shreds, topped with thin sliced pink pickled red onion",
+  "model": "gemini-3.6-flash",
+  "name": "Pork Pibil",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-22T23:38:35+00:00"
+ },
  "0a2f3946fb2f": {
   "avoid": [
    "meat",
@@ -7380,6 +7412,38 @@
   "vessel": "plate",
   "written_at": "2026-09-27T05:33:17+00:00"
  },
+ "3c60e7f1e1f1": {
+  "avoid": [
+   "raw chicken",
+   "skewers",
+   "breaded chicken",
+   "fried chicken",
+   "soup",
+   "lemons"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item roasted or grilled chicken?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken breaded or deep fried?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a soup or broth?",
+    "yes": false
+   }
+  ],
+  "dish": "Cuban lemon chicken",
+  "look": "golden roasted chicken piece, glossy citrus lemon glaze, light savory brown pan jus, roasted garlic cloves, caramelized skin",
+  "model": "gemini-3.6-flash",
+  "name": "Cuban Lemon Chicken",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-22T23:38:35+00:00"
+ },
  "3cbe33a6bb4f": {
   "avoid": [
    "bacon",
@@ -10042,6 +10106,40 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-26T23:11:26+00:00"
+ },
+ "51d6f263d5bf": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "bones",
+   "raw meat"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a plant-based chick'n piece?",
+    "yes": true
+   },
+   {
+    "q": "Does the food contain real meat or chicken bones?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a liquid soup or broth?",
+    "yes": false
+   }
+  ],
+  "dish": "vegan lemon chick'n",
+  "look": "golden plant-based grilled chick'n cutlet strips, glossy citrus lemon glaze, savory light brown pan jus, roasted garlic cloves",
+  "model": "gemini-3.6-flash",
+  "name": "Plant Forward Cuban Lemon \"Chick'n\"",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-22T23:38:35+00:00"
  },
  "5237eebdff4f": {
   "avoid": [
@@ -19098,6 +19196,38 @@
   "vessel": "plate",
   "written_at": "2026-10-15T23:11:09+00:00"
  },
+ "a15f4b832811": {
+  "avoid": [
+   "dry pork",
+   "tacos",
+   "burrito",
+   "raw pork",
+   "clear soup",
+   "tortilla chips"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a broth soup containing meat and hominy kernels?",
+    "yes": true
+   },
+   {
+    "q": "Is the dish served dry on a plate without broth?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish wrapped inside a tortilla?",
+    "yes": false
+   }
+  ],
+  "dish": "pork pozole rojo",
+  "look": "rich red guajillo chili broth stew, tender braised pork chunks, large puffy white hominy corn kernels, shredded green cabbage, sliced radishes",
+  "model": "gemini-3.6-flash",
+  "name": "Wendy's Pork Posole",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-22T23:38:35+00:00"
+ },
  "a16044ca8279": {
   "avoid": [
    "meat",
@@ -21516,6 +21646,38 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-05T10:46:18+00:00"
+ },
+ "b232bafdcd81": {
+  "avoid": [
+   "bacon strips",
+   "shredded pork",
+   "raw pork",
+   "skewers",
+   "soup",
+   "sandwiches"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item thick slices or pieces of glazed pork belly?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat thin crisp breakfast bacon strips?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat finely shredded like pulled pork?",
+    "yes": false
+   }
+  ],
+  "dish": "honey glazed pork belly",
+  "look": "thick seared slices of pork belly, glossy dark mahogany honey tamari glaze, crisp caramelized brown edges, tender layers of fat and meat",
+  "model": "gemini-3.6-flash",
+  "name": "Honey Citrus Glazed Pork Belly",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-22T23:38:35+00:00"
  },
  "b25317f79275": {
   "avoid": [
@@ -30808,6 +30970,38 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T05:07:50+00:00"
  },
+ "fae6e9edfe5f": {
+  "avoid": [
+   "skewers",
+   "raw chicken",
+   "fried chicken",
+   "soup",
+   "noodles",
+   "curry"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item sliced meat in dark sauce with vegetables?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken served on wooden skewers?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a liquid soup?",
+    "yes": false
+   }
+  ],
+  "dish": "chicken teriyaki stir-fry",
+  "look": "sliced glazed chicken, shiny dark brown teriyaki sauce, wilted green bok choy leaves, tender sliced white onions, glossy sauce sheen",
+  "model": "gemini-3.6-flash",
+  "name": "Star Ginger Teriyaki Chicken",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-22T23:38:35+00:00"
+ },
  "fb08f332a205": {
   "avoid": [
    "breaded chicken",
@@ -31405,6 +31599,39 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-10-01T10:31:58+00:00"
+ },
+ "fe3fc34c6795": {
+  "avoid": [
+   "white fish",
+   "beef",
+   "chicken",
+   "raw fish",
+   "sushi",
+   "salmon roll",
+   "soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a fillet of pink fish?",
+    "yes": true
+   },
+   {
+    "q": "Is the fish raw like sushi?",
+    "yes": false
+   },
+   {
+    "q": "Is the main item white fish or poultry?",
+    "yes": false
+   }
+  ],
+  "dish": "herb-crusted salmon",
+  "look": "seared salmon fillet, green herb crust with dill and parsley, dollop of creamy beige remoulade sauce, flaky pink fish flesh",
+  "model": "gemini-3.6-flash",
+  "name": "Herb Crusted Salmon with Remoulade",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-22T23:38:35+00:00"
  },
  "fead3e292f02": {
   "avoid": [
