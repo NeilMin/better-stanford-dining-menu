@@ -3054,6 +3054,42 @@
   "vessel": "plate",
   "written_at": "2026-09-30T10:02:25+00:00"
  },
+ "1ca04f9fde80": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "bacon",
+   "spam",
+   "fish",
+   "shrimp",
+   "fried egg",
+   "raw rice"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish fried rice tinted reddish-orange?",
+    "yes": true
+   },
+   {
+    "q": "Is there a fried egg on top?",
+    "yes": false
+   },
+   {
+    "q": "Are there pieces of meat, pork, or seafood?",
+    "yes": false
+   }
+  ],
+  "dish": "kimchi fried rice",
+  "look": "cooked fried rice grains coated in reddish-orange kimchi sauce, chopped spicy Napa cabbage pieces, diced orange carrots, green peas, diced translucent onions, sprinkled with sliced green onions",
+  "model": "gemini-flash-latest",
+  "name": "Kimchi Fried Rice",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-24T08:20:42+00:00"
+ },
  "1cbb8d5a3d88": {
   "avoid": [
    "meat",
@@ -11942,6 +11978,41 @@
   "vessel": "bowl",
   "written_at": "2026-10-10T00:10:11+00:00"
  },
+ "6290126550ca": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "bacon bits",
+   "chili",
+   "fish",
+   "shrimp",
+   "french fries"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item crispy cylindrical tater tots covered in melted cheese?",
+    "yes": true
+   },
+   {
+    "q": "Are there bacon bits, ground beef, or chili on top?",
+    "yes": false
+   },
+   {
+    "q": "Is the potato in the form of long thin french fries?",
+    "yes": false
+   }
+  ],
+  "dish": "cheesy tater tots",
+  "look": "a pile of cylindrical golden-brown crispy potato tater tots, blanketed in melted stringy white mozzarella cheese, garnished with finely chopped green scallions",
+  "model": "gemini-flash-latest",
+  "name": "Cheesy Tater Tots",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-24T08:20:42+00:00"
+ },
  "6365c6d5ff7b": {
   "avoid": [
    "meat",
@@ -20353,6 +20424,42 @@
   "vessel": "plate",
   "written_at": "2026-10-07T20:53:43+00:00"
  },
+ "a881ea29ef7e": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "pepperoni",
+   "bacon",
+   "fish",
+   "shrimp",
+   "pizza",
+   "tomato sauce"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item sliced bread filled with melted cheese?",
+    "yes": true
+   },
+   {
+    "q": "Is there meat like pepperoni, ham, or bacon inside or on top?",
+    "yes": false
+   },
+   {
+    "q": "Is it a flat round pizza?",
+    "yes": false
+   }
+  ],
+  "dish": "stuffed garlic bread",
+  "look": "thick slices of crusty golden-brown Italian bread, split open, filled with melted gooey white mozzarella cheese, glistening toasted garlic crust, flecks of dried green parsley",
+  "model": "gemini-flash-latest",
+  "name": "Stuffed Garlic Bread",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-24T08:20:42+00:00"
+ },
  "a8b9b1a7939d": {
   "avoid": [
    "tortillas",
@@ -24067,6 +24174,42 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-23T08:45:49+00:00"
+ },
+ "c3905b1b2de9": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "creamy sauce",
+   "cheese",
+   "soup",
+   "raw mushrooms"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a cooked rice and mushroom dish?",
+    "yes": true
+   },
+   {
+    "q": "Are there visible pieces of meat, poultry, or fish?",
+    "yes": false
+   },
+   {
+    "q": "Is it a broth-based liquid soup?",
+    "yes": false
+   }
+  ],
+  "dish": "wild rice and mushroom pilaf",
+  "look": "fluffy blend of dark wild rice and brown rice grains, tender sautéed sliced brown button mushrooms, glistening cooked garlic bits, garnished with finely chopped fresh green parsley",
+  "model": "gemini-flash-latest",
+  "name": "Wild Rice & Mushroom Pilaf",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-24T08:20:42+00:00"
  },
  "c391bc87a5d0": {
   "avoid": [
@@ -30919,6 +31062,42 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-29T20:18:23+00:00"
+ },
+ "f7745a6ea56d": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "bacon",
+   "sausage",
+   "fish",
+   "shrimp",
+   "fried chicken",
+   "pancakes"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item waffles with a square grid pattern?",
+    "yes": true
+   },
+   {
+    "q": "Is there fried chicken or other meat on or beside the waffles?",
+    "yes": false
+   },
+   {
+    "q": "Are they flat round pancakes instead of waffles?",
+    "yes": false
+   }
+  ],
+  "dish": "Belgian waffles",
+  "look": "two golden-brown waffles, deep square grid pattern, crisp browned ridges, fluffy interior, pat of melting yellow butter, drizzle of warm amber maple syrup",
+  "model": "gemini-flash-latest",
+  "name": "Homestyle Waffles",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-24T08:20:42+00:00"
  },
  "f7b6d5499609": {
   "avoid": [
