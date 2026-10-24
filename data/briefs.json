@@ -12158,6 +12158,41 @@
   "vessel": "bowl",
   "written_at": "2026-10-02T10:03:48+00:00"
  },
+ "64c3e2fc45b2": {
+  "avoid": [
+   "meatballs",
+   "sliced steak",
+   "chicken",
+   "alfredo sauce",
+   "white sauce",
+   "pesto",
+   "garlic bread",
+   "side salad",
+   "raw pasta"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish pasta tossed or topped with red meat sauce?",
+    "yes": true
+   },
+   {
+    "q": "Are there meatballs on the pasta?",
+    "yes": false
+   },
+   {
+    "q": "Is the sauce white, creamy, or green?",
+    "yes": false
+   }
+  ],
+  "dish": "Pasta Bolognese",
+  "look": "tangled mound of al dente pasta ribbons, coated in thick savory red-brown Bolognese sauce, crumbled ground beef, simmered crushed tomatoes, glossy sauce clinging to noodles, light dusting of grated parmesan cheese, flecks of finely chopped parsley",
+  "model": "gemini-flash-latest",
+  "name": "Pasta Bolognese",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-24T18:27:03+00:00"
+ },
  "650d25f97736": {
   "avoid": [
    "chicken",
