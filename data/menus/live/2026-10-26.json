@@ -1,6 +1,6 @@
 {
  "date": "2026-10-26",
- "scraped_at": "2026-10-24T15:32:04-07:00",
+ "scraped_at": "2026-10-25T01:30:34-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -4353,16 +4353,25 @@
      "order": 0
     },
     {
-     "name": "Greek-Spiced Chickpea & Eggplant",
-     "recipe_id": "GreekChickEgg1",
+     "name": "Loco Moco",
+     "recipe_id": "5615760",
      "description": "",
-     "ingredients": "eggplant, chickpeas, onions, tomatoes, garlic, lemon juice, parsley, oregano, cumin, paprika, olive/canola oil blend, salt, black pepper",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan"
+     "ingredients": "beef, mushrooms, eggs, green onions, sesame oil, furikake seasoning (nori seaweed, sesame seeds, salt, sugar, korean red pepper, mushroom seasoning), caramelized onion gravy (onions, vegetable soup base, canola/olive oil blend, thyme, bay leaf, butter, flour, salt, pepper), teriyaki sauce (tamari, sugar, canola/olive oil blend, cornstarch), chive, rice",
+     "allergens": [
+      "EGG",
+      "MILK",
+      "SESAME",
+      "SOY",
+      "WHEAT"
      ],
+     "trace_allergens": [
+      "COCONUT",
+      "FISH",
+      "PEANUTS",
+      "SHELLFISH",
+      "TREENUTS"
+     ],
+     "tags": [],
      "order": 1
     },
     {
@@ -4706,19 +4715,6 @@
      "order": 4
     },
     {
-     "name": "Cuban Style Green Beans",
-     "recipe_id": "CubanGrnBeans1",
-     "description": "",
-     "ingredients": "green beans, tomatoes, onions, bell peppers, garlic, cumin, oregano, vegetable soup base, olive/canola oil blend, salt, black pepper",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan"
-     ],
-     "order": 5
-    },
-    {
      "name": "Citrus Herb Yellow Rice",
      "recipe_id": "CitHerbYelRice1",
      "description": "",
@@ -4728,22 +4724,7 @@
      "tags": [
       "gluten-free"
      ],
-     "order": 6
-    },
-    {
-     "name": "Yuca Fries",
-     "recipe_id": "3613270",
-     "description": "",
-     "ingredients": "yuca/cassava, mashed potato, vegetable palm oil, yuca/cassava starch, salt, dextrose, xanthan gum",
-     "allergens": [],
-     "trace_allergens": [
-      "MILK",
-      "SOY"
-     ],
-     "tags": [
-      "vegan"
-     ],
-     "order": 7
+     "order": 5
     },
     {
      "name": "Panini Station",
@@ -4761,7 +4742,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 8
+     "order": 6
     },
     {
      "name": "Soup of the Day",
@@ -4771,7 +4752,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 9
+     "order": 7
     },
     {
      "name": "Assorted Dinner Rolls",
@@ -4790,7 +4771,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 10
+     "order": 8
     },
     {
      "name": "Composed Salad",
@@ -4800,7 +4781,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 11
+     "order": 9
     },
     {
      "name": "Performance Bar",
@@ -4810,7 +4791,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 12
+     "order": 10
     },
     {
      "name": "Craveable Grains",
@@ -4823,7 +4804,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 13
+     "order": 11
     },
     {
      "name": "Flavor Forward Legumes",
@@ -4836,40 +4817,24 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 14
+     "order": 12
     },
     {
-     "name": "Marinara Cheese Ravioli",
-     "recipe_id": "3581918",
+     "name": "Pasta Alfredo",
+     "recipe_id": "5683556",
      "description": "",
-     "ingredients": "ravioli, marinara sauce, parmesan cheese",
+     "ingredients": "pasta, white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, parmesan cheese",
      "allergens": [
-      "EGG",
       "MILK",
-      "SOY",
       "WHEAT"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "EGG"
+     ],
      "tags": [
       "vegetarian"
      ],
-     "order": 15
-    },
-    {
-     "name": "Pesto Sauce",
-     "recipe_id": "6128910",
-     "description": "",
-     "ingredients": "basil, canola oil, parmesan cheese (milk, bacterial culture, salt, microbial enzymes, extra virgin olive oil, garlic, salt, lemon juice concentrate, natural flavor, ascorbic acid, xanthan gum, soy lecithin, chamomile extract, rosemary extract)",
-     "allergens": [
-      "MILK",
-      "SOY"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegetarian"
-     ],
-     "order": 16
+     "order": 13
     }
    ]
   },

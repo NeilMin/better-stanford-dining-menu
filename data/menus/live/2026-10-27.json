@@ -1,6 +1,6 @@
 {
  "date": "2026-10-27",
- "scraped_at": "2026-10-24T15:32:04-07:00",
+ "scraped_at": "2026-10-25T01:30:34-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -4367,11 +4367,12 @@
    ],
    "Lunch": [
     {
-     "name": "Gyūdon",
-     "recipe_id": "4227860",
+     "name": "Coconut Chicken Rendang",
+     "recipe_id": "100266",
      "description": "",
-     "ingredients": "beef, onions, green onions, kombu, shiitake mushrooms, mushroom seasoning, tamari, sugar, seasoned rice vinegar, apple juice, ginger, garlic, salt, water",
+     "ingredients": "chicken, rendang marinade (tamari sauce, canola/olive oil blend, garlic, ginger, shallot, green chili, fennel seeds, galangal, tamarind paste, salt), rendang sauce (coconut milk, lemongrass, kaffir lime leaves, paprika, coriander, cardamom, coconut flakes)",
      "allergens": [
+      "COCONUT",
       "SOY"
      ],
      "trace_allergens": [],
@@ -4381,13 +4382,11 @@
      "order": 0
     },
     {
-     "name": "Gyūdon-Style Mushrooms",
-     "recipe_id": "4233521",
+     "name": "Jackfruit Provençal",
+     "recipe_id": "ProvençalJackfruit1",
      "description": "",
-     "ingredients": "portobello mushrooms, shiitake mushrooms, assorted mushrooms, onions, green onions, kombu, mushroom seasoning, tamari sauce, ginger, garlic, sugar, seasoned rice vinegar, apple juice, water",
-     "allergens": [
-      "SOY"
-     ],
+     "ingredients": "zucchini, squash, jackfruit, stewed tomatoes, red bell peppers, onions, oil, garlic, thyme, lemon juice, salt, and pepper",
+     "allergens": [],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
@@ -4422,61 +4421,48 @@
      "order": 3
     },
     {
-     "name": "Miso Honey Glazed Cabbage",
-     "recipe_id": "MisoHoneyCabbage1",
+     "name": "Jamaican-Style Braised Cabbage & Carrots",
+     "recipe_id": "JamCabbCarr1",
      "description": "",
-     "ingredients": "cabbage, honey, white miso, garlic, ginger, tamari, rice vinegar, olive/canola oil blend, salt, black pepper",
+     "ingredients": "cabbage, carrots, onions, bell peppers, garlic, thyme, allspice, habanero pepper, vegetable soup base, olive/canola oil blend, salt, black pepper",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "vegan"
+     ],
+     "order": 4
+    },
+    {
+     "name": "Caribbean Butter Rice",
+     "recipe_id": "CaribButRice1",
+     "description": "",
+     "ingredients": "rice, water, butter, garlic, onions, thyme, allspice, olive/canola oil blend, salt, black pepper",
      "allergens": [
-      "SOY"
+      "MILK"
      ],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
       "vegetarian"
      ],
-     "order": 4
-    },
-    {
-     "name": "Steamed Jasmine Rice",
-     "recipe_id": "5134594",
-     "description": "",
-     "ingredients": "jasmine rice, water, salt",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan"
-     ],
      "order": 5
     },
     {
-     "name": "Udon Noodles",
-     "recipe_id": "5790707",
+     "name": "Coconut Sweet Potato Mash",
+     "recipe_id": "CocoSweetPotMash1",
      "description": "",
-     "ingredients": "enriched wheat flour, tapioca starch, salt, natural flavor",
+     "ingredients": "sweet potatoes, coconut milk, butter, brown sugar, cinnamon, nutmeg, olive/canola oil blend, salt, black pepper",
      "allergens": [
-      "WHEAT"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "vegan"
-     ],
-     "order": 6
-    },
-    {
-     "name": "Simmered Onions",
-     "recipe_id": "SimmOnions1",
-     "description": "",
-     "ingredients": "onions, water, tamari, sugar, kombu, mushroom seasoning, olive/canola oil blend, salt",
-     "allergens": [
-      "SOY"
+      "COCONUT",
+      "MILK",
+      "TREENUTS"
      ],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
-      "vegan"
+      "vegetarian"
      ],
-     "order": 7
+     "order": 6
     },
     {
      "name": "Burger Bar",
@@ -4486,7 +4472,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 8
+     "order": 7
     },
     {
      "name": "Grilled Chicken",
@@ -4507,7 +4493,7 @@
       "WHEAT"
      ],
      "tags": [],
-     "order": 9
+     "order": 8
     },
     {
      "name": "Grilled Vegan/Vegetarian",
@@ -4528,7 +4514,7 @@
       "WHEAT"
      ],
      "tags": [],
-     "order": 10
+     "order": 9
     },
     {
      "name": "Handmade Pizza",
@@ -4543,7 +4529,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 11
+     "order": 10
     },
     {
      "name": "Panini Station",
@@ -4561,7 +4547,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 12
+     "order": 11
     },
     {
      "name": "Soup of the Day",
@@ -4571,7 +4557,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 13
+     "order": 12
     },
     {
      "name": "Composed Salad",
@@ -4581,7 +4567,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 14
+     "order": 13
     },
     {
      "name": "Performance Bar",
@@ -4591,7 +4577,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 15
+     "order": 14
     },
     {
      "name": "Craveable Grains",
@@ -4604,7 +4590,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 16
+     "order": 15
     },
     {
      "name": "Flavor Forward Legumes",
@@ -4617,7 +4603,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 17
+     "order": 16
     },
     {
      "name": "Pasta Marinara",
@@ -4634,7 +4620,7 @@
      "tags": [
       "vegan"
      ],
-     "order": 18
+     "order": 17
     },
     {
      "name": "Pasta Pesto",
@@ -4652,7 +4638,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 19
+     "order": 18
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -4665,7 +4651,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 20
+     "order": 19
     }
    ],
    "Dinner": [
@@ -4714,19 +4700,6 @@
      "order": 2
     },
     {
-     "name": "Seasonal Vegetable Board",
-     "recipe_id": "4503514",
-     "description": "",
-     "ingredients": "seasonal roasted vegetables with olive/canola oil blend, salt, pepper",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan"
-     ],
-     "order": 3
-    },
-    {
      "name": "Caribbean Vegetable Medley",
      "recipe_id": "CaribVegMed1",
      "description": "",
@@ -4737,7 +4710,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 4
+     "order": 3
     },
     {
      "name": "Roasted Sweet Potato Wedges",
@@ -4753,7 +4726,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 5
+     "order": 4
     },
     {
      "name": "Coconut Rice & Peas",
@@ -4769,7 +4742,7 @@
       "gluten-free",
       "vegetarian"
      ],
-     "order": 6
+     "order": 5
     },
     {
      "name": "Fried Plantain",
@@ -4792,7 +4765,7 @@
      "tags": [
       "vegan"
      ],
-     "order": 7
+     "order": 6
     },
     {
      "name": "Panini Station",
@@ -4810,7 +4783,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 8
+     "order": 7
     },
     {
      "name": "Soup of the Day",
@@ -4820,7 +4793,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 9
+     "order": 8
     },
     {
      "name": "Assorted Dinner Rolls",
@@ -4839,7 +4812,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 10
+     "order": 9
     },
     {
      "name": "Composed Salad",
@@ -4849,7 +4822,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 11
+     "order": 10
     },
     {
      "name": "Performance Bar",
@@ -4859,7 +4832,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 12
+     "order": 11
     },
     {
      "name": "Craveable Grains",
@@ -4872,7 +4845,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 13
+     "order": 12
     },
     {
      "name": "Flavor Forward Legumes",
@@ -4885,7 +4858,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 14
+     "order": 13
     },
     {
      "name": "Pasta Marinara",
@@ -4902,25 +4875,7 @@
      "tags": [
       "vegan"
      ],
-     "order": 15
-    },
-    {
-     "name": "Pasta Pesto",
-     "recipe_id": "3857040",
-     "description": "",
-     "ingredients": "pasta, pesto sauce (basil, canola oil, parmesan cheese, extra virgin olive oil, garlic, lemon juice concentrate, natural flavor, ascorbic acid, xanthan gum, soy lecithin, chamomile extract, rosemary extract, salt)",
-     "allergens": [
-      "MILK",
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "EGG"
-     ],
-     "tags": [
-      "vegetarian"
-     ],
-     "order": 16
+     "order": 14
     }
    ]
   },

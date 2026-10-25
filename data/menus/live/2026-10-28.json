@@ -1,6 +1,6 @@
 {
  "date": "2026-10-28",
- "scraped_at": "2026-10-24T15:32:04-07:00",
+ "scraped_at": "2026-10-25T01:30:34-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -4443,26 +4443,30 @@
    ],
    "Lunch": [
     {
-     "name": "Pork Pibil",
-     "recipe_id": "3774688",
+     "name": "Gyūdon",
+     "recipe_id": "4227860",
      "description": "",
-     "ingredients": "(non-halal) pork, pibil marinade (onion, achiote paste, lime juice, orange juice, allspice, clove, cumin, oregano, cinnamon, garlic, salt, black pepper), pibil sauce (annatto seed, spices, vinegar, salt, water, garlic, cornmeal, cuminseed, onions, garlic, oregano leaves, limes, oranges, allspice, cinnamon sticks, black pepper, cloves, salt)",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [],
-     "order": 0
-    },
-    {
-     "name": "Plant-Forward Jerk Chick'n",
-     "recipe_id": "4711488",
-     "description": "",
-     "ingredients": "plant-based chick'n, bell peppers, onions, garlic, ginger, habanero peppers, jerk seasoning, salt, and pepper",
+     "ingredients": "beef, onions, green onions, kombu, shiitake mushrooms, mushroom seasoning, tamari, sugar, seasoned rice vinegar, apple juice, ginger, garlic, salt, water",
      "allergens": [
-      "SOY",
-      "WHEAT"
+      "SOY"
      ],
      "trace_allergens": [],
      "tags": [
+      "gluten-free"
+     ],
+     "order": 0
+    },
+    {
+     "name": "Gyūdon-Style Mushrooms",
+     "recipe_id": "4233521",
+     "description": "",
+     "ingredients": "portobello mushrooms, shiitake mushrooms, assorted mushrooms, onions, green onions, kombu, mushroom seasoning, tamari sauce, ginger, garlic, sugar, seasoned rice vinegar, apple juice, water",
+     "allergens": [
+      "SOY"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
       "vegan"
      ],
      "order": 1
@@ -4481,46 +4485,6 @@
      "order": 2
     },
     {
-     "name": "Seasonal Vegetable Board",
-     "recipe_id": "4503514",
-     "description": "",
-     "ingredients": "seasonal roasted vegetables with olive/canola oil blend, salt, pepper",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan"
-     ],
-     "order": 3
-    },
-    {
-     "name": "Jamaican-Style Braised Cabbage & Carrots",
-     "recipe_id": "JamCabbCarr1",
-     "description": "",
-     "ingredients": "cabbage, carrots, onions, bell peppers, garlic, thyme, allspice, habanero pepper, vegetable soup base, olive/canola oil blend, salt, black pepper",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "vegan"
-     ],
-     "order": 4
-    },
-    {
-     "name": "Caribbean Butter Rice",
-     "recipe_id": "CaribButRice1",
-     "description": "",
-     "ingredients": "rice, water, butter, garlic, onions, thyme, allspice, olive/canola oil blend, salt, black pepper",
-     "allergens": [
-      "MILK"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegetarian"
-     ],
-     "order": 5
-    },
-    {
      "name": "Coconut Sweet Potato Mash",
      "recipe_id": "CocoSweetPotMash1",
      "description": "",
@@ -4535,20 +4499,49 @@
       "gluten-free",
       "vegetarian"
      ],
-     "order": 6
+     "order": 3
     },
     {
-     "name": "Jerk-Roasted Seasonal Vegetables",
-     "recipe_id": "JerkRoastVeg1",
+     "name": "Miso Honey Glazed Cabbage",
+     "recipe_id": "MisoHoneyCabbage1",
      "description": "",
-     "ingredients": "seasonal vegetables, onions, bell peppers, garlic, thyme, allspice, ginger, habanero pepper, paprika, brown sugar, lime juice, olive/canola oil blend, salt, black pepper",
+     "ingredients": "cabbage, honey, white miso, garlic, ginger, tamari, rice vinegar, olive/canola oil blend, salt, black pepper",
+     "allergens": [
+      "SOY"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegetarian"
+     ],
+     "order": 4
+    },
+    {
+     "name": "Steamed Jasmine Rice",
+     "recipe_id": "5134594",
+     "description": "",
+     "ingredients": "jasmine rice, water, salt",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
       "vegan"
      ],
-     "order": 7
+     "order": 5
+    },
+    {
+     "name": "Udon Noodles",
+     "recipe_id": "5790707",
+     "description": "",
+     "ingredients": "enriched wheat flour, tapioca starch, salt, natural flavor",
+     "allergens": [
+      "WHEAT"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "vegan"
+     ],
+     "order": 6
     },
     {
      "name": "Burger Bar",
@@ -4558,7 +4551,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 8
+     "order": 7
     },
     {
      "name": "Grilled Chicken",
@@ -4579,7 +4572,7 @@
       "WHEAT"
      ],
      "tags": [],
-     "order": 9
+     "order": 8
     },
     {
      "name": "Grilled Vegan/Vegetarian",
@@ -4600,7 +4593,7 @@
       "WHEAT"
      ],
      "tags": [],
-     "order": 10
+     "order": 9
     },
     {
      "name": "Handmade Pizza",
@@ -4615,7 +4608,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 11
+     "order": 10
     },
     {
      "name": "Panini Station",
@@ -4633,7 +4626,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 12
+     "order": 11
     },
     {
      "name": "Soup of the Day",
@@ -4643,7 +4636,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 13
+     "order": 12
     },
     {
      "name": "Composed Salad",
@@ -4653,7 +4646,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 14
+     "order": 13
     },
     {
      "name": "Performance Bar",
@@ -4663,7 +4656,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 15
+     "order": 14
     },
     {
      "name": "Craveable Grains",
@@ -4676,7 +4669,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 16
+     "order": 15
     },
     {
      "name": "Flavor Forward Legumes",
@@ -4689,7 +4682,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 17
+     "order": 16
     },
     {
      "name": "Pasta Alfredo",
@@ -4706,7 +4699,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 18
+     "order": 17
     },
     {
      "name": "Pasta Marinara",
@@ -4723,7 +4716,7 @@
      "tags": [
       "vegan"
      ],
-     "order": 19
+     "order": 18
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -4736,37 +4729,43 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 20
+     "order": 19
     }
    ],
    "Dinner": [
     {
-     "name": "Korean Fried Chicken Cutlet",
-     "recipe_id": "KorFriChxCut1",
+     "name": "Chicken Tenders",
+     "recipe_id": "3763205",
      "description": "",
-     "ingredients": "chicken, marinade (garlic, ginger, tamari, sugar, sesame oil, black pepper), dredge (salt, black pepper, garlic powder, onion powder, all-purpose flour, cornstarch, baking powder, eggs, olive/canola oil blend), glaze (gochujang, gochugaru, tamari, sugar, rice vinegar, garlic, ginger, sesame oil, honey, water) toasted sesame seeds, green onions",
+     "ingredients": "chicken tenderloins, water, corn starch, sea salt, rice flour, pea protein isolate, dextrose, baking soda, yellow corn flour, cream of tartar, spice, sunflower oil, guar gum, soybean oil, fried in canola oil",
      "allergens": [
+      "SOY"
+     ],
+     "trace_allergens": [
+      "COCONUT",
       "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
       "SESAME",
-      "SOY",
+      "SHELLFISH",
+      "TREENUTS",
       "WHEAT"
      ],
-     "trace_allergens": [],
      "tags": [],
      "order": 0
     },
     {
-     "name": "Crispy Korean-Style Tempeh",
-     "recipe_id": "CrispKorTempeh1",
+     "name": "Herb-Marinated Lemon Tofu",
+     "recipe_id": "8327042",
      "description": "",
-     "ingredients": "tempeh, marinade (garlic, ginger, tamari, sugar, sesame oil, black pepper), dredge (salt, black pepper, garlic powder, onion powder, rice flour, cornstarch, baking powder, vegan eggs, olive/canola oil blend), glaze (gochujang, gochugaru, tamari, sugar, rice vinegar, garlic, ginger, sesame oil, honey, water) toasted sesame seeds, green onions",
+     "ingredients": "lemon herb tofu (tofu, lemon juice, canola/olive oil, garlic, oregano, rosemary, thyme, parsley, salt, pepper), squash, zucchini",
      "allergens": [
-      "SESAME",
-      "SOY",
-      "WHEAT"
+      "SOY"
      ],
      "trace_allergens": [],
      "tags": [
+      "gluten-free",
       "vegan"
      ],
      "order": 1
@@ -4798,22 +4797,6 @@
      "order": 3
     },
     {
-     "name": "Stir-Fried Korean Vegetables",
-     "recipe_id": "KorStirFryVeg1",
-     "description": "",
-     "ingredients": "zucchini, carrots, onions, bell peppers, garlic, toasted sesame oil, tamari, sugar, rice vinegar, gochugaru, toasted sesame seeds, salt, black pepper",
-     "allergens": [
-      "SESAME",
-      "SOY"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan"
-     ],
-     "order": 4
-    },
-    {
      "name": "Rainbow Sesame Slaw",
      "recipe_id": "6109299",
      "description": "",
@@ -4827,7 +4810,7 @@
      "tags": [
       "vegan"
      ],
-     "order": 5
+     "order": 4
     },
     {
      "name": "Steamed Jasmine Rice",
@@ -4840,21 +4823,31 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 6
+     "order": 5
     },
     {
-     "name": "Korean Potato Salad",
-     "recipe_id": "KorPotSalad1",
+     "name": "Curly Fries",
+     "recipe_id": "3717456",
      "description": "",
-     "ingredients": "Yukon Gold potatoes, hard-boiled eggs, salted cucumbers, sliced carrots, mayonnaise, sugar, salt, pepper",
+     "ingredients": "potatoes, canola oil, sunflower oil, cottonseed oil, palm oil, corn oil, soybean oil, flour, salt, modified food starch, spices, corn meal, garlic powder, onion powder, sodium bicarbonate, dried yeast, oleoresin paprika, dextrose, fried in canola oil",
      "allergens": [
-      "EGG"
+      "SOY",
+      "WHEAT"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "TREENUTS"
+     ],
      "tags": [
-      "gluten-free"
+      "vegan"
      ],
-     "order": 7
+     "order": 6
     },
     {
      "name": "Panini Station",
@@ -4872,7 +4865,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 8
+     "order": 7
     },
     {
      "name": "Soup of the Day",
@@ -4882,7 +4875,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 9
+     "order": 8
     },
     {
      "name": "Assorted Dinner Rolls",
@@ -4901,7 +4894,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 10
+     "order": 9
     },
     {
      "name": "Composed Salad",
@@ -4911,7 +4904,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 11
+     "order": 10
     },
     {
      "name": "Performance Bar",
@@ -4921,7 +4914,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 12
+     "order": 11
     },
     {
      "name": "Craveable Grains",
@@ -4934,7 +4927,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 13
+     "order": 12
     },
     {
      "name": "Flavor Forward Legumes",
@@ -4947,7 +4940,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 14
+     "order": 13
     },
     {
      "name": "Pasta Alfredo",
@@ -4964,24 +4957,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 15
-    },
-    {
-     "name": "Pasta Marinara",
-     "recipe_id": "5095708",
-     "description": "",
-     "ingredients": "pasta, marinara sauce, canola/olive oil blend",
-     "allergens": [
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "EGG"
-     ],
-     "tags": [
-      "vegan"
-     ],
-     "order": 16
+     "order": 14
     }
    ]
   },
