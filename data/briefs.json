@@ -953,6 +953,41 @@
   "vessel": "plate",
   "written_at": "2026-09-27T06:14:59+00:00"
  },
+ "08df212afdee": {
+  "avoid": [
+   "tortillas",
+   "tacos",
+   "ground beef",
+   "mince",
+   "shredded beef",
+   "whole steak",
+   "skewers",
+   "rice",
+   "beans"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item bite-sized pieces of meat in a dark chili sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat ground or crumbled like mince?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat served inside tacos or wrapped in tortillas?",
+    "yes": false
+   }
+  ],
+  "dish": "beef tips in pasilla sauce",
+  "look": "tender seared beef tips, bite-sized beef strips, coated in rich dark reddish-brown pasilla chili sauce, simmered sliced onions, glossy velvety gravy, flecks of roasted chili and tomato",
+  "model": "gemini-flash-latest",
+  "name": "Puntas De Res En Pasilla",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-25T22:41:30+00:00"
+ },
  "09407b03ef6f": {
   "avoid": [
    "pasta",
