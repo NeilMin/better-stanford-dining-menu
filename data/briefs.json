@@ -245,6 +245,42 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T10:19:38+00:00"
  },
+ "01f6d13d69fd": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "tortillas",
+   "taco shell",
+   "rice",
+   "raw vegetables"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a mix of cooked vegetables?",
+    "yes": true
+   },
+   {
+    "q": "Is the food inside a tortilla or wrap?",
+    "yes": false
+   },
+   {
+    "q": "Is there meat in the dish?",
+    "yes": false
+   }
+  ],
+  "dish": "Mexican Mixed Vegetables",
+  "look": "chunky medley of sautéed vegetables, diced red tomatoes, translucent onions, brown mushroom slices, green jalapeno rounds, beige garbanzo beans, cubed white and orange potatoes, cauliflower florets, cut green beans",
+  "model": "gemma-4-31b-it",
+  "name": "Verduras a la Mexicana",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-25T18:38:36+00:00"
+ },
  "024351e6a22e": {
   "avoid": [
    "meat",
@@ -6074,6 +6110,41 @@
   "vessel": "plate",
   "written_at": "2026-09-27T07:39:15+00:00"
  },
+ "33950c2cc43a": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "pumpkin pie",
+   "cinnamon sticks",
+   "raw squash"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item orange squash?",
+    "yes": true
+   },
+   {
+    "q": "Is it a pie or cake?",
+    "yes": false
+   },
+   {
+    "q": "Is there meat in the dish?",
+    "yes": false
+   }
+  ],
+  "dish": "Roasted Cinnamon Butternut Squash",
+  "look": "cubed butternut squash, roasted orange-gold color, soft edges, light dusting of brown cinnamon powder, glistening surface",
+  "model": "gemma-4-31b-it",
+  "name": "Cinnamon Butternut Squash",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-25T18:38:36+00:00"
+ },
  "33ba07037adb": {
   "avoid": [
    "fried chicken",
@@ -8866,6 +8937,41 @@
   "vessel": "bowl",
   "written_at": "2026-10-08T20:56:03+00:00"
  },
+ "46c40c9fb299": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "raw spinach",
+   "rice",
+   "naan bread"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a vegetable curry containing potatoes, chickpeas, and wilted spinach?",
+    "yes": true
+   },
+   {
+    "q": "Are there chunks of meat, chicken, or seafood visible in the curry?",
+    "yes": false
+   },
+   {
+    "q": "Is the spinach raw and served as a dry leafy salad?",
+    "yes": false
+   }
+  ],
+  "dish": "spinach, potato, and chickpea curry",
+  "look": "fragrant golden-brown spiced curry stew with tender cubed potatoes, whole round chickpeas, wilted dark green spinach leaves, diced orange carrots, thick glossy masala sauce",
+  "model": "gemini-3.7-flash",
+  "name": "Spinach, Potato & Chickpea Curry",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-25T18:32:18+00:00"
+ },
  "471abbe0153c": {
   "avoid": [
    "meat",
@@ -10990,6 +11096,39 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T08:24:37+00:00"
+ },
+ "561a497dbe0f": {
+  "avoid": [
+   "red tomato salsa",
+   "shredded chicken",
+   "tacos",
+   "burrito",
+   "chips",
+   "raw chicken",
+   "noodles"
+  ],
+  "checks": [
+   {
+    "q": "Is the chicken covered in a thick dark brown or black mole sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the sauce clear, pale, or bright red tomato salsa?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat raw or breaded and deep-fried?",
+    "yes": false
+   }
+  ],
+  "dish": "chicken mole poblano",
+  "look": "tender roasted chicken thigh pieces smothered in a thick, glossy, velvety dark brown-black mole sauce, garnished with toasted pale pumpkin seeds and scattered roasted butternut squash cubes",
+  "model": "gemini-3.7-flash",
+  "name": "Mole Poblano with Chicken",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-25T18:32:18+00:00"
  },
  "5651751b2c1d": {
   "avoid": [
@@ -16788,6 +16927,40 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T07:39:15+00:00"
  },
+ "8a9f46f4512c": {
+  "avoid": [
+   "hard taco shell",
+   "burrito",
+   "ground meat",
+   "beef",
+   "chicken",
+   "raw shrimp",
+   "skewers",
+   "french fries"
+  ],
+  "checks": [
+   {
+    "q": "Are the tacos filled with crispy battered shrimp?",
+    "yes": true
+   },
+   {
+    "q": "Is the protein ground beef or shredded chicken?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish wrapped in a burrito roll?",
+    "yes": false
+   }
+  ],
+  "dish": "crispy shrimp tacos",
+  "look": "two warm small corn tortillas folded around golden-brown beer-battered fried shrimp, topped with shredded green cabbage, light drizzle of spiced crema, and fresh cilantro leaves",
+  "model": "gemini-3.7-flash",
+  "name": "Crispy Shrimp Tacos",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-25T18:32:18+00:00"
+ },
  "8aa578bdf257": {
   "avoid": [
    "pita",
@@ -18803,6 +18976,39 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-15T19:30:40+00:00"
+ },
+ "9a79c341f21a": {
+  "avoid": [
+   "rice",
+   "mashed potatoes",
+   "ground beef",
+   "spaghetti",
+   "tomato sauce",
+   "raw noodles",
+   "meatballs"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish beef in creamy brown sauce served over noodles?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat ground like mince or meatballs?",
+    "yes": false
+   },
+   {
+    "q": "Is the sauce bright red like tomato marinara?",
+    "yes": false
+   }
+  ],
+  "dish": "beef stroganoff",
+  "look": "tender strips of seared beef in a creamy brown mushroom and caramelized onion gravy, ladled over a bed of buttery wide twisted egg noodles, garnished with finely chopped fresh parsley",
+  "model": "gemini-3.7-flash",
+  "name": "Beef Stroganoff with Egg Noodles",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-25T18:32:18+00:00"
  },
  "9ae90503d4eb": {
   "avoid": [
@@ -25690,6 +25896,40 @@
   "vessel": "plate",
   "written_at": "2026-09-27T08:12:49+00:00"
  },
+ "cbeecc7ad9ab": {
+  "avoid": [
+   "salmon",
+   "pink fish",
+   "breaded fish",
+   "deep-fried fish sticks",
+   "tofu",
+   "rice",
+   "beans",
+   "soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a fillet of seared white fish?",
+    "yes": true
+   },
+   {
+    "q": "Is the fish battered and deep-fried like fish and chips?",
+    "yes": false
+   },
+   {
+    "q": "Is the fish pink or orange like salmon?",
+    "yes": false
+   }
+  ],
+  "dish": "pan-seared cilantro lime cod",
+  "look": "a thick flaky white cod fillet, golden-seared crust, glistening lime glaze, flecks of chopped green cilantro, red chili flakes, lime zest, lime wedge on the side",
+  "model": "gemini-3.7-flash",
+  "name": "Cilantro Lime Cod",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-25T18:32:18+00:00"
+ },
  "cc1fd27ec57a": {
   "avoid": [
    "spaghetti",
@@ -25919,6 +26159,41 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-26T23:04:11+00:00"
+ },
+ "cd96bb37584b": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "french fries",
+   "onion rings",
+   "raw jackfruit"
+  ],
+  "checks": [
+   {
+    "q": "Is the sandwich filled with shredded sauced jackfruit?",
+    "yes": true
+   },
+   {
+    "q": "Does the filling look like sliced deli meat or a solid burger patty?",
+    "yes": false
+   },
+   {
+    "q": "Is the filling served without a bun on a salad?",
+    "yes": false
+   }
+  ],
+  "dish": "barbecue jackfruit sandwich",
+  "look": "toasted split hamburger bun heaped with shredded pulled jackfruit in dark glossy red-brown barbecue sauce, topped with creamy crunchy cabbage coleslaw under the tilted top bun",
+  "model": "gemini-3.7-flash",
+  "name": "Pulled BBQ Jackfruit Sandwich",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-25T18:32:18+00:00"
  },
  "cdb16a7b2877": {
   "avoid": [
@@ -26733,6 +27008,39 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-10-12T11:13:26+00:00"
+ },
+ "d3f4a7203ca2": {
+  "avoid": [
+   "soft flour tortilla",
+   "burrito",
+   "taco salad",
+   "chips",
+   "quesadilla",
+   "raw meat",
+   "large buffet bowls"
+  ],
+  "checks": [
+   {
+    "q": "Are the tacos in crispy hard folded taco shells?",
+    "yes": true
+   },
+   {
+    "q": "Is the dish wrapped in a large flour tortilla like a burrito?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a bowl of loose taco salad?",
+    "yes": false
+   }
+  ],
+  "dish": "crispy beef tacos",
+  "look": "three crisp yellow corn taco shells standing upright, filled with seasoned ground beef, shredded cheddar cheese, shredded iceberg lettuce, diced red tomatoes, sliced jalapeños, and a dollop of white crema",
+  "model": "gemini-3.7-flash",
+  "name": "Beef Taco Station",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-25T18:32:18+00:00"
  },
  "d3f6c35987ea": {
   "avoid": [
@@ -27685,6 +27993,40 @@
   "vessel": "plate",
   "written_at": "2026-09-30T10:06:09+00:00"
  },
+ "dc03cf3caa74": {
+  "avoid": [
+   "coleslaw",
+   "fries",
+   "cornbread",
+   "pulled pork",
+   "beef patty",
+   "bun",
+   "skewers",
+   "raw meat"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a portion of bone-in pork ribs?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat shredded or ground like pulled pork or a burger?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat raw or pale and unglazed?",
+    "yes": false
+   }
+  ],
+  "dish": "barbecue pork ribs",
+  "look": "a half rack of roasted pork ribs, sticky caramelized mahogany barbecue sauce glaze, charred edges, tender meat on curved rib bones, glistening glaze, light sprinkle of cracked pepper",
+  "model": "gemini-3.7-flash",
+  "name": "BBQ Pork Rib",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-25T18:32:18+00:00"
+ },
  "dc5e1403d970": {
   "avoid": [
    "bread bun",
@@ -28543,6 +28885,41 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-30T10:02:25+00:00"
+ },
+ "e303dd1f31c3": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "corn on the cob",
+   "corn tortillas",
+   "corn soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item corn kernels in a creamy sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the corn on a cob?",
+    "yes": false
+   },
+   {
+    "q": "Is there meat in the dish?",
+    "yes": false
+   }
+  ],
+  "dish": "Creamed Corn with Pasilla Peppers",
+  "look": "yellow corn kernels, thick creamy white sauce, dark brown strips of pasilla pepper, crumbled white queso fresco cheese, chopped green cilantro leaves",
+  "model": "gemma-4-31b-it",
+  "name": "Creamed Corn and Pasilla Pepper",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-25T18:38:36+00:00"
  },
  "e36586673323": {
   "avoid": [
