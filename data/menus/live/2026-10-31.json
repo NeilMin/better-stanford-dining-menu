@@ -1,6 +1,6 @@
 {
  "date": "2026-10-31",
- "scraped_at": "2026-10-25T01:30:34-07:00",
+ "scraped_at": "2026-10-25T11:26:03-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -3913,19 +3913,33 @@
    ],
    "Lunch": [
     {
-     "name": "Creole Mushrooms",
-     "recipe_id": "CreoMushroom17",
+     "name": "BBQ Pork Rib",
+     "recipe_id": "8375867",
      "description": "",
-     "ingredients": "sliced mushrooms, butter, yellow onion, garlic, tomato paste, mushroom seasoning, olive canola blend oil, AP flour, green bell pepper, green onion, diced tomato, veg stock, creole seasoning, salt, bay leaf, cayenne, thyme, black ground pepper, sweet paprika",
+     "ingredients": "(non-halal) pork, bbq spice rub (garlic, paprika, salt, pepper, cumin, cayenne pepper, herbs de provence), bbq sauce (ketchup, apple cider vinegar, molasses, dijon mustard, chipotle peppers, adobo sauce, tamari sauce, ginger, chili powder, lemon juice, garlic powder, salt, pepper), liquid smoke",
      "allergens": [
-      "MILK",
-      "WHEAT"
+      "SOY"
      ],
      "trace_allergens": [],
      "tags": [
-      "vegetarian"
+      "gluten-free"
      ],
      "order": 0
+    },
+    {
+     "name": "Molasses Glazed BBQ Tofu",
+     "recipe_id": "4537362",
+     "description": "",
+     "ingredients": "tofu, allergy friendly bbq sauce (molasses, ketchup, chili powder, liquid smoke, garlic powder, ginger, chipotle pepper, dijon mustard, salt, pepper, apple cider vinegar, lemon juice)",
+     "allergens": [
+      "SOY"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
+     "order": 1
     },
     {
      "name": "Seasonal Steamed Vegetables",
@@ -3938,7 +3952,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 1
+     "order": 2
     },
     {
      "name": "Seasonal Vegetable Board",
@@ -3951,7 +3965,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 2
+     "order": 3
     },
     {
      "name": "Braised Green Beans & Caramelized Onions",
@@ -3964,7 +3978,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 3
+     "order": 4
     },
     {
      "name": "Creamy Grits with Cheddar Cheese",
@@ -3979,26 +3993,13 @@
       "gluten-free",
       "vegetarian"
      ],
-     "order": 4
-    },
-    {
-     "name": "Cheesy Vegan Grits",
-     "recipe_id": "VgnChzGrits1",
-     "description": "",
-     "ingredients": "stone-ground grits, vegetable soup base, vegan butter, vegan cheese, nutritional yeast, olive/canola oil blend, salt, black pepper",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan"
-     ],
      "order": 5
     },
     {
-     "name": "Charred Corn & Herb Salad",
-     "recipe_id": "CharrCorHerbSal1",
+     "name": "Dirty Rice",
+     "recipe_id": "5581842",
      "description": "",
-     "ingredients": "corn, red onions, cilantro, parsley, lime juice, jalapeños, garlic, cumin, olive/canola oil blend, salt, black pepper",
+     "ingredients": "rice, vegetable soup base (contains carrots), onion, celery, canola/olive oil blend, oregano, parsley, sage, thyme, bay leaf, garlic, cayenne pepper, salt, pepper",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -4008,56 +4009,19 @@
      "order": 6
     },
     {
-     "name": "Burger Bar",
-     "recipe_id": "5964436",
+     "name": "BBQ Baked Beans",
+     "recipe_id": "5993164",
      "description": "",
-     "ingredients": "",
-     "allergens": [],
+     "ingredients": "white beans, onions, brown sugar, mustard, tabasco sauce, tomato sauce, tamari sauce, salt",
+     "allergens": [
+      "SOY"
+     ],
      "trace_allergens": [],
-     "tags": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
      "order": 7
-    },
-    {
-     "name": "Grilled Chicken",
-     "recipe_id": "520454-02",
-     "description": "",
-     "ingredients": "chicken, canola/olive oil blend, salt, pepper",
-     "allergens": [],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
-     ],
-     "tags": [],
-     "order": 8
-    },
-    {
-     "name": "Grilled Vegan/Vegetarian",
-     "recipe_id": "13468741",
-     "description": "",
-     "ingredients": "chef's choice grilled vegan OR vegetarian option",
-     "allergens": [],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
-     ],
-     "tags": [],
-     "order": 9
     },
     {
      "name": "Panini Station",
@@ -4075,7 +4039,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 10
+     "order": 8
     },
     {
      "name": "Soup of the Day",
@@ -4085,7 +4049,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 11
+     "order": 9
     },
     {
      "name": "Composed Salad",
@@ -4095,7 +4059,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 12
+     "order": 10
     },
     {
      "name": "Performance Bar",
@@ -4105,7 +4069,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 13
+     "order": 11
     },
     {
      "name": "Craveable Grains",
@@ -4118,7 +4082,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 14
+     "order": 12
     },
     {
      "name": "Flavor Forward Legumes",
@@ -4131,7 +4095,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 15
+     "order": 13
     },
     {
      "name": "Creamy Pesto",
@@ -4147,24 +4111,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 16
-    },
-    {
-     "name": "Pasta Marinara",
-     "recipe_id": "5095708",
-     "description": "",
-     "ingredients": "pasta, marinara sauce, canola/olive oil blend",
-     "allergens": [
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "EGG"
-     ],
-     "tags": [
-      "vegan"
-     ],
-     "order": 17
+     "order": 14
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -4177,41 +4124,33 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 18
+     "order": 15
     }
    ],
    "Dinner": [
     {
-     "name": "Thai Curry Seafood",
-     "recipe_id": "ThaiCurrySea1",
+     "name": "San Francisco Cioppino",
+     "recipe_id": "5371070",
      "description": "",
-     "ingredients": "clams, mussels, calamari, bell peppers, eggplant, green beans, coconut milk, garlic, onions, Thai yellow curry paste, ginger, lemongrass, kaffir lime, Thai basil, fish sauce, lime juice, sugar, salt, and pepper",
+     "ingredients": "clams, mussels, calamari, shrimp, onion, celery, garlic, bell peppers, fennel, tomatoes, clam juice, cioppino sauce (fennel, red pepper flake, tomatoes, tomato paste, white wine vinegar, bay leaf, parsley, oregano, pepper, clam paste, bell pepper, canola/olive oil blend, salt, garlic)",
      "allergens": [
-      "COCONUT",
       "FISH",
-      "SHELLFISH"
+      "MILK",
+      "SHELLFISH",
+      "SOY",
+      "WHEAT"
      ],
-     "trace_allergens": [
-      "SOY"
-     ],
-     "tags": [
-      "gluten-free"
-     ],
+     "trace_allergens": [],
+     "tags": [],
      "order": 0
     },
     {
-     "name": "Thai Mushroom Curry with Nori",
-     "recipe_id": "ThaiMushCurrNor1",
+     "name": "Jackfruit Cioppino",
+     "recipe_id": "JackfruitCiop1",
      "description": "",
-     "ingredients": "trumpet mushrooms, oyster mushrooms, button mushrooms, coconut milk, vegetable soup base, onions, carrots, red bell peppers, bamboo shoots, baby corn, Thai yellow curry paste, garlic, ginger, tamari, brown sugar, lime juice, canola/olive oil blend, nori, Thai basil, cilantro, salt, black pepper",
-     "allergens": [
-      "COCONUT",
-      "SOY"
-     ],
-     "trace_allergens": [
-      "FISH",
-      "SHELLFISH"
-     ],
+     "ingredients": "jackfruit, vegetable base, onions, oil, garlic, fennel, red bell peppers, tomato, celery, carrots, parsley, basil, thyme, bay leaves, crushed red pepper flakes, lemon juice, oregano, salt, and pepper",
+     "allergens": [],
+     "trace_allergens": [],
      "tags": [
       "gluten-free",
       "vegan"
@@ -4258,47 +4197,20 @@
      "order": 4
     },
     {
-     "name": "Thai Basil Eggplant",
-     "recipe_id": "121120010",
+     "name": "Buttered Egg Noodles",
+     "recipe_id": "ButterEggNood1",
      "description": "",
-     "ingredients": "eggplant, bell peppers, oil, Thai basil sauce (onion, garlic, ginger, coconut liquid aminos, Thai basil, maple syrup/sugar, rice vinegar, mushroom seasoning, sambal, corn starch)",
+     "ingredients": "semolina, durum flour, eggs, butter",
      "allergens": [
-      "COCONUT"
+      "EGG",
+      "MILK",
+      "WHEAT"
      ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
-      "vegan"
+      "vegetarian"
      ],
      "order": 5
-    },
-    {
-     "name": "Coconut Rice",
-     "recipe_id": "5218958",
-     "description": "",
-     "ingredients": "jasmine rice, unsweetened coconut milk",
-     "allergens": [
-      "COCONUT"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan"
-     ],
-     "order": 6
-    },
-    {
-     "name": "Rice Noodle",
-     "recipe_id": "2939072",
-     "description": "",
-     "ingredients": "rice flour",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan"
-     ],
-     "order": 7
     },
     {
      "name": "Panini Station",
@@ -4316,7 +4228,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 8
+     "order": 6
     },
     {
      "name": "Soup of the Day",
@@ -4326,7 +4238,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 9
+     "order": 7
     },
     {
      "name": "Assorted Dinner Rolls",
@@ -4345,7 +4257,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 10
+     "order": 8
     },
     {
      "name": "Composed Salad",
@@ -4355,7 +4267,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 11
+     "order": 9
     },
     {
      "name": "Performance Bar",
@@ -4365,7 +4277,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 12
+     "order": 10
     },
     {
      "name": "Craveable Grains",
@@ -4378,7 +4290,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 13
+     "order": 11
     },
     {
      "name": "Flavor Forward Legumes",
@@ -4391,7 +4303,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 14
+     "order": 12
     },
     {
      "name": "Creamy Pesto",
@@ -4407,7 +4319,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 15
+     "order": 13
     }
    ]
   },

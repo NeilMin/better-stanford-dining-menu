@@ -1,6 +1,6 @@
 {
  "date": "2026-10-26",
- "scraped_at": "2026-10-25T01:30:34-07:00",
+ "scraped_at": "2026-10-25T11:26:03-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -1103,14 +1103,17 @@
      "order": 0
     },
     {
-     "name": "Greek-Spiced Chickpea & Eggplant",
-     "recipe_id": "GreekChickEgg1",
+     "name": "Veggie Gyro Plate",
+     "recipe_id": "COV3719382",
      "description": "",
-     "ingredients": "eggplant, chickpeas, onions, tomatoes, garlic, lemon juice, parsley, oregano, cumin, paprika, olive/canola oil blend, salt, black pepper",
-     "allergens": [],
+     "ingredients": "Veggie Gyros (gardein chick'n, bell pepper, onions, tomatoes, garlic, oregano, lemon juice, garlic, canola/olive oil blend, salt, pepper), Sauteed Greens (seasonal leafy greens, canola/olive oil blend, garlic, lemon juice, salt, pepper), Greek Style Pita (whole wheat flour, enriched wheat flour, soybean, canola oil, sugar, salt, baking powder, yeast, blackstrap molasses, calcium propionate, sodium stearoyl lactylate, guar gum, amylase)",
+     "allergens": [
+      "SOY",
+      "WHEAT",
+      "TRACEALLERGENS"
+     ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
       "vegan"
      ],
      "order": 1
@@ -1898,16 +1901,15 @@
    ],
    "Lunch": [
     {
-     "name": "Greek Chicken Gyro Meat",
-     "recipe_id": "ChxGyroMeat1",
+     "name": "Chicken Shawarma",
+     "recipe_id": "ChxShawarma1",
      "description": "",
-     "ingredients": "chicken, water, soy protein, nonfat dry milk, salt, spices, garlic, paprika, corn oil, lemon juice",
-     "allergens": [
-      "MILK",
-      "SOY"
-     ],
+     "ingredients": "chicken, lemon juice, garlic, olive/canola oil blend, cumin, coriander, paprika, turmeric, allspice, cinnamon, cayenne, salt, black pepper",
+     "allergens": [],
      "trace_allergens": [],
-     "tags": [],
+     "tags": [
+      "gluten-free"
+     ],
      "order": 0
     },
     {
@@ -2009,16 +2011,6 @@
      "order": 7
     },
     {
-     "name": "Burger Bar",
-     "recipe_id": "5964436",
-     "description": "",
-     "ingredients": "",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [],
-     "order": 8
-    },
-    {
      "name": "Grilled Chicken",
      "recipe_id": "520454-02",
      "description": "",
@@ -2037,7 +2029,7 @@
       "WHEAT"
      ],
      "tags": [],
-     "order": 9
+     "order": 8
     },
     {
      "name": "Grilled Vegan/Vegetarian",
@@ -2058,7 +2050,7 @@
       "WHEAT"
      ],
      "tags": [],
-     "order": 10
+     "order": 9
     },
     {
      "name": "Handmade Pizza",
@@ -2073,7 +2065,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 11
+     "order": 10
     },
     {
      "name": "Panini Station",
@@ -2091,7 +2083,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 12
+     "order": 11
     },
     {
      "name": "Soup of the Day",
@@ -2101,7 +2093,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 13
+     "order": 12
     },
     {
      "name": "Composed Salad",
@@ -2111,7 +2103,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 14
+     "order": 13
     },
     {
      "name": "Performance Bar",
@@ -2121,7 +2113,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 15
+     "order": 14
     },
     {
      "name": "Craveable Grains",
@@ -2134,7 +2126,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 16
+     "order": 15
     },
     {
      "name": "Flavor Forward Legumes",
@@ -2147,24 +2139,24 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 17
+     "order": 16
     },
     {
-     "name": "Marinara Cheese Ravioli",
-     "recipe_id": "3581918",
+     "name": "Pasta Marinara",
+     "recipe_id": "5095708",
      "description": "",
-     "ingredients": "ravioli, marinara sauce, parmesan cheese",
+     "ingredients": "pasta, marinara sauce, canola/olive oil blend",
      "allergens": [
-      "EGG",
-      "MILK",
       "SOY",
       "WHEAT"
      ],
-     "trace_allergens": [],
-     "tags": [
-      "vegetarian"
+     "trace_allergens": [
+      "EGG"
      ],
-     "order": 18
+     "tags": [
+      "vegan"
+     ],
+     "order": 17
     },
     {
      "name": "Pesto Sauce",
@@ -2180,7 +2172,7 @@
       "gluten-free",
       "vegetarian"
      ],
-     "order": 19
+     "order": 18
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -2193,38 +2185,31 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 20
+     "order": 19
     }
    ],
    "Dinner": [
     {
-     "name": "Mexicali Chicken Bowl",
-     "recipe_id": "7160345",
+     "name": "Al Pastor Chicken",
+     "recipe_id": "4829855-2",
      "description": "",
-     "ingredients": "baked chicken (chicken, canola/olive oil blend, herbs, garlic, salt, pepper), quinoa, black beans, roasted corn and bell peppers, roasted red salsa, pumpkin seeds, cotija cheese, italian dressing (red wine vinegar, rice vinegar, canola oil, beet sugar, shallots, garlic, dijon mustard, black pepper, italian parsley, dried basil, onion powder, garlic powder, crushed red pepper flakes, dried thyme, dried oregano, dried basil, salt)",
-     "allergens": [
-      "MILK"
-     ],
-     "trace_allergens": [
-      "PEANUTS",
-      "TREENUTS"
-     ],
+     "ingredients": "chicken, bell peppers, onions, garlic, al pastor sauce (orange juice, achiote paste, garlic, onion, vinegar, cumin seed, guajillo chili, ancho chili, salt, sugar)",
+     "allergens": [],
+     "trace_allergens": [],
      "tags": [
       "gluten-free"
      ],
      "order": 0
     },
     {
-     "name": "Plant-Forward \"Beef\" Ropa Vieja",
-     "recipe_id": "Plant-Forward Ropa1",
+     "name": "Taco Veggie Crumbles",
+     "recipe_id": "4877652",
      "description": "",
-     "ingredients": "plant-forward gardein beef, veggie soup base, potatoes, green bell peppers, carrots, onions, celery, olive oil, tomatoes, garlic, tomato paste, canola/olive oil blend, bay leaf, cumin, salt, pepper",
-     "allergens": [
-      "SOY",
-      "WHEAT"
-     ],
+     "ingredients": "plant-forward \"beef\" crumbles (pea protein, sunflower oil, spices, caramel color), yams, canola/olive oil blend, garlic, onion, lime juice, cumin, chipotle chili pepper, oregano, pepper",
+     "allergens": [],
      "trace_allergens": [],
      "tags": [
+      "gluten-free",
       "vegan"
      ],
      "order": 1
@@ -2256,10 +2241,10 @@
      "order": 3
     },
     {
-     "name": "Cuban-Spiced Zucchini & Peppers",
-     "recipe_id": "SpicedZucchini1",
+     "name": "Zucchini & Corn",
+     "recipe_id": "4188086",
      "description": "",
-     "ingredients": "zucchini, garlic, onion, cumin, oregano, chipotle powder, salt, and pepper",
+     "ingredients": "flame-roasted corn, zucchini squash, onions, garlic, canola/olive oil blend, salt, pepper",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -2269,10 +2254,10 @@
      "order": 4
     },
     {
-     "name": "Cuban Style Green Beans",
-     "recipe_id": "CubanGrnBeans1",
+     "name": "Verduras a la Mexicana",
+     "recipe_id": "6672498",
      "description": "",
-     "ingredients": "green beans, tomatoes, onions, bell peppers, garlic, cumin, oregano, vegetable soup base, olive/canola oil blend, salt, black pepper",
+     "ingredients": "tomatoes, onions, mushrooms, jalapeno chili, garbanzo beans, potatoes, sweet potatoes, cauliflower, green beans",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -2282,28 +2267,27 @@
      "order": 5
     },
     {
-     "name": "Citrus Herb Yellow Rice",
-     "recipe_id": "CitHerbYelRice1",
+     "name": "Cilantro Lime Rice",
+     "recipe_id": "4960003",
      "description": "",
-     "ingredients": "long-grain white rice, chicken soup base, onion, garlic, bell pepper, olive oil, annatto powder, cumin, oregano, lime juice, lime zest, orange juice, cilantro, parsley, salt",
+     "ingredients": "brown rice, onion, canola/olive oil blend, lime, cilantro, garlic, salt",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
-      "gluten-free"
+      "gluten-free",
+      "vegan"
      ],
      "order": 6
     },
     {
-     "name": "Yuca Fries",
-     "recipe_id": "3613270",
+     "name": "Seasoned Black Beans",
+     "recipe_id": "5111980",
      "description": "",
-     "ingredients": "yuca/cassava, mashed potato, vegetable palm oil, yuca/cassava starch, salt, dextrose, xanthan gum",
+     "ingredients": "black beans, canola/olive oil blend, salt",
      "allergens": [],
-     "trace_allergens": [
-      "MILK",
-      "SOY"
-     ],
+     "trace_allergens": [],
      "tags": [
+      "gluten-free",
       "vegan"
      ],
      "order": 7
@@ -2444,19 +2428,19 @@
      "order": 16
     },
     {
-     "name": "Marinara Cheese Ravioli",
-     "recipe_id": "3581918",
+     "name": "Pasta Marinara",
+     "recipe_id": "5095708",
      "description": "",
-     "ingredients": "ravioli, marinara sauce, parmesan cheese",
+     "ingredients": "pasta, marinara sauce, canola/olive oil blend",
      "allergens": [
-      "EGG",
-      "MILK",
       "SOY",
       "WHEAT"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "EGG"
+     ],
      "tags": [
-      "vegetarian"
+      "vegan"
      ],
      "order": 17
     },
@@ -4460,73 +4444,6 @@
      "order": 7
     },
     {
-     "name": "Burger Bar",
-     "recipe_id": "5964436",
-     "description": "",
-     "ingredients": "",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [],
-     "order": 8
-    },
-    {
-     "name": "Grilled Chicken",
-     "recipe_id": "520454-02",
-     "description": "",
-     "ingredients": "chicken, canola/olive oil blend, salt, pepper",
-     "allergens": [],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
-     ],
-     "tags": [],
-     "order": 9
-    },
-    {
-     "name": "Grilled Vegan/Vegetarian",
-     "recipe_id": "13468741",
-     "description": "",
-     "ingredients": "chef's choice grilled vegan OR vegetarian option",
-     "allergens": [],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
-     ],
-     "tags": [],
-     "order": 10
-    },
-    {
-     "name": "Handmade Pizza",
-     "recipe_id": "afdcpizza2",
-     "description": "",
-     "ingredients": "wheat flour, yeast, sugar, olive oil, mozzarella cheese, marinara sauce",
-     "allergens": [
-      "MILK",
-      "WHEAT"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "vegetarian"
-     ],
-     "order": 11
-    },
-    {
      "name": "Panini Station",
      "recipe_id": "4532805",
      "description": "",
@@ -4542,7 +4459,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 12
+     "order": 8
     },
     {
      "name": "Soup of the Day",
@@ -4552,7 +4469,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 13
+     "order": 9
     },
     {
      "name": "Composed Salad",
@@ -4562,7 +4479,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 14
+     "order": 10
     },
     {
      "name": "Performance Bar",
@@ -4572,7 +4489,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 15
+     "order": 11
     },
     {
      "name": "Craveable Grains",
@@ -4585,7 +4502,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 16
+     "order": 12
     },
     {
      "name": "Flavor Forward Legumes",
@@ -4598,24 +4515,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 17
-    },
-    {
-     "name": "Marinara Cheese Ravioli",
-     "recipe_id": "3581918",
-     "description": "",
-     "ingredients": "ravioli, marinara sauce, parmesan cheese",
-     "allergens": [
-      "EGG",
-      "MILK",
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "vegetarian"
-     ],
-     "order": 18
+     "order": 13
     },
     {
      "name": "Pesto Sauce",
@@ -4631,7 +4531,7 @@
       "gluten-free",
       "vegetarian"
      ],
-     "order": 19
+     "order": 14
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -4644,7 +4544,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 20
+     "order": 15
     }
    ],
    "Dinner": [
