@@ -1,6 +1,6 @@
 {
  "date": "2026-10-26",
- "scraped_at": "2026-10-25T11:26:03-07:00",
+ "scraped_at": "2026-10-25T15:36:49-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -2525,28 +2525,6 @@
      "order": 2
     },
     {
-     "name": "Bacon Scramble",
-     "recipe_id": "5222525",
-     "description": "",
-     "ingredients": "eggs, (non-halal) bacon, seasonal vegetables, canola/olive oil blend, herbs, salt, pepper",
-     "allergens": [
-      "EGG"
-     ],
-     "trace_allergens": [
-      "COCONUT",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
-     ],
-     "tags": [],
-     "order": 3
-    },
-    {
      "name": "Hard Boiled Eggs",
      "recipe_id": "2612705",
      "description": "",
@@ -2559,7 +2537,7 @@
       "gluten-free",
       "vegetarian"
      ],
-     "order": 4
+     "order": 3
     },
     {
      "name": "Chilaquiles with Fried Egg",
@@ -2576,7 +2554,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 5
+     "order": 4
     },
     {
      "name": "Double Smoked Bacon",
@@ -2588,7 +2566,7 @@
      "tags": [
       "gluten-free"
      ],
-     "order": 6
+     "order": 5
     },
     {
      "name": "Fried Hash Brown Patties",
@@ -2612,7 +2590,7 @@
      "tags": [
       "vegan"
      ],
-     "order": 7
+     "order": 6
     },
     {
      "name": "Plant Powered \"Eggs”",
@@ -2629,7 +2607,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 8
+     "order": 7
     },
     {
      "name": "Waffles",
@@ -2646,7 +2624,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 9
+     "order": 8
     }
    ],
    "Lunch": [
@@ -2762,71 +2740,40 @@
      "order": 7
     },
     {
-     "name": "Burger Bar",
-     "recipe_id": "5964436",
+     "name": "Cheese Pizza",
+     "recipe_id": "5646522",
      "description": "",
-     "ingredients": "",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [],
-     "order": 8
-    },
-    {
-     "name": "Grilled Chicken",
-     "recipe_id": "520454-02",
-     "description": "",
-     "ingredients": "chicken, canola/olive oil blend, salt, pepper",
-     "allergens": [],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
-     ],
-     "tags": [],
-     "order": 9
-    },
-    {
-     "name": "Grilled Vegan/Vegetarian",
-     "recipe_id": "13468741",
-     "description": "",
-     "ingredients": "chef's choice grilled vegan OR vegetarian option",
-     "allergens": [],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
-     ],
-     "tags": [],
-     "order": 10
-    },
-    {
-     "name": "Handmade Pizza",
-     "recipe_id": "afdcpizza2",
-     "description": "",
-     "ingredients": "wheat flour, yeast, sugar, olive oil, mozzarella cheese, marinara sauce",
+     "ingredients": "pizza dough, tomato sauce, mozzarella cheese, parmesan cheese",
      "allergens": [
       "MILK",
+      "SOY",
       "WHEAT"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "EGG",
+      "SESAME"
+     ],
      "tags": [
       "vegetarian"
      ],
-     "order": 11
+     "order": 8
+    },
+    {
+     "name": "Meat Lover’s Pizza",
+     "recipe_id": "5384040",
+     "description": "",
+     "ingredients": "pizza dough (enriched unbleached wheat flour [wheat flour, yeast], sugar, soybean oil, hydrogenated soybean oil, baking soda, salt, buttermilk, wheat gluten, mozzarella cheese, cheddar cheese, whey powder, guar gum, xanthan gum, garlic powder, datem, malted barley flour), pizza sauce, mozzarella cheese, parmesan cheese, (non-halal) beef pork pepperoni, (non-halal) ham, (non-halal) bacon, (non-halal) pork sausage, canola/olive oil blend",
+     "allergens": [
+      "MILK",
+      "SOY",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "EGG",
+      "SESAME"
+     ],
+     "tags": [],
+     "order": 9
     },
     {
      "name": "Panini Station",
@@ -2844,7 +2791,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 12
+     "order": 10
     },
     {
      "name": "Soup of the Day",
@@ -2854,7 +2801,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 13
+     "order": 11
     },
     {
      "name": "Composed Salad",
@@ -2864,7 +2811,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 14
+     "order": 12
     },
     {
      "name": "Performance Bar",
@@ -2874,7 +2821,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 15
+     "order": 13
     },
     {
      "name": "Craveable Grains",
@@ -2887,7 +2834,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 16
+     "order": 14
     },
     {
      "name": "Flavor Forward Legumes",
@@ -2900,7 +2847,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 17
+     "order": 15
     },
     {
      "name": "Marinara Cheese Ravioli",
@@ -2917,7 +2864,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 18
+     "order": 16
     },
     {
      "name": "Pesto Sauce",
@@ -2933,7 +2880,7 @@
       "gluten-free",
       "vegetarian"
      ],
-     "order": 19
+     "order": 17
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -2946,7 +2893,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 20
+     "order": 18
     }
    ],
    "Dinner": [
@@ -3057,74 +3004,28 @@
      "order": 7
     },
     {
-     "name": "Burger Bar",
-     "recipe_id": "5964436",
+     "name": "Quesadilla Bar",
+     "recipe_id": "quesadillabar(lake)",
      "description": "",
      "ingredients": "",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [],
-     "order": 8
-    },
-    {
-     "name": "Grilled Chicken",
-     "recipe_id": "520454-02",
-     "description": "",
-     "ingredients": "chicken, canola/olive oil blend, salt, pepper",
-     "allergens": [],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
-     ],
-     "tags": [],
-     "order": 9
-    },
-    {
-     "name": "Grilled Vegan/Vegetarian",
-     "recipe_id": "13468741",
-     "description": "",
-     "ingredients": "chef's choice grilled vegan OR vegetarian option",
-     "allergens": [],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
-     ],
-     "tags": [],
-     "order": 10
-    },
-    {
-     "name": "Panini Station",
-     "recipe_id": "4532805",
-     "description": "",
-     "ingredients": "(assorted) breads, cheeses, deli meats, lettuce, tomatoes, and onions",
      "allergens": [
       "EGG",
+      "MILK",
       "SOY",
       "WHEAT"
      ],
      "trace_allergens": [
       "COCONUT",
-      "MILK",
+      "FISH",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
       "TREENUTS"
      ],
-     "tags": [],
-     "order": 11
+     "tags": [
+      "vegetarian"
+     ],
+     "order": 8
     },
     {
      "name": "Soup of the Day",
@@ -3134,7 +3035,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 12
+     "order": 9
     },
     {
      "name": "Assorted Dinner Rolls",
@@ -3153,7 +3054,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 13
+     "order": 10
     },
     {
      "name": "Composed Salad",
@@ -3163,7 +3064,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 14
+     "order": 11
     },
     {
      "name": "Performance Bar",
@@ -3173,7 +3074,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 15
+     "order": 12
     },
     {
      "name": "Craveable Grains",
@@ -3186,20 +3087,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 16
-    },
-    {
-     "name": "Flavor Forward Legumes",
-     "recipe_id": "FlavForLegumes1",
-     "description": "",
-     "ingredients": "** No Alliums: this includes garlic, onion, shallots, leeks, chives, scallions/ green onions, and any similar wild varieties, such as ramps. ** No Root vegetables/Tubers: this includes potatoes of any variety, beets, carrots, radishes, turnips, ginger, and fresh turmeric root. ** No Mushrooms/Fungi of any kind.",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan"
-     ],
-     "order": 17
+     "order": 13
     },
     {
      "name": "Marinara Cheese Ravioli",
@@ -3216,7 +3104,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 18
+     "order": 14
     },
     {
      "name": "Pesto Sauce",
@@ -3232,20 +3120,7 @@
       "gluten-free",
       "vegetarian"
      ],
-     "order": 19
-    },
-    {
-     "name": "Penne Pasta (Gluten-Free)",
-     "recipe_id": "3189216",
-     "description": "",
-     "ingredients": "brown rice, rice bran, water",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan"
-     ],
-     "order": 20
+     "order": 15
     }
    ]
   },
@@ -4549,10 +4424,10 @@
    ],
    "Dinner": [
     {
-     "name": "Cuban Style Ropa Vieja",
-     "recipe_id": "CubanRopaVieja1",
+     "name": "Puntas De Res En Pasilla",
+     "recipe_id": "3555955",
      "description": "",
-     "ingredients": "beef, beef soup base, russet potatoes, green and red bell peppers, onions, garlic, green olives, tomatoes, tomato paste, oregano, cumin, bay leaf, olive/canola oil blend, salt, black pepper",
+     "ingredients": "beef , tomatoes, pasilla chili, canola/olive olive oil blend, onions, garlic, chipotle peppers, salt, tomatillo salsa (onions, garlic, tomatillo, serrano chili, cilantro, salt)",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
