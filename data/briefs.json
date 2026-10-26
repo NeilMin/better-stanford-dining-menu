@@ -598,6 +598,40 @@
   "vessel": "bowl",
   "written_at": "2026-10-02T10:03:48+00:00"
  },
+ "0666d21aa551": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "soup broth",
+   "raw head of cabbage"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item sautéed shredded vegetables?",
+    "yes": true
+   },
+   {
+    "q": "Is the cabbage raw and uncooked?",
+    "yes": false
+   },
+   {
+    "q": "Are there chunks of meat or seafood mixed in?",
+    "yes": false
+   }
+  ],
+  "dish": "Ginisang Repolyo",
+  "look": "stir-fried tender green cabbage ribbons, julienned orange carrot strips, translucent yellow onion slices, glistening garlic flecks, lightly charred soft vegetable edges",
+  "model": "gemini-3.6-flash",
+  "name": "Ginisang Repolyo",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-26T20:39:43+00:00"
+ },
  "06def5459c8f": {
   "avoid": [
    "pulled chicken",
@@ -7830,6 +7864,42 @@
   "vessel": "plate",
   "written_at": "2026-10-22T23:38:35+00:00"
  },
+ "3c73eece17fc": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "rice",
+   "clear broth",
+   "yellow curry",
+   "curry paste"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a chunky vegetable stew in coconut sauce?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat, poultry, or seafood visible?",
+    "yes": false
+   },
+   {
+    "q": "Is the liquid a thin clear soup?",
+    "yes": false
+   }
+  ],
+  "dish": "Ginataang Gulay",
+  "look": "creamy opaque white coconut milk vegetable stew, filled with chunky orange squash cubes, tender green beans, wilted dark spinach leaves, golden fried tofu, garnished with sliced red chilis",
+  "model": "gemini-3.6-flash",
+  "name": "Ginataang Gulay",
+  "rev": 6,
+  "revisions": 1,
+  "vessel": "bowl",
+  "written_at": "2026-10-26T21:10:30+00:00"
+ },
  "3cbe33a6bb4f": {
   "avoid": [
    "bacon",
@@ -8039,6 +8109,40 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T07:30:19+00:00"
+ },
+ "3debb6a99299": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "raw fresh summer rolls",
+   "tortilla wrap"
+  ],
+  "checks": [
+   {
+    "q": "Are the main items fried spring rolls?",
+    "yes": true
+   },
+   {
+    "q": "Are the rolls wrapped in fresh translucent raw rice paper?",
+    "yes": false
+   },
+   {
+    "q": "Is ground meat visible inside the broken roll?",
+    "yes": false
+   }
+  ],
+  "dish": "Vegetable Lumpia",
+  "look": "golden brown crispy fried spring rolls, thin bubbly wheat wrappers, stacked neatly, revealing a finely shredded cabbage and carrot filling inside a cut roll",
+  "model": "gemini-3.6-flash",
+  "name": "Vegetable Lumpia",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-26T20:39:43+00:00"
  },
  "3e3a996bd7b9": {
   "avoid": [
@@ -21816,6 +21920,40 @@
   "vessel": "plate",
   "written_at": "2026-10-26T09:20:12+00:00"
  },
+ "ad8965f53377": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "red tomato sauce",
+   "soup broth"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cooked noodles tossed in garlic sauce?",
+    "yes": true
+   },
+   {
+    "q": "Are the noodles submerged in a liquid soup broth?",
+    "yes": false
+   },
+   {
+    "q": "Is there meat or seafood served over the noodles?",
+    "yes": false
+   }
+  ],
+  "dish": "Garlic Noodles",
+  "look": "long glossy spaghetti pasta coiled in a swirl, coated in brown butter garlic sauce, speckled with minced toasted garlic bits and fresh chopped parsley",
+  "model": "gemini-3.6-flash",
+  "name": "Garlic Noodles",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-26T20:39:43+00:00"
+ },
  "adb94943a034": {
   "avoid": [
    "meat",
@@ -24807,11 +24945,14 @@
  },
  "c344d1f6c95c": {
   "avoid": [
+   "meat cubes",
+   "tofu cubes",
+   "rice",
+   "chicken",
    "whole uncut fish",
    "fish head",
    "fried battered fish",
    "salmon",
-   "chicken",
    "beef",
    "bread"
   ],
@@ -24830,13 +24971,13 @@
    }
   ],
   "dish": "South Indian fish curry",
-  "look": "flaky white fish fillet chunks, deep reddish-brown tamarind curry gravy, thin julienned ginger strips, glossy spiced surface, fresh chopped green cilantro",
-  "model": "gemini-3.7-flash",
+  "look": "tender flaky white fish fillet pieces showing visible fish grain, submerged in deep reddish-brown tamarind curry sauce, thin julienned ginger strips, glossy spiced surface, fresh chopped green cilantro garnish",
+  "model": "gemini-3.6-flash",
   "name": "Tamil Nadu Fish Curry",
   "rev": 6,
-  "revisions": 0,
+  "revisions": 1,
   "vessel": "bowl",
-  "written_at": "2026-10-26T09:20:12+00:00"
+  "written_at": "2026-10-26T21:22:12+00:00"
  },
  "c373b4c6a34b": {
   "avoid": [
@@ -29270,6 +29411,39 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-05T10:46:18+00:00"
+ },
+ "e3afa051d9bb": {
+  "avoid": [
+   "pork",
+   "beef",
+   "rice",
+   "fried egg",
+   "skewers",
+   "raw chicken",
+   "whole chicken breast"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food sliced cooked meat?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat served on skewers?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat pale and unglazed?",
+    "yes": false
+   }
+  ],
+  "dish": "Chicken Tocino",
+  "look": "charred sliced chicken thighs coated in a glossy reddish-pink sweet garlic glaze, caramelized burnt edges, juicy meat pieces, scattered sliced scallions",
+  "model": "gemini-3.6-flash",
+  "name": "Grilled Chicken Tocino",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-26T20:39:43+00:00"
  },
  "e3b9c5f2de7d": {
   "avoid": [
