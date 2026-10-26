@@ -1,6 +1,6 @@
 {
  "date": "2026-10-28",
- "scraped_at": "2026-10-26T02:03:06-07:00",
+ "scraped_at": "2026-10-26T13:33:33-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -545,27 +545,34 @@
    ],
    "Dinner": [
     {
-     "name": "Crispy Korean Chicken Wings",
-     "recipe_id": "KorChxWings1",
+     "name": "Grilled Chicken Tocino",
+     "recipe_id": "ChxTocino1",
      "description": "",
-     "ingredients": "chicken, marinade (garlic, ginger, tamari, sugar, sesame oil, black pepper), dredge (salt, black pepper, garlic powder, onion powder, all-purpose flour, cornstarch, baking powder, eggs, olive/canola oil blend), glaze (gochujang, gochugaru, tamari, sugar, rice vinegar, garlic, ginger, sesame oil, honey, water), toasted sesame seeds, green onions",
+     "ingredients": "chicken, tocino marinade (pineapple juice, tamari sauce, red food coloring, sugar, garlic, fish sauce, coconut cane vinegar, lemon juice, ginger, salt, pepper)",
      "allergens": [
+      "COCONUT",
+      "FISH",
+      "SHELLFISH",
+      "SOY"
+     ],
+     "trace_allergens": [
       "EGG",
+      "MILK",
+      "PEANUTS",
       "SESAME",
-      "SOY",
+      "TREENUTS",
       "WHEAT"
      ],
-     "trace_allergens": [],
      "tags": [],
      "order": 0
     },
     {
-     "name": "Crispy Korean-Style Tempeh",
-     "recipe_id": "CrispKorTempeh1",
+     "name": "Ginataang Gulay",
+     "recipe_id": "4919217",
      "description": "",
-     "ingredients": "tempeh, marinade (garlic, ginger, tamari, sugar, sesame oil, black pepper), dredge (salt, black pepper, garlic powder, onion powder, rice flour, cornstarch, baking powder, vegan eggs, olive/canola oil blend), glaze (gochujang, gochugaru, tamari, sugar, rice vinegar, garlic, ginger, sesame oil, honey, water) toasted sesame seeds, green onions",
+     "ingredients": "butternut squash, green beans, kabocha squash, spinach, tofu, olive oil, tamari, black bean sauce, garlic, annatto powder, ginger, red onions, serrano chili, salt, coconut milk, red pepper flakes",
      "allergens": [
-      "SESAME",
+      "COCONUT",
       "SOY",
       "WHEAT"
      ],
@@ -602,12 +609,11 @@
      "order": 3
     },
     {
-     "name": "Stir-Fried Korean Vegetables",
-     "recipe_id": "KorStirFryVeg1",
+     "name": "Ginisang Repolyo",
+     "recipe_id": "GiniRepo1",
      "description": "",
-     "ingredients": "zucchini, carrots, onions, bell peppers, garlic, toasted sesame oil, tamari, sugar, rice vinegar, gochugaru, toasted sesame seeds, salt, black pepper",
+     "ingredients": "green cabbage, carrots, yellow onions, garlic, olive/canola oil blend, vegetable soup base, tamari, salt, black pepper",
      "allergens": [
-      "SESAME",
       "SOY"
      ],
      "trace_allergens": [],
@@ -618,45 +624,74 @@
      "order": 4
     },
     {
-     "name": "Rainbow Sesame Slaw",
-     "recipe_id": "6109299",
+     "name": "Vegetable Lumpia",
+     "recipe_id": "94188",
      "description": "",
-     "ingredients": "green cabbage, red cabbage, chinese cabbage, carrots, green onions, bell peppers, cilantro, sesame dressing (high fructose corn syrup, soybean oil, soy sauce [water, wheat, soybeans, salt], vinegar, apple cider vinegar, sesame oil, salt, spice, xanthan gum, sesame seeds, garlic, natural flavor, caramel color, paprika, artificial flavor)",
+     "ingredients": "wheat wrap, cabbage, carrot, vermicelli, corn starch, palm oil, green beans, onion, sugar, salt, sesame oil, natural yeast extract, black pepper, fried in canola oil",
      "allergens": [
       "SESAME",
-      "SOY",
       "WHEAT"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SHELLFISH",
+      "SOY",
+      "TREENUTS"
+     ],
      "tags": [
       "vegan"
      ],
      "order": 5
     },
     {
-     "name": "Steamed Jasmine Rice",
-     "recipe_id": "5134594",
+     "name": "Pancit Noodles",
+     "recipe_id": "5593430",
      "description": "",
-     "ingredients": "jasmine rice, water, salt",
-     "allergens": [],
-     "trace_allergens": [],
+     "ingredients": "rice noodles, bok choy, carrots, bell peppers, green onions, onions, canola/olive oil blend, tamari sauce, garlic",
+     "allergens": [
+      "SOY"
+     ],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "TREENUTS",
+      "WHEAT"
+     ],
      "tags": [
-      "gluten-free",
       "vegan"
      ],
      "order": 6
     },
     {
-     "name": "Korean Potato Salad",
-     "recipe_id": "KorPotSalad1",
+     "name": "Garlic Fried Rice",
+     "recipe_id": "5847314",
      "description": "",
-     "ingredients": "Yukon Gold potatoes, hard-boiled eggs, salted cucumbers, sliced carrots, mayonnaise, sugar, salt, pepper",
+     "ingredients": "jasmine rice, peas, carrots, celery, onion, garlic, tamari, canola oil, olive oil, salt",
      "allergens": [
-      "EGG"
+      "SOY"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "TREENUTS",
+      "WHEAT"
+     ],
      "tags": [
-      "gluten-free"
+      "vegan"
      ],
      "order": 7
     },
@@ -5210,23 +5245,6 @@
      "order": 13
     },
     {
-     "name": "Pasta Marinara",
-     "recipe_id": "5095708",
-     "description": "",
-     "ingredients": "pasta, marinara sauce, canola/olive oil blend",
-     "allergens": [
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "EGG"
-     ],
-     "tags": [
-      "vegan"
-     ],
-     "order": 14
-    },
-    {
      "name": "Penne Pasta (Gluten-Free)",
      "recipe_id": "3189216",
      "description": "",
@@ -5237,7 +5255,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 15
+     "order": 14
     }
    ],
    "Dinner": [

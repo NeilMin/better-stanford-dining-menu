@@ -1,6 +1,6 @@
 {
  "date": "2026-10-26",
- "scraped_at": "2026-10-26T02:03:06-07:00",
+ "scraped_at": "2026-10-26T13:33:33-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -1103,16 +1103,24 @@
      "order": 0
     },
     {
-     "name": "Veggie Gyro Plate",
-     "recipe_id": "COV3719382",
+     "name": "Meatless Chick’n Fajita",
+     "recipe_id": "5586519",
      "description": "",
-     "ingredients": "Veggie Gyros (gardein chick'n, bell pepper, onions, tomatoes, garlic, oregano, lemon juice, garlic, canola/olive oil blend, salt, pepper), Sauteed Greens (seasonal leafy greens, canola/olive oil blend, garlic, lemon juice, salt, pepper), Greek Style Pita (whole wheat flour, enriched wheat flour, soybean, canola oil, sugar, salt, baking powder, yeast, blackstrap molasses, calcium propionate, sodium stearoyl lactylate, guar gum, amylase)",
+     "ingredients": "meatless chick’n strips, cilantro, fajita seasoning, onions, bell peppers, canola/olive oil blend, salt, pepper",
      "allergens": [
       "SOY",
-      "WHEAT",
-      "TRACEALLERGENS"
+      "WHEAT"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "TREENUTS"
+     ],
      "tags": [
       "vegan"
      ],
@@ -1217,27 +1225,6 @@
      "order": 8
     },
     {
-     "name": "Grilled Vegan/Vegetarian",
-     "recipe_id": "13468741",
-     "description": "",
-     "ingredients": "chef's choice grilled vegan OR vegetarian option",
-     "allergens": [],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
-     ],
-     "tags": [],
-     "order": 9
-    },
-    {
      "name": "Handmade Pizza",
      "recipe_id": "afdcpizza2",
      "description": "",
@@ -1250,7 +1237,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 10
+     "order": 9
     },
     {
      "name": "Panini Station",
@@ -1268,17 +1255,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 11
-    },
-    {
-     "name": "Soup of the Day",
-     "recipe_id": "SoupoftheDay",
-     "description": "",
-     "ingredients": "chef's choice soup of the day",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [],
-     "order": 12
+     "order": 10
     },
     {
      "name": "Composed Salad",
@@ -1288,7 +1265,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 13
+     "order": 11
     },
     {
      "name": "Performance Bar",
@@ -1298,7 +1275,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 14
+     "order": 12
     },
     {
      "name": "Craveable Grains",
@@ -1311,7 +1288,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 15
+     "order": 13
     },
     {
      "name": "Flavor Forward Legumes",
@@ -1324,15 +1301,29 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 16
+     "order": 14
     },
     {
-     "name": "Marinara Cheese Ravioli",
-     "recipe_id": "3581918",
+     "name": "Marinara Sauce",
+     "recipe_id": "3612835",
      "description": "",
-     "ingredients": "ravioli, marinara sauce, parmesan cheese",
+     "ingredients": "italian tomatoes, diced tomatoes, fresh onions, extra virgin olive oil, garlic, sea salt, oregano, black pepper",
      "allergens": [
-      "EGG",
+      "SOY"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
+     "order": 15
+    },
+    {
+     "name": "Creamy Pesto",
+     "recipe_id": "7728050",
+     "description": "",
+     "ingredients": "pesto sauce (basil, canola oil, parmesan cheese, olive oil, garlic, salt, lemon juice concentrate, natural flavor, xanthan gum, soy lecithin, chamomile extract, rosemary extract, white sauce (flour, butter, cream, milk powder, onion powder, white pepper, garlic, nutmeg, salt), parmesan cheese, parsley",
+     "allergens": [
       "MILK",
       "SOY",
       "WHEAT"
@@ -1341,23 +1332,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 17
-    },
-    {
-     "name": "Pesto Sauce",
-     "recipe_id": "6128910",
-     "description": "",
-     "ingredients": "basil, canola oil, parmesan cheese (milk, bacterial culture, salt, microbial enzymes, extra virgin olive oil, garlic, salt, lemon juice concentrate, natural flavor, ascorbic acid, xanthan gum, soy lecithin, chamomile extract, rosemary extract)",
-     "allergens": [
-      "MILK",
-      "SOY"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegetarian"
-     ],
-     "order": 18
+     "order": 16
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -1370,7 +1345,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 19
+     "order": 17
     }
    ],
    "Dinner": [
@@ -4212,25 +4187,18 @@
      "order": 0
     },
     {
-     "name": "Loco Moco",
-     "recipe_id": "5615760",
+     "name": "Teriyaki Glazed Chick'n Strips",
+     "recipe_id": "4863539",
      "description": "",
-     "ingredients": "beef, mushrooms, eggs, green onions, sesame oil, furikake seasoning (nori seaweed, sesame seeds, salt, sugar, korean red pepper, mushroom seasoning), caramelized onion gravy (onions, vegetable soup base, canola/olive oil blend, thyme, bay leaf, butter, flour, salt, pepper), teriyaki sauce (tamari, sugar, canola/olive oil blend, cornstarch), chive, rice",
+     "ingredients": "plant-based chick'n, bell peppers, onions, canola oil, garlic, salt, black pepper, teriyaki glaze (beet sugar, no soy sauce, cornstarch, canola oil)",
      "allergens": [
-      "EGG",
-      "MILK",
-      "SESAME",
       "SOY",
       "WHEAT"
      ],
-     "trace_allergens": [
-      "COCONUT",
-      "FISH",
-      "PEANUTS",
-      "SHELLFISH",
-      "TREENUTS"
+     "trace_allergens": [],
+     "tags": [
+      "vegan"
      ],
-     "tags": [],
      "order": 1
     },
     {
@@ -4260,10 +4228,10 @@
      "order": 3
     },
     {
-     "name": "Lemony Garlic Green Beans",
-     "recipe_id": "LemonGarlicBeans1",
+     "name": "Steamed Rice",
+     "recipe_id": "5121297",
      "description": "",
-     "ingredients": "green beans, garlic, lemon juice, lemon zest, canola/olive oil blend, salt, pepper",
+     "ingredients": "white rice, salt",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -4273,50 +4241,46 @@
      "order": 4
     },
     {
-     "name": "Warm Pita",
-     "recipe_id": "3675181",
+     "name": "Garlic Noodles",
+     "recipe_id": "5536509",
      "description": "",
-     "ingredients": "whole wheat flour, enriched wheat flour, soybean, canola oil, sugar, salt, baking powder, yeast, blackstrap molasses, calcium propionate, sodium stearoyl lactylate, guar gum, amylase",
+     "ingredients": "pasta (semolina flour), garlic, canola/olive oil blend, butter, tamari sauce, mushroom seasoning",
      "allergens": [
+      "MILK",
       "SOY",
       "WHEAT"
      ],
      "trace_allergens": [
-      "EGG",
-      "TREENUTS"
+      "EGG"
      ],
      "tags": [
-      "vegan"
+      "vegetarian"
      ],
      "order": 5
     },
     {
-     "name": "Greek Lemon Roasted Potatoes",
-     "recipe_id": "GreekLemPots1",
+     "name": "Egg Roll",
+     "recipe_id": "3364001",
      "description": "",
-     "ingredients": "potatoes, lemon juice, garlic, oregano, olive/canola oil blend, salt, black pepper",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan"
-     ],
-     "order": 6
-    },
-    {
-     "name": "Lemon Herb Rice Pilaf",
-     "recipe_id": "LemonHerbPilaf1",
-     "description": "",
-     "ingredients": "long grain rice, vegetable soup base, onions, celery, garlic, lemon zest, fresh lemon juice, parsley, green onions, thyme, oregano, bay leaf, olive/canola oil blend, butter, black pepper, salt",
+     "ingredients": "enriched flour, calcium propionate, malted barley flour, cabbage, celery, carrots, bok choy, enriched durum flour, wheat flour, water chestnuts, bamboo shoots, salt, modified food starch, cottonseed oil, canola oil, sugar, spice, garlic, wheat gluten, sesame oil, dried onion, maltodextrin, natural flavor, disodium inosinate, disodium guanylate, eggs, sesame oil, cornstarch, fried in canola oil",
      "allergens": [
-      "MILK"
+      "EGG",
+      "SESAME",
+      "WHEAT"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "COCONUT",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SHELLFISH",
+      "SOY",
+      "TREENUTS"
+     ],
      "tags": [
-      "gluten-free",
       "vegetarian"
      ],
-     "order": 7
+     "order": 6
     },
     {
      "name": "Panini Station",
@@ -4334,17 +4298,22 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 8
+     "order": 7
     },
     {
-     "name": "Soup of the Day",
-     "recipe_id": "SoupoftheDay",
+     "name": "Chicken Noodle Soup",
+     "recipe_id": "MollyChxNoodleSoup1",
      "description": "",
-     "ingredients": "chef's choice soup of the day",
-     "allergens": [],
+     "ingredients": "chicken stock, chicken meat, carrots, celery, enriched egg noodles, peas, onions, modified food starch, bleached enriched flour, salt, chicken fat, yeast extract, sugar, chicken meat including chicken juices, maltodextrin, water, vegetables (celery, onions, carrots), dehydrated whey (milk), garlic, soy protein isolate, spices, turmeric, cornstarch, beta carotene, dehydrated chicken, citric acid",
+     "allergens": [
+      "EGG",
+      "MILK",
+      "SOY",
+      "WHEAT"
+     ],
      "trace_allergens": [],
      "tags": [],
-     "order": 9
+     "order": 8
     },
     {
      "name": "Composed Salad",
@@ -4354,7 +4323,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 10
+     "order": 9
     },
     {
      "name": "Performance Bar",
@@ -4364,7 +4333,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 11
+     "order": 10
     },
     {
      "name": "Craveable Grains",
@@ -4377,7 +4346,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 12
+     "order": 11
     },
     {
      "name": "Flavor Forward Legumes",
@@ -4390,23 +4359,24 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 13
+     "order": 12
     },
     {
-     "name": "Pesto Sauce",
-     "recipe_id": "6128910",
+     "name": "Pasta Marinara",
+     "recipe_id": "5095708",
      "description": "",
-     "ingredients": "basil, canola oil, parmesan cheese (milk, bacterial culture, salt, microbial enzymes, extra virgin olive oil, garlic, salt, lemon juice concentrate, natural flavor, ascorbic acid, xanthan gum, soy lecithin, chamomile extract, rosemary extract)",
+     "ingredients": "pasta, marinara sauce, canola/olive oil blend",
      "allergens": [
-      "MILK",
-      "SOY"
+      "SOY",
+      "WHEAT"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "EGG"
+     ],
      "tags": [
-      "gluten-free",
-      "vegetarian"
+      "vegan"
      ],
-     "order": 14
+     "order": 13
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -4419,7 +4389,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 15
+     "order": 14
     }
    ],
    "Dinner": [
@@ -4922,20 +4892,12 @@
      "order": 5
     },
     {
-     "name": "Turkey Burger with Bun",
-     "recipe_id": "5597199",
+     "name": "Burger Bar",
+     "recipe_id": "5964436",
      "description": "",
-     "ingredients": "turkey burger (white turkey, salt, spices, granulated garlic, onion powder, olive oil, natural flavorings, silicon dioxide), burger bun (whole wheat flour, wheat gluten, sugar, soybean oil, sea salt, wheat bran, yeast, calcium propionate, monoglycerides, datem, citric acid, grain vinegar, salt, calcium sulfate, potassium diodate, monocalcium phosphate, soy lecithin)",
-     "allergens": [
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "EGG",
-      "MILK",
-      "SESAME",
-      "TREENUTS"
-     ],
+     "ingredients": "",
+     "allergens": [],
+     "trace_allergens": [],
      "tags": [],
      "order": 6
     },
@@ -5063,22 +5025,6 @@
      "order": 13
     },
     {
-     "name": "Pesto Sauce",
-     "recipe_id": "6128910",
-     "description": "",
-     "ingredients": "basil, canola oil, parmesan cheese (milk, bacterial culture, salt, microbial enzymes, extra virgin olive oil, garlic, salt, lemon juice concentrate, natural flavor, ascorbic acid, xanthan gum, soy lecithin, chamomile extract, rosemary extract)",
-     "allergens": [
-      "MILK",
-      "SOY"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegetarian"
-     ],
-     "order": 14
-    },
-    {
      "name": "Penne Pasta (Gluten-Free)",
      "recipe_id": "3189216",
      "description": "",
@@ -5089,7 +5035,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 15
+     "order": 14
     }
    ],
    "Dinner": [
