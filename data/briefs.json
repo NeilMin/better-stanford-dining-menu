@@ -2075,6 +2075,41 @@
   "vessel": "plate",
   "written_at": "2026-09-29T01:08:29+00:00"
  },
+ "171d81e8f86c": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "sausage",
+   "andouille",
+   "crawfish"
+  ],
+  "checks": [
+   {
+    "q": "Is the main dish a dark vegetable stew with sliced okra?",
+    "yes": true
+   },
+   {
+    "q": "Does the stew contain pieces of sausage, meat, or seafood?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a dry stir-fry or salad?",
+    "yes": false
+   }
+  ],
+  "dish": "vegetarian gumbo",
+  "look": "thick dark brown roux broth, sliced green okra rounds, diced zucchini, bright yellow squash cubes, sliced cremini mushrooms, stewed red tomato chunks, diced green bell peppers",
+  "model": "gemini-3.7-flash",
+  "name": "Vegetable Gumbo",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-26T09:20:12+00:00"
+ },
  "1764ace053da": {
   "avoid": [
    "chicken",
@@ -6898,6 +6933,41 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-10-21T23:40:21+00:00"
+ },
+ "37575f402593": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "tofu",
+   "paneer",
+   "soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a mix of spiced roasted cauliflower and squash pieces?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat or seafood?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish served as a soupy broth?",
+    "yes": false
+   }
+  ],
+  "dish": "masala roasted vegetables",
+  "look": "roasted cauliflower florets, sliced yellow squash rounds, sliced green zucchini crescents, golden turmeric and brown masala spice coating, lightly charred edges, fresh cilantro leaves",
+  "model": "gemini-3.7-flash",
+  "name": "Masala Spiced Vegetable",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-26T09:20:12+00:00"
  },
  "376f903e513c": {
   "avoid": [
@@ -12221,6 +12291,41 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-11T19:38:05+00:00"
+ },
+ "61e2148e0cac": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "egg",
+   "noodle soup",
+   "broth"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish stir-fried thin rice noodles with sliced vegetables?",
+    "yes": true
+   },
+   {
+    "q": "Is the dish served in a liquid broth like a noodle soup?",
+    "yes": false
+   },
+   {
+    "q": "Are there pieces of meat, chicken, or seafood visible?",
+    "yes": false
+   }
+  ],
+  "dish": "vegetable pancit bihon",
+  "look": "tangled thin rice vermicelli noodles, light brown tamari sheen, shredded orange carrots, chopped vibrant bok choy greens, thin red bell pepper strips, sliced scallions",
+  "model": "gemini-3.7-flash",
+  "name": "Pancit Noodles",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-26T09:20:12+00:00"
  },
  "628253461907": {
   "avoid": [
@@ -18728,6 +18833,41 @@
   "vessel": "bowl",
   "written_at": "2026-10-15T19:30:40+00:00"
  },
+ "987ff0dcef9a": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "raw lentils",
+   "dry beans",
+   "bread"
+  ],
+  "checks": [
+   {
+    "q": "Is the main dish a thick yellow lentil stew?",
+    "yes": true
+   },
+   {
+    "q": "Are there chunks of meat or seafood in the stew?",
+    "yes": false
+   },
+   {
+    "q": "Do the lentils look dry or uncooked?",
+    "yes": false
+   }
+  ],
+  "dish": "curried yellow dal",
+  "look": "simmered yellow lentils, thick golden-yellow turmeric puree, sliced green chilies, chopped green onions, glossy spiced aromatic surface, finely chopped fresh cilantro",
+  "model": "gemini-3.7-flash",
+  "name": "Curried Dal & Onion",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-26T09:20:12+00:00"
+ },
  "9883089b31c8": {
   "avoid": [
    "meat",
@@ -21640,6 +21780,41 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-10-01T10:36:25+00:00"
+ },
+ "ad69d51fe11b": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "bone-in meat",
+   "soup",
+   "skewers"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish glazed vegetarian strips mixed with sliced peppers and onions?",
+    "yes": true
+   },
+   {
+    "q": "Does the dish contain bone-in meat?",
+    "yes": false
+   },
+   {
+    "q": "Is the food submerged in broth or soup?",
+    "yes": false
+   }
+  ],
+  "dish": "teriyaki plant-based chicken stir-fry",
+  "look": "seared plant-based chick'n strips, thick dark amber teriyaki glaze, sliced red bell peppers, sliced green bell peppers, soft caramelized onion strips, toasted white sesame seeds",
+  "model": "gemini-3.7-flash",
+  "name": "Teriyaki Glazed Chick'n Strips",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-26T09:20:12+00:00"
  },
  "adb94943a034": {
   "avoid": [
@@ -24630,6 +24805,39 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T05:33:17+00:00"
  },
+ "c344d1f6c95c": {
+  "avoid": [
+   "whole uncut fish",
+   "fish head",
+   "fried battered fish",
+   "salmon",
+   "chicken",
+   "beef",
+   "bread"
+  ],
+  "checks": [
+   {
+    "q": "Is the main dish pieces of fish in a reddish-brown curry gravy?",
+    "yes": true
+   },
+   {
+    "q": "Is the fish whole with head and tail attached?",
+    "yes": false
+   },
+   {
+    "q": "Is the fish deep-fried in crispy batter?",
+    "yes": false
+   }
+  ],
+  "dish": "South Indian fish curry",
+  "look": "flaky white fish fillet chunks, deep reddish-brown tamarind curry gravy, thin julienned ginger strips, glossy spiced surface, fresh chopped green cilantro",
+  "model": "gemini-3.7-flash",
+  "name": "Tamil Nadu Fish Curry",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-26T09:20:12+00:00"
+ },
  "c373b4c6a34b": {
   "avoid": [
    "meat",
@@ -25461,6 +25669,39 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-30T10:06:09+00:00"
+ },
+ "c7c49319693d": {
+  "avoid": [
+   "bone-in chicken",
+   "whole chicken breast",
+   "skewers",
+   "beef",
+   "shrimp",
+   "naan",
+   "bread"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish chicken pieces in a yellow curry sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken served as a whole bone-in piece or uncut breast?",
+    "yes": false
+   },
+   {
+    "q": "Is the curry dry without sauce?",
+    "yes": false
+   }
+  ],
+  "dish": "Thai yellow chicken curry",
+  "look": "tender bite-sized chicken breast pieces, creamy bright yellow-orange coconut curry sauce, soft translucent diced onions, glossy sauce surface, fresh green cilantro leaves",
+  "model": "gemini-3.7-flash",
+  "name": "Coconut Chicken Curry",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-26T09:20:12+00:00"
  },
  "c7f757efdea2": {
   "avoid": [
