@@ -448,9 +448,9 @@ JSON block so a dish name cannot close the script tag early.
   through a reload or a bookmark.
 - **Feedback goes to a Google Form, not to GitHub issues,** because most readers have no
   GitHub account. The form is on the owner's Google account and emails the owner on every
-  response. The way in is on the dish, where a problem is noticed: a line at the foot of each
-  dish's ingredients and under the big picture (`reportLink()`), with the footer line for
-  everything else. One click listener writes every link's address on the way out, pre-filling
+  response. The way in is on the dish, where a problem is noticed: under the big picture, or
+  at the foot of the ingredients on a card with no picture to open (`reportLink()`), with the
+  footer line for everything else. One click listener writes every link's address on the way out, pre-filling
   the form's "page info" question with the dish and its hall (read off the column's
   `data-hall`; the lightbox is handed it, being outside the board) and the view on screen
   (the `?d=&m=&h=` link, the language, the width, the build). It goes through `FEEDBACK_VIEW`
@@ -487,7 +487,10 @@ JSON block so a dish name cannot close the script tag early.
 - **Sizes and shadows come from a scale on `:root`, the way colours do.** Every font size is a step
   of the `type scale` written in the comment there (12 13 14 15 16 18 20 24 28 32 48), and
   `test_every_font_size_is_on_the_type_scale` reads that comment, so a new size is a new step
-  there or nothing. It replaced nineteen sizes, half-pixels among them. A shadow is one of four
+  there or nothing. It replaced nineteen sizes, half-pixels among them. Every padding, margin and
+  gap is a step of the `spacing scale` beside it (4 8 12 16 24 32 48 64 96 128), held by
+  `test_every_spacing_is_on_the_spacing_scale`; under 4px is a nudge, not a spacing, and is
+  exempt. A value between two steps takes the smaller: the larger was tried and read as too loose. A shadow is one of four
   elevations, `--shadow-1` to `--shadow-4`: pick how high the thing floats, not what its shadow
   looks like. Anything entering, leaving or pressed eases with `--ease-out`. The rules behind
   these, and the rest of the visual vocabulary, come from *Refactoring UI*; notes on it live in
@@ -555,6 +558,11 @@ JSON block so a dish name cannot close the script tag early.
   and again on every toggle — and a hall picked last slots in where its chip sits rather than
   appearing on the right of the board. Filtering against `DATA.halls` is also what drops a stored
   id the build no longer publishes, which `render()` would otherwise crash on.
+- **A dish's ingredients are behind its picture.** Clicking the picture opens the lightbox,
+  which carries the ingredients, the shared-equipment line and the report link; the card keeps
+  only the allergens. The card's own "Ingredients" toggle is drawn only where there is no
+  picture to open -- a dish not drawn yet, pictures switched off, an item at a counter --
+  because it was the same text twice. Something the toggle says, the lightbox has to say too.
 - **A dish card leads with its picture,** so the pictures in one row start level across the halls
   however many lines the names above them would have taken. `dishCard()` appends the thumb before
   the name block.

@@ -35,6 +35,19 @@
      half-pixels among them, and nobody could have said why a badge was 14.5 and
      the allergens beside it 14. A new size goes in here first, or not at all. */
 
+  /* Every padding, margin and gap is a step of the book's spacing scale, and a
+     test holds it to that too, --gutter and --bleed included:
+
+       spacing scale: 4 8 12 16 24 32 48 64 96 128
+
+     Each step is at least a quarter more than the last, so two spacings that
+     differ are seen to differ. Below 4px is a nudge or a hairline, not a
+     spacing, and is left alone. A value that fell between two steps went to
+     the smaller: the larger, the book's advice, was tried and read as too
+     loose. The one exception is the feedback link's padding, which is its tap
+     target. Before the scale the page had thirty-odd spacings, 7s, 9s, 13s and
+     17s among them. */
+
   /* Elevation: how far above the page a thing floats, not what its shadow looks
      like. Each is two shadows -- a soft one cast by the light, and a tight one
      where the thing meets the page, which fades as it rises. In dark mode none
@@ -84,7 +97,7 @@
      narrow for five of anything. */
   --col-floor: max(var(--col-min), calc((var(--limit) - 4 * var(--col-gap)) / 5));
   /* How far a special's panel reaches past its column; see .card-special. */
-  --bleed: 10px;
+  --bleed: 8px;
 }
 :root[data-theme="light"] { color-scheme: light; }
 :root[data-theme="dark"] { color-scheme: dark; }
@@ -164,8 +177,8 @@ html:lang(zh) .col-concept { font-family: var(--cjk), var(--sans); font-size: 15
   grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   grid-template-areas: "brand bar tools";
   align-items: center;
-  gap: 10px 28px;
-  padding: 10px max(var(--gutter), (100% - var(--page)) / 2);
+  gap: 8px 24px;
+  padding: 8px max(var(--gutter), (100% - var(--page)) / 2);
   background: color-mix(in srgb, var(--bg) 86%, transparent);
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
@@ -175,6 +188,7 @@ html:lang(zh) .col-concept { font-family: var(--cjk), var(--sans); font-size: 15
 .masthead { display: contents; }
 
 .brand {
+  --mark: 22px;
   grid-area: brand;
   margin: 0;
   font: 600 18px/1.2 var(--serif);
@@ -187,9 +201,9 @@ html:lang(zh) .col-concept { font-family: var(--cjk), var(--sans); font-size: 15
 .brand::before {
   content: "";
   display: inline-block;
-  width: 22px;
-  height: 22px;
-  margin-right: 10px;
+  width: var(--mark);
+  height: var(--mark);
+  margin-right: 8px;
   vertical-align: -5px;
   border-radius: 6px;
   background:
@@ -204,7 +218,7 @@ html:lang(zh) .col-concept { font-family: var(--cjk), var(--sans); font-size: 15
    which is no taller than the day chips. Chinese keeps its one line. */
 html:lang(en) .brand {
   position: relative;
-  padding-left: 32px;
+  padding-left: calc(var(--mark) + 8px);
   font-size: 16px;
   line-height: 1.12;
 }
@@ -217,9 +231,9 @@ html:lang(en) .brand span { display: block; overflow: hidden; text-overflow: ell
   appearance: none;
   display: inline-flex;
   align-items: center;
-  gap: 7px;
+  gap: 8px;
   height: 36px;
-  padding: 0 11px;
+  padding: 0 12px;
   border: 0;
   border-radius: 8px;
   background: none;
@@ -250,7 +264,7 @@ html:lang(en) .brand span { display: block; overflow: hidden; text-overflow: ell
   grid-area: bar;
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 16px;
 }
 
 .controls { display: flex; align-items: center; }
@@ -298,7 +312,7 @@ html:lang(en) .brand span { display: block; overflow: hidden; text-overflow: ell
   flex-direction: column;
   gap: 1px;
   min-width: 54px;
-  padding: 5px 9px 6px;
+  padding: 4px 8px;
   border-radius: 10px;
 }
 .chip-day .label { font-size: 13px; line-height: 1.2; color: var(--ink-2); }
@@ -325,7 +339,7 @@ html:lang(en) .brand span { display: block; overflow: hidden; text-overflow: ell
 
 .chip-seg {
   height: 36px;
-  padding: 0 17px;
+  padding: 0 16px;
   border-radius: 8px;
   color: var(--ink-2);
   font-size: 15px;
@@ -347,7 +361,7 @@ html:lang(en) .brand span { display: block; overflow: hidden; text-overflow: ell
 .chips .chip {
   gap: 8px;
   height: 36px;
-  padding: 0 13px;
+  padding: 0 12px;
   border: 1px solid var(--rule-strong);
   border-radius: 8px;
   background: var(--bg);
@@ -380,7 +394,7 @@ html:lang(en) .brand span { display: block; overflow: hidden; text-overflow: ell
 /* Sorting and pictures change the view rather than the menu, so they sit a
    rule apart from the diet filters. */
 .chips .chip-view { position: relative; }
-.chips .chip:not(.chip-view) + .chip-view { margin-left: 13px; }
+.chips .chip:not(.chip-view) + .chip-view { margin-left: 12px; }
 .chips .chip:not(.chip-view) + .chip-view::before {
   content: "";
   position: absolute;
@@ -409,7 +423,7 @@ html:lang(en) .brand span { display: block; overflow: hidden; text-overflow: ell
 .intro {
   max-width: var(--page);
   margin: 0 auto;
-  padding: 44px var(--gutter) 0;
+  padding: 48px var(--gutter) 0;
 }
 
 /* The one large thing on the page: what you are looking at. */
@@ -432,10 +446,10 @@ html:lang(en) .brand span { display: block; overflow: hidden; text-overflow: ell
   flex: none;
   display: inline-flex;
   align-items: center;
-  gap: 7px;
+  gap: 8px;
   height: 36px;
-  margin-top: 7px;
-  padding: 0 13px 0 11px;
+  margin-top: 8px;
+  padding: 0 12px;
   border: 1px solid var(--rule-strong);
   border-radius: 8px;
   background: var(--bg);
@@ -467,7 +481,7 @@ html:lang(en) .brand span { display: block; overflow: hidden; text-overflow: ell
   bottom: calc(24px + env(safe-area-inset-bottom));
   z-index: 50;
   max-width: min(440px, calc(100vw - 32px));
-  padding: 10px 16px;
+  padding: 8px 16px;
   border-radius: 12px;
   background: var(--ink);
   color: var(--bg);
@@ -492,8 +506,8 @@ html:lang(en) .brand span { display: block; overflow: hidden; text-overflow: ell
 .picks {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-top: 30px;
+  gap: 8px;
+  margin-top: 32px;
 }
 
 /* The tour scrolls a stop into view; this keeps it clear of the sticky bar. */
@@ -516,7 +530,7 @@ html:lang(en) .brand span { display: block; overflow: hidden; text-overflow: ell
    the exception. Spanning the window is also what makes `100%` inside .board
    mean the widest the board can get without pushing the page sideways -- 100vw
    would have counted the scrollbar and done exactly that. */
-main { margin: 0; padding: 36px var(--gutter) 88px; }
+main { margin: 0; padding: 32px var(--gutter) 96px; }
 
 /* What the calendar says to the whole campus at once -- a Thanksgiving dinner,
    a winter-break closure -- which belongs above the board, not in one column. */
@@ -526,7 +540,7 @@ main { margin: 0; padding: 36px var(--gutter) 88px; }
   display: flex;
   flex-direction: column;
   gap: 8px;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
 }
 .notices:empty { display: none; }
 
@@ -535,13 +549,13 @@ main { margin: 0; padding: 36px var(--gutter) 88px; }
    styling: readable, and inside the same cap as the notices. */
 .prerender {
   max-width: var(--limit);
-  margin: 0 auto 28px;
+  margin: 0 auto 24px;
   line-height: 1.5;
 }
 .prerender h2 { font-family: var(--serif); margin: 0 0 4px; }
 .prerender h3 { margin: 24px 0 4px; }
 .prerender h4 { margin: 12px 0 2px; font-weight: 600; }
-.prerender ul { margin: 0; padding-left: 20px; }
+.prerender ul { margin: 0; padding-left: 16px; }
 
 .notice {
   margin: 0;
@@ -588,7 +602,7 @@ main { margin: 0; padding: 36px var(--gutter) 88px; }
   grid-auto-flow: column;
   grid-auto-columns: minmax(var(--col-floor), 1fr);
   column-gap: var(--col-gap);
-  row-gap: 40px;
+  row-gap: 32px;
   align-items: start;
   overflow-x: auto;
   scroll-snap-type: x proximity;
@@ -617,7 +631,7 @@ main { margin: 0; padding: 36px var(--gutter) 88px; }
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 32px;
   --wash: light-dark(color-mix(in srgb, var(--hall, var(--cardinal)) 24%, #FFFFFF),
     color-mix(in srgb, var(--hall, var(--cardinal)) 13%, #1A1918));
 }
@@ -664,7 +678,7 @@ main { margin: 0; padding: 36px var(--gutter) 88px; }
 .col-top {
   display: flex;
   align-items: flex-start;
-  gap: 14px;
+  gap: 12px;
 }
 .col-title { flex: 1; min-width: 0; }
 
@@ -712,8 +726,8 @@ main { margin: 0; padding: 36px var(--gutter) 88px; }
   height: var(--logo-h);
   object-fit: contain;
   box-sizing: content-box;
-  padding: 3px 5px;
-  margin: -3px -5px;
+  padding: 3px 4px;
+  margin: -3px -4px;
   border-radius: 5px;
   background: light-dark(transparent, #FFFFFF);
 }
@@ -736,7 +750,7 @@ main { margin: 0; padding: 36px var(--gutter) 88px; }
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
-  column-gap: 17px;
+  column-gap: 16px;
 }
 .col-when > *, .col-stats > * { position: relative; }
 /* Out of flow, so a link does not underline its own separator. */
@@ -750,7 +764,7 @@ main { margin: 0; padding: 36px var(--gutter) 88px; }
 .hours { color: var(--ink); font-variant-numeric: tabular-nums; }
 
 .status {
-  padding-left: 14px;
+  padding-left: 12px;
   background: radial-gradient(circle at 4px 50%, currentColor 3.5px, transparent 4px) no-repeat;
 }
 .status-open { color: var(--open); }
@@ -955,7 +969,7 @@ main { margin: 0; padding: 36px var(--gutter) 88px; }
   justify-content: center;
   gap: 8px;
   aspect-ratio: 16 / 9;
-  padding: 8px 14px;
+  padding: 8px 12px;
   border-radius: var(--radius);
   background: var(--sunk);
   color: var(--ink-3);
@@ -1029,7 +1043,7 @@ main { margin: 0; padding: 36px var(--gutter) 88px; }
 }
 
 .lightbox-info {
-  padding: 16px 20px 20px;
+  padding: 16px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -1053,7 +1067,7 @@ main { margin: 0; padding: 36px var(--gutter) 88px; }
 .lightbox-badges {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 4px;
   margin: 4px 0;
 }
 
@@ -1110,19 +1124,19 @@ dialog.lightbox {
   transition-behavior: allow-discrete;
 }
 
-.card-head { padding-top: 14px; }
+.card-head { padding-top: 12px; }
 
 /* With pictures switched off the board is a list, and a list wants rules
    between its rows rather than a picture's worth of air. */
-.board:not(:has(.thumb, .thumb-none)) { row-gap: 18px; }
-.board:not(:has(.thumb, .thumb-none)) .column { gap: 18px; }
+.board:not(:has(.thumb, .thumb-none)) { row-gap: 16px; }
+.board:not(:has(.thumb, .thumb-none)) .column { gap: 16px; }
 .card:not(:has(> .thumb, > .thumb-none)) > .card-head { padding-top: 0; }
 .col-head ~ .card:not(.card-special, :has(> .thumb, > .thumb-none)) {
-  padding-top: 18px;
+  padding-top: 16px;
   border-top: 1px solid var(--rule);
 }
 .col-head + .card:not(.card-special, :has(> .thumb, > .thumb-none)) { padding-top: 0; border-top: 0; }
-.card-special:not(:has(> .thumb, > .thumb-none)) { padding-top: 14px; }
+.card-special:not(:has(> .thumb, > .thumb-none)) { padding-top: 12px; }
 
 .dish-name {
   margin: 0;
@@ -1153,18 +1167,18 @@ dialog.lightbox {
   align-items: center;
   row-gap: 4px;
   min-height: 24px;
-  margin-top: 6px;
+  margin-top: 4px;
   font-size: 14px;
   line-height: 1.4;
 }
 
 .badge { color: var(--ink-2); white-space: nowrap; }
-.badge + .badge::before { content: "·"; margin: 0 7px; color: var(--ink-3); }
+.badge + .badge::before { content: "·"; margin: 0 8px; color: var(--ink-3); }
 .badge-protein { color: var(--ink); font-weight: 600; }
 
 .badge-special, .badge-only {
-  margin-right: 9px;
-  padding: 1px 7px;
+  margin-right: 8px;
+  padding: 1px 8px;
   border-radius: 5px;
   font-size: 13px;
   font-weight: 600;
@@ -1182,7 +1196,7 @@ dialog.lightbox {
    stays exactly where the pictures in the other halls are. */
 .card-special {
   margin: calc(-1 * var(--bleed)) calc(-1 * var(--bleed)) 0;
-  padding: var(--bleed) var(--bleed) 14px;
+  padding: var(--bleed) var(--bleed) 12px;
   border-radius: calc(var(--radius) + var(--bleed) - 2px);
   background: var(--wash);
 }
@@ -1190,19 +1204,20 @@ dialog.lightbox {
 
 .special-note { margin: 0; font-size: 14px; line-height: 1.45; color: var(--ink-2); }
 
-/* Reserves the line of allergens and the ingredients toggle. Half the dishes
-   list no allergens, and that one missing line is exactly what knocks the next
-   column out of step. */
-.card-body { padding-top: 8px; min-height: 66px; }
+/* Reserves the line of allergens, and the ingredients toggle on a card whose
+   picture does not open them. Half the dishes list no allergens, and that one
+   missing line is exactly what knocks the next column out of step. */
+.card-body { padding-top: 8px; min-height: calc(8px + 14px * 1.45); }
+.card-body:has(> .more) { min-height: 66px; }
 
 .allergens { margin: 0; font-size: 14px; line-height: 1.45; color: var(--ink-2); }
 .allergens b { font-weight: 600; color: var(--ink); }
 
-.more { margin-top: 6px; }
+.more { margin-top: 4px; }
 .more summary {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
+  gap: 8px;
   padding: 2px 0;
   font-size: 14px;
   color: var(--ink-2);
@@ -1224,7 +1239,7 @@ dialog.lightbox {
 @media (hover: hover) and (pointer: fine) {
   .more summary:hover { color: var(--ink); }
 }
-.ingredients { margin: 6px 0 0; font-size: 14px; line-height: 1.55; color: var(--ink-2); }
+.ingredients { margin: 4px 0 0; font-size: 14px; line-height: 1.55; color: var(--ink-2); }
 
 /* The way to the feedback form from one dish, under its ingredients and under
    the big picture. Quieter than the text above it; the padding is for a thumb. */
@@ -1232,7 +1247,7 @@ dialog.lightbox {
 .lightbox-info .report-line { margin: 0; }
 .report {
   display: inline-block;
-  padding: 6px 0;
+  padding: 8px 0;
   color: var(--ink-3);
   text-decoration: underline;
   text-decoration-color: var(--rule-strong);
@@ -1270,7 +1285,7 @@ dialog.lightbox {
   .stations-toggle:hover { background: var(--sunk); color: var(--ink); }
 }
 
-.station-list { margin-top: 6px; }
+.station-list { margin-top: 4px; }
 .station-list > * + * { border-top: 1px solid var(--rule); }
 
 .station-wrap > summary { list-style: none; cursor: pointer; }
@@ -1280,11 +1295,11 @@ dialog.lightbox {
   display: flex;
   align-items: baseline;
   flex-wrap: wrap;
-  gap: 2px 10px;
-  padding: 9px 0;
+  gap: 2px 8px;
+  padding: 8px 0;
 }
 /* The rows that open carry a chevron; the ones that list nothing more do not. */
-.station-wrap > summary .station { padding-right: 22px; position: relative; }
+.station-wrap > summary .station { padding-right: 24px; position: relative; }
 .station-wrap > summary .station::after {
   content: "";
   position: absolute;
@@ -1316,7 +1331,7 @@ dialog.lightbox {
 }
 
 .station-subitems {
-  margin-top: 6px;
+  margin-top: 4px;
   padding-left: 12px;
   border-left: 1.5px solid var(--rule);
   display: flex;
@@ -1382,7 +1397,7 @@ dialog.lightbox {
 }
 
 .empty {
-  padding: 28px 20px;
+  padding: 24px 16px;
   border-radius: var(--radius);
   background: var(--sunk);
   color: var(--ink-2);
@@ -1400,8 +1415,8 @@ footer {
 }
 /* The digest's measure: the allergy warning is in here, and past ~75 characters a
    line is hard to find the start of the next one. */
-footer p { max-width: 72ch; margin: 0 0 10px; }
-footer p:first-child { padding-top: 28px; border-top: 1px solid var(--rule); max-width: none; }
+footer p { max-width: 72ch; margin: 0 0 8px; }
+footer p:first-child { padding-top: 24px; border-top: 1px solid var(--rule); max-width: none; }
 footer strong { font-weight: 600; color: var(--ink); }
 footer a {
   color: var(--ink);
@@ -1438,7 +1453,7 @@ footer .foot-halls { max-width: none; }
   position: fixed;
   z-index: 41;
   width: min(310px, calc(100vw - 24px));
-  padding: 14px 16px 12px;
+  padding: 12px 16px;
   border-radius: 12px;
   background: var(--ink);
   color: var(--bg);
@@ -1472,7 +1487,7 @@ html:lang(zh) .tour-title { font-family: var(--cjk), var(--serif); }
   appearance: none;
   font-size: 14px;
   line-height: 1;
-  padding: 8px 13px;
+  padding: 8px 12px;
   border: 0;
   border-radius: 8px;
   cursor: pointer;
@@ -1516,7 +1531,6 @@ html:lang(zh) .tour-title { font-family: var(--cjk), var(--serif); }
     --col-max: 84vw;
     --col-cap: 100%;
     --col-gap: 16px;
-    --bleed: 8px;
   }
 
   body { font-size: 15px; }
@@ -1530,13 +1544,12 @@ html:lang(zh) .tour-title { font-family: var(--cjk), var(--serif); }
     display: flex;
     align-items: center;
     gap: 4px;
-    padding: 10px var(--gutter) 2px;
+    padding: 8px var(--gutter) 2px;
   }
-  .brand { flex: 1 1 auto; min-width: 0; }
+  .brand { --mark: 20px; flex: 1 1 auto; min-width: 0; }
   /* Fifteen CJK characters at the laptop's 18px run into the switches. */
   html:lang(zh) .brand { font-size: 15px; }
-  html:lang(en) .brand { padding-left: 28px; }
-  .brand::before { width: 20px; height: 20px; margin-right: 8px; vertical-align: -4px;
+  .brand::before { vertical-align: -4px;
     background-position: 5px 5px, 10.6px 5px, 0 0; background-size: 4.4px 10px, 4.4px 10px, auto; }
   .tools { margin-right: -8px; }
   .tool { height: 34px; padding: 0 8px; font-size: 14px; }
@@ -1544,9 +1557,9 @@ html:lang(zh) .tour-title { font-family: var(--cjk), var(--serif); }
   .tool-theme { font-size: 0; gap: 0; }
   .tool-theme::before { width: 15px; height: 15px; }
   /* "EN" for "English", which the Chinese masthead needs the room of: fifteen
-     characters and the mark are 253 px, and a 360 px phone has 258 beside the
+     characters and the mark are 253 px, and a 360 px phone has 261 beside the
      switches. The aria-label still says the whole thing. */
-  .tool-lang { padding: 0 6px; font-size: 0; }
+  .tool-lang { padding: 0 4px; font-size: 0; }
   .tool-lang::after { content: attr(data-short); font-size: 14px; }
 
   .bar {
@@ -1556,7 +1569,7 @@ html:lang(zh) .tour-title { font-family: var(--cjk), var(--serif); }
     flex-direction: column;
     align-items: stretch;
     gap: 8px;
-    padding: 8px 0 10px;
+    padding: 8px 0;
     background: color-mix(in srgb, var(--bg) 86%, transparent);
     backdrop-filter: saturate(180%) blur(20px);
     -webkit-backdrop-filter: saturate(180%) blur(20px);
@@ -1586,16 +1599,16 @@ html:lang(zh) .tour-title { font-family: var(--cjk), var(--serif); }
   .controls-day, .controls-meal { overflow: visible; mask-image: none; }
   .controls-day .group, .days, .controls-meal .group, .segmented { flex: 1; }
   .days { justify-content: space-between; }
-  .chip-seg { flex: 1; height: 34px; padding: 0 10px; font-size: 14px; }
+  .chip-seg { flex: 1; height: 34px; padding: 0 8px; font-size: 14px; }
 
-  .chip-day { flex: 1 1 0; min-width: 0; max-width: 64px; padding: 4px 2px 5px; }
+  .chip-day { flex: 1 1 0; min-width: 0; max-width: 64px; padding: 4px 2px; }
   .chip-day .label { font-size: 12px; }
   /* What a label says where its column is too narrow for it; app.js writes it. */
   .chip-day .label[data-short] { font-size: 0; }
   .chip-day .label[data-short]::after { content: attr(data-short); font-size: 12px; }
   .chip-day .sub { font-size: 16px; }
 
-  .intro { padding-top: 22px; }
+  .intro { padding-top: 24px; }
   .stamp { font-size: 32px; line-height: 1.12; }
   /* Icon only, like the theme switch, so the headline keeps the width it had;
      the label is still the button's accessible name. And a Chinese headline
@@ -1607,14 +1620,13 @@ html:lang(zh) .tour-title { font-family: var(--cjk), var(--serif); }
   html:lang(zh) .stamp { word-break: keep-all; }
   .digest { margin-top: 8px; font-size: 16px; }
 
-  .picks { margin: 20px calc(-1 * var(--gutter)) 0; gap: 8px; }
+  .picks { margin: 16px calc(-1 * var(--gutter)) 0; gap: 8px; }
   .picks .group-label { display: none; }
-  .chips .chip { height: 34px; padding: 0 11px; font-size: 14px; }
+  .chips .chip { height: 34px; padding: 0 12px; font-size: 14px; }
 
-  main { padding-top: 24px; padding-bottom: 56px; }
+  main { padding-top: 24px; padding-bottom: 48px; }
 
-  .board { scroll-snap-type: x mandatory; row-gap: 32px; }
-  .column { gap: 32px; }
+  .board { scroll-snap-type: x mandatory; }
   /* One column is in view at a time here, so there is no neighbour for a
      special's panel to be level with -- only an empty stretch of colour. */
   .card-special { align-self: start; }

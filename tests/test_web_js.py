@@ -445,6 +445,26 @@ def test_every_font_size_is_on_the_type_scale():
     assert sorted({n for n in used if n} - steps) == []
 
 
+def test_every_spacing_is_on_the_spacing_scale():
+    """Padding, margin and gap are steps of one scale, the book's, written on
+    :root next to the type scale. Under 4px is a nudge or a hairline, which no
+    scale has a step for."""
+    import re
+
+    from jsbridge import APP_JS
+
+    css = (APP_JS.parent / "app.css").read_text()
+    scale = re.search(r"spacing scale:([\d ]+)\n", css)
+    assert scale, "the scale is declared on :root"
+    steps = {float(n) for n in scale.group(1).split()}
+    css = re.sub(r"/\*.*?\*/", "", css, flags=re.S)
+    values = re.findall(r"(?<![-\w])(?:padding|margin|gap|row-gap|column-gap)(?:-[a-z]+)*\s*:([^;}]+)", css)
+    values += re.findall(r"--(?:gutter|bleed):([^;}]+)", css)
+    used = [abs(float(n)) for v in values for n in re.findall(r"(-?[\d.]+)px", v)]
+    assert len(used) > 100, "the patterns stopped matching the stylesheet"
+    assert sorted({n for n in used if n >= 4} - steps) == []
+
+
 def test_the_status_bar_is_painted_with_the_page_background():
     """theme-color is what a phone paints its status bar and browser chrome. It
     is the page's own --bg in each scheme; anything else reads as a strip of

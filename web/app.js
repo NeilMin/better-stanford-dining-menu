@@ -757,7 +757,8 @@
     return a;
   }
 
-  function detailsFor(rec, special = false) {
+  /** `opens` is whether the card's picture opens the dish's details. */
+  function detailsFor(rec, special = false, opens = false) {
     const out = [];
     // The poster names the dish and nothing else. Saying so is better than an
     // empty body that reads as "no allergens".
@@ -771,7 +772,11 @@
     }
     if (rec.placeholder) {
       out.push(el("p", { className: "placeholder-note", textContent: t("varies") }));
-    } else if (rec.ing) {
+    } else if (rec.ing && !opens) {
+      // A picture that opens shows the ingredients, the shared equipment and
+      // the report link, so a toggle on its card only said them twice. A dish
+      // with no picture to open -- none drawn yet, pictures switched off, an
+      // item at a counter -- has nowhere else to say them.
       const more = el("details", { className: "more" }, [
         el("summary", { textContent: t("ingredients") }),
         el("p", { className: "ingredients", textContent: ingredientText(rec.ing) }),
@@ -798,6 +803,7 @@
   const lightboxSubtitle = document.getElementById("lightbox-subtitle");
   const lightboxBadges = document.getElementById("lightbox-badges");
   const lightboxIng = document.getElementById("lightbox-ingredients");
+  const lightboxTraces = document.getElementById("lightbox-traces");
   const lightboxReport = document.getElementById("lightbox-report");
 
   /** `hall` is the column the picture was opened from: the dialog sits outside
@@ -833,6 +839,11 @@
         lightboxIng.textContent = "";
         lightboxIng.style.display = "none";
       }
+    }
+    if (lightboxTraces) {
+      const traces = Boolean(rec.trace && rec.trace.length);
+      lightboxTraces.textContent = traces ? t("traces", rec.trace) : "";
+      lightboxTraces.style.display = traces ? "" : "none";
     }
     if (lightboxReport) {
       // The big picture is where a wrong one gets noticed.
@@ -939,7 +950,8 @@
 
     // Likewise: a dish that lists no allergens still gets the body, which
     // reserves that line.
-    card.append(el("div", { className: "card-body" }, detailsFor(rec, special)));
+    card.append(el("div", { className: "card-body" },
+      detailsFor(rec, special, state.photos && Boolean(rec.image))));
     return card;
   }
 
