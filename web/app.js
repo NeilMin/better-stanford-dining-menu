@@ -115,7 +115,7 @@
       shareTip: "Share this day, meal and these halls",
       pager: (dir) => (dir < 0 ? "Previous hall" : "Next hall"),
       hallTitle: (name) => `${name} Menu · Stanford Dining, Side by Side`,
-      footHalls: "Each hall on its own page:",
+      footHalls: "Each hall on its own page",
       shareWhen: (meal, day) => `${day.toLocaleDateString(undefined, { weekday: "long" })} ` +
         `${meal.toLowerCase()}, ${day.toLocaleDateString(undefined, { month: "short", day: "numeric" })}`,
       shareHalls: (n) => `${n} halls`,
@@ -136,21 +136,18 @@
       footerFeedback: (a) => ["Something wrong? ", a("Tell me here"), "."],
       reportDish: "Something wrong with this dish? Tell me here",
       footerSrc: (a, built) => [
-        "Menus scraped from the ",
+        "Menus from the ",
         a("https://rdeapps.stanford.edu/dininghallmenu/", "R&DE Dining Hall Menu"),
-        "; hours and addresses from ",
+        ", hours from ",
         a("https://rde.stanford.edu/dining-hospitality/dining-locations-hours",
           "Dining Locations & Hours"),
-        `. Built ${built}. `,
+        `. Updated ${built}. `,
         a("https://github.com/NeilMin/better-stanford-dining-menu", "Source on GitHub"),
         ".",
       ],
-      footerNote: (strong) => [
-        strong("Dish photographs are AI-generated from each dish's name and ingredient list."),
-        " They illustrate what a dish usually looks like and are not photographs of the food " +
-        "being served. Allergen and ingredient text is reproduced from R&DE and is subject to " +
-        "change without notice — if you have an allergy, confirm at the hall.",
-      ],
+      footerNote: "Dish pictures are AI-generated from the name and ingredients: they show what " +
+        "a dish usually looks like, not what is being served. Allergens and ingredients come " +
+        "from R&DE and can change; if you have an allergy, check at the hall.",
     },
     zh: {
       langChip: "English",
@@ -207,7 +204,7 @@
       shareTip: "分享当前的日期、餐次和食堂",
       pager: (dir) => (dir < 0 ? "上一个食堂" : "下一个食堂"),
       hallTitle: (name) => `${name} 菜单 · 舌尖上的斯坦福`,
-      footHalls: "各食堂单独页面：",
+      footHalls: "各食堂单独页面",
       shareWhen: (meal, day) => `${day.toLocaleDateString("zh-CN", { month: "long", day: "numeric" })}` +
         `（${day.toLocaleDateString("zh-CN", { weekday: "short" })}）${meal}`,
       shareHalls: (n) => `${n} 家食堂`,
@@ -223,21 +220,17 @@
       footerFeedback: (a) => ["有问题就", a("点这里告诉我"), "。"],
       reportDish: "这道菜有问题？点这里告诉我",
       footerSrc: (a, built) => [
-        "菜单抓取自 ",
+        "菜单来自 ",
         a("https://rdeapps.stanford.edu/dininghallmenu/", "R&DE 食堂菜单"),
-        "，营业时间和地址来自 ",
+        "，营业时间来自 ",
         a("https://rde.stanford.edu/dining-hospitality/dining-locations-hours",
           "R&DE 餐饮地点与营业时间"),
-        `。更新于 ${built}。`,
-        "源代码托管在 ",
+        `。更新于 ${built}。源代码在 `,
         a("https://github.com/NeilMin/better-stanford-dining-menu", "GitHub"),
         "。",
       ],
-      footerNote: (strong) => [
-        strong("菜品图片由 AI 根据菜名和配料表生成。"),
-        "图片仅示意这道菜通常的样子，并非实际出餐的照片。" +
-        "过敏原和配料信息转载自 R&DE，可能随时变更，恕不另行通知——如有食物过敏，请到食堂当面确认。",
-      ],
+      footerNote: "菜品图片由 AI 根据菜名和配料生成，只是示意，不是实际出餐的照片。" +
+        "过敏原和配料来自 R&DE，可能会变；如有过敏，请到食堂确认。",
       // Dish names and ingredients are translated offline into data/zh.json;
       // anything that run has not reached yet stays English on the page.
     },
@@ -1648,9 +1641,8 @@
     const built = (state.lang === "zh" && DATA.generated_at_zh) || DATA.generated_at;
     document.getElementById("foot-feedback").replaceChildren(
       ...t("footerFeedback", (text) => reportLink("footer", text)));
+    document.getElementById("foot-note").textContent = t("footerNote");
     document.getElementById("foot-src").replaceChildren(...t("footerSrc", link, built));
-    document.getElementById("foot-note").replaceChildren(
-      ...t("footerNote", (text) => el("strong", { textContent: text })));
 
     const lang = document.getElementById("lang");
     lang.textContent = t("langChip");

@@ -450,7 +450,7 @@ JSON block so a dish name cannot close the script tag early.
   GitHub account. The form is on the owner's Google account and emails the owner on every
   response. The way in is on the dish, where a problem is noticed: under the big picture, or
   at the foot of the ingredients on a card with no picture to open (`reportLink()`), with the
-  footer line for everything else. One click listener writes every link's address on the way out, pre-filling
+  footer's first line, in bold, for everything else. One click listener writes every link's address on the way out, pre-filling
   the form's "page info" question with the dish and its hall (read off the column's
   `data-hall`; the lightbox is handed it, being outside the board) and the view on screen
   (the `?d=&m=&h=` link, the language, the width, the build). It goes through `FEEDBACK_VIEW`
@@ -468,7 +468,9 @@ JSON block so a dish name cannot close the script tag early.
   `docTitle`, because Google reads the title after the script has run. And `_swap()` refuses to
   build if a head tag it rewrites has changed in `index.html`: a hall page that kept the home
   page's canonical would be filed as a duplicate of it. Pages are made for every *active* hall
-  in config, serving or not, so a break does not drop them from the index.
+  in config, serving or not, so a break does not drop them from the index. The footer links
+  every one of them for crawlers, written into the HTML by the build, inside a `<details>` that
+  stays shut: a crawler follows a link whether or not it is open, and a reader never used them.
 - **`web/og.jpg` is the link-preview card, composed once by hand** from the logos and a few
   dish pictures. The page is static, so every link unfurls with the same one; the line the
   button sends with the link is what says which view it is. `og:image` is an absolute URL on

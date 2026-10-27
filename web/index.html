@@ -130,20 +130,25 @@
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <footer>
-  <p id="foot-feedback">Something wrong?
+  <!-- What anyone scrolls down here for, so it comes first, in bold; the fine
+       print beside it only has to be there. -->
+  <p class="foot-feedback" id="foot-feedback">Something wrong?
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSfyfNV88WrqzPeE1CX2G51WM-iRTr-SHSqo9b5zOe5f9wjmtA/viewform" target="_blank" rel="noopener">Tell me here</a>.</p>
-  <p id="foot-src">Menus scraped from the
-    <a href="https://rdeapps.stanford.edu/dininghallmenu/" target="_blank" rel="noopener">R&amp;DE Dining Hall Menu</a>;
-    hours and addresses from
+  <p class="foot-fine" id="foot-note">Dish pictures are AI-generated from the name and ingredients:
+    they show what a dish usually looks like, not what is being served. Allergens and ingredients
+    come from R&amp;DE and can change; if you have an allergy, check at the hall.</p>
+  <p class="foot-fine" id="foot-src">Menus from the
+    <a href="https://rdeapps.stanford.edu/dininghallmenu/" target="_blank" rel="noopener">R&amp;DE Dining Hall Menu</a>,
+    hours from
     <a href="https://rde.stanford.edu/dining-hospitality/dining-locations-hours" target="_blank" rel="noopener">Dining Locations &amp; Hours</a>.
     <a href="https://github.com/NeilMin/better-stanford-dining-menu" target="_blank" rel="noopener">Source on GitHub</a>.</p>
-  <p id="foot-note"><strong>Dish photographs are AI-generated from each dish's name and ingredient list.</strong>
-    They illustrate what a dish usually looks like and are not photographs of the food being served.
-    Allergen and ingredient text is reproduced from R&amp;DE and is subject to change without notice —
-    if you have an allergy, confirm at the hall.</p>
   <!-- A link to every hall's own page, written by the build so a crawler can
-       follow them without running app.js. -->
-  <p class="foot-halls"><span id="foot-halls">Each hall on its own page:</span> <!--HALLS--></p>
+       follow them without running app.js. They are there for search engines,
+       which follow a link whether or not its <details> is open, so it is shut. -->
+  <details class="more foot-halls">
+    <summary id="foot-halls">Each hall on its own page</summary>
+    <p><!--HALLS--></p>
+  </details>
 </footer>
 
 <script id="menu-data" type="application/json">/*DATA*/</script>

@@ -1405,19 +1405,29 @@ dialog.lightbox {
   text-align: center;
 }
 
+/* Side by side across the page, as many columns as fit: on a laptop the four
+   pieces sit in one row, each narrow enough to read, instead of one column
+   bunched in the bottom-left corner; on a phone they stack. The margins put
+   the rule where the content starts, inside the gutters, as the page's other
+   edges are. */
 footer {
-  max-width: var(--page);
-  margin: 0 auto;
-  padding: 0 var(--gutter) 64px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  align-items: start;
+  gap: 8px 48px;
+  margin: 0 max(var(--gutter), (100% - var(--page)) / 2 + var(--gutter));
+  padding: 24px 0 64px;
+  border-top: 1px solid var(--rule);
   font-size: 14px;
   line-height: 1.6;
   color: var(--ink-2);
 }
-/* The digest's measure: the allergy warning is in here, and past ~75 characters a
-   line is hard to find the start of the next one. */
-footer p { max-width: 72ch; margin: 0 0 8px; }
-footer p:first-child { padding-top: 24px; border-top: 1px solid var(--rule); max-width: none; }
-footer strong { font-weight: 600; color: var(--ink); }
+footer p { margin: 0; }
+/* What anyone scrolls down here for, so it comes first, and in bold. */
+.foot-feedback { font-weight: 600; color: var(--ink); }
+/* The rest only has to be there. */
+.foot-fine { font-size: 13px; line-height: 1.5; color: var(--ink-3); }
+footer .foot-fine a { color: var(--ink-2); }
 footer a {
   color: var(--ink);
   text-decoration: underline;
@@ -1427,7 +1437,10 @@ footer a {
 @media (hover: hover) and (pointer: fine) {
   footer a:hover { text-decoration-color: currentColor; }
 }
-footer .foot-halls { max-width: none; }
+.foot-halls { margin: 0; }
+.foot-halls summary { font-size: 13px; color: var(--ink-3); }
+.foot-halls p { margin: 8px 0 0; font-size: 13px; line-height: 1.6; }
+.foot-halls a { white-space: nowrap; }
 
 /* ---------- first-visit tour ---------- */
 

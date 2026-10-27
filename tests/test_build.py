@@ -529,7 +529,7 @@ class TestHallPages:
     def test_the_footer_links_land_on_pages_the_build_wrote(self, out):
         for page in (out / "index.html", out / "wilbur" / "index.html"):
             html = page.read_text()
-            links = re.findall(r'<a href="([^"]+/)">', html[html.index('class="foot-halls"'):])
+            links = re.findall(r'<a href="([^"]+/)">', html[html.index('class="more foot-halls"'):])
             assert len(links) == 2
             for href in links:
                 assert (page.parent / href / "index.html").resolve().exists(), href

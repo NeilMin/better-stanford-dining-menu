@@ -429,7 +429,8 @@ def page_html(template: str, payload: dict, halls: list[dict], hall: dict | None
     hall's page one directory down."""
     esc = html_lib.escape
     root = "../" if hall else ""
-    links = " · ".join(f'<a href="{root}{h["id"]}/">{esc(h["name"])}</a>' for h in halls)
+    # The dot is held to the name before it, so a wrapped line never opens on one.
+    links = "&nbsp;· ".join(f'<a href="{root}{h["id"]}/">{esc(h["name"])}</a>' for h in halls)
     html = template.replace("<!--HALLS-->", links)
     lcp_image = find_lcp_image(payload, hall["id"] if hall else None)
     preload = (f'<link rel="preload" as="image" href="{root}img/{lcp_image}" fetchpriority="high">\n'
