@@ -26,6 +26,29 @@
   --cjk: "PingFang SC", "Hiragino Sans GB", "Source Han Sans SC", "Noto Sans CJK SC",
     "Microsoft YaHei";
 
+  /* Every font size on the page is one of these, and a test holds it to that:
+
+       type scale: 12 13 14 15 16 18 20 24 28 32 48
+
+     Dense at the bottom, where a pixel is a visible step, and sparse at the
+     top, where it is not. Before there was a scale the page had nineteen sizes,
+     half-pixels among them, and nobody could have said why a badge was 14.5 and
+     the allergens beside it 14. A new size goes in here first, or not at all. */
+
+  /* Elevation: how far above the page a thing floats, not what its shadow looks
+     like. Each is two shadows -- a soft one cast by the light, and a tight one
+     where the thing meets the page, which fades as it rises. In dark mode none
+     of them shows much; what floats there is told apart by its border or by
+     being inverted. */
+  --shadow-1: 0 1px 2px rgb(0 0 0 / .1), 0 0 0 .5px rgb(0 0 0 / .08);   /* the meal switch's thumb */
+  --shadow-2: 0 4px 12px rgb(0 0 0 / .1), 0 1px 3px rgb(0 0 0 / .08);   /* buttons floating on the board */
+  --shadow-3: 0 12px 32px rgb(0 0 0 / .2), 0 2px 6px rgb(0 0 0 / .06);  /* the toast, the tour's tip */
+  --shadow-4: 0 24px 48px rgb(0 0 0 / .3);                              /* the picture, opened */
+
+  /* For anything arriving, leaving or being pressed: fast out of the blocks, so
+     it answers the moment it is touched, and slow to settle. */
+  --ease-out: cubic-bezier(.16, 1, .3, 1);
+
   --radius: 10px;
   --gutter: 24px;
   --page: 1800px;
@@ -76,7 +99,9 @@
 }
 
 * { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
+/* The grey flash a phone lays over anything tapped is the browser's press
+   state, not ours; every control has its own (see :active under controls). */
+html { -webkit-text-size-adjust: 100%; -webkit-tap-highlight-color: transparent; }
 
 body {
   margin: 0;
@@ -90,6 +115,19 @@ body {
 
 button { font: inherit; color: inherit; }
 :focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+
+/* A tap is a click at once: none of these zooms on a double tap, so the browser
+   need not wait to see whether a second one is coming. */
+button, a, summary, .thumb { touch-action: manipulation; }
+/* A control's label is not text to copy, and a long press on a chip selecting
+   "Lakeside" is the browser showing through. Dish names and ingredients stay
+   selectable: people copy those. */
+button { -webkit-user-select: none; user-select: none; }
+
+/* Hover styles below all sit inside (hover: hover) and (pointer: fine), and a
+   test holds them to it. A phone has no hover, so it fakes one on the first tap
+   and keeps it until the next tap lands somewhere else: a hall chip switched off
+   kept its dark border, the "show all" button its grey. */
 
 /* The Latin stack carries no CJK faces, so a Chinese page falls back glyph by
    glyph and ends up mixing two type designs inside one dish name. Selected off
@@ -139,7 +177,7 @@ html:lang(zh) .col-concept { font-family: var(--cjk), var(--sans); font-size: 15
 .brand {
   grid-area: brand;
   margin: 0;
-  font: 600 19px/1.2 var(--serif);
+  font: 600 18px/1.2 var(--serif);
   letter-spacing: -.012em;
   white-space: nowrap;
   overflow: hidden;
@@ -167,7 +205,7 @@ html:lang(zh) .col-concept { font-family: var(--cjk), var(--sans); font-size: 15
 html:lang(en) .brand {
   position: relative;
   padding-left: 32px;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.12;
 }
 html:lang(en) .brand::before { position: absolute; left: 0; top: 50%; translate: 0 -50%; }
@@ -190,9 +228,11 @@ html:lang(en) .brand span { display: block; overflow: hidden; text-overflow: ell
   font-weight: 500;
   cursor: pointer;
   white-space: nowrap;
-  transition: background-color .15s, color .15s;
+  transition: background-color .15s, color .15s, scale .12s var(--ease-out);
 }
-.tool:hover { background: var(--sunk); color: var(--ink); }
+@media (hover: hover) and (pointer: fine) {
+  .tool:hover { background: var(--sunk); color: var(--ink); }
+}
 
 /* The contrast mark: half-filled for Auto, empty for Light, full for Dark. */
 .tool-theme::before {
@@ -240,10 +280,16 @@ html:lang(en) .brand span { display: block; overflow: hidden; text-overflow: ell
   background: none;
   cursor: pointer;
   white-space: nowrap;
-  -webkit-tap-highlight-color: transparent;
-  transition: background-color .15s, color .15s, border-color .15s, box-shadow .15s;
+  transition: background-color .15s, color .15s, border-color .15s, box-shadow .15s,
+    scale .12s var(--ease-out);
 }
 .chip:disabled { cursor: not-allowed; }
+
+/* Pressed. On a phone this is the only sign a tap landed, so every button has
+   it. `scale`, the property, rather than a transform, so it composes with any
+   transform the element already carries. */
+:is(.chip:not(:disabled), .tool, .share, .pager, .stations-toggle, .tour-actions button,
+    .lightbox-close):active { scale: .97; }
 
 /* The week, as a calendar strip: the day's name over its date. */
 .days { display: flex; gap: 2px; }
@@ -255,14 +301,16 @@ html:lang(en) .brand span { display: block; overflow: hidden; text-overflow: ell
   padding: 5px 9px 6px;
   border-radius: 10px;
 }
-.chip-day .label { font-size: 12.5px; line-height: 1.2; color: var(--ink-2); }
+.chip-day .label { font-size: 13px; line-height: 1.2; color: var(--ink-2); }
 .chip-day .sub {
   font-size: 18px;
   font-weight: 600;
   line-height: 1.15;
   font-variant-numeric: tabular-nums;
 }
-.chip-day:hover { background: var(--sunk); }
+@media (hover: hover) and (pointer: fine) {
+  .chip-day:hover { background: var(--sunk); }
+}
 .chip-day[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
 .chip-day[aria-pressed="true"] .label { color: inherit; opacity: .78; }
 
@@ -283,11 +331,13 @@ html:lang(en) .brand span { display: block; overflow: hidden; text-overflow: ell
   font-size: 15px;
   font-weight: 500;
 }
-.chip-seg:hover:not(:disabled) { color: var(--ink); }
+@media (hover: hover) and (pointer: fine) {
+  .chip-seg:hover:not(:disabled) { color: var(--ink); }
+}
 .chip-seg[aria-pressed="true"] {
   background: var(--thumb);
   color: var(--ink);
-  box-shadow: 0 1px 2px rgb(0 0 0 / .1), 0 0 0 .5px rgb(0 0 0 / .08);
+  box-shadow: var(--shadow-1);
 }
 .chip-seg:disabled { color: var(--ink-3); opacity: .55; }
 
@@ -305,7 +355,9 @@ html:lang(en) .brand span { display: block; overflow: hidden; text-overflow: ell
   font-size: 15px;
   font-weight: 500;
 }
-.chips .chip:hover { border-color: var(--ink-3); }
+@media (hover: hover) and (pointer: fine) {
+  .chips .chip:hover { border-color: var(--ink-3); }
+}
 .chips .chip[aria-pressed="true"] {
   background: var(--ink);
   border-color: var(--ink);
@@ -348,7 +400,9 @@ html:lang(en) .brand span { display: block; overflow: hidden; text-overflow: ell
   text-decoration-color: var(--rule-strong);
   text-underline-offset: 4px;
 }
-.chips .chip-reset:hover { border-color: transparent; color: var(--ink); text-decoration-color: currentColor; }
+@media (hover: hover) and (pointer: fine) {
+  .chips .chip-reset:hover { border-color: transparent; color: var(--ink); text-decoration-color: currentColor; }
+}
 
 /* ---------- intro ---------- */
 
@@ -361,7 +415,7 @@ html:lang(en) .brand span { display: block; overflow: hidden; text-overflow: ell
 /* The one large thing on the page: what you are looking at. */
 .stamp {
   margin: 0;
-  font: 500 46px/1.08 var(--serif);
+  font: 500 48px/1.08 var(--serif);
   letter-spacing: -.024em;
   text-wrap: balance;
 }
@@ -390,10 +444,11 @@ html:lang(en) .brand span { display: block; overflow: hidden; text-overflow: ell
   font-weight: 500;
   cursor: pointer;
   white-space: nowrap;
-  -webkit-tap-highlight-color: transparent;
-  transition: border-color .15s;
+  transition: border-color .15s, scale .12s var(--ease-out);
 }
-.share:hover { border-color: var(--ink-3); }
+@media (hover: hover) and (pointer: fine) {
+  .share:hover { border-color: var(--ink-3); }
+}
 .share svg {
   width: 16px;
   height: 16px;
@@ -413,10 +468,10 @@ html:lang(en) .brand span { display: block; overflow: hidden; text-overflow: ell
   z-index: 50;
   max-width: min(440px, calc(100vw - 32px));
   padding: 10px 16px;
-  border-radius: 10px;
+  border-radius: 12px;
   background: var(--ink);
   color: var(--bg);
-  box-shadow: 0 12px 32px rgb(0 0 0 / .24);
+  box-shadow: var(--shadow-3);
   font-size: 15px;
   line-height: 1.4;
   overflow-wrap: anywhere;
@@ -424,7 +479,7 @@ html:lang(en) .brand span { display: block; overflow: hidden; text-overflow: ell
   opacity: 0;
   pointer-events: none;
   transform: translate(-50%, 8px);
-  transition: opacity .18s, transform .18s;
+  transition: opacity .18s var(--ease-out), transform .18s var(--ease-out);
 }
 .toast:empty { display: none; }
 .toast-on { opacity: 1; pointer-events: auto; transform: translate(-50%, 0); }
@@ -493,14 +548,14 @@ main { margin: 0; padding: 36px var(--gutter) 88px; }
   padding: 12px 16px;
   border-radius: var(--radius);
   background: var(--sunk);
-  font-size: 15.5px;
+  font-size: 15px;
 }
 
 .special-tag { margin-right: 8px; font-weight: 600; color: var(--cardinal); }
 
 /* Same rule as a dish name: the Chinese is what you read, the English under it
    is what matches the sign at the counter. */
-.special-en { display: block; margin-top: 2px; font-size: 13.5px; color: var(--ink-2); }
+.special-en { display: block; margin-top: 2px; font-size: 14px; color: var(--ink-2); }
 
 /* How wide the board is, from what the halls ask for:
 
@@ -537,6 +592,7 @@ main { margin: 0; padding: 36px var(--gutter) 88px; }
   align-items: start;
   overflow-x: auto;
   scroll-snap-type: x proximity;
+  overscroll-behavior-x: contain;
   /* Room for a special's panel to reach past the first and last columns, which
      the scroller would otherwise clip. It sits outside --width, so the columns
      themselves still line up with the title: the box is --bleed wider on each
@@ -614,7 +670,7 @@ main { margin: 0; padding: 36px var(--gutter) 88px; }
 
 .col-name {
   margin: 0;
-  font: 600 27px/38px var(--serif);
+  font: 600 28px/38px var(--serif);
   letter-spacing: -.016em;
 }
 /* A bar of the hall's colour under its name: the specials poster prints each
@@ -709,7 +765,9 @@ main { margin: 0; padding: 36px var(--gutter) 88px; }
   text-decoration-color: var(--rule-strong);
   text-underline-offset: 3px;
 }
-.maplink:hover { color: var(--ink); text-decoration-color: currentColor; }
+@media (hover: hover) and (pointer: fine) {
+  .maplink:hover { color: var(--ink); text-decoration-color: currentColor; }
+}
 .maplink::after { content: "↗"; display: inline-block; margin-left: 2px; }
 
 /* ---------- the hall row, pinned ---------- */
@@ -751,7 +809,7 @@ main { margin: 0; padding: 36px var(--gutter) 88px; }
   opacity: 0;
   transform: translateY(-7px) scale(.97);
   transform-origin: 50% 0;
-  transition: opacity .18s ease, transform .18s ease, visibility .18s;
+  transition: opacity .18s var(--ease-out), transform .18s var(--ease-out), visibility .18s;
 }
 .pinned.is-on { visibility: visible; opacity: 1; transform: none; }
 
@@ -772,7 +830,7 @@ main { margin: 0; padding: 36px var(--gutter) 88px; }
   flex: 1 1 auto;
   min-width: 0;
   margin: 0;
-  font: 600 19px/1.2 var(--serif);
+  font: 600 18px/1.2 var(--serif);
   letter-spacing: -.014em;
   white-space: nowrap;
   overflow: hidden;
@@ -825,19 +883,21 @@ main { margin: 0; padding: 36px var(--gutter) 88px; }
   background: color-mix(in srgb, var(--bg) 86%, transparent);
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
-  box-shadow: 0 2px 10px rgb(0 0 0 / .14);
+  box-shadow: var(--shadow-2);
   color: var(--ink);
   cursor: pointer;
   /* Away, like the strip: invisible, so it cannot be clicked or tabbed to. */
   visibility: hidden;
   opacity: 0;
-  transition: opacity .18s ease, visibility .18s, border-color .15s;
+  transition: opacity .18s var(--ease-out), visibility .18s, border-color .15s, scale .12s var(--ease-out);
 }
 @media (hover: hover) and (pointer: fine) and (min-width: 721px) {
   .pager { display: grid; }
 }
 .pager.is-on { visibility: visible; opacity: 1; }
-.pager:hover { border-color: var(--ink-3); background: var(--bg); }
+@media (hover: hover) and (pointer: fine) {
+  .pager:hover { border-color: var(--ink-3); background: var(--bg); }
+}
 .pager svg {
   width: 18px;
   height: 18px;
@@ -873,9 +933,17 @@ main { margin: 0; padding: 36px var(--gutter) 88px; }
   background: var(--sunk);
   cursor: zoom-in;
   transition: filter 0.15s ease;
+  /* A white plate on a white page loses its edge wherever the photograph is
+     pale. A hairline drawn over the picture, faint enough not to read as a
+     frame, gives it one back. An outline because a box-shadow would be
+     painted under the image, where nothing can see it. */
+  outline: 1px solid light-dark(rgb(0 0 0 / .07), rgb(255 255 255 / .07));
+  outline-offset: -1px;
 }
-.thumb:hover {
-  filter: brightness(1.03);
+/* ...which is the property the focus ring uses, so the ring is said again. */
+.thumb:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+@media (hover: hover) and (pointer: fine) {
+  .thumb:hover { filter: brightness(1.03); }
 }
 
 /* Same box a picture would fill, not a strip: a dish still waiting to be drawn
@@ -894,7 +962,7 @@ main { margin: 0; padding: 36px var(--gutter) 88px; }
   font-size: 14px;
   text-align: center;
 }
-.thumb-none .glyph { font-size: 26px; line-height: 1; filter: grayscale(1); opacity: .5; }
+.thumb-none .glyph { font-size: 24px; line-height: 1; filter: grayscale(1); opacity: .5; }
 
 /* ---------- lightbox modal ---------- */
 
@@ -905,6 +973,7 @@ main { margin: 0; padding: 36px var(--gutter) 88px; }
   margin: auto;
   width: min(92vw, 680px);
   max-height: 90vh;
+  max-height: 90dvh;
   overflow: visible;
   color: var(--ink);
 }
@@ -933,10 +1002,11 @@ main { margin: 0; padding: 36px var(--gutter) 88px; }
   border: 1px solid var(--rule-strong);
   border-radius: calc(var(--radius) * 1.5);
   overflow: hidden;
-  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--shadow-4);
   display: flex;
   flex-direction: column;
   max-height: 90vh;
+  max-height: 90dvh;
 }
 
 .lightbox-media {
@@ -946,6 +1016,7 @@ main { margin: 0; padding: 36px var(--gutter) 88px; }
   justify-content: center;
   overflow: hidden;
   max-height: 60vh;
+  max-height: 60dvh;
 }
 
 .lightbox-img {
@@ -954,6 +1025,7 @@ main { margin: 0; padding: 36px var(--gutter) 88px; }
   max-height: 60vh;
   object-fit: contain;
   display: block;
+  max-height: 60dvh;
 }
 
 .lightbox-info {
@@ -1009,12 +1081,14 @@ main { margin: 0; padding: 36px var(--gutter) 88px; }
   align-items: center;
   justify-content: center;
   z-index: 2;
-  transition: background 0.15s ease, transform 0.15s ease;
+  transition: background 0.15s ease, transform 0.15s ease, scale .12s var(--ease-out);
 }
 
-.lightbox-close:hover {
-  background: rgba(0, 0, 0, 0.85);
-  transform: scale(1.08);
+@media (hover: hover) and (pointer: fine) {
+  .lightbox-close:hover {
+    background: rgba(0, 0, 0, 0.85);
+    transform: scale(1.08);
+  }
 }
 
 dialog.lightbox[open] {
@@ -1032,7 +1106,7 @@ dialog.lightbox {
   transform: scale(0.96);
   transition-property: opacity, transform, display, overlay;
   transition-duration: 0.25s;
-  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  transition-timing-function: var(--ease-out);
   transition-behavior: allow-discrete;
 }
 
@@ -1080,7 +1154,7 @@ dialog.lightbox {
   row-gap: 4px;
   min-height: 24px;
   margin-top: 6px;
-  font-size: 14.5px;
+  font-size: 14px;
   line-height: 1.4;
 }
 
@@ -1092,7 +1166,7 @@ dialog.lightbox {
   margin-right: 9px;
   padding: 1px 7px;
   border-radius: 5px;
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: 600;
 }
 .badge-special { background: var(--cardinal); color: var(--bg); }
@@ -1147,7 +1221,9 @@ dialog.lightbox {
   transition: transform .15s;
 }
 .more[open] summary::before { transform: translateY(-2px) rotate(45deg); }
-.more summary:hover { color: var(--ink); }
+@media (hover: hover) and (pointer: fine) {
+  .more summary:hover { color: var(--ink); }
+}
 .ingredients { margin: 6px 0 0; font-size: 14px; line-height: 1.55; color: var(--ink-2); }
 
 /* The way to the feedback form from one dish, under its ingredients and under
@@ -1162,7 +1238,9 @@ dialog.lightbox {
   text-decoration-color: var(--rule-strong);
   text-underline-offset: 3px;
 }
-.report:hover { color: var(--ink); text-decoration-color: currentColor; }
+@media (hover: hover) and (pointer: fine) {
+  .report:hover { color: var(--ink); text-decoration-color: currentColor; }
+}
 
 .placeholder-note { margin: 0; font-size: 14px; color: var(--ink-2); }
 
@@ -1181,13 +1259,16 @@ dialog.lightbox {
   margin: 0 -8px 0 auto;
   padding: 4px 8px;
   border: 0;
-  border-radius: 6px;
+  border-radius: 8px;
   background: none;
   color: var(--ink-2);
-  font-size: 14.5px;
+  font-size: 14px;
   cursor: pointer;
+  transition: scale .12s var(--ease-out);
 }
-.stations-toggle:hover { background: var(--sunk); color: var(--ink); }
+@media (hover: hover) and (pointer: fine) {
+  .stations-toggle:hover { background: var(--sunk); color: var(--ink); }
+}
 
 .station-list { margin-top: 6px; }
 .station-list > * + * { border-top: 1px solid var(--rule); }
@@ -1217,17 +1298,19 @@ dialog.lightbox {
   transition: transform .15s;
 }
 .station-wrap[open] > summary .station::after { transform: translateY(3px) rotate(-135deg); }
-.station-wrap > summary:hover .station-name { text-decoration: underline; text-decoration-color: var(--rule-strong); text-underline-offset: 3px; }
+@media (hover: hover) and (pointer: fine) {
+  .station-wrap > summary:hover .station-name { text-decoration: underline; text-decoration-color: var(--rule-strong); text-underline-offset: 3px; }
+}
 
-.station-name { font-size: 15.5px; font-weight: 500; }
-.station-name-en { font-size: 13.5px; color: var(--ink-2); }
-.station .badges { margin-top: 0; min-height: 0; font-size: 13.5px; }
+.station-name { font-size: 15px; font-weight: 500; }
+.station-name-en { font-size: 13px; color: var(--ink-2); }
+.station .badges { margin-top: 0; min-height: 0; font-size: 13px; }
 .station-detail { padding: 0 0 12px; }
 
 /* ---------- station subitems ---------- */
 
 .station-count-sub {
-  font-size: 13.5px;
+  font-size: 13px;
   color: var(--ink-3);
   font-variant-numeric: tabular-nums;
 }
@@ -1255,7 +1338,7 @@ dialog.lightbox {
 }
 
 .station-subitem-name {
-  font-size: 14.5px;
+  font-size: 14px;
   font-weight: 500;
   color: var(--ink);
 }
@@ -1268,7 +1351,7 @@ dialog.lightbox {
 .station-subitem .badges {
   margin-top: 0;
   min-height: 0;
-  font-size: 12.5px;
+  font-size: 12px;
 }
 
 .station-subitem-detail {
@@ -1303,7 +1386,7 @@ dialog.lightbox {
   border-radius: var(--radius);
   background: var(--sunk);
   color: var(--ink-2);
-  font-size: 15.5px;
+  font-size: 15px;
   text-align: center;
 }
 
@@ -1315,7 +1398,9 @@ footer {
   line-height: 1.6;
   color: var(--ink-2);
 }
-footer p { max-width: 104ch; margin: 0 0 10px; }
+/* The digest's measure: the allergy warning is in here, and past ~75 characters a
+   line is hard to find the start of the next one. */
+footer p { max-width: 72ch; margin: 0 0 10px; }
 footer p:first-child { padding-top: 28px; border-top: 1px solid var(--rule); max-width: none; }
 footer strong { font-weight: 600; color: var(--ink); }
 footer a {
@@ -1324,7 +1409,9 @@ footer a {
   text-decoration-color: var(--rule-strong);
   text-underline-offset: 3px;
 }
-footer a:hover { text-decoration-color: currentColor; }
+@media (hover: hover) and (pointer: fine) {
+  footer a:hover { text-decoration-color: currentColor; }
+}
 footer .foot-halls { max-width: none; }
 
 /* ---------- first-visit tour ---------- */
@@ -1355,10 +1442,10 @@ footer .foot-halls { max-width: none; }
   border-radius: 12px;
   background: var(--ink);
   color: var(--bg);
-  box-shadow: 0 12px 32px rgb(0 0 0 / .24);
+  box-shadow: var(--shadow-3);
   font-size: 15px;
   line-height: 1.45;
-  animation: tour-in .22s ease both;
+  animation: tour-in .22s var(--ease-out) both;
 }
 .tour-tip::before {
   content: "";
@@ -1374,7 +1461,7 @@ footer .foot-halls { max-width: none; }
   from { opacity: 0; transform: translateY(-4px); }
 }
 
-.tour-title { margin: 0 0 4px; font: 600 17px/1.3 var(--serif); }
+.tour-title { margin: 0 0 4px; font: 600 16px/1.3 var(--serif); }
 html:lang(zh) .tour-title { font-family: var(--cjk), var(--serif); }
 .tour-body { margin: 0; opacity: .86; }
 
@@ -1389,9 +1476,12 @@ html:lang(zh) .tour-title { font-family: var(--cjk), var(--serif); }
   border: 0;
   border-radius: 8px;
   cursor: pointer;
+  transition: scale .12s var(--ease-out);
 }
 .tour-skip { background: transparent; color: inherit; opacity: .72; }
-.tour-skip:hover { opacity: 1; }
+@media (hover: hover) and (pointer: fine) {
+  .tour-skip:hover { opacity: 1; }
+}
 .tour-next { background: var(--bg); color: var(--ink); font-weight: 600; }
 /* Not cardinal: a red ring here would read as a second stop of the tour. */
 .tour-actions button:focus-visible { outline: 2px solid var(--bg); outline-offset: 2px; }
@@ -1439,20 +1529,25 @@ html:lang(zh) .tour-title { font-family: var(--cjk), var(--serif); }
   .masthead {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 4px;
     padding: 10px var(--gutter) 2px;
   }
-  .brand { flex: 1 1 auto; min-width: 0; font-size: 17px; }
-  /* Fifteen CJK characters at 17px run into the switches. */
+  .brand { flex: 1 1 auto; min-width: 0; }
+  /* Fifteen CJK characters at the laptop's 18px run into the switches. */
   html:lang(zh) .brand { font-size: 15px; }
-  html:lang(en) .brand { padding-left: 28px; font-size: 16px; }
+  html:lang(en) .brand { padding-left: 28px; }
   .brand::before { width: 20px; height: 20px; margin-right: 8px; vertical-align: -4px;
     background-position: 5px 5px, 10.6px 5px, 0 0; background-size: 4.4px 10px, 4.4px 10px, auto; }
   .tools { margin-right: -8px; }
-  .tool { height: 34px; padding: 0 8px; font-size: 14.5px; }
+  .tool { height: 34px; padding: 0 8px; font-size: 14px; }
   /* Icon only: the name of the mode is still the button's accessible name. */
   .tool-theme { font-size: 0; gap: 0; }
   .tool-theme::before { width: 15px; height: 15px; }
+  /* "EN" for "English", which the Chinese masthead needs the room of: fifteen
+     characters and the mark are 253 px, and a 360 px phone has 258 beside the
+     switches. The aria-label still says the whole thing. */
+  .tool-lang { padding: 0 6px; font-size: 0; }
+  .tool-lang::after { content: attr(data-short); font-size: 14px; }
 
   .bar {
     position: sticky;
@@ -1470,9 +1565,11 @@ html:lang(zh) .tour-title { font-family: var(--cjk), var(--serif); }
 
   /* One scrollable line per control group instead of wrapping: every wrapped
      row of a pinned bar is permanently lost height. The edge fades so it reads
-     as scrollable rather than clipped. */
+     as scrollable rather than clipped. A swipe that reaches the end stops there
+     rather than carrying on into the board or the browser's back gesture. */
   .controls {
     overflow-x: auto;
+    overscroll-behavior-x: contain;
     scrollbar-width: none;
     padding: 0 var(--gutter);
     mask-image: linear-gradient(to right, transparent, #000 var(--gutter),
@@ -1481,16 +1578,25 @@ html:lang(zh) .tour-title { font-family: var(--cjk), var(--serif); }
   .controls::-webkit-scrollbar { display: none; }
   .group, .chips { flex-wrap: nowrap; }
 
-  .controls-meal { overflow: visible; mask-image: none; }
-  .controls-meal .group, .segmented { flex: 1; }
-  .chip-seg { flex: 1; height: 34px; padding: 0 10px; font-size: 14.5px; }
+  /* The day and the meal fill their rows instead: a week is seven chips, which
+     fit, and left-aligned they left a gap on the right that read as days
+     missing. The days share the row in equal columns, like a calendar's, up
+     to a width past which a pressed day reads as a bar; then the room goes
+     between them. */
+  .controls-day, .controls-meal { overflow: visible; mask-image: none; }
+  .controls-day .group, .days, .controls-meal .group, .segmented { flex: 1; }
+  .days { justify-content: space-between; }
+  .chip-seg { flex: 1; height: 34px; padding: 0 10px; font-size: 14px; }
 
-  .chip-day { min-width: 48px; padding: 4px 8px 5px; }
+  .chip-day { flex: 1 1 0; min-width: 0; max-width: 64px; padding: 4px 2px 5px; }
   .chip-day .label { font-size: 12px; }
-  .chip-day .sub { font-size: 17px; }
+  /* What a label says where its column is too narrow for it; app.js writes it. */
+  .chip-day .label[data-short] { font-size: 0; }
+  .chip-day .label[data-short]::after { content: attr(data-short); font-size: 12px; }
+  .chip-day .sub { font-size: 16px; }
 
   .intro { padding-top: 22px; }
-  .stamp { font-size: 31px; line-height: 1.12; }
+  .stamp { font-size: 32px; line-height: 1.12; }
   /* Icon only, like the theme switch, so the headline keeps the width it had;
      the label is still the button's accessible name. And a Chinese headline
      that does wrap breaks at its space, not between 9月24 and 日. */
@@ -1499,11 +1605,11 @@ html:lang(zh) .tour-title { font-family: var(--cjk), var(--serif); }
     font-size: 0; gap: 0; }
   .share svg { width: 17px; height: 17px; }
   html:lang(zh) .stamp { word-break: keep-all; }
-  .digest { margin-top: 8px; font-size: 15.5px; }
+  .digest { margin-top: 8px; font-size: 16px; }
 
   .picks { margin: 20px calc(-1 * var(--gutter)) 0; gap: 8px; }
   .picks .group-label { display: none; }
-  .chips .chip { height: 34px; padding: 0 11px; font-size: 14.5px; }
+  .chips .chip { height: 34px; padding: 0 11px; font-size: 14px; }
 
   main { padding-top: 24px; padding-bottom: 56px; }
 
@@ -1519,10 +1625,10 @@ html:lang(zh) .tour-title { font-family: var(--cjk), var(--serif); }
     height: calc(var(--logo-h) * .88);
   }
   .col-meta { font-size: 14px; }
-  .dish-name { font-size: 18.5px; }
+  .dish-name { font-size: 18px; }
 
   .pinned { --pin-h: 42px; }
-  .pin-name { font-size: 17px; }
+  .pin-name { font-size: 16px; }
   .pin .col-logo img {
     width: calc(var(--logo-w) * .58);
     height: calc(var(--logo-h) * .58);

@@ -484,6 +484,23 @@ JSON block so a dish name cannot close the script tag early.
   colour is a new pair there, not a rule repeated under `[data-theme="dark"]` and the media query.
   The interface is greys plus cardinal; hall pastels are only a key (name underline, chip dot,
   the wash behind a special), and the colour on the page is meant to come from the photographs.
+- **Sizes and shadows come from a scale on `:root`, the way colours do.** Every font size is a step
+  of the `type scale` written in the comment there (12 13 14 15 16 18 20 24 28 32 48), and
+  `test_every_font_size_is_on_the_type_scale` reads that comment, so a new size is a new step
+  there or nothing. It replaced nineteen sizes, half-pixels among them. A shadow is one of four
+  elevations, `--shadow-1` to `--shadow-4`: pick how high the thing floats, not what its shadow
+  looks like. Anything entering, leaving or pressed eases with `--ease-out`. The rules behind
+  these, and the rest of the visual vocabulary, come from *Refactoring UI*; notes on it live in
+  `~/Projects/shared-resources/UI/refactoring-ui-notes.md`.
+- **A phone has no hover, so every `:hover` rule sits inside `(hover: hover) and (pointer:
+  fine)`,** and a test parses the stylesheet to hold it there. Ungated, a phone fakes a hover
+  on the first tap and keeps it until the next one lands elsewhere: a hall chip switched off kept
+  its dark border. What a phone gets instead is `:active` -- every button scales to .97 when
+  pressed, using the `scale` property so it composes with a transform the element already has.
+  iOS Safari only draws `:active` under a touchstart listener, which is why `app.js` registers an
+  empty passive one. The browser's own grey tap flash is off for the whole page.
+- **`theme-color` is the page's `--bg`,** one tag per OS scheme in `index.html`, held to the
+  stylesheet by a test. `syncThemeColor()` repaints both when the theme is picked by hand.
 - **On a phone `.top` is `display: contents`.** That is what lets `.bar` (day and meal) stick to
   the page while the name row scrolls away: a sticky element only sticks inside its parent's
   box, and the wrapper is exactly as tall as the bar. On a desktop the whole `.top` is sticky.

@@ -384,6 +384,83 @@ def test_the_hall_pager_never_shows_on_a_phone():
     assert "max-width: 720px" in css
 
 
+def _css_rules(css: str):
+    """Every style rule in a stylesheet, as (selector, the at-rules around it).
+
+    Enough of a parser for app.css, which keeps braces and semicolons out of its
+    strings: comments go first, then each `{` opens a block named by whatever
+    came since the last `{`, `}` or `;`."""
+    import re
+
+    css = re.sub(r"/\*.*?\*/", "", css, flags=re.S)
+    rules, stack, start = [], [], 0
+    for i, ch in enumerate(css):
+        if ch == "{":
+            prelude = css[start:i].strip()
+            if not prelude.startswith("@"):
+                rules.append((prelude, [p for p in stack if p.startswith("@")]))
+            stack.append(prelude)
+            start = i + 1
+        elif ch == "}":
+            stack.pop()
+            start = i + 1
+        elif ch == ";":
+            start = i + 1
+    assert not stack, "unbalanced braces in app.css"
+    return rules
+
+
+def test_hover_styles_reach_only_a_pointer_that_can_hover():
+    """A phone has no hover, so it fakes one on the first tap and keeps it until
+    the next tap lands somewhere else: a hall chip switched off kept its dark
+    border, the "show all" button its grey. Every :hover rule therefore sits
+    inside a query that asks for a pointer that can hover, precisely."""
+    from jsbridge import APP_JS
+
+    rules = _css_rules((APP_JS.parent / "app.css").read_text())
+    hover = [(sel, at) for sel, at in rules if ":hover" in sel]
+    assert hover, "the parser found no :hover rules at all"
+    loose = [sel for sel, at in hover
+             if not any("(hover: hover)" in a and "(pointer: fine)" in a for a in at)]
+    assert loose == []
+
+
+def test_every_font_size_is_on_the_type_scale():
+    """The scale is written once, in a comment on :root, and every size in the
+    stylesheet is one of its steps. It replaced nineteen sizes, half-pixels among
+    them, that nobody could have said the reason for."""
+    import re
+
+    from jsbridge import APP_JS
+
+    css = (APP_JS.parent / "app.css").read_text()
+    scale = re.search(r"type scale:([\d ]+)\n", css)
+    assert scale, "the scale is declared on :root"
+    steps = {float(n) for n in scale.group(1).split()}
+    css = re.sub(r"/\*.*?\*/", "", css, flags=re.S)
+    used = [float(n) for n in re.findall(r"font-size:\s*([\d.]+)px", css)]
+    used += [float(n) for n in re.findall(r"\bfont:[^;]*?\s([\d.]+)px", css)]
+    assert len(used) > 20, "the patterns stopped matching the stylesheet"
+    # 0 is not a size: it is how an icon-only button hides its label.
+    assert sorted({n for n in used if n} - steps) == []
+
+
+def test_the_status_bar_is_painted_with_the_page_background():
+    """theme-color is what a phone paints its status bar and browser chrome. It
+    is the page's own --bg in each scheme; anything else reads as a strip of
+    some other page stuck above this one."""
+    import re
+
+    from jsbridge import APP_JS
+
+    css = (APP_JS.parent / "app.css").read_text()
+    html = (APP_JS.parent / "index.html").read_text()
+    light, dark = re.search(r"--bg: light-dark\((#\w+), (#\w+)\)", css).groups()
+    metas = re.findall(r'<meta name="theme-color" media="\(prefers-color-scheme: (\w+)\)" '
+                       r'content="(#\w+)">', html)
+    assert {k: v.upper() for k, v in metas} == {"light": light.upper(), "dark": dark.upper()}
+
+
 LINK_PRELUDE = (
     "const MEALS = ['Breakfast', 'Lunch', 'Dinner'];\n"
     "const DATA = { window: ['2026-09-24', '2026-09-25'], "

@@ -27,15 +27,18 @@
 
   const MEAL_ZH = { Breakfast: "早餐", Lunch: "午餐", Dinner: "晚餐", Brunch: "早午餐" };
 
-  // R&DE's allergen codes. Anything not listed shows as it came.
+  // R&DE's allergen codes, spelt the way R&DE spells them: the nuts are plural.
+  // Anything not listed shows as it came, which is how PEANUTS and TREENUTS went
+  // out raw in every shared-equipment line while this said PEANUT and TREENUT.
+  // A golden test now holds every code in the data to a name in both tables.
   const ALLERGEN_EN = {
     MILK: "Milk", EGG: "Egg", WHEAT: "Wheat", SOY: "Soy", FISH: "Fish", SHELLFISH: "Shellfish",
-    SESAME: "Sesame", COCONUT: "Coconut", PEANUT: "Peanut", TREENUT: "Tree nuts",
+    SESAME: "Sesame", COCONUT: "Coconut", PEANUTS: "Peanuts", TREENUTS: "Tree nuts",
     TRACEALLERGENS: "Trace allergens",
   };
   const ALLERGEN_ZH = {
     MILK: "乳制品", EGG: "蛋类", WHEAT: "小麦", SOY: "大豆", FISH: "鱼类", SHELLFISH: "甲壳贝类",
-    SESAME: "芝麻", COCONUT: "椰子", PEANUT: "花生", TREENUT: "坚果",
+    SESAME: "芝麻", COCONUT: "椰子", PEANUTS: "花生", TREENUTS: "坚果",
     TRACEALLERGENS: "微量过敏原",
   };
 
@@ -54,12 +57,16 @@
   const UI = {
     en: {
       langChip: "中文",
+      langShort: "中文",
       langLabel: "切换到中文",
       docTitle: "Stanford Dining Hall Menus, Side by Side",
       brandA: "Stanford Dining Hall Menus, ",
       brandB: "Side by Side",
       lblDay: "Day", lblMeal: "Meal", lblHalls: "Halls", lblFilter: "Filter",
       today: "Today", tomorrow: "Tomorrow",
+      // A phone gives each day an equal seventh of the row, and "Tomorrow" is
+      // wider than that at 360 px: there the chip names the weekday instead.
+      tomorrowShort: (weekday) => weekday,
       meal: (m) => m,
       diet: (d) => d.label,
       dietShort: (d) => d.short,
@@ -96,11 +103,11 @@
         ? `Closed ${day.toLowerCase()}.`
         : `Closed on ${day}.`),
       unreleased: "Closed, or no menu released yet.",
-      noMatch: "Nothing on today's menu matches the filters.",
-      noneListed: "Nothing specific listed for today.",
+      noMatch: "Nothing on this menu matches the filters.",
+      noneListed: "Nothing specific listed for this meal.",
       allShut: "Every dining hall is closed this week.",
       digest: (b, total, halls, every, unique) => [
-        b(total), ` dishes on today's menu across ${halls} halls · `,
+        b(total), ` dish${total === 1 ? "" : "es"} across ${halls} halls · `,
         b(every), " at every one · ", b(unique), " at only one.",
       ],
       identical: "These menus are identical — go wherever is closest.",
@@ -147,12 +154,15 @@
     },
     zh: {
       langChip: "English",
+      // What a phone shows instead: "English" left the Chinese masthead too
+      // little room at 360 px.
+      langShort: "EN",
       langLabel: "Switch to English",
       docTitle: "舌尖上的斯坦福，一站式食堂菜单",
       brandA: "舌尖上的斯坦福，",
       brandB: "一站式食堂菜单",
       lblDay: "日期", lblMeal: "餐次", lblHalls: "食堂", lblFilter: "筛选",
-      today: "今天", tomorrow: "明天",
+      today: "今天", tomorrow: "明天", tomorrowShort: "明天",
       meal: (m) => MEAL_ZH[m] || m,
       diet: (d) => d.zh,
       dietShort: (d) => d.shortZh,
@@ -185,11 +195,11 @@
       noService: (meal, day) => `${day}本食堂不供应${MEAL_ZH[meal] || meal}。`,
       closedDay: (day) => `${day}本食堂不营业。`,
       unreleased: "不营业，或尚未发布菜单。",
-      noMatch: "今日菜单中没有符合筛选条件的菜品。",
-      noneListed: "今日未列出具体菜品。",
+      noMatch: "这份菜单中没有符合筛选条件的菜品。",
+      noneListed: "这一餐未列出具体菜品。",
       allShut: "本周各食堂均休息。",
       digest: (b, total, halls, every, unique) => [
-        `今天 ${halls} 家食堂共 `, b(total), " 道菜 · 其中 ",
+        `${halls} 家食堂共 `, b(total), " 道菜 · 其中 ",
         b(every), " 道家家都有 · ", b(unique), " 道仅此一家。",
       ],
       identical: "这几家的菜单完全相同——去离你最近的那家就好。",
@@ -995,8 +1005,21 @@
 
   const stationAccordion = stationRow;
 
+  /** The colour a phone paints its status bar and browser chrome. Each
+   *  theme-color tag in index.html answers for one OS scheme, which is right on
+   *  Auto; a theme picked by hand paints both with the page's own background,
+   *  read off the body so the colour is not written down a third time. */
+  function syncThemeColor() {
+    const bg = getComputedStyle(document.body).backgroundColor;
+    for (const meta of document.querySelectorAll('meta[name="theme-color"]')) {
+      meta.dataset.auto ??= meta.content;
+      meta.content = state.theme === "auto" ? meta.dataset.auto : bg;
+    }
+  }
+
   function render() {
     document.documentElement.dataset.theme = state.theme;
+    syncThemeColor();
     renderChrome();
     renderControls();
 
@@ -1490,6 +1513,7 @@
     });
     b.setAttribute("aria-pressed", String(pressed));
     b.append(el("span", { className: "label", textContent: label }));
+    if (extra.short) b.lastChild.dataset.short = extra.short;
     if (extra.sub) b.append(el("span", { className: "sub", textContent: extra.sub }));
     if (extra.accent) b.style.setProperty("--hall", extra.accent);
     b.addEventListener("click", onClick);
@@ -1506,6 +1530,8 @@
       }, {
         className: "chip-day",
         sub: String(Number(iso.slice(8))),
+        short: iso === TOMORROW && t("tomorrowShort",
+          new Date(iso + "T12:00:00").toLocaleDateString(locale(), { weekday: "short" })),
         props: { title: dayFull(iso) },
       })));
 
@@ -1616,6 +1642,7 @@
 
     const lang = document.getElementById("lang");
     lang.textContent = t("langChip");
+    lang.dataset.short = t("langShort");
     lang.setAttribute("aria-label", t("langLabel"));
 
     document.getElementById("foot-halls").textContent = t("footHalls");
@@ -1899,6 +1926,11 @@
     state.date = DATA.window[next];
     render();
   });
+
+  // iOS Safari draws :active -- the pressed look every button has, and on a
+  // phone the only sign a tap landed -- only under a touchstart listener. An
+  // empty passive one turns it on and costs the scroll nothing.
+  document.addEventListener("touchstart", () => {}, { passive: true });
 
   render();
   // A beat after the page appears, so the ring reads as something happening.

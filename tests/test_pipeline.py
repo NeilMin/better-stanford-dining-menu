@@ -228,6 +228,25 @@ class TestTheCheckoutsOwnData:
             assert day in payload["window"]
             assert set(halls) <= known
 
+    @pytest.mark.node
+    def test_every_allergen_on_the_board_has_a_name_in_both_languages(self, payload, tmp_path):
+        """The page names an allergen from a table keyed by R&DE's code and prints
+        the code itself when the key is missing. That is how "PEANUTS" and
+        "TREENUTS" went out raw in every shared-equipment line: the table said
+        PEANUT and TREENUT, and R&DE has only ever sent the plural."""
+        from jsbridge import NODE, call
+
+        if NODE is None:
+            pytest.skip("needs node to run web/app.js")
+        codes = {code for record in payload["dishes"].values() for v in record.get("v", [])
+                 for code in (v.get("alg") or []) + (v.get("trace") or [])}
+        assert codes, "no allergens anywhere on the board"
+        en, zh = call(["ALLERGEN_EN", "ALLERGEN_ZH"],
+                      "return [Object.keys(ALLERGEN_EN), Object.keys(ALLERGEN_ZH)];",
+                      tmp_path=tmp_path)
+        assert sorted(codes - set(en)) == []
+        assert sorted(codes - set(zh)) == []
+
     def test_plant_forward_is_not_translated_literally(self, repo):
         zh_raw = (repo / "data" / "zh.json").read_text()
         assert "植物向前" not in zh_raw

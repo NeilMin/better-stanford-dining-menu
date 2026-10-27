@@ -6,6 +6,11 @@
 <title>Stanford Dining Hall Menus, Side by Side</title>
 <meta name="description" content="Compare today's menus across Stanford dining halls, with a picture of every dish.">
 <meta name="color-scheme" content="light dark">
+<!-- What a phone paints its status bar and browser chrome: the page's own
+     background, --bg in app.css, in each scheme (a test holds them together).
+     app.js repaints both when the theme is picked by hand. -->
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#FFFFFF">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#121211">
 <!-- The one URL search engines should file this page under: a shared link's
      ?d=&m=&h= is the same page in another view, not another page. -->
 <link rel="canonical" href="https://stanford-dining.neilmin.com/">
@@ -51,7 +56,7 @@
   <header class="masthead">
     <h1 class="brand" id="brand">Stanford Dining Hall Menus, <span>Side by Side</span></h1>
     <div class="tools">
-      <button class="tool" type="button" id="lang">中文</button>
+      <button class="tool tool-lang" type="button" id="lang" data-short="中文">中文</button>
       <button class="tool tool-theme" type="button" id="theme">Auto</button>
     </div>
   </header>
