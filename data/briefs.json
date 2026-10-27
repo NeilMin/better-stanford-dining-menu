@@ -1322,6 +1322,44 @@
   "vessel": "plate",
   "written_at": "2026-09-27T04:53:30+00:00"
  },
+ "0c881cc4b535": {
+  "avoid": [
+   "wings",
+   "drumsticks",
+   "nuggets",
+   "ground meat",
+   "shredded chicken",
+   "tacos",
+   "sandwiches",
+   "raw chicken"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a breaded chicken breast?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken cut into small nuggets or pieces?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken served as wings or drumsticks?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken ground or minced?",
+    "yes": false
+   }
+  ],
+  "dish": "chicken fried chicken",
+  "look": "a large crispy fried chicken breast, thick golden-brown breaded crust, craggy uneven texture, juicy white meat, drizzled with creamy white country gravy",
+  "model": "gemma-4-26b-a4b-it",
+  "name": "Chicken Fried Chicken",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-27T20:29:45+00:00"
+ },
  "0cfb2b304b0b": {
   "avoid": [
    "meat",
@@ -10717,14 +10755,15 @@
  },
  "4ffc517c706d": {
   "avoid": [
+   "thali",
+   "metal platter",
+   "multiple bowls",
+   "ramekins",
+   "buffet spread",
+   "combination platter",
+   "metal tray",
    "chopsticks",
-   "noodles",
-   "sushi",
-   "tacos",
-   "burgers",
-   "pasta",
-   "raw lentils",
-   "soup bowl"
+   "noodles"
   ],
   "checks": [
    {
@@ -10740,14 +10779,14 @@
     "yes": false
    }
   ],
-  "dish": "North Indian Thali",
-  "look": "rich orange curry in a small stainless bowl on a metal platter, fragrant white basmati rice, golden brown samosa, yellow dal curry, warm folded garlic naan bread, sprinkle of chopped cilantro",
+  "dish": "Chicken Tikka Masala",
+  "look": "creamy orange chicken tikka masala curry served over fragrant white basmati rice in a single wide ceramic bowl, tender chicken chunks, glossy tomato sauce, folded garlic naan bread on the side, sprinkle of fresh chopped cilantro",
   "model": "gemini-3.6-flash",
   "name": "Diwali Dinner",
   "rev": 6,
-  "revisions": 0,
-  "vessel": "plate",
-  "written_at": "2026-10-27T09:34:30+00:00"
+  "revisions": 1,
+  "vessel": "bowl",
+  "written_at": "2026-10-27T21:04:29+00:00"
  },
  "502c39671734": {
   "avoid": [
@@ -15344,6 +15383,42 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-08T10:50:06+00:00"
+ },
+ "7ad94db3b5c3": {
+  "avoid": [
+   "tortilla",
+   "burrito",
+   "soft wrap",
+   "raw vegetables",
+   "meatballs",
+   "skewers",
+   "tacos",
+   "chicken",
+   "beef",
+   "shrimp"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item fried spring rolls?",
+    "yes": true
+   },
+   {
+    "q": "Is the main item a soft wrap or tortilla?",
+    "yes": false
+   },
+   {
+    "q": "Is the filling raw or un-cooked?",
+    "yes": false
+   }
+  ],
+  "dish": "pork lumpia",
+  "look": "golden-brown crispy fried spring rolls, cylindrical shape, thin crunchy wheat flour wrappers, sliced cross-sections showing minced pork filling, bits of orange carrot and green onion inside",
+  "model": "gemma-4-26b-a4b-it",
+  "name": "Filipino Lumpia",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-27T20:29:54+00:00"
  },
  "7ae05e886317": {
   "avoid": [
@@ -24106,7 +24181,8 @@
    "lamb",
    "fish",
    "shrimp",
-   "raw lentils",
+   "plain brown rice",
+   "quinoa",
    "pita wrap"
   ],
   "checks": [
@@ -24119,14 +24195,14 @@
     "yes": false
    }
   ],
-  "dish": "mujadara",
-  "look": "steaming basmati rice mixed with cooked brown lentils, topped with dark crisp fried caramelized onions, drizzle of pale white tahini yogurt sauce, sprinkle of chopped fresh parsley",
+  "dish": "Mujadara",
+  "look": "mixture of distinct brown lentils and fluffy basmati rice, generously topped with dark crispy fried caramelized onion slices, drizzle of pale white tahini yogurt sauce, garnish of chopped fresh parsley",
   "model": "gemini-3.6-flash",
   "name": "Mujadara with Tahini Yogurt Sauce: Spiced Lentil and Basmati Rice Dish",
   "rev": 6,
-  "revisions": 0,
+  "revisions": 1,
   "vessel": "bowl",
-  "written_at": "2026-10-27T09:37:08+00:00"
+  "written_at": "2026-10-27T22:26:11+00:00"
  },
  "b9171048e5a9": {
   "avoid": [
@@ -32812,6 +32888,41 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T08:19:18+00:00"
  },
+ "f849d1f2dad1": {
+  "avoid": [
+   "pancake",
+   "toast",
+   "waffle",
+   "sausage links",
+   "sliced sausage",
+   "raw vegetables",
+   "meat patty",
+   "ground meat",
+   "mince"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item scrambled eggs?",
+    "yes": true
+   },
+   {
+    "q": "Is the sausage in whole links or slices?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat ground or crumbled like mince?",
+    "yes": false
+   }
+  ],
+  "dish": "pork sausage and vegetable scramble",
+  "look": "soft scrambled eggs, large chunks of browned pork sausage, sautéed seasonal vegetables, colorful bell peppers, diced onions, soft curd texture, moist and warm",
+  "model": "gemma-4-26b-a4b-it",
+  "name": "Pork Sausage Power Scramble",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-27T20:29:50+00:00"
+ },
  "f89ab2c469cd": {
   "avoid": [
    "meat",
@@ -33302,11 +33413,12 @@
  },
  "fbcd1f3c0bf9": {
   "avoid": [
-   "raw egg",
-   "dry instant noodle block",
+   "fried egg",
+   "poached egg",
+   "soup without noodles",
    "spaghetti",
    "pork slices",
-   "clear soup broth",
+   "clear broth",
    "chopsticks",
    "hard-boiled egg"
   ],
@@ -33324,14 +33436,14 @@
     "yes": false
    }
   ],
-  "dish": "cheesy chili crisp ramen",
-  "look": "wavy ramen noodles coated in a glossy melted yellow cheese sauce, topped with a halved soft-boiled egg showing a jammy orange yolk, spoonful of bright red chili crisp oil with dark red crunchy flakes, chopped scallions",
-  "model": "gemini-3.6-flash",
+  "dish": "cheesy ramen",
+  "look": "curly ramen noodles tossed in thick melted yellow cheddar cheese sauce, filling the bowl, halved soft-boiled egg showing a jammy orange yolk, spoonful of red chili crisp with visible chili flakes and crunchy garlic, chopped green scallions",
+  "model": "gemini-flash-latest",
   "name": "Cheesy Ramen with Chili Crisp and Egg",
   "rev": 6,
-  "revisions": 0,
+  "revisions": 1,
   "vessel": "bowl",
-  "written_at": "2026-10-27T09:33:25+00:00"
+  "written_at": "2026-10-27T21:14:05+00:00"
  },
  "fc32b8d28777": {
   "avoid": [
