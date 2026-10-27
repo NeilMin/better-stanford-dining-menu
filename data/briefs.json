@@ -94,6 +94,34 @@
   "vessel": "plate",
   "written_at": "2026-10-02T10:03:48+00:00"
  },
+ "00b0caaa143b": {
+  "avoid": [
+   "sandwich",
+   "burger",
+   "rye bread",
+   "hot dog",
+   "raw potatoes",
+   "deli sandwich wrap"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item french fries topped with meat and cheese?",
+    "yes": true
+   },
+   {
+    "q": "Is the pastrami served inside a bread sandwich or burger?",
+    "yes": false
+   }
+  ],
+  "dish": "loaded pastrami french fries",
+  "look": "golden french fries piled high, topped with chopped smoked pastrami slices, melted yellow cheddar cheese, drizzle of creamy thousand island dressing, sliced pickled jalapenos, finely chopped chives",
+  "model": "gemini-3.6-flash",
+  "name": "Loaded Pastrami Fries",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-27T09:37:08+00:00"
+ },
  "0123cb091811": {
   "avoid": [
    "shrimp",
@@ -4246,6 +4274,34 @@
   "vessel": "bowl",
   "written_at": "2026-10-12T11:13:20+00:00"
  },
+ "251676d2a0c6": {
+  "avoid": [
+   "tacos",
+   "burrito",
+   "dry plate dish",
+   "raw corn",
+   "clear broth",
+   "cream soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the main dish a red broth Mexican soup with hominy?",
+    "yes": true
+   },
+   {
+    "q": "Is the food served dry on a plate without soup broth?",
+    "yes": false
+   }
+  ],
+  "dish": "Mexican pozole",
+  "look": "rich red chile broth soup, large white puffed hominy corn kernels, tender shredded pork meat, garnishes of thin sliced radishes, shredded cabbage, lime wedge, chopped cilantro",
+  "model": "gemini-3.6-flash",
+  "name": "Posole",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-27T09:37:08+00:00"
+ },
  "2666d3b7effb": {
   "avoid": [
    "tofu",
@@ -4630,6 +4686,40 @@
   "vessel": "plate",
   "written_at": "2026-10-17T22:27:58+00:00"
  },
+ "28b333376561": {
+  "avoid": [
+   "oyster shells",
+   "raw oysters",
+   "burger bun",
+   "tortilla wrap",
+   "french fries",
+   "shrimp",
+   "chicken",
+   "pita"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food a sandwich?",
+    "yes": true
+   },
+   {
+    "q": "Are there raw oysters or oyster shells in the picture?",
+    "yes": false
+   },
+   {
+    "q": "Is the food served inside a tortilla wrap or flatbread?",
+    "yes": false
+   }
+  ],
+  "dish": "Fried oyster po' boy",
+  "look": "crispy golden cornmeal-crusted fried oysters stuffed inside a split French roll, finely shredded iceberg lettuce, sliced ripe red tomatoes, creamy orange remoulade sauce drizzled over the crispy oysters",
+  "model": "gemini-3.6-flash",
+  "name": "Fried Oyster Po Boy",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-27T09:35:42+00:00"
+ },
  "292eb6796433": {
   "avoid": [
    "bacon strips",
@@ -4705,6 +4795,34 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-10-10T19:49:21+00:00"
+ },
+ "29ef8ef93b51": {
+  "avoid": [
+   "deep fried nuggets",
+   "chicken skewers",
+   "breaded chicken",
+   "raw green beans",
+   "raw meat",
+   "pineapple slices"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item glazed chicken pieces served with rice and green beans?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken deep-fried with thick crunchy breading?",
+    "yes": false
+   }
+  ],
+  "dish": "sweet and sour braised chicken with rice and green beans",
+  "look": "tender braised chicken thigh pieces coated in glossy reddish-orange sweet and sour glaze, mound of fluffy white jasmine rice, roasted dark green beans with blistered skin, sprinkle of sesame seeds",
+  "model": "gemini-3.6-flash",
+  "name": "Sweet And Sour Braised Chicken, Steamed Jasmine Rice and Roasted Green Beans",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-27T09:37:08+00:00"
  },
  "2ac8b92f32df": {
   "avoid": [
@@ -6140,6 +6258,41 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T05:03:54+00:00"
+ },
+ "32a7991fa5af": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "ramen broth",
+   "soup liquid",
+   "raw dry noodles"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish thin dark noodles tossed in sauce?",
+    "yes": true
+   },
+   {
+    "q": "Are the noodles submerged in liquid soup broth?",
+    "yes": false
+   },
+   {
+    "q": "Is there meat, chicken, or seafood served with the noodles?",
+    "yes": false
+   }
+  ],
+  "dish": "miso sesame soba noodles",
+  "look": "thin dark buckwheat soba noodles, light brown miso sesame glaze, sprinkled toasted white sesame seeds, sliced green scallions, shredded carrots, julienned cucumbers",
+  "model": "gemini-3.6-flash",
+  "name": "Miso-Sesame Soba Noodles",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-27T09:37:08+00:00"
  },
  "333164e95b02": {
   "avoid": [
@@ -8179,6 +8332,40 @@
   "revisions": 1,
   "vessel": "plate",
   "written_at": "2026-09-27T08:08:27+00:00"
+ },
+ "3e72f067d2e8": {
+  "avoid": [
+   "green mole",
+   "burrito",
+   "tacos",
+   "tortilla wrap",
+   "skulls",
+   "marigold flowers",
+   "raw chicken",
+   "clear broth soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item chicken coated in a dark brown sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the sauce bright green or yellow?",
+    "yes": false
+   },
+   {
+    "q": "Is the main item wrapped in a tortilla or pita?",
+    "yes": false
+   }
+  ],
+  "dish": "chicken mole poblano",
+  "look": "bone-in chicken thigh, thick velvety dark chocolate-brown glossy mole sauce coating the chicken, sprinkle of toasted white sesame seeds on top, side of fluffy Mexican red rice, side of creamy refried beans",
+  "model": "gemini-3.6-flash",
+  "name": "Dia de Muertos Dinner",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-27T09:34:12+00:00"
  },
  "3e790f35066a": {
   "avoid": [
@@ -10528,6 +10715,40 @@
   "vessel": "plate",
   "written_at": "2026-10-01T10:31:58+00:00"
  },
+ "4ffc517c706d": {
+  "avoid": [
+   "chopsticks",
+   "noodles",
+   "sushi",
+   "tacos",
+   "burgers",
+   "pasta",
+   "raw lentils",
+   "soup bowl"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food an array of Indian curries and rice?",
+    "yes": true
+   },
+   {
+    "q": "Is the food a bowl of noodles or pasta?",
+    "yes": false
+   },
+   {
+    "q": "Does the meal feature raw uncooked ingredients?",
+    "yes": false
+   }
+  ],
+  "dish": "North Indian Thali",
+  "look": "rich orange curry in a small stainless bowl on a metal platter, fragrant white basmati rice, golden brown samosa, yellow dal curry, warm folded garlic naan bread, sprinkle of chopped cilantro",
+  "model": "gemini-3.6-flash",
+  "name": "Diwali Dinner",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-27T09:34:30+00:00"
+ },
  "502c39671734": {
   "avoid": [
    "burger patty",
@@ -10665,6 +10886,39 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-26T23:11:26+00:00"
+ },
+ "519cfa5b0ccb": {
+  "avoid": [
+   "skewers",
+   "pulled pork",
+   "ground meat",
+   "soup",
+   "ramen noodles",
+   "raw pork",
+   "sandwich"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item pieces of glazed meat?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat ground like mince or shredded like pulled pork?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish served in soup or with ramen noodles?",
+    "yes": false
+   }
+  ],
+  "dish": "honey citrus glazed pork belly",
+  "look": "thick caramelized slices of glazed pork belly, sticky glossy amber honey citrus glaze, fluffy white steamed jasmine rice, roasted charred broccoli florets, sprinkled with toasted sesame seeds",
+  "model": "gemini-3.6-flash",
+  "name": "Honey Citrus Glazed Pork Belly, Steamed Jasmine Rice and Roasted Broccoli",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-27T09:36:15+00:00"
  },
  "51d6f263d5bf": {
   "avoid": [
@@ -11841,6 +12095,42 @@
   "vessel": "bowl",
   "written_at": "2026-10-11T10:11:53+00:00"
  },
+ "5c910588df5d": {
+  "avoid": [
+   "thin hot chocolate",
+   "coffee",
+   "tea",
+   "croissant",
+   "donut",
+   "bagel",
+   "meat",
+   "chicken",
+   "beef",
+   "pork"
+  ],
+  "checks": [
+   {
+    "q": "Is the photo centered on a thick brown chocolate drink served with sweet bread?",
+    "yes": true
+   },
+   {
+    "q": "Is the drink thin and watery like black coffee?",
+    "yes": false
+   },
+   {
+    "q": "Is the bread a croissant, bagel, or donut?",
+    "yes": false
+   }
+  ],
+  "dish": "Champurrado and pan dulce",
+  "look": "a thick steaming dark brown chocolate champurrado, frothy surface dusted with a pinch of ground cinnamon, served alongside a soft round Mexican pan dulce concha with a sugary shell-patterned crust",
+  "model": "gemini-3.6-flash",
+  "name": "Champurrado with Pan Dulce",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-27T09:33:18+00:00"
+ },
  "5d107d0e8f99": {
   "avoid": [
    "meat",
@@ -11978,6 +12268,41 @@
   "revisions": 1,
   "vessel": "plate",
   "written_at": "2026-10-22T00:48:55+00:00"
+ },
+ "5e5f9a352123": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "pasta shells",
+   "penne",
+   "raw potatoes"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish potato gnocchi in a creamy sauce with kale?",
+    "yes": true
+   },
+   {
+    "q": "Is there meat, chicken, or seafood visible in the dish?",
+    "yes": false
+   },
+   {
+    "q": "Is the pasta shaped like long noodles or penne tubes?",
+    "yes": false
+   }
+  ],
+  "dish": "creamy Tuscan potato gnocchi with kale",
+  "look": "tender pillowy potato gnocchi, rich creamy sun-dried tomato sauce, glossy dark green sauteed kale leaves, flecks of red pepper flakes, freshly grated parmesan cheese",
+  "model": "gemini-3.6-flash",
+  "name": "Marry Me Potato Gnocchi & Sauteed Kale",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-27T09:37:08+00:00"
  },
  "5e67d04e8728": {
   "avoid": [
@@ -18129,6 +18454,38 @@
   "vessel": "plate",
   "written_at": "2026-09-27T05:30:31+00:00"
  },
+ "902380bab976": {
+  "avoid": [
+   "burrito",
+   "hard taco shell",
+   "tortilla chips",
+   "flour tortilla wrap",
+   "ground beef mince",
+   "raw meat"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish small open soft corn tortillas with filling?",
+    "yes": true
+   },
+   {
+    "q": "Are the ingredients wrapped up tight inside a large burrito?",
+    "yes": false
+   },
+   {
+    "q": "Are hard yellow crispy taco shells used?",
+    "yes": false
+   }
+  ],
+  "dish": "beef street tacos",
+  "look": "three small doubled warm corn tortillas, piled with diced seared steak beef, fresh pico de gallo, drizzle of white crema, green guacamole, bright pink pickled shredded cabbage, chopped cilantro",
+  "model": "gemini-3.6-flash",
+  "name": "Street Tacos, Beef or Chicken with Salsa, Crema, Pico de Gallo, Guacamole and Pickled Cabbage",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-27T09:37:08+00:00"
+ },
  "90df5dee67e5": {
   "avoid": [
    "pasta",
@@ -18936,6 +19293,39 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-10-15T19:30:40+00:00"
+ },
+ "987d80c24c73": {
+  "avoid": [
+   "sausage links",
+   "hot dog bun",
+   "meatballs in marinara sauce",
+   "raw sausage",
+   "soup",
+   "burger patty",
+   "mozzarella sticks"
+  ],
+  "checks": [
+   {
+    "q": "Are the main items fried golden-brown breaded balls?",
+    "yes": true
+   },
+   {
+    "q": "Are the main items long sausage links in casing?",
+    "yes": false
+   },
+   {
+    "q": "Are the items meatballs coated in red tomato sauce?",
+    "yes": false
+   }
+  ],
+  "dish": "deep-fried boudin balls",
+  "look": "crispy golden-brown deep-fried breaded boudin balls, rough panko crust, one ball sliced open showing cooked rice and minced pork interior flecked with green onions, side ramekin of creamy orange remoulade dipping sauce",
+  "model": "gemini-3.6-flash",
+  "name": "Boudin Bombs",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-27T09:33:08+00:00"
  },
  "987ff0dcef9a": {
   "avoid": [
@@ -23706,6 +24096,37 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T04:33:15+00:00"
+ },
+ "b90827bcaedd": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "lamb",
+   "fish",
+   "shrimp",
+   "raw lentils",
+   "pita wrap"
+  ],
+  "checks": [
+   {
+    "q": "Is the main dish a mix of rice and lentils topped with fried onions?",
+    "yes": true
+   },
+   {
+    "q": "Is there meat, poultry, or seafood visible in the bowl?",
+    "yes": false
+   }
+  ],
+  "dish": "mujadara",
+  "look": "steaming basmati rice mixed with cooked brown lentils, topped with dark crisp fried caramelized onions, drizzle of pale white tahini yogurt sauce, sprinkle of chopped fresh parsley",
+  "model": "gemini-3.6-flash",
+  "name": "Mujadara with Tahini Yogurt Sauce: Spiced Lentil and Basmati Rice Dish",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-27T09:37:08+00:00"
  },
  "b9171048e5a9": {
   "avoid": [
@@ -32141,6 +32562,39 @@
   "vessel": "plate",
   "written_at": "2026-09-27T04:50:49+00:00"
  },
+ "f6eddc20dde0": {
+  "avoid": [
+   "fried rice",
+   "dry rice",
+   "raw rice",
+   "noodles",
+   "clear soup broth",
+   "sushi",
+   "ramen"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a bowl of thick creamy rice congee or porridge?",
+    "yes": true
+   },
+   {
+    "q": "Is the rice dry or fluffy individual grains like fried rice?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a noodle soup?",
+    "yes": false
+   }
+  ],
+  "dish": "rice congee",
+  "look": "creamy thick white rice congee, smooth porridge base, garnished with shredded cooked chicken, dark sliced century egg, crisp bright green scallion rings, golden fried wonton strips, delicate julienned ginger",
+  "model": "gemini-3.6-flash",
+  "name": "Jook & Toppings Station",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-27T09:36:32+00:00"
+ },
  "f6f9528f14c8": {
   "avoid": [
    "chicken",
@@ -32845,6 +33299,39 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-28T01:14:44+00:00"
+ },
+ "fbcd1f3c0bf9": {
+  "avoid": [
+   "raw egg",
+   "dry instant noodle block",
+   "spaghetti",
+   "pork slices",
+   "clear soup broth",
+   "chopsticks",
+   "hard-boiled egg"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food ramen noodles coated in cheese sauce?",
+    "yes": true
+   },
+   {
+    "q": "Are the noodles served dry without any sauce or cheese?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a thin clear soup instead of cheesy noodles?",
+    "yes": false
+   }
+  ],
+  "dish": "cheesy chili crisp ramen",
+  "look": "wavy ramen noodles coated in a glossy melted yellow cheese sauce, topped with a halved soft-boiled egg showing a jammy orange yolk, spoonful of bright red chili crisp oil with dark red crunchy flakes, chopped scallions",
+  "model": "gemini-3.6-flash",
+  "name": "Cheesy Ramen with Chili Crisp and Egg",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-27T09:33:25+00:00"
  },
  "fc32b8d28777": {
   "avoid": [
