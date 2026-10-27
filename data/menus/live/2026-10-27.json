@@ -1,6 +1,6 @@
 {
  "date": "2026-10-27",
- "scraped_at": "2026-10-27T02:06:17-07:00",
+ "scraped_at": "2026-10-27T13:07:11-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -1172,16 +1172,26 @@
      "order": 4
     },
     {
-     "name": "Udon Noodles",
-     "recipe_id": "5790707",
+     "name": "Vegetable Yakisoba",
+     "recipe_id": "5545292",
      "description": "",
-     "ingredients": "enriched wheat flour, tapioca starch, salt, natural flavor",
+     "ingredients": "ramen noodles, cabbage, carrots, onions, vegetarian oyster sauce, A-1 steak sauce, ketchup, pickled ginger, mushrooms, mayonnaise, furikake seasoning (nori seaweed, sesame seeds, salt, sugar, korean red pepper, mushroom seasoning)",
      "allergens": [
+      "EGG",
+      "SESAME",
+      "SOY",
       "WHEAT"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "COCONUT",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SHELLFISH",
+      "TREENUTS"
+     ],
      "tags": [
-      "vegan"
+      "vegetarian"
      ],
      "order": 5
     },
@@ -1198,45 +1208,29 @@
      "order": 6
     },
     {
-     "name": "Grilled Chicken",
-     "recipe_id": "520454-02",
+     "name": "Spanish Rice",
+     "recipe_id": "5298653",
      "description": "",
-     "ingredients": "chicken, canola/olive oil blend, salt, pepper",
+     "ingredients": "white rice, vegetable soup base (contains mushrooms, celery), onions, bell peppers, garlic, jalapeno peppers, canola/olive oil blend, tomato juice, salt, coriander, cumin, pepper, cilantro",
      "allergens": [],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
      ],
-     "tags": [],
      "order": 7
     },
     {
-     "name": "Grilled Vegan/Vegetarian",
-     "recipe_id": "13468741",
+     "name": "Refried Beans",
+     "recipe_id": "4835563",
      "description": "",
-     "ingredients": "chef's choice grilled vegan OR vegetarian option",
+     "ingredients": "pinto beans, onions, garlic, canola oil, extra virgin olive oil, cumin, coriander, cilantro, salt",
      "allergens": [],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
      ],
-     "tags": [],
      "order": 8
     },
     {
@@ -1279,16 +1273,6 @@
      "order": 10
     },
     {
-     "name": "Soup of the Day",
-     "recipe_id": "SoupoftheDay",
-     "description": "",
-     "ingredients": "chef's choice soup of the day",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [],
-     "order": 11
-    },
-    {
      "name": "Composed Salad",
      "recipe_id": "123116546",
      "description": "",
@@ -1296,7 +1280,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 12
+     "order": 11
     },
     {
      "name": "Performance Bar",
@@ -1306,7 +1290,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 13
+     "order": 12
     },
     {
      "name": "Craveable Grains",
@@ -1319,7 +1303,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 14
+     "order": 13
     },
     {
      "name": "Flavor Forward Legumes",
@@ -1332,42 +1316,38 @@
       "gluten-free",
       "vegan"
      ],
+     "order": 14
+    },
+    {
+     "name": "Marinara Sauce",
+     "recipe_id": "4079962",
+     "description": "",
+     "ingredients": "tomatoes, tomato paste, soybean oil, sugar, salt, onion, garlic, spices, citric acid, natural flavor",
+     "allergens": [
+      "SOY"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
      "order": 15
     },
     {
-     "name": "Pasta Marinara",
-     "recipe_id": "5095708",
+     "name": "Creamy Pesto",
+     "recipe_id": "7728050",
      "description": "",
-     "ingredients": "pasta, marinara sauce, canola/olive oil blend",
-     "allergens": [
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "EGG"
-     ],
-     "tags": [
-      "vegan"
-     ],
-     "order": 16
-    },
-    {
-     "name": "Pasta Pesto",
-     "recipe_id": "3857040",
-     "description": "",
-     "ingredients": "pasta, pesto sauce (basil, canola oil, parmesan cheese, extra virgin olive oil, garlic, lemon juice concentrate, natural flavor, ascorbic acid, xanthan gum, soy lecithin, chamomile extract, rosemary extract, salt)",
+     "ingredients": "pesto sauce (basil, canola oil, parmesan cheese, olive oil, garlic, salt, lemon juice concentrate, natural flavor, xanthan gum, soy lecithin, chamomile extract, rosemary extract, white sauce (flour, butter, cream, milk powder, onion powder, white pepper, garlic, nutmeg, salt), parmesan cheese, parsley",
      "allergens": [
       "MILK",
       "SOY",
       "WHEAT"
      ],
-     "trace_allergens": [
-      "EGG"
-     ],
+     "trace_allergens": [],
      "tags": [
       "vegetarian"
      ],
-     "order": 17
+     "order": 16
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -1380,7 +1360,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 18
+     "order": 17
     }
    ],
    "Dinner": [
@@ -1481,7 +1461,7 @@
      "name": "Southern Pork Stew",
      "recipe_id": "6489523",
      "description": "",
-     "ingredients": "(non-halal) pork, garlic, diced tomatoes, potatoes, carrots, oregano, rosemary, canola/olive oil blend, celery, black pepper, apple cider vinegar, onions, tomato paste, beef soup base, unsalted butter, kosher salt",
+     "ingredients": "pork, garlic, diced tomatoes, potatoes, carrots, oregano, rosemary, canola/olive oil blend, celery, black pepper, apple cider vinegar, onions, tomato paste, beef soup base, unsalted butter, kosher salt",
      "allergens": [
       "MILK"
      ],
