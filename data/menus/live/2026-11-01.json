@@ -1,6 +1,6 @@
 {
  "date": "2026-11-01",
- "scraped_at": "2026-10-28T02:46:49-07:00",
+ "scraped_at": "2026-10-28T13:20:05-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -1006,39 +1006,40 @@
    ],
    "Lunch": [
     {
-     "name": "Roasted Pork with Tomato Gravy",
-     "recipe_id": "3927147",
+     "name": "Chicken & Waffles with Apple Syrup",
+     "recipe_id": "3229585",
      "description": "",
-     "ingredients": "pork , tomato, butter, flour, onion, garlic, cayenne pepper, pepper, paprika, salt, cuminseed, herb de provence",
+     "ingredients": "Fried Chicken (chicken, buttermilk, flour, thyme, oregano, pepper, garlic powder, cayenne pepper, salt, onion powder, tarragon, parsley), Belgian Waffles (wheat flour, eggs, sugar, soybean oil, canola oil, leavening, malted barley flour, salt, soy lecithin, glycerides, natural flavor, artificial flavors [milk]), Apple Cider Syrup (apple cider vinegar, apple cider, cinnamon, butter, brown sugar), deep fried in canola oil",
      "allergens": [
+      "EGG",
       "MILK",
-      "WHEAT"
-     ],
-     "trace_allergens": [],
-     "tags": [],
-     "order": 0
-    },
-    {
-     "name": "Popcorn Tofu",
-     "recipe_id": "6387599",
-     "description": "",
-     "ingredients": "tofu, tamari sauce, garlic, onion powder, paprika, soy milk, apple cider vinegar, flour, bread crumbs, italian seasoning, canola/olive oil blend, salt, fried in canola oil",
-     "allergens": [
       "SOY",
       "WHEAT"
      ],
      "trace_allergens": [
       "COCONUT",
-      "EGG",
       "FISH",
-      "MILK",
       "PEANUTS",
       "SESAME",
       "SHELLFISH",
       "TREENUTS"
      ],
+     "tags": [],
+     "order": 0
+    },
+    {
+     "name": "Crispy Fried \"Chick'n\" Tenders",
+     "recipe_id": "FriedChickn1",
+     "description": "",
+     "ingredients": "soy protein isolate, vital wheat gluten, natural flavors, yeast extract, cane sugar, expeller pressed/canola oil, sea salt, ancient grains flour (kamut, amaranth, millet, quinoa), pea protein (carrot fiber, beetroot fiber, onion powder, paprika, turmeric), panko, egg, flour, salt, and pepper",
+     "allergens": [
+      "EGG",
+      "SOY",
+      "WHEAT"
+     ],
+     "trace_allergens": [],
      "tags": [
-      "vegan"
+      "vegetarian"
      ],
      "order": 1
     },
@@ -1069,21 +1070,15 @@
      "order": 3
     },
     {
-     "name": "Assorted Dinner Rolls",
-     "recipe_id": "5344600",
+     "name": "Fava Bean Succotash",
+     "recipe_id": "3663869",
      "description": "",
-     "ingredients": "unbleached wheat flour, malted barley flour, sour culture, salt, yeast, sesame seeds, amaranth, poppy seeds, whole wheat flour, dark rye flour, malt powder, honey, extra virgin olive oil, semolina, wheat germ",
-     "allergens": [
-      "MILK",
-      "SESAME",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "SOY",
-      "TREENUTS"
-     ],
+     "ingredients": "fava beans, corn, bell peppers, cilantro, garlic, onions, basil, tabasco, lime, canola/olive oil blend",
+     "allergens": [],
+     "trace_allergens": [],
      "tags": [
-      "vegetarian"
+      "gluten-free",
+      "vegan"
      ],
      "order": 4
     },
@@ -1103,6 +1098,90 @@
      "order": 5
     },
     {
+     "name": "Scrambled Eggs",
+     "recipe_id": "3975106",
+     "description": "",
+     "ingredients": "eggs, canola/olive oil blend, salt",
+     "allergens": [
+      "EGG"
+     ],
+     "trace_allergens": [
+      "COCONUT",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "SOY",
+      "TREENUTS",
+      "WHEAT"
+     ],
+     "tags": [
+      "vegetarian"
+     ],
+     "order": 6
+    },
+    {
+     "name": "Pork Sausage Patty",
+     "recipe_id": "3942305",
+     "description": "",
+     "ingredients": "pork, salt, potassium chloride, dextrose, spices, monosodium glutamate, sodium phosphates, bht, citric acid, caramel color",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free"
+     ],
+     "order": 7
+    },
+    {
+     "name": "Chilaquiles with Roasted Tomato Salsa",
+     "recipe_id": "4199856",
+     "description": "",
+     "ingredients": "flour tortilla, eggs, onion, cilantro, cojita cheese, sour cream, roasted tomato salsa (tomatoes, chipotle peppers, adobo sauce, garlic, canola/olive oil blend, salt), radish, garlic, canola/olive oil blend, salt",
+     "allergens": [
+      "EGG",
+      "MILK",
+      "SOY",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "COCONUT",
+      "FISH",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "TREENUTS"
+     ],
+     "tags": [
+      "vegetarian"
+     ],
+     "order": 8
+    },
+    {
+     "name": "Tater Tots",
+     "recipe_id": "6105956",
+     "description": "",
+     "ingredients": "potatoes, oil (canola oil, soybean oil, cottonseed oil, sunflower oil, or corn oil), dextrose, natural flavor, salt, sodium acid pyrophosphate, fried in canola oil",
+     "allergens": [
+      "SOY"
+     ],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "TREENUTS",
+      "WHEAT"
+     ],
+     "tags": [
+      "vegan"
+     ],
+     "order": 9
+    },
+    {
      "name": "Panini Station",
      "recipe_id": "4532805",
      "description": "",
@@ -1118,7 +1197,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 6
+     "order": 10
     },
     {
      "name": "Soup of the Day",
@@ -1128,7 +1207,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 7
+     "order": 11
     },
     {
      "name": "Composed Salad",
@@ -1138,7 +1217,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 8
+     "order": 12
     },
     {
      "name": "Performance Bar",
@@ -1148,7 +1227,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 9
+     "order": 13
     },
     {
      "name": "Craveable Grains",
@@ -1161,7 +1240,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 10
+     "order": 14
     },
     {
      "name": "Flavor Forward Legumes",
@@ -1174,7 +1253,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 11
+     "order": 15
     },
     {
      "name": "Tri Color Cheese Tortellini",
@@ -1188,7 +1267,7 @@
      ],
      "trace_allergens": [],
      "tags": [],
-     "order": 12
+     "order": 16
     },
     {
      "name": "Pasta Alfredo",
@@ -1205,7 +1284,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 13
+     "order": 17
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -1218,7 +1297,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 14
+     "order": 18
     }
    ],
    "Dinner": [
@@ -1325,6 +1404,80 @@
      "order": 5
     },
     {
+     "name": "Jambalaya Pasta",
+     "recipe_id": "JambPast99",
+     "description": "",
+     "ingredients": "pasta, tomato, andouille sausage, chicken, shrimp, green onion, parsley, cajun seasoning, garlic, thyme, yellow onion, bell pepper, oil, salt, pepper.",
+     "allergens": [
+      "SHELLFISH",
+      "WHEAT"
+     ],
+     "trace_allergens": [],
+     "tags": [],
+     "order": 6
+    },
+    {
+     "name": "Seasonal Steamed Vegetables",
+     "recipe_id": "5561366",
+     "description": "",
+     "ingredients": "seasonal vegetables, salt",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
+     "order": 7
+    },
+    {
+     "name": "Hush-puppies",
+     "recipe_id": "6185433",
+     "description": "",
+     "ingredients": "onions, enriched yellow corn meal, enriched bleached flour, soybean oil with dimethylpolysiloxane, sugar, buttermilk, salt, leavening, spice, dried parsley, guar gum, fried in canola oil",
+     "allergens": [
+      "MILK",
+      "SOY",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "TREENUTS"
+     ],
+     "tags": [
+      "vegetarian"
+     ],
+     "order": 8
+    },
+    {
+     "name": "Fried Okra",
+     "recipe_id": "6159363",
+     "description": "",
+     "ingredients": "okra, flour, corn meal, buttermilk, creole spice, salt, canola/olive oil blend, fried in canola oil",
+     "allergens": [
+      "MILK",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "SOY",
+      "TREENUTS"
+     ],
+     "tags": [
+      "vegetarian"
+     ],
+     "order": 9
+    },
+    {
      "name": "Fried Rice Bar",
      "recipe_id": "friedrice",
      "description": "",
@@ -1343,7 +1496,7 @@
       "WHEAT"
      ],
      "tags": [],
-     "order": 6
+     "order": 10
     },
     {
      "name": "Soup of the Day",
@@ -1353,7 +1506,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 7
+     "order": 11
     },
     {
      "name": "Assorted Dinner Rolls",
@@ -1372,7 +1525,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 8
+     "order": 12
     },
     {
      "name": "Composed Salad",
@@ -1382,7 +1535,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 9
+     "order": 13
     },
     {
      "name": "Performance Bar",
@@ -1392,7 +1545,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 10
+     "order": 14
     },
     {
      "name": "Craveable Grains",
@@ -1405,7 +1558,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 11
+     "order": 15
     },
     {
      "name": "Flavor Forward Legumes",
@@ -1418,7 +1571,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 12
+     "order": 16
     },
     {
      "name": "Tri Color Cheese Tortellini",
@@ -1432,7 +1585,7 @@
      ],
      "trace_allergens": [],
      "tags": [],
-     "order": 13
+     "order": 17
     },
     {
      "name": "Pasta Alfredo",
@@ -1449,7 +1602,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 14
+     "order": 18
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -1462,7 +1615,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 15
+     "order": 19
     }
    ]
   },

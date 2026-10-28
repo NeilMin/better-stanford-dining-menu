@@ -1,6 +1,6 @@
 {
  "date": "2026-11-02",
- "scraped_at": "2026-10-28T02:46:49-07:00",
+ "scraped_at": "2026-10-28T13:20:05-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -1345,11 +1345,12 @@
    ],
    "Dinner": [
     {
-     "name": "Beef & Lamb Gyro Meat",
-     "recipe_id": "BeefLambGyro1",
+     "name": "Spaghetti with Beef & Pork Meatballs",
+     "recipe_id": "6337932",
      "description": "",
-     "ingredients": "Beef, Water, Bread Crumbs, Salt, Yeast, Sugar, Lamb, Corn Flour, Wheat Flour, Rye Flour, Garlic, Onion Powder, Soy Protein Concentrate",
+     "ingredients": "spaghetti, marinara sauce, salt, parsley, parmesan cheese, canola/olive oil blend, meatballs (beef, pork, breadcrumbs, romano cheese, garlic powder, oregano, basil, parsley, vegetable oil)",
      "allergens": [
+      "MILK",
       "SOY",
       "WHEAT"
      ],
@@ -1358,25 +1359,16 @@
      "order": 0
     },
     {
-     "name": "Crispy Falafel",
-     "recipe_id": "5071871",
+     "name": "Meatless \"Meatballs\"",
+     "recipe_id": "6412361",
      "description": "",
-     "ingredients": "garbanzo beans, parsley, white flour, wheat flour, spices, sesame, onions, fried in canola oil",
+     "ingredients": "pea protein, sunflower oil, coconut oil, vegetable juice, fruit juice, salt, spice, natural flavor, methylcellulose, maltodextrin, yeast extract, cultured dextrose, rice bran extract, dried garlic, sugar, onion powder, garlic powder, gum arabic, dried onion, dried parsley, canola oil",
      "allergens": [
-      "SESAME",
-      "WHEAT"
+      "COCONUT"
      ],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS"
-     ],
+     "trace_allergens": [],
      "tags": [
+      "gluten-free",
       "vegan"
      ],
      "order": 1
@@ -1408,33 +1400,33 @@
      "order": 3
     },
     {
-     "name": "Warm Pita",
-     "recipe_id": "3675181",
+     "name": "Garlic Breadstick",
+     "recipe_id": "5454300",
      "description": "",
-     "ingredients": "whole wheat flour, enriched wheat flour, soybean, canola oil, sugar, salt, baking powder, yeast, blackstrap molasses, calcium propionate, sodium stearoyl lactylate, guar gum, amylase",
+     "ingredients": "enriched wheat flour, malted barley flour, salt, sugar, datem, enzymes, l-cysteine, calcium sulfate, dextrose, yeast, calcium propionate, monoglycerides, diglycerides, citric acid, cornmeal, soybean oil, palm oil, dehydrated garlic, salt, natural flavors, artificial flavors, citric acid, whey, garnish (parmesan, parsley)",
      "allergens": [
+      "MILK",
       "SOY",
       "WHEAT"
      ],
-     "trace_allergens": [
-      "EGG",
-      "TREENUTS"
-     ],
+     "trace_allergens": [],
      "tags": [
-      "vegan"
+      "vegetarian"
      ],
      "order": 4
     },
     {
-     "name": "Lemon Herb Rice",
-     "recipe_id": "6775233",
+     "name": "Mashed Potatoes",
+     "recipe_id": "4055591",
      "description": "",
-     "ingredients": "basmati rice, dill, mint, parsley, canola/olive oil blend, turmeric, lemon juice, lemon zest",
-     "allergens": [],
+     "ingredients": "dehydrated mashed potato pearls, cream, whole milk, butter, salt, pepper",
+     "allergens": [
+      "MILK"
+     ],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
-      "vegan"
+      "vegetarian"
      ],
      "order": 5
     },
@@ -3118,41 +3110,6 @@
      "order": 10
     },
     {
-     "name": "Grilled Chicken",
-     "recipe_id": "5816331",
-     "description": "",
-     "ingredients": "chicken, olive oil, salt, pepper",
-     "allergens": [
-      "TRACEALLERGENS"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free"
-     ],
-     "order": 11
-    },
-    {
-     "name": "Grilled Vegan/Vegetarian",
-     "recipe_id": "13468741",
-     "description": "",
-     "ingredients": "chef's choice grilled vegan OR vegetarian option",
-     "allergens": [],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
-     ],
-     "tags": [],
-     "order": 12
-    },
-    {
      "name": "Soup of the Day",
      "recipe_id": "SoupoftheDay",
      "description": "",
@@ -3160,26 +3117,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 13
-    },
-    {
-     "name": "Assorted Dinner Rolls",
-     "recipe_id": "5344600",
-     "description": "",
-     "ingredients": "unbleached wheat flour, malted barley flour, sour culture, salt, yeast, sesame seeds, amaranth, poppy seeds, whole wheat flour, dark rye flour, malt powder, honey, extra virgin olive oil, semolina, wheat germ",
-     "allergens": [
-      "MILK",
-      "SESAME",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "SOY",
-      "TREENUTS"
-     ],
-     "tags": [
-      "vegetarian"
-     ],
-     "order": 14
+     "order": 11
     },
     {
      "name": "Composed Salad",
@@ -3189,7 +3127,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 15
+     "order": 12
     },
     {
      "name": "Performance Bar",
@@ -3199,33 +3137,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 16
-    },
-    {
-     "name": "Craveable Grains",
-     "recipe_id": "CraveableGrains1",
-     "description": "",
-     "ingredients": "** No Alliums: this includes garlic, onion, shallots, leeks, chives, scallions/ green onions, and any similar wild varieties, such as ramps. ** No Root vegetables/Tubers: this includes potatoes of any variety, beets, carrots, radishes, turnips, ginger, and fresh turmeric root. ** No Mushrooms/Fungi of any kind.",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan"
-     ],
-     "order": 17
-    },
-    {
-     "name": "Flavor Forward Legumes",
-     "recipe_id": "FlavForLegumes1",
-     "description": "",
-     "ingredients": "** No Alliums: this includes garlic, onion, shallots, leeks, chives, scallions/ green onions, and any similar wild varieties, such as ramps. ** No Root vegetables/Tubers: this includes potatoes of any variety, beets, carrots, radishes, turnips, ginger, and fresh turmeric root. ** No Mushrooms/Fungi of any kind.",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan"
-     ],
-     "order": 18
+     "order": 13
     },
     {
      "name": "Marinara Cheese Ravioli",
@@ -3242,7 +3154,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 19
+     "order": 14
     },
     {
      "name": "Pasta Marinara",
@@ -3259,7 +3171,7 @@
      "tags": [
       "vegan"
      ],
-     "order": 20
+     "order": 15
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -3272,7 +3184,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 21
+     "order": 16
     }
    ]
   },
@@ -3500,25 +3412,18 @@
    ],
    "Lunch": [
     {
-     "name": "Seafood Jambalaya",
-     "recipe_id": "4860996",
+     "name": "Thai Green Curry Chicken",
+     "recipe_id": "ThaiGrnCurChx1",
      "description": "",
-     "ingredients": "shrimp, mussels, (non-halal) andouille sausage, okra, tomato puree, basmati rice, chicken base, garlic, creole spice (herbs de provence, cuminseed, salt, cayenne pepper, pepper, paprika), bell peppers, celery, onion, Worcestershire sauce, thyme, bay leaf, parsley",
+     "ingredients": "chicken, coconut milk, Thai eggplant, bamboo shoots, onions, bell peppers, garlic, ginger, fish sauce, sugar, lime juice, thai basil, olive/canola oil blend, salt, green curry paste (green chiles, lemongrass, shallots, garlic, ginger, cilantro stems, dried makrut lime, cumin, coriander, white pepper, fish sauce, salt, olive/canola oil blend)",
      "allergens": [
-      "EGG",
-      "FISH",
-      "SHELLFISH",
-      "WHEAT"
-     ],
-     "trace_allergens": [
       "COCONUT",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SOY",
-      "TREENUTS"
+      "FISH"
      ],
-     "tags": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free"
+     ],
      "order": 0
     },
     {
@@ -4338,25 +4243,18 @@
    ],
    "Lunch": [
     {
-     "name": "Seafood Jambalaya",
-     "recipe_id": "4860996",
+     "name": "Beef & Broccoli with Rice",
+     "recipe_id": "COV5763055",
      "description": "",
-     "ingredients": "shrimp, mussels, (non-halal) andouille sausage, okra, tomato puree, basmati rice, chicken base, garlic, creole spice (herbs de provence, cuminseed, salt, cayenne pepper, pepper, paprika), bell peppers, celery, onion, Worcestershire sauce, thyme, bay leaf, parsley",
+     "ingredients": "beef, broccoli, tamari, garlic, sugar, cornstarch, canola/olive oil blend, steamed Rice",
      "allergens": [
-      "EGG",
-      "FISH",
-      "SHELLFISH",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "COCONUT",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
       "SOY",
-      "TREENUTS"
+      "TRACEALLERGENS"
      ],
-     "tags": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free"
+     ],
      "order": 0
     },
     {
@@ -4573,16 +4471,15 @@
    ],
    "Dinner": [
     {
-     "name": "Beef & Lamb Gyro Meat",
-     "recipe_id": "BeefLambGyro1",
+     "name": "Lemon Oregano Chicken",
+     "recipe_id": "4448464",
      "description": "",
-     "ingredients": "Beef, Water, Bread Crumbs, Salt, Yeast, Sugar, Lamb, Corn Flour, Wheat Flour, Rye Flour, Garlic, Onion Powder, Soy Protein Concentrate",
-     "allergens": [
-      "SOY",
-      "WHEAT"
-     ],
+     "ingredients": "chicken, lemon juice, lime juice, canola/olive oil blend, garlic, parsley, oregano, salt, pepper",
+     "allergens": [],
      "trace_allergens": [],
-     "tags": [],
+     "tags": [
+      "gluten-free"
+     ],
      "order": 0
     },
     {

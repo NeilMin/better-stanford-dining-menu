@@ -1,6 +1,6 @@
 {
  "date": "2026-10-28",
- "scraped_at": "2026-10-28T02:46:49-07:00",
+ "scraped_at": "2026-10-28T13:20:05-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -1257,24 +1257,17 @@
      "order": 5
     },
     {
-     "name": "Grilled Teriyaki Chicken Protein Bowl",
-     "recipe_id": "TCPB99",
+     "name": "Creamy Cajun Chicken",
+     "recipe_id": "4369429",
      "description": "",
-     "ingredients": "chicken thigh, garlic, ginger, sesame, tamari, rice, bell pepper, cucumber, carrot,",
+     "ingredients": "chicken, bell pepper, onion, celery, cream, cajun spice, canola olive oil, tomato paste, salt, pepper",
      "allergens": [
-      "SESAME",
-      "SOY"
-     ],
-     "trace_allergens": [
-      "COCONUT",
       "EGG",
-      "FISH",
       "MILK",
-      "PEANUTS",
-      "SHELLFISH",
-      "TREENUTS",
+      "SOY",
       "WHEAT"
      ],
+     "trace_allergens": [],
      "tags": [],
      "order": 6
     },
@@ -1300,27 +1293,6 @@
      "order": 7
     },
     {
-     "name": "Grilled Vegan/Vegetarian",
-     "recipe_id": "13468741",
-     "description": "",
-     "ingredients": "chef's choice grilled vegan OR vegetarian option",
-     "allergens": [],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
-     ],
-     "tags": [],
-     "order": 8
-    },
-    {
      "name": "Cheese Quesadilla",
      "recipe_id": "5193745",
      "description": "",
@@ -1342,7 +1314,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 9
+     "order": 8
     },
     {
      "name": "Panini Station",
@@ -1360,7 +1332,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 10
+     "order": 9
     },
     {
      "name": "Soup of the Day",
@@ -1370,7 +1342,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 11
+     "order": 10
     },
     {
      "name": "Composed Salad",
@@ -1380,7 +1352,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 12
+     "order": 11
     },
     {
      "name": "Performance Bar",
@@ -1390,7 +1362,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 13
+     "order": 12
     },
     {
      "name": "Craveable Grains",
@@ -1403,7 +1375,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 14
+     "order": 13
     },
     {
      "name": "Flavor Forward Legumes",
@@ -1416,41 +1388,38 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 15
+     "order": 14
     },
     {
-     "name": "Pasta Alfredo",
-     "recipe_id": "5683556",
+     "name": "Creamy Marinara",
+     "recipe_id": "CreamyMar(lakeside)",
      "description": "",
-     "ingredients": "pasta, white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, parmesan cheese",
+     "ingredients": "tomatoes, tomato paste, cream, milk powder, butter, parmesan cheese, flour, soybean oil, sugar, salt, onion, garlic, spices, citric acid, natural flavor",
      "allergens": [
       "MILK",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "EGG"
-     ],
-     "tags": [
-      "vegetarian"
-     ],
-     "order": 16
-    },
-    {
-     "name": "Pasta Marinara",
-     "recipe_id": "5095708",
-     "description": "",
-     "ingredients": "pasta, marinara sauce, canola/olive oil blend",
-     "allergens": [
       "SOY",
       "WHEAT"
      ],
-     "trace_allergens": [
-      "EGG"
-     ],
+     "trace_allergens": [],
      "tags": [
+      "vegetarian"
+     ],
+     "order": 15
+    },
+    {
+     "name": "Marinara Sauce",
+     "recipe_id": "3612835",
+     "description": "",
+     "ingredients": "italian tomatoes, diced tomatoes, fresh onions, extra virgin olive oil, garlic, sea salt, oregano, black pepper",
+     "allergens": [
+      "SOY"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
       "vegan"
      ],
-     "order": 17
+     "order": 16
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -1463,7 +1432,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 18
+     "order": 17
     }
    ],
    "Dinner": [
@@ -1538,16 +1507,15 @@
      "order": 4
     },
     {
-     "name": "Korean Potato Salad",
-     "recipe_id": "KorPotSalad1",
+     "name": "Roasted Potatoes",
+     "recipe_id": "5018531",
      "description": "",
-     "ingredients": "Yukon Gold potatoes, hard-boiled eggs, salted cucumbers, sliced carrots, mayonnaise, sugar, salt, pepper",
-     "allergens": [
-      "EGG"
-     ],
+     "ingredients": "potatoes, salt, pepper, canola/olive oil blend",
+     "allergens": [],
      "trace_allergens": [],
      "tags": [
-      "gluten-free"
+      "gluten-free",
+      "vegan"
      ],
      "order": 5
     },
@@ -2163,18 +2131,13 @@
      "order": 9
     },
     {
-     "name": "Handmade Pizza",
-     "recipe_id": "afdcpizza2",
+     "name": "Hot Dog Bar",
+     "recipe_id": "3998930",
      "description": "",
-     "ingredients": "wheat flour, yeast, sugar, olive oil, mozzarella cheese, marinara sauce",
-     "allergens": [
-      "MILK",
-      "WHEAT"
-     ],
+     "ingredients": "",
+     "allergens": [],
      "trace_allergens": [],
-     "tags": [
-      "vegetarian"
-     ],
+     "tags": [],
      "order": 10
     },
     {
@@ -5573,10 +5536,10 @@
    ],
    "Dinner": [
     {
-     "name": "Chicken Bulgogi",
-     "recipe_id": "000000",
+     "name": "Filipino Chicken Adobo",
+     "recipe_id": "121212100",
      "description": "",
-     "ingredients": "Ingredients: chicken, oil, ginger, garlic, gochujang paste, brown sugar, red apple juice, beef base, coconut liquid aminos, mushroom seasoning, vegan fish sauce (pineapple, red yeast rice, water), cabbage, green onions",
+     "ingredients": "chicken, oil, garlic, bay leaf, peppercorn, coconut liquid amino, vinegar, chicken base, sugar, salt,",
      "allergens": [
       "COCONUT"
      ],
@@ -5587,10 +5550,10 @@
      "order": 0
     },
     {
-     "name": "Gochujang Potatoes, Chickpeas & Quinoa Stew",
-     "recipe_id": "121331200",
+     "name": "Tofu & Vegetable Kare Kare",
+     "recipe_id": "321123",
      "description": "",
-     "ingredients": "oil, ginger, garlic, gochujang paste, mushroom seasoning, coconut liquid aminos, salt, pepper, potatoes, chickpeas, quinoa",
+     "ingredients": "prime roots tofu (mycoprotein, koji, water, rice vinegar, konjac root flour, rice bran oil, hydrated lime, brown rice flour), seasonal vegetables, oil, onion, annatto seed, sunflower butter, mushroom seasoning, coconut liquid aminos, nutritional yeast, veg base, vegan fish sauce (pineapple juice, red yeast rice, salt)",
      "allergens": [
       "COCONUT"
      ],
