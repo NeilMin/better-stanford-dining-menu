@@ -1,6 +1,6 @@
 {
  "date": "2026-11-02",
- "scraped_at": "2026-10-27T16:48:44-07:00",
+ "scraped_at": "2026-10-28T02:46:49-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -5112,46 +5112,32 @@
    ],
    "Lunch": [
     {
-     "name": "Seafood Jambalaya",
-     "recipe_id": "4860996",
+     "name": "Shrimp, Chicken & Pork Sausage Jambalaya",
+     "recipe_id": "6484833",
      "description": "",
-     "ingredients": "shrimp, mussels, (non-halal) andouille sausage, okra, tomato puree, basmati rice, chicken base, garlic, creole spice (herbs de provence, cuminseed, salt, cayenne pepper, pepper, paprika), bell peppers, celery, onion, Worcestershire sauce, thyme, bay leaf, parsley",
+     "ingredients": "spicy tomato sauce (tomato sauce, butter, beef soup base, tomato, cayenne pepper, black pepper, onion), dirty rice (rice, butter, parsley, vegetable soup base [contains mushroom, celery], garlic, onion, celery, bay leaf, sage, cayenne pepper, oregano, thyme, pepper, salt, canola/olive oil blend), chicken soup base, chicken, shrimp, okra, beef pork andouille sausage, green onion",
      "allergens": [
-      "EGG",
       "FISH",
-      "SHELLFISH",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "COCONUT",
       "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SOY",
-      "TREENUTS"
+      "SHELLFISH"
      ],
-     "tags": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free"
+     ],
      "order": 0
     },
     {
-     "name": "Jambalaya with Fried Okra",
-     "recipe_id": "5310969",
+     "name": "Cajun Tofu",
+     "recipe_id": "3878294-1",
      "description": "",
-     "ingredients": "jambalaya (brown rice, bell pepper, butternut squash, tomato, onion, mushroom, celery, okra, canola/olive oil blend, garlic, parsley, salt, pepper, thyme, cumin, cayenne, paprika), fried okra (okra, corn starch, corn meal, fried in canola oil)",
-     "allergens": [],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
+     "ingredients": "tofu, tomato sauce, cayenne pepper, allspice, nutmeg, ancho chili pepper, cinnamon, garlic powder, onion powder, salt, pepper",
+     "allergens": [
+      "SOY"
      ],
+     "trace_allergens": [],
      "tags": [
+      "gluten-free",
       "vegan"
      ],
      "order": 1
@@ -5170,19 +5156,6 @@
      "order": 2
     },
     {
-     "name": "Seasonal Steamed Vegetables",
-     "recipe_id": "5561366",
-     "description": "",
-     "ingredients": "seasonal vegetables, salt",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan"
-     ],
-     "order": 3
-    },
-    {
      "name": "Seasonal Vegetable Board",
      "recipe_id": "4503514",
      "description": "",
@@ -5193,7 +5166,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 4
+     "order": 3
     },
     {
      "name": "Creole Succotash",
@@ -5206,18 +5179,42 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 5
+     "order": 4
     },
     {
-     "name": "Steamed Louisiana-Style Rice",
-     "recipe_id": "LouisStyleRice1",
+     "name": "Cheesy Grits",
+     "recipe_id": "5053921",
      "description": "",
-     "ingredients": "long-grain rice, water, onions, celery, bell peppers, garlic, paprika, dried thyme, dried oregano, olive/canola oil blend, salt, black pepper",
-     "allergens": [],
+     "ingredients": "grits, cheddar cheese, parmesan cheese, cream, monterey jack cheese, unsalted butter, white pepper, salt",
+     "allergens": [
+      "MILK"
+     ],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
-      "vegan"
+      "vegetarian"
+     ],
+     "order": 5
+    },
+    {
+     "name": "Honey Butter Cornbread",
+     "recipe_id": "6923824",
+     "description": "",
+     "ingredients": "cornbread (butter, sugar, eggs, wheat flour, yellow corn meal, cream corn, baking powder, sea salt, vanilla extract), unsalted butter, honey",
+     "allergens": [
+      "EGG",
+      "MILK",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "COCONUT",
+      "PEANUTS",
+      "SESAME",
+      "SOY",
+      "TREENUTS"
+     ],
+     "tags": [
+      "vegetarian"
      ],
      "order": 6
     },
@@ -5253,40 +5250,28 @@
      "order": 8
     },
     {
-     "name": "Grilled Vegan/Vegetarian",
-     "recipe_id": "13468741",
+     "name": "Grilled Tofu Patty",
+     "recipe_id": "GrilledTofu1",
      "description": "",
-     "ingredients": "chef's choice grilled vegan OR vegetarian option",
-     "allergens": [],
+     "ingredients": "tofu, canola oil, salt, and pepper",
+     "allergens": [
+      "SOY"
+     ],
      "trace_allergens": [
-      "COCONUT",
       "EGG",
       "FISH",
       "MILK",
       "PEANUTS",
       "SESAME",
       "SHELLFISH",
-      "SOY",
       "TREENUTS",
       "WHEAT"
      ],
-     "tags": [],
-     "order": 9
-    },
-    {
-     "name": "Handmade Pizza",
-     "recipe_id": "afdcpizza2",
-     "description": "",
-     "ingredients": "wheat flour, yeast, sugar, olive oil, mozzarella cheese, marinara sauce",
-     "allergens": [
-      "MILK",
-      "WHEAT"
-     ],
-     "trace_allergens": [],
      "tags": [
-      "vegetarian"
+      "gluten-free",
+      "vegan"
      ],
-     "order": 10
+     "order": 9
     },
     {
      "name": "Panini Station",
@@ -5304,27 +5289,46 @@
       "TREENUTS"
      ],
      "tags": [],
+     "order": 10
+    },
+    {
+     "name": "Miso Soup",
+     "recipe_id": "3902989",
+     "description": "",
+     "ingredients": "vegetable soup base, onions, swiss chard, white miso, tofu",
+     "allergens": [
+      "SOY"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
      "order": 11
     },
     {
-     "name": "Soup of the Day",
-     "recipe_id": "SoupoftheDay",
+     "name": "Garden Fresh Salad",
+     "recipe_id": "5482634",
      "description": "",
-     "ingredients": "chef's choice soup of the day",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [],
+     "ingredients": "romaine lettuce, green onions, tomatoes, carrots, ranch dressing (soybean oil, vinegar, buttermilk, sugar, egg yolks, salt, food starch, whey, xanthan gum, garlic, onions, spice)",
+     "allergens": [
+      "EGG",
+      "MILK",
+      "SOY"
+     ],
+     "trace_allergens": [
+      "COCONUT",
+      "FISH",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "TREENUTS",
+      "WHEAT"
+     ],
+     "tags": [
+      "vegetarian"
+     ],
      "order": 12
-    },
-    {
-     "name": "Composed Salad",
-     "recipe_id": "123116546",
-     "description": "",
-     "ingredients": "chef's choice composed salad",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [],
-     "order": 13
     },
     {
      "name": "Performance Bar",
@@ -5334,50 +5338,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 14
-    },
-    {
-     "name": "Craveable Grains",
-     "recipe_id": "CraveableGrains1",
-     "description": "",
-     "ingredients": "** No Alliums: this includes garlic, onion, shallots, leeks, chives, scallions/ green onions, and any similar wild varieties, such as ramps. ** No Root vegetables/Tubers: this includes potatoes of any variety, beets, carrots, radishes, turnips, ginger, and fresh turmeric root. ** No Mushrooms/Fungi of any kind.",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan"
-     ],
-     "order": 15
-    },
-    {
-     "name": "Flavor Forward Legumes",
-     "recipe_id": "FlavForLegumes1",
-     "description": "",
-     "ingredients": "** No Alliums: this includes garlic, onion, shallots, leeks, chives, scallions/ green onions, and any similar wild varieties, such as ramps. ** No Root vegetables/Tubers: this includes potatoes of any variety, beets, carrots, radishes, turnips, ginger, and fresh turmeric root. ** No Mushrooms/Fungi of any kind.",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan"
-     ],
-     "order": 16
-    },
-    {
-     "name": "Marinara Cheese Ravioli",
-     "recipe_id": "3581918",
-     "description": "",
-     "ingredients": "ravioli, marinara sauce, parmesan cheese",
-     "allergens": [
-      "EGG",
-      "MILK",
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "vegetarian"
-     ],
-     "order": 17
+     "order": 13
     },
     {
      "name": "Pesto Sauce",
@@ -5393,7 +5354,7 @@
       "gluten-free",
       "vegetarian"
      ],
-     "order": 18
+     "order": 14
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -5406,7 +5367,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 19
+     "order": 15
     }
    ],
    "Dinner": [
@@ -5532,16 +5493,6 @@
      "order": 7
     },
     {
-     "name": "Burger Bar",
-     "recipe_id": "5964436",
-     "description": "",
-     "ingredients": "",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [],
-     "order": 8
-    },
-    {
      "name": "Grilled Chicken",
      "recipe_id": "5816331",
      "description": "",
@@ -5553,7 +5504,7 @@
      "tags": [
       "gluten-free"
      ],
-     "order": 9
+     "order": 8
     },
     {
      "name": "Grilled Tofu Patty",
@@ -5577,7 +5528,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 10
+     "order": 9
     },
     {
      "name": "Miso Soup",
@@ -5592,7 +5543,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 11
+     "order": 10
     },
     {
      "name": "Southwestern Ranch Salad",
@@ -5609,7 +5560,7 @@
       "gluten-free",
       "vegetarian"
      ],
-     "order": 12
+     "order": 11
     },
     {
      "name": "Performance Bar",
@@ -5619,7 +5570,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 13
+     "order": 12
     },
     {
      "name": "Pasta Marinara",
@@ -5636,7 +5587,7 @@
      "tags": [
       "vegan"
      ],
-     "order": 14
+     "order": 13
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -5649,7 +5600,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 15
+     "order": 14
     }
    ]
   }
