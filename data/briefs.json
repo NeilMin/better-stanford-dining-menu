@@ -12164,13 +12164,14 @@
    }
   ],
   "dish": "Champurrado and pan dulce",
-  "look": "a thick steaming dark brown chocolate champurrado, frothy surface dusted with a pinch of ground cinnamon, served alongside a soft round Mexican pan dulce concha with a sugary shell-patterned crust",
-  "model": "gemini-3.6-flash",
+  "hand": true,
+  "look": "a ceramic mug of thick steaming dark brown chocolate champurrado with a frothy surface dusted with ground cinnamon, served alongside a soft round Mexican pan dulce concha with a sugary shell-patterned crust",
+  "model": "manual-fix",
   "name": "Champurrado with Pan Dulce",
   "rev": 6,
   "revisions": 0,
-  "vessel": "bowl",
-  "written_at": "2026-10-27T09:33:18+00:00"
+  "vessel": "plate",
+  "written_at": "2026-10-27T19:56:00+00:00"
  },
  "5d107d0e8f99": {
   "avoid": [
@@ -16873,6 +16874,12 @@
  },
  "863fc25a2ecb": {
   "avoid": [
+   "avocado",
+   "guacamole",
+   "avocado half",
+   "avocado slice",
+   "avocado pit",
+   "meat",
    "beef",
    "steak",
    "chicken",
@@ -16881,7 +16888,11 @@
    "shrimp",
    "burger bun",
    "sandwich",
-   "raw mushrooms"
+   "raw mushrooms",
+   "raw vegetables outside bowl",
+   "vegetables on table",
+   "hybrid vegetables",
+   "fused vegetables"
   ],
   "checks": [
    {
@@ -16898,13 +16909,14 @@
    }
   ],
   "dish": "Chimichurri Portobello Mushroom Bowl",
-  "look": "large grilled portobello mushroom cap, vibrant green herby chimichurri sauce drizzled on top, charred yellow corn kernels, roasted green zucchini chunks, roasted broccoli florets, glistening roasted vegetables",
-  "model": "gemma-4-31b-it",
+  "hand": true,
+  "look": "juicy thick grilled portobello mushroom with grill marks and chimichurri herb sauce, accompanied by dark green roasted broccoli florets, golden corn kernels, and tender sliced zucchini",
+  "model": "manual-fix",
   "name": "Chimichurri Portobello Steak Bowl",
   "rev": 6,
   "revisions": 0,
   "vessel": "bowl",
-  "written_at": "2026-10-21T23:38:56+00:00"
+  "written_at": "2026-10-28T03:49:46+00:00"
  },
  "86ab20d5a48c": {
   "avoid": [
@@ -20254,6 +20266,44 @@
   "vessel": "plate",
   "written_at": "2026-09-27T05:30:31+00:00"
  },
+ "9e75f45dfcfa": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "bacon",
+   "pizza",
+   "burgers",
+   "sandwiches",
+   "sushi",
+   "burnt quesadilla"
+  ],
+  "checks": [
+   {
+    "q": "Does the photo show toasted quesadillas cut into triangles with melted cheese, served alongside toppings or salsa?",
+    "yes": true
+   },
+   {
+    "q": "Is the food mostly pizza, burgers, or sandwiches?",
+    "yes": false
+   },
+   {
+    "q": "Are the quesadillas completely burnt black or raw dough?",
+    "yes": false
+   }
+  ],
+  "dish": "quesadilla bar spread",
+  "hand": true,
+  "look": "a vibrant quesadilla bar spread, golden toasted flour quesadillas cut into triangles with melted cheese, arranged on a central platter with small bowls of fresh green guacamole, red chunky pico de gallo salsa, white sour cream, pickled jalapeno slices, lime wedges, and crispy tortilla chips",
+  "model": "manual-fix",
+  "name": "Quesadilla Bar",
+  "rev": 6,
+  "revisions": 0,
+  "spread": true,
+  "vessel": "plate",
+  "written_at": "2026-10-28T03:40:56+00:00"
+ },
  "9ee470a67590": {
   "avoid": [
    "fish fillet",
@@ -22216,6 +22266,25 @@
  },
  "ac9401fb87ff": {
   "avoid": [
+   "towel",
+   "napkin",
+   "cloth",
+   "fabric",
+   "table runner",
+   "wooden cutting board",
+   "side dish",
+   "extra bowl",
+   "sauce dish",
+   "multiple plates",
+   "deformed claws",
+   "chimera creatures",
+   "mutant animals",
+   "shrimp with crab legs",
+   "cutlery clutter",
+   "fork",
+   "knife",
+   "spoon",
+   "whole lemon",
    "pasta",
    "rice",
    "soup broth",
@@ -22240,13 +22309,14 @@
    }
   ],
   "dish": "Cajun seafood boil",
-  "look": "a heap of red-orange boiled crab pieces, crawfish, pink shrimp, open clams and mussels in shells, baby potatoes, corn on the cob pieces, sliced andouille sausage, lemon wedges, chopped parsley",
-  "model": "claude-sonnet",
+  "hand": true,
+  "look": "a whole steamed red Dungeness crab with large claws and jointed legs, open littleneck clams in natural shells, sweet yellow corn on the cob wheels, tender red baby potatoes, cajun garlic butter glaze and chopped parsley",
+  "model": "manual-fix",
   "name": "Magnolia Boil",
   "rev": 6,
   "revisions": 0,
-  "vessel": "bowl",
-  "written_at": "2026-09-27T05:43:05+00:00"
+  "vessel": "plate",
+  "written_at": "2026-10-28T03:28:51+00:00"
  },
  "ace7d14ae0a3": {
   "avoid": [

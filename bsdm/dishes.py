@@ -139,6 +139,8 @@ def is_station_container(dish) -> bool:
     rather than a finished, standalone recipe.
     """
     get = _get(dish)
+    if get("special"):
+        return False
     name = (get("name", "") or "").translate(_SMART_QUOTES).strip()
     ing = (get("ingredients", "") or "").translate(_SMART_QUOTES).strip()
     if not name:

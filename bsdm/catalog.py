@@ -99,6 +99,7 @@ def build(menu_paths: Iterable[Path], station_table: dict, previous: dict | None
                 "icon": dishlib.station_icon(dish),
             }
         entry["special"] = True
+        entry["placeholder"] = False
         as_daily[did] = as_daily.get(did, 0) + 1
 
     for did, entry in catalog.items():
