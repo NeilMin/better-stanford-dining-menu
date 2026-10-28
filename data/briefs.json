@@ -1327,15 +1327,17 @@
    "wings",
    "drumsticks",
    "nuggets",
+   "steak",
    "ground meat",
    "shredded chicken",
-   "tacos",
+   "asparagus",
+   "gravy boat",
    "sandwiches",
    "raw chicken"
   ],
   "checks": [
    {
-    "q": "Is the main item a breaded chicken breast?",
+    "q": "Is the main item a breaded cutlet?",
     "yes": true
    },
    {
@@ -1352,13 +1354,13 @@
    }
   ],
   "dish": "chicken fried chicken",
-  "look": "a large crispy fried chicken breast, thick golden-brown breaded crust, craggy uneven texture, juicy white meat, drizzled with creamy white country gravy",
-  "model": "gemma-4-26b-a4b-it",
+  "look": "a whole boneless chicken breast cutlet, thick golden-brown craggy breaded crust, deep-fried texture, topped with creamy white country gravy, black pepper specks",
+  "model": "gemini-3.6-flash",
   "name": "Chicken Fried Chicken",
   "rev": 6,
-  "revisions": 0,
+  "revisions": 1,
   "vessel": "plate",
-  "written_at": "2026-10-27T20:29:45+00:00"
+  "written_at": "2026-10-28T00:35:52+00:00"
  },
  "0cfb2b304b0b": {
   "avoid": [
@@ -24178,12 +24180,12 @@
    "chicken",
    "beef",
    "pork",
-   "lamb",
    "fish",
    "shrimp",
-   "plain brown rice",
+   "brown rice",
+   "dark grains",
    "quinoa",
-   "pita wrap"
+   "pita"
   ],
   "checks": [
    {
@@ -24196,13 +24198,13 @@
    }
   ],
   "dish": "Mujadara",
-  "look": "mixture of distinct brown lentils and fluffy basmati rice, generously topped with dark crispy fried caramelized onion slices, drizzle of pale white tahini yogurt sauce, garnish of chopped fresh parsley",
-  "model": "gemini-3.6-flash",
+  "look": "mixture of distinct white basmati rice and small brown lentils, topped with a heaping pile of dark brown crispy fried onions, drizzle of pale white tahini yogurt sauce, chopped fresh parsley",
+  "model": "gemma-4-31b-it",
   "name": "Mujadara with Tahini Yogurt Sauce: Spiced Lentil and Basmati Rice Dish",
   "rev": 6,
-  "revisions": 1,
+  "revisions": 2,
   "vessel": "bowl",
-  "written_at": "2026-10-27T22:26:11+00:00"
+  "written_at": "2026-10-28T01:30:06+00:00"
  },
  "b9171048e5a9": {
   "avoid": [
