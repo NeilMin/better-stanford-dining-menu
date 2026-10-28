@@ -7887,6 +7887,38 @@
   "vessel": "plate",
   "written_at": "2026-09-30T10:02:01+00:00"
  },
+ "3aedeb33c6b8": {
+  "avoid": [
+   "macaroni",
+   "penne",
+   "lasagna",
+   "sliced sausage",
+   "white sauce",
+   "raw pasta"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish spaghetti pasta topped with meatballs and red sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the pasta a short tubular shape like penne or macaroni?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat served in slices or strips rather than round balls?",
+    "yes": false
+   }
+  ],
+  "dish": "spaghetti and meatballs",
+  "look": "long tangled strands of spaghetti pasta, coated in rich bright red marinara tomato sauce, topped with several round browned meatballs, dusted with grated parmesan cheese and chopped green parsley",
+  "model": "gemini-flash-latest",
+  "name": "Spaghetti with Beef & Pork Meatballs",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-28T20:24:06+00:00"
+ },
  "3b335111eaa0": {
   "avoid": [
    "meat",
@@ -9164,6 +9196,41 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-10-05T10:51:19+00:00"
+ },
+ "46199132c384": {
+  "avoid": [
+   "meat",
+   "beef",
+   "pork",
+   "oxtail",
+   "chicken",
+   "fish",
+   "shrimp",
+   "bagoong",
+   "rice noodles"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a yellow-orange vegetable and tofu stew?",
+    "yes": true
+   },
+   {
+    "q": "Are there visible chunks of meat like beef or oxtail in the stew?",
+    "yes": false
+   },
+   {
+    "q": "Is the stew served with shrimp or seafood?",
+    "yes": false
+   }
+  ],
+  "dish": "tofu and vegetable kare-kare",
+  "look": "thick golden-orange savory sunflower-seed sauce, golden fried tofu cubes, tender green bok choy leaves, sliced long beans, eggplant pieces, bright annatto sheen",
+  "model": "gemini-flash-latest",
+  "name": "Tofu & Vegetable Kare Kare",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-28T20:24:06+00:00"
  },
  "4622675fff94": {
   "avoid": [
@@ -17305,6 +17372,41 @@
   "vessel": "plate",
   "written_at": "2026-09-27T05:43:05+00:00"
  },
+ "88310a1d3f9c": {
+  "avoid": [
+   "meat",
+   "beef",
+   "pork",
+   "chicken",
+   "fish",
+   "shrimp",
+   "spaghetti",
+   "marinara sauce",
+   "cheese"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a serving of round meatless balls?",
+    "yes": true
+   },
+   {
+    "q": "Are the meatballs served over a large bed of pasta?",
+    "yes": false
+   },
+   {
+    "q": "Is there shredded dairy cheese melted over them?",
+    "yes": false
+   }
+  ],
+  "dish": "vegan meatballs",
+  "look": "a mound of seared round plant-based meatballs, rough textured browned outer crust, flecks of dried green parsley and garlic, savory sheen on the surface",
+  "model": "gemini-flash-latest",
+  "name": "Meatless \"Meatballs\"",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-28T20:24:06+00:00"
+ },
  "888b6b577d1f": {
   "avoid": [
    "pasta",
@@ -17652,6 +17754,39 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T14:22:11+00:00"
+ },
+ "8acedab86a4c": {
+  "avoid": [
+   "breaded chicken",
+   "fried chicken",
+   "skewers",
+   "chicken nuggets",
+   "pasta",
+   "rice",
+   "curry"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a roasted piece of chicken?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken deep-fried or breaded?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken served on skewers?",
+    "yes": false
+   }
+  ],
+  "dish": "Greek lemon oregano chicken",
+  "look": "roasted golden brown chicken thigh with crisp skin, glossy light lemon pan sauce, flecks of dried green oregano and fresh chopped parsley, charred lemon wedges",
+  "model": "gemini-flash-latest",
+  "name": "Lemon Oregano Chicken",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-28T20:24:06+00:00"
  },
  "8acf693c691b": {
   "avoid": [
@@ -26514,6 +26649,39 @@
   "vessel": "plate",
   "written_at": "2026-10-09T10:51:35+00:00"
  },
+ "c8a55f477cb4": {
+  "avoid": [
+   "noodles",
+   "carrots",
+   "peanuts",
+   "raw broccoli",
+   "skewers",
+   "ground beef",
+   "soup"
+  ],
+  "checks": [
+   {
+    "q": "Does the dish feature sliced beef and broccoli florets over white rice?",
+    "yes": true
+   },
+   {
+    "q": "Is the dish served with noodles instead of rice?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat ground like mince?",
+    "yes": false
+   }
+  ],
+  "dish": "beef and broccoli with rice",
+  "look": "tender thin slices of browned beef, vibrant green cooked broccoli florets, glossy dark brown savory tamari sauce coating, served over a bed of fluffy steamed white rice, sliced garlic flecks",
+  "model": "gemini-flash-latest",
+  "name": "Beef & Broccoli with Rice",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-28T20:24:06+00:00"
+ },
  "c8ad011b6384": {
   "avoid": [
    "greens",
@@ -31176,6 +31344,39 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T07:31:35+00:00"
+ },
+ "ed3c2e233e44": {
+  "avoid": [
+   "eggs",
+   "pancakes",
+   "toast",
+   "sausage",
+   "ham",
+   "raw bacon",
+   "burger bun"
+  ],
+  "checks": [
+   {
+    "q": "Are the food items cooked strips of bacon?",
+    "yes": true
+   },
+   {
+    "q": "Are there eggs or toast served alongside the bacon?",
+    "yes": false
+   },
+   {
+    "q": "Does the bacon look pale and raw?",
+    "yes": false
+   }
+  ],
+  "dish": "crispy smoked bacon",
+  "look": "crisp wavy strips of fried bacon, alternating ribbons of dark reddish-brown cooked meat and rendered golden fat, rippled charred crunchy edges",
+  "model": "gemini-flash-latest",
+  "name": "Smoked Bacon",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-28T20:24:06+00:00"
  },
  "ed5c4e45a6ce": {
   "avoid": [
