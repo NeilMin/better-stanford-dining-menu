@@ -2382,6 +2382,42 @@
   "vessel": "bowl",
   "written_at": "2026-10-02T10:04:59+00:00"
  },
+ "18905319a35e": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "cheese",
+   "tortillas",
+   "rice",
+   "soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish composed of sliced cooked squash?",
+    "yes": true
+   },
+   {
+    "q": "Does the dish contain any meat, poultry, or seafood?",
+    "yes": false
+   },
+   {
+    "q": "Is the squash whole and raw?",
+    "yes": false
+   }
+  ],
+  "dish": "sauteed chayote squash",
+  "look": "thin crescent slices of pale green chayote squash, tender-crisp texture, golden sauteed edges, tossed with minced garlic bits and small dark green flecks of oregano and marjoram leaves",
+  "model": "gemini-3.7-flash",
+  "name": "Vegetales",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-29T10:15:53+00:00"
+ },
  "18a59428a79d": {
   "avoid": [
    "meat",
@@ -11101,6 +11137,42 @@
   "vessel": "plate",
   "written_at": "2026-09-28T18:08:01+00:00"
  },
+ "52641c1a9d15": {
+  "avoid": [
+   "salad",
+   "lettuce",
+   "leafy greens",
+   "spinach",
+   "raw tomatoes",
+   "cream",
+   "cheese",
+   "meat",
+   "chicken",
+   "tortillas"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a warm mixture of corn kernels and green pepper strips?",
+    "yes": true
+   },
+   {
+    "q": "Is there any meat, chicken, or seafood in the dish?",
+    "yes": false
+   },
+   {
+    "q": "Is the food wrapped inside a taco or burrito?",
+    "yes": false
+   }
+  ],
+  "dish": "rajas con elote",
+  "look": "charred roasted dark green poblano pepper strips, cooked green chile slices, warm sauteed golden sweet corn kernels, tender translucent sliced white onions, soft stewed diced red tomatoes, glistening cooked vegetable skillet mixture",
+  "model": "gemini-flash-latest",
+  "name": "Rajas Y Elote Con Jitomate",
+  "rev": 6,
+  "revisions": 1,
+  "vessel": "bowl",
+  "written_at": "2026-10-29T11:33:21+00:00"
+ },
  "529902cdc508": {
   "avoid": [
    "meat",
@@ -17380,9 +17452,10 @@
    "chicken",
    "fish",
    "shrimp",
+   "white sauce",
+   "cilantro",
    "spaghetti",
-   "marinara sauce",
-   "cheese"
+   "marinara sauce"
   ],
   "checks": [
    {
@@ -17398,14 +17471,14 @@
     "yes": false
    }
   ],
-  "dish": "vegan meatballs",
-  "look": "a mound of seared round plant-based meatballs, rough textured browned outer crust, flecks of dried green parsley and garlic, savory sheen on the surface",
+  "dish": "plant-based meatballs",
+  "look": "round plant-based meatless meatballs, rough crumbly textured brown exterior with visible plant grain and green parsley flecks, seared golden-brown crust, savory glossy sheen, neatly mounded",
   "model": "gemini-flash-latest",
   "name": "Meatless \"Meatballs\"",
   "rev": 6,
-  "revisions": 0,
+  "revisions": 1,
   "vessel": "plate",
-  "written_at": "2026-10-28T20:24:06+00:00"
+  "written_at": "2026-10-29T11:30:41+00:00"
  },
  "888b6b577d1f": {
   "avoid": [
@@ -26234,6 +26307,42 @@
   "vessel": "plate",
   "written_at": "2026-09-27T07:30:19+00:00"
  },
+ "c5bf59f6f96d": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "bacon",
+   "ham hock",
+   "cornbread",
+   "raw salad"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food cooked leafy dark greens in liquid?",
+    "yes": true
+   },
+   {
+    "q": "Are there visible pieces of bacon, ham, or meat?",
+    "yes": false
+   },
+   {
+    "q": "Does the dish look like a raw, crisp salad?",
+    "yes": false
+   }
+  ],
+  "dish": "Southern-style collard greens",
+  "look": "tender braised dark green collard greens, silky stewed ribbon cuts, translucent sliced onions, scattered yellow mustard seeds, tiny red pepper flakes, glistening in a shallow pool of savory vegetable potlikker broth",
+  "model": "gemini-3.7-flash",
+  "name": "Braised Southern-Style Collard Greens",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-29T10:15:53+00:00"
+ },
  "c5c527846fb2": {
   "avoid": [
    "beef",
@@ -26266,6 +26375,40 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T07:44:39+00:00"
+ },
+ "c5cfb5a114ec": {
+  "avoid": [
+   "full-size burger",
+   "french fries",
+   "cheese",
+   "pickles",
+   "pork",
+   "chicken",
+   "chips",
+   "onion rings"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a small slider sandwich in a bun?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat a ground burger patty?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat served loose without bread?",
+    "yes": false
+   }
+  ],
+  "dish": "smoked brisket slider",
+  "look": "a small slider sandwich, glossy golden-brown split dinner roll bun, thick mound of shredded and sliced smoked beef brisket with dark bark, topped with crunchy shredded green and purple spicy cabbage slaw",
+  "model": "gemini-3.7-flash",
+  "name": "Smoked Brisket Slider",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-29T10:15:53+00:00"
  },
  "c5e6dd7e354d": {
   "avoid": [
@@ -27126,6 +27269,41 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-10T13:12:00+00:00"
+ },
+ "cca0f08411d3": {
+  "avoid": [
+   "whole pig",
+   "bun",
+   "sandwich",
+   "barbecue sauce",
+   "rice",
+   "macaroni salad",
+   "cabbage",
+   "pineapple",
+   "tacos"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item shredded or pulled meat?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat served inside a sandwich bun or roll?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat a solid unsliced steak or chop?",
+    "yes": false
+   }
+  ],
+  "dish": "Kalua pork",
+  "look": "tender shredded pulled pork shoulder, glossy juicy brown and pinkish strands, crisp caramelized dark edges, resting on a piece of green banana leaf, light glistening pan juices",
+  "model": "gemini-3.7-flash",
+  "name": "Kalua Pork",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-29T10:15:53+00:00"
  },
  "cce77b5c28c2": {
   "avoid": [
