@@ -1,6 +1,6 @@
 {
  "date": "2026-11-03",
- "scraped_at": "2026-10-28T13:20:05-07:00",
+ "scraped_at": "2026-10-29T03:05:20-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -1361,39 +1361,40 @@
    ],
    "Dinner": [
     {
-     "name": "Creamy Butter Chicken",
-     "recipe_id": "5104556",
+     "name": "Smoked Brisket Slider",
+     "recipe_id": "4197516",
      "description": "",
-     "ingredients": "chicken, unsalted butter, curry sauce (onions, ginger, garlic, tomato puree, tomato sauce, tomato paste, ketchup, turmeric, garam masala, coriander seeds, curry powder, ground cumin, cumin seeds, chili powder, salt), cream, coriander seeds, cinnamon, cardamom seeds, cloves, nutmeg, bay leaf, pepper",
+     "ingredients": "dinner roll (wheat flour, enzymes, whole milk, butter, eggs, sugar, yeast, salt), beef brisket[grass fed beef (halal), bbq rub spice(herb de provence, paprika, salt, garlic, pepper, cumin, cayenne pepper), canola oil, salt, pepper], spicy cabbage slaw (coleslaw, jalapeno chili, sugar, dill, lime juice), beef soup base, liquid smoke flavoring",
      "allergens": [
-      "MILK"
+      "EGG",
+      "MILK",
+      "WHEAT"
      ],
      "trace_allergens": [
-      "WHEAT"
+      "COCONUT",
+      "PEANUTS",
+      "SESAME",
+      "SOY",
+      "TREENUTS"
      ],
      "tags": [],
      "order": 0
     },
     {
-     "name": "Red Lentil & Cauliflower Curry",
-     "recipe_id": "CauliLentilCurry1",
+     "name": "Taco Bar",
+     "recipe_id": "4641316",
      "description": "",
-     "ingredients": "red lentils, cauliflower, stewed tomatoes, onions, garlic, coconut milk, curry powder, chili powder, mushroom seasoning, lemon juice, cilantro, oil, salt, and pepper",
-     "allergens": [
-      "COCONUT"
-     ],
+     "ingredients": "",
+     "allergens": [],
      "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan"
-     ],
+     "tags": [],
      "order": 1
     },
     {
-     "name": "Seasonal Steamed Vegetables",
-     "recipe_id": "5561366",
+     "name": "Collard Greens",
+     "recipe_id": "3365370",
      "description": "",
-     "ingredients": "seasonal vegetables, salt",
+     "ingredients": "collard greens, mustard greens, kale, hot sauce (cayenne peppers, distilled vinegar, salt, xanthan gum), canola/olive oil blend, garlic, onions, salt, pepper",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -1403,10 +1404,10 @@
      "order": 2
     },
     {
-     "name": "Seasonal Vegetable Board",
-     "recipe_id": "4503514",
+     "name": "Fava Bean Succotash",
+     "recipe_id": "3663869",
      "description": "",
-     "ingredients": "seasonal roasted vegetables with olive/canola oil blend, salt, pepper",
+     "ingredients": "fava beans, corn, bell peppers, cilantro, garlic, onions, basil, tabasco, lime, canola/olive oil blend",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -1453,23 +1454,35 @@
      "order": 5
     },
     {
-     "name": "Grilled Tri Tip",
-     "recipe_id": "4769744",
+     "name": "General Chicken",
+     "recipe_id": "4903720",
      "description": "",
-     "ingredients": "beef, canola/olive oil blend, salt, pepper",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free"
+     "ingredients": "chicken, eggs, corn starch, tamari sauce, chili paste, sesame oil, rice vinegar, brown sugar, garlic, fried in canola oil",
+     "allergens": [
+      "EGG",
+      "SESAME",
+      "SOY"
      ],
+     "trace_allergens": [
+      "COCONUT",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SHELLFISH",
+      "TREENUTS",
+      "WHEAT"
+     ],
+     "tags": [],
      "order": 6
     },
     {
-     "name": "Sauteed Green Beans",
-     "recipe_id": "5259610",
+     "name": "Vegetable Stir-Fry",
+     "recipe_id": "2312311",
      "description": "",
-     "ingredients": "green beans, shallots, canola/olive oil blend, garlic, salt",
-     "allergens": [],
+     "ingredients": "seasonal vegetables, oil, garlic, coconut liquid aminos, mushroom seasoning, vegetarian stir fry sauce, corn starch",
+     "allergens": [
+      "COCONUT"
+     ],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
@@ -1478,13 +1491,11 @@
      "order": 7
     },
     {
-     "name": "Wild Rice & Mushroom Pilaf",
-     "recipe_id": "3935272",
+     "name": "Steamed Jasmine Rice",
+     "recipe_id": "5134594",
      "description": "",
-     "ingredients": "wild rice blend, mushrooms, vegetable soup base (contains celery, mushrooms, carrots), canola/olive oil blend, garlic, parsley",
-     "allergens": [
-      "SOY"
-     ],
+     "ingredients": "jasmine rice, water, salt",
+     "allergens": [],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
@@ -1493,34 +1504,35 @@
      "order": 8
     },
     {
-     "name": "Assorted Dinner Rolls",
-     "recipe_id": "5344600",
+     "name": "Pepperoni Pizza",
+     "recipe_id": "Pizza(ricker)",
      "description": "",
-     "ingredients": "unbleached wheat flour, malted barley flour, sour culture, salt, yeast, sesame seeds, amaranth, poppy seeds, whole wheat flour, dark rye flour, malt powder, honey, extra virgin olive oil, semolina, wheat germ",
+     "ingredients": "Pizza Dough, Pizza Sauce, Mozzarella Cheese, Pepperoni, Italian Sausage Crumble, Jalapeno",
      "allergens": [
       "MILK",
-      "SESAME",
+      "SOY",
       "WHEAT"
      ],
-     "trace_allergens": [
-      "SOY",
-      "TREENUTS"
-     ],
-     "tags": [
-      "vegetarian"
-     ],
+     "trace_allergens": [],
+     "tags": [],
      "order": 9
     },
     {
-     "name": "Seasonal Steamed Vegetables",
-     "recipe_id": "5561366",
+     "name": "Cheese Pizza",
+     "recipe_id": "5646522",
      "description": "",
-     "ingredients": "seasonal vegetables, salt",
-     "allergens": [],
-     "trace_allergens": [],
+     "ingredients": "pizza dough, tomato sauce, mozzarella cheese, parmesan cheese",
+     "allergens": [
+      "MILK",
+      "SOY",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "EGG",
+      "SESAME"
+     ],
      "tags": [
-      "gluten-free",
-      "vegan"
+      "vegetarian"
      ],
      "order": 10
     },
@@ -3422,36 +3434,33 @@
    ],
    "Lunch": [
     {
-     "name": "Vietnamese Lemongrass Beef",
-     "recipe_id": "VietLemonBeef1",
+     "name": "Chicken Tinga Tostada",
+     "recipe_id": "3514990",
      "description": "",
-     "ingredients": "beef, onions, bell peppers, lemongrass, garlic, ginger, tamari, lime juice, sugar, fish sauce, olive/canola oil blend, salt, black pepper",
+     "ingredients": "chicken tinga (chicken, tinga sauce (onions, pasilla chili, tomatoes, garlic, chipotle, bell peppers), adobo mix (oregano, cumin seed, cloves, allspice, garlic, onions, ancho chili, guajillo chili, guajillo), tostada shell, refried beans (beans, salt, water), salsa roja (garlic, onions, jalapeno, puya chili, cilantro, lime juice, salt, beets, tomatoes), mexican crema, avocado, canola/olive oil blend",
      "allergens": [
-      "FISH",
-      "SOY",
-      "TRACEALLERGENS"
+      "MILK",
+      "WHEAT"
      ],
-     "trace_allergens": [
-      "SHELLFISH"
-     ],
+     "trace_allergens": [],
      "tags": [
-      "gluten-free"
+      "vegetarian"
      ],
      "order": 0
     },
     {
-     "name": "Vietnamese Lemongrass Tofu",
-     "recipe_id": "VietLemonTofu1",
+     "name": "Tostada De Tinga De Hongos",
+     "recipe_id": "4389513",
      "description": "",
-     "ingredients": "tofu, mushrooms, potato starch, cornstarch, lemongrass, onions, bell peppers, garlic, ginger, tamari, lime juice, sugar, cilantro, olive/canola oil blend, salt, black pepper",
+     "ingredients": "tostadas, mushrooms, refried beans, chipotle chiles, canola/olive oil blend, onions, garlic, tomatoes, apple cider vinegar, sugar, salt, avocados, crema mexicana, salt",
      "allergens": [
+      "MILK",
       "SOY"
      ],
      "trace_allergens": [
       "COCONUT",
       "EGG",
       "FISH",
-      "MILK",
       "PEANUTS",
       "SESAME",
       "SHELLFISH",
@@ -3459,19 +3468,16 @@
       "WHEAT"
      ],
      "tags": [
-      "vegan"
+      "vegetarian"
      ],
      "order": 1
     },
     {
-     "name": "Sesame-Roasted Bok Choy",
-     "recipe_id": "SesameBokChoy1",
+     "name": "Vegetales",
+     "recipe_id": "7053094",
      "description": "",
-     "ingredients": "bok choy, garlic, toasted sesame seeds, tamari, toasted sesame oil, ginger, olive/canola oil blend, salt, black pepper",
-     "allergens": [
-      "SESAME",
-      "SOY"
-     ],
+     "ingredients": "chayote squash, garlic, canola/olive oil blend, salt, black pepper, marjoram leaf, oregano",
+     "allergens": [],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
@@ -3506,10 +3512,10 @@
      "order": 4
     },
     {
-     "name": "Pickled Daikon & Carrot",
-     "recipe_id": "3965456",
+     "name": "Rajas Y Elote Con Jitomate",
+     "recipe_id": "6128676",
      "description": "",
-     "ingredients": "daikon, carrot, white wine vinegar, sugar, salt",
+     "ingredients": "corn, onions, poblano chili, garlic, tomatoes",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -3519,10 +3525,10 @@
      "order": 5
     },
     {
-     "name": "Steamed Jasmine Rice",
-     "recipe_id": "5134594",
+     "name": "Cilantro Jasmine Rice",
+     "recipe_id": "4218356-1",
      "description": "",
-     "ingredients": "jasmine rice, water, salt",
+     "ingredients": "jasmine rice, onions, canola/olive oil blend, cilantro, green onion, jalapeno chili, salt, garlic",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -3532,10 +3538,10 @@
      "order": 6
     },
     {
-     "name": "Seasoned Rice Noodles with Veggies",
-     "recipe_id": "4088911",
+     "name": "Perfectly Roasted Yams",
+     "recipe_id": "5826889",
      "description": "",
-     "ingredients": "vermicelli rice noodle, mushroom seasoning, ginger, onions, bell peppers, mushrooms, carrot, green onion, salt, cabbage, pea shoots, snap peas, black pepper, canola/olive oil blend, brown sugar, garlic, chili paste",
+     "ingredients": "yams, canola/olive oil blend, thyme, parsley, salt, pepper",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -4526,21 +4532,6 @@
      "order": 0
     },
     {
-     "name": "Red Lentil & Cauliflower Curry",
-     "recipe_id": "CauliLentilCurry1",
-     "description": "",
-     "ingredients": "red lentils, cauliflower, stewed tomatoes, onions, garlic, coconut milk, curry powder, chili powder, mushroom seasoning, lemon juice, cilantro, oil, salt, and pepper",
-     "allergens": [
-      "COCONUT"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan"
-     ],
-     "order": 1
-    },
-    {
      "name": "Seasonal Steamed Vegetables",
      "recipe_id": "5561366",
      "description": "",
@@ -4551,7 +4542,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 2
+     "order": 1
     },
     {
      "name": "Seasonal Vegetable Board",
@@ -4564,7 +4555,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 3
+     "order": 2
     },
     {
      "name": "Garlic Green Peas",
@@ -4577,7 +4568,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 4
+     "order": 3
     },
     {
      "name": "Roasted Beets with Honey Herb Yogurt",
@@ -4592,7 +4583,7 @@
       "gluten-free",
       "vegetarian"
      ],
-     "order": 5
+     "order": 4
     },
     {
      "name": "Basmati Rice",
@@ -4605,7 +4596,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 6
+     "order": 5
     },
     {
      "name": "Warm Garlic Naan",
@@ -4629,7 +4620,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 7
+     "order": 6
     },
     {
      "name": "Chickpea Masala",
@@ -4642,52 +4633,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 8
-    },
-    {
-     "name": "Burger Bar",
-     "recipe_id": "5964436",
-     "description": "",
-     "ingredients": "",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [],
-     "order": 9
-    },
-    {
-     "name": "Grilled Chicken",
-     "recipe_id": "5816331",
-     "description": "",
-     "ingredients": "chicken, olive oil, salt, pepper",
-     "allergens": [
-      "TRACEALLERGENS"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free"
-     ],
-     "order": 10
-    },
-    {
-     "name": "Grilled Vegan/Vegetarian",
-     "recipe_id": "13468741",
-     "description": "",
-     "ingredients": "chef's choice grilled vegan OR vegetarian option",
-     "allergens": [],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
-     ],
-     "tags": [],
-     "order": 11
+     "order": 7
     },
     {
      "name": "Soup of the Day",
@@ -4697,7 +4643,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 12
+     "order": 8
     },
     {
      "name": "Assorted Dinner Rolls",
@@ -4716,7 +4662,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 13
+     "order": 9
     },
     {
      "name": "Composed Salad",
@@ -4726,7 +4672,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 14
+     "order": 10
     },
     {
      "name": "Performance Bar",
@@ -4736,7 +4682,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 15
+     "order": 11
     },
     {
      "name": "Craveable Grains",
@@ -4749,7 +4695,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 16
+     "order": 12
     },
     {
      "name": "Flavor Forward Legumes",
@@ -4762,7 +4708,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 17
+     "order": 13
     },
     {
      "name": "Pasta Pesto",
@@ -4780,37 +4726,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 18
-    },
-    {
-     "name": "Pasta Marinara",
-     "recipe_id": "5095708",
-     "description": "",
-     "ingredients": "pasta, marinara sauce, canola/olive oil blend",
-     "allergens": [
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "EGG"
-     ],
-     "tags": [
-      "vegan"
-     ],
-     "order": 19
-    },
-    {
-     "name": "Penne Pasta (Gluten-Free)",
-     "recipe_id": "3189216",
-     "description": "",
-     "ingredients": "brown rice, rice bran, water",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan"
-     ],
-     "order": 20
+     "order": 14
     }
    ]
   },
