@@ -3483,6 +3483,40 @@
   "vessel": "bowl",
   "written_at": "2026-10-17T07:55:50+00:00"
  },
+ "1e22485bd04e": {
+  "avoid": [
+   "skewers",
+   "whole chicken breast",
+   "chicken wings",
+   "bone-in chicken",
+   "raw meat",
+   "noodles",
+   "soup",
+   "lettuce wrap"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item bite-sized pieces of glazed chicken?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken served as a whole uncut breast or bone-in cuts?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat threaded onto skewers?",
+    "yes": false
+   }
+  ],
+  "dish": "orange chicken",
+  "look": "bite-sized pieces of crispy battered fried chicken, coated in glossy sticky orange-amber glaze, sprinkled with toasted white sesame seeds, mixed with bright green broccoli florets and sliced red bell peppers, scattered chopped green onions",
+  "model": "gemini-flash-latest",
+  "name": "Orange Sesame Chicken",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-29T20:30:32+00:00"
+ },
  "1e5910e94d34": {
   "avoid": [
    "meat",
@@ -11139,11 +11173,11 @@
  },
  "52641c1a9d15": {
   "avoid": [
-   "salad",
-   "lettuce",
-   "leafy greens",
-   "spinach",
-   "raw tomatoes",
+   "green beans",
+   "soup",
+   "broth",
+   "liquid sauce",
+   "cherry tomatoes",
    "cream",
    "cheese",
    "meat",
@@ -11165,13 +11199,13 @@
    }
   ],
   "dish": "rajas con elote",
-  "look": "charred roasted dark green poblano pepper strips, cooked green chile slices, warm sauteed golden sweet corn kernels, tender translucent sliced white onions, soft stewed diced red tomatoes, glistening cooked vegetable skillet mixture",
-  "model": "gemini-flash-latest",
+  "look": "thick roasted dark green poblano pepper strips, golden sweet corn kernels, tender translucent white onion slices, cooked diced red tomatoes, warm sautéed mexican vegetable mixture",
+  "model": "gemini-3.6-flash",
   "name": "Rajas Y Elote Con Jitomate",
   "rev": 6,
-  "revisions": 1,
+  "revisions": 2,
   "vessel": "bowl",
-  "written_at": "2026-10-29T11:33:21+00:00"
+  "written_at": "2026-10-29T22:00:59+00:00"
  },
  "529902cdc508": {
   "avoid": [
@@ -17447,15 +17481,15 @@
  "88310a1d3f9c": {
   "avoid": [
    "meat",
-   "beef",
+   "ground beef",
    "pork",
    "chicken",
    "fish",
    "shrimp",
-   "white sauce",
-   "cilantro",
+   "pasta",
    "spaghetti",
-   "marinara sauce"
+   "marinara sauce",
+   "melted cheese"
   ],
   "checks": [
    {
@@ -17471,14 +17505,14 @@
     "yes": false
    }
   ],
-  "dish": "plant-based meatballs",
-  "look": "round plant-based meatless meatballs, rough crumbly textured brown exterior with visible plant grain and green parsley flecks, seared golden-brown crust, savory glossy sheen, neatly mounded",
+  "dish": "vegan meatballs",
+  "look": "plant-based veggie meatballs, spherical textured vegetable protein balls, rough porous brown grain, visible bits of dried onion and flecks of green dried parsley, firm baked exterior, golden-brown seared crust, arranged in a neat mound",
   "model": "gemini-flash-latest",
   "name": "Meatless \"Meatballs\"",
   "rev": 6,
-  "revisions": 1,
+  "revisions": 2,
   "vessel": "plate",
-  "written_at": "2026-10-29T11:30:41+00:00"
+  "written_at": "2026-10-29T21:16:23+00:00"
  },
  "888b6b577d1f": {
   "avoid": [
@@ -25549,6 +25583,42 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-10-03T09:33:01+00:00"
+ },
+ "c06bc16b8117": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "tortillas",
+   "taco shells",
+   "cheese",
+   "fried egg"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food cooked cauliflower?",
+    "yes": true
+   },
+   {
+    "q": "Is the food served inside a taco shell or tortilla wrap?",
+    "yes": false
+   },
+   {
+    "q": "Is there a fried egg on top of the food?",
+    "yes": false
+   }
+  ],
+  "dish": "spiced cauliflower and soyrizo hash",
+  "look": "roasted cauliflower florets with browned edges, crumbled reddish-orange soyrizo bits, sautéed sliced red and green bell peppers, diced cooked tomatoes, translucent sliced onions, reddish spice coating, scattered chopped fresh cilantro leaves",
+  "model": "gemini-flash-latest",
+  "name": "Soyrizo Cauliflower Sizzle",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-29T20:33:50+00:00"
  },
  "c0ba05e5dca5": {
   "avoid": [
