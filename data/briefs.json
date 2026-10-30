@@ -13293,6 +13293,39 @@
   "vessel": "bowl",
   "written_at": "2026-09-29T17:11:14+00:00"
  },
+ "63b6b9509a7a": {
+  "avoid": [
+   "skewers",
+   "kabobs",
+   "rice",
+   "curry sauce",
+   "soup",
+   "raw chicken",
+   "salad"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cooked chicken pieces?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat threaded onto skewers?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a soup or stew?",
+    "yes": false
+   }
+  ],
+  "dish": "lemon saffron chicken",
+  "look": "roasted bone-in chicken thighs, vibrant golden-yellow saffron hue, glistening skin with browned charred edges, reddish paprika specks, flecks of dried oregano, whole roasted garlic cloves, caramelized lemon wheel garnish",
+  "model": "gemini-flash-latest",
+  "name": "Lemon Saffron Chicken",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-30T20:15:31+00:00"
+ },
  "642597bb7589": {
   "avoid": [
    "meat",
@@ -21404,14 +21437,14 @@
   "avoid": [
    "meat",
    "chicken",
-   "chicken tikka",
    "beef",
    "pork",
    "fish",
    "shrimp",
+   "unseasoned plain vegetables",
+   "raw vegetables",
    "skewers",
-   "naan",
-   "rice"
+   "naan"
   ],
   "checks": [
    {
@@ -21427,14 +21460,14 @@
     "yes": false
    }
   ],
-  "dish": "tandoori roasted vegetables",
-  "look": "charred spiced cauliflower florets, roasted sweet potato chunks, halved browned brussels sprouts, vibrant reddish-orange tandoori spice rub, ruby red pomegranate seeds scattered on top",
-  "model": "gemini-3.7-flash",
+  "dish": "Tandoori Roasted Vegetables",
+  "look": "vibrant reddish-orange tandoori spiced roasted cauliflower florets, caramelized sweet potato cubes, halved roasted brussels sprouts, thick red tandoori masala glaze coating every piece, charred edges, light white coconut milk drizzle, ruby red pomegranate seeds scattered on top",
+  "model": "gemini-3.6-flash",
   "name": "Tandoori Style Roasted Vegetables",
   "rev": 6,
-  "revisions": 0,
+  "revisions": 1,
   "vessel": "plate",
-  "written_at": "2026-10-30T10:23:00+00:00"
+  "written_at": "2026-10-30T20:56:33+00:00"
  },
  "a23a018dd204": {
   "avoid": [
@@ -33788,14 +33821,15 @@
  },
  "f80bbe65754e": {
   "avoid": [
+   "black beans",
+   "black bean soup",
+   "multiple bowls",
    "meat",
    "chicken",
    "beef",
    "pork",
    "fish",
    "shrimp",
-   "rice",
-   "naan bread",
    "dairy cream swirl"
   ],
   "checks": [
@@ -33813,13 +33847,13 @@
    }
   ],
   "dish": "dal makhani",
-  "look": "thick simmered black lentils, dark reddish-brown bean stew, glossy spiced tomato gravy, shredded fresh ginger root, sprinkle of fresh chopped green cilantro",
+  "look": "dark brown lentil stew, simmered whole brown lentils and split chana dal, thick creamy reddish-brown spiced gravy, speckled with soft lentils, glossy surface, garnished with thin ginger matchsticks, pinch of chopped fresh cilantro",
   "model": "gemini-3.7-flash",
   "name": "Dal Makhani",
   "rev": 6,
-  "revisions": 0,
+  "revisions": 1,
   "vessel": "bowl",
-  "written_at": "2026-10-30T10:30:01+00:00"
+  "written_at": "2026-10-30T20:59:02+00:00"
  },
  "f82b67e85167": {
   "avoid": [
