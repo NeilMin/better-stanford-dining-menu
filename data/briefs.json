@@ -4512,6 +4512,41 @@
   "vessel": "bowl",
   "written_at": "2026-10-14T08:53:40+00:00"
  },
+ "26ebe114754a": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "chicken cutlet",
+   "bacon",
+   "grated cheese"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item gnocchi coated in a creamy sauce?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of chicken or other meat in the dish?",
+    "yes": false
+   },
+   {
+    "q": "Is the pasta long noodles like spaghetti or fettuccine?",
+    "yes": false
+   }
+  ],
+  "dish": "creamy tomato gnocchi with kale",
+  "look": "plump ridged potato gnocchi, rich creamy sun-dried tomato cream sauce, wilted dark green sautéed kale leaves, dark red sun-dried tomato strips, torn fresh basil flecks",
+  "model": "gemini-3.7-flash",
+  "name": "Marry Me Gnocchi & Sauteed Kale",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-30T10:23:00+00:00"
+ },
  "2753e4945094": {
   "avoid": [
    "meat",
@@ -12249,6 +12284,42 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T04:50:49+00:00"
  },
+ "5a926099bc93": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "ice cream",
+   "gulab jamun",
+   "brown dumplings",
+   "pancakes"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish soft white cheese discs soaked in milk syrup?",
+    "yes": true
+   },
+   {
+    "q": "Are the dumplings dark brown like gulab jamun?",
+    "yes": false
+   },
+   {
+    "q": "Is the dessert served as scoops of ice cream?",
+    "yes": false
+   }
+  ],
+  "dish": "ras malai",
+  "look": "tender flattened white cheese discs, poached paneer patties, creamy pale-ivory spiced milk broth, chopped emerald pistachios, dried crimson rose petals",
+  "model": "gemini-3.7-flash",
+  "name": "Ras Malai",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-30T10:30:01+00:00"
+ },
  "5c23b9039a39": {
   "avoid": [
    "meat",
@@ -12380,6 +12451,42 @@
   "vessel": "plate",
   "written_at": "2026-10-10T00:10:11+00:00"
  },
+ "5d7637cbc1aa": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "tortilla",
+   "burrito",
+   "naan",
+   "pancakes"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a rolled golden-brown crepe or dosa?",
+    "yes": true
+   },
+   {
+    "q": "Is it wrapped in a flour tortilla like a burrito?",
+    "yes": false
+   },
+   {
+    "q": "Does the dish contain meat, chicken, or seafood?",
+    "yes": false
+   }
+  ],
+  "dish": "masala dosa",
+  "look": "crisp golden-brown rolled crepe, cylindrical folded lentil and rice dosa, warm turmeric-spiced yellow potato mash filling peeking from open end, white coconut chutney garnish, fresh green cilantro",
+  "model": "gemini-3.7-flash",
+  "name": "Masala Dosa",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-30T10:30:01+00:00"
+ },
  "5d811882c1b7": {
   "avoid": [
    "chicken",
@@ -12413,6 +12520,42 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-20T08:52:07+00:00"
+ },
+ "5da283315d22": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "raw mango slices",
+   "whole mango",
+   "curry",
+   "rice"
+  ],
+  "checks": [
+   {
+    "q": "Is the food a golden-amber chunky fruit chutney?",
+    "yes": true
+   },
+   {
+    "q": "Is it fresh raw sliced fruit?",
+    "yes": false
+   },
+   {
+    "q": "Does the dish contain meat or poultry?",
+    "yes": false
+   }
+  ],
+  "dish": "sweet mango chutney",
+  "look": "glossy golden-amber mango relish, soft translucent diced mango chunks in thick jammy syrup, tiny dark chili flecks, minced ginger bits",
+  "model": "gemini-3.7-flash",
+  "name": "Mango Chutney",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-30T10:23:00+00:00"
  },
  "5dc6dacce93e": {
   "avoid": [
@@ -12689,6 +12832,40 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T10:05:32+00:00"
+ },
+ "60b04d0f0411": {
+  "avoid": [
+   "whole turkey",
+   "turkey leg",
+   "drumstick",
+   "sandwich",
+   "bread",
+   "gravy boat",
+   "mashed potatoes",
+   "cranberry sauce"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item sliced poultry meat?",
+    "yes": true
+   },
+   {
+    "q": "Is the turkey a whole intact bird or drumstick?",
+    "yes": false
+   },
+   {
+    "q": "Is the turkey served inside a sandwich or bun?",
+    "yes": false
+   }
+  ],
+  "dish": "smoked turkey breast",
+  "look": "thick carved slices of smoked turkey breast, mahogany-brown seasoned spiced crust on outer edges, juicy pale poultry meat, glistening meat juices, coarse black pepper flecks",
+  "model": "gemini-3.7-flash",
+  "name": "Smoked Turkey",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-30T10:23:00+00:00"
  },
  "60c7caa00da9": {
   "avoid": [
@@ -14284,6 +14461,41 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T06:22:24+00:00"
+ },
+ "6dda05d4bbfe": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "samosas",
+   "pakoras",
+   "vegetable chunks"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a green puréed sauce or dip?",
+    "yes": true
+   },
+   {
+    "q": "Are there solid appetizers or pastries in the bowl?",
+    "yes": false
+   },
+   {
+    "q": "Is the sauce red or yellow?",
+    "yes": false
+   }
+  ],
+  "dish": "mint cilantro chutney",
+  "look": "smooth vibrant bright-green herb chutney, silky thin purée texture, tiny visible flecks of minced green chili and blended cilantro leaves",
+  "model": "gemini-3.7-flash",
+  "name": "Mint Chutney",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-30T10:23:00+00:00"
  },
  "6e4ffb0f956e": {
   "avoid": [
@@ -19243,6 +19455,42 @@
   "vessel": "bowl",
   "written_at": "2026-10-15T23:11:09+00:00"
  },
+ "93e12794bbd0": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "raw tofu",
+   "white uncooked cubes",
+   "noodles",
+   "rice"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish composed of tofu and vegetables in a dark sauce?",
+    "yes": true
+   },
+   {
+    "q": "Does the dish contain meat, poultry, or seafood?",
+    "yes": false
+   },
+   {
+    "q": "Is the tofu pale, white, and uncooked?",
+    "yes": false
+   }
+  ],
+  "dish": "teriyaki tofu and eggplant",
+  "look": "seared golden-brown tofu cubes, tender roasted purple eggplant chunks, sliced red bell peppers, dark glossy teriyaki glaze, sliced scallions, chopped fresh basil leaves",
+  "model": "gemini-3.7-flash",
+  "name": "Teriyaki Tofu with Eggplant",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-30T10:23:00+00:00"
+ },
  "9447e7380ead": {
   "avoid": [
    "meatballs",
@@ -21140,6 +21388,42 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T06:30:47+00:00"
  },
+ "a2332a8c4ed2": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "chicken tikka",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "skewers",
+   "naan",
+   "rice"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish composed of roasted spiced vegetables?",
+    "yes": true
+   },
+   {
+    "q": "Is there chicken or any meat present?",
+    "yes": false
+   },
+   {
+    "q": "Are the vegetables raw?",
+    "yes": false
+   }
+  ],
+  "dish": "tandoori roasted vegetables",
+  "look": "charred spiced cauliflower florets, roasted sweet potato chunks, halved browned brussels sprouts, vibrant reddish-orange tandoori spice rub, ruby red pomegranate seeds scattered on top",
+  "model": "gemini-3.7-flash",
+  "name": "Tandoori Style Roasted Vegetables",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-30T10:23:00+00:00"
+ },
  "a23a018dd204": {
   "avoid": [
    "meat",
@@ -21711,6 +21995,41 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-22T19:22:39+00:00"
+ },
+ "a6be29d3ec48": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "cheese",
+   "croutons",
+   "pasta"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a mixed green salad with sliced avocado and citrus?",
+    "yes": true
+   },
+   {
+    "q": "Is the avocado mashed into guacamole?",
+    "yes": false
+   },
+   {
+    "q": "Does the salad contain meat, chicken, or shrimp?",
+    "yes": false
+   }
+  ],
+  "dish": "grapefruit and avocado salad",
+  "look": "fresh baby spring mix greens, purple and green baby lettuce, vibrant pink grapefruit segments, creamy sliced green avocado, glossy drizzle of dark balsamic vinaigrette",
+  "model": "gemini-3.7-flash",
+  "name": "Sunny California Salad",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-30T10:30:01+00:00"
  },
  "a6be9de8b9e3": {
   "avoid": [
@@ -22405,6 +22724,42 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-18T08:10:17+00:00"
+ },
+ "ac11dd577086": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "bacon",
+   "pancetta",
+   "casserole",
+   "cream sauce"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item slender whole green beans?",
+    "yes": true
+   },
+   {
+    "q": "Does the dish contain bacon, pancetta, or other meat?",
+    "yes": false
+   },
+   {
+    "q": "Is it baked in a creamy casserole?",
+    "yes": false
+   }
+  ],
+  "dish": "sautéed green beans with shallots",
+  "look": "slender whole bright green haricots verts, tender blistered skins, tossed with caramelized golden-brown translucent sliced shallot rings, light glistening sheen",
+  "model": "gemini-3.7-flash",
+  "name": "Sauteed Haricot Vert with Shallots",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-30T10:23:00+00:00"
  },
  "ac1e0c38ce07": {
   "avoid": [
@@ -26236,6 +26591,42 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-28T17:10:34+00:00"
+ },
+ "c56e639a46de": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "sandwich",
+   "deli meat",
+   "cheese slices",
+   "soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the food a variety of sliced artisan breads?",
+    "yes": true
+   },
+   {
+    "q": "Are the breads assembled into sandwiches?",
+    "yes": false
+   },
+   {
+    "q": "Is there sliced deli meat or charcuterie present?",
+    "yes": false
+   }
+  ],
+  "dish": "assorted artisan bread and butter",
+  "look": "sliced crusty artisan baguette rounds, rustic country loaf slices with airy crumb, dark olive bread slices, hearty brown whole wheat slices, accompanied by a swirl of creamy pale-yellow butter",
+  "model": "gemini-3.7-flash",
+  "name": "Assorted Bread & Butter",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-30T10:23:00+00:00"
  },
  "c572b6b661ee": {
   "avoid": [
@@ -33374,6 +33765,41 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-10-01T23:12:32+00:00"
+ },
+ "f80bbe65754e": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "rice",
+   "naan bread",
+   "dairy cream swirl"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a dark brown lentil stew?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat or chicken?",
+    "yes": false
+   },
+   {
+    "q": "Is the dal served over a bed of white rice in the bowl?",
+    "yes": false
+   }
+  ],
+  "dish": "dal makhani",
+  "look": "thick simmered black lentils, dark reddish-brown bean stew, glossy spiced tomato gravy, shredded fresh ginger root, sprinkle of fresh chopped green cilantro",
+  "model": "gemini-3.7-flash",
+  "name": "Dal Makhani",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-30T10:30:01+00:00"
  },
  "f82b67e85167": {
   "avoid": [
