@@ -428,6 +428,12 @@ JSON block so a dish name cannot close the script tag early.
   has a table for, English otherwise. It is a default, so a saved preference still wins on the
   way back in and the tour inherits it for free (it reads `t()` like everything else). Adding a
   third language is a new key in `UI` and nothing here.
+- **There is no headline over the board.** "Dinner Friday, October 30" and the line of counts
+  under it were removed: the first repeated the bar's picked day and meal, the second every
+  column's header, and on a phone the two pushed the first dish off the first screen. The one
+  thing the counts said that nothing else does -- the halls picked serve the same menu -- is a
+  `.notice` now, drawn by `renderNotices()` only then. Do not put a title back to say what the
+  bar already says.
 - **The date and the meal are deliberately not persisted**; everything else in `state` is.
   `upcoming()` opens the page on the next meal the chosen halls are still serving, by the
   viewer's clock and the halls' hours, and on tomorrow's first meal once tonight's is over.
@@ -439,7 +445,7 @@ JSON block so a dish name cannot close the script tag early.
 - **A selection that is only the defaults is not saved**, so changing `defaults.selected` in
   `config/halls.json` reaches everyone who never picked a hall. v4 saved it regardless; `legacy()`
   drops the old Arrillaga/Wilbur/FloMo default on the way to v5, keeping any other selection.
-- **A shared link is shown, not adopted.** The share button beside the headline sends
+- **A shared link is shown, not adopted.** The share button, in the bar beside the meal, sends
   `?d=&m=&h=` — the day, the meal and the halls, never a preference — and `readLink()` drops
   whatever the build does not publish. The halls are remembered, so a friend's link must not
   overwrite yours: they go into `borrowed`, `save()` writes `own` back, and they leave
@@ -486,13 +492,23 @@ JSON block so a dish name cannot close the script tag early.
   colour is a new pair there, not a rule repeated under `[data-theme="dark"]` and the media query.
   The interface is greys plus cardinal; hall pastels are only a key (name underline, chip dot,
   the wash behind a special), and the colour on the page is meant to come from the photographs.
+  The hall colours are R&DE's, read off the specials poster, and stay that colour: derived shades
+  change lightness and chroma, never the hue. `config/halls.json` has `accent`, the poster's pastel;
+  `mark`, the accent itself or, for the four that all but vanish on white (FloMo's is 1.07:1), the
+  same colour at OKLCH lightness 0.80, for the dot and the underline; and `dark_wash`, a special's
+  panel on a dark page, the accent's hue at lightness 0.30 (mixing the pastel into near-black left
+  five halls grey). Set them all through `hallColours()` in `web/app.js`. A picked chip is inverted on a
+  light page and a raised grey on a dark one (`--on` and friends), where inverted it outshone the food.
 - **Sizes and shadows come from a scale on `:root`, the way colours do.** Every font size is a step
   of the `type scale` written in the comment there (12 13 14 15 16 18 20 24 28 32 48), and
   `test_every_font_size_is_on_the_type_scale` reads that comment, so a new size is a new step
   there or nothing. It replaced nineteen sizes, half-pixels among them. Every padding, margin and
   gap is a step of the `spacing scale` beside it (4 8 12 16 24 32 48 64 96 128), held by
   `test_every_spacing_is_on_the_spacing_scale`; under 4px is a nudge, not a spacing, and is
-  exempt. A value between two steps takes the smaller: the larger was tried and read as too loose. A shadow is one of four
+  exempt. A value between two steps takes the smaller: the larger was tried and read as too loose.
+  Every corner is a step of the `radius scale` (4 8 12 16), held by
+  `test_every_radius_is_on_the_radius_scale`; a box inside another takes the outer radius less the
+  padding between them. A shadow is one of four
   elevations, `--shadow-1` to `--shadow-4`: pick how high the thing floats, not what its shadow
   looks like. Anything entering, leaving or pressed eases with `--ease-out`. The rules behind
   these, and the rest of the visual vocabulary, come from *Refactoring UI*; notes on it live in
@@ -561,8 +577,9 @@ JSON block so a dish name cannot close the script tag early.
   appearing on the right of the board. Filtering against `DATA.halls` is also what drops a stored
   id the build no longer publishes, which `render()` would otherwise crash on.
 - **A dish's ingredients are behind its picture.** Clicking the picture opens the lightbox,
-  which carries the ingredients, the shared-equipment line and the report link; the card keeps
-  only the allergens. The card's own "Ingredients" toggle is drawn only where there is no
+  which carries the allergens again, the ingredients, the shared-equipment line and the report
+  link; the card keeps only the allergens. (The lightbox once left the allergens out and listed
+  what the dish shares equipment with, which read as the whole story.) The card's own "Ingredients" toggle is drawn only where there is no
   picture to open -- a dish not drawn yet, pictures switched off, an item at a counter --
   because it was the same text twice. Something the toggle says, the lightbox has to say too.
 - **A dish card leads with its picture,** so the pictures in one row start level across the halls

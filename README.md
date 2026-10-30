@@ -29,7 +29,7 @@ This scrapes all of it and puts the halls next to each other, with a picture of 
   open right now.
 - **Allergens as served.** A few dishes differ by hall — Branner runs allergen-free versions of
   the same recipes — so each column shows the allergens for *that* hall's version.
-- **Share what you are looking at.** The button beside the headline sends a link to this day,
+- **Share what you are looking at.** The button beside the meal sends a link to this day,
   this meal and these halls, with a line saying what is on — "Thursday dinner, Sep 24 ·
   Arrillaga vs Wilbur · Special at Wilbur: …" — so the group chat learns something before
   anyone taps it. Opening one shows that view without replacing your own halls.

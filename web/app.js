@@ -81,7 +81,9 @@
       special: "Special",
       specialBadge: "Special",
       specialTip: (meal) => `${meal} special, from R&DE's specials calendar`,
-      specialNote: "Limited-time special from R&DE's calendar. No ingredient list published — ask at the counter.",
+      // One line: it sits on every special, and the badge and the card's
+      // tooltip already say where the dish came from.
+      specialNote: "No ingredient list — ask at the counter.",
       alwaysHere: "Always here",
       toggle: (shown) => (shown ? "Hide" : "Show"),
       stationBadge: "Station",
@@ -106,10 +108,6 @@
       noMatch: "Nothing on this menu matches the filters.",
       noneListed: "Nothing specific listed for this meal.",
       allShut: "Every dining hall is closed this week.",
-      digest: (b, total, halls, every, unique) => [
-        b(total), ` dish${total === 1 ? "" : "es"} across ${halls} halls · `,
-        b(every), " at every one · ", b(unique), " at only one.",
-      ],
       identical: "These menus are identical — go wherever is closest.",
       share: "Share",
       shareTip: "Share this day, meal and these halls",
@@ -174,7 +172,7 @@
       special: "限定",
       specialBadge: "限定",
       specialTip: (meal) => `${meal}限定菜品，出自 R&DE 的限定菜日历`,
-      specialNote: "R&DE 日历上的限时菜品，未公布配料表——有过敏请到窗口确认。",
+      specialNote: "未公布配料，过敏请问窗口。",
       alwaysHere: "常设窗口",
       toggle: (shown) => (shown ? "收起" : "展开"),
       stationBadge: "自选档口",
@@ -195,10 +193,6 @@
       noMatch: "这份菜单中没有符合筛选条件的菜品。",
       noneListed: "这一餐未列出具体菜品。",
       allShut: "本周各食堂均休息。",
-      digest: (b, total, halls, every, unique) => [
-        `${halls} 家食堂共 `, b(total), " 道菜 · 其中 ",
-        b(every), " 道家家都有 · ", b(unique), " 道仅此一家。",
-      ],
       identical: "这几家的菜单完全相同——去离你最近的那家就好。",
       share: "分享",
       shareTip: "分享当前的日期、餐次和食堂",
@@ -243,6 +237,16 @@
   };
 
   const hallById = new Map(DATA.halls.map((h) => [h.id, h]));
+
+  /** A hall's colours, on anything drawn for it: the poster's pastel, which a
+   *  special is washed in on a light page; the deeper shade its dot and the bar
+   *  under its name take there, where some of the pastels all but vanish; and
+   *  the panel a special sits on in the dark, picked by hand (config/halls.json). */
+  function hallColours(node, hall) {
+    node.style.setProperty("--hall", hall.accent);
+    node.style.setProperty("--hall-mark", hall.mark || hall.accent);
+    if (hall.dark_wash) node.style.setProperty("--hall-dark-wash", hall.dark_wash);
+  }
 
   // Derived from the viewer's clock, not from build time: the site is rebuilt
   // daily but a tab left open overnight must not keep calling yesterday "Today".
@@ -722,7 +726,9 @@
     if (special) {
       badges.append(el("span", { className: "badge badge-special", textContent: t("specialBadge") }));
     }
-    if (onlyHere) {
+    // A special is the hall's own already; "only here" beside it said so twice.
+    // One two halls share is not only here anyway.
+    if (onlyHere && !special) {
       badges.append(el("span", { className: "badge badge-only", textContent: t("onlyHere") }));
     }
     if (PROTEIN[rec.category]) {
@@ -795,6 +801,7 @@
   const lightboxTitle = document.getElementById("lightbox-title");
   const lightboxSubtitle = document.getElementById("lightbox-subtitle");
   const lightboxBadges = document.getElementById("lightbox-badges");
+  const lightboxAllergens = document.getElementById("lightbox-allergens");
   const lightboxIng = document.getElementById("lightbox-ingredients");
   const lightboxTraces = document.getElementById("lightbox-traces");
   const lightboxReport = document.getElementById("lightbox-report");
@@ -820,6 +827,15 @@
     }
     if (lightboxBadges) {
       lightboxBadges.replaceChildren(badgesFor(rec, onlyHere, special));
+    }
+    // The card's own line, said again: the picture opened is the dish looked
+    // at most closely, and it listed what the dish shares equipment with but
+    // not what is in it.
+    if (lightboxAllergens) {
+      const alg = Boolean(rec.alg && rec.alg.length);
+      lightboxAllergens.replaceChildren(
+        ...(alg ? [el("b", { textContent: t("allergens") }), t("allergenList", rec.alg)] : []));
+      lightboxAllergens.style.display = alg ? "" : "none";
     }
     if (lightboxIng) {
       if (rec.ing) {
@@ -1079,13 +1095,7 @@
     renderPins();
     syncPagers();
 
-    renderDigest(spread, servingHalls.length);
-    renderNotices();
-    document.getElementById("stamp").replaceChildren(
-      el("span", { className: "stamp-meal", textContent: t("meal", state.meal) }),
-      " ",
-      el("span", { className: "stamp-day", textContent: dayFull(state.date) }),
-    );
+    renderNotices(spread, servingHalls.length);
     // A render can switch the language under the tip or resize the row it points at.
     if (tour) drawTour(false);
     save();
@@ -1108,27 +1118,11 @@
     return { spread, serving };
   }
 
-  /** How much the selected halls actually differ -- the whole point of comparing. */
-  function renderDigest(spread, servingCount) {
-    const node = document.getElementById("digest");
-    if (servingCount < 2 || spread.size === 0) {
-      node.replaceChildren();
-      return;
-    }
-
-    const total = spread.size;
-    const everywhere = [...spread.values()].filter((n) => n === servingCount).length;
-    const unique = [...spread.values()].filter((n) => n === 1).length;
-
-    const bold = (n) => el("b", { textContent: String(n) });
-    node.replaceChildren(...t("digest", bold, total, servingCount, everywhere, unique));
-    if (unique === 0) {
-      node.append(" ", el("span", { className: "warn", textContent: t("identical") }));
-    }
-  }
-
-  /** Whatever the specials calendar says to the whole campus at once. */
-  function renderNotices() {
+  /** Whatever the specials calendar says to the whole campus at once, and the
+   *  one thing the line of counts over the board used to say that nothing else
+   *  does: that the halls picked are serving exactly the same menu, so there is
+   *  nothing to compare. The counts themselves are in every column's header. */
+  function renderNotices(spread, servingCount) {
     const node = document.getElementById("notices");
     const notes = noticesFor(state.date);
     node.replaceChildren(...notes.map((text) => {
@@ -1140,6 +1134,9 @@
       if (zh) line.append(el("span", { className: "special-en", textContent: text }));
       return line;
     }));
+    const identical = servingCount >= 2 && spread.size > 0 &&
+      [...spread.values()].every((n) => n === servingCount);
+    if (identical) node.append(el("p", { className: "notice", textContent: t("identical") }));
   }
 
   // The logos run from Branner's roundel, taller than it is wide, to Lakeside's
@@ -1183,7 +1180,7 @@
   function column(hallId, spread, servingCount = 0, colIndex = 0) {
     const hall = hallById.get(hallId);
     const col = el("section", { className: "column" });
-    col.style.setProperty("--hall", hall.accent);
+    hallColours(col, hall);
     // Which hall this column is drawn for, for the pinned row to read back.
     col.dataset.hall = hallId;
 
@@ -1373,7 +1370,7 @@
         el("p", { className: "pin-name" }, [el("span", { textContent: hall.short })]),
         hallLogo(hall),
       ]);
-      pin.style.setProperty("--hall", hall.accent);
+      hallColours(pin, hall);
       return pin;
     }));
     syncPins();
@@ -1520,14 +1517,15 @@
     b.append(el("span", { className: "label", textContent: label }));
     if (extra.short) b.lastChild.dataset.short = extra.short;
     if (extra.sub) b.append(el("span", { className: "sub", textContent: extra.sub }));
-    if (extra.accent) b.style.setProperty("--hall", extra.accent);
+    if (extra.hall) hallColours(b, extra.hall);
     b.addEventListener("click", onClick);
     return b;
   }
 
   function renderControls() {
-    // A calendar strip: the day's name over its date. The month is in the
-    // headline, and the full date on hover.
+    // A calendar strip: the day's name over its date, and the full date on
+    // hover. No month: the week in view is this one, and a 31 followed by a 1
+    // says where the month turns.
     document.getElementById("days").replaceChildren(...DATA.window.map((iso) =>
       chip(dayLabel(iso), iso === state.date, () => {
         state.date = iso;
@@ -1564,7 +1562,7 @@
           total_selected: state.halls.length,
         });
         render();
-      }, { className: "chip-hall", accent: h.accent })));
+      }, { className: "chip-hall", hall: h })));
 
     // Nothing to pick over a break. Hide the row rather than leave a label with
     // an empty line under it, which reads as a control that failed to load.

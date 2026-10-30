@@ -20,6 +20,16 @@
   --open: light-dark(#1E7A46, #62CC8F);
   --soon: light-dark(#9A6200, #E3B04B);
 
+  /* A picked hall or diet chip. Inverted on a light page, where black on white
+     is the plainest way to say "on". Inverted on a dark page the picked chips
+     were the brightest thing on the screen, brighter than the food, so there
+     a picked chip is a raised grey with an edge and the ones not picked step
+     back a shade instead -- the book's emphasis by de-emphasis. */
+  --on: light-dark(#1B1A18, #3A3834);
+  --on-ink: light-dark(#FFFFFF, #F3F1EC);
+  --on-edge: light-dark(#1B1A18, #8E8B83);
+  --off-ink: light-dark(#1B1A18, #ABA8A1);
+
   --serif: "Source Serif 4", "Source Serif Pro", Georgia, "Times New Roman", serif;
   --sans: "Source Sans 3", "Source Sans Pro", -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", sans-serif;
@@ -48,6 +58,18 @@
      target. Before the scale the page had thirty-odd spacings, 7s, 9s, 13s and
      17s among them. */
 
+  /* Corners too, and a test holds them to it:
+
+       radius scale: 4 8 12 16
+
+     4 for a mark (a badge, a tick box, a logo's plate), 8 for anything you
+     press and for a picture, 12 for a small thing that floats or a track that
+     holds buttons, 16 for a panel. A box inside another takes the outer
+     radius less the padding between them -- a track's 12 around its 8s and
+     4px, a special's 16 around its picture's 8 and --bleed -- so the gap
+     between the two curves stays even. There were ten radii before, 5, 6, 10,
+     11, 14 and 15 among them. */
+
   /* Elevation: how far above the page a thing floats, not what its shadow looks
      like. Each is two shadows -- a soft one cast by the light, and a tight one
      where the thing meets the page, which fades as it rises. In dark mode none
@@ -62,7 +84,7 @@
      it answers the moment it is touched, and slow to settle. */
   --ease-out: cubic-bezier(.16, 1, .3, 1);
 
-  --radius: 10px;
+  --radius: 8px;
   --gutter: 24px;
   --page: 1800px;
   /* --page as a block inside <main> sees it: the page's width less its gutters,
@@ -108,7 +130,11 @@
     --bg: #FFFFFF; --sunk: #F4F3EF; --thumb: #FFFFFF; --ink: #1B1A18; --ink-2: #5F5C57;
     --ink-3: #75726B; --rule: #E7E5E0; --rule-strong: #CFCCC5; --cardinal: #8C1515;
     --open: #1E7A46; --soon: #9A6200;
+    --on: #1B1A18; --on-ink: #FFFFFF; --on-edge: #1B1A18; --off-ink: #1B1A18;
   }
+  /* `body` only to outrank the rules further down that declare these. */
+  body :is(.column, .pin, .chip-hall) { --hall-line: var(--hall-mark, var(--hall)); }
+  body .column { --wash: color-mix(in srgb, var(--hall, var(--cardinal)) 24%, #FFFFFF); }
 }
 
 * { box-sizing: border-box; }
@@ -146,7 +172,7 @@ button { -webkit-user-select: none; user-select: none; }
    glyph and ends up mixing two type designs inside one dish name. Selected off
    <html lang>, which app.js sets with the language. */
 html:lang(zh) body { font-family: var(--cjk), var(--sans); }
-html:lang(zh) :is(.brand, .stamp, .dish-name, .stations-title) {
+html:lang(zh) :is(.brand, .dish-name, .stations-title) {
   font-family: var(--cjk), var(--serif);
   letter-spacing: 0;
 }
@@ -205,7 +231,9 @@ html:lang(zh) .col-concept { font-family: var(--cjk), var(--sans); font-size: 15
   height: var(--mark);
   margin-right: 8px;
   vertical-align: -5px;
-  border-radius: 6px;
+  /* The favicon's own corner, rx 8 on 32, rather than a step of the scale:
+     this is the icon drawn again, not a box of the page's. */
+  border-radius: 25%;
   background:
     linear-gradient(#fff, #fff) 5.5px 5.5px / 4.8px 11px no-repeat,
     linear-gradient(rgb(255 255 255 / .62), rgb(255 255 255 / .62)) 11.7px 5.5px / 4.8px 11px no-repeat,
@@ -215,7 +243,13 @@ html:lang(zh) .col-concept { font-family: var(--cjk), var(--sans); font-size: 15
 /* The English name is too long for one line: beside the week on a laptop it
    ran into the day chips, beside the switches on a phone it lost "Side by Side"
    to an ellipsis. So it is set in two lines, the mark centred beside both,
-   which is no taller than the day chips. Chinese keeps its one line. */
+   which is no taller than the day chips.
+
+   The Chinese name fits on one line on a phone, where the masthead has a row
+   to itself, but not on a laptop, where it shares one with the week, the meals
+   and the share button: one line wants 300px, and from 1280 to 1400px wide
+   that row has 240-283 for it ("舌尖上的斯坦福，一站式食…"). So on a laptop it is
+   two lines too, split where the English is. */
 html:lang(en) .brand {
   position: relative;
   padding-left: calc(var(--mark) + 8px);
@@ -224,6 +258,16 @@ html:lang(en) .brand {
 }
 html:lang(en) .brand::before { position: absolute; left: 0; top: 50%; translate: 0 -50%; }
 html:lang(en) .brand span { display: block; overflow: hidden; text-overflow: ellipsis; }
+@media (min-width: 721px) {
+  html:lang(zh) .brand {
+    position: relative;
+    padding-left: calc(var(--mark) + 8px);
+    font-size: 16px;
+    line-height: 1.2;
+  }
+  html:lang(zh) .brand::before { position: absolute; left: 0; top: 50%; translate: 0 -50%; }
+  html:lang(zh) .brand span { display: block; overflow: hidden; text-overflow: ellipsis; }
+}
 
 .tools { grid-area: tools; display: flex; justify-content: flex-end; gap: 2px; }
 
@@ -305,17 +349,28 @@ html:lang(en) .brand span { display: block; overflow: hidden; text-overflow: ell
 :is(.chip:not(:disabled), .tool, .share, .pager, .stations-toggle, .tour-actions button,
     .lightbox-close):active { scale: .97; }
 
-/* The week, as a calendar strip: the day's name over its date. */
-.days { display: flex; gap: 2px; }
+/* The week and the meal are one kind of control, side by side in the same bar,
+   so they say "picked" the same way: a raised thumb in a sunken track. The day
+   used to be an inverted block beside the meal's thumb -- two ways of saying
+   one thing -- and on a dark page that block was the brightest thing on it. */
+.days, .segmented {
+  display: inline-flex;
+  gap: 2px;
+  padding: 4px;
+  border-radius: 12px;
+  background: var(--sunk);
+}
 
+/* The week, as a calendar strip: the day's name over its date. */
 .chip-day {
   flex-direction: column;
   gap: 1px;
   min-width: 54px;
-  padding: 4px 8px;
-  border-radius: 10px;
+  padding: 2px 8px;
+  border-radius: 8px;
+  color: var(--ink-2);
 }
-.chip-day .label { font-size: 13px; line-height: 1.2; color: var(--ink-2); }
+.chip-day .label { font-size: 13px; line-height: 1.2; color: var(--ink-3); }
 .chip-day .sub {
   font-size: 18px;
   font-weight: 600;
@@ -323,19 +378,14 @@ html:lang(en) .brand span { display: block; overflow: hidden; text-overflow: ell
   font-variant-numeric: tabular-nums;
 }
 @media (hover: hover) and (pointer: fine) {
-  .chip-day:hover { background: var(--sunk); }
+  .chip-day:hover { color: var(--ink); }
 }
-.chip-day[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
-.chip-day[aria-pressed="true"] .label { color: inherit; opacity: .78; }
-
-/* The meal, as a segmented control. */
-.segmented {
-  display: inline-flex;
-  gap: 2px;
-  padding: 3px;
-  border-radius: 11px;
-  background: var(--sunk);
+.chip-day[aria-pressed="true"] {
+  background: var(--thumb);
+  color: var(--ink);
+  box-shadow: var(--shadow-1);
 }
+.chip-day[aria-pressed="true"] .label { color: var(--ink-2); }
 
 .chip-seg {
   height: 36px;
@@ -365,35 +415,73 @@ html:lang(en) .brand span { display: block; overflow: hidden; text-overflow: ell
   border: 1px solid var(--rule-strong);
   border-radius: 8px;
   background: var(--bg);
-  color: var(--ink);
+  color: var(--off-ink);
   font-size: 15px;
   font-weight: 500;
 }
 @media (hover: hover) and (pointer: fine) {
-  .chips .chip:hover { border-color: var(--ink-3); }
+  .chips .chip:hover { border-color: var(--ink-3); color: var(--ink); }
 }
 .chips .chip[aria-pressed="true"] {
-  background: var(--ink);
-  border-color: var(--ink);
-  color: var(--bg);
+  background: var(--on);
+  border-color: var(--on-edge);
+  color: var(--on-ink);
 }
 
 /* Each hall's colour is the one R&DE gives it on the specials calendar, so the
    board and the poster on the wall read as one key. The dot stays on when the
-   chip is, so the colour is learnt before the column ever appears. */
+   chip is, so the colour is learnt before the column ever appears. On a white
+   page it takes the deeper shade (--hall-mark): FloMo's pastel is 1.07:1
+   against white, and gone. */
+.column, .pin, .chip-hall {
+  --hall-line: light-dark(var(--hall-mark, var(--hall, var(--cardinal))), var(--hall, var(--cardinal)));
+}
 .chip-hall::before {
   content: "";
   flex: none;
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: var(--hall, var(--cardinal));
+  background: var(--hall-line);
   box-shadow: inset 0 0 0 1px rgb(0 0 0 / .14);
 }
 
 /* Sorting and pictures change the view rather than the menu, so they sit a
-   rule apart from the diet filters. */
+   rule apart from the diet filters -- and they are settings, not picks, so a
+   tick box says they are on rather than the filled chip a hall or a diet gets.
+   Both are on by default, and as filled chips they were two of the five black
+   blocks on the row before anyone had chosen anything. */
 .chips .chip-view { position: relative; }
+.chips .chip-view[aria-pressed="true"] {
+  background: var(--bg);
+  border-color: var(--rule-strong);
+  color: var(--ink);
+}
+.chips .chip-view .label { position: relative; padding-left: 24px; }
+.chips .chip-view .label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  translate: 0 -50%;
+  border: 1.5px solid var(--ink-3);
+  border-radius: 4px;
+}
+.chips .chip-view[aria-pressed="true"] .label::before { border-color: var(--ink); background: var(--ink); }
+.chips .chip-view[aria-pressed="true"] .label::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 50%;
+  width: 4px;
+  height: 9px;
+  translate: 0 -60%;
+  rotate: 45deg;
+  border: solid var(--bg);
+  border-width: 0 1.5px 1.5px 0;
+}
 .chips .chip:not(.chip-view) + .chip-view { margin-left: 12px; }
 .chips .chip:not(.chip-view) + .chip-view::before {
   content: "";
@@ -420,27 +508,17 @@ html:lang(en) .brand span { display: block; overflow: hidden; text-overflow: ell
 
 /* ---------- intro ---------- */
 
+/* There was a headline here, "Dinner Friday, October 30", and a line of counts
+   under it. The first said again what the bar's picked day and meal say; the
+   second what every column's header says. On a phone the two of them were
+   most of what stood between the bar and the first dish. */
 .intro {
   max-width: var(--page);
   margin: 0 auto;
-  padding: 48px var(--gutter) 0;
+  padding: 24px var(--gutter) 0;
 }
 
-/* The one large thing on the page: what you are looking at. */
-.stamp {
-  margin: 0;
-  font: 500 48px/1.08 var(--serif);
-  letter-spacing: -.024em;
-  text-wrap: balance;
-}
-.stamp-day { color: var(--ink-3); }
-
-/* The headline is the name of what gets shared, so the button sits on its
-   line -- at the far end, where it stays put while the day's name beside it
-   changes length. Pulled down onto the middle of the first line of type. */
-.headline { display: flex; align-items: flex-start; gap: 16px; }
-.headline .stamp { flex: 1 1 auto; min-width: 0; }
-
+/* Sends the view the bar's controls make, so it sits at the end of them. */
 .share {
   appearance: none;
   flex: none;
@@ -448,7 +526,6 @@ html:lang(en) .brand span { display: block; overflow: hidden; text-overflow: ell
   align-items: center;
   gap: 8px;
   height: 36px;
-  margin-top: 8px;
   padding: 0 12px;
   border: 1px solid var(--rule-strong);
   border-radius: 8px;
@@ -478,7 +555,9 @@ html:lang(en) .brand span { display: block; overflow: hidden; text-overflow: ell
 .toast {
   position: fixed;
   left: 50%;
-  bottom: calc(24px + env(safe-area-inset-bottom));
+  /* No env(safe-area-inset-bottom) here: without viewport-fit=cover, which
+     would put the page under a phone's notch in landscape, it is always 0. */
+  bottom: 24px;
   z-index: 50;
   max-width: min(440px, calc(100vw - 32px));
   padding: 8px 16px;
@@ -498,16 +577,10 @@ html:lang(en) .brand span { display: block; overflow: hidden; text-overflow: ell
 .toast:empty { display: none; }
 .toast-on { opacity: 1; pointer-events: auto; transform: translate(-50%, 0); }
 
-.digest { margin: 12px 0 0; font-size: 18px; color: var(--ink-2); max-width: 72ch; }
-.digest:empty { display: none; }
-.digest b { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
-.digest .warn { color: var(--cardinal); font-weight: 600; }
-
 .picks {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  margin-top: 32px;
 }
 
 /* The tour scrolls a stop into view; this keeps it clear of the sticky bar. */
@@ -632,8 +705,13 @@ main { margin: 0; padding: 32px var(--gutter) 96px; }
   display: flex;
   flex-direction: column;
   gap: 32px;
+  /* On a dark page a special is washed in its hall's colour too, but not by
+     mixing the pastel into near-black: that left five of the eight halls grey.
+     Each hall's dark panel is the poster's own hue, darkened, written down in
+     config/halls.json (dark_wash); the mix is only the fallback for a hall
+     without one. The hue is never turned: these colours are R&DE's key. */
   --wash: light-dark(color-mix(in srgb, var(--hall, var(--cardinal)) 24%, #FFFFFF),
-    color-mix(in srgb, var(--hall, var(--cardinal)) 13%, #1A1918));
+    var(--hall-dark-wash, color-mix(in srgb, var(--hall, var(--cardinal)) 13%, #1A1918)));
 }
 
 /* The board is read across, not down, so the columns share one set of rows:
@@ -691,7 +769,7 @@ main { margin: 0; padding: 32px var(--gutter) 96px; }
    hall on a bar of it. An underline rather than a highlight, because a pastel
    laid behind text reads as text someone has selected. */
 .col-name span {
-  text-decoration: underline 6px var(--hall, var(--cardinal));
+  text-decoration: underline 6px var(--hall-line);
   text-underline-offset: 3px;
   text-decoration-skip-ink: none;
 }
@@ -728,7 +806,7 @@ main { margin: 0; padding: 32px var(--gutter) 96px; }
   box-sizing: content-box;
   padding: 3px 4px;
   margin: -3px -4px;
-  border-radius: 5px;
+  border-radius: 4px;
   background: light-dark(transparent, #FFFFFF);
 }
 
@@ -742,6 +820,9 @@ main { margin: 0; padding: 32px var(--gutter) 96px; }
   gap: 1px;
   font-size: 15px;
   color: var(--ink-2);
+  /* A line that wraps starts with an item whose "·" hangs off to its left;
+     clipped here, so a wrapped line starts with the item, not a stray dot. */
+  overflow: hidden;
 }
 
 .col-when, .col-stats {
@@ -853,7 +934,7 @@ main { margin: 0; padding: 32px var(--gutter) 96px; }
 /* Thinner than the header's bar, in proportion to the smaller type; still the
    hall's colour, because that is the key the board and the poster share. */
 .pin-name span {
-  text-decoration: underline 4px var(--hall, var(--cardinal));
+  text-decoration: underline 4px var(--hall-line);
   text-underline-offset: 2px;
   text-decoration-skip-ink: none;
 }
@@ -946,7 +1027,7 @@ main { margin: 0; padding: 32px var(--gutter) 96px; }
   border-radius: var(--radius);
   background: var(--sunk);
   cursor: zoom-in;
-  transition: filter 0.15s ease;
+  transition: filter 0.15s ease, scale .12s var(--ease-out);
   /* A white plate on a white page loses its edge wherever the photograph is
      pale. A hairline drawn over the picture, faint enough not to read as a
      frame, gives it one back. An outline because a box-shadow would be
@@ -959,6 +1040,10 @@ main { margin: 0; padding: 32px var(--gutter) 96px; }
 @media (hover: hover) and (pointer: fine) {
   .thumb:hover { filter: brightness(1.03); }
 }
+/* The thing tapped most on a phone, and until now the one press with nothing
+   to show for it until the picture opened. Softer than a button's .97: it is
+   a whole photograph moving. */
+.thumb:active { scale: .98; }
 
 /* Same box a picture would fill, not a strip: a dish still waiting to be drawn
    otherwise leaves its card ~170px shorter than the one beside it. */
@@ -992,15 +1077,18 @@ main { margin: 0; padding: 32px var(--gutter) 96px; }
   color: var(--ink);
 }
 
+/* Out faster than in, here and on the dialog below: opening, you are waiting
+   to see the picture; closing, you are already looking back at the board. */
 .lightbox::backdrop {
   background-color: rgba(0, 0, 0, 0);
   transition:
-    display 0.25s allow-discrete,
-    overlay 0.25s allow-discrete,
-    background-color 0.25s ease-out;
+    display 0.15s allow-discrete,
+    overlay 0.15s allow-discrete,
+    background-color 0.15s ease-out;
 }
 
 .lightbox[open]::backdrop {
+  transition-duration: 0.25s;
   background-color: rgba(0, 0, 0, 0.65);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
@@ -1014,7 +1102,7 @@ main { margin: 0; padding: 32px var(--gutter) 96px; }
   position: relative;
   background: var(--bg);
   border: 1px solid var(--rule-strong);
-  border-radius: calc(var(--radius) * 1.5);
+  border-radius: 16px;
   overflow: hidden;
   box-shadow: var(--shadow-4);
   display: flex;
@@ -1071,10 +1159,11 @@ main { margin: 0; padding: 32px var(--gutter) 96px; }
   margin: 4px 0;
 }
 
+/* What the picture was opened to check, so at the card's size, not below it. */
 .lightbox-ingredients {
   margin: 0;
-  font-size: 13px;
-  line-height: 1.45;
+  font-size: 14px;
+  line-height: 1.5;
   color: var(--ink-2);
 }
 
@@ -1088,8 +1177,7 @@ main { margin: 0; padding: 32px var(--gutter) 96px; }
   background: rgba(0, 0, 0, 0.55);
   color: #fff;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  font-size: 20px;
-  line-height: 1;
+  padding: 0;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -1097,6 +1185,16 @@ main { margin: 0; padding: 32px var(--gutter) 96px; }
   z-index: 2;
   transition: background 0.15s ease, transform 0.15s ease, scale .12s var(--ease-out);
 }
+.lightbox-close svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+}
+/* 32px drawn, 44px to a thumb. */
+.lightbox-close::after { content: ""; position: absolute; inset: -6px; }
 
 @media (hover: hover) and (pointer: fine) {
   .lightbox-close:hover {
@@ -1108,6 +1206,7 @@ main { margin: 0; padding: 32px var(--gutter) 96px; }
 dialog.lightbox[open] {
   opacity: 1;
   transform: scale(1);
+  transition-duration: 0.25s;
 
   @starting-style {
     opacity: 0;
@@ -1119,7 +1218,7 @@ dialog.lightbox {
   opacity: 0;
   transform: scale(0.96);
   transition-property: opacity, transform, display, overlay;
-  transition-duration: 0.25s;
+  transition-duration: 0.15s;
   transition-timing-function: var(--ease-out);
   transition-behavior: allow-discrete;
 }
@@ -1179,7 +1278,7 @@ dialog.lightbox {
 .badge-special, .badge-only {
   margin-right: 8px;
   padding: 1px 8px;
-  border-radius: 5px;
+  border-radius: 4px;
   font-size: 13px;
   font-weight: 600;
 }
@@ -1197,12 +1296,15 @@ dialog.lightbox {
 .card-special {
   margin: calc(-1 * var(--bleed)) calc(-1 * var(--bleed)) 0;
   padding: var(--bleed) var(--bleed) 12px;
-  border-radius: calc(var(--radius) + var(--bleed) - 2px);
+  /* 16: the picture's 8 plus the --bleed between them. */
+  border-radius: calc(var(--radius) + var(--bleed));
   background: var(--wash);
 }
-.card-special .thumb, .card-special .thumb-none { border-radius: calc(var(--radius) - 2px); }
 
-.special-note { margin: 0; font-size: 14px; line-height: 1.45; color: var(--ink-2); }
+/* One quiet line: it is on every special, and at dinner that can be five
+   cards in a row saying it. Quiet by size, not by colour: the lightest grey
+   is under 4.5:1 on every hall's wash, in both themes. */
+.special-note { margin: 0; font-size: 13px; line-height: 1.45; color: var(--ink-2); }
 
 /* Reserves the line of allergens, and the ingredients toggle on a card whose
    picture does not open them. Half the dishes list no allergens, and that one
@@ -1451,7 +1553,7 @@ footer a {
   z-index: 40;
   pointer-events: none;
   border: 2px solid var(--cardinal);
-  border-radius: 14px;
+  border-radius: 16px;
   animation: tour-pulse 1.6s ease-out infinite;
 }
 .tour-ring.tour-glide { transition: left .22s, top .22s, width .22s, height .22s; }
@@ -1516,9 +1618,12 @@ html:lang(zh) .tour-title { font-family: var(--cjk), var(--serif); }
 
 /* ---------- narrower screens ---------- */
 
-/* The bar no longer fits beside the name: the week and the meal drop to a
-   second line, still inside the sticky top. */
-@media (max-width: 1180px) {
+/* The bar no longer fits beside the name: the week, the meal and the share
+   button drop to a second line, still inside the sticky top. With seven days
+   and the share button the bar is about 700px, and the English name in its
+   two lines needs 239 beside it; 1280 is the narrowest window where it does
+   not lose "Side by Side" to an ellipsis. */
+@media (max-width: 1279px) {
   .top {
     grid-template-columns: minmax(0, 1fr) auto;
     grid-template-areas: "brand tools" "bar bar";
@@ -1606,50 +1711,76 @@ html:lang(zh) .tour-title { font-family: var(--cjk), var(--serif); }
 
   /* The day and the meal fill their rows instead: a week is seven chips, which
      fit, and left-aligned they left a gap on the right that read as days
-     missing. The days share the row in equal columns, like a calendar's, up
-     to a width past which a pressed day reads as a bar; then the room goes
-     between them. */
+     missing. The days share their track in equal columns, like a calendar's,
+     the way the meals share theirs. */
   .controls-day, .controls-meal { overflow: visible; mask-image: none; }
   .controls-day .group, .days, .controls-meal .group, .segmented { flex: 1; }
-  .days { justify-content: space-between; }
   .chip-seg { flex: 1; height: 34px; padding: 0 8px; font-size: 14px; }
 
-  .chip-day { flex: 1 1 0; min-width: 0; max-width: 64px; padding: 4px 2px; }
+  .chip-day { flex: 1 1 0; min-width: 0; padding: 2px; }
   .chip-day .label { font-size: 12px; }
   /* What a label says where its column is too narrow for it; app.js writes it. */
   .chip-day .label[data-short] { font-size: 0; }
   .chip-day .label[data-short]::after { content: attr(data-short); font-size: 12px; }
   .chip-day .sub { font-size: 16px; }
 
-  .intro { padding-top: 24px; }
-  .stamp { font-size: 32px; line-height: 1.12; }
-  /* Icon only, like the theme switch, so the headline keeps the width it had;
-     the label is still the button's accessible name. And a Chinese headline
-     that does wrap breaks at its space, not between 9月24 and 日. */
-  .headline { gap: 12px; }
-  .share { width: 34px; height: 34px; margin-top: 1px; padding: 0; justify-content: center;
-    font-size: 0; gap: 0; }
+  /* Everything from here to the first dish is what a phone's first screen
+     holds, and it used to hold no dish at all: the first name sat at 767px on
+     a 390px phone whose browser shows about 700. The headline and the counts
+     are gone (see .intro), and the hall's header below is a line shorter. */
+  .intro { padding-top: 16px; }
+  /* Icon only, like the theme switch, so the meals keep the row; the label is
+     still the button's accessible name. */
+  .share { width: 34px; height: 34px; padding: 0; justify-content: center; font-size: 0; gap: 0; }
   .share svg { width: 17px; height: 17px; }
-  html:lang(zh) .stamp { word-break: keep-all; }
-  .digest { margin-top: 8px; font-size: 16px; }
 
-  .picks { margin: 16px calc(-1 * var(--gutter)) 0; gap: 8px; }
+  .picks { margin: 0 calc(-1 * var(--gutter)); gap: 8px; }
   .picks .group-label { display: none; }
   .chips .chip { height: 34px; padding: 0 12px; font-size: 14px; }
 
-  main { padding-top: 24px; padding-bottom: 48px; }
+  /* A thumb wants about 44px; these are drawn at 34. Each gets a few pixels
+     of target past its edges instead of being drawn taller, which would cost
+     the sticky bar and the first screen the height. A chip row scrolls
+     sideways, and a scroller clips what hangs out of it, hit area included,
+     so the rows are given that room inside and handed it back outside. */
+  :is(.chips .chip, .chip-seg, .share) { position: relative; }
+  :is(.chips .chip, .chip-seg)::after { content: ""; position: absolute; inset: -4px 0; }
+  .share::after { content: ""; position: absolute; inset: -5px; }
+  .picks .controls { padding-block: 4px; margin-block: -4px; }
+
+  main { padding-top: 16px; padding-bottom: 48px; }
 
   .board { scroll-snap-type: x mandatory; }
   /* One column is in view at a time here, so there is no neighbour for a
      special's panel to be level with -- only an empty stretch of colour. */
   .card-special { align-self: start; }
-  .col-name { font-size: 24px; }
+  /* The name's line is the logo's height here, not the laptop's 38px. */
+  .col-name { font-size: 24px; line-height: 32px; }
+  .col-logo { min-height: 32px; }
   .col-concept { font-size: 15px; }
   .col-logo img {
     width: calc(var(--logo-w) * .88);
     height: calc(var(--logo-h) * .88);
   }
-  .col-meta { font-size: 14px; }
+  /* When it serves and what it has, run on as one line. On a laptop they are
+     two because each is read across five headers; here a header is read once,
+     on its own. The two lines' own items become the row's, and the first of
+     the second line takes the separator the rest already have. */
+  .col-meta {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: baseline;
+    column-gap: 16px;
+    padding-top: 8px;
+    font-size: 14px;
+  }
+  .col-when, .col-stats { display: contents; }
+  .col-when:not(:empty) + .col-stats > :first-child::before {
+    content: "·";
+    position: absolute;
+    left: -11px;
+    color: var(--ink-3);
+  }
   .dish-name { font-size: 18px; }
 
   .pinned { --pin-h: 42px; }
@@ -1660,8 +1791,14 @@ html:lang(zh) .tour-title { font-family: var(--cjk), var(--serif); }
   }
 }
 
+/* Less motion, not none. Nothing moves, grows or slides -- transitions are cut
+   back to the properties that do not move anything -- but a fade or a colour
+   change still says that something changed, which an instant swap does not. */
 @media (prefers-reduced-motion: reduce) {
-  * { transition: none !important; }
+  * {
+    transition-property: opacity, color, background-color, border-color, box-shadow,
+      text-decoration-color, filter !important;
+  }
   .board { scroll-behavior: auto; }
   .tour-ring, .tour-tip { animation: none; }
 }

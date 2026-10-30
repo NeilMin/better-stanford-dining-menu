@@ -465,6 +465,25 @@ def test_every_spacing_is_on_the_spacing_scale():
     assert sorted({n for n in used if n >= 4} - steps) == []
 
 
+def test_every_radius_is_on_the_radius_scale():
+    """Corners are steps of a scale too, written on :root beside the other two.
+    A circle is 50% and the brand mark keeps the favicon's own 25%; anything in
+    pixels is a step. There were ten radii before, 5, 11, 14 and 15 among them."""
+    import re
+
+    from jsbridge import APP_JS
+
+    css = (APP_JS.parent / "app.css").read_text()
+    scale = re.search(r"radius scale:([\d ]+)\n", css)
+    assert scale, "the scale is declared on :root"
+    steps = {float(n) for n in scale.group(1).split()}
+    css = re.sub(r"/\*.*?\*/", "", css, flags=re.S)
+    values = re.findall(r"(?:border-radius|--radius):([^;}]+)", css)
+    used = [float(n) for v in values for n in re.findall(r"([\d.]+)px", v)]
+    assert len(used) > 10, "the patterns stopped matching the stylesheet"
+    assert sorted(set(used) - steps) == []
+
+
 def test_the_status_bar_is_painted_with_the_page_background():
     """theme-color is what a phone paints its status bar and browser chrome. It
     is the page's own --bg in each scheme; anything else reads as a strip of

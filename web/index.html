@@ -65,20 +65,20 @@
       <div class="group"><span class="group-label" id="lbl-day">Day</span><span class="days" id="days"></span></div>
     </div>
     <div class="controls controls-meal">
-      <div class="group"><span class="group-label" id="lbl-meal">Meal</span><span class="segmented" id="meals"></span></div>
+      <div class="group"><span class="group-label" id="lbl-meal">Meal</span><span class="segmented" id="meals"></span>
+        <!-- Beside the controls whose view it sends: the day, the meal and the
+             halls. In the bar, so on a phone it stays on screen with them. -->
+        <button class="share" type="button" id="share">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 9.5V1.75M5.25 4.25 8 1.5l2.75 2.75M5.5 6.5H4.5A1.5 1.5 0 0 0 3 8v5.5A1.5 1.5 0 0 0 4.5 15h7a1.5 1.5 0 0 0 1.5-1.5V8a1.5 1.5 0 0 0-1.5-1.5h-1"/></svg>
+          <span id="share-label">Share</span>
+        </button></div>
     </div>
   </nav>
 </div>
 
+<!-- No headline: the bar above already says which day and which meal, and on a
+     phone the line that repeated it cost the first dish its place on screen. -->
 <section class="intro">
-  <div class="headline">
-    <p class="stamp" id="stamp"></p>
-    <button class="share" type="button" id="share">
-      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 9.5V1.75M5.25 4.25 8 1.5l2.75 2.75M5.5 6.5H4.5A1.5 1.5 0 0 0 3 8v5.5A1.5 1.5 0 0 0 4.5 15h7a1.5 1.5 0 0 0 1.5-1.5V8a1.5 1.5 0 0 0-1.5-1.5h-1"/></svg>
-      <span id="share-label">Share</span>
-    </button>
-  </div>
-  <p class="digest" id="digest"></p>
   <div class="picks">
     <div class="controls">
       <div class="group"><span class="group-label" id="lbl-halls">Halls</span><span class="chips" id="halls"></span></div>
@@ -112,7 +112,11 @@
 
 <dialog id="lightbox" class="lightbox" closedby="any" aria-label="Dish photo preview">
   <div class="lightbox-content">
-    <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Close">×</button>
+    <!-- Drawn, not typed: a "×" sits wherever the font puts it, and PingFang put
+         it 2px below the middle of the circle. -->
+    <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Close">
+      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 4.5l7 7M11.5 4.5l-7 7"/></svg>
+    </button>
     <div class="lightbox-media">
       <img id="lightbox-img" class="lightbox-img" alt="" src="">
     </div>
@@ -120,6 +124,7 @@
       <h3 id="lightbox-title" class="lightbox-title"></h3>
       <p id="lightbox-subtitle" class="lightbox-subtitle"></p>
       <div id="lightbox-badges" class="lightbox-badges"></div>
+      <p id="lightbox-allergens" class="allergens"></p>
       <p id="lightbox-ingredients" class="lightbox-ingredients"></p>
       <p id="lightbox-traces" class="lightbox-ingredients"></p>
       <p class="report-line" id="lightbox-report"></p>

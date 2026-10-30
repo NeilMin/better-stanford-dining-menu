@@ -6,7 +6,9 @@
     "menu_key": "value submitted to the rdeapps lstLocations dropdown",
     "schedules": "ordered list; first entry whose date range covers the target date wins. 'days' uses 0=Mon..6=Sun.",
     "meals": "meal name -> [open, close] in 24h local time",
-    "accent": "the hall's colour on the R&DE dinner specials calendar, read off the PDF's fills (Sept 14-25, 2026 edition). A light pastel by design: text on it stays dark, and app.css derives a darker ink from it where it has to be read on white.",
+    "accent": "the hall's colour on the R&DE dinner specials calendar, read off the PDF's fills (Sept 14-25, 2026 edition). A light pastel by design: text on it stays dark, and it is what a special's panel is washed in.",
+    "mark": "the accent as it is, except where it all but vanishes on a white page (FloMo's is 1.07:1): there the same colour a step darker, for the dot on the hall's chip and the bar under its name. Same OKLCH hue and chroma as the accent, only the lightness taken down to 0.80, so it is still the poster's colour. Dark mode uses the accent itself. A hall without one falls back to accent.",
+    "dark_wash": "a special's panel on a dark page: the accent's own OKLCH hue, unchanged, at lightness 0.30 and chroma about 0.04-0.06. Mixing the pastel into near-black left five of the eight halls grey. The hue stays the poster's on purpose: these colours are R&DE's key. A hall without one falls back to that mix.",
     "aliases": "extra names the specials calendar uses for this hall, beyond id/short/name. Matching ignores case and punctuation, so only genuinely different words belong here -- \"AFDC\", \"Casper\", and one recurring typo."
   },
   "halls": [
@@ -21,6 +23,8 @@
       "tagline": "Large West Campus commons with late-night service",
       "active": true,
       "accent": "#CCCCFF",
+      "mark": "#B8B8EA",
+      "dark_wash": "#2C2B3F",
       "schedules": [
         {"from": "2026-09-15", "to": "2026-09-15", "label": "NSO Hours", "days": [0,1,2,3,4,5,6],
          "meals": {"Lunch": ["11:00","14:30"], "Dinner": ["17:00","20:00"]}},
@@ -43,6 +47,8 @@
       "tagline": "Southern cooking: brisket, Nashville hot chicken, gumbo, po'boys",
       "active": true,
       "accent": "#FFC000",
+      "mark": "#FFC000",
+      "dark_wash": "#3C2B02",
       "schedules": [
         {"from": "2026-09-15", "to": "2026-09-15", "label": "NSO Hours", "days": [0,1,2,3,4,5,6],
          "meals": {"Lunch": ["11:00","13:30"], "Dinner": ["18:00","20:00"]}},
@@ -68,6 +74,8 @@
       "tagline": "Southeast Asian: Thai curries, Vietnamese noodle soups, grilled meats",
       "active": true,
       "accent": "#8EB6F8",
+      "mark": "#8EB6F8",
+      "dark_wash": "#212E43",
       "schedules": [
         {"from": "2026-09-15", "to": "2026-09-15", "label": "NSO Hours", "days": [0,1,2,3,4,5,6],
          "meals": {"Lunch": ["11:00","13:30"], "Dinner": ["18:00","20:00"]}},
@@ -92,6 +100,8 @@
       "tagline": "Modern Oaxacan: slow-marinated meats, house salsas, scratch rice and beans",
       "active": true,
       "accent": "#7ED957",
+      "mark": "#7ED957",
+      "dark_wash": "#1E3515",
       "schedules": [
         {"from": "2026-09-15", "to": "2026-09-15", "label": "NSO Hours", "days": [0,1,2,3,4,5,6],
          "meals": {"Breakfast": ["07:30","10:00"], "Lunch": ["11:00","13:30"], "Dinner": ["17:00","20:00"]}},
@@ -115,6 +125,8 @@
       "tagline": "Campus kosher kitchen",
       "active": true,
       "accent": "#F5FF8D",
+      "mark": "#BEC754",
+      "dark_wash": "#2E310C",
       "schedules": [
         {"from": "2026-09-15", "to": "2026-09-15", "label": "NSO Hours", "days": [0,1,2,3,4,5,6],
          "meals": {"Lunch": ["11:00","13:30"], "Dinner": ["18:00","20:00"]}},
@@ -139,6 +151,8 @@
       "tagline": null,
       "active": true,
       "accent": "#F997AA",
+      "mark": "#F997AA",
+      "dark_wash": "#422329",
       "schedules": [
         {"from": "2026-09-15", "to": "2026-09-15", "label": "NSO Hours", "days": [0,1,2,3,4,5,6],
          "meals": {"Lunch": ["11:00","13:30"], "Dinner": ["18:00","20:00"]}},
@@ -164,6 +178,8 @@
       "tagline": "Asian vegetarian; Jain/Sattvic-guided, no onion, garlic, or root vegetables",
       "active": true,
       "accent": "#FFCD8C",
+      "mark": "#E5B474",
+      "dark_wash": "#3A2B16",
       "schedules": [
         {"from": "2026-09-15", "to": "2026-09-15", "label": "NSO Hours", "days": [0,1,2,3,4,5,6],
          "meals": {"Lunch": ["11:00","13:30"], "Dinner": ["18:00","20:00"]}},
@@ -187,6 +203,8 @@
       "tagline": "Entire menu free of the nine most common allergens",
       "active": true,
       "accent": "#A5EBD0",
+      "mark": "#8ACFB4",
+      "dark_wash": "#1B342B",
       "schedules": [
         {"from": "2026-09-15", "to": "2026-09-15", "label": "NSO Hours", "days": [0,1,2,3,4,5,6],
          "meals": {"Lunch": ["11:00","13:30"], "Dinner": ["18:00","20:00"]}},

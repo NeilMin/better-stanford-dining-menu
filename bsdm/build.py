@@ -204,7 +204,12 @@ def build_payload(root: Path) -> dict:
         out = {
             "id": h["id"], "short": h["short"], "name": h["name"],
             "concept": h["concept"], "address": h["address"], "accent": h["accent"],
+            # The accent a step deeper, for marks on a white page; see the schema.
+            "mark": h.get("mark", h["accent"]),
         }
+        # A special's panel on a dark page; without one, app.css mixes its own.
+        if h.get("dark_wash"):
+            out["dark_wash"] = h["dark_wash"]
         if concept_zh := zhlib.get(zh_table, "halls", h["id"]):
             out["concept_zh"] = concept_zh
         # A hall with no logo cut yet falls back to its name alone, the same way
