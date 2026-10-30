@@ -1,7 +1,6 @@
 # AGENTS.md
 
-Guidance for AI coding agents working in this repository -- Claude Code reads this file directly;
-Gemini / Antigravity also read `GEMINI.md`, a shorter digest of the same rules.
+Guidance for AI coding agents (Claude Code, Gemini, Antigravity, etc.) working in this repository.
 
 `README.md` explains what the project is and why the design choices were made. Read it first.
 This file covers the invariants that are easy to break and only visible across several files.

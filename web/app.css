@@ -275,6 +275,7 @@ html:lang(en) .brand span { display: block; overflow: hidden; text-overflow: ell
   appearance: none;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   height: 36px;
   padding: 0 12px;
@@ -1677,7 +1678,7 @@ html:lang(zh) .tour-title { font-family: var(--cjk), var(--serif); }
   /* "EN" for "English", which the Chinese masthead needs the room of: fifteen
      characters and the mark are 253 px, and a 360 px phone has 261 beside the
      switches. The aria-label still says the whole thing. */
-  .tool-lang { padding: 0 4px; font-size: 0; }
+  .tool-lang { padding: 0 4px; font-size: 0; gap: 0; }
   .tool-lang::after { content: attr(data-short); font-size: 14px; }
 
   .bar {

@@ -130,6 +130,7 @@
         "Share sends the day, the meal and these halls, so a friend opens exactly this view. Nothing else of yours goes along."],
       // 语言 in the title so a Chinese reader spots the stop meant for them.
       tourLang: ["Language · 语言", "Switch to another language here."],
+      tourTheme: ["Theme", "Switch between auto, light, and dark mode here."],
       tourNext: "Next", tourDone: "Got it", tourSkip: "Skip",
       footerFeedback: (a) => ["Something wrong? ", a("Tell me here"), "."],
       reportDish: "Something wrong with this dish? Tell me here",
@@ -210,6 +211,7 @@
       tourHalls: ["选食堂", "点一下添加或移除，每家食堂占一列，并排对比。食堂、餐次、语言和主题都会记住。"],
       tourShare: ["发给朋友", "分享会带上当前的日期、餐次和食堂，朋友打开就是同一个视图；你的其他设置不会跟着发出去。"],
       tourLang: ["语言 · Language", "在这里可以切换成其他语言。"],
+      tourTheme: ["换主题", "在这里可以在自动、浅色和深色模式之间切换。"],
       tourNext: "下一步", tourDone: "知道了", tourSkip: "跳过",
       footerFeedback: (a) => ["有问题就", a("点这里告诉我"), "。"],
       reportDish: "这道菜有问题？点这里告诉我",
@@ -1661,7 +1663,7 @@
 
   // ---------- first-visit tour ----------
   //
-  // Five stops, shown once per browser. The flag lives apart from STORE, so
+  // Six stops, shown once per browser. The flag lives apart from STORE, so
   // Reset or a STORE bump does not replay the tour to someone who has seen it.
   //
   // The ring and the tip are overlays laid over the target, not styles on it:
@@ -1670,10 +1672,11 @@
   const TOUR_SEEN = "bsdm.tour.v1";
   const TOUR = [
     { key: "tourDay", target: () => document.getElementById("days").parentElement },
-    { key: "tourMeal", target: () => document.getElementById("meals").parentElement },
+    { key: "tourMeal", target: () => document.getElementById("meals") },
     { key: "tourHalls", target: () => document.getElementById("halls").parentElement },
     { key: "tourShare", target: () => document.getElementById("share") },
     { key: "tourLang", target: () => document.getElementById("lang") },
+    { key: "tourTheme", target: () => document.getElementById("theme") },
   ];
   let tour = null;
 
@@ -1766,8 +1769,8 @@
       const row = target.closest(".controls");
       if (row) {
         tour.row = [row, row.scrollLeft];
-        target.scrollIntoView({ block: "nearest", inline: "nearest" });
       }
+      target.scrollIntoView({ block: "nearest", inline: "nearest" });
       next.focus({ preventScroll: true });
     }
     placeTour();

@@ -365,6 +365,39 @@ def test_the_stored_preferences_key_is_versioned(tmp_path):
     assert match and int(match.group(1)) >= 1
 
 
+def test_tour_stops_and_translations(tmp_path):
+    """The first-visit tour has six stops, mirrored across languages.
+    tourMeal must target #meals directly so the share button beside it in .group is not boxed in."""
+    from jsbridge import APP_JS
+
+    src = APP_JS.read_text()
+    assert '{ key: "tourMeal", target: () => document.getElementById("meals") }' in src
+    assert '{ key: "tourTheme", target: () => document.getElementById("theme") }' in src
+
+    keys = call(
+        ["UI"],
+        "return [Object.keys(UI.en).filter((k) => k.startsWith('tour')), "
+        "        Object.keys(UI.zh).filter((k) => k.startsWith('tour'))];",
+        tmp_path=tmp_path,
+    )
+    expected = ["tourDay", "tourMeal", "tourHalls", "tourShare", "tourLang", "tourTheme", "tourNext", "tourDone", "tourSkip"]
+    assert keys[0] == expected
+    assert keys[1] == expected
+
+
+def test_tool_lang_on_phone_zeros_gap():
+    """On phone, .tool-lang hides the text node (font-size: 0) and shows ::after.
+    It must set gap: 0 so flex gap doesn't insert an asymmetrical 8px space on the left."""
+    import re
+    from jsbridge import APP_JS
+
+    css = (APP_JS.parent / "app.css").read_text()
+    match = re.search(r"\.tool-lang\s*\{([^}]+)\}", css)
+    assert match, "found .tool-lang rule"
+    rule = match.group(1)
+    assert "gap: 0" in rule
+
+
 def test_the_hall_pager_never_shows_on_a_phone():
     """The buttons that step the board a hall sideways are for a mouse. A phone
     has no room for them and swipes instead, so the one rule that shows them
