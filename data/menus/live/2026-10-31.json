@@ -1,6 +1,6 @@
 {
  "date": "2026-10-31",
- "scraped_at": "2026-10-29T13:20:47-07:00",
+ "scraped_at": "2026-10-30T03:08:36-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -2000,38 +2000,27 @@
    ],
    "Dinner": [
     {
-     "name": "Chicken Satay",
-     "recipe_id": "3510993",
+     "name": "Homestyle Beef Stew",
+     "recipe_id": "6171489",
      "description": "",
-     "ingredients": "chicken, satay marinade (coconut milk, canola/olive oil blend, thai red curry paste, fish sauce, ginger, turmeric, garlic, cumin, shallot, tamari sauce)",
-     "allergens": [
-      "COCONUT",
-      "FISH",
-      "SHELLFISH",
-      "SOY"
+     "ingredients": "beef, celery, carrot, onion, beef soup base, tomato, tomato paste, potato starch, canola/olive oil blend, salt, black pepper",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free"
      ],
-     "trace_allergens": [
-      "PEANUTS",
-      "WHEAT"
-     ],
-     "tags": [],
      "order": 0
     },
     {
-     "name": "Thai Mushroom Curry with Nori",
-     "recipe_id": "ThaiMushCurrNor1",
+     "name": "Wild Mushroom Bourguignon",
+     "recipe_id": "MushVegBourg1",
      "description": "",
-     "ingredients": "trumpet mushrooms, oyster mushrooms, button mushrooms, coconut milk, vegetable soup base, onions, carrots, red bell peppers, bamboo shoots, baby corn, Thai yellow curry paste, garlic, ginger, tamari, brown sugar, lime juice, canola/olive oil blend, nori, Thai basil, cilantro, salt, black pepper",
+     "ingredients": "assorted mushrooms, vegetable soup base, pearl onions, carrots, potatoes, (non-halal) red wine, tomato paste, garlic, olive/canola oil blend, olive/canola oil blend, flour, thyme, bay leaves, parsley, black pepper, salt",
      "allergens": [
-      "COCONUT",
-      "SOY"
+      "WHEAT"
      ],
-     "trace_allergens": [
-      "FISH",
-      "SHELLFISH"
-     ],
+     "trace_allergens": [],
      "tags": [
-      "gluten-free",
       "vegan"
      ],
      "order": 1
@@ -2063,10 +2052,10 @@
      "order": 3
     },
     {
-     "name": "Pickled Cabbage Slaw",
-     "recipe_id": "5080396",
+     "name": "Sauteed Haricot Vert with Shallots",
+     "recipe_id": "6340538",
      "description": "",
-     "ingredients": "cole slaw, cilantro, lime juice, salt",
+     "ingredients": "haricot vert (green beans), shallots, canola/olive oil blend, salt, pepper",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -2076,13 +2065,11 @@
      "order": 4
     },
     {
-     "name": "Thai Basil Eggplant",
-     "recipe_id": "121120010",
+     "name": "Ratatouille Provençal",
+     "recipe_id": "RataProv1",
      "description": "",
-     "ingredients": "eggplant, bell peppers, oil, Thai basil sauce (onion, garlic, ginger, coconut liquid aminos, Thai basil, maple syrup/sugar, rice vinegar, mushroom seasoning, sambal, corn starch)",
-     "allergens": [
-      "COCONUT"
-     ],
+     "ingredients": "eggplant, zucchini, tomatoes, onions, red bell peppers, yellow squash, garlic, olive/canola oil blend, tomato paste, thyme, basil, parsley, rosemary, bay leaves, salt, black pepper",
+     "allergens": [],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
@@ -2091,13 +2078,11 @@
      "order": 5
     },
     {
-     "name": "Coconut Rice",
-     "recipe_id": "5218958",
+     "name": "Roasted Garlic Herb Potatoes",
+     "recipe_id": "HerbedPotatoes1",
      "description": "",
-     "ingredients": "jasmine rice, unsweetened coconut milk",
-     "allergens": [
-      "COCONUT"
-     ],
+     "ingredients": "potatoes, garlic, fresh herbs, olive/canola oil blend, salt, and pepper",
+     "allergens": [],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
@@ -2106,15 +2091,17 @@
      "order": 6
     },
     {
-     "name": "Rice Noodle",
-     "recipe_id": "2939072",
+     "name": "French Herb Rice Pilaf",
+     "recipe_id": "FrenHerbRicePil1",
      "description": "",
-     "ingredients": "rice flour",
-     "allergens": [],
+     "ingredients": "rice, vegetable soup base, onions, butter, olive/canola oil blend, celery, garlic, parsley, thyme, chives, rosemary, bay leaves, salt, black pepper",
+     "allergens": [
+      "MILK",
+      "WHEAT"
+     ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
-      "vegan"
+      "vegetarian"
      ],
      "order": 7
     },
@@ -4260,6 +4247,191 @@
       "vegetarian"
      ],
      "order": 13
+    }
+   ]
+  },
+  "gerhardcasper": {
+   "Breakfast": [
+    {
+     "name": "Steel Cut Oatmeal",
+     "recipe_id": "3849426",
+     "description": "",
+     "ingredients": "steel cut oats",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
+     "order": 0
+    },
+    {
+     "name": "Chef's Choice Overnight Oats",
+     "recipe_id": "OvernightOats1",
+     "description": "",
+     "ingredients": "",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [],
+     "order": 1
+    },
+    {
+     "name": "Scrambled Eggs",
+     "recipe_id": "3975106",
+     "description": "",
+     "ingredients": "eggs, canola/olive oil blend, salt",
+     "allergens": [
+      "EGG"
+     ],
+     "trace_allergens": [
+      "COCONUT",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "SOY",
+      "TREENUTS",
+      "WHEAT"
+     ],
+     "tags": [
+      "vegetarian"
+     ],
+     "order": 2
+    },
+    {
+     "name": "Hard Boiled Eggs",
+     "recipe_id": "2612705",
+     "description": "",
+     "ingredients": "eggs",
+     "allergens": [
+      "EGG"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegetarian"
+     ],
+     "order": 3
+    },
+    {
+     "name": "Chef's Choice Egg Special",
+     "recipe_id": "ChefsChoiceEgg",
+     "description": "",
+     "ingredients": "Please refer to dining hall chef or manager for ingredient and allergen information",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "vegetarian"
+     ],
+     "order": 4
+    },
+    {
+     "name": "Double Smoked Bacon",
+     "recipe_id": "5781155",
+     "description": "",
+     "ingredients": "bacon, salt, sugar, sodium phosphate, sodium erythorbate, sodium nitrite",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free"
+     ],
+     "order": 5
+    },
+    {
+     "name": "Hash Brown Patty",
+     "recipe_id": "6350846",
+     "description": "",
+     "ingredients": "potatoes, oil (canola oil, corn oil, cottonseed oil, palm oil, soybean oil, or sunflower oil), salt, onion powder, natural flavor, dextrose, disodium dihydrogen pyrophosphate",
+     "allergens": [
+      "SOY"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
+     "order": 6
+    },
+    {
+     "name": "Chef's Choice Vegan Breakfast",
+     "recipe_id": "ChefsChoiceVGNBkfst",
+     "description": "",
+     "ingredients": "Please refer to dining hall chef or manager for ingredient and allergen information",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "vegan"
+     ],
+     "order": 7
+    },
+    {
+     "name": "Chef's Choice Breakfast Special",
+     "recipe_id": "ChefsChoiceBkfstSpec",
+     "description": "",
+     "ingredients": "Please refer to dining hall chef or manager for ingredient and allergen information",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [],
+     "order": 8
+    },
+    {
+     "name": "Waffles",
+     "recipe_id": "3144806",
+     "description": "",
+     "ingredients": "enriched wheat flour, sugar, soybean oil, leavings, buckwheat flour, buttermilk, natural flavors, artificial flavors, wheat bran, rice flour, yellow corn flour, whole oat flour, whey, whole egg, salt, dextrose, wheat starch, natural flavors, artificial flavor, malted barley flour, lactic acid",
+     "allergens": [
+      "EGG",
+      "MILK",
+      "SOY",
+      "WHEAT"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "vegetarian"
+     ],
+     "order": 9
+    },
+    {
+     "name": "Gluten-Free Waffles",
+     "recipe_id": "3800193",
+     "description": "",
+     "ingredients": "white rice flour, degerminated corn flour, cane sugar, soy flour, baking powder, canola oil, salt, natural flavor, xanthan gum",
+     "allergens": [
+      "SOY"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
+     "order": 10
+    },
+    {
+     "name": "Seasonal Fruit",
+     "recipe_id": "3810874",
+     "description": "",
+     "ingredients": "seasonal fresh fruit",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
+     "order": 11
+    },
+    {
+     "name": "Assorted Allergy-Friendly Items",
+     "recipe_id": "3907378",
+     "description": "",
+     "ingredients": "sliced bread, alternative milk, vegan yogurt, chia seed puddings, overnight oats, seed bars, granola, and/or condiments) Free from the top food allergens. Please refer to packaging for ingredient information",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
+     "order": 12
     }
    ]
   }

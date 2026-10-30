@@ -1,6 +1,6 @@
 {
  "date": "2026-11-01",
- "scraped_at": "2026-10-29T13:20:47-07:00",
+ "scraped_at": "2026-10-30T03:08:36-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -2129,28 +2129,38 @@
    ],
    "Dinner": [
     {
-     "name": "Beef Bourguignon",
-     "recipe_id": "BeefBourg1",
+     "name": "Chicken Satay",
+     "recipe_id": "3510993",
      "description": "",
-     "ingredients": "beef, beef soup base, mushrooms, pearl onions, carrots, (non-halal) red wine, tomato paste, garlic, olive/canola oil blend, butter, flour, thyme, bay leaves, parsley, black pepper, salt",
+     "ingredients": "chicken, satay marinade (coconut milk, canola/olive oil blend, thai red curry paste, fish sauce, ginger, turmeric, garlic, cumin, shallot, tamari sauce)",
      "allergens": [
-      "MILK",
+      "COCONUT",
+      "FISH",
+      "SHELLFISH",
+      "SOY"
+     ],
+     "trace_allergens": [
+      "PEANUTS",
       "WHEAT"
      ],
-     "trace_allergens": [],
      "tags": [],
      "order": 0
     },
     {
-     "name": "Wild Mushroom Bourguignon",
-     "recipe_id": "MushVegBourg1",
+     "name": "Thai Mushroom Curry with Nori",
+     "recipe_id": "ThaiMushCurrNor1",
      "description": "",
-     "ingredients": "assorted mushrooms, vegetable soup base, pearl onions, carrots, potatoes, (non-halal) red wine, tomato paste, garlic, olive/canola oil blend, olive/canola oil blend, flour, thyme, bay leaves, parsley, black pepper, salt",
+     "ingredients": "trumpet mushrooms, oyster mushrooms, button mushrooms, coconut milk, vegetable soup base, onions, carrots, red bell peppers, bamboo shoots, baby corn, Thai yellow curry paste, garlic, ginger, tamari, brown sugar, lime juice, canola/olive oil blend, nori, Thai basil, cilantro, salt, black pepper",
      "allergens": [
-      "WHEAT"
+      "COCONUT",
+      "SOY"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "FISH",
+      "SHELLFISH"
+     ],
      "tags": [
+      "gluten-free",
       "vegan"
      ],
      "order": 1
@@ -2182,26 +2192,26 @@
      "order": 3
     },
     {
-     "name": "Haricots Verts with Shallots",
-     "recipe_id": "HariVertsShall1",
+     "name": "Pickled Cabbage Slaw",
+     "recipe_id": "5080396",
      "description": "",
-     "ingredients": "haricots verts, shallots, butter, olive/canola oil blend, garlic, parsley, thyme, lemon zest, lemon juice, salt, black pepper",
-     "allergens": [
-      "MILK"
-     ],
+     "ingredients": "cole slaw, cilantro, lime juice, salt",
+     "allergens": [],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
-      "vegetarian"
+      "vegan"
      ],
      "order": 4
     },
     {
-     "name": "Ratatouille Provençal",
-     "recipe_id": "RataProv1",
+     "name": "Thai Basil Eggplant",
+     "recipe_id": "121120010",
      "description": "",
-     "ingredients": "eggplant, zucchini, tomatoes, onions, red bell peppers, yellow squash, garlic, olive/canola oil blend, tomato paste, thyme, basil, parsley, rosemary, bay leaves, salt, black pepper",
-     "allergens": [],
+     "ingredients": "eggplant, bell peppers, oil, Thai basil sauce (onion, garlic, ginger, coconut liquid aminos, Thai basil, maple syrup/sugar, rice vinegar, mushroom seasoning, sambal, corn starch)",
+     "allergens": [
+      "COCONUT"
+     ],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
@@ -2210,11 +2220,13 @@
      "order": 5
     },
     {
-     "name": "Roasted Garlic Herb Potatoes",
-     "recipe_id": "HerbedPotatoes1",
+     "name": "Coconut Rice",
+     "recipe_id": "5218958",
      "description": "",
-     "ingredients": "potatoes, garlic, fresh herbs, olive/canola oil blend, salt, and pepper",
-     "allergens": [],
+     "ingredients": "jasmine rice, unsweetened coconut milk",
+     "allergens": [
+      "COCONUT"
+     ],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
@@ -2223,17 +2235,15 @@
      "order": 6
     },
     {
-     "name": "French Herb Rice Pilaf",
-     "recipe_id": "FrenHerbRicePil1",
+     "name": "Rice Noodle",
+     "recipe_id": "2939072",
      "description": "",
-     "ingredients": "rice, vegetable soup base, onions, butter, olive/canola oil blend, celery, garlic, parsley, thyme, chives, rosemary, bay leaves, salt, black pepper",
-     "allergens": [
-      "MILK",
-      "WHEAT"
-     ],
+     "ingredients": "rice flour",
+     "allergens": [],
      "trace_allergens": [],
      "tags": [
-      "vegetarian"
+      "gluten-free",
+      "vegan"
      ],
      "order": 7
     },
@@ -2383,17 +2393,20 @@
      "order": 17
     },
     {
-     "name": "Tri Color Cheese Tortellini",
-     "recipe_id": "6188353",
+     "name": "Pasta Marinara",
+     "recipe_id": "5095708",
      "description": "",
-     "ingredients": "enriched semolina flour, romano cheese (cow's milk, sheep's milk), ricotta cheese, wheat flour, parmesan cheese, pasteurized eggs, corn starch, salt, paprika oleoresin, asiago cheese, spinach powder, garlic powder, spices, onion powder, fontina cheese, xanthan gum, locust bean gum, guar gum, beta carotene",
+     "ingredients": "pasta, marinara sauce, canola/olive oil blend",
      "allergens": [
-      "EGG",
-      "MILK",
+      "SOY",
       "WHEAT"
      ],
-     "trace_allergens": [],
-     "tags": [],
+     "trace_allergens": [
+      "EGG"
+     ],
+     "tags": [
+      "vegan"
+     ],
      "order": 18
     },
     {
