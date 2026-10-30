@@ -4867,41 +4867,41 @@
  },
  "292eb6796433": {
   "avoid": [
-   "bacon strips",
+   "fish fillet",
+   "fish steak",
+   "salmon",
+   "swordfish",
+   "flaky fish",
+   "seafood",
+   "thin bacon strips",
    "lean pork chop",
-   "ribs",
-   "sausage",
+   "shredded pulled pork",
    "rice",
-   "vegetable sides",
-   "bun",
-   "fried egg"
+   "french fries"
   ],
   "checks": [
    {
-    "q": "Is the main item thick chunks or slabs of meat with visible fat layers?",
+    "q": "Is the main item thick slices or cuts of meat with visible alternating layers of meat and fat?",
     "yes": true
    },
    {
-    "q": "Is the meat thin crispy bacon strips?",
+    "q": "Does the meat look like a flaky fish fillet or seafood steak?",
     "yes": false
    },
    {
-    "q": "Is the meat shredded or pulled?",
-    "yes": false
-   },
-   {
-    "q": "Is the meat raw or pale and uncooked?",
+    "q": "Is the meat thin crispy bacon strips or shredded meat?",
     "yes": false
    }
   ],
-  "dish": "honey mustard glazed pork belly",
-  "look": "thick cubes of pork belly, layered stripes of fat and meat, seared golden-brown crisp edges, glossy honey mustard glaze, sticky amber sauce",
-  "model": "claude-sonnet",
+  "dish": "seared honey mustard pork belly",
+  "hand": true,
+  "look": "thick slices of seared pork belly, clearly visible horizontal striated layers of tender cooked pork meat and glistening rendered fat, caramelized crispy golden-brown edges, coated in a glossy amber honey mustard glaze, flecks of cracked black pepper, juicy roasted pork belly texture",
+  "model": "hand",
   "name": "Seared Honey Mustard Pork Belly",
   "rev": 6,
   "revisions": 0,
   "vessel": "plate",
-  "written_at": "2026-09-27T04:56:29+00:00"
+  "written_at": "2026-10-30T00:18:00+00:00"
  },
  "29c9e78d37fd": {
   "avoid": [
@@ -14884,22 +14884,24 @@
  },
  "72347f8b812e": {
   "avoid": [
+   "pale white chicken",
+   "white chicken slices",
+   "large chicken breast fillets",
+   "steamed chicken chunks",
    "rice",
    "fried egg",
    "noodles",
-   "chicken breast whole",
    "curry sauce",
-   "broccoli",
-   "peanuts",
+   "soup",
    "lettuce cups"
   ],
   "checks": [
    {
-    "q": "Is the main item stir-fried chicken pieces with green beans?",
+    "q": "Is the dish a stir-fry of minced meat and green beans in a dark sauce?",
     "yes": true
    },
    {
-    "q": "Is the dish a soup or a curry in a thick coconut sauce?",
+    "q": "Is the chicken pale white or in large uncut breast fillets?",
     "yes": false
    },
    {
@@ -14907,14 +14909,15 @@
     "yes": false
    }
   ],
-  "dish": "Thai basil chicken",
-  "look": "bite-sized pieces of stir-fried chicken, crisp green bean pieces, whole dark green Thai basil leaves, sliced red chilies, minced garlic, glossy brown sauce coating",
-  "model": "claude-sonnet",
+  "dish": "Thai basil chicken (Pad Krapow Gai)",
+  "hand": true,
+  "look": "coarsely minced stir-fried chicken, deeply browned with caramelized wok sear and rich dark savory sauce, tossed with cut green bean pieces, wilted dark green Thai basil leaves, sliced red chilies, minced garlic, glistening hot wok stir-fry, savory dark gloss",
+  "model": "hand",
   "name": "Thai Basil Chicken (Branner)",
   "rev": 6,
   "revisions": 0,
   "vessel": "plate",
-  "written_at": "2026-09-27T04:57:12+00:00"
+  "written_at": "2026-10-30T00:10:00+00:00"
  },
  "72e8fdd175fe": {
   "avoid": [
@@ -18720,37 +18723,42 @@
  },
  "8ef9910ec041": {
   "avoid": [
-   "whole roast chicken",
-   "breaded chicken",
-   "fried chicken",
+   "miniature whole chickens",
+   "whole chicken carcass",
+   "mutated birds",
+   "weird tiny birds",
+   "plastic skin",
+   "smooth yellow airbrush",
+   "breaded fried chicken",
+   "thick cheese sauce",
+   "soup",
+   "salad bed",
    "rice",
-   "potatoes",
-   "salad",
-   "pasta",
-   "sauce pool"
+   "pasta"
   ],
   "checks": [
    {
-    "q": "Is the main item cooked chicken pieces?",
+    "q": "Is the main item roasted chicken drumsticks or chicken legs with golden-brown herb-seasoned skin?",
     "yes": true
+   },
+   {
+    "q": "Do the pieces look like miniature whole bird carcasses instead of chicken drumsticks or leg cuts?",
+    "yes": false
    },
    {
     "q": "Is the chicken breaded and deep fried?",
     "yes": false
-   },
-   {
-    "q": "Is the chicken in a soup or heavy sauce?",
-    "yes": false
    }
   ],
-  "dish": "lemon herb chicken",
-  "look": "roasted chicken pieces with golden-brown skin, paprika-tinted orange-red surface, flecks of chopped parsley and oregano, juicy meat, thin lemon slices on the side",
-  "model": "claude-sonnet",
+  "dish": "roasted lemon herb chicken drumsticks",
+  "hand": true,
+  "look": "two crispy golden-brown roasted chicken drumsticks and a roasted bone-in chicken thigh, clearly defined chicken drumsticks with roasted skin, caramelized herb flecks of chopped oregano and parsley, cracked black pepper, glistening savory pan drippings, served with charred lemon wheels, realistic succulent roasted chicken legs",
+  "model": "hand",
   "name": "Lemon Herbed Chicken",
   "rev": 6,
   "revisions": 0,
   "vessel": "plate",
-  "written_at": "2026-09-27T04:46:15+00:00"
+  "written_at": "2026-10-30T12:56:00+00:00"
  },
  "8f132cc2192e": {
   "avoid": [
@@ -20364,37 +20372,41 @@
  },
  "9bed9f3e67d7": {
   "avoid": [
-   "chicken",
+   "Brussels sprouts",
+   "cabbage",
+   "green beans",
+   "whole green peppers",
+   "raw okra pods",
+   "meat",
    "sausage",
    "shrimp",
-   "meat",
+   "chicken",
    "pork",
-   "beef",
-   "fish",
-   "raw okra pods"
+   "beef"
   ],
   "checks": [
    {
-    "q": "Is the base a reddish seasoned rice dish?",
+    "q": "Is the dish seasoned reddish rice accompanied by crispy golden fried okra?",
     "yes": true
    },
    {
-    "q": "Are there pieces of meat, sausage, or shrimp mixed into the rice?",
+    "q": "Do the vegetables look like round whole Brussels sprouts instead of fried okra?",
     "yes": false
    },
    {
-    "q": "Is the okra raw and unbreaded rather than crispy and fried?",
+    "q": "Does the dish contain meat, sausage, or shrimp?",
     "yes": false
    }
   ],
-  "dish": "vegetable jambalaya with fried okra",
-  "look": "reddish-orange rice studded with diced tomatoes, bell peppers, onions, and celery, mounded next to crispy golden breaded fried okra pieces",
-  "model": "claude-sonnet",
+  "dish": "crispy fried okra and jambalaya",
+  "hand": true,
+  "look": "a generous mound of crispy golden-brown cornmeal-battered fried okra slices, crunchy fried okra rounds with star-shaped cross-sections, served over flavorful reddish-brown Cajun jambalaya rice, golden fried texture",
+  "model": "hand",
   "name": "Jambalaya with Fried Okra",
   "rev": 6,
   "revisions": 0,
   "vessel": "bowl",
-  "written_at": "2026-09-27T06:53:41+00:00"
+  "written_at": "2026-10-30T00:26:00+00:00"
  },
  "9c2074f141e8": {
   "avoid": [
@@ -30542,39 +30554,47 @@
  },
  "e1b4760c09f9": {
   "avoid": [
+   "pile of green scallions",
+   "mountain of chopped greens",
+   "black sludge",
+   "black sauce pool",
    "meat",
    "chicken",
    "beef",
    "pork",
    "fish",
    "shrimp",
-   "raw unglazed tofu",
-   "steamed vegetables",
+   "plain white unglazed tofu",
    "rice bowl",
    "noodles"
   ],
   "checks": [
    {
-    "q": "Is the main item cubed tofu pieces?",
+    "q": "Does the dish show both cubed tofu pieces and dark mushroom pieces tossed together?",
     "yes": true
    },
    {
-    "q": "Is the tofu a plain unglazed white block?",
+    "q": "Are the mushrooms completely missing from the plate?",
     "yes": false
    },
    {
-    "q": "Is the main item meat instead of tofu?",
+    "q": "Is the dish buried under a heavy pile of chopped green scallions?",
+    "yes": false
+   },
+   {
+    "q": "Is the main item meat or poultry instead of tofu?",
     "yes": false
    }
   ],
-  "dish": "Crispy gochujang tofu with shiitake mushrooms",
-  "look": "cubed golden-fried tofu pieces glazed in glossy dark red-orange gochujang sauce, mixed with browned shiitake mushroom slices, sprinkle of toasted sesame seeds, glistening sticky glaze",
-  "model": "claude-sonnet",
+  "dish": "crispy gochujang tofu with shiitake mushrooms",
+  "hand": true,
+  "look": "cubed crispy golden firm tofu pieces and distinct dark brown sliced shiitake mushroom caps, evenly tossed together in a glossy reddish-orange spicy gochujang chili glaze, garnished with a light sprinkle of toasted white sesame seeds, both tofu cubes and whole shiitake mushroom pieces clearly visible",
+  "model": "hand",
   "name": "Crispy Gochujang Tofu & Shiitake Mushrooms",
   "rev": 6,
   "revisions": 0,
   "vessel": "plate",
-  "written_at": "2026-09-27T06:34:15+00:00"
+  "written_at": "2026-10-30T00:18:00+00:00"
  },
  "e1d8a103351a": {
   "avoid": [
