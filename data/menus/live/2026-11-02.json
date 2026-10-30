@@ -1,6 +1,6 @@
 {
  "date": "2026-11-02",
- "scraped_at": "2026-10-30T03:08:36-07:00",
+ "scraped_at": "2026-10-30T12:56:36-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -4847,19 +4847,6 @@
      "order": 1
     },
     {
-     "name": "Slow-Braised Collard Greens",
-     "recipe_id": "5686325",
-     "description": "",
-     "ingredients": "collard greens, vegetable soup base (contains carrots, mushrooms, celery), mustard seeds, onions, apple cider vinegar, canola/olive oil blend",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan"
-     ],
-     "order": 2
-    },
-    {
      "name": "Seasonal Vegetable Board",
      "recipe_id": "4503514",
      "description": "",
@@ -4870,7 +4857,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 3
+     "order": 2
     },
     {
      "name": "Creole Succotash",
@@ -4883,7 +4870,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 4
+     "order": 3
     },
     {
      "name": "Cheesy Grits",
@@ -4898,7 +4885,7 @@
       "gluten-free",
       "vegetarian"
      ],
-     "order": 5
+     "order": 4
     },
     {
      "name": "Honey Butter Cornbread",
@@ -4920,7 +4907,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 6
+     "order": 5
     },
     {
      "name": "Burger Bar",
@@ -4930,7 +4917,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 7
+     "order": 6
     },
     {
      "name": "Grilled Chicken",
@@ -4951,7 +4938,7 @@
       "WHEAT"
      ],
      "tags": [],
-     "order": 8
+     "order": 7
     },
     {
      "name": "Grilled Tofu Patty",
@@ -4975,7 +4962,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 9
+     "order": 8
     },
     {
      "name": "Panini Station",
@@ -4993,7 +4980,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 10
+     "order": 9
     },
     {
      "name": "Miso Soup",
@@ -5008,7 +4995,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 11
+     "order": 10
     },
     {
      "name": "Garden Fresh Salad",
@@ -5032,7 +5019,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 12
+     "order": 11
     },
     {
      "name": "Performance Bar",
@@ -5042,7 +5029,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 13
+     "order": 12
     },
     {
      "name": "Pesto Sauce",
@@ -5058,7 +5045,7 @@
       "gluten-free",
       "vegetarian"
      ],
-     "order": 14
+     "order": 13
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -5071,7 +5058,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 15
+     "order": 14
     }
    ],
    "Dinner": [
@@ -5089,24 +5076,16 @@
      "order": 0
     },
     {
-     "name": "Crispy Falafel",
-     "recipe_id": "5071871",
+     "name": "Veggie Gyro Plate",
+     "recipe_id": "COV3719382",
      "description": "",
-     "ingredients": "garbanzo beans, parsley, white flour, wheat flour, spices, sesame, onions, fried in canola oil",
+     "ingredients": "Veggie Gyros (gardein chick'n, bell pepper, onions, tomatoes, garlic, oregano, lemon juice, garlic, canola/olive oil blend, salt, pepper), Sauteed Greens (seasonal leafy greens, canola/olive oil blend, garlic, lemon juice, salt, pepper), Greek Style Pita (whole wheat flour, enriched wheat flour, soybean, canola oil, sugar, salt, baking powder, yeast, blackstrap molasses, calcium propionate, sodium stearoyl lactylate, guar gum, amylase)",
      "allergens": [
-      "SESAME",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SHELLFISH",
       "SOY",
-      "TREENUTS"
+      "WHEAT",
+      "TRACEALLERGENS"
      ],
+     "trace_allergens": [],
      "tags": [
       "vegan"
      ],
@@ -5211,6 +5190,24 @@
      "order": 8
     },
     {
+     "name": "Panini Station",
+     "recipe_id": "4532805",
+     "description": "",
+     "ingredients": "(assorted) breads, cheeses, deli meats, lettuce, tomatoes, and onions",
+     "allergens": [
+      "EGG",
+      "SOY",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "COCONUT",
+      "MILK",
+      "TREENUTS"
+     ],
+     "tags": [],
+     "order": 9
+    },
+    {
      "name": "Grilled Tofu Patty",
      "recipe_id": "GrilledTofu1",
      "description": "",
@@ -5232,7 +5229,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 9
+     "order": 10
     },
     {
      "name": "Miso Soup",
@@ -5247,24 +5244,31 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 10
+     "order": 11
     },
     {
-     "name": "Southwestern Ranch Salad",
-     "recipe_id": "4041962",
+     "name": "Garden Fresh Salad",
+     "recipe_id": "5482634",
      "description": "",
-     "ingredients": "romaine lettuce, black beans, corn, black olives, cherry tomatoes, bell peppers, corn tortilla chips, cheese, cilantro, ranch dressing (soybean oil, vinegar, buttermilk, sugar, egg yolks, salt, food starch, whey, xanthan gum, garlic, onions, spice)",
+     "ingredients": "romaine lettuce, green onions, tomatoes, carrots, ranch dressing (soybean oil, vinegar, buttermilk, sugar, egg yolks, salt, food starch, whey, xanthan gum, garlic, onions, spice)",
      "allergens": [
       "EGG",
       "MILK",
       "SOY"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "COCONUT",
+      "FISH",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "TREENUTS",
+      "WHEAT"
+     ],
      "tags": [
-      "gluten-free",
       "vegetarian"
      ],
-     "order": 11
+     "order": 12
     },
     {
      "name": "Performance Bar",
@@ -5274,7 +5278,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 12
+     "order": 13
     },
     {
      "name": "Pasta Marinara",
@@ -5291,7 +5295,7 @@
      "tags": [
       "vegan"
      ],
-     "order": 13
+     "order": 14
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -5304,7 +5308,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 14
+     "order": 15
     }
    ]
   },

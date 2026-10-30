@@ -1,6 +1,6 @@
 {
  "date": "2026-11-03",
- "scraped_at": "2026-10-30T03:08:36-07:00",
+ "scraped_at": "2026-10-30T12:56:36-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -4923,22 +4923,6 @@
      "order": 1
     },
     {
-     "name": "Sesame-Roasted Bok Choy",
-     "recipe_id": "SesameBokChoy1",
-     "description": "",
-     "ingredients": "bok choy, garlic, toasted sesame seeds, tamari, toasted sesame oil, ginger, olive/canola oil blend, salt, black pepper",
-     "allergens": [
-      "SESAME",
-      "SOY"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan"
-     ],
-     "order": 2
-    },
-    {
      "name": "Seasonal Vegetable Board",
      "recipe_id": "4503514",
      "description": "",
@@ -4949,7 +4933,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 3
+     "order": 2
     },
     {
      "name": "Pickled Daikon & Carrot",
@@ -4962,20 +4946,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 4
-    },
-    {
-     "name": "Steamed Jasmine Rice",
-     "recipe_id": "5134594",
-     "description": "",
-     "ingredients": "jasmine rice, water, salt",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan"
-     ],
-     "order": 5
+     "order": 3
     },
     {
      "name": "Seasoned Rice Noodles with Veggies",
@@ -4988,7 +4959,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 6
+     "order": 4
     },
     {
      "name": "Turkey Burger",
@@ -5002,7 +4973,7 @@
      "tags": [
       "gluten-free"
      ],
-     "order": 7
+     "order": 5
     },
     {
      "name": "Grilled Chicken",
@@ -5023,28 +4994,24 @@
       "WHEAT"
      ],
      "tags": [],
-     "order": 8
+     "order": 6
     },
     {
-     "name": "Grilled Vegan/Vegetarian",
-     "recipe_id": "13468741",
+     "name": "Black Bean Burger",
+     "recipe_id": "5677116",
      "description": "",
-     "ingredients": "chef's choice grilled vegan OR vegetarian option",
-     "allergens": [],
-     "trace_allergens": [
-      "COCONUT",
+     "ingredients": "black beans, brown rice, onions, corn oil, canola oil, corn, soy flour, tomatoes, onion powder, wheat gluten, eggs, bulgur wheat, green chiles, calcium caseinate milk, cornstarch, spices, tomato powder, tomato juice, salt, garlic powder, natural flavor, soy sauce powder, jalapeno peppers, onion concentrate, gum arabic, carrot concentrate, citric acid, xanthan gum",
+     "allergens": [
       "EGG",
-      "FISH",
       "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
       "SOY",
-      "TREENUTS",
       "WHEAT"
      ],
-     "tags": [],
-     "order": 9
+     "trace_allergens": [],
+     "tags": [
+      "vegetarian"
+     ],
+     "order": 7
     },
     {
      "name": "Balsamic Glazed Cheese Pizza",
@@ -5059,7 +5026,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 10
+     "order": 8
     },
     {
      "name": "Panini Station",
@@ -5077,7 +5044,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 11
+     "order": 9
     },
     {
      "name": "Chicken Noodle Soup",
@@ -5092,7 +5059,7 @@
      ],
      "trace_allergens": [],
      "tags": [],
-     "order": 12
+     "order": 10
     },
     {
      "name": "Caesar Salad",
@@ -5110,7 +5077,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 13
+     "order": 11
     },
     {
      "name": "Performance Bar",
@@ -5120,7 +5087,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 14
+     "order": 12
     },
     {
      "name": "Pasta Pesto",
@@ -5138,7 +5105,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 15
+     "order": 13
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -5151,7 +5118,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 16
+     "order": 14
     }
    ],
    "Dinner": [
@@ -5275,6 +5242,27 @@
      "order": 7
     },
     {
+     "name": "Fried Rice Bar",
+     "recipe_id": "friedrice",
+     "description": "",
+     "ingredients": "build your own fried rice bar",
+     "allergens": [],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "SOY",
+      "TREENUTS",
+      "WHEAT"
+     ],
+     "tags": [],
+     "order": 8
+    },
+    {
      "name": "Black Bean Burger with Bun",
      "recipe_id": "6325750-1",
      "description": "",
@@ -5292,7 +5280,7 @@
      "tags": [
       "vegan"
      ],
-     "order": 8
+     "order": 9
     },
     {
      "name": "Chicken Noodle Soup",
@@ -5307,7 +5295,7 @@
      ],
      "trace_allergens": [],
      "tags": [],
-     "order": 9
+     "order": 10
     },
     {
      "name": "Caesar Salad",
@@ -5325,7 +5313,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 10
+     "order": 11
     },
     {
      "name": "Performance Bar",
@@ -5335,7 +5323,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 11
+     "order": 12
     },
     {
      "name": "Pasta Marinara",
@@ -5352,7 +5340,7 @@
      "tags": [
       "vegan"
      ],
-     "order": 12
+     "order": 13
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -5365,7 +5353,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 13
+     "order": 14
     }
    ]
   },

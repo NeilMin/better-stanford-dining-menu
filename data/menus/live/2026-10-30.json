@@ -1,6 +1,6 @@
 {
  "date": "2026-10-30",
- "scraped_at": "2026-10-30T03:08:36-07:00",
+ "scraped_at": "2026-10-30T12:56:36-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -1132,11 +1132,12 @@
    ],
    "Lunch": [
     {
-     "name": "Korean Fried Chicken",
-     "recipe_id": "336263",
+     "name": "Orange Sesame Chicken",
+     "recipe_id": "5507629",
      "description": "",
-     "ingredients": "halal chicken, rice vinegar, tamari, honey, ginger, korean chili paste, garlic, canola oil, salt, bi bim bap sauce (tamari, orange juice, korean chili paste, beet sugar, sesame oil, garlic, ginger, alcohol-free mirin seasoning, korean red pepper), sesame seeds",
+     "ingredients": "chicken, sesame oil, tamari sauce, orange juice, brown sugar, garlic, orange sesame sauce (orange juice, ketchup, cornstarch, white wine vinegar, vegetarian oyster sauce, salt, sugar, red pepper flakes, sesame seeds), seasonal vegetables",
      "allergens": [
+      "SESAME",
       "SOY",
       "WHEAT"
      ],
@@ -1145,6 +1146,7 @@
       "EGG",
       "FISH",
       "MILK",
+      "PEANUTS",
       "SHELLFISH",
       "TREENUTS"
      ],
@@ -1152,17 +1154,15 @@
      "order": 0
     },
     {
-     "name": "Crispy Gochujang Tofu & Shiitake Mushrooms",
-     "recipe_id": "GochTofuMush1",
+     "name": "Teriyaki Glazed Chick'n Strips",
+     "recipe_id": "4863539",
      "description": "",
-     "ingredients": "tofu, shiitake mushrooms, cornstarch, gochujang, tamari, garlic, ginger, rice vinegar, sugar, sesame oil, toasted sesame seeds, olive/canola oil blend, salt, black pepper",
+     "ingredients": "plant-based chick'n, bell peppers, onions, canola oil, garlic, salt, black pepper, teriyaki glaze (beet sugar, no soy sauce, cornstarch, canola oil)",
      "allergens": [
-      "SESAME",
-      "SOY"
-     ],
-     "trace_allergens": [
+      "SOY",
       "WHEAT"
      ],
+     "trace_allergens": [],
      "tags": [
       "vegan"
      ],
@@ -1208,32 +1208,21 @@
      "order": 4
     },
     {
-     "name": "Pancit Noodles",
-     "recipe_id": "5593430",
+     "name": "Seasoned Rice Noodles with Veggies",
+     "recipe_id": "4088911",
      "description": "",
-     "ingredients": "rice noodles, bok choy, carrots, bell peppers, green onions, onions, canola/olive oil blend, tamari sauce, garlic",
-     "allergens": [
-      "SOY"
-     ],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "TREENUTS",
-      "WHEAT"
-     ],
+     "ingredients": "vermicelli rice noodle, mushroom seasoning, ginger, onions, bell peppers, mushrooms, carrot, green onion, salt, cabbage, pea shoots, snap peas, black pepper, canola/olive oil blend, brown sugar, garlic, chili paste",
+     "allergens": [],
+     "trace_allergens": [],
      "tags": [
+      "gluten-free",
       "vegan"
      ],
      "order": 5
     },
     {
-     "name": "Baked Potato Bar",
-     "recipe_id": "6827028",
+     "name": "Nacho Bar",
+     "recipe_id": "3506903",
      "description": "",
      "ingredients": "",
      "allergens": [],
@@ -1263,43 +1252,20 @@
      "order": 7
     },
     {
-     "name": "Grilled Vegan/Vegetarian",
-     "recipe_id": "13468741",
+     "name": "Baked Pasta Marinara",
+     "recipe_id": "4662005",
      "description": "",
-     "ingredients": "chef's choice grilled vegan OR vegetarian option",
-     "allergens": [],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
-     ],
-     "tags": [],
-     "order": 8
-    },
-    {
-     "name": "Classic Lasagna",
-     "recipe_id": "5549113",
-     "description": "",
-     "ingredients": "lasagna noodles, marinara sauce, parmesan cheese, spinach ricotta filling (mushrooms, spinach, onion, ricotta cheese, butter, cream, dry milk powder, water, flour, salt, basil, oregano, white pepper, onion powder, nutmeg)",
+     "ingredients": "pasta, vegetable soup base, garlic, tomato, basil, zucchini, mushroom, salt, canola/olive oil blend",
      "allergens": [
-      "MILK",
-      "SOY",
       "WHEAT"
      ],
      "trace_allergens": [
       "EGG"
      ],
      "tags": [
-      "vegetarian"
+      "vegan"
      ],
-     "order": 9
+     "order": 8
     },
     {
      "name": "Panini Station",
@@ -1317,7 +1283,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 10
+     "order": 9
     },
     {
      "name": "Soup of the Day",
@@ -1327,7 +1293,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 11
+     "order": 10
     },
     {
      "name": "Composed Salad",
@@ -1337,7 +1303,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 12
+     "order": 11
     },
     {
      "name": "Performance Bar",
@@ -1347,7 +1313,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 13
+     "order": 12
     },
     {
      "name": "Craveable Grains",
@@ -1360,7 +1326,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 14
+     "order": 13
     },
     {
      "name": "Flavor Forward Legumes",
@@ -1373,41 +1339,38 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 15
+     "order": 14
     },
     {
-     "name": "Pasta Alfredo",
-     "recipe_id": "5683556",
+     "name": "Creamy Pesto",
+     "recipe_id": "7728050",
      "description": "",
-     "ingredients": "pasta, white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, parmesan cheese",
+     "ingredients": "pesto sauce (basil, canola oil, parmesan cheese, olive oil, garlic, salt, lemon juice concentrate, natural flavor, xanthan gum, soy lecithin, chamomile extract, rosemary extract, white sauce (flour, butter, cream, milk powder, onion powder, white pepper, garlic, nutmeg, salt), parmesan cheese, parsley",
      "allergens": [
       "MILK",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "EGG"
-     ],
-     "tags": [
-      "vegetarian"
-     ],
-     "order": 16
-    },
-    {
-     "name": "Pasta Marinara",
-     "recipe_id": "5095708",
-     "description": "",
-     "ingredients": "pasta, marinara sauce, canola/olive oil blend",
-     "allergens": [
       "SOY",
       "WHEAT"
      ],
-     "trace_allergens": [
-      "EGG"
-     ],
+     "trace_allergens": [],
      "tags": [
+      "vegetarian"
+     ],
+     "order": 15
+    },
+    {
+     "name": "Marinara Sauce",
+     "recipe_id": "3612835",
+     "description": "",
+     "ingredients": "italian tomatoes, diced tomatoes, fresh onions, extra virgin olive oil, garlic, sea salt, oregano, black pepper",
+     "allergens": [
+      "SOY"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
       "vegan"
      ],
-     "order": 17
+     "order": 16
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -1420,7 +1383,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 18
+     "order": 17
     }
    ],
    "Dinner": [

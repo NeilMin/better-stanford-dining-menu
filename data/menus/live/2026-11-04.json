@@ -1,6 +1,6 @@
 {
  "date": "2026-11-04",
- "scraped_at": "2026-10-30T03:08:36-07:00",
+ "scraped_at": "2026-10-30T12:56:36-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -4851,19 +4851,6 @@
      "order": 1
     },
     {
-     "name": "Balsamic Roasted Peppers & Onions",
-     "recipe_id": "BalsamPeppOnion1",
-     "description": "",
-     "ingredients": "bell peppers, onions, balsamic vinegar, garlic, dried oregano, olive/canola oil blend, salt, black pepper",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan"
-     ],
-     "order": 2
-    },
-    {
      "name": "Seasonal Vegetable Board",
      "recipe_id": "4503514",
      "description": "",
@@ -4874,22 +4861,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 3
-    },
-    {
-     "name": "Roasted Zucchini & Cherry Tomatoes",
-     "recipe_id": "RoastZuccCherTom1",
-     "description": "",
-     "ingredients": "zucchini, cherry tomatoes, garlic, parmesan cheese, dried oregano, dried basil, olive/canola oil blend, salt, black pepper",
-     "allergens": [
-      "MILK"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegetarian"
-     ],
-     "order": 4
+     "order": 2
     },
     {
      "name": "Fettuccini Alfredo",
@@ -4906,7 +4878,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 5
+     "order": 3
     },
     {
      "name": "Garlic & Herb Roasted Potatoes",
@@ -4919,7 +4891,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 6
+     "order": 4
     },
     {
      "name": "All Beef Hot Dog",
@@ -4940,7 +4912,7 @@
       "WHEAT"
      ],
      "tags": [],
-     "order": 7
+     "order": 5
     },
     {
      "name": "Grilled Chicken",
@@ -4961,28 +4933,25 @@
       "WHEAT"
      ],
      "tags": [],
-     "order": 8
+     "order": 6
     },
     {
-     "name": "Grilled Vegan/Vegetarian",
-     "recipe_id": "13468741",
+     "name": "Impossible Burger",
+     "recipe_id": "4764885",
      "description": "",
-     "ingredients": "chef's choice grilled vegan OR vegetarian option",
-     "allergens": [],
-     "trace_allergens": [
+     "ingredients": "textured wheat protein, coconut oil, potato protein, natural flavors, soy, yeast extract, salt, konjac gum, xanthan gum, soy protein isolate",
+     "allergens": [
       "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
       "SOY",
-      "TREENUTS",
       "WHEAT"
      ],
-     "tags": [],
-     "order": 9
+     "trace_allergens": [
+      "SESAME"
+     ],
+     "tags": [
+      "vegan"
+     ],
+     "order": 7
     },
     {
      "name": "Pesto Chicken Pizza",
@@ -4999,7 +4968,7 @@
       "SESAME"
      ],
      "tags": [],
-     "order": 10
+     "order": 8
     },
     {
      "name": "Panini Station",
@@ -5017,7 +4986,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 11
+     "order": 9
     },
     {
      "name": "Lemon Lentil Soup",
@@ -5031,7 +5000,7 @@
      "tags": [
       "vegan"
      ],
-     "order": 12
+     "order": 10
     },
     {
      "name": "Crunchy Miso Sesame Ginger Salad",
@@ -5047,7 +5016,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 13
+     "order": 11
     },
     {
      "name": "Performance Bar",
@@ -5057,7 +5026,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 14
+     "order": 12
     },
     {
      "name": "Pasta Marinara",
@@ -5074,7 +5043,7 @@
      "tags": [
       "vegan"
      ],
-     "order": 15
+     "order": 13
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -5087,44 +5056,47 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 16
+     "order": 14
     }
    ],
    "Dinner": [
     {
-     "name": "Kalua Pork",
-     "recipe_id": "5491281",
+     "name": "Orange Sesame Chicken",
+     "recipe_id": "5507629",
      "description": "",
-     "ingredients": "pork, garlic, tamari sauce, liquid smoke flavoring, banana leaf, salt, pepper",
+     "ingredients": "chicken, sesame oil, tamari sauce, orange juice, brown sugar, garlic, orange sesame sauce (orange juice, ketchup, cornstarch, white wine vinegar, vegetarian oyster sauce, salt, sugar, red pepper flakes, sesame seeds), seasonal vegetables",
      "allergens": [
-      "SOY"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free"
-     ],
-     "order": 0
-    },
-    {
-     "name": "Huli Huli Chick’n",
-     "recipe_id": "3640872",
-     "description": "",
-     "ingredients": "plant-forward chick’n, pineapple, onion, garlic, canola/olive oil blend, salt, pepper, green onions, bell peppers, huli huli sauce (alcohol free tamari, pineapple juice, ketchup, sriracha sauce, brown sugar, rice vinegar, garlic, ginger, cornstarch)",
-     "allergens": [
+      "SESAME",
       "SOY",
       "WHEAT"
      ],
-     "trace_allergens": [],
-     "tags": [
-      "vegan"
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SHELLFISH",
+      "TREENUTS"
      ],
+     "tags": [],
+     "order": 0
+    },
+    {
+     "name": "Beef Taco Station",
+     "recipe_id": "BeefTaco17",
+     "description": "",
+     "ingredients": "beef, cheddar, lettuce, tomato, onion, cilantro, jalapenos, beans, crema, olives, taco shells, lime wedges",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [],
      "order": 1
     },
     {
-     "name": "Seasonal Vegetable Board",
-     "recipe_id": "4503514",
+     "name": "Slow-Braised Collard Greens",
+     "recipe_id": "5686325",
      "description": "",
-     "ingredients": "seasonal roasted vegetables with olive/canola oil blend, salt, pepper",
+     "ingredients": "collard greens, vegetable soup base (contains carrots, mushrooms, celery), mustard seeds, onions, apple cider vinegar, canola/olive oil blend",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -5134,65 +5106,76 @@
      "order": 2
     },
     {
-     "name": "Vegetable Stir-Fry",
-     "recipe_id": "5601963",
+     "name": "Fava Bean Succotash",
+     "recipe_id": "3663869",
      "description": "",
-     "ingredients": "cabbage, carrots, garlic, vegetarian oyster sauce, canola/olive oil blend, salt",
-     "allergens": [
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "TREENUTS"
-     ],
-     "tags": [
-      "vegan"
-     ],
-     "order": 3
-    },
-    {
-     "name": "Steamed Japanese Rice",
-     "recipe_id": "SteaJapanRice1",
-     "description": "",
-     "ingredients": "Japanese short-grain rice, water",
+     "ingredients": "fava beans, corn, bell peppers, cilantro, garlic, onions, basil, tabasco, lime, canola/olive oil blend",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
       "vegan"
      ],
+     "order": 3
+    },
+    {
+     "name": "Garlic Bread",
+     "recipe_id": "5398769",
+     "description": "",
+     "ingredients": "french baguette, unsalted butter, garlic, parsley",
+     "allergens": [
+      "MILK",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "EGG",
+      "SOY",
+      "TREENUTS"
+     ],
+     "tags": [
+      "vegetarian"
+     ],
      "order": 4
     },
     {
-     "name": "Hawaiian Macaroni Salad",
-     "recipe_id": "HawMacSalad1",
+     "name": "Cheese Pizza",
+     "recipe_id": "5646522",
      "description": "",
-     "ingredients": "elbow macaroni, mayonnaise, tuna, carrots, whole milk, sweet onion, apple cider vinegar, sugar, salt, black pepper",
+     "ingredients": "pizza dough, tomato sauce, mozzarella cheese, parmesan cheese",
      "allergens": [
+      "MILK",
+      "SOY",
+      "WHEAT"
+     ],
+     "trace_allergens": [
       "EGG",
-      "FISH",
+      "SESAME"
+     ],
+     "tags": [
+      "vegetarian"
+     ],
+     "order": 5
+    },
+    {
+     "name": "Tony's Pepperoni Pizza",
+     "recipe_id": "##",
+     "description": "",
+     "ingredients": "enriched flour (wheat flour, malted barley flour), mozzarella cheese, pepperoni (pork, chicken, beef, salt, spices, dextrose, lactic acid, sodium ascorbate, smoke flavoring, sodium nitrite, BHA, BHT, citric acid, garlic powder, paprika), tomato paste, palm oil, yeast, soybean oi, canola oil, sugar, modified food starch, spice, maltodextrin, hydrolyzed soy protein, hydrolyzed corn protein, carrot fiber, diced garlic, wheat starch, l-cysteine hydrochloride, ammonium sulfate, soy lecithin, natural flavor",
+     "allergens": [
       "MILK",
       "SOY",
       "WHEAT"
      ],
      "trace_allergens": [],
      "tags": [],
-     "order": 5
+     "order": 6
     },
     {
-     "name": "Vegetable Spring Rolls",
-     "recipe_id": "8981533",
+     "name": "Hot Dog",
+     "recipe_id": "AB00621194-01-002",
      "description": "",
-     "ingredients": "cabbage, wheat flour, bean sprout, carrot, water chestnut, sugar, mung bean vermicelli, modified corn starch, salt, soy sauce (water, soybean, salt, wheat flour), yeast extract, sesame oil, white pepper powder",
+     "ingredients": "beef, water, salt, mustard, dextrose, paprika, garlic powder, autolyzed yeast extract, phosphate, extractives of paprika spices, sodium erythorbate, natural flavors, sodium nitrite",
      "allergens": [
-      "SESAME",
       "SOY",
       "WHEAT"
      ],
@@ -5202,13 +5185,24 @@
       "FISH",
       "MILK",
       "PEANUTS",
+      "SESAME",
       "SHELLFISH",
       "TREENUTS"
      ],
+     "tags": [],
+     "order": 7
+    },
+    {
+     "name": "BBQ Beef Brisket",
+     "recipe_id": "4276510",
+     "description": "",
+     "ingredients": "shredded beef brisket (beef, salt, pepper, canola oil, neighborhood bbq sauce (no soy sauce, molasses, ketchup, dijon mustard, apple cider vinegar, lemon juice, liquid smoke, chili powder, garlic powder, chipotle pepper, ginger, salt, pepper), liquid smoke",
+     "allergens": [],
+     "trace_allergens": [],
      "tags": [
-      "vegan"
+      "gluten-free"
      ],
-     "order": 6
+     "order": 8
     },
     {
      "name": "Grilled Chicken",
@@ -5222,7 +5216,17 @@
      "tags": [
       "gluten-free"
      ],
-     "order": 7
+     "order": 9
+    },
+    {
+     "name": "Nacho Bar",
+     "recipe_id": "3506903",
+     "description": "",
+     "ingredients": "",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [],
+     "order": 10
     },
     {
      "name": "Plant-Forward Tenders",
@@ -5246,7 +5250,7 @@
      "tags": [
       "vegan"
      ],
-     "order": 8
+     "order": 11
     },
     {
      "name": "Lemon Lentil Soup",
@@ -5260,22 +5264,7 @@
      "tags": [
       "vegan"
      ],
-     "order": 9
-    },
-    {
-     "name": "Barley, Arugula & Goat Cheese Salad",
-     "recipe_id": "5519534",
-     "description": "",
-     "ingredients": "arugula, barley, strawberries, goat cheese, pumpkin seeds, chia ctrus vinaigrette (canola oil, chia seeds, honey, orange juice, lemon juice, lime juice, shallots, garlic, dijon mustard, salt, pepper), salt, pepper",
-     "allergens": [
-      "MILK",
-      "WHEAT"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "vegetarian"
-     ],
-     "order": 10
+     "order": 12
     },
     {
      "name": "Performance Bar",
@@ -5285,7 +5274,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 11
+     "order": 13
     },
     {
      "name": "Pasta Marinara",
@@ -5302,7 +5291,7 @@
      "tags": [
       "vegan"
      ],
-     "order": 12
+     "order": 14
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -5315,7 +5304,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 13
+     "order": 15
     }
    ]
   },

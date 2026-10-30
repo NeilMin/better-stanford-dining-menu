@@ -1,6 +1,6 @@
 {
  "date": "2026-11-05",
- "scraped_at": "2026-10-30T03:08:36-07:00",
+ "scraped_at": "2026-10-30T12:56:36-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -4781,21 +4781,6 @@
      "order": 1
     },
     {
-     "name": "Simmered Kabocha Squash",
-     "recipe_id": "SimmKoboSqua1",
-     "description": "",
-     "ingredients": "kabocha squash, water, tamari, (non-halal) mirin, sugar, kombu, mushroom seasoning, ginger, olive/canola oil blend, salt",
-     "allergens": [
-      "SOY"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan"
-     ],
-     "order": 2
-    },
-    {
      "name": "Seasonal Vegetable Board",
      "recipe_id": "4503514",
      "description": "",
@@ -4806,36 +4791,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 3
-    },
-    {
-     "name": "Goma-ae Spinach with Sesame",
-     "recipe_id": "GomaSpinSes1",
-     "description": "",
-     "ingredients": "spinach, sesame seeds, tamari, sugar, (non-halal) mirin, rice vinegar, sesame oil, ginger, salt",
-     "allergens": [
-      "SESAME",
-      "SOY"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan"
-     ],
-     "order": 4
-    },
-    {
-     "name": "Steamed Japanese Rice",
-     "recipe_id": "SteaJapanRice1",
-     "description": "",
-     "ingredients": "Japanese short-grain rice, water",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan"
-     ],
-     "order": 5
+     "order": 2
     },
     {
      "name": "Vegetable Yakisoba",
@@ -4859,7 +4815,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 6
+     "order": 3
     },
     {
      "name": "Burger Bar",
@@ -4869,7 +4825,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 7
+     "order": 4
     },
     {
      "name": "Grilled Chicken",
@@ -4890,28 +4846,31 @@
       "WHEAT"
      ],
      "tags": [],
-     "order": 8
+     "order": 5
     },
     {
-     "name": "Grilled Vegan/Vegetarian",
-     "recipe_id": "13468741",
+     "name": "Grilled Tofu Patty",
+     "recipe_id": "GrilledTofu1",
      "description": "",
-     "ingredients": "chef's choice grilled vegan OR vegetarian option",
-     "allergens": [],
+     "ingredients": "tofu, canola oil, salt, and pepper",
+     "allergens": [
+      "SOY"
+     ],
      "trace_allergens": [
-      "COCONUT",
       "EGG",
       "FISH",
       "MILK",
       "PEANUTS",
       "SESAME",
       "SHELLFISH",
-      "SOY",
       "TREENUTS",
       "WHEAT"
      ],
-     "tags": [],
-     "order": 9
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
+     "order": 6
     },
     {
      "name": "Grilled Cheese",
@@ -4935,7 +4894,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 10
+     "order": 7
     },
     {
      "name": "Panini Station",
@@ -4953,7 +4912,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 11
+     "order": 8
     },
     {
      "name": "Creamy Tomato Soup",
@@ -4968,7 +4927,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 12
+     "order": 9
     },
     {
      "name": "Sunny California Salad",
@@ -4983,7 +4942,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 13
+     "order": 10
     },
     {
      "name": "Performance Bar",
@@ -4993,7 +4952,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 14
+     "order": 11
     },
     {
      "name": "Pasta Alfredo",
@@ -5010,7 +4969,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 15
+     "order": 12
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -5023,23 +4982,20 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 16
+     "order": 13
     }
    ],
    "Dinner": [
     {
-     "name": "Herb Crusted Salmon with Remoulade",
-     "recipe_id": "4928696",
+     "name": "Lemon Saffron Chicken",
+     "recipe_id": "6784167",
      "description": "",
-     "ingredients": "salmon, canola/olive oil blend, dill, parsley, breadcrumbs, salt, black pepper, remoulade (mayonnaise, lemon juice, dijon mustard, ketchup, pickle relish, shallot, red wine vinegar, parsley, salt, pepper)",
-     "allergens": [
-      "EGG",
-      "FISH",
-      "SOY",
-      "WHEAT"
-     ],
+     "ingredients": "chicken, garlic, saffron, pepper, oregano, salt, canola/olive oil blend, lime juice, cuminseed, paprika",
+     "allergens": [],
      "trace_allergens": [],
-     "tags": [],
+     "tags": [
+      "gluten-free"
+     ],
      "order": 0
     },
     {
@@ -5136,6 +5092,27 @@
      "order": 6
     },
     {
+     "name": "Fried Rice Bar",
+     "recipe_id": "friedrice",
+     "description": "",
+     "ingredients": "build your own fried rice bar",
+     "allergens": [],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "SOY",
+      "TREENUTS",
+      "WHEAT"
+     ],
+     "tags": [],
+     "order": 7
+    },
+    {
      "name": "Grilled Tofu Patty",
      "recipe_id": "GrilledTofu1",
      "description": "",
@@ -5157,33 +5134,19 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 7
-    },
-    {
-     "name": "Italian Wedding Soup",
-     "recipe_id": "ItalianWeddSoup1",
-     "description": "",
-     "ingredients": "chicken broth, cooked Italian-style beef meatballs, enriched macaroni, spinach, carrots, food starch, salt, chicken seasoning, parmesan cheese, dehydrated onion, annatto color, white pepper",
-     "allergens": [
-      "MILK",
-      "WHEAT"
-     ],
-     "trace_allergens": [],
-     "tags": [],
      "order": 8
     },
     {
-     "name": "Cran-Apple Salad",
-     "recipe_id": "4296623",
+     "name": "Creamy Tomato Soup",
+     "recipe_id": "5408464",
      "description": "",
-     "ingredients": "kale, apple, dried cranberries, feta, salt, pepper, balsamic vinaigrette (balsamic vinegar [wine vinegar, grape juice], vegetable oil [soybean oil, canola oil, and/or olive oil], sugar, salt, garlic, dijon mustard [vinegar, mustard seed, salt, white wine (alcohol), spice], xanthan gum, mustard flour, parsley, artificial flavor)",
+     "ingredients": "tomatoes, vegetable soup base, tomato sauce, carrots, celery, onions, cream, soy lecithin, garlic, salt, basil, canola/olive oil blend, vinegar, white pepper, sugar",
      "allergens": [
       "MILK",
       "SOY"
      ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
       "vegetarian"
      ],
      "order": 9
