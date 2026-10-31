@@ -1779,6 +1779,34 @@
   "vessel": "plate",
   "written_at": "2026-10-18T22:30:07+00:00"
  },
+ "1233569a618a": {
+  "avoid": [
+   "wrap",
+   "sandwich",
+   "pasta",
+   "soup",
+   "raw whole chicken",
+   "whole lettuce head"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a salad with green lettuce and chopped toppings?",
+    "yes": true
+   },
+   {
+    "q": "Is the food served inside a tortilla wrap or flatbread?",
+    "yes": false
+   }
+  ],
+  "dish": "Cobb salad",
+  "look": "chopped romaine lettuce base, arranged rows of diced grilled chicken, crispy bacon bits, sliced hard-boiled egg, crumbled blue cheese, diced avocado, halved cherry tomatoes, sliced green onion, drizzle of creamy white ranch dressing",
+  "model": "gemini-3.6-flash",
+  "name": "California Cobb Salad",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-31T09:52:27+00:00"
+ },
  "12460b3d8498": {
   "avoid": [
    "meat",
@@ -2943,6 +2971,42 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T07:30:19+00:00"
+ },
+ "1ad2ff6ba081": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "sliced loaf",
+   "sandwich",
+   "burger",
+   "butter butter-pat"
+  ],
+  "checks": [
+   {
+    "q": "Is the item an individual bread roll?",
+    "yes": true
+   },
+   {
+    "q": "Is the roll made into a sandwich with fillings inside?",
+    "yes": false
+   },
+   {
+    "q": "Is the bread a sliced loaf instead of a dinner roll?",
+    "yes": false
+   }
+  ],
+  "dish": "sourdough dinner roll",
+  "look": "a single crusty golden-brown sourdough roll, dusty white flour dusting, deep slashes cut on the domed top crust, chewy artisan bread texture",
+  "model": "gemini-3.6-flash",
+  "name": "Sourdough Roll",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-31T09:52:27+00:00"
  },
  "1ae8c9ee6e3c": {
   "avoid": [
@@ -13358,6 +13422,38 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-30T20:15:31+00:00"
+ },
+ "63f1d980586b": {
+  "avoid": [
+   "raw chicken",
+   "curry soup",
+   "broth",
+   "rice",
+   "skewers",
+   "breaded chicken"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item roasted chicken pieces?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken submerged in a watery soup or curry?",
+    "yes": false
+   },
+   {
+    "q": "Does the chicken look unbaked or raw?",
+    "yes": false
+   }
+  ],
+  "dish": "turmeric roasted chicken",
+  "look": "roasted chicken thigh and drumstick, bright yellow turmeric spice rub coating, golden crispy skin, moist cooked chicken meat, subtle charred edges, glistening texture",
+  "model": "gemini-3.6-flash",
+  "name": "Roasted Turmeric Chicken",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-31T09:52:27+00:00"
  },
  "642597bb7589": {
   "avoid": [
@@ -25055,6 +25151,41 @@
   "vessel": "plate",
   "written_at": "2026-10-02T10:06:48+00:00"
  },
+ "b9afb2dc455e": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "raw whole vegetables",
+   "soup",
+   "stew"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item roasted root vegetable chunks?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat or poultry in the dish?",
+    "yes": false
+   },
+   {
+    "q": "Do the vegetables look raw and uncooked?",
+    "yes": false
+   }
+  ],
+  "dish": "roasted root vegetables",
+  "look": "roasted bite-sized chunks of carrots, parsnips, yellow beets, sweet potatoes, golden caramelized browned edges, sprinkled fresh green thyme leaves, soft roasted garlic cloves",
+  "model": "gemini-3.6-flash",
+  "name": "Roasted Root Vegetable Medley",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-31T09:52:27+00:00"
+ },
  "b9f9e6f892d4": {
   "avoid": [
    "spaghetti",
@@ -27633,6 +27764,40 @@
   "vessel": "bowl",
   "written_at": "2026-10-25T08:51:14+00:00"
  },
+ "cb6fd035fd15": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "raw eggplant",
+   "noodles"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cooked eggplant in sauce?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat, chicken, or seafood visible?",
+    "yes": false
+   },
+   {
+    "q": "Does the eggplant look firm and uncooked?",
+    "yes": false
+   }
+  ],
+  "dish": "stir-fried eggplant in black bean sauce",
+  "look": "tender sliced Asian purple eggplant wedges, glossy dark brown black bean garlic sauce coating, visible fermented black beans, minced garlic flecks, glistening cooked texture",
+  "model": "gemini-3.6-flash",
+  "name": "Eggplant with Black Bean Sauce",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-31T09:52:27+00:00"
+ },
  "cb72cee636b4": {
   "avoid": [
    "meat",
@@ -28030,6 +28195,41 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-26T23:04:11+00:00"
+ },
+ "cd64254691b5": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "soup",
+   "noodles",
+   "raw green beans"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food cooked green beans?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat, poultry, or seafood with the green beans?",
+    "yes": false
+   },
+   {
+    "q": "Do the green beans look raw and bright green like uncooked produce?",
+    "yes": false
+   }
+  ],
+  "dish": "Szechuan green beans",
+  "look": "blistered tender-crisp whole green beans, glossy dark tamari chili glaze, minced garlic and ginger bits, topped with crispy golden fried shallot flakes",
+  "model": "gemini-3.6-flash",
+  "name": "Crispy Chili Soy Green Beans",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-10-31T09:52:27+00:00"
  },
  "cd96bb37584b": {
   "avoid": [
@@ -33533,6 +33733,42 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-10-21T09:04:04+00:00"
+ },
+ "f585929bbc39": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "pita",
+   "flatbread",
+   "wrap",
+   "skewers"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish French fries topped with shredded jackfruit and onions?",
+    "yes": true
+   },
+   {
+    "q": "Is the food wrapped inside a pita or flatbread sandwich?",
+    "yes": false
+   },
+   {
+    "q": "Does the topping contain real sliced meat or shredded pork?",
+    "yes": false
+   }
+  ],
+  "dish": "Loaded Jackfruit Fries",
+  "look": "golden brown French fries, topped with a heap of brownish-tan shredded jackfruit, white diced onions, bright pink pickled red onion slices, chopped parsley garnish",
+  "model": "gemma-4-31b-it",
+  "name": "Jackfruit Gyro Fries",
+  "rev": 6,
+  "revisions": 1,
+  "vessel": "plate",
+  "written_at": "2026-10-31T10:38:02+00:00"
  },
  "f5e04336cbc3": {
   "avoid": [
