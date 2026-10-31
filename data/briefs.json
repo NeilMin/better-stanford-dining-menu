@@ -13390,6 +13390,39 @@
   "vessel": "bowl",
   "written_at": "2026-09-29T17:11:14+00:00"
  },
+ "637a3de5d11d": {
+  "avoid": [
+   "skewers",
+   "breaded chicken",
+   "fried chicken nuggets",
+   "bone-in chicken",
+   "noodles",
+   "soup",
+   "raw chicken"
+  ],
+  "checks": [
+   {
+    "q": "Does the dish consist of cooked meat and mixed vegetables in a dark sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat served on wooden skewers?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat breaded or deep-fried?",
+    "yes": false
+   }
+  ],
+  "dish": "teriyaki chicken stir-fry",
+  "look": "tender chicken strips coated in a glossy dark amber teriyaki glaze, tossed with bright green broccoli florets, crinkle-cut orange carrot slices, whole snow pea pods, sliced white mushrooms, chopped green bok choy, wilted onion strips, finished with sliced green onions",
+  "model": "gemini-flash-latest",
+  "name": "Teriyaki Chicken with Stir-Fried Vegetables",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-31T19:33:57+00:00"
+ },
  "63b6b9509a7a": {
   "avoid": [
    "skewers",
@@ -33745,11 +33778,11 @@
    "pita",
    "flatbread",
    "wrap",
-   "skewers"
+   "crispy fried bits"
   ],
   "checks": [
    {
-    "q": "Is the dish French fries topped with shredded jackfruit and onions?",
+    "q": "Is the dish French fries topped with a shredded savory topping and onions?",
     "yes": true
    },
    {
@@ -33761,14 +33794,14 @@
     "yes": false
    }
   ],
-  "dish": "Loaded Jackfruit Fries",
-  "look": "golden brown French fries, topped with a heap of brownish-tan shredded jackfruit, white diced onions, bright pink pickled red onion slices, chopped parsley garnish",
-  "model": "gemma-4-31b-it",
+  "dish": "Jackfruit gyro fries",
+  "look": "golden brown French fries, topped generously with seasoned, fibrous, brownish-tan shredded jackfruit strands, diced white onions, bright pink pickled red onion slices, chopped fresh parsley garnish",
+  "model": "gemini-3.6-flash",
   "name": "Jackfruit Gyro Fries",
   "rev": 6,
-  "revisions": 1,
+  "revisions": 2,
   "vessel": "plate",
-  "written_at": "2026-10-31T10:38:02+00:00"
+  "written_at": "2026-10-31T21:02:13+00:00"
  },
  "f5e04336cbc3": {
   "avoid": [
