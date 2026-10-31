@@ -1889,6 +1889,39 @@
   "vessel": "plate",
   "written_at": "2026-09-27T16:11:50+00:00"
  },
+ "12f887f49dc8": {
+  "avoid": [
+   "injera",
+   "flatbread",
+   "hard-boiled eggs",
+   "rice",
+   "skewers",
+   "raw chicken",
+   "creamy soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a stew of poultry pieces in reddish sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the stew served on or rolled in flatbread?",
+    "yes": false
+   },
+   {
+    "q": "Are there whole or halved boiled eggs in the bowl?",
+    "yes": false
+   }
+  ],
+  "dish": "Ethiopian chicken stew",
+  "look": "tender chicken pieces simmered in a thick dark-red berbere stew, soft potato chunks, sliced red bell peppers, wilted dark green spinach leaves, rich glossy reddish-brown sauce",
+  "model": "gemini-flash-latest",
+  "name": "Ethiopian Style Chicken Stew",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-10-30T23:57:20+00:00"
+ },
  "13d7bb8eea9f": {
   "avoid": [
    "meat",
