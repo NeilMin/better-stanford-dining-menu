@@ -1,6 +1,6 @@
 {
  "date": "2026-10-31",
- "scraped_at": "2026-10-31T02:44:30-07:00",
+ "scraped_at": "2026-10-31T12:20:40-07:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -982,17 +982,17 @@
      "order": 0
     },
     {
-     "name": "Chick'n Strips",
-     "recipe_id": "4951414",
+     "name": "Creole Mushrooms",
+     "recipe_id": "CreoMushroom17",
      "description": "",
-     "ingredients": "soy protein isolate, vital wheat gluten, natural flavors, yeast extract, cane sugar, expeller pressed/canola oil, sea salt, ancient grains flour (kamut, amaranth, millet, quinoa), pea protein, carrot fiber, beetroot fiber, onion powder, paprika, turmeric",
+     "ingredients": "sliced mushrooms, butter, yellow onion, garlic, tomato paste, mushroom seasoning, olive canola blend oil, AP flour, green bell pepper, green onion, diced tomato, veg stock, creole seasoning, salt, bay leaf, cayenne, thyme, black ground pepper, sweet paprika",
      "allergens": [
-      "SOY",
+      "MILK",
       "WHEAT"
      ],
      "trace_allergens": [],
      "tags": [
-      "vegan"
+      "vegetarian"
      ],
      "order": 1
     },
@@ -1036,30 +1036,6 @@
      "order": 4
     },
     {
-     "name": "Buttermilk Biscuits & Gravy",
-     "recipe_id": "3067945",
-     "description": "",
-     "ingredients": "buttermilk biscuit (flour, shortening, buttermilk powder, sugar, baking powder, salt), caramelized onion gravy (onions, vegetable soup base, canola/olive oil blend, thyme, bay leaf, butter, flour, salt, pepper)",
-     "allergens": [
-      "MILK",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS"
-     ],
-     "tags": [
-      "vegetarian"
-     ],
-     "order": 5
-    },
-    {
      "name": "Scrambled Eggs",
      "recipe_id": "3975106",
      "description": "",
@@ -1081,31 +1057,19 @@
      "tags": [
       "vegetarian"
      ],
+     "order": 5
+    },
+    {
+     "name": "Pork Sausage Patty",
+     "recipe_id": "3942305",
+     "description": "",
+     "ingredients": "pork, salt, potassium chloride, dextrose, spices, monosodium glutamate, sodium phosphates, bht, citric acid, caramel color",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free"
+     ],
      "order": 6
-    },
-    {
-     "name": "Smoked Bacon",
-     "recipe_id": "6740347",
-     "description": "",
-     "ingredients": "pork, salt, sugar, sodium phosphate, natural smoke flavoring, sodium erythorbate, sodium nitrite",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free"
-     ],
-     "order": 7
-    },
-    {
-     "name": "Turkey Bacon",
-     "recipe_id": "4328766",
-     "description": "",
-     "ingredients": "turkey thigh meat, sea salt, beet powder, paprika, brown sugar, onion, garlic",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free"
-     ],
-     "order": 8
     },
     {
      "name": "Triangle Hash Browns",
@@ -1120,35 +1084,48 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 9
+     "order": 7
     },
     {
-     "name": "Panini Station",
-     "recipe_id": "4532805",
+     "name": "Crepe Station",
+     "recipe_id": "crepestation(lake)",
      "description": "",
-     "ingredients": "(assorted) breads, cheeses, deli meats, lettuce, tomatoes, and onions",
+     "ingredients": "",
+     "allergens": [
+      "COCONUT",
+      "EGG",
+      "MILK",
+      "PEANUTS",
+      "SOY",
+      "TREENUTS"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "vegetarian"
+     ],
+     "order": 8
+    },
+    {
+     "name": "Omelet Station",
+     "recipe_id": "3565117",
+     "description": "",
+     "ingredients": "eggs, canola/olive oil blend, mushrooms, tomatoes, bacon, ham, pork sausage, cheddar cheese, onions, bell peppers, spinach, zucchini, olives",
      "allergens": [
       "EGG",
-      "SOY",
-      "WHEAT"
+      "MILK"
      ],
      "trace_allergens": [
       "COCONUT",
-      "MILK",
-      "TREENUTS"
+      "FISH",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "SOY",
+      "TREENUTS",
+      "WHEAT"
      ],
      "tags": [],
-     "order": 10
-    },
-    {
-     "name": "Soup of the Day",
-     "recipe_id": "SoupoftheDay",
-     "description": "",
-     "ingredients": "chef's choice soup of the day",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [],
-     "order": 11
+     "order": 9
     },
     {
      "name": "Composed Salad",
@@ -1158,7 +1135,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 12
+     "order": 10
     },
     {
      "name": "Performance Bar",
@@ -1168,7 +1145,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 13
+     "order": 11
     },
     {
      "name": "Craveable Grains",
@@ -1181,7 +1158,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 14
+     "order": 12
     },
     {
      "name": "Flavor Forward Legumes",
@@ -1194,7 +1171,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 15
+     "order": 13
     },
     {
      "name": "Creamy Pesto",
@@ -1210,24 +1187,22 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 16
+     "order": 14
     },
     {
-     "name": "Pasta Marinara",
-     "recipe_id": "5095708",
+     "name": "Marinara Sauce",
+     "recipe_id": "4079962",
      "description": "",
-     "ingredients": "pasta, marinara sauce, canola/olive oil blend",
+     "ingredients": "tomatoes, tomato paste, soybean oil, sugar, salt, onion, garlic, spices, citric acid, natural flavor",
      "allergens": [
-      "SOY",
-      "WHEAT"
+      "SOY"
      ],
-     "trace_allergens": [
-      "EGG"
-     ],
+     "trace_allergens": [],
      "tags": [
+      "gluten-free",
       "vegan"
      ],
-     "order": 17
+     "order": 15
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -1240,7 +1215,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 18
+     "order": 16
     }
    ],
    "Dinner": [
@@ -2387,28 +2362,6 @@
      "order": 4
     },
     {
-     "name": "Huevo Con Salchichas",
-     "recipe_id": "1019648-13",
-     "description": "",
-     "ingredients": "",
-     "allergens": [
-      "EGG"
-     ],
-     "trace_allergens": [
-      "COCONUT",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
-     ],
-     "tags": [],
-     "order": 5
-    },
-    {
      "name": "Pork Sausage Patty",
      "recipe_id": "3942305",
      "description": "",
@@ -2418,7 +2371,7 @@
      "tags": [
       "gluten-free"
      ],
-     "order": 6
+     "order": 5
     },
     {
      "name": "Farm-Style Potatoes",
@@ -2442,7 +2395,7 @@
      "tags": [
       "vegan"
      ],
-     "order": 7
+     "order": 6
     },
     {
      "name": "Crimson Lentils with Spinach",
@@ -2465,7 +2418,7 @@
      "tags": [
       "vegan"
      ],
-     "order": 8
+     "order": 7
     },
     {
      "name": "Buttermilk Pancakes",
@@ -2489,7 +2442,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 9
+     "order": 8
     }
    ],
    "Lunch": [
@@ -3189,19 +3142,6 @@
      "order": 3
     },
     {
-     "name": "Braised Green Beans & Caramelized Onions",
-     "recipe_id": "GreenBeanCarmOn1",
-     "description": "",
-     "ingredients": "green beans, onions, vegetable soup base, garlic, thyme, parsley, olive/canola oil blend, salt, black pepper",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan"
-     ],
-     "order": 4
-    },
-    {
      "name": "Creamy Grits with Cheddar Cheese",
      "recipe_id": "5548756",
      "description": "",
@@ -3214,33 +3154,55 @@
       "gluten-free",
       "vegetarian"
      ],
+     "order": 4
+    },
+    {
+     "name": "Fried Hash Brown Patties",
+     "recipe_id": "3621879",
+     "description": "",
+     "ingredients": "potatoes, oil (canola oil, corn oil, cottonseed oil, palm oil, soybean oil, or sunflower oil), salt, dehydrated potato, onion powder, natural flavor, dextrose, disodium dihydrogen pyrophosphate, fried in canola oil",
+     "allergens": [
+      "SOY"
+     ],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "TREENUTS",
+      "WHEAT"
+     ],
+     "tags": [
+      "vegan"
+     ],
      "order": 5
     },
     {
-     "name": "Cheesy Vegan Grits",
-     "recipe_id": "VgnChzGrits1",
+     "name": "French Toast",
+     "recipe_id": "3508602",
      "description": "",
-     "ingredients": "stone-ground grits, vegetable soup base, vegan butter, vegan cheese, nutritional yeast, olive/canola oil blend, salt, black pepper",
-     "allergens": [],
-     "trace_allergens": [],
+     "ingredients": "chala bread, eggs, canola/olive oil blend, powdered sugar, cinnamon",
+     "allergens": [
+      "EGG",
+      "MILK",
+      "SOY",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "COCONUT",
+      "FISH",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "TREENUTS"
+     ],
      "tags": [
-      "gluten-free",
-      "vegan"
+      "vegetarian"
      ],
      "order": 6
-    },
-    {
-     "name": "Charred Corn & Herb Salad",
-     "recipe_id": "CharrCorHerbSal1",
-     "description": "",
-     "ingredients": "corn, red onions, cilantro, parsley, lime juice, jalapeños, garlic, cumin, olive/canola oil blend, salt, black pepper",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan"
-     ],
-     "order": 7
     },
     {
      "name": "Grilled Chicken",
@@ -3261,7 +3223,7 @@
       "WHEAT"
      ],
      "tags": [],
-     "order": 8
+     "order": 7
     },
     {
      "name": "Soup of the Day",
@@ -3271,7 +3233,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 9
+     "order": 8
     },
     {
      "name": "Composed Salad",
@@ -3281,7 +3243,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 10
+     "order": 9
     },
     {
      "name": "Performance Bar",
@@ -3291,7 +3253,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 11
+     "order": 10
     },
     {
      "name": "Craveable Grains",
@@ -3304,7 +3266,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 12
+     "order": 11
     },
     {
      "name": "Flavor Forward Legumes",
@@ -3317,7 +3279,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 13
+     "order": 12
     },
     {
      "name": "Creamy Pesto",
@@ -3333,15 +3295,14 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 14
+     "order": 13
     },
     {
-     "name": "Pasta Marinara",
-     "recipe_id": "5095708",
+     "name": "Pasta",
+     "recipe_id": "5796111",
      "description": "",
-     "ingredients": "pasta, marinara sauce, canola/olive oil blend",
+     "ingredients": "semolina, durum wheat flour, canola/olive oil blend",
      "allergens": [
-      "SOY",
       "WHEAT"
      ],
      "trace_allergens": [
@@ -3350,7 +3311,7 @@
      "tags": [
       "vegan"
      ],
-     "order": 15
+     "order": 14
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -3363,20 +3324,29 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 16
+     "order": 15
     }
    ],
    "Dinner": [
     {
-     "name": "Teriyaki Chicken Bowl",
-     "recipe_id": "COV4976390",
+     "name": "Teriyaki Chicken with Stir-Fried Vegetables",
+     "recipe_id": "6230939",
      "description": "",
-     "ingredients": "Teriyaki Chicken(ABF chicken (halal), teriyaki marinade [canola oil, alcohol free mirin, tamari, garlic, chili powder], teriyaki glaze[sugar, tamari, cornstarch, canola oil]), Veggie Fried Rice (rice, peas, carrot, onion, celery, green onion, tamari, garlic, canola/olive oil blend, salt, pepper), Sauteed Seasonal Greens",
+     "ingredients": "chicken strips, broccoli, carrots, celery, onions, pea pods, mushrooms bok choy, green onions",
      "allergens": [
       "SOY",
-      "TRACEALLERGENS"
+      "WHEAT"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "TREENUTS"
+     ],
      "tags": [],
      "order": 0
     },
