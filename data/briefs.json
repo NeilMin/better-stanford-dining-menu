@@ -1535,6 +1535,41 @@
   "vessel": "plate",
   "written_at": "2026-09-27T14:22:11+00:00"
  },
+ "0ef2f8b208ea": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "scrambled eggs",
+   "spam",
+   "pineapple shell boat"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food fried rice mixed with pineapple and edamame?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat, chicken, or seafood visible?",
+    "yes": false
+   },
+   {
+    "q": "Is the rice served inside a hollowed-out whole pineapple?",
+    "yes": false
+   }
+  ],
+  "dish": "pineapple and edamame fried rice",
+  "look": "stir-fried rice grains, glossy red-amber sweet chili coating, bright yellow pineapple chunks, vibrant green shelled edamame beans, small diced orange carrots, thin sliced green jalapenos, minced celery and onions",
+  "model": "gemini-flash-latest",
+  "name": "Fried Rice with Pineapple & Edamame",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-01T19:50:30+00:00"
+ },
  "0f4cc9050c41": {
   "avoid": [
    "whole turkey",
@@ -13939,6 +13974,41 @@
   "vessel": "plate",
   "written_at": "2026-09-29T16:49:13+00:00"
  },
+ "699a03913654": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "curry sauce",
+   "mango slices",
+   "cilantro"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food white rice topped with toasted coconut flakes?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat, poultry, or seafood visible?",
+    "yes": false
+   },
+   {
+    "q": "Is the rice served with curry or sliced fruit?",
+    "yes": false
+   }
+  ],
+  "dish": "toasted coconut rice",
+  "look": "steamed white jasmine rice grains, glossy creamy coconut milk coating, generous topping of golden-brown toasted shredded coconut flakes, fluffy textured rice mound",
+  "model": "gemini-flash-latest",
+  "name": "Toasted Coconut Rice",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-01T19:50:30+00:00"
+ },
  "69acd623fc25": {
   "avoid": [
    "rice",
@@ -14153,6 +14223,41 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-30T10:02:25+00:00"
+ },
+ "6ab57ec20ac9": {
+  "avoid": [
+   "potstickers",
+   "gyoza",
+   "wontons",
+   "pie crust",
+   "pot pie",
+   "puff pastry",
+   "pasta",
+   "noodles",
+   "raw dough"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a stew of chicken and doughy dumplings?",
+    "yes": true
+   },
+   {
+    "q": "Are the dumplings crimped Asian-style dumplings like potstickers or wontons?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish covered with a baked pastry crust like a pot pie?",
+    "yes": false
+   }
+  ],
+  "dish": "chicken and dumplings",
+  "look": "tender shredded chicken, fluffy dropped flour dumplings, thick creamy chicken broth, diced orange carrots, diced celery, diced onions, flecks of dried thyme and black pepper, steaming comforting stew",
+  "model": "gemini-flash-latest",
+  "name": "Chicken & Dumpling",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-01T19:50:30+00:00"
  },
  "6ad6101e3231": {
   "avoid": [
