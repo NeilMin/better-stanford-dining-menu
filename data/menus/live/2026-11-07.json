@@ -1,6 +1,6 @@
 {
  "date": "2026-11-07",
- "scraped_at": "2026-11-01T11:44:12-08:00",
+ "scraped_at": "2026-11-01T15:39:38-08:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -1328,6 +1328,71 @@
      "order": 5
     },
     {
+     "name": "Carnitas",
+     "recipe_id": "3210758",
+     "description": "",
+     "ingredients": "pork, onions, garlic, bay leaf, salt",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free"
+     ],
+     "order": 6
+    },
+    {
+     "name": "Nacho Cheese",
+     "recipe_id": "5787950",
+     "description": "",
+     "ingredients": "skim milk, vegetable acetate, canola oil, soybean oil, sunflower oil, food starch-modified, cheddar cheese, jalapeno peppers, salt, natural flavor, red bell peppers, green bell peppers, sodium phosphate, lactic acid, sodium citrate, annatto, datem, monoglyceride, diglycerides, acetic acid, spice",
+     "allergens": [
+      "MILK",
+      "SOY"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free"
+     ],
+     "order": 7
+    },
+    {
+     "name": "Tortilla Chips",
+     "recipe_id": "4883696",
+     "description": "",
+     "ingredients": "white corn, lime water, vegetable oil (cottonseed or soy), salt, corn germ, cellulose gum, fumaric acid, sorbic acid, propionic acid, phosphoric acid",
+     "allergens": [
+      "SOY"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
+     "order": 8
+    },
+    {
+     "name": "Spicy Black Beans",
+     "recipe_id": "4303352",
+     "description": "",
+     "ingredients": "black beans, onions, carrots, celery, garlic, chili powder, bay leaf, cumin seeds, cayenne pepper, jalapeno chili, salt, white pepper",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
+     "order": 9
+    },
+    {
+     "name": "Nacho Bar",
+     "recipe_id": "3506903",
+     "description": "",
+     "ingredients": "",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [],
+     "order": 10
+    },
+    {
      "name": "Soup of the Day",
      "recipe_id": "SoupoftheDay",
      "description": "",
@@ -1335,7 +1400,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 6
+     "order": 11
     },
     {
      "name": "Assorted Dinner Rolls",
@@ -1354,7 +1419,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 7
+     "order": 12
     },
     {
      "name": "Composed Salad",
@@ -1364,7 +1429,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 8
+     "order": 13
     },
     {
      "name": "Performance Bar",
@@ -1374,7 +1439,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 9
+     "order": 14
     },
     {
      "name": "Craveable Grains",
@@ -1387,7 +1452,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 10
+     "order": 15
     },
     {
      "name": "Flavor Forward Legumes",
@@ -1400,7 +1465,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 11
+     "order": 16
     },
     {
      "name": "Creamy Pesto",
@@ -1416,7 +1481,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 12
+     "order": 17
     },
     {
      "name": "Pasta Marinara",
@@ -1433,7 +1498,7 @@
      "tags": [
       "vegan"
      ],
-     "order": 13
+     "order": 18
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -1446,7 +1511,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 14
+     "order": 19
     }
    ]
   },
@@ -3919,18 +3984,14 @@
    ],
    "Dinner": [
     {
-     "name": "Vegan \"Meatballs\" in Red Sauce",
-     "recipe_id": "VGNMeatballMar1",
+     "name": "Braised Beef Brisket",
+     "recipe_id": "4487387",
      "description": "",
-     "ingredients": "marinara sauce, meatless \"meatballs\" (pea protein, sunflower oil, coconut oil, vegetable juice, fruit juice, yeast extract, rice bran extract, sugar, onion powder, garlic powder, gum arabic, parsley, canola oil), onions, garlic, salt, pepper",
-     "allergens": [
-      "COCONUT",
-      "SOY",
-      "WHEAT"
-     ],
+     "ingredients": "beef, brisket sauce (carrots, onions, celery, garlic, beef soup base, thyme, bay leaf, parsley, salt, pepper)",
+     "allergens": [],
      "trace_allergens": [],
      "tags": [
-      "vegan"
+      "gluten-free"
      ],
      "order": 0
     },
@@ -3961,45 +4022,47 @@
      "order": 2
     },
     {
-     "name": "Broccoli Rabe with Garlic & Lemon",
-     "recipe_id": "RoatBrocRabe1",
+     "name": "Maple Roasted Root Vegetables",
+     "recipe_id": "MapRoastVeg1",
      "description": "",
-     "ingredients": "broccoli rabe, garlic, lemon juice, lemon zest, parmesan cheese, red pepper flakes, olive/canola oil blend, salt, black pepper",
-     "allergens": [
-      "MILK"
-     ],
+     "ingredients": "root vegetables (carrots, parsnips, sweet potatoes, yukon gold or russet potatoes, red onions), maple syrup, thyme, rosemary, garlic, olive/canola oil blend, salt, black pepper",
+     "allergens": [],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
-      "vegetarian"
+      "vegan"
      ],
      "order": 3
     },
     {
-     "name": "Spaghetti Marinara",
-     "recipe_id": "SpagMarinara1",
+     "name": "RSK Macaroni & Cheese",
+     "recipe_id": "5362174",
      "description": "",
-     "ingredients": "spaghetti, marinara sauce, olive/canola oil blend, salt",
+     "ingredients": "macaroni pasta, bread crumb, cream, cheddar cheese, butter, flour, milk, hot sauce, garlic, nutmeg, worcestershire sauce (vinegar, molasses, high fructose corn syrup, anchovies, water, salt, garlic, tamarind concentrate, cloves, natural flavorings, chili pepper extract), parsley",
      "allergens": [
-      "SOY",
+      "FISH",
+      "MILK",
       "WHEAT"
      ],
-     "trace_allergens": [],
-     "tags": [
-      "vegan"
+     "trace_allergens": [
+      "EGG"
      ],
+     "tags": [],
      "order": 4
     },
     {
-     "name": "Garlic Bread",
-     "recipe_id": "3192879",
+     "name": "Honey Butter Biscuit",
+     "recipe_id": "5930228",
      "description": "",
-     "ingredients": "french baguette (wheat flour, malted barley flour, sour culture, salt, yeast, cornmeal), garlic paste (olive oil, garlic, unsalted butter, parsley),",
+     "ingredients": "buttermilk biscuit (enriched bleached flour, shortening [palm oil, monoglycerides, diglycerides, polysorbate 60], buttermilk powder, sugar, baking powder, salt), honey, butter",
      "allergens": [
       "MILK",
       "WHEAT"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "EGG",
+      "SESAME"
+     ],
      "tags": [
       "vegetarian"
      ],
