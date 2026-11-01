@@ -15906,7 +15906,7 @@
    "meat",
    "beef",
    "pork",
-   "bone-in meat",
+   "bone-in chicken",
    "pasta",
    "spaghetti",
    "noodles",
@@ -15927,13 +15927,13 @@
    }
   ],
   "dish": "tofu cacciatore",
-  "look": "firm seared tofu cubes, browned square bean curd pieces, thick rustic chunky red tomato sauce, sliced button mushrooms, tender carrot slices, diced celery, cooked onion strips, scattered green capers, sprinkled dried oregano",
+  "look": "cubed firm white tofu blocks with seared golden edges, thick rustic chunky red tomato sauce, sliced button mushrooms, diced orange carrots, chopped celery, cooked sliced onions, scattered green capers, flecks of dried oregano",
   "model": "gemini-flash-latest",
   "name": "TOFU CACCIATORE",
   "rev": 6,
-  "revisions": 1,
+  "revisions": 2,
   "vessel": "bowl",
-  "written_at": "2026-10-31T23:58:04+00:00"
+  "written_at": "2026-11-01T13:08:50+00:00"
  },
  "7a96dc2899be": {
   "avoid": [
@@ -20320,6 +20320,42 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-10-02T10:09:55+00:00"
+ },
+ "9924e456e279": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "pasta",
+   "noodles",
+   "rice",
+   "soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item protein strips in a creamy white sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the sauce clear like broth?",
+    "yes": false
+   },
+   {
+    "q": "Is the food served mixed with pasta?",
+    "yes": false
+   }
+  ],
+  "dish": "Creamy Tuscan chicken",
+  "look": "seared golden-brown plant-based chicken strips smothered in thick white garlic cream sauce, julienned dark red sun-dried tomatoes, wilted deep green spinach leaves, diced soft onions, chopped flat-leaf parsley",
+  "model": "gemini-flash-latest",
+  "name": "Creamy Tuscan \"Chick'n\"",
+  "rev": 6,
+  "revisions": 1,
+  "vessel": "bowl",
+  "written_at": "2026-11-01T11:41:55+00:00"
  },
  "998e85b27032": {
   "avoid": [
