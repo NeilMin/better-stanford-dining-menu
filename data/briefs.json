@@ -15899,6 +15899,42 @@
   "vessel": "plate",
   "written_at": "2026-10-18T08:10:56+00:00"
  },
+ "7a727f1c6c4e": {
+  "avoid": [
+   "chicken",
+   "poultry",
+   "meat",
+   "beef",
+   "pork",
+   "bone-in meat",
+   "pasta",
+   "spaghetti",
+   "noodles",
+   "rice"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item tofu in a red tomato sauce?",
+    "yes": true
+   },
+   {
+    "q": "Does the dish contain chicken or meat?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish served over pasta or noodles?",
+    "yes": false
+   }
+  ],
+  "dish": "tofu cacciatore",
+  "look": "firm seared tofu cubes, browned square bean curd pieces, thick rustic chunky red tomato sauce, sliced button mushrooms, tender carrot slices, diced celery, cooked onion strips, scattered green capers, sprinkled dried oregano",
+  "model": "gemini-flash-latest",
+  "name": "TOFU CACCIATORE",
+  "rev": 6,
+  "revisions": 1,
+  "vessel": "bowl",
+  "written_at": "2026-10-31T23:58:04+00:00"
+ },
  "7a96dc2899be": {
   "avoid": [
    "meat",
