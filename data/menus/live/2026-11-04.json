@@ -1,6 +1,6 @@
 {
  "date": "2026-11-04",
- "scraped_at": "2026-11-01T02:34:15-08:00",
+ "scraped_at": "2026-11-01T11:44:12-08:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -4250,19 +4250,6 @@
      "order": 1
     },
     {
-     "name": "Balsamic Roasted Peppers & Onions",
-     "recipe_id": "BalsamPeppOnion1",
-     "description": "",
-     "ingredients": "bell peppers, onions, balsamic vinegar, garlic, dried oregano, olive/canola oil blend, salt, black pepper",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan"
-     ],
-     "order": 2
-    },
-    {
      "name": "Seasonal Steamed Vegetables",
      "recipe_id": "5561366",
      "description": "",
@@ -4273,7 +4260,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 3
+     "order": 2
     },
     {
      "name": "Seasonal Vegetable Board",
@@ -4286,7 +4273,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 4
+     "order": 3
     },
     {
      "name": "Roasted Zucchini & Cherry Tomatoes",
@@ -4301,24 +4288,26 @@
       "gluten-free",
       "vegetarian"
      ],
-     "order": 5
+     "order": 4
     },
     {
-     "name": "Fettuccini Alfredo",
-     "recipe_id": "5683556-1",
+     "name": "Garlic Bread",
+     "recipe_id": "5398769",
      "description": "",
-     "ingredients": "fettuccini, milk, heavy cream, parmesan cheese, butter, flour, garlic, olive/canola oil blend, salt, black pepper",
+     "ingredients": "french baguette, unsalted butter, garlic, parsley",
      "allergens": [
       "MILK",
       "WHEAT"
      ],
      "trace_allergens": [
-      "EGG"
+      "EGG",
+      "SOY",
+      "TREENUTS"
      ],
      "tags": [
       "vegetarian"
      ],
-     "order": 6
+     "order": 5
     },
     {
      "name": "Garlic & Herb Roasted Potatoes",
@@ -4331,28 +4320,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 7
-    },
-    {
-     "name": "Grilled Vegan/Vegetarian",
-     "recipe_id": "13468741",
-     "description": "",
-     "ingredients": "chef's choice grilled vegan OR vegetarian option",
-     "allergens": [],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
-     ],
-     "tags": [],
-     "order": 8
+     "order": 6
     },
     {
      "name": "Soup of the Day",
@@ -4362,7 +4330,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 9
+     "order": 7
     },
     {
      "name": "Composed Salad",
@@ -4372,7 +4340,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 10
+     "order": 8
     },
     {
      "name": "Performance Bar",
@@ -4382,7 +4350,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 11
+     "order": 9
     },
     {
      "name": "Craveable Grains",
@@ -4395,7 +4363,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 12
+     "order": 10
     },
     {
      "name": "Flavor Forward Legumes",
@@ -4408,41 +4376,23 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 13
+     "order": 11
     },
     {
-     "name": "Pasta Alfredo",
-     "recipe_id": "5683556",
+     "name": "Creamy Pesto",
+     "recipe_id": "7728050",
      "description": "",
-     "ingredients": "pasta, white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, parmesan cheese",
+     "ingredients": "pesto sauce (basil, canola oil, parmesan cheese, olive oil, garlic, salt, lemon juice concentrate, natural flavor, xanthan gum, soy lecithin, chamomile extract, rosemary extract, white sauce (flour, butter, cream, milk powder, onion powder, white pepper, garlic, nutmeg, salt), parmesan cheese, parsley",
      "allergens": [
       "MILK",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "EGG"
-     ],
-     "tags": [
-      "vegetarian"
-     ],
-     "order": 14
-    },
-    {
-     "name": "Pasta Marinara",
-     "recipe_id": "5095708",
-     "description": "",
-     "ingredients": "pasta, marinara sauce, canola/olive oil blend",
-     "allergens": [
       "SOY",
       "WHEAT"
      ],
-     "trace_allergens": [
-      "EGG"
-     ],
+     "trace_allergens": [],
      "tags": [
-      "vegan"
+      "vegetarian"
      ],
-     "order": 15
+     "order": 12
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -4455,22 +4405,44 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 16
+     "order": 13
     }
    ],
    "Dinner": [
     {
-     "name": "Braised Southern-Style Collard Greens",
-     "recipe_id": "5925204",
+     "name": "Fried Chicken Wings",
+     "recipe_id": "6300731",
      "description": "",
-     "ingredients": "collard greens, onions, canola/olive oil blend, garlic, vegetable soup base (contains carrots, celery, mushrooms), brown sugar, red wine vinegar, mustard seeds, red pepper flakes, cajun seasoning, pepper",
+     "ingredients": "chicken, carrots, celery, garlic, buffalo sauce, ranch dressing (nonfat greek yogurt, lowfat buttermilk, mayonnaise, ranch dressing spice mix [parsley, dill, onion powder, mushroom seasoning, milk powder, garlic powder, salt, pepper]), fried in canola oil",
+     "allergens": [
+      "EGG",
+      "MILK",
+      "SOY"
+     ],
+     "trace_allergens": [
+      "COCONUT",
+      "FISH",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "TREENUTS",
+      "WHEAT"
+     ],
+     "tags": [],
+     "order": 0
+    },
+    {
+     "name": "Seasonal Steamed Vegetables",
+     "recipe_id": "5561366",
+     "description": "",
+     "ingredients": "seasonal vegetables, salt",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
       "vegan"
      ],
-     "order": 0
+     "order": 1
     },
     {
      "name": "Seasonal Vegetable Board",
@@ -4483,7 +4455,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 1
+     "order": 2
     },
     {
      "name": "Creole Succotash",
@@ -4496,22 +4468,46 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 2
+     "order": 3
     },
     {
-     "name": "Garlic Bread",
-     "recipe_id": "3192879",
+     "name": "Roasted Beets with Honey Herb Yogurt",
+     "recipe_id": "BeetsHoneyYogurt1",
      "description": "",
-     "ingredients": "french baguette (wheat flour, malted barley flour, sour culture, salt, yeast, cornmeal), garlic paste (olive oil, garlic, unsalted butter, parsley),",
+     "ingredients": "red beets, Greek yogurt, lemon juice, garlic, dill, parsley, honey, olive/canola oil blend, salt, black pepper",
      "allergens": [
-      "MILK",
-      "WHEAT"
+      "MILK"
      ],
      "trace_allergens": [],
      "tags": [
+      "gluten-free",
       "vegetarian"
      ],
-     "order": 3
+     "order": 4
+    },
+    {
+     "name": "Warm Garlic Naan",
+     "recipe_id": "boxlunch-evgr44",
+     "description": "",
+     "ingredients": "naan bread (enriched wheat flour, buttermilk [nonfat milk, dry buttermilk, bacterial culture]), soybean oil, cultured wheat flour, eggs, sugar, baking powder, sea salt, ghee (clarified butter), wheat gluten, dextrose, dextrin, carrot fiber, yeast, soybean oil, olive oil, garlic",
+     "allergens": [
+      "EGG",
+      "MILK",
+      "SESAME",
+      "SOY",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "COCONUT",
+      "FISH",
+      "PEANUTS",
+      "SHELLFISH",
+      "TREENUTS"
+     ],
+     "tags": [
+      "vegetarian"
+     ],
+     "order": 5
     },
     {
      "name": "Soup of the Day",
@@ -4521,7 +4517,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 4
+     "order": 6
     },
     {
      "name": "Composed Salad",
@@ -4531,7 +4527,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 5
+     "order": 7
     },
     {
      "name": "Performance Bar",
@@ -4541,7 +4537,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 6
+     "order": 8
     },
     {
      "name": "Craveable Grains",
@@ -4554,7 +4550,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 7
+     "order": 9
     },
     {
      "name": "Flavor Forward Legumes",
@@ -4567,7 +4563,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 8
+     "order": 10
     },
     {
      "name": "Pasta Alfredo",
@@ -4584,7 +4580,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 9
+     "order": 11
     }
    ]
   },

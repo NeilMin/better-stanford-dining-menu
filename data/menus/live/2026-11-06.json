@@ -1,6 +1,6 @@
 {
  "date": "2026-11-06",
- "scraped_at": "2026-11-01T02:34:15-08:00",
+ "scraped_at": "2026-11-01T11:44:12-08:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -1164,8 +1164,8 @@
      "order": 5
     },
     {
-     "name": "Burger Bar",
-     "recipe_id": "5964436",
+     "name": "Baked Potato Bar",
+     "recipe_id": "6827028",
      "description": "",
      "ingredients": "",
      "allergens": [],
@@ -4185,18 +4185,18 @@
      "order": 0
     },
     {
-     "name": "Thai Red Curry Tempeh",
-     "recipe_id": "ThaiRedCurTemp1",
+     "name": "Thai Coconut Curry Tofu",
+     "recipe_id": "ThaiCocoTofu1",
      "description": "",
-     "ingredients": "tempeh, coconut milk, pumpkin, Thai red chiles, lemongrass, shallots, garlic, ginger, cilantro stems, dried makrut lime, cumin, coriander, white pepper, mushroom seasoning, sugar, lime juice, thai basil, olive/canola oil blend, salt",
+     "ingredients": "tofu, seasonal vegetables, coconut milk, vegetarian red curry paste (Thai red chilies, garlic, shallots, lemongrass, makrut lime leaves, coriander seeds, cumin, white pepper, salt), onions, bell peppers, garlic, ginger, tamari, vegetarian oyster sauce, lime juice, basil, sugar, olive/canola oil blend, salt",
      "allergens": [
       "COCONUT",
-      "SHELLFISH",
       "SOY"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "WHEAT"
+     ],
      "tags": [
-      "gluten-free",
       "vegan"
      ],
      "order": 1
@@ -4250,55 +4250,13 @@
      "order": 4
     },
     {
-     "name": "Roasted Thai Eggplant",
-     "recipe_id": "RstThaiEggplant1",
+     "name": "Fried Rice with Pineapple & Edamame",
+     "recipe_id": "4456173",
      "description": "",
-     "ingredients": "eggplant, garlic, ginger, tamari, lime juice, vegetarian oyster sauce, Thai red curry paste, cilantro, olive/canola oil blend, salt",
+     "ingredients": "rice, sweet chili sauce, pineapple, jalapeno, lemon juice, garlic, edamame, carrot, celery, onion, salt",
      "allergens": [
-      "SHELLFISH",
       "SOY"
      ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free"
-     ],
-     "order": 5
-    },
-    {
-     "name": "Steamed Jasmine Rice",
-     "recipe_id": "5134594",
-     "description": "",
-     "ingredients": "jasmine rice, water, salt",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan"
-     ],
-     "order": 6
-    },
-    {
-     "name": "Thai Pineapple Fried Rice",
-     "recipe_id": "ThaiPineFryRice1",
-     "description": "",
-     "ingredients": "jasmine rice, pineapple, eggs, onions, bell peppers, carrots, garlic, ginger, tamari, mushroom seasoning, sugar, curry powder, green onions, cilantro, olive/canola oil blend, salt, black pepper",
-     "allergens": [
-      "EGG",
-      "SOY"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegetarian"
-     ],
-     "order": 7
-    },
-    {
-     "name": "Grilled Vegan/Vegetarian",
-     "recipe_id": "13468741",
-     "description": "",
-     "ingredients": "chef's choice grilled vegan OR vegetarian option",
-     "allergens": [],
      "trace_allergens": [
       "COCONUT",
       "EGG",
@@ -4307,12 +4265,13 @@
       "PEANUTS",
       "SESAME",
       "SHELLFISH",
-      "SOY",
       "TREENUTS",
       "WHEAT"
      ],
-     "tags": [],
-     "order": 8
+     "tags": [
+      "vegan"
+     ],
+     "order": 5
     },
     {
      "name": "Soup of the Day",
@@ -4322,7 +4281,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 9
+     "order": 6
     },
     {
      "name": "Composed Salad",
@@ -4332,7 +4291,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 10
+     "order": 7
     },
     {
      "name": "Performance Bar",
@@ -4342,7 +4301,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 11
+     "order": 8
     },
     {
      "name": "Craveable Grains",
@@ -4355,7 +4314,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 12
+     "order": 9
     },
     {
      "name": "Flavor Forward Legumes",
@@ -4368,7 +4327,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 13
+     "order": 10
     },
     {
      "name": "Pasta Alfredo",
@@ -4385,24 +4344,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 14
-    },
-    {
-     "name": "Pasta Marinara",
-     "recipe_id": "5095708",
-     "description": "",
-     "ingredients": "pasta, marinara sauce, canola/olive oil blend",
-     "allergens": [
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "EGG"
-     ],
-     "tags": [
-      "vegan"
-     ],
-     "order": 15
+     "order": 11
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -4415,7 +4357,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 16
+     "order": 12
     }
    ],
    "Dinner": [

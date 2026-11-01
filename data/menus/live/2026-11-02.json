@@ -1,6 +1,6 @@
 {
  "date": "2026-11-02",
- "scraped_at": "2026-11-01T02:34:15-08:00",
+ "scraped_at": "2026-11-01T11:44:12-08:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -1064,10 +1064,10 @@
    ],
    "Lunch": [
     {
-     "name": "Sausage Bar Station",
-     "recipe_id": "6645789",
+     "name": "Hot Dog Bar",
+     "recipe_id": "3998930",
      "description": "",
-     "ingredients": "beef pork sausage, bratwurst sausage, plant-forward italian hot link, hot dog bun, pretzels, potato hot dog bun, ketchup, dill pickles, pickle relish, sauerkraut, curry powder, smoky aioli sauce",
+     "ingredients": "",
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
@@ -4140,11 +4140,14 @@
      "order": 0
     },
     {
-     "name": "Jambalaya with Fried Okra",
-     "recipe_id": "5310969",
+     "name": "Stir Fried Tofu with Eggplant",
+     "recipe_id": "4081035",
      "description": "",
-     "ingredients": "jambalaya (brown rice, bell pepper, butternut squash, tomato, onion, mushroom, celery, okra, canola/olive oil blend, garlic, parsley, salt, pepper, thyme, cumin, cayenne, paprika), fried okra (okra, corn starch, corn meal, fried in canola oil)",
-     "allergens": [],
+     "ingredients": "eggplant, tofu, seasonal vegetables, canola oil, garlic, tamari, stir fry sauce (canola oil/olive oil blend, vegetarian oyster sauce, shallot, brown sugar, onion, red pepper flakes, tamari)",
+     "allergens": [
+      "SOY",
+      "WHEAT"
+     ],
      "trace_allergens": [
       "COCONUT",
       "EGG",
@@ -4153,9 +4156,7 @@
       "PEANUTS",
       "SESAME",
       "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
+      "TREENUTS"
      ],
      "tags": [
       "vegan"
@@ -4202,23 +4203,26 @@
      "order": 4
     },
     {
-     "name": "Creole Succotash",
-     "recipe_id": "USF#7328065",
+     "name": "Vegetable Egg Roll",
+     "recipe_id": "3083068",
      "description": "",
-     "ingredients": "corn, lima beans, bell peppers, onions, tomatoes, celery, garlic, paprika, dried oregano, dried thyme, cayenne pepper, olive/canola oil blend, salt, black pepper",
-     "allergens": [],
+     "ingredients": "dough (wheat flour, corn starch, salt, fdc yellow #5 & #6), cabbage, carrots, onions, broccoli, frying oil (soybean oil), soy sauce (soybeans, wheat, salt), sugar, garlic, modified food starch, salt, sesame seed oil, garlic powder, onion powder, ginger, spices",
+     "allergens": [
+      "SESAME",
+      "SOY",
+      "WHEAT"
+     ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
       "vegan"
      ],
      "order": 5
     },
     {
-     "name": "Steamed Louisiana-Style Rice",
-     "recipe_id": "LouisStyleRice1",
+     "name": "Steamed Jasmine Rice",
+     "recipe_id": "5134594",
      "description": "",
-     "ingredients": "long-grain rice, water, onions, celery, bell peppers, garlic, paprika, dried thyme, dried oregano, olive/canola oil blend, salt, black pepper",
+     "ingredients": "jasmine rice, water, salt",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -4228,24 +4232,19 @@
      "order": 6
     },
     {
-     "name": "Grilled Vegan/Vegetarian",
-     "recipe_id": "13468741",
+     "name": "Vegetable Chow Mein Noodles",
+     "recipe_id": "4856200",
      "description": "",
-     "ingredients": "chef's choice grilled vegan OR vegetarian option",
-     "allergens": [],
-     "trace_allergens": [
-      "COCONUT",
+     "ingredients": "chow mein noodles, carrots, canola/olive oil blend, celery, white pepper, cabbage, green onions, stir fry sauce (tamari sauce, canola oil, green onion, fried shallots, red pepper, onion, vegetarian oyster sauce [sugar, soy sauce, salt, corn starch, yeast extract, caramel color, mushroom flavor, salt], brown sugar)",
+     "allergens": [
       "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
       "SOY",
-      "TREENUTS",
       "WHEAT"
      ],
-     "tags": [],
+     "trace_allergens": [],
+     "tags": [
+      "vegetarian"
+     ],
      "order": 7
     },
     {
@@ -4305,37 +4304,21 @@
      "order": 12
     },
     {
-     "name": "Marinara Cheese Ravioli",
-     "recipe_id": "3581918",
+     "name": "Pasta Marinara",
+     "recipe_id": "5095708",
      "description": "",
-     "ingredients": "ravioli, marinara sauce, parmesan cheese",
+     "ingredients": "pasta, marinara sauce, canola/olive oil blend",
      "allergens": [
-      "EGG",
-      "MILK",
       "SOY",
       "WHEAT"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "EGG"
+     ],
      "tags": [
-      "vegetarian"
+      "vegan"
      ],
      "order": 13
-    },
-    {
-     "name": "Pesto Sauce",
-     "recipe_id": "6128910",
-     "description": "",
-     "ingredients": "basil, canola oil, parmesan cheese (milk, bacterial culture, salt, microbial enzymes, extra virgin olive oil, garlic, salt, lemon juice concentrate, natural flavor, ascorbic acid, xanthan gum, soy lecithin, chamomile extract, rosemary extract)",
-     "allergens": [
-      "MILK",
-      "SOY"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegetarian"
-     ],
-     "order": 14
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -4348,7 +4331,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 15
+     "order": 14
     }
    ],
    "Dinner": [
