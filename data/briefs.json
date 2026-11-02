@@ -5419,6 +5419,40 @@
   "vessel": "bowl",
   "written_at": "2026-10-11T10:10:28+00:00"
  },
+ "2c78fb032768": {
+  "avoid": [
+   "meat",
+   "bacon bits",
+   "ground beef",
+   "chicken",
+   "raw pasta",
+   "side salad",
+   "bread rolls",
+   "broccoli"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item macaroni pasta coated in cheese sauce?",
+    "yes": true
+   },
+   {
+    "q": "Does the dish contain pieces of meat or bacon?",
+    "yes": false
+   },
+   {
+    "q": "Is the pasta uncooked or dry without sauce?",
+    "yes": false
+   }
+  ],
+  "dish": "macaroni and cheese",
+  "look": "tender elbow macaroni pasta coated in thick creamy melted cheddar cheese sauce, lightly toasted golden-brown melted top, rich creamy cheese pull, sprinkle of finely chopped parsley",
+  "model": "gemini-flash-latest",
+  "name": "RSK Macaroni & Cheese",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-01T23:49:33+00:00"
+ },
  "2c938bc82419": {
   "avoid": [
    "meat",
@@ -9329,6 +9363,39 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T04:46:15+00:00"
+ },
+ "44f1e5b4b41b": {
+  "avoid": [
+   "tortilla chips",
+   "french fries",
+   "ground beef",
+   "tacos",
+   "burritos",
+   "shredded unmelted cheese",
+   "jalapeno poppers"
+  ],
+  "checks": [
+   {
+    "q": "Is the food a warm liquid cheese sauce?",
+    "yes": true
+   },
+   {
+    "q": "Are there tortilla chips or other foods mixed in or dominating the bowl?",
+    "yes": false
+   },
+   {
+    "q": "Is the cheese solid or shredded rather than a smooth sauce?",
+    "yes": false
+   }
+  ],
+  "dish": "nacho cheese dip",
+  "look": "smooth creamy warm yellow-orange cheddar cheese sauce, glossy melted surface, flecks of finely diced green jalapenos, small diced red bell pepper pieces, thick pouring consistency",
+  "model": "gemini-flash-latest",
+  "name": "Nacho Cheese",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-01T23:49:33+00:00"
  },
  "4517bb7c1d28": {
   "avoid": [
@@ -16487,6 +16554,43 @@
   "vessel": "bowl",
   "written_at": "2026-10-01T00:09:14+00:00"
  },
+ "7cedd476fb44": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "bacon",
+   "parmesan cheese",
+   "creamy casserole",
+   "french fried onions",
+   "raw green beans"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food whole roasted green beans?",
+    "yes": true
+   },
+   {
+    "q": "Is there bacon or meat mixed with the green beans?",
+    "yes": false
+   },
+   {
+    "q": "Is it prepared as a creamy casserole with fried onion toppings?",
+    "yes": false
+   }
+  ],
+  "dish": "roasted green beans",
+  "look": "whole slender green beans, bright olive-green colour with blistered dark-brown char marks, wrinkled tender texture, subtle dusting of savory brown mushroom powder",
+  "model": "gemini-flash-latest",
+  "name": "Roasted Green Beans",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-01T23:49:33+00:00"
+ },
  "7d208fd83922": {
   "avoid": [
    "meat",
@@ -19765,6 +19869,47 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-10T21:35:00+00:00"
+ },
+ "93d2e7846a94": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "melted cheese",
+   "salsa",
+   "guacamole",
+   "nacho toppings",
+   "soft tortillas"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item crispy triangular corn tortilla chips?",
+    "yes": true
+   },
+   {
+    "q": "Are the chips smothered in melted cheese or nacho toppings?",
+    "yes": false
+   },
+   {
+    "q": "Are they soft flat tortillas rather than fried chips?",
+    "yes": false
+   },
+   {
+    "q": "Is there meat, chicken, or fish in the dish?",
+    "yes": false
+   }
+  ],
+  "dish": "corn tortilla chips",
+  "look": "a mound of crisp golden-yellow triangular corn tortilla chips, slightly blistered crunchy texture, visible fine salt granules across the surface, lightly toasted edges",
+  "model": "gemini-flash-latest",
+  "name": "Tortilla Chips",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-01T23:49:33+00:00"
  },
  "93d7f5f7f711": {
   "avoid": [
@@ -31386,6 +31531,39 @@
   "vessel": "plate",
   "written_at": "2026-10-20T23:16:43+00:00"
  },
+ "e3dfe5658090": {
+  "avoid": [
+   "battered fried chicken balls",
+   "tempura chicken",
+   "pineapple",
+   "white rice",
+   "noodles",
+   "raw chicken",
+   "skewers"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item chicken chunks cooked in a reddish sauce with peppers?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken battered and deep-fried balls?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat served on skewers?",
+    "yes": false
+   }
+  ],
+  "dish": "sweet and sour chicken",
+  "look": "tender bite-sized chunks of braised chicken, thoroughly coated in glossy reddish-orange sweet and sour sauce, mixed with sautéed red bell pepper chunks, green bell pepper squares, translucent yellow onion wedges",
+  "model": "gemini-flash-latest",
+  "name": "Sweet & Sour Braised Chicken",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-01T23:49:33+00:00"
+ },
  "e3f94b0624ca": {
   "avoid": [
    "meat",
@@ -34402,6 +34580,41 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-10-27T20:29:50+00:00"
+ },
+ "f84c1c1de3e9": {
+  "avoid": [
+   "ground beef",
+   "shredded beef",
+   "pulled beef",
+   "burger bun",
+   "sandwich",
+   "skewers",
+   "raw meat",
+   "carrots",
+   "potatoes"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item sliced braised beef?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat shredded or pulled into strands?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat served inside a bun or sandwich?",
+    "yes": false
+   }
+  ],
+  "dish": "braised beef brisket",
+  "look": "thick slices of tender braised beef brisket, dark caramelized crust, juicy browned meat fibers, draped in rich glossy brown brisket gravy, sprinkle of chopped fresh parsley",
+  "model": "gemini-flash-latest",
+  "name": "Braised Beef Brisket",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-01T23:49:33+00:00"
  },
  "f89ab2c469cd": {
   "avoid": [
