@@ -520,6 +520,42 @@
   "vessel": "plate",
   "written_at": "2026-09-27T08:24:37+00:00"
  },
+ "03e6cc1c1f76": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "curry",
+   "soup",
+   "taco",
+   "tortilla chips"
+  ],
+  "checks": [
+   {
+    "q": "Is the base a crisp, thin round cracker topped with diced vegetables?",
+    "yes": true
+   },
+   {
+    "q": "Is the dish a liquid curry or stew?",
+    "yes": false
+   },
+   {
+    "q": "Is the base a soft folded flatbread or tortilla?",
+    "yes": false
+   }
+  ],
+  "dish": "masala papad",
+  "look": "a crisp round roasted papadum disc, topped with a colorful scattering of finely diced red onions, chopped ripe tomatoes, minced green chilies, fresh green cilantro, toasted cumin seeds, dusting of red spice",
+  "model": "gemini-flash-latest",
+  "name": "Masala Papad",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-02T11:25:41+00:00"
+ },
  "04dd4c67d93e": {
   "avoid": [
    "meat",
@@ -5035,6 +5071,41 @@
   "vessel": "plate",
   "written_at": "2026-10-30T00:18:00+00:00"
  },
+ "293d1372b0cc": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "rice",
+   "noodles",
+   "salad"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item mixed cooked vegetables in a dark sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is there meat, chicken, or seafood visible?",
+    "yes": false
+   },
+   {
+    "q": "Are the vegetables served raw like a salad?",
+    "yes": false
+   }
+  ],
+  "dish": "vegetable adobo",
+  "look": "chopped seasonal vegetables, tender eggplant chunks, green beans, carrots, red bell pepper, braised in rich glossy dark brown adobo sauce, visible flecks of minced garlic, savory glaze",
+  "model": "gemini-flash-latest",
+  "name": "Veggies in Adobo Sauce",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-02T11:25:41+00:00"
+ },
  "29c9e78d37fd": {
   "avoid": [
    "chicken",
@@ -8819,6 +8890,42 @@
   "vessel": "plate",
   "written_at": "2026-09-27T07:17:51+00:00"
  },
+ "3ee200fa539f": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "rice",
+   "naan",
+   "flatbread",
+   "whole potatoes"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a yellow lentil stew containing cauliflower florets?",
+    "yes": true
+   },
+   {
+    "q": "Is there meat, chicken, or seafood in the dish?",
+    "yes": false
+   },
+   {
+    "q": "Is the cauliflower raw as in a crudite or dry salad?",
+    "yes": false
+   }
+  ],
+  "dish": "dal gobi",
+  "look": "tender cauliflower florets, simmered in a thick spiced golden-yellow lentil dal, speckled with red pepper flakes, toasted cumin seeds, chopped cilantro, warm aromatic yellow gravy",
+  "model": "gemini-flash-latest",
+  "name": "Dal Gobi",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-02T11:25:41+00:00"
+ },
  "3eeb924e71d6": {
   "avoid": [
    "meat chunks",
@@ -9366,13 +9473,16 @@
  },
  "44f1e5b4b41b": {
   "avoid": [
+   "bread",
+   "toasted bread",
+   "crostini",
+   "baguette",
    "tortilla chips",
    "french fries",
    "ground beef",
    "tacos",
    "burritos",
-   "shredded unmelted cheese",
-   "jalapeno poppers"
+   "shredded unmelted cheese"
   ],
   "checks": [
    {
@@ -9389,13 +9499,13 @@
    }
   ],
   "dish": "nacho cheese dip",
-  "look": "smooth creamy warm yellow-orange cheddar cheese sauce, glossy melted surface, flecks of finely diced green jalapenos, small diced red bell pepper pieces, thick pouring consistency",
-  "model": "gemini-flash-latest",
+  "look": "steaming pool of glossy melted yellow-orange nacho cheese sauce, viscous smooth liquid texture, tiny flecks of finely diced green jalapenos, small specks of red bell pepper, rich creamy cheddar dip surface",
+  "model": "gemini-3.6-flash",
   "name": "Nacho Cheese",
   "rev": 6,
-  "revisions": 0,
+  "revisions": 1,
   "vessel": "bowl",
-  "written_at": "2026-11-01T23:49:33+00:00"
+  "written_at": "2026-11-02T12:45:26+00:00"
  },
  "4517bb7c1d28": {
   "avoid": [
@@ -26150,6 +26260,42 @@
   "vessel": "plate",
   "written_at": "2026-10-18T08:10:17+00:00"
  },
+ "bd819332c3bf": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "cheese",
+   "red sauce",
+   "beans",
+   "tacos"
+  ],
+  "checks": [
+   {
+    "q": "Are the main items steamed corn masa tamales in corn husks?",
+    "yes": true
+   },
+   {
+    "q": "Are the tamales filled with visible shredded meat?",
+    "yes": false
+   },
+   {
+    "q": "Are the tamales fried and crunchy?",
+    "yes": false
+   }
+  ],
+  "dish": "tamales blancos",
+  "look": "two steamed white corn masa tamales, soft tender pale masa dough, resting partially unwrapped inside natural pale tan dried corn husks, moist smooth texture, light cornmeal surface",
+  "model": "gemini-flash-latest",
+  "name": "Tamales Blanco con Masa Harina",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-02T11:25:41+00:00"
+ },
  "bdc3480b4ef9": {
   "avoid": [
    "scrambled eggs",
@@ -27155,6 +27301,42 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-28T17:10:34+00:00"
+ },
+ "c56402bff722": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "paneer",
+   "rice",
+   "naan",
+   "flatbread"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a yellow lentil stew with wilted spinach?",
+    "yes": true
+   },
+   {
+    "q": "Does the dish contain pieces of meat or poultry?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a clear broth soup?",
+    "yes": false
+   }
+  ],
+  "dish": "dal palak",
+  "look": "thick yellow moong lentil stew, tender wilted dark green spinach leaves folded throughout, tempered with golden toasted cumin seeds, minced garlic, slices of green chili, vibrant yellow turmeric hue",
+  "model": "gemini-flash-latest",
+  "name": "Daal Palak",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-02T11:25:41+00:00"
  },
  "c56e639a46de": {
   "avoid": [
