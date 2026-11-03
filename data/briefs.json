@@ -14115,6 +14115,41 @@
   "vessel": "bowl",
   "written_at": "2026-10-17T07:55:50+00:00"
  },
+ "68d2014c4413": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "corn on the cob",
+   "cornbread",
+   "soup broth"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a creamy corn dish?",
+    "yes": true
+   },
+   {
+    "q": "Is the corn served whole on the cob?",
+    "yes": false
+   },
+   {
+    "q": "Are there pieces of meat or fish in the dish?",
+    "yes": false
+   }
+  ],
+  "dish": "Creamed corn",
+  "look": "a rich yellow mixture of tender whole sweet corn kernels suspended in a thick glossy creamy sauce, golden-yellow hue, smooth luscious texture, light sprinkle of cracked black pepper",
+  "model": "gemini-3.6-flash",
+  "name": "Creamed Corn",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-03T21:15:35+00:00"
+ },
  "6954cce63bc4": {
   "avoid": [
    "meat",
@@ -29941,10 +29976,10 @@
    "pork",
    "fish",
    "shrimp",
-   "string beans",
-   "edamame",
+   "yellow beans",
+   "cilantro sprig",
    "corn on the cob",
-   "cherry tomatoes"
+   "edamame"
   ],
   "checks": [
    {
@@ -29961,13 +29996,13 @@
    }
   ],
   "dish": "Succotash",
-  "look": "bright yellow corn kernels, plump pale green lima beans, diced red bell pepper, translucent diced onions, diced red tomatoes, sliced green chili peppers, chopped fresh parsley",
-  "model": "gemma-4-31b-it",
+  "look": "sautéed mixture of bright yellow sweet corn kernels and plump pale green lima beans, with diced red bell peppers, translucent diced onions, red tomatoes, chopped green chili peppers, garnished with fine fresh parsley",
+  "model": "gemini-3.6-flash",
   "name": "Succotash",
   "rev": 6,
-  "revisions": 2,
+  "revisions": 3,
   "vessel": "bowl",
-  "written_at": "2026-11-03T12:05:25+00:00"
+  "written_at": "2026-11-03T22:21:56+00:00"
  },
  "d4e44082e4cf": {
   "avoid": [
