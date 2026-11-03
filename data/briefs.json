@@ -197,6 +197,40 @@
   "vessel": "plate",
   "written_at": "2026-09-27T04:29:35+00:00"
  },
+ "0153243cb327": {
+  "avoid": [
+   "food",
+   "cooked meat",
+   "vegetables",
+   "sauce",
+   "cutlery",
+   "utensils",
+   "napkins",
+   "signage"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item an empty plate?",
+    "yes": true
+   },
+   {
+    "q": "Is there food on the plate?",
+    "yes": false
+   },
+   {
+    "q": "Are there utensils or cutlery present?",
+    "yes": false
+   }
+  ],
+  "dish": "empty plate",
+  "look": "a clean empty white ceramic dinner plate, smooth polished surface, glossy porcelain rim, clear pristine center, smooth porcelain, minimalist single piece of tableware",
+  "model": "gemini-3.6-flash",
+  "name": "Dining Hall Closed",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-02T23:22:44+00:00"
+ },
  "0181581216d4": {
   "avoid": [
    "meat",
@@ -4265,6 +4299,42 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T06:30:47+00:00"
+ },
+ "226a66c474b1": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "chocolate chips",
+   "frosting",
+   "icing",
+   "cake"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food a baked cookie?",
+    "yes": true
+   },
+   {
+    "q": "Is the cookie covered in frosting or icing?",
+    "yes": false
+   },
+   {
+    "q": "Are there chocolate chips studded in the cookie?",
+    "yes": false
+   }
+  ],
+  "dish": "snickerdoodle cookie",
+  "look": "a thick round snickerdoodle cookie, golden-tan baked surface, distinct crinkled cracks, liberally dusted with reddish-brown cinnamon and white sugar crystals, soft buttery interior visible inside fissures",
+  "model": "gemini-3.6-flash",
+  "name": "Snickerdoodle Cookie",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-02T23:24:22+00:00"
  },
  "226f47002661": {
   "avoid": [
@@ -9473,20 +9543,19 @@
  },
  "44f1e5b4b41b": {
   "avoid": [
-   "bread",
-   "toasted bread",
-   "crostini",
-   "baguette",
    "tortilla chips",
-   "french fries",
-   "ground beef",
+   "chips",
+   "whole peppers",
+   "raw peppers on side",
+   "green leaves",
+   "cilantro",
+   "bread",
    "tacos",
-   "burritos",
-   "shredded unmelted cheese"
+   "ground beef"
   ],
   "checks": [
    {
-    "q": "Is the food a warm liquid cheese sauce?",
+    "q": "Is the main food item a smooth liquid cheese sauce?",
     "yes": true
    },
    {
@@ -9498,14 +9567,14 @@
     "yes": false
    }
   ],
-  "dish": "nacho cheese dip",
-  "look": "steaming pool of glossy melted yellow-orange nacho cheese sauce, viscous smooth liquid texture, tiny flecks of finely diced green jalapenos, small specks of red bell pepper, rich creamy cheddar dip surface",
+  "dish": "nacho cheese sauce",
+  "look": "smooth glossy bright yellow-orange liquid cheese sauce filling a small bowl, creamy melted fluid texture, tiny flecks of finely diced green jalapenos, small specks of finely minced red bell pepper",
   "model": "gemini-3.6-flash",
   "name": "Nacho Cheese",
   "rev": 6,
-  "revisions": 1,
+  "revisions": 2,
   "vessel": "bowl",
-  "written_at": "2026-11-02T12:45:26+00:00"
+  "written_at": "2026-11-03T00:38:06+00:00"
  },
  "4517bb7c1d28": {
   "avoid": [
@@ -17290,6 +17359,42 @@
   "vessel": "plate",
   "written_at": "2026-10-12T22:42:49+00:00"
  },
+ "81a19f4ebb3a": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "mochi ice cream",
+   "round mochi balls",
+   "frosting",
+   "whipped cream"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food a slice of baked cake?",
+    "yes": true
+   },
+   {
+    "q": "Are the mochis round ice cream balls?",
+    "yes": false
+   },
+   {
+    "q": "Does the dish contain meat or seafood?",
+    "yes": false
+   }
+  ],
+  "dish": "Hawaiian butter mochi",
+  "look": "a square slice of baked butter mochi cake, golden-brown caramelized top, crisp brown edges, chewy dense pale yellow interior, topped with scattered toasted coconut flakes",
+  "model": "gemini-3.6-flash",
+  "name": "Butter Mochi Cake",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-02T23:24:09+00:00"
+ },
  "81f15f5b56f3": {
   "avoid": [
    "tomato broth",
@@ -20122,6 +20227,39 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T05:43:05+00:00"
+ },
+ "9470b9483845": {
+  "avoid": [
+   "pulled beef",
+   "shredded pork",
+   "ribs",
+   "burger",
+   "sandwich bun",
+   "raw meat",
+   "skewers"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item sliced cooked meat?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat shredded or pulled?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat served on a rib bone?",
+    "yes": false
+   }
+  ],
+  "dish": "Texas BBQ tri-tip",
+  "look": "thick angled slices of roasted beef tri-tip, dark caramelized bark on the outer edges, tender pinkish-red interior, brushed with a rich glossy dark red barbecue sauce",
+  "model": "gemini-3.6-flash",
+  "name": "Texas BBQ Tri Tip",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-02T23:21:28+00:00"
  },
  "94913a9b1fb0": {
   "avoid": [
@@ -24044,6 +24182,41 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T08:32:01+00:00"
  },
+ "aee7d3c316b9": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "tomato sauce",
+   "lettuce",
+   "hot steam"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item pasta coated in a green sauce?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat, chicken, or seafood in the dish?",
+    "yes": false
+   },
+   {
+    "q": "Is the sauce red like tomato sauce?",
+    "yes": false
+   }
+  ],
+  "dish": "pesto pasta salad",
+  "look": "spiral fusilli pasta tossed in vibrant green basil pesto sauce, thinly sliced red onion rings, topped with finely shredded parmesan cheese, scattered crushed red pepper flakes, flecks of cracked black pepper",
+  "model": "gemini-3.6-flash",
+  "name": "Pesto Pasta Salad",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-02T23:24:32+00:00"
+ },
  "af1e5d097a42": {
   "avoid": [
    "meat",
@@ -27652,6 +27825,39 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T08:27:45+00:00"
  },
+ "c6087ff67bdb": {
+  "avoid": [
+   "tortilla wrap",
+   "burrito",
+   "hard taco shell",
+   "soft tortilla",
+   "steak",
+   "quesadilla",
+   "french fries"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food corn chips topped with meat and taco garnishes?",
+    "yes": true
+   },
+   {
+    "q": "Is the food served inside a tortilla wrap or taco shell?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat served as whole sliced steak?",
+    "yes": false
+   }
+  ],
+  "dish": "Frito pie",
+  "look": "crunchy golden corn chips, topped with seasoned crumbled ground beef, melted shredded cheddar cheese, finely shredded iceberg lettuce, chunky red tomato salsa, dollop of thick white sour cream",
+  "model": "gemini-3.6-flash",
+  "name": "Walking Taco",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-02T23:21:43+00:00"
+ },
  "c659350003bb": {
   "avoid": [
    "meat",
@@ -29727,6 +29933,42 @@
   "vessel": "plate",
   "written_at": "2026-09-27T04:50:08+00:00"
  },
+ "d461b9b9e1be": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "green beans",
+   "string beans",
+   "cherry tomatoes",
+   "corn on the cob"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a warm mixture of corn kernels and green beans?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat, poultry, or seafood in the dish?",
+    "yes": false
+   },
+   {
+    "q": "Is the corn served whole on the cob?",
+    "yes": false
+   }
+  ],
+  "dish": "succotash",
+  "look": "warm sautéed mixture of bright yellow corn kernels and plump pale green lima beans, finely diced red bell pepper, sautéed translucent onions, diced red tomatoes, sliced hot green peppers, scattered chopped fresh herbs",
+  "model": "gemini-3.6-flash",
+  "name": "Succotash",
+  "rev": 6,
+  "revisions": 1,
+  "vessel": "bowl",
+  "written_at": "2026-11-03T00:12:47+00:00"
+ },
  "d4e44082e4cf": {
   "avoid": [
    "meat",
@@ -31716,16 +31958,16 @@
  "e3dfe5658090": {
   "avoid": [
    "battered fried chicken balls",
-   "tempura chicken",
+   "deep-fried tempura",
+   "dark brown sauce",
    "pineapple",
    "white rice",
-   "noodles",
-   "raw chicken",
+   "green onions",
    "skewers"
   ],
   "checks": [
    {
-    "q": "Is the main item chicken chunks cooked in a reddish sauce with peppers?",
+    "q": "Is the main item meat chunks cooked in a reddish sauce with peppers?",
     "yes": true
    },
    {
@@ -31738,13 +31980,13 @@
    }
   ],
   "dish": "sweet and sour chicken",
-  "look": "tender bite-sized chunks of braised chicken, thoroughly coated in glossy reddish-orange sweet and sour sauce, mixed with sautéed red bell pepper chunks, green bell pepper squares, translucent yellow onion wedges",
+  "look": "bite-sized chunks of tender chicken breast meat, glossy translucent reddish-orange sweet and sour glaze, large square chunks of red bell pepper, crisp green bell pepper pieces, sliced white onion wedges",
   "model": "gemini-flash-latest",
   "name": "Sweet & Sour Braised Chicken",
   "rev": 6,
-  "revisions": 0,
+  "revisions": 1,
   "vessel": "bowl",
-  "written_at": "2026-11-01T23:49:33+00:00"
+  "written_at": "2026-11-03T00:17:42+00:00"
  },
  "e3f94b0624ca": {
   "avoid": [
