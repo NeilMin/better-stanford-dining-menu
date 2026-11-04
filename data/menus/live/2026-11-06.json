@@ -1,6 +1,6 @@
 {
  "date": "2026-11-06",
- "scraped_at": "2026-11-04T03:02:31-08:00",
+ "scraped_at": "2026-11-04T13:21:10-08:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -365,7 +365,7 @@
      "name": "Grilled Chicken",
      "recipe_id": "520454-02",
      "description": "",
-     "ingredients": "[Halal] chicken, canola/olive oil blend, salt, pepper",
+     "ingredients": "[HALAL] chicken, canola/olive oil blend, salt, pepper",
      "allergens": [],
      "trace_allergens": [
       "COCONUT",
@@ -545,7 +545,7 @@
      "name": "Chicken Parmesan",
      "recipe_id": "4383016",
      "description": "",
-     "ingredients": "[Halal] chicken, italian seasoning, garlic powder, eggs, milk, breadcrumbs, flour, mozzarella cheese, parmesan cheese, canola/olive oil blend, garlic powder, italian seasoning, salt, marinara sauce",
+     "ingredients": "[HALAL] chicken, italian seasoning, garlic powder, eggs, milk, breadcrumbs, flour (wheat), mozzarella cheese, parmesan cheese (milk), canola/olive oil blend, garlic powder, italian seasoning, salt, marinara sauce (soy)",
      "allergens": [
       "EGG",
       "MILK",
@@ -615,7 +615,7 @@
      "name": "Broccoli Rabe with Garlic & Lemon",
      "recipe_id": "RoatBrocRabe1",
      "description": "",
-     "ingredients": "broccoli rabe, garlic, lemon juice, lemon zest, parmesan cheese, red pepper flakes, olive/canola oil blend, salt, black pepper",
+     "ingredients": "broccoli rabe, garlic, lemon juice, lemon zest, parmesan cheese (milk), red pepper flakes, olive/canola oil blend, salt, black pepper",
      "allergens": [
       "MILK"
      ],
@@ -662,7 +662,7 @@
      "name": "Garlic Herb Spaghetti",
      "recipe_id": "GarHerbSpaghetti1",
      "description": "",
-     "ingredients": "spaghetti, garlic, parsley, basil, lemon juice, red pepper flakes, olive/canola oil blend, salt, black pepper",
+     "ingredients": "spaghetti (wheat), garlic, parsley, basil, lemon juice, red pepper flakes, olive/canola oil blend, salt, black pepper",
      "allergens": [
       "WHEAT"
      ],
@@ -1214,7 +1214,7 @@
      "name": "Grilled Chicken",
      "recipe_id": "520454-02",
      "description": "",
-     "ingredients": "[Halal] chicken, canola/olive oil blend, salt, pepper",
+     "ingredients": "[HALAL] chicken, canola/olive oil blend, salt, pepper",
      "allergens": [],
      "trace_allergens": [
       "COCONUT",
@@ -2036,7 +2036,7 @@
      "name": "Grilled Chicken",
      "recipe_id": "520454-02",
      "description": "",
-     "ingredients": "[Halal] chicken, canola/olive oil blend, salt, pepper",
+     "ingredients": "[HALAL] chicken, canola/olive oil blend, salt, pepper",
      "allergens": [],
      "trace_allergens": [
       "COCONUT",
@@ -2213,32 +2213,36 @@
    ],
    "Dinner": [
     {
-     "name": "Spaghetti with Beef & Pork Meatballs",
-     "recipe_id": "6337932",
+     "name": "Chicken Pibil Plate",
+     "recipe_id": "6352850-2",
      "description": "",
-     "ingredients": "spaghetti, marinara sauce, salt, parsley, parmesan cheese, canola/olive oil blend, meatballs (beef, pork, breadcrumbs, romano cheese, garlic powder, oregano, basil, parsley, vegetable oil)",
-     "allergens": [
+     "ingredients": "Chicken Pibil (chicken, pibil sauce [garlic, onion, salt, cumin, oregano, achiote paste, allspice, pepper, orange juice, lime juice, cinnamon, ground clove], canola/olive oil blend), pickled onionss (red onion, orange juice, apple cider vinegar, habanero chili, oregano, salt, lime juice), Sauteed Corn & Zucchini, Black Beans (black beans, epazote leaf, salt, onions, canola/olive oil blend), Mexican Rice, Corn Tortillas",
+     "allergens": [],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
       "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
       "SOY",
+      "TREENUTS",
       "WHEAT"
      ],
-     "trace_allergens": [],
      "tags": [],
      "order": 0
     },
     {
-     "name": "Eggplant Parmesan",
-     "recipe_id": "4464496",
+     "name": "Mushroom Hongos Al Pastor",
+     "recipe_id": "3798100",
      "description": "",
-     "ingredients": "eggplant, mushrooms, onions, marinara sauce (soy), bread crumbs (wheat), mozzarella cheese (milk), parmesan cheese (milk), canola/olive oil blend, oregano, pepper",
-     "allergens": [
-      "MILK",
-      "SOY",
-      "WHEAT"
-     ],
+     "ingredients": "mushrooms, onions, guajillo chili, orange juice, achiote paste, garlic, cilantro, pineapple, white vinegar, lime juice, canola/olive oil blend, cumin seeds, salt, pepper",
+     "allergens": [],
      "trace_allergens": [],
      "tags": [
-      "vegetarian"
+      "gluten-free",
+      "vegan"
      ],
      "order": 1
     },
@@ -2282,44 +2286,36 @@
      "order": 4
     },
     {
-     "name": "Broccoli Rabe with Garlic & Lemon",
-     "recipe_id": "RoatBrocRabe1",
+     "name": "Seasoned Black Beans",
+     "recipe_id": "5111980",
      "description": "",
-     "ingredients": "broccoli rabe, garlic, lemon juice, lemon zest, parmesan cheese, red pepper flakes, olive/canola oil blend, salt, black pepper",
-     "allergens": [
-      "MILK"
-     ],
+     "ingredients": "black beans, canola/olive oil blend, salt",
+     "allergens": [],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
-      "vegetarian"
+      "vegan"
      ],
      "order": 5
     },
     {
-     "name": "Assorted Dinner Rolls",
-     "recipe_id": "5344600",
+     "name": "Zesty Cilantro Rice Pilaf",
+     "recipe_id": "5449797-1",
      "description": "",
-     "ingredients": "unbleached wheat flour, malted barley flour, sour culture, salt, yeast, sesame seeds, amaranth, poppy seeds, whole wheat flour, dark rye flour, malt powder (milk), honey, extra virgin olive oil, semolina (wheat), wheat germ",
-     "allergens": [
-      "MILK",
-      "SESAME",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "SOY",
-      "TREENUTS"
-     ],
+     "ingredients": "white rice, onions, carrot, vegetable soup base (contains mushrooms), lime juice, canola/olive oil blend, cilantro, pepper",
+     "allergens": [],
+     "trace_allergens": [],
      "tags": [
-      "vegetarian"
+      "gluten-free",
+      "vegan"
      ],
      "order": 6
     },
     {
-     "name": "Rosemary Garlic White Bean Stew",
-     "recipe_id": "RoseWhiteStew1",
+     "name": "White Corn Tortilla",
+     "recipe_id": "TORFP_CASE",
      "description": "",
-     "ingredients": "white beans, stewed tomatoes, onions, carrots, celery, garlic, vegetable base, rosemary, bay leaf, crushed red pepper flakes, oil, salt, and pepper",
+     "ingredients": "ground corn treated with lime, propionic acid, sodium phosphate, dextrose",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -2329,20 +2325,6 @@
      "order": 7
     },
     {
-     "name": "Garlic Herb Spaghetti",
-     "recipe_id": "GarHerbSpaghetti1",
-     "description": "",
-     "ingredients": "spaghetti, garlic, parsley, basil, lemon juice, red pepper flakes, olive/canola oil blend, salt, black pepper",
-     "allergens": [
-      "WHEAT"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "vegan"
-     ],
-     "order": 8
-    },
-    {
      "name": "Burger Bar",
      "recipe_id": "5964436",
      "description": "",
@@ -2350,7 +2332,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 9
+     "order": 8
     },
     {
      "name": "Grilled Chicken",
@@ -2364,7 +2346,7 @@
      "tags": [
       "gluten-free"
      ],
-     "order": 10
+     "order": 9
     },
     {
      "name": "Grilled Vegan/Vegetarian",
@@ -2385,7 +2367,7 @@
       "WHEAT"
      ],
      "tags": [],
-     "order": 11
+     "order": 10
     },
     {
      "name": "Soup of the Day",
@@ -2395,7 +2377,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 12
+     "order": 11
     },
     {
      "name": "Assorted Dinner Rolls",
@@ -2414,7 +2396,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 13
+     "order": 12
     },
     {
      "name": "Composed Salad",
@@ -2424,7 +2406,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 14
+     "order": 13
     },
     {
      "name": "Performance Bar",
@@ -2434,7 +2416,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 15
+     "order": 14
     },
     {
      "name": "Craveable Grains",
@@ -2447,7 +2429,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 16
+     "order": 15
     },
     {
      "name": "Flavor Forward Legumes",
@@ -2460,7 +2442,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 17
+     "order": 16
     },
     {
      "name": "Pasta Alfredo",
@@ -2477,7 +2459,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 18
+     "order": 17
     },
     {
      "name": "Pasta Marinara",
@@ -2494,7 +2476,7 @@
      "tags": [
       "vegan"
      ],
-     "order": 19
+     "order": 18
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -2507,7 +2489,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 20
+     "order": 19
     }
    ]
   },
@@ -2960,7 +2942,7 @@
      "name": "Chicken Parmesan",
      "recipe_id": "4383016",
      "description": "",
-     "ingredients": "[Halal] chicken, italian seasoning, garlic powder, eggs, milk, breadcrumbs, flour, mozzarella cheese, parmesan cheese, canola/olive oil blend, garlic powder, italian seasoning, salt, marinara sauce",
+     "ingredients": "[HALAL] chicken, italian seasoning, garlic powder, eggs, milk, breadcrumbs, flour (wheat), mozzarella cheese, parmesan cheese (milk), canola/olive oil blend, garlic powder, italian seasoning, salt, marinara sauce (soy)",
      "allergens": [
       "EGG",
       "MILK",
@@ -3030,7 +3012,7 @@
      "name": "Broccoli Rabe with Garlic & Lemon",
      "recipe_id": "RoatBrocRabe1",
      "description": "",
-     "ingredients": "broccoli rabe, garlic, lemon juice, lemon zest, parmesan cheese, red pepper flakes, olive/canola oil blend, salt, black pepper",
+     "ingredients": "broccoli rabe, garlic, lemon juice, lemon zest, parmesan cheese (milk), red pepper flakes, olive/canola oil blend, salt, black pepper",
      "allergens": [
       "MILK"
      ],
@@ -3077,7 +3059,7 @@
      "name": "Garlic Herb Spaghetti",
      "recipe_id": "GarHerbSpaghetti1",
      "description": "",
-     "ingredients": "spaghetti, garlic, parsley, basil, lemon juice, red pepper flakes, olive/canola oil blend, salt, black pepper",
+     "ingredients": "spaghetti (wheat), garlic, parsley, basil, lemon juice, red pepper flakes, olive/canola oil blend, salt, black pepper",
      "allergens": [
       "WHEAT"
      ],
@@ -3514,7 +3496,7 @@
      "name": "Grilled Chicken",
      "recipe_id": "520454-02",
      "description": "",
-     "ingredients": "[Halal] chicken, canola/olive oil blend, salt, pepper",
+     "ingredients": "[HALAL] chicken, canola/olive oil blend, salt, pepper",
      "allergens": [],
      "trace_allergens": [
       "COCONUT",
@@ -3694,7 +3676,7 @@
      "name": "Miso Black Cod",
      "recipe_id": "MisoCod1",
      "description": "",
-     "ingredients": "black cod (sablefish), white miso paste, brown sugar, tamari, ginger, green onions, sesame seeds",
+     "ingredients": "black cod (sablefish), white miso paste (soy), brown sugar, tamari (soy), ginger, green onions, sesame seeds",
      "allergens": [
       "FISH",
       "SESAME",
@@ -4239,14 +4221,13 @@
      "name": "Thai Coconut Curry Tofu",
      "recipe_id": "ThaiCocoTofu1",
      "description": "",
-     "ingredients": "tofu, seasonal vegetables, coconut milk, vegetarian red curry paste (Thai red chilies, garlic, shallots, lemongrass, makrut lime leaves, coriander seeds, cumin, white pepper, salt), onions, bell peppers, garlic, ginger, tamari, vegetarian oyster sauce, lime juice, basil, sugar, olive/canola oil blend, salt",
+     "ingredients": "tofu (soy), seasonal vegetables, coconut milk, vegetarian red curry paste (Thai red chilies, garlic, shallots, lemongrass, makrut lime leaves, coriander seeds, cumin, white pepper, salt), onions, bell peppers, garlic, ginger, tamari (soy), vegetarian oyster sauce (soy, wheat), lime juice, basil, sugar, olive/canola oil blend, salt",
      "allergens": [
       "COCONUT",
-      "SOY"
-     ],
-     "trace_allergens": [
+      "SOY",
       "WHEAT"
      ],
+     "trace_allergens": [],
      "tags": [
       "vegan"
      ],
@@ -4483,7 +4464,7 @@
      "name": "Broccoli Rabe with Garlic & Lemon",
      "recipe_id": "RoatBrocRabe1",
      "description": "",
-     "ingredients": "broccoli rabe, garlic, lemon juice, lemon zest, parmesan cheese, red pepper flakes, olive/canola oil blend, salt, black pepper",
+     "ingredients": "broccoli rabe, garlic, lemon juice, lemon zest, parmesan cheese (milk), red pepper flakes, olive/canola oil blend, salt, black pepper",
      "allergens": [
       "MILK"
      ],
@@ -4939,7 +4920,7 @@
      "name": "Grilled Chicken",
      "recipe_id": "520454-02",
      "description": "",
-     "ingredients": "[Halal] chicken, canola/olive oil blend, salt, pepper",
+     "ingredients": "[HALAL] chicken, canola/olive oil blend, salt, pepper",
      "allergens": [],
      "trace_allergens": [
       "COCONUT",
@@ -5068,7 +5049,7 @@
      "name": "Spaghetti with Beef & Pork Meatballs",
      "recipe_id": "6337932",
      "description": "",
-     "ingredients": "spaghetti, marinara sauce, salt, parsley, parmesan cheese, canola/olive oil blend, meatballs (beef, pork, breadcrumbs, romano cheese, garlic powder, oregano, basil, parsley, vegetable oil)",
+     "ingredients": "[NON-HALAL] spaghetti (wheat), marinara sauce (soy), salt, parsley, parmesan cheese, canola/olive oil blend, meatballs (beef, pork, breadcrumbs [wheat], romano cheese [milk], garlic powder, oregano, basil, parsley, vegetable oil)",
      "allergens": [
       "MILK",
       "SOY",
@@ -5082,7 +5063,7 @@
      "name": "Vegan \"Meatballs\" in Red Sauce",
      "recipe_id": "VGNMeatballMar1",
      "description": "",
-     "ingredients": "marinara sauce, meatless \"meatballs\" (pea protein, sunflower oil, coconut oil, vegetable juice, fruit juice, yeast extract, rice bran extract, sugar, onion powder, garlic powder, gum arabic, parsley, canola oil), onions, garlic, salt, pepper",
+     "ingredients": "marinara sauce (soy), meatless \"meatballs\" (pea protein, sunflower oil, coconut oil, vegetable juice, fruit juice, yeast extract, rice bran extract, sugar, onion powder, garlic powder, gum arabic, parsley, canola oil [wheat]), onions, garlic, salt, pepper",
      "allergens": [
       "COCONUT",
       "SOY",
@@ -5137,7 +5118,7 @@
      "name": "Garlic Herb Spaghetti",
      "recipe_id": "GarHerbSpaghetti1",
      "description": "",
-     "ingredients": "spaghetti, garlic, parsley, basil, lemon juice, red pepper flakes, olive/canola oil blend, salt, black pepper",
+     "ingredients": "spaghetti (wheat), garlic, parsley, basil, lemon juice, red pepper flakes, olive/canola oil blend, salt, black pepper",
      "allergens": [
       "WHEAT"
      ],

@@ -1,6 +1,6 @@
 {
  "date": "2026-11-05",
- "scraped_at": "2026-11-04T03:02:31-08:00",
+ "scraped_at": "2026-11-04T13:21:10-08:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -355,7 +355,7 @@
      "name": "Grilled Chicken",
      "recipe_id": "520454-02",
      "description": "",
-     "ingredients": "[Halal] chicken, canola/olive oil blend, salt, pepper",
+     "ingredients": "[HALAL] chicken, canola/olive oil blend, salt, pepper",
      "allergens": [],
      "trace_allergens": [
       "COCONUT",
@@ -535,7 +535,7 @@
      "name": "Braised Beef Poutine (Topping)",
      "recipe_id": "BraisBeefPoutine1",
      "description": "",
-     "ingredients": "[Halal] beef, beef soup base, onions, garlic, tomato paste, Worcestershire sauce, thyme, rosemary, olive/canola oil blend, salt, black pepper",
+     "ingredients": "[HALAL] beef, beef soup base, onions, garlic, tomato paste, Worcestershire sauce (fish), thyme, rosemary, olive/canola oil blend, salt, black pepper",
      "allergens": [
       "FISH"
      ],
@@ -588,7 +588,7 @@
      "name": "Buttered Green Beans with Shallots",
      "recipe_id": "ButterGrnBeanShal1",
      "description": "",
-     "ingredients": "green beans, butter, shallots, garlic, parsley, lemon juice, olive/canola oil blend, salt, black pepper",
+     "ingredients": "green beans, butter (milk), shallots, garlic, parsley, lemon juice, olive/canola oil blend, salt, black pepper",
      "allergens": [
       "MILK"
      ],
@@ -654,7 +654,7 @@
      "name": "Canadian-Style Coleslaw",
      "recipe_id": "CanadaSlaw1",
      "description": "",
-     "ingredients": "green cabbage, carrots, mayonnaise, onions, sugar, apple cider vinegar, celery seeds, (non-halal) dijon mustard, salt, black pepper",
+     "ingredients": "[NON-HALAL] green cabbage, carrots, mayonnaise (egg, soy), onions, sugar, apple cider vinegar, celery seeds, dijon mustard (alcohol), salt, black pepper",
      "allergens": [
       "EGG",
       "SOY"
@@ -683,7 +683,7 @@
      "name": "Quebec-Style Cheese Curds",
      "recipe_id": "PoutCheeseCurds1",
      "description": "",
-     "ingredients": "pasteurized milk, cream, vinegar, enzymes",
+     "ingredients": "pasteurized milk, cream (milk), vinegar, enzymes",
      "allergens": [
       "MILK"
      ],
@@ -1238,7 +1238,7 @@
      "name": "Grilled Chicken",
      "recipe_id": "520454-02",
      "description": "",
-     "ingredients": "[Halal] chicken, canola/olive oil blend, salt, pepper",
+     "ingredients": "[HALAL] chicken, canola/olive oil blend, salt, pepper",
      "allergens": [],
      "trace_allergens": [
       "COCONUT",
@@ -1277,18 +1277,25 @@
      "order": 8
     },
     {
-     "name": "Handmade Pizza",
-     "recipe_id": "afdcpizza2",
+     "name": "Chicken Tenders & Fries",
+     "recipe_id": "3763205-2",
      "description": "",
-     "ingredients": "wheat flour, yeast, sugar, olive oil, mozzarella cheese (milk), marinara sauce",
+     "ingredients": "",
      "allergens": [
+      "SOY"
+     ],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
       "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "TREENUTS",
       "WHEAT"
      ],
-     "trace_allergens": [],
-     "tags": [
-      "vegetarian"
-     ],
+     "tags": [],
      "order": 9
     },
     {
@@ -2068,7 +2075,7 @@
      "name": "Grilled Chicken",
      "recipe_id": "520454-02",
      "description": "",
-     "ingredients": "[Halal] chicken, canola/olive oil blend, salt, pepper",
+     "ingredients": "[HALAL] chicken, canola/olive oil blend, salt, pepper",
      "allergens": [],
      "trace_allergens": [
       "COCONUT",
@@ -2248,7 +2255,7 @@
      "name": "Braised Beef Poutine (Topping)",
      "recipe_id": "BraisBeefPoutine1",
      "description": "",
-     "ingredients": "[Halal] beef, beef soup base, onions, garlic, tomato paste, Worcestershire sauce, thyme, rosemary, olive/canola oil blend, salt, black pepper",
+     "ingredients": "[HALAL] beef, beef soup base, onions, garlic, tomato paste, Worcestershire sauce (fish), thyme, rosemary, olive/canola oil blend, salt, black pepper",
      "allergens": [
       "FISH"
      ],
@@ -2301,7 +2308,7 @@
      "name": "Buttered Green Beans with Shallots",
      "recipe_id": "ButterGrnBeanShal1",
      "description": "",
-     "ingredients": "green beans, butter, shallots, garlic, parsley, lemon juice, olive/canola oil blend, salt, black pepper",
+     "ingredients": "green beans, butter (milk), shallots, garlic, parsley, lemon juice, olive/canola oil blend, salt, black pepper",
      "allergens": [
       "MILK"
      ],
@@ -2367,7 +2374,7 @@
      "name": "Canadian-Style Coleslaw",
      "recipe_id": "CanadaSlaw1",
      "description": "",
-     "ingredients": "green cabbage, carrots, mayonnaise, onions, sugar, apple cider vinegar, celery seeds, (non-halal) dijon mustard, salt, black pepper",
+     "ingredients": "[NON-HALAL] green cabbage, carrots, mayonnaise (egg, soy), onions, sugar, apple cider vinegar, celery seeds, dijon mustard (alcohol), salt, black pepper",
      "allergens": [
       "EGG",
       "SOY"
@@ -2396,7 +2403,7 @@
      "name": "Quebec-Style Cheese Curds",
      "recipe_id": "PoutCheeseCurds1",
      "description": "",
-     "ingredients": "pasteurized milk, cream, vinegar, enzymes",
+     "ingredients": "pasteurized milk, cream (milk), vinegar, enzymes",
      "allergens": [
       "MILK"
      ],
@@ -3029,7 +3036,7 @@
      "name": "Braised Beef Poutine (Topping)",
      "recipe_id": "BraisBeefPoutine1",
      "description": "",
-     "ingredients": "[Halal] beef, beef soup base, onions, garlic, tomato paste, Worcestershire sauce, thyme, rosemary, olive/canola oil blend, salt, black pepper",
+     "ingredients": "[HALAL] beef, beef soup base, onions, garlic, tomato paste, Worcestershire sauce (fish), thyme, rosemary, olive/canola oil blend, salt, black pepper",
      "allergens": [
       "FISH"
      ],
@@ -3082,7 +3089,7 @@
      "name": "Buttered Green Beans with Shallots",
      "recipe_id": "ButterGrnBeanShal1",
      "description": "",
-     "ingredients": "green beans, butter, shallots, garlic, parsley, lemon juice, olive/canola oil blend, salt, black pepper",
+     "ingredients": "green beans, butter (milk), shallots, garlic, parsley, lemon juice, olive/canola oil blend, salt, black pepper",
      "allergens": [
       "MILK"
      ],
@@ -3148,7 +3155,7 @@
      "name": "Quebec-Style Cheese Curds",
      "recipe_id": "PoutCheeseCurds1",
      "description": "",
-     "ingredients": "pasteurized milk, cream, vinegar, enzymes",
+     "ingredients": "pasteurized milk, cream (milk), vinegar, enzymes",
      "allergens": [
       "MILK"
      ],
@@ -3162,7 +3169,7 @@
      "name": "Canadian-Style Coleslaw",
      "recipe_id": "CanadaSlaw1",
      "description": "",
-     "ingredients": "green cabbage, carrots, mayonnaise, onions, sugar, apple cider vinegar, celery seeds, (non-halal) dijon mustard, salt, black pepper",
+     "ingredients": "[NON-HALAL] green cabbage, carrots, mayonnaise (egg, soy), onions, sugar, apple cider vinegar, celery seeds, dijon mustard (alcohol), salt, black pepper",
      "allergens": [
       "EGG",
       "SOY"
@@ -3475,7 +3482,7 @@
      "name": "Creamy Butter Chicken",
      "recipe_id": "5104556",
      "description": "",
-     "ingredients": "Halal chicken, unsalted butter, curry sauce (onions, ginger, garlic, tomato puree, tomato sauce, tomato paste, ketchup, turmeric, garam masala, coriander seeds, curry powder, ground cumin, cumin seeds, chili powder, salt), cream, coriander seeds, cinnamon, cardamom seeds, cloves, nutmeg, bay leaf, pepper",
+     "ingredients": "[HALAL] chicken, unsalted butter (milk), curry sauce (onions, ginger, garlic, tomato puree, tomato sauce, tomato paste, ketchup, turmeric, garam masala, coriander seeds, curry powder, ground cumin, cumin seeds, chili powder, salt), cream (milk), coriander seeds, cinnamon, cardamom seeds, cloves, nutmeg, bay leaf, pepper",
      "allergens": [
       "MILK"
      ],
@@ -4680,7 +4687,7 @@
      "name": "Grilled Chicken",
      "recipe_id": "520454-02",
      "description": "",
-     "ingredients": "[Halal] chicken, canola/olive oil blend, salt, pepper",
+     "ingredients": "[HALAL] chicken, canola/olive oil blend, salt, pepper",
      "allergens": [],
      "trace_allergens": [
       "COCONUT",
@@ -4698,25 +4705,19 @@
      "order": 5
     },
     {
-     "name": "Grilled Tofu Patty",
-     "recipe_id": "GrilledTofu1",
+     "name": "Impossible Burger",
+     "recipe_id": "4764885",
      "description": "",
-     "ingredients": "tofu, canola oil, salt, and pepper",
+     "ingredients": "textured wheat protein, coconut oil, potato protein, natural flavors, soy, yeast extract, salt, konjac gum, xanthan gum, soy protein isolate",
      "allergens": [
-      "SOY"
-     ],
-     "trace_allergens": [
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "TREENUTS",
+      "COCONUT",
+      "SOY",
       "WHEAT"
      ],
+     "trace_allergens": [
+      "SESAME"
+     ],
      "tags": [
-      "gluten-free",
       "vegan"
      ],
      "order": 6
@@ -4877,7 +4878,7 @@
      "name": "Buttered Green Beans with Shallots",
      "recipe_id": "ButterGrnBeanShal1",
      "description": "",
-     "ingredients": "green beans, butter, shallots, garlic, parsley, lemon juice, olive/canola oil blend, salt, black pepper",
+     "ingredients": "green beans, butter (milk), shallots, garlic, parsley, lemon juice, olive/canola oil blend, salt, black pepper",
      "allergens": [
       "MILK"
      ],
