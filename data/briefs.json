@@ -730,6 +730,40 @@
   "vessel": "plate",
   "written_at": "2026-10-26T20:39:43+00:00"
  },
+ "06b07d3542ad": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "raw eggplant",
+   "noodles"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cooked eggplant pieces in sauce?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat or seafood in the dish?",
+    "yes": false
+   },
+   {
+    "q": "Is the eggplant raw or whole?",
+    "yes": false
+   }
+  ],
+  "dish": "stir-fried eggplant",
+  "look": "tender purple-skinned eggplant chunks glossy with dark savory tamari sauce, flecked with crushed red pepper flakes, glistening under soft light",
+  "model": "gemini-3.6-flash",
+  "name": "Stir Fried Eggplant",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-04T21:33:03+00:00"
+ },
  "06def5459c8f": {
   "avoid": [
    "pulled chicken",
@@ -10099,6 +10133,38 @@
   "vessel": "bowl",
   "written_at": "2026-10-21T09:04:04+00:00"
  },
+ "475a4eb7a514": {
+  "avoid": [
+   "pork",
+   "beef",
+   "burrito",
+   "taco wrap",
+   "raw onions",
+   "tortilla chips"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cooked shredded meat in sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat wrapped inside a burrito?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat raw or uncooked?",
+    "yes": false
+   }
+  ],
+  "dish": "chicken pibil plate",
+  "look": "shredded cooked chicken breast in reddish achiote sauce, vibrant pink pickled red onions, red Mexican rice, black beans, sauteed yellow corn and zucchini, corn tortillas",
+  "model": "gemini-3.6-flash",
+  "name": "Chicken Pibil Plate",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-04T21:33:03+00:00"
+ },
  "479ceb40a2da": {
   "avoid": [
    "meat",
@@ -11978,6 +12044,37 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-02T10:09:55+00:00"
+ },
+ "555ba8d1f8cb": {
+  "avoid": [
+   "pepperoni slices",
+   "raw dough",
+   "burrito",
+   "whole pizza pie",
+   "pasta"
+  ],
+  "checks": [
+   {
+    "q": "Is the food a slice of baked pizza?",
+    "yes": true
+   },
+   {
+    "q": "Is the dough unbaked and raw?",
+    "yes": false
+   },
+   {
+    "q": "Is the food folded into a taco or burrito?",
+    "yes": false
+   }
+  ],
+  "dish": "Southwest chorizo pizza",
+  "look": "slice of baked pizza with golden crust, melted white pepperjack cheese, crumbles of reddish-brown chorizo sausage, small diced potatoes, black beans, yellow corn kernels",
+  "model": "gemini-3.6-flash",
+  "name": "Southwest Chorizo Pizza",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-04T21:33:03+00:00"
  },
  "5582dc2d6e3b": {
   "avoid": [
@@ -25406,6 +25503,40 @@
   "vessel": "plate",
   "written_at": "2026-10-23T19:26:54+00:00"
  },
+ "b69f1fcc8216": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "raw rice",
+   "soup broth"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food cooked rice?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat or seafood with the rice?",
+    "yes": false
+   },
+   {
+    "q": "Is the rice raw or dry and uncooked?",
+    "yes": false
+   }
+  ],
+  "dish": "cilantro rice pilaf",
+  "look": "mound of fluffy cooked white rice pilaf, tossed with tiny diced orange carrots, soft translucent onions, flecks of fresh green chopped cilantro leaves",
+  "model": "gemini-3.6-flash",
+  "name": "Zesty Cilantro Rice Pilaf",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-04T21:33:03+00:00"
+ },
  "b6cf6ab4c1fa": {
   "avoid": [
    "bone-in chicken",
@@ -26755,6 +26886,41 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-30T10:09:22+00:00"
+ },
+ "befe299e6873": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "cheese",
+   "ketchup dip",
+   "raw potatoes"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food cooked potato fries?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat or chicken with the fries?",
+    "yes": false
+   },
+   {
+    "q": "Are the potatoes whole or raw?",
+    "yes": false
+   }
+  ],
+  "dish": "garlic french fries",
+  "look": "stack of crispy golden-brown fried potato fries, tossed with finely minced toasted garlic bits, sprinkled with chopped green fresh parsley",
+  "model": "gemini-3.6-flash",
+  "name": "Garlic French Fries",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-04T21:33:03+00:00"
  },
  "bf2d3e810d6e": {
   "avoid": [
@@ -30282,6 +30448,38 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T04:50:08+00:00"
+ },
+ "d6297b93a5df": {
+  "avoid": [
+   "raw fish",
+   "deep fried battered fish",
+   "salmon",
+   "shrimp",
+   "catfish whole head",
+   "tacos"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food a cooked fish fillet?",
+    "yes": true
+   },
+   {
+    "q": "Is the fish pink like salmon?",
+    "yes": false
+   },
+   {
+    "q": "Is the fish deep fried in heavy yellow batter?",
+    "yes": false
+   }
+  ],
+  "dish": "blackened catfish",
+  "look": "blackened pan-seared catfish fillet with dark spice crust, flaky white flesh, white rice bed, drizzle of creamy pale orange aioli, sprinkle of minced green parsley",
+  "model": "gemini-3.6-flash",
+  "name": "Blackened Catfish with Spicy Lime Aioli",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-04T21:33:03+00:00"
  },
  "d6a949b9815e": {
   "avoid": [
