@@ -2124,6 +2124,38 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T08:27:45+00:00"
  },
+ "14152d9aeb4b": {
+  "avoid": [
+   "skewers",
+   "rice",
+   "beef",
+   "pork",
+   "soup",
+   "vegetables"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item grilled poultry?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat ground or minced?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat served on skewers?",
+    "yes": false
+   }
+  ],
+  "dish": "Lemongrass Grilled Chicken",
+  "look": "grilled chicken pieces, charred brown edges, glossy soy glaze, scattered red chili flakes, fresh chopped cilantro",
+  "model": "gemma-4-31b-it",
+  "name": "Grilled Lemongrass Chicken",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-05T11:20:34+00:00"
+ },
  "1429ac7cd993": {
   "avoid": [
    "chicken",
@@ -29954,6 +29986,40 @@
   "vessel": "plate",
   "written_at": "2026-10-04T10:07:59+00:00"
  },
+ "d36dbb63797d": {
+  "avoid": [
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "meat",
+   "rice",
+   "noodles"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cubed tofu?",
+    "yes": true
+   },
+   {
+    "q": "Is the main item meat or fish?",
+    "yes": false
+   },
+   {
+    "q": "Is the tofu served dry without sauce?",
+    "yes": false
+   }
+  ],
+  "dish": "Yellow Curry Tofu",
+  "look": "cubed firm tofu, thick creamy yellow curry sauce, coconut milk, glossy texture",
+  "model": "gemma-4-31b-it",
+  "name": "Curried Tofu",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-05T11:20:34+00:00"
+ },
  "d3ad2fe14444": {
   "avoid": [
    "tortillas",
@@ -31507,6 +31573,41 @@
   "vessel": "bowl",
   "written_at": "2026-09-26T20:17:35+00:00"
  },
+ "de8ec4b71ee7": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "raw kale",
+   "salad",
+   "soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cooked leafy greens?",
+    "yes": true
+   },
+   {
+    "q": "Is the kale raw or in a salad?",
+    "yes": false
+   },
+   {
+    "q": "Are there pieces of meat mixed in?",
+    "yes": false
+   }
+  ],
+  "dish": "Sautéed Kale",
+  "look": "wilted dark green kale leaves, translucent sautéed onions, minced garlic bits, glistening surface",
+  "model": "gemma-4-31b-it",
+  "name": "Sauteed Kale",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-05T11:20:34+00:00"
+ },
  "dec90394a60e": {
   "avoid": [
    "chicken",
@@ -31976,6 +32077,40 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-30T10:02:25+00:00"
+ },
+ "e28dc36b3fa8": {
+  "avoid": [
+   "chicken",
+   "beef",
+   "pork",
+   "shrimp",
+   "fish",
+   "meat",
+   "omelet",
+   "wrap"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food cooked rice?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat or fish in the rice?",
+    "yes": false
+   },
+   {
+    "q": "Is the rice served as a soup?",
+    "yes": false
+   }
+  ],
+  "dish": "Thai Basil Fried Rice",
+  "look": "stir-fried jasmine rice, scrambled yellow egg pieces, dark brown glaze, wilted dark green basil leaves, diced carrots, peas",
+  "model": "gemma-4-31b-it",
+  "name": "Thai Basil Fried Rice w/ JustEgg",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-05T11:20:34+00:00"
  },
  "e303dd1f31c3": {
   "avoid": [
@@ -36455,5 +36590,37 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T08:19:18+00:00"
+ },
+ "ffbc671ba6f6": {
+  "avoid": [
+   "shrimp",
+   "seafood",
+   "white rice",
+   "soup",
+   "beans",
+   "pasta"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food cooked rice?",
+    "yes": true
+   },
+   {
+    "q": "Is the rice white and plain?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a soup or stew?",
+    "yes": false
+   }
+  ],
+  "dish": "Cajun Dirty Rice",
+  "look": "browned long-grain rice, crumbled beef and liver bits, diced green and red bell peppers, sautéed onions, flecks of green parsley",
+  "model": "gemma-4-31b-it",
+  "name": "Nola Dirty Rice",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-05T11:20:34+00:00"
  }
 }
