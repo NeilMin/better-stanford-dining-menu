@@ -1323,6 +1323,39 @@
   "vessel": "plate",
   "written_at": "2026-09-28T17:10:34+00:00"
  },
+ "0ab461b0d494": {
+  "avoid": [
+   "unbreaded grilled steak",
+   "hamburger bun",
+   "sandwich",
+   "french fries",
+   "mashed potatoes",
+   "brown gravy",
+   "raw meat"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a breaded fried meat cutlet smothered in white gravy?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat an unbreaded grilled or seared steak?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat served inside a bun or sandwich?",
+    "yes": false
+   }
+  ],
+  "dish": "country fried steak",
+  "look": "a wide flattened beef cutlet with craggy golden-brown fried breading, smothered in thick creamy white pepper gravy, garnished with a light sprinkle of fresh minced thyme",
+  "model": "gemini-flash-latest",
+  "name": "Country Fried Steak",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-05T21:37:37+00:00"
+ },
  "0bc8919ce350": {
   "avoid": [
    "meat",
@@ -2649,6 +2682,39 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-29T10:15:53+00:00"
+ },
+ "1893bff7acba": {
+  "avoid": [
+   "tortillas",
+   "tacos",
+   "french fries",
+   "potato wedges",
+   "soup",
+   "bread",
+   "cheese"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item fried root vegetable chunks topped with crispy pork pieces?",
+    "yes": true
+   },
+   {
+    "q": "Is the food served inside tacos or a tortilla wrap?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a soup or stew in liquid broth?",
+    "yes": false
+   }
+  ],
+  "dish": "yuca con chicharrón",
+  "look": "golden fried yuca root chunks, topped with crispy bite-sized pork chicharrón pieces, shredded cabbage curtido slaw, thinly sliced pickled red onions, fresh red radish rounds, light drizzle of red salsa",
+  "model": "gemini-flash-latest",
+  "name": "Salvadoran Yuca con Chicharron",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-05T21:37:37+00:00"
  },
  "18a59428a79d": {
   "avoid": [
@@ -24945,6 +25011,40 @@
   "vessel": "plate",
   "written_at": "2026-09-29T16:26:47+00:00"
  },
+ "b2c33398be8e": {
+  "avoid": [
+   "whole orange slices",
+   "orange peels",
+   "raw chicken",
+   "skewers",
+   "rice",
+   "noodles",
+   "salad",
+   "bone-in chicken"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item glazed fried meat pieces?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat raw or pale and unbattered?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat served on skewers or bones?",
+    "yes": false
+   }
+  ],
+  "dish": "orange chicken",
+  "look": "crispy bite-sized fried chicken nuggets, coated in thick glossy amber-orange glaze, flecks of minced garlic and red pepper flakes, sprinkle of thinly sliced green scallions",
+  "model": "gemini-flash-latest",
+  "name": "Orange Chicken",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-05T21:37:37+00:00"
+ },
  "b2f7abf0820c": {
   "avoid": [
    "chicken",
@@ -26131,6 +26231,41 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-10T10:04:34+00:00"
+ },
+ "ba6b3c3f7b15": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "rice",
+   "noodles",
+   "raw white tofu"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item glazed tofu pieces stir-fried with vegetables?",
+    "yes": true
+   },
+   {
+    "q": "Does the dish contain meat, poultry, or seafood?",
+    "yes": false
+   },
+   {
+    "q": "Is the tofu pale, raw, and unseared?",
+    "yes": false
+   }
+  ],
+  "dish": "teriyaki tofu stir-fry",
+  "look": "seared golden-brown tofu cubes, coated in glossy dark amber teriyaki glaze, tossed with sautéed sliced red bell peppers, dark green pasilla chili strips, tender onion petals, fresh basil leaves",
+  "model": "gemini-flash-latest",
+  "name": "Teriyaki Tofu",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-05T21:37:37+00:00"
  },
  "ba95779a369a": {
   "avoid": [
