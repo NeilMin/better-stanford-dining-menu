@@ -1,6 +1,6 @@
 {
  "date": "2026-11-07",
- "scraped_at": "2026-11-05T03:03:41-08:00",
+ "scraped_at": "2026-11-05T13:28:59-08:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -131,7 +131,7 @@
      "name": "Waffles",
      "recipe_id": "3144806",
      "description": "",
-     "ingredients": "enriched wheat flour, sugar, soybean oil, leavings, buckwheat flour, buttermilk, natural flavors, artificial flavors, wheat bran, rice flour, yellow corn flour, whole oat flour, whey, whole egg, salt, dextrose, wheat starch, natural flavors, artificial flavor, malted barley flour, lactic acid",
+     "ingredients": "enriched wheat flour, sugar, soybean oil, leavings, buckwheat flour, buttermilk (milk), natural flavors, artificial flavors, wheat bran, rice flour, yellow corn flour, whole oat flour, whey (milk), whole egg, salt, dextrose, wheat starch, natural flavors, artificial flavor, malted barley flour, lactic acid",
      "allergens": [
       "EGG",
       "MILK",
@@ -883,7 +883,7 @@
      "name": "Waffles",
      "recipe_id": "3144806",
      "description": "",
-     "ingredients": "enriched wheat flour, sugar, soybean oil, leavings, buckwheat flour, buttermilk, natural flavors, artificial flavors, wheat bran, rice flour, yellow corn flour, whole oat flour, whey, whole egg, salt, dextrose, wheat starch, natural flavors, artificial flavor, malted barley flour, lactic acid",
+     "ingredients": "enriched wheat flour, sugar, soybean oil, leavings, buckwheat flour, buttermilk (milk), natural flavors, artificial flavors, wheat bran, rice flour, yellow corn flour, whole oat flour, whey (milk), whole egg, salt, dextrose, wheat starch, natural flavors, artificial flavor, malted barley flour, lactic acid",
      "allergens": [
       "EGG",
       "MILK",
@@ -1088,7 +1088,7 @@
      "name": "French Toast",
      "recipe_id": "3508602",
      "description": "",
-     "ingredients": "chala bread, eggs, canola/olive oil blend, powdered sugar, cinnamon",
+     "ingredients": "chala bread (wheat), eggs, canola/olive oil blend, powdered sugar, cinnamon",
      "allergens": [
       "EGG",
       "MILK",
@@ -1644,7 +1644,7 @@
      "name": "Waffles",
      "recipe_id": "3144806",
      "description": "",
-     "ingredients": "enriched wheat flour, sugar, soybean oil, leavings, buckwheat flour, buttermilk, natural flavors, artificial flavors, wheat bran, rice flour, yellow corn flour, whole oat flour, whey, whole egg, salt, dextrose, wheat starch, natural flavors, artificial flavor, malted barley flour, lactic acid",
+     "ingredients": "enriched wheat flour, sugar, soybean oil, leavings, buckwheat flour, buttermilk (milk), natural flavors, artificial flavors, wheat bran, rice flour, yellow corn flour, whole oat flour, whey (milk), whole egg, salt, dextrose, wheat starch, natural flavors, artificial flavor, malted barley flour, lactic acid",
      "allergens": [
       "EGG",
       "MILK",
@@ -2413,7 +2413,7 @@
      "name": "Buttermilk Pancakes",
      "recipe_id": "3958551",
      "description": "",
-     "ingredients": "wheat flour, malted barley flour, enzymes, ascorbic acid, sugar, soy flour, sodium bicarbonate, sodium aluminum phosphate, aluminum sulfate, monocalcium phosphate, canola or soybean oil, dextrose, salt, buttermilk, mono-diglycerides, soy lecithin, eggs",
+     "ingredients": "wheat flour, malted barley flour, enzymes, ascorbic acid, sugar, soy flour, sodium bicarbonate, sodium aluminum phosphate, aluminum sulfate, monocalcium phosphate, canola or soybean oil, dextrose, salt, buttermilk (milk), mono-diglycerides, soy lecithin, eggs",
      "allergens": [
       "EGG",
       "MILK",
@@ -2991,7 +2991,7 @@
      "name": "Waffles",
      "recipe_id": "3144806",
      "description": "",
-     "ingredients": "enriched wheat flour, sugar, soybean oil, leavings, buckwheat flour, buttermilk, natural flavors, artificial flavors, wheat bran, rice flour, yellow corn flour, whole oat flour, whey, whole egg, salt, dextrose, wheat starch, natural flavors, artificial flavor, malted barley flour, lactic acid",
+     "ingredients": "enriched wheat flour, sugar, soybean oil, leavings, buckwheat flour, buttermilk (milk), natural flavors, artificial flavors, wheat bran, rice flour, yellow corn flour, whole oat flour, whey (milk), whole egg, salt, dextrose, wheat starch, natural flavors, artificial flavor, malted barley flour, lactic acid",
      "allergens": [
       "EGG",
       "MILK",
@@ -3723,7 +3723,7 @@
      "name": "Waffles",
      "recipe_id": "3144806",
      "description": "",
-     "ingredients": "enriched wheat flour, sugar, soybean oil, leavings, buckwheat flour, buttermilk, natural flavors, artificial flavors, wheat bran, rice flour, yellow corn flour, whole oat flour, whey, whole egg, salt, dextrose, wheat starch, natural flavors, artificial flavor, malted barley flour, lactic acid",
+     "ingredients": "enriched wheat flour, sugar, soybean oil, leavings, buckwheat flour, buttermilk (milk), natural flavors, artificial flavors, wheat bran, rice flour, yellow corn flour, whole oat flour, whey (milk), whole egg, salt, dextrose, wheat starch, natural flavors, artificial flavor, malted barley flour, lactic acid",
      "allergens": [
       "EGG",
       "MILK",
@@ -3780,6 +3780,18 @@
    ],
    "Lunch": [
     {
+     "name": "Orange Chicken",
+     "recipe_id": "1234123455",
+     "description": "",
+     "ingredients": "chicken, cornstarch, minced garlic, orange juice, coconut liquid aminos, chicken base, rice vinegar, brown sugar, red pepper flakes",
+     "allergens": [
+      "COCONUT"
+     ],
+     "trace_allergens": [],
+     "tags": [],
+     "order": 0
+    },
+    {
      "name": "Harissa Tofu",
      "recipe_id": "5044417",
      "description": "",
@@ -3792,7 +3804,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 0
+     "order": 1
     },
     {
      "name": "Seasonal Steamed Vegetables",
@@ -3805,7 +3817,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 1
+     "order": 2
     },
     {
      "name": "Seasonal Vegetable Board",
@@ -3818,7 +3830,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 2
+     "order": 3
     },
     {
      "name": "Spicy Green Beans",
@@ -3831,7 +3843,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 3
+     "order": 4
     },
     {
      "name": "Turmeric Roasted Potatoes",
@@ -3844,7 +3856,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 4
+     "order": 5
     },
     {
      "name": "Warm Pita",
@@ -3862,7 +3874,7 @@
      "tags": [
       "vegan"
      ],
-     "order": 5
+     "order": 6
     },
     {
      "name": "Soup of the Day",
@@ -3872,7 +3884,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 6
+     "order": 7
     },
     {
      "name": "Composed Salad",
@@ -3882,7 +3894,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 7
+     "order": 8
     },
     {
      "name": "Performance Bar",
@@ -3892,7 +3904,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 8
+     "order": 9
     },
     {
      "name": "Craveable Grains",
@@ -3905,7 +3917,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 9
+     "order": 10
     },
     {
      "name": "Flavor Forward Legumes",
@@ -3918,7 +3930,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 10
+     "order": 11
     },
     {
      "name": "Creamy Pesto",
@@ -3934,7 +3946,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 11
+     "order": 12
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -3947,7 +3959,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 12
+     "order": 13
     }
    ],
    "Dinner": [
@@ -4287,7 +4299,7 @@
      "name": "Waffles",
      "recipe_id": "3144806",
      "description": "",
-     "ingredients": "enriched wheat flour, sugar, soybean oil, leavings, buckwheat flour, buttermilk, natural flavors, artificial flavors, wheat bran, rice flour, yellow corn flour, whole oat flour, whey, whole egg, salt, dextrose, wheat starch, natural flavors, artificial flavor, malted barley flour, lactic acid",
+     "ingredients": "enriched wheat flour, sugar, soybean oil, leavings, buckwheat flour, buttermilk (milk), natural flavors, artificial flavors, wheat bran, rice flour, yellow corn flour, whole oat flour, whey (milk), whole egg, salt, dextrose, wheat starch, natural flavors, artificial flavor, malted barley flour, lactic acid",
      "allergens": [
       "EGG",
       "MILK",
