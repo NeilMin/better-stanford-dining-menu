@@ -1,6 +1,6 @@
 {
  "date": "2026-11-09",
- "scraped_at": "2026-11-05T13:28:59-08:00",
+ "scraped_at": "2026-11-06T03:00:30-08:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -5078,19 +5078,6 @@
      "order": 1
     },
     {
-     "name": "Seasonal Steamed Vegetables",
-     "recipe_id": "5561366",
-     "description": "",
-     "ingredients": "seasonal vegetables, salt",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan"
-     ],
-     "order": 2
-    },
-    {
      "name": "Seasonal Vegetable Board",
      "recipe_id": "4503514",
      "description": "",
@@ -5101,7 +5088,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 3
+     "order": 2
     },
     {
      "name": "Charred Squash with Ras el Hanout",
@@ -5114,7 +5101,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 4
+     "order": 3
     },
     {
      "name": "Turmeric Chive Rice",
@@ -5127,20 +5114,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 5
-    },
-    {
-     "name": "Moroccan Roasted Potatoes",
-     "recipe_id": "MorrRoastPots1",
-     "description": "",
-     "ingredients": "potatoes, garlic, cumin, paprika, coriander, turmeric, parsley, lemon juice, olive/canola oil blend, salt, black pepper",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan"
-     ],
-     "order": 6
+     "order": 4
     },
     {
      "name": "Moroccan Pickled Cucumbers",
@@ -5153,17 +5127,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 7
-    },
-    {
-     "name": "Burger Bar",
-     "recipe_id": "5964436",
-     "description": "",
-     "ingredients": "",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [],
-     "order": 8
+     "order": 5
     },
     {
      "name": "Grilled Chicken",
@@ -5184,28 +5148,31 @@
       "WHEAT"
      ],
      "tags": [],
-     "order": 9
+     "order": 6
     },
     {
-     "name": "Grilled Vegan/Vegetarian",
-     "recipe_id": "13468741",
+     "name": "Grilled Tofu Patty",
+     "recipe_id": "GrilledTofu1",
      "description": "",
-     "ingredients": "chef's choice grilled vegan OR vegetarian option",
-     "allergens": [],
+     "ingredients": "tofu, canola oil, salt, and pepper",
+     "allergens": [
+      "SOY"
+     ],
      "trace_allergens": [
-      "COCONUT",
       "EGG",
       "FISH",
       "MILK",
       "PEANUTS",
       "SESAME",
       "SHELLFISH",
-      "SOY",
       "TREENUTS",
       "WHEAT"
      ],
-     "tags": [],
-     "order": 10
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
+     "order": 7
     },
     {
      "name": "Panini Station",
@@ -5223,17 +5190,22 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 11
+     "order": 8
     },
     {
-     "name": "Soup of the Day",
-     "recipe_id": "SoupoftheDay",
+     "name": "Miso Soup",
+     "recipe_id": "3902989",
      "description": "",
-     "ingredients": "chef's choice soup of the day",
-     "allergens": [],
+     "ingredients": "vegetable soup base, onions, swiss chard, white miso, tofu",
+     "allergens": [
+      "SOY"
+     ],
      "trace_allergens": [],
-     "tags": [],
-     "order": 12
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
+     "order": 9
     },
     {
      "name": "Assorted Dinner Rolls",
@@ -5252,7 +5224,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 13
+     "order": 10
     },
     {
      "name": "Composed Salad",
@@ -5262,7 +5234,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 14
+     "order": 11
     },
     {
      "name": "Performance Bar",
@@ -5272,33 +5244,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 15
-    },
-    {
-     "name": "Craveable Grains",
-     "recipe_id": "CraveableGrains1",
-     "description": "",
-     "ingredients": "** No Alliums: this includes garlic, onion, shallots, leeks, chives, scallions/ green onions, and any similar wild varieties, such as ramps. ** No Root vegetables/Tubers: this includes potatoes of any variety, beets, carrots, radishes, turnips, ginger, and fresh turmeric root. ** No Mushrooms/Fungi of any kind.",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan"
-     ],
-     "order": 16
-    },
-    {
-     "name": "Flavor Forward Legumes",
-     "recipe_id": "FlavForLegumes1",
-     "description": "",
-     "ingredients": "** No Alliums: this includes garlic, onion, shallots, leeks, chives, scallions/ green onions, and any similar wild varieties, such as ramps. ** No Root vegetables/Tubers: this includes potatoes of any variety, beets, carrots, radishes, turnips, ginger, and fresh turmeric root. ** No Mushrooms/Fungi of any kind.",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan"
-     ],
-     "order": 17
+     "order": 12
     },
     {
      "name": "Marinara Cheese Ravioli",
@@ -5315,23 +5261,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 18
-    },
-    {
-     "name": "Pesto Sauce",
-     "recipe_id": "6128910",
-     "description": "",
-     "ingredients": "basil, canola oil, parmesan cheese (milk, bacterial culture, salt, microbial enzymes, extra virgin olive oil, garlic, salt, lemon juice concentrate, natural flavor, ascorbic acid, xanthan gum, soy lecithin, chamomile extract, rosemary extract)",
-     "allergens": [
-      "MILK",
-      "SOY"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegetarian"
-     ],
-     "order": 19
+     "order": 13
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -5344,7 +5274,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 20
+     "order": 14
     }
    ]
   },
@@ -5517,7 +5447,7 @@
      "name": "Salvadoran Yuca con Chicharron",
      "recipe_id": "12324321",
      "description": "",
-     "ingredients": "oil, pork, salt, pepper, yuca root, shredded cabbage, radish, salsa",
+     "ingredients": "oil, pork, salt, pepper, yuca root, cabbage salad, pickled red onions, radish, salsa",
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
