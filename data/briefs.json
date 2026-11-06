@@ -2089,6 +2089,38 @@
   "vessel": "plate",
   "written_at": "2026-09-27T16:11:50+00:00"
  },
+ "12e6f88984c5": {
+  "avoid": [
+   "raw dough",
+   "bread loaf",
+   "pancakes",
+   "pie",
+   "cake slices",
+   "muffins"
+  ],
+  "checks": [
+   {
+    "q": "Are the main items round baked thumbprint cookies?",
+    "yes": true
+   },
+   {
+    "q": "Is the main item a sliced loaf of bread or cake?",
+    "yes": false
+   },
+   {
+    "q": "Is it a bowl of soup or wet stew?",
+    "yes": false
+   }
+  ],
+  "dish": "plum jelly thumbprint cookies",
+  "look": "baked golden-brown round thumbprint cookies, lightly cracked edges, center indentation filled with glossy dark reddish-purple plum jelly, fine dusting of sugar granules",
+  "model": "gemini-3.6-flash",
+  "name": "Potawatomi Cookies",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-06T11:14:49+00:00"
+ },
  "12f887f49dc8": {
   "avoid": [
    "injera",
@@ -9985,6 +10017,38 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T06:57:19+00:00"
  },
+ "464db31e8ea4": {
+  "avoid": [
+   "corn on the cob",
+   "cornbread",
+   "corn soup",
+   "raw corn",
+   "whole steak",
+   "taco shell"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food sautéed sweet corn kernels mixed with bacon and peppers?",
+    "yes": true
+   },
+   {
+    "q": "Is the corn served whole on the cob?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish baked cornbread?",
+    "yes": false
+   }
+  ],
+  "dish": "corn maque choux with bacon",
+  "look": "creamy yellow sweet corn kernels sautéed with crisp chopped bacon bits, diced red bell pepper, green bell pepper, minced onion, glossy cream sauce glaze, sliced scallions",
+  "model": "gemini-3.6-flash",
+  "name": "Bacon Creole Corn Maque Choux",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-06T11:14:14+00:00"
+ },
  "466b3724374d": {
   "avoid": [
    "burrito wrap",
@@ -10650,6 +10714,42 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-26T20:19:53+00:00"
+ },
+ "4992eff1fd77": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "pie crust",
+   "cake",
+   "pancakes",
+   "ice cream"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food a thick cooked berry sauce or compote?",
+    "yes": true
+   },
+   {
+    "q": "Is it baked inside a pie or pastry dough?",
+    "yes": false
+   },
+   {
+    "q": "Are there pieces of meat or seafood in the dish?",
+    "yes": false
+   }
+  ],
+  "dish": "wozapi",
+  "look": "thick glossy berry compote, deep crimson and dark purple hue, crushed blackberries, soft strawberry chunks, thick fruit sauce reduction, visible berry seeds",
+  "model": "gemini-3.6-flash",
+  "name": "Wozapi",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-06T11:14:49+00:00"
  },
  "49b7acff88a0": {
   "avoid": [
@@ -14103,6 +14203,39 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T04:46:15+00:00"
  },
+ "6511ce7edaf3": {
+  "avoid": [
+   "white fish",
+   "cod",
+   "raw salmon",
+   "sushi",
+   "blackened spice crust",
+   "deep fried fish",
+   "pasta"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food a cooked pink salmon fillet?",
+    "yes": true
+   },
+   {
+    "q": "Is the fish white-fleshed like cod?",
+    "yes": false
+   },
+   {
+    "q": "Is the fish raw or served as sushi?",
+    "yes": false
+   }
+  ],
+  "dish": "roasted salmon with lemon caper butter",
+  "look": "seared pink salmon fillet, glossy melt of lemon butter glaze, scattered green capers, sliced shallot rings, flecks of fresh green dill, tender opaque flaky pink flesh",
+  "model": "gemini-3.6-flash",
+  "name": "Butter Lemon & Caper Roasted Salmon",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-06T11:14:14+00:00"
+ },
  "6555ab16b826": {
   "avoid": [
    "meat",
@@ -16186,6 +16319,41 @@
   "vessel": "plate",
   "written_at": "2026-09-27T05:43:05+00:00"
  },
+ "769bc6de495a": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "cheese",
+   "raw squash",
+   "soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food roasted acorn squash slices or halves?",
+    "yes": true
+   },
+   {
+    "q": "Is there meat, chicken, or seafood on the plate?",
+    "yes": false
+   },
+   {
+    "q": "Is the squash raw and unroasted?",
+    "yes": false
+   }
+  ],
+  "dish": "roasted acorn squash",
+  "look": "thick roasted acorn squash wedges, dark green ridged skin intact, tender golden-orange interior flesh, caramelized dark brown roasted edges, light olive oil sheen",
+  "model": "gemini-3.6-flash",
+  "name": "Roasted Acorn Squash",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-06T11:14:14+00:00"
+ },
  "76ad28c3529f": {
   "avoid": [
    "ground beef",
@@ -16339,6 +16507,41 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-29T00:31:05+00:00"
+ },
+ "76f6b18b795a": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "cornbread",
+   "tortillas",
+   "corn on the cob"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food a thick blue or purple porridge?",
+    "yes": true
+   },
+   {
+    "q": "Is it a baked bread or solid cornbread slice?",
+    "yes": false
+   },
+   {
+    "q": "Are there pieces of meat or poultry in the food?",
+    "yes": false
+   }
+  ],
+  "dish": "blue corn mush",
+  "look": "thick warm blue cornmeal porridge, deep purplish-blue color, smooth creamy texture, light drizzle of translucent golden honey across the top surface",
+  "model": "gemini-3.6-flash",
+  "name": "Blue Corn Mush",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-06T11:14:49+00:00"
  },
  "786074cf1eea": {
   "avoid": [
@@ -18825,6 +19028,38 @@
   "vessel": "plate",
   "written_at": "2026-10-12T22:40:49+00:00"
  },
+ "8a13b4323985": {
+  "avoid": [
+   "dry steak",
+   "tacos",
+   "burrito",
+   "raw vegetables",
+   "ground beef",
+   "noodle soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food a stew with chunky meat and vegetables in broth?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat served dry without any broth or sauce?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat ground or crumbled like mince?",
+    "yes": false
+   }
+  ],
+  "dish": "Bolivian beef and vegetable stew",
+  "look": "rich brown beef broth, large tender chunks of stewed beef, piece of corn on the cob, sliced zucchini, sliced carrots, chopped cabbage, green beans, whole chickpeas, fresh cilantro",
+  "model": "gemini-3.6-flash",
+  "name": "Wakavaki",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-06T11:14:14+00:00"
+ },
  "8a1eb1fec787": {
   "avoid": [
    "meat",
@@ -19217,6 +19452,38 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-26T20:20:07+00:00"
+ },
+ "8c72657a331c": {
+  "avoid": [
+   "beef",
+   "soup",
+   "whole roast chicken",
+   "fried chicken nuggets",
+   "tortilla wrap",
+   "noodles"
+  ],
+  "checks": [
+   {
+    "q": "Is the main dish a stir-fry of sliced chicken strips, French fries, onions, and tomatoes?",
+    "yes": true
+   },
+   {
+    "q": "Is the dish a broth soup?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat ground or formed into patties?",
+    "yes": false
+   }
+  ],
+  "dish": "chicken saltado",
+  "look": "stir-fried chicken breast strips, thick cut French fries, wedge sliced red onions, tomato wedges, green bell pepper strips, savory dark soy garlic pan sauce, fresh cilantro leaves",
+  "model": "gemini-3.6-flash",
+  "name": "Chicken Saltado",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-06T11:14:14+00:00"
  },
  "8ca9e208e7aa": {
   "avoid": [
@@ -23990,6 +24257,39 @@
   "vessel": "plate",
   "written_at": "2026-09-27T07:31:35+00:00"
  },
+ "ad0fba594e94": {
+  "avoid": [
+   "salmon",
+   "pink fish",
+   "raw fish",
+   "breaded fish",
+   "fish sticks",
+   "soup",
+   "white sauce"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food a seared white fish fillet with a dark crust?",
+    "yes": true
+   },
+   {
+    "q": "Is the fish pink or orange like salmon?",
+    "yes": false
+   },
+   {
+    "q": "Is the fish deep-fried in breadcrumbs?",
+    "yes": false
+   }
+  ],
+  "dish": "blackened cod fillet",
+  "look": "thick seared cod fillet, charred dark red-brown spice crust, flaky white fish interior exposed along the edges, pan-seared surface, light dusting of paprika",
+  "model": "gemini-3.6-flash",
+  "name": "Blackened COD",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-06T11:14:14+00:00"
+ },
  "ad2da3cb1404": {
   "avoid": [
    "meat",
@@ -24547,6 +24847,42 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T05:30:31+00:00"
+ },
+ "af7e69eb5fb3": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "cheese",
+   "croutons",
+   "creamy white dressing",
+   "pasta"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food a leafy green salad with fresh berries?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat, chicken, or seafood on top?",
+    "yes": false
+   },
+   {
+    "q": "Is it a cooked grain or pasta dish?",
+    "yes": false
+   }
+  ],
+  "dish": "blackberry watercress salad",
+  "look": "fresh green watercress and sorrel leaves, fresh whole blackberries, sliced dried strawberries, toasted walnut halves, scattered sunflower seeds, bright edible flower petals, light drizzle of dark blackberry dressing",
+  "model": "gemini-3.6-flash",
+  "name": "Muwekma Ohlone Salad",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-06T11:14:49+00:00"
  },
  "afb12ba934d3": {
   "avoid": [
@@ -26877,6 +27213,42 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T04:50:08+00:00"
+ },
+ "be20c6c6f6f0": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "cheese",
+   "mashed potatoes",
+   "potato chips",
+   "raw potatoes"
+  ],
+  "checks": [
+   {
+    "q": "Is the main dish a warm mix of roasted potato cubes and cooked quinoa?",
+    "yes": true
+   },
+   {
+    "q": "Does the dish contain meat, poultry, or fish?",
+    "yes": false
+   },
+   {
+    "q": "Are the potatoes mashed into a smooth puree?",
+    "yes": false
+   }
+  ],
+  "dish": "roasted potato and quinoa hash",
+  "look": "cubed roasted yellow potatoes, golden crisp browned skin edges, tossed with cooked fluffy quinoa grains, light herb flecks, toasted pan finish",
+  "model": "gemini-3.6-flash",
+  "name": "Roasted Potatoes & Quinoa",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-06T11:14:14+00:00"
  },
  "be46358a0b2e": {
   "avoid": [
@@ -30844,6 +31216,38 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T04:46:15+00:00"
+ },
+ "d7955171b6bd": {
+  "avoid": [
+   "fried chicken",
+   "clear soup",
+   "tacos",
+   "tortilla wrap",
+   "raw chicken",
+   "plain grilled chicken breast"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food chicken covered in a thick dark reddish sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken breaded and deep-fried?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken served dry without sauce?",
+    "yes": false
+   }
+  ],
+  "dish": "Guatemalan chicken pepián",
+  "look": "tender cooked chicken piece, rich dark reddish-brown sesame seed and chile sauce, thick gravy coat, toasted white sesame seeds sprinkled on top, cilantro garnish",
+  "model": "gemini-3.6-flash",
+  "name": "Pepian de Pollo",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-06T11:14:14+00:00"
  },
  "d7b0b5df40ae": {
   "avoid": [
