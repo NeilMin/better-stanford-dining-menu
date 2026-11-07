@@ -9862,7 +9862,7 @@
    "seen": "A yellow lentil stew with cauliflower florets topped with fresh cilantro leaves."
   },
   "last_seen": "2026-11-08",
-  "min_order": 9,
+  "min_order": 8,
   "model": "sdxl",
   "name": "Dal Gobi",
   "needs_image": true,
@@ -12960,14 +12960,14 @@
   "generated_at": "2026-09-22T04:02:37+00:00",
   "icon": "plate",
   "image": "53a559318a58.webp",
-  "ingredients": "[HALAL] chicken, tandoori marinade (garlic, ginger, garam masala, chili powder, cumin, coriander, natural beet coloring, annatto food coloring), curry sauce (onions, cumin seeds, garam masala, coriander seed, curry powder, chili powder, garlic, ginger, ketchup, tomato sauce, tomato paste, tomato puree, salt, turmeric)",
+  "ingredients": "chicken, yogurt, chili powder, turmeric, cuminseed",
   "is_station": false,
   "judge": {
    "at": "2026-09-27T04:56:50+00:00",
    "judge": "gemma-4-26b-a4b-it",
    "seen": "Two pieces of roasted chicken with a red-orange coating served on a yellow sauce with green herbs."
   },
-  "last_seen": "2026-11-08",
+  "last_seen": "2026-09-27",
   "min_order": 0,
   "model": "sdxl",
   "name": "Tandoori Style Chicken",
@@ -12975,12 +12975,13 @@
   "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
   "placeholder": false,
   "priority": 0,
-  "prompt": "Tandoori Style Chicken, roasted tandoori chicken with vibrant red-orange spice crust, charred edges, and aromatic herbs, made with chicken, tandoori marinade, curry sauce, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "prompt": "Tandoori Style Chicken, roasted tandoori chicken with vibrant red-orange spice crust, charred edges, and aromatic herbs, made with chicken, yogurt, chili powder, turmeric, cuminseed, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
   "prompt_rev": 5,
   "seed": 456,
   "station_only": false,
   "tags": [
-   "gluten-free"
+   "gluten-free",
+   "halal"
   ]
  },
  "53b540ae47f3": {
@@ -23273,14 +23274,14 @@
   "generated_at": "2026-09-22T04:41:54+00:00",
   "icon": "plate",
   "image": "99e47bcf3c0d.webp",
-  "ingredients": "(non-halal) pork, vindaloo sauce (potatoes, onions, tomato paste, white wine vinegar, garlic, black pepper, paprika, cinnamon, clove, cumin, mustard seed, ginger root, salt)",
+  "ingredients": "pork, vindaloo sauce (potatoes, onions, tomato paste, white wine vinegar, garlic, black pepper, paprika, cinnamon, clove, cumin, mustard seed, ginger root, salt)",
   "is_station": false,
   "judge": {
    "at": "2026-09-27T05:38:48+00:00",
    "judge": "gemma-4-26b-a4b-it",
    "seen": "A bowl of thick red curry containing chunks of meat and potatoes, garnished with fresh cilantro leaves."
   },
-  "last_seen": "2026-10-17",
+  "last_seen": "2026-11-08",
   "min_order": 0,
   "model": "sdxl",
   "name": "Pork Vindaloo",
@@ -35757,7 +35758,7 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "A bowl of black beans in a dark liquid topped with orange vegetable slices, green onions, and cilantro."
   },
-  "last_seen": "2026-11-07",
+  "last_seen": "2026-10-26",
   "min_order": 3,
   "model": "sdxl",
   "name": "Spicy Black Beans",
@@ -38999,7 +39000,7 @@
    "judge": "claude-sonnet",
    "seen": "A white bowl of whole pinto beans in brothy bean liquid topped with fresh cilantro leaves, with a second bowl of beans and more cilantro and dried chiles beside it."
   },
-  "last_seen": "2026-10-23",
+  "last_seen": "2026-11-07",
   "min_order": 4,
   "model": "sdxl",
   "name": "Frijoles Pintos",
