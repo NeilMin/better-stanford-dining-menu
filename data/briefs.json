@@ -31371,6 +31371,41 @@
   "vessel": "plate",
   "written_at": "2026-09-27T04:50:08+00:00"
  },
+ "d60ebb2da1ab": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "uncooked white tofu",
+   "rice",
+   "noodles"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cooked tofu?",
+    "yes": true
+   },
+   {
+    "q": "Does the dish contain meat, poultry, or seafood?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a soup with broth?",
+    "yes": false
+   }
+  ],
+  "dish": "ginger tofu stir-fry",
+  "look": "cubes of golden-brown pan-fried tofu, tossed with wilted dark green kale leaves, tender sliced yellow onions, coated in a glossy amber-orange ginger glaze",
+  "model": "gemini-flash-latest",
+  "name": "Mandarin Ginger Tofu Stir-Fry",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-07T19:33:30+00:00"
+ },
  "d6297b93a5df": {
   "avoid": [
    "raw fish",
