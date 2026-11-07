@@ -1,6 +1,6 @@
 {
  "date": "2026-11-07",
- "scraped_at": "2026-11-07T02:21:05-08:00",
+ "scraped_at": "2026-11-07T11:27:59-08:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -964,17 +964,18 @@
      "order": 0
     },
     {
-     "name": "Plant Forward Beef Stroganoff",
-     "recipe_id": "867512",
+     "name": "BBQ Tofu with Vegetables",
+     "recipe_id": "3334994",
      "description": "",
-     "ingredients": "",
+     "ingredients": "tofu, bbq sauce, seasonal vegetables, canola/olive oil blend, garlic",
      "allergens": [
-      "MILK",
       "SOY",
       "WHEAT"
      ],
      "trace_allergens": [],
-     "tags": [],
+     "tags": [
+      "vegan"
+     ],
      "order": 1
     },
     {
@@ -1071,10 +1072,10 @@
      "order": 6
     },
     {
-     "name": "Double Smoked Bacon",
-     "recipe_id": "5781155",
+     "name": "Pork Sausage Patty",
+     "recipe_id": "3942305",
      "description": "",
-     "ingredients": "bacon, salt, sugar, sodium phosphate, sodium erythorbate, sodium nitrite",
+     "ingredients": "pork, salt, potassium chloride, dextrose, spices, monosodium glutamate, sodium phosphates, bht, citric acid, caramel color",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -1083,22 +1084,10 @@
      "order": 7
     },
     {
-     "name": "Turkey Bacon",
-     "recipe_id": "4328766",
+     "name": "Buttermilk Pancakes",
+     "recipe_id": "3958551",
      "description": "",
-     "ingredients": "turkey thigh meat, sea salt, beet powder, paprika, brown sugar, onion, garlic",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free"
-     ],
-     "order": 8
-    },
-    {
-     "name": "French Toast",
-     "recipe_id": "3508602",
-     "description": "",
-     "ingredients": "chala bread (wheat), eggs, canola/olive oil blend, powdered sugar, cinnamon",
+     "ingredients": "wheat flour, malted barley flour, enzymes, ascorbic acid, sugar, soy flour, sodium bicarbonate, sodium aluminum phosphate, aluminum sulfate, monocalcium phosphate, canola or soybean oil, dextrose, salt, buttermilk (milk), mono-diglycerides, soy lecithin, eggs",
      "allergens": [
       "EGG",
       "MILK",
@@ -1116,35 +1105,29 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 9
+     "order": 8
     },
     {
-     "name": "Panini Station",
-     "recipe_id": "4532805",
+     "name": "Omelet Station",
+     "recipe_id": "3565117",
      "description": "",
-     "ingredients": "(assorted) breads (egg, soy, wheat), cheeses (milk), deli meats, lettuce, tomatoes, and onions",
+     "ingredients": "eggs, canola/olive oil blend, mushrooms, tomatoes, bacon, ham, pork sausage, cheddar cheese, onions, bell peppers, spinach, zucchini, olives",
      "allergens": [
       "EGG",
-      "MILK",
-      "SOY",
-      "WHEAT"
+      "MILK"
      ],
      "trace_allergens": [
       "COCONUT",
-      "TREENUTS"
+      "FISH",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "SOY",
+      "TREENUTS",
+      "WHEAT"
      ],
      "tags": [],
-     "order": 10
-    },
-    {
-     "name": "Soup of the Day",
-     "recipe_id": "SoupoftheDay",
-     "description": "",
-     "ingredients": "chef's choice soup of the day",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [],
-     "order": 11
+     "order": 9
     },
     {
      "name": "Composed Salad",
@@ -1154,7 +1137,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 12
+     "order": 10
     },
     {
      "name": "Performance Bar",
@@ -1164,7 +1147,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 13
+     "order": 11
     },
     {
      "name": "Craveable Grains",
@@ -1177,7 +1160,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 14
+     "order": 12
     },
     {
      "name": "Flavor Forward Legumes",
@@ -1190,23 +1173,22 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 15
+     "order": 13
     },
     {
-     "name": "Creamy Pesto",
-     "recipe_id": "7728050",
+     "name": "Alfredo Sauce",
+     "recipe_id": "5681078",
      "description": "",
-     "ingredients": "basil, canola oil, parmesan cheese (milk), olive oil, garlic, salt, lemon juice concentrate, natural flavor, xanthan gum, soy lecithin, chamomile extract, rosemary extract, white sauce (flour [wheat], butter, cream, milk powder, onion powder, white pepper, garlic, nutmeg, salt), parsley",
+     "ingredients": "cream, onion, milk powder, butter, parmesan cheese, flour, garlic, nutmeg, onion powder, salt",
      "allergens": [
       "MILK",
-      "SOY",
       "WHEAT"
      ],
      "trace_allergens": [],
      "tags": [
       "vegetarian"
      ],
-     "order": 16
+     "order": 14
     },
     {
      "name": "Pasta Marinara",
@@ -1223,7 +1205,7 @@
      "tags": [
       "vegan"
      ],
-     "order": 17
+     "order": 15
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -1236,7 +1218,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 18
+     "order": 16
     }
    ],
    "Dinner": [
@@ -3794,19 +3776,41 @@
      "order": 0
     },
     {
-     "name": "Harissa Tofu",
-     "recipe_id": "5044417",
+     "name": "Mandarin Ginger Tofu Stir-Fry",
+     "recipe_id": "4537174",
      "description": "",
-     "ingredients": "tofu (soy), harissa sauce (caraway seeds, bell peppers, salt, garlic, ancho chili, cilantro, canola oil, cumin seed, coriander seed, paprika, lemon juice, red wine vinegar), harissa paste (hot chili peppers, garlic, onion, olive oil, spices, sunflower oil, lactic acid, salt), salt",
+     "ingredients": "tofu, onion, kale, salt, pepper, mandarin ginger dressing (canola oil, sesame oil, mandarin tangerine puree, brown sugar, garlic, rice vinegar, ginger, dijon mustard, salt)",
      "allergens": [
+      "SESAME",
       "SOY"
      ],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SHELLFISH",
+      "TREENUTS",
+      "WHEAT"
+     ],
+     "tags": [
+      "vegan"
+     ],
+     "order": 1
+    },
+    {
+     "name": "Steamed Bok Choy",
+     "recipe_id": "4182774",
+     "description": "",
+     "ingredients": "bok choy, salt",
+     "allergens": [],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
       "vegan"
      ],
-     "order": 1
+     "order": 2
     },
     {
      "name": "Seasonal Steamed Vegetables",
@@ -3819,7 +3823,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 2
+     "order": 3
     },
     {
      "name": "Seasonal Vegetable Board",
@@ -3832,60 +3836,59 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 3
-    },
-    {
-     "name": "Spicy Green Beans",
-     "recipe_id": "7819461",
-     "description": "",
-     "ingredients": "green beans, olive oil, garlic, red pepper flakes, salt",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan"
-     ],
      "order": 4
     },
     {
-     "name": "Turmeric Roasted Potatoes",
-     "recipe_id": "TurmRstPots1",
+     "name": "Spring Rolls",
+     "recipe_id": "5587308",
      "description": "",
-     "ingredients": "potatoes, garlic, turmeric, cumin, coriander, paprika, lemon juice, olive/canola oil blend, salt, black pepper",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan"
-     ],
-     "order": 5
-    },
-    {
-     "name": "Warm Pita",
-     "recipe_id": "3675181",
-     "description": "",
-     "ingredients": "whole wheat flour, enriched wheat flour, soybean, canola oil, sugar, salt, baking powder, yeast, blackstrap molasses, calcium propionate, sodium stearoyl lactylate, guar gum, amylase",
+     "ingredients": "enriched flour, calcium propionate, malted barley flour, cabbage, celery, carrots, bok choy, enriched durum flour, ferrous sulfate, thiamine mononitrate, water chestnuts, bamboo shoots, salt, modified food starch, canola oil, sugar, spice, garlic, wheat gluten, toasted sesame oil, dried onion, maltodextrin, natural flavor, disodium inosinate, disodium guanylate, eggs, sesame oil, cornstarch, fried in soybean oil",
      "allergens": [
+      "EGG",
+      "SESAME",
       "SOY",
       "WHEAT"
      ],
      "trace_allergens": [
-      "EGG",
+      "COCONUT",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SHELLFISH",
       "TREENUTS"
      ],
      "tags": [
+      "vegetarian"
+     ],
+     "order": 5
+    },
+    {
+     "name": "Roasted Potatoes",
+     "recipe_id": "5018531",
+     "description": "",
+     "ingredients": "potatoes, salt, pepper, canola/olive oil blend",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
       "vegan"
      ],
      "order": 6
     },
     {
-     "name": "Soup of the Day",
-     "recipe_id": "SoupoftheDay",
+     "name": "Vegetable Chow Mein Noodles",
+     "recipe_id": "4856200",
      "description": "",
-     "ingredients": "chef's choice soup of the day",
-     "allergens": [],
+     "ingredients": "chow mein noodles, carrots, canola/olive oil blend, celery, white pepper, cabbage, green onions, stir fry sauce (tamari sauce, canola oil, green onion, fried shallots, red pepper, onion, vegetarian oyster sauce [sugar, soy sauce, salt, corn starch, yeast extract, caramel color, mushroom flavor, salt], brown sugar)",
+     "allergens": [
+      "EGG",
+      "SOY",
+      "WHEAT"
+     ],
      "trace_allergens": [],
-     "tags": [],
+     "tags": [
+      "vegetarian"
+     ],
      "order": 7
     },
     {
