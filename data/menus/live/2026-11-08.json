@@ -1,6 +1,6 @@
 {
  "date": "2026-11-08",
- "scraped_at": "2026-11-06T12:55:47-08:00",
+ "scraped_at": "2026-11-07T02:21:05-08:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -468,7 +468,7 @@
      "name": "Pasta Alfredo",
      "recipe_id": "5683556",
      "description": "",
-     "ingredients": "pasta (wheat), white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, parmesan cheese (milk)",
+     "ingredients": "pasta (wheat), white sauce (cream, butter, milk powder, flour [wheat], garlic, nutmeg, onion powder, white pepper, salt), mozzarella & parmesan cheese (milk)",
      "allergens": [
       "MILK",
       "WHEAT"
@@ -1274,7 +1274,7 @@
      "name": "Pasta Alfredo",
      "recipe_id": "5683556",
      "description": "",
-     "ingredients": "pasta (wheat), white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, parmesan cheese (milk)",
+     "ingredients": "pasta (wheat), white sauce (cream, butter, milk powder, flour [wheat], garlic, nutmeg, onion powder, white pepper, salt), mozzarella & parmesan cheese (milk)",
      "allergens": [
       "MILK",
       "WHEAT"
@@ -1306,7 +1306,7 @@
      "name": "Filipino Chicken Adobo",
      "recipe_id": "121212100",
      "description": "",
-     "ingredients": "chicken, oil, garlic, bay leaf, peppercorn, coconut liquid amino, vinegar, chicken base, sugar, salt,",
+     "ingredients": "HALAL chicken, oil, garlic, bay leaf, peppercorn, coconut liquid amino, vinegar, chicken base, sugar, salt,",
      "allergens": [
       "COCONUT"
      ],
@@ -2029,7 +2029,7 @@
      "name": "Pasta Alfredo",
      "recipe_id": "5683556",
      "description": "",
-     "ingredients": "pasta (wheat), white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, parmesan cheese (milk)",
+     "ingredients": "pasta (wheat), white sauce (cream, butter, milk powder, flour [wheat], garlic, nutmeg, onion powder, white pepper, salt), mozzarella & parmesan cheese (milk)",
      "allergens": [
       "MILK",
       "WHEAT"
@@ -2782,7 +2782,7 @@
      "name": "Pasta Alfredo",
      "recipe_id": "5683556",
      "description": "",
-     "ingredients": "pasta (wheat), white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, parmesan cheese (milk)",
+     "ingredients": "pasta (wheat), white sauce (cream, butter, milk powder, flour [wheat], garlic, nutmeg, onion powder, white pepper, salt), mozzarella & parmesan cheese (milk)",
      "allergens": [
       "MILK",
       "WHEAT"
@@ -3477,7 +3477,7 @@
      "name": "Pasta Alfredo",
      "recipe_id": "5683556",
      "description": "",
-     "ingredients": "pasta (wheat), white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, parmesan cheese (milk)",
+     "ingredients": "pasta (wheat), white sauce (cream, butter, milk powder, flour [wheat], garlic, nutmeg, onion powder, white pepper, salt), mozzarella & parmesan cheese (milk)",
      "allergens": [
       "MILK",
       "WHEAT"
@@ -4222,30 +4222,43 @@
    ],
    "Dinner": [
     {
-     "name": "Wild Mushroom & Lentil Poutine",
-     "recipe_id": "MushLentilPout1",
+     "name": "Braised Beef Brisket",
+     "recipe_id": "4487387",
      "description": "",
-     "ingredients": "brown lentils, wild mushrooms, onions, garlic, vegetable soup base, tomato paste, thyme, rosemary, mushroom seasoning, olive/canola oil blend, salt, black pepper",
+     "ingredients": "beef, brisket sauce (carrots, onions, celery, garlic, beef soup base, thyme, bay leaf, parsley, salt, pepper)",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
-      "vegan"
+      "gluten-free"
      ],
      "order": 0
     },
     {
-     "name": "Sauteed Green Beans",
-     "recipe_id": "5259610",
+     "name": "Blackened BBQ Tofu Steak",
+     "recipe_id": "02231979",
      "description": "",
-     "ingredients": "green beans, shallots, canola/olive oil blend, garlic, salt",
+     "ingredients": "Tofu (soy), maple syrup, rosemary, Worcestershire sauce (fish), salt , pepper, cayenne pepper",
+     "allergens": [
+      "FISH",
+      "SOY",
+      "WHEAT"
+     ],
+     "trace_allergens": [],
+     "tags": [],
+     "order": 1
+    },
+    {
+     "name": "Seasonal Steamed Vegetables",
+     "recipe_id": "5561366",
+     "description": "",
+     "ingredients": "seasonal vegetables, salt",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
       "vegan"
      ],
-     "order": 1
+     "order": 2
     },
     {
      "name": "Seasonal Vegetable Board",
@@ -4258,7 +4271,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 2
+     "order": 3
     },
     {
      "name": "Buttered Green Beans with Shallots",
@@ -4273,7 +4286,7 @@
       "gluten-free",
       "vegetarian"
      ],
-     "order": 3
+     "order": 4
     },
     {
      "name": "Garlic Mashed Potatoes",
@@ -4288,7 +4301,7 @@
       "gluten-free",
       "vegetarian"
      ],
-     "order": 4
+     "order": 5
     },
     {
      "name": "Garlic Bread",
@@ -4303,7 +4316,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 5
+     "order": 6
     },
     {
      "name": "Soup of the Day",
@@ -4313,7 +4326,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 6
+     "order": 7
     },
     {
      "name": "Assorted Dinner Rolls",
@@ -4332,7 +4345,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 7
+     "order": 8
     },
     {
      "name": "Composed Salad",
@@ -4342,7 +4355,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 8
+     "order": 9
     },
     {
      "name": "Performance Bar",
@@ -4352,7 +4365,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 9
+     "order": 10
     },
     {
      "name": "Craveable Grains",
@@ -4365,7 +4378,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 10
+     "order": 11
     },
     {
      "name": "Flavor Forward Legumes",
@@ -4378,7 +4391,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 11
+     "order": 12
     },
     {
      "name": "Tri Color Cheese Tortellini",
@@ -4392,7 +4405,7 @@
      ],
      "trace_allergens": [],
      "tags": [],
-     "order": 12
+     "order": 13
     }
    ]
   },

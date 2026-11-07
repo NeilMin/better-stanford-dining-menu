@@ -1,6 +1,6 @@
 {
  "date": "2026-11-12",
- "scraped_at": "2026-11-06T12:55:47-08:00",
+ "scraped_at": "2026-11-07T02:21:05-08:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -474,7 +474,7 @@
      "name": "Pasta Alfredo",
      "recipe_id": "5683556",
      "description": "",
-     "ingredients": "pasta (wheat), white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, parmesan cheese (milk)",
+     "ingredients": "pasta (wheat), white sauce (cream, butter, milk powder, flour [wheat], garlic, nutmeg, onion powder, white pepper, salt), mozzarella & parmesan cheese (milk)",
      "allergens": [
       "MILK",
       "WHEAT"
@@ -499,6 +499,338 @@
       "vegan"
      ],
      "order": 19
+    }
+   ],
+   "Dinner": [
+    {
+     "name": "Wakavaki",
+     "recipe_id": "Wakavaki1",
+     "description": "",
+     "ingredients": "beef, corn, green beans, zucchini, carrots, cabbage, chickpeas, onion, green chile peppers, tomato, garlic, cilantro, salt, black pepper",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free"
+     ],
+     "order": 0
+    },
+    {
+     "name": "Pepian de Pollo",
+     "recipe_id": "PepianDePollo1",
+     "description": "",
+     "ingredients": "chicken, water, tomatoes, tomatillos, green bell peppers, sesame seeds, pumpkin seeds, dried guajillo chiles, dried pasilla chiles, onions, garlic, corn tortillas, cinnamon stick, black pepper, cloves, allspice, salt, olive oil blend, cilantro",
+     "allergens": [
+      "SESAME"
+     ],
+     "trace_allergens": [
+      "PEANUTS",
+      "TREENUTS"
+     ],
+     "tags": [
+      "gluten-free"
+     ],
+     "order": 1
+    },
+    {
+     "name": "Seasonal Steamed Vegetables",
+     "recipe_id": "5561366",
+     "description": "",
+     "ingredients": "seasonal vegetables, salt",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
+     "order": 2
+    },
+    {
+     "name": "Seasonal Vegetable Board",
+     "recipe_id": "4503514",
+     "description": "",
+     "ingredients": "seasonal roasted vegetables with olive/canola oil blend, salt, pepper",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
+     "order": 3
+    },
+    {
+     "name": "Roasted Acorn Squash",
+     "recipe_id": "RoastAcorn1",
+     "description": "",
+     "ingredients": "acorn squash, salt, oil blend",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
+     "order": 4
+    },
+    {
+     "name": "Roasted Potatoes & Quinoa",
+     "recipe_id": "Pots&Quinoa1",
+     "description": "",
+     "ingredients": "potatoes, quinoa, salt, oil blend",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
+     "order": 5
+    },
+    {
+     "name": "Blue Corn Mush",
+     "recipe_id": "BlueCornMush1",
+     "description": "",
+     "ingredients": "water, blue cornmeal, salt, honey",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegetarian"
+     ],
+     "order": 6
+    },
+    {
+     "name": "Wozapi",
+     "recipe_id": "Wozapi1",
+     "description": "",
+     "ingredients": "blackberry, strawberry, sugar, lemon juice",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
+     "order": 7
+    },
+    {
+     "name": "Potawatomi Cookies",
+     "recipe_id": "PotawatomiCookies1",
+     "description": "",
+     "ingredients": "[NON-HALAL] shortening, maple sugar, eggs, salt, baking soda, vanilla extract (alcohol), almond flour, all-purpose flour (wheat), plum jelly",
+     "allergens": [
+      "EGG",
+      "PEANUTS",
+      "TREENUTS",
+      "WHEAT"
+     ],
+     "trace_allergens": [],
+     "tags": [],
+     "order": 8
+    },
+    {
+     "name": "Muwekma Ohlone Salad",
+     "recipe_id": "MuwekmaOhloneSalad1",
+     "description": "",
+     "ingredients": "watercress, sorrel, blackberries, dried strawberries, walnuts, toasted sunflower seeds, oil blend, blackberry purée, agave, bay leaf, edible flowers, salt",
+     "allergens": [
+      "PEANUTS",
+      "TREENUTS"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
+     "order": 9
+    },
+    {
+     "name": "Burger Bar",
+     "recipe_id": "5964436",
+     "description": "",
+     "ingredients": "",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [],
+     "order": 10
+    },
+    {
+     "name": "Grilled Chicken",
+     "recipe_id": "520454-02",
+     "description": "",
+     "ingredients": "[HALAL] chicken, canola/olive oil blend, salt, pepper",
+     "allergens": [],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "SOY",
+      "TREENUTS",
+      "WHEAT"
+     ],
+     "tags": [],
+     "order": 11
+    },
+    {
+     "name": "Grilled Vegan/Vegetarian",
+     "recipe_id": "13468741",
+     "description": "",
+     "ingredients": "chef's choice grilled vegan OR vegetarian option",
+     "allergens": [],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "SOY",
+      "TREENUTS",
+      "WHEAT"
+     ],
+     "tags": [],
+     "order": 12
+    },
+    {
+     "name": "Panini Station",
+     "recipe_id": "4532805",
+     "description": "",
+     "ingredients": "(assorted) breads (egg, soy, wheat), cheeses (milk), deli meats, lettuce, tomatoes, and onions",
+     "allergens": [
+      "EGG",
+      "MILK",
+      "SOY",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "COCONUT",
+      "TREENUTS"
+     ],
+     "tags": [],
+     "order": 13
+    },
+    {
+     "name": "Soup of the Day",
+     "recipe_id": "SoupoftheDay",
+     "description": "",
+     "ingredients": "chef's choice soup of the day",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [],
+     "order": 14
+    },
+    {
+     "name": "Assorted Dinner Rolls",
+     "recipe_id": "5344600",
+     "description": "",
+     "ingredients": "unbleached wheat flour, malted barley flour, sour culture, salt, yeast, sesame seeds, amaranth, poppy seeds, whole wheat flour, dark rye flour, malt powder (milk), honey, extra virgin olive oil, semolina (wheat), wheat germ",
+     "allergens": [
+      "MILK",
+      "SESAME",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "SOY",
+      "TREENUTS"
+     ],
+     "tags": [
+      "vegetarian"
+     ],
+     "order": 15
+    },
+    {
+     "name": "Composed Salad",
+     "recipe_id": "123116546",
+     "description": "",
+     "ingredients": "chef's choice composed salad",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [],
+     "order": 16
+    },
+    {
+     "name": "Performance Bar",
+     "recipe_id": "4992007",
+     "description": "",
+     "ingredients": "Seasonal Assortment of Fresh Vegetables, Salads, Beans, Whole Grains, Hard Boiled Eggs, Baked Chicken, Tofu, Hummus, Spinach",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [],
+     "order": 17
+    },
+    {
+     "name": "Craveable Grains",
+     "recipe_id": "CraveableGrains1",
+     "description": "",
+     "ingredients": "** No Alliums: this includes garlic, onion, shallots, leeks, chives, scallions/ green onions, and any similar wild varieties, such as ramps. ** No Root vegetables/Tubers: this includes potatoes of any variety, beets, carrots, radishes, turnips, ginger, and fresh turmeric root. ** No Mushrooms/Fungi of any kind.",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
+     "order": 18
+    },
+    {
+     "name": "Flavor Forward Legumes",
+     "recipe_id": "FlavForLegumes1",
+     "description": "",
+     "ingredients": "** No Alliums: this includes garlic, onion, shallots, leeks, chives, scallions/ green onions, and any similar wild varieties, such as ramps. ** No Root vegetables/Tubers: this includes potatoes of any variety, beets, carrots, radishes, turnips, ginger, and fresh turmeric root. ** No Mushrooms/Fungi of any kind.",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
+     "order": 19
+    },
+    {
+     "name": "Pasta Marinara",
+     "recipe_id": "5095708",
+     "description": "",
+     "ingredients": "pasta (wheat), marinara sauce (soy), canola/olive oil blend",
+     "allergens": [
+      "SOY",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "EGG"
+     ],
+     "tags": [
+      "vegan"
+     ],
+     "order": 20
+    },
+    {
+     "name": "Pasta Alfredo",
+     "recipe_id": "5683556",
+     "description": "",
+     "ingredients": "pasta (wheat), white sauce (cream, butter, milk powder, flour [wheat], garlic, nutmeg, onion powder, white pepper, salt), mozzarella & parmesan cheese (milk)",
+     "allergens": [
+      "MILK",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "EGG"
+     ],
+     "tags": [
+      "vegetarian"
+     ],
+     "order": 21
+    },
+    {
+     "name": "Penne Pasta (Gluten-Free)",
+     "recipe_id": "3189216",
+     "description": "",
+     "ingredients": "brown rice, rice bran, water",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
+     "order": 22
     }
    ]
   },
@@ -803,7 +1135,7 @@
      "name": "Chicken Saltado",
      "recipe_id": "6773828-1",
      "description": "",
-     "ingredients": "chicken, tomato, tamari, cilantro, onions, french fries, bell peppers, garlic, salt, pepper, lomo saltado sauce (tamari, red wine vinegar, aji amarillo, canola/olive oil blend, salt, pepper)",
+     "ingredients": "chicken, tomato, tamari (soy), cilantro, onions, french fries, bell peppers, garlic, salt, pepper, lomo saltado sauce (tamari [soy], red wine vinegar, aji amarillo, canola/olive oil blend, salt, pepper)",
      "allergens": [
       "SOY"
      ],
@@ -838,7 +1170,7 @@
      "name": "Crispy Potato Wedges",
      "recipe_id": "CrispPotWedge1",
      "description": "",
-     "ingredients": "potatoes, garlic powder, paprika, onion powder, dried thyme, dried rosemary, cayenne pepper, parmesan cheese, chopped parsley, oil, salt, pepper",
+     "ingredients": "potatoes, garlic powder, paprika, onion powder, dried thyme, dried rosemary, cayenne pepper, parmesan cheese (milk), chopped parsley, oil, salt, pepper",
      "allergens": [
       "MILK"
      ],
@@ -965,7 +1297,7 @@
      "name": "Pasta Alfredo",
      "recipe_id": "5683556",
      "description": "",
-     "ingredients": "pasta (wheat), white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, parmesan cheese (milk)",
+     "ingredients": "pasta (wheat), white sauce (cream, butter, milk powder, flour [wheat], garlic, nutmeg, onion powder, white pepper, salt), mozzarella & parmesan cheese (milk)",
      "allergens": [
       "MILK",
       "WHEAT"
@@ -1218,7 +1550,7 @@
      "name": "Pasta Alfredo",
      "recipe_id": "5683556",
      "description": "",
-     "ingredients": "pasta (wheat), white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, parmesan cheese (milk)",
+     "ingredients": "pasta (wheat), white sauce (cream, butter, milk powder, flour [wheat], garlic, nutmeg, onion powder, white pepper, salt), mozzarella & parmesan cheese (milk)",
      "allergens": [
       "MILK",
       "WHEAT"
@@ -1708,7 +2040,7 @@
      "name": "Pasta Alfredo",
      "recipe_id": "5683556",
      "description": "",
-     "ingredients": "pasta (wheat), white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, parmesan cheese (milk)",
+     "ingredients": "pasta (wheat), white sauce (cream, butter, milk powder, flour [wheat], garlic, nutmeg, onion powder, white pepper, salt), mozzarella & parmesan cheese (milk)",
      "allergens": [
       "MILK",
       "WHEAT"
@@ -2009,7 +2341,7 @@
      "name": "Pasta Alfredo",
      "recipe_id": "5683556",
      "description": "",
-     "ingredients": "pasta (wheat), white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, parmesan cheese (milk)",
+     "ingredients": "pasta (wheat), white sauce (cream, butter, milk powder, flour [wheat], garlic, nutmeg, onion powder, white pepper, salt), mozzarella & parmesan cheese (milk)",
      "allergens": [
       "MILK",
       "WHEAT"
@@ -2384,7 +2716,7 @@
      "name": "Pasta Alfredo",
      "recipe_id": "5683556",
      "description": "",
-     "ingredients": "pasta (wheat), white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, parmesan cheese (milk)",
+     "ingredients": "pasta (wheat), white sauce (cream, butter, milk powder, flour [wheat], garlic, nutmeg, onion powder, white pepper, salt), mozzarella & parmesan cheese (milk)",
      "allergens": [
       "MILK",
       "WHEAT"
@@ -3040,7 +3372,7 @@
      "name": "Pasta Alfredo",
      "recipe_id": "5683556",
      "description": "",
-     "ingredients": "pasta (wheat), white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, parmesan cheese (milk)",
+     "ingredients": "pasta (wheat), white sauce (cream, butter, milk powder, flour [wheat], garlic, nutmeg, onion powder, white pepper, salt), mozzarella & parmesan cheese (milk)",
      "allergens": [
       "MILK",
       "WHEAT"
@@ -3065,6 +3397,273 @@
       "vegan"
      ],
      "order": 18
+    }
+   ],
+   "Dinner": [
+    {
+     "name": "Lemongrass Chicken",
+     "recipe_id": "3796121",
+     "description": "",
+     "ingredients": "chicken, lemongrass ginger marinade (tamari [soy], ginger root, chili, onion, lime, lemongrass, garlic, shallot, sugar), vietnamese spice rub (garlic powder, peppercorn, chinese five spice, espresso powder, salt)",
+     "allergens": [
+      "SOY"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free"
+     ],
+     "order": 0
+    },
+    {
+     "name": "Vietnamese Tofu",
+     "recipe_id": "5444387",
+     "description": "",
+     "ingredients": "tofu, garlic, peppers, onions, brown sugar, green onions, salt, and pepper",
+     "allergens": [
+      "SOY"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
+     "order": 1
+    },
+    {
+     "name": "Seasonal Steamed Vegetables",
+     "recipe_id": "5561366",
+     "description": "",
+     "ingredients": "seasonal vegetables, salt",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
+     "order": 2
+    },
+    {
+     "name": "Seasonal Vegetable Board",
+     "recipe_id": "4503514",
+     "description": "",
+     "ingredients": "seasonal roasted vegetables with olive/canola oil blend, salt, pepper",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
+     "order": 3
+    },
+    {
+     "name": "Steamed Rice",
+     "recipe_id": "5121297",
+     "description": "",
+     "ingredients": "white rice, salt",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
+     "order": 4
+    },
+    {
+     "name": "Nuoc Cham",
+     "recipe_id": "NuocCham1",
+     "description": "",
+     "ingredients": "fish sauce, water, lime juice, sugar, rice vinegar, minced garlic, chopped Thai chili, shredded carrot",
+     "allergens": [
+      "FISH",
+      "SHELLFISH"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free"
+     ],
+     "order": 5
+    },
+    {
+     "name": "Grilled Chicken",
+     "recipe_id": "520454-02",
+     "description": "",
+     "ingredients": "[HALAL] chicken, canola/olive oil blend, salt, pepper",
+     "allergens": [],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "SOY",
+      "TREENUTS",
+      "WHEAT"
+     ],
+     "tags": [],
+     "order": 6
+    },
+    {
+     "name": "Grilled Vegan/Vegetarian",
+     "recipe_id": "13468741",
+     "description": "",
+     "ingredients": "chef's choice grilled vegan OR vegetarian option",
+     "allergens": [],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "SOY",
+      "TREENUTS",
+      "WHEAT"
+     ],
+     "tags": [],
+     "order": 7
+    },
+    {
+     "name": "Panini Station",
+     "recipe_id": "4532805",
+     "description": "",
+     "ingredients": "(assorted) breads (egg, soy, wheat), cheeses (milk), deli meats, lettuce, tomatoes, and onions",
+     "allergens": [
+      "EGG",
+      "MILK",
+      "SOY",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "COCONUT",
+      "TREENUTS"
+     ],
+     "tags": [],
+     "order": 8
+    },
+    {
+     "name": "Soup of the Day",
+     "recipe_id": "SoupoftheDay",
+     "description": "",
+     "ingredients": "chef's choice soup of the day",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [],
+     "order": 9
+    },
+    {
+     "name": "Assorted Dinner Rolls",
+     "recipe_id": "5344600",
+     "description": "",
+     "ingredients": "unbleached wheat flour, malted barley flour, sour culture, salt, yeast, sesame seeds, amaranth, poppy seeds, whole wheat flour, dark rye flour, malt powder (milk), honey, extra virgin olive oil, semolina (wheat), wheat germ",
+     "allergens": [
+      "MILK",
+      "SESAME",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "SOY",
+      "TREENUTS"
+     ],
+     "tags": [
+      "vegetarian"
+     ],
+     "order": 10
+    },
+    {
+     "name": "Composed Salad",
+     "recipe_id": "123116546",
+     "description": "",
+     "ingredients": "chef's choice composed salad",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [],
+     "order": 11
+    },
+    {
+     "name": "Performance Bar",
+     "recipe_id": "4992007",
+     "description": "",
+     "ingredients": "Seasonal Assortment of Fresh Vegetables, Salads, Beans, Whole Grains, Hard Boiled Eggs, Baked Chicken, Tofu, Hummus, Spinach",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [],
+     "order": 12
+    },
+    {
+     "name": "Craveable Grains",
+     "recipe_id": "CraveableGrains1",
+     "description": "",
+     "ingredients": "** No Alliums: this includes garlic, onion, shallots, leeks, chives, scallions/ green onions, and any similar wild varieties, such as ramps. ** No Root vegetables/Tubers: this includes potatoes of any variety, beets, carrots, radishes, turnips, ginger, and fresh turmeric root. ** No Mushrooms/Fungi of any kind.",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
+     "order": 13
+    },
+    {
+     "name": "Flavor Forward Legumes",
+     "recipe_id": "FlavForLegumes1",
+     "description": "",
+     "ingredients": "** No Alliums: this includes garlic, onion, shallots, leeks, chives, scallions/ green onions, and any similar wild varieties, such as ramps. ** No Root vegetables/Tubers: this includes potatoes of any variety, beets, carrots, radishes, turnips, ginger, and fresh turmeric root. ** No Mushrooms/Fungi of any kind.",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
+     "order": 14
+    },
+    {
+     "name": "Pasta Marinara",
+     "recipe_id": "5095708",
+     "description": "",
+     "ingredients": "pasta (wheat), marinara sauce (soy), canola/olive oil blend",
+     "allergens": [
+      "SOY",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "EGG"
+     ],
+     "tags": [
+      "vegan"
+     ],
+     "order": 15
+    },
+    {
+     "name": "Pasta Alfredo",
+     "recipe_id": "5683556",
+     "description": "",
+     "ingredients": "pasta (wheat), white sauce (cream, butter, milk powder, flour [wheat], garlic, nutmeg, onion powder, white pepper, salt), mozzarella & parmesan cheese (milk)",
+     "allergens": [
+      "MILK",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "EGG"
+     ],
+     "tags": [
+      "vegetarian"
+     ],
+     "order": 16
+    },
+    {
+     "name": "Penne Pasta (Gluten-Free)",
+     "recipe_id": "3189216",
+     "description": "",
+     "ingredients": "brown rice, rice bran, water",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
+     "order": 17
     }
    ]
   },
@@ -3540,7 +4139,7 @@
      "name": "Pasta Alfredo",
      "recipe_id": "5683556",
      "description": "",
-     "ingredients": "pasta (wheat), white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, parmesan cheese (milk)",
+     "ingredients": "pasta (wheat), white sauce (cream, butter, milk powder, flour [wheat], garlic, nutmeg, onion powder, white pepper, salt), mozzarella & parmesan cheese (milk)",
      "allergens": [
       "MILK",
       "WHEAT"
@@ -3851,7 +4450,7 @@
      "name": "Pasta Alfredo",
      "recipe_id": "5683556",
      "description": "",
-     "ingredients": "pasta (wheat), white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, parmesan cheese (milk)",
+     "ingredients": "pasta (wheat), white sauce (cream, butter, milk powder, flour [wheat], garlic, nutmeg, onion powder, white pepper, salt), mozzarella & parmesan cheese (milk)",
      "allergens": [
       "MILK",
       "WHEAT"
@@ -4561,7 +5160,7 @@
      "name": "Creamy Cajun Chicken",
      "recipe_id": "21212100",
      "description": "",
-     "ingredients": "chicken, oil, onion, celery, bell pepper, tomato paste, cajun seasoning, chicken base, coconut yogurt, oat milk, salt, pepper",
+     "ingredients": "HALAL chicken, oil, onion, celery, bell pepper, tomato paste, cajun seasoning, chicken base, coconut yogurt, oat milk, salt, pepper",
      "allergens": [
       "COCONUT"
      ],
@@ -4685,7 +5284,7 @@
      "name": "Filipino Chicken Adobo",
      "recipe_id": "121212100",
      "description": "",
-     "ingredients": "chicken, oil, garlic, bay leaf, peppercorn, coconut liquid amino, vinegar, chicken base, sugar, salt,",
+     "ingredients": "HALAL chicken, oil, garlic, bay leaf, peppercorn, coconut liquid amino, vinegar, chicken base, sugar, salt,",
      "allergens": [
       "COCONUT"
      ],
