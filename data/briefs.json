@@ -1323,6 +1323,40 @@
   "vessel": "plate",
   "written_at": "2026-09-28T17:10:34+00:00"
  },
+ "0a74c4cf1965": {
+  "avoid": [
+   "chicken",
+   "beef",
+   "ribs",
+   "raw pork",
+   "pulled pork",
+   "skewers",
+   "french fries",
+   "rice"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item sliced roasted meat?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat shredded or pulled into strands?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat served on skewers?",
+    "yes": false
+   }
+  ],
+  "dish": "harissa glazed roast pork",
+  "look": "thick slices of roasted pork loin, glossy reddish-brown harissa glaze, caramelized seared edges, tender pink-white interior, drizzle of spiced pan glaze, fresh lemon wedge on the side",
+  "model": "gemini-flash-latest",
+  "name": "Harissa Glazed Pork",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-07T10:27:36+00:00"
+ },
  "0ab461b0d494": {
   "avoid": [
    "unbreaded grilled steak",
@@ -3958,6 +3992,42 @@
   "vessel": "bowl",
   "written_at": "2026-09-29T16:28:29+00:00"
  },
+ "1eb40c8f25a6": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "bacon",
+   "sausage",
+   "cheese",
+   "cream"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a thick stew with beans in a red broth?",
+    "yes": true
+   },
+   {
+    "q": "Does the stew contain chunks of meat, sausage, or bacon?",
+    "yes": false
+   },
+   {
+    "q": "Is the broth creamy white or clear?",
+    "yes": false
+   }
+  ],
+  "dish": "smoky tomato and white bean stew",
+  "look": "thick hearty stew, rich red tomato broth, plump white cannellini beans, diced tender russet potatoes, wilted dark green kale ribbons, flecks of red pepper flakes",
+  "model": "gemini-flash-latest",
+  "name": "Hot Smoky Tomato White Bean Stew",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-07T10:27:36+00:00"
+ },
  "1edf8e708f15": {
   "avoid": [
    "plain white rice",
@@ -5303,6 +5373,39 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-27T09:35:42+00:00"
+ },
+ "28d26f02e26f": {
+  "avoid": [
+   "clear broth",
+   "tomato broth",
+   "whole crab claws",
+   "crab legs with shells",
+   "bread bowl",
+   "spoon",
+   "crackers"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a creamy, opaque chowder?",
+    "yes": true
+   },
+   {
+    "q": "Is the soup served in a thin, clear broth?",
+    "yes": false
+   },
+   {
+    "q": "Are there whole crab shells or crab legs in the soup?",
+    "yes": false
+   }
+  ],
+  "dish": "crab and corn chowder",
+  "look": "thick creamy pale-yellow soup, tender yellow corn kernels, diced soft potatoes, flaked sweet crab meat, finely diced celery, visible dusting of reddish creole spices",
+  "model": "gemini-flash-latest",
+  "name": "Corn Chowder",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-07T10:27:36+00:00"
  },
  "292eb6796433": {
   "avoid": [
@@ -13066,6 +13169,42 @@
   "vessel": "bowl",
   "written_at": "2026-10-30T10:30:01+00:00"
  },
+ "5ae253d097e4": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "uncooked white tofu",
+   "noodles",
+   "rice",
+   "soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cooked cubes of tofu?",
+    "yes": true
+   },
+   {
+    "q": "Does the dish contain meat, poultry, or seafood?",
+    "yes": false
+   },
+   {
+    "q": "Is the tofu served in a liquid noodle soup?",
+    "yes": false
+   }
+  ],
+  "dish": "black pepper tofu",
+  "look": "golden-brown fried tofu cubes, glistening black pepper glaze, soft caramelized yellow onion slices, chopped garlic pieces, sliced green scallions, cracked black peppercorns",
+  "model": "gemini-flash-latest",
+  "name": "Vietnamese Tofu",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-07T10:27:36+00:00"
+ },
  "5c23b9039a39": {
   "avoid": [
    "meat",
@@ -15305,6 +15444,39 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T10:09:27+00:00"
  },
+ "6c7a3b3fb60c": {
+  "avoid": [
+   "melted cheese",
+   "nachos",
+   "tacos",
+   "burrito",
+   "quesadilla",
+   "ground beef",
+   "sour cream heap"
+  ],
+  "checks": [
+   {
+    "q": "Are dry tortilla chips served alongside bowls of salsa?",
+    "yes": true
+   },
+   {
+    "q": "Are the chips smothered in melted cheese sauce like nachos?",
+    "yes": false
+   },
+   {
+    "q": "Is the food wrapped into a burrito or taco?",
+    "yes": false
+   }
+  ],
+  "dish": "tortilla chips with assorted salsas",
+  "look": "pile of crisp triangular yellow corn tortilla chips, three small ramekins of pale-green avocado salsa, chunky red pico de gallo, spicy dark red chile salsa, bright green pickled jalapeños",
+  "model": "gemini-flash-latest",
+  "name": "Salsa Bar with Tortilla Chips",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-07T10:27:36+00:00"
+ },
  "6c97a9c059e0": {
   "avoid": [
    "meat",
@@ -17275,6 +17447,42 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-11-01T23:49:33+00:00"
+ },
+ "7d0c7d22bd61": {
+  "avoid": [
+   "pepperoni",
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "sausage",
+   "bacon",
+   "unbaked dough"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a baked slice of cheese pizza topped with vegetables?",
+    "yes": true
+   },
+   {
+    "q": "Does the pizza have pepperoni, sausage, or any meat toppings?",
+    "yes": false
+   },
+   {
+    "q": "Is the pizza crust pale, raw, and unbaked?",
+    "yes": false
+   }
+  ],
+  "dish": "vegetable pizza",
+  "look": "wedge of baked pizza, bubbly golden-brown crust, melted stringy mozzarella cheese, sliced red bell peppers, dark sliced mushrooms, red onion slivers, green zucchini slices",
+  "model": "gemini-flash-latest",
+  "name": "Vegetable Pizza",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-07T10:27:36+00:00"
  },
  "7d208fd83922": {
   "avoid": [
@@ -23619,6 +23827,41 @@
   "vessel": "plate",
   "written_at": "2026-10-24T08:20:42+00:00"
  },
+ "a899697f7a78": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "cheese",
+   "sour cream",
+   "folded taco"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish served on an open, flat, crispy round tortilla?",
+    "yes": true
+   },
+   {
+    "q": "Does the dish contain any meat, poultry, or seafood?",
+    "yes": false
+   },
+   {
+    "q": "Is the tortilla folded like a taco or rolled like a burrito?",
+    "yes": false
+   }
+  ],
+  "dish": "lentil tostadas",
+  "look": "flat crisp golden corn tostada shell, topped with seasoned brown lentils, roasted white cauliflower florets, sweet yellow corn kernels, sliced green avocado, fresh cilantro leaves",
+  "model": "gemini-flash-latest",
+  "name": "Lentil Tostadas",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-07T10:27:36+00:00"
+ },
  "a8b9b1a7939d": {
   "avoid": [
    "tortillas",
@@ -28254,6 +28497,39 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-15T19:30:40+00:00"
+ },
+ "c5528643420c": {
+  "avoid": [
+   "folded taco",
+   "flour tortilla",
+   "burrito",
+   "chicken",
+   "beef",
+   "pork",
+   "cheese sauce"
+  ],
+  "checks": [
+   {
+    "q": "Is the food served on an open, flat, crispy round tortilla?",
+    "yes": true
+   },
+   {
+    "q": "Is the tortilla folded over like a taco or rolled like a burrito?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish topped with red meat or chicken instead of seafood?",
+    "yes": false
+   }
+  ],
+  "dish": "shrimp tostadas",
+  "look": "crisp golden flat corn tostada, piled high with chilled pink cooked shrimp, diced green cucumber cubes, shredded bright orange carrots, finely chopped red onion, fresh cilantro leaves",
+  "model": "gemini-flash-latest",
+  "name": "Shrimp Tostadas",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-07T10:27:36+00:00"
  },
  "c55dfe6d0c41": {
   "avoid": [
