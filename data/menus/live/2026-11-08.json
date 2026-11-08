@@ -1,6 +1,6 @@
 {
  "date": "2026-11-08",
- "scraped_at": "2026-11-08T02:29:52-08:00",
+ "scraped_at": "2026-11-08T11:43:52-08:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -1017,24 +1017,15 @@
    ],
    "Lunch": [
     {
-     "name": "Chicken & Waffles with Apple Syrup",
-     "recipe_id": "3229585",
+     "name": "Buttermilk Fried Chicken",
+     "recipe_id": "5370469",
      "description": "",
-     "ingredients": "[HALAL] Fried Chicken (chicken, buttermilk [milk], flour, thyme, oregano, pepper, garlic powder, cayenne pepper, salt, onion powder, tarragon, parsley), Belgian Waffles (wheat flour, eggs, sugar, soybean oil, canola oil, leavening, malted barley flour, salt, soy lecithin, glycerides, natural flavor, artificial flavors [milk]), Apple Cider Syrup (apple cider vinegar, apple cider, cinnamon, butter, brown sugar), deep fried in canola oil",
+     "ingredients": "chicken, flour, buttermilk chicken marinade (buttermilk, blackening spice, parsley, tarragon spice, salt), canola/olive oil blend, salt, pepper",
      "allergens": [
-      "EGG",
       "MILK",
-      "SOY",
       "WHEAT"
      ],
-     "trace_allergens": [
-      "COCONUT",
-      "FISH",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "TREENUTS"
-     ],
+     "trace_allergens": [],
      "tags": [],
      "order": 0
     },
@@ -1080,30 +1071,6 @@
      "order": 3
     },
     {
-     "name": "Chilaquiles with Roasted Tomato Salsa",
-     "recipe_id": "4199856",
-     "description": "",
-     "ingredients": "flour tortilla (wheat), eggs, onion, cilantro, cojita cheese (milk), sour cream (milk), roasted tomato salsa (tomatoes, chipotle peppers, adobo sauce, garlic, canola/olive oil blend, salt), radish, garlic, canola/olive oil blend, salt",
-     "allergens": [
-      "EGG",
-      "MILK",
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "COCONUT",
-      "FISH",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "TREENUTS"
-     ],
-     "tags": [
-      "vegetarian"
-     ],
-     "order": 4
-    },
-    {
      "name": "Triangle Hash Browns",
      "recipe_id": "5802689",
      "description": "",
@@ -1116,7 +1083,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 5
+     "order": 4
     },
     {
      "name": "Scrambled Eggs",
@@ -1140,7 +1107,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 6
+     "order": 5
     },
     {
      "name": "Turkey Sausage Patty",
@@ -1152,35 +1119,29 @@
       "WHEAT"
      ],
      "tags": [],
-     "order": 7
+     "order": 6
     },
     {
-     "name": "Pork Sausage Patty",
-     "recipe_id": "3942305",
+     "name": "Chocolate Chip Pancakes",
+     "recipe_id": "3304597",
      "description": "",
-     "ingredients": "pork, salt, potassium chloride, dextrose, spices, monosodium glutamate, sodium phosphates, bht, citric acid, caramel color",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free"
-     ],
-     "order": 8
-    },
-    {
-     "name": "Baked Pasta Marinara",
-     "recipe_id": "4662005",
-     "description": "",
-     "ingredients": "pasta, vegetable soup base, garlic, tomato, basil, zucchini, mushroom, salt, canola/olive oil blend",
+     "ingredients": "buttermilk pancake mix (wheat flour, malted barley flour, enzymes, ascorbic acid, sugar, soy flour, sodium bicarbonate, sodium aluminum phosphate, aluminum sulfate, monocalcium phosphate, canola oil, soybean oil, dextrose, salt, buttermilk, monoglycerides, diglycerides, soy lecithin, eggs), chocolate chips",
      "allergens": [
+      "EGG",
+      "MILK",
+      "SOY",
       "WHEAT"
      ],
      "trace_allergens": [
-      "EGG"
+      "COCONUT",
+      "FISH",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "TREENUTS"
      ],
-     "tags": [
-      "vegan"
-     ],
-     "order": 9
+     "tags": [],
+     "order": 7
     },
     {
      "name": "Omelet Station",
@@ -1202,7 +1163,26 @@
       "WHEAT"
      ],
      "tags": [],
-     "order": 10
+     "order": 8
+    },
+    {
+     "name": "Crepe Station",
+     "recipe_id": "crepestation(lake)",
+     "description": "",
+     "ingredients": "",
+     "allergens": [
+      "COCONUT",
+      "EGG",
+      "MILK",
+      "PEANUTS",
+      "SOY",
+      "TREENUTS"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "vegetarian"
+     ],
+     "order": 9
     },
     {
      "name": "Composed Salad",
@@ -1212,7 +1192,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 11
+     "order": 10
     },
     {
      "name": "Performance Bar",
@@ -1222,7 +1202,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 12
+     "order": 11
     },
     {
      "name": "Craveable Grains",
@@ -1235,7 +1215,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 13
+     "order": 12
     },
     {
      "name": "Flavor Forward Legumes",
@@ -1248,38 +1228,34 @@
       "gluten-free",
       "vegan"
      ],
+     "order": 13
+    },
+    {
+     "name": "Bolognese Sauce",
+     "recipe_id": "5504877",
+     "description": "",
+     "ingredients": "beef, tomato sauce, onions, carrots, celery, garlic, balsamic vinegar, beef soup base, parsley, salt, italian seasoning, black pepper",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free"
+     ],
      "order": 14
     },
     {
-     "name": "Tri Color Cheese Tortellini",
-     "recipe_id": "6188353",
+     "name": "Marinara Sauce",
+     "recipe_id": "3612835",
      "description": "",
-     "ingredients": "enriched semolina flour (wheat), romano cheese (cow's milk, sheep's milk), ricotta cheese (milk), wheat flour, parmesan cheese (milk), pasteurized eggs, corn starch, salt, paprika oleoresin, asiago cheese (milk), spinach powder, garlic powder, spices, onion powder, fontina cheese (milk), xanthan gum, locust bean gum, guar gum, beta carotene",
+     "ingredients": "italian tomatoes, diced tomatoes, fresh onions, extra virgin olive oil, garlic, sea salt, oregano, black pepper",
      "allergens": [
-      "EGG",
-      "MILK",
-      "WHEAT"
+      "SOY"
      ],
      "trace_allergens": [],
-     "tags": [],
-     "order": 15
-    },
-    {
-     "name": "Pasta Alfredo",
-     "recipe_id": "5683556",
-     "description": "",
-     "ingredients": "pasta (wheat), white sauce (cream, butter, milk powder, flour [wheat], garlic, nutmeg, onion powder, white pepper, salt), mozzarella & parmesan cheese (milk)",
-     "allergens": [
-      "MILK",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "EGG"
-     ],
      "tags": [
-      "vegetarian"
+      "gluten-free",
+      "vegan"
      ],
-     "order": 16
+     "order": 15
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -1292,7 +1268,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 17
+     "order": 16
     }
    ],
    "Dinner": [
@@ -4028,25 +4004,14 @@
      "order": 0
     },
     {
-     "name": "Fried Eggplant & Chips",
-     "recipe_id": "4278771",
+     "name": "Frijoles Pintos",
+     "recipe_id": "3621719",
      "description": "",
-     "ingredients": "eggplant, flour (wheat), cornstarch, baking powder, nori, garlic, canola/olive oil blend, french fry (potatoes, vegetable oil [canola, palm, soybean, sunflower], modified food starch [potato, corn], rice flour, salt, dextrin, sugar, garlic powder, black pepper, natural flavor, onion powder, dextrose, xanthan gum), salt, pepper, fried in canola oil",
-     "allergens": [
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "TREENUTS"
-     ],
+     "ingredients": "pinto beans, onions, garlic, salt",
+     "allergens": [],
+     "trace_allergens": [],
      "tags": [
+      "gluten-free",
       "vegan"
      ],
      "order": 1
@@ -4091,68 +4056,6 @@
      "order": 4
     },
     {
-     "name": "Baked Parmesan Broccolini",
-     "recipe_id": "5445309",
-     "description": "",
-     "ingredients": "broccolini, canola/olive oil blend, parmesan cheese (milk), canola/olive oil blend, salt, black pepper",
-     "allergens": [
-      "MILK"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegetarian"
-     ],
-     "order": 5
-    },
-    {
-     "name": "Curly Fries",
-     "recipe_id": "3717456",
-     "description": "",
-     "ingredients": "potatoes, canola oil, sunflower oil, cottonseed oil, palm oil, corn oil, soybean oil, flour, salt, modified food starch, spices, corn meal, garlic powder, onion powder, sodium bicarbonate, dried yeast, oleoresin paprika, dextrose, fried in canola oil",
-     "allergens": [
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "TREENUTS"
-     ],
-     "tags": [
-      "vegan"
-     ],
-     "order": 6
-    },
-    {
-     "name": "Spicy Cabbage Coleslaw",
-     "recipe_id": "3836896",
-     "description": "",
-     "ingredients": "cabbage, lime juice, dill, jalapeno, sugar",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan"
-     ],
-     "order": 7
-    },
-    {
-     "name": "Soup of the Day",
-     "recipe_id": "SoupoftheDay",
-     "description": "",
-     "ingredients": "chef's choice soup of the day",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [],
-     "order": 8
-    },
-    {
      "name": "Composed Salad",
      "recipe_id": "123116546",
      "description": "",
@@ -4160,7 +4063,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 9
+     "order": 5
     },
     {
      "name": "Performance Bar",
@@ -4170,7 +4073,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 10
+     "order": 6
     },
     {
      "name": "Craveable Grains",
@@ -4183,7 +4086,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 11
+     "order": 7
     },
     {
      "name": "Flavor Forward Legumes",
@@ -4196,7 +4099,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 12
+     "order": 8
     },
     {
      "name": "Pasta Marinara",
@@ -4213,7 +4116,7 @@
      "tags": [
       "vegan"
      ],
-     "order": 13
+     "order": 9
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -4226,7 +4129,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 14
+     "order": 10
     }
    ],
    "Dinner": [

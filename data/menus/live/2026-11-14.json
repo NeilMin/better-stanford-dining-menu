@@ -1,6 +1,6 @@
 {
  "date": "2026-11-14",
- "scraped_at": "2026-11-08T02:29:52-08:00",
+ "scraped_at": "2026-11-08T11:43:52-08:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -1334,17 +1334,66 @@
      "order": 4
     },
     {
-     "name": "Seasonal Steamed Vegetables",
-     "recipe_id": "5561366",
+     "name": "Chipotle Beef Picadillo",
+     "recipe_id": "4015136",
      "description": "",
-     "ingredients": "seasonal vegetables, salt",
+     "ingredients": "ground beef with mushroom, canola oil, potato, butternut squash, onion, bell pepper, marinara sauce, jalapeno chili, tomato, garlic, cumin, black pepper, salt",
+     "allergens": [
+      "MILK",
+      "WHEAT"
+     ],
+     "trace_allergens": [],
+     "tags": [],
+     "order": 5
+    },
+    {
+     "name": "Refried Beans",
+     "recipe_id": "4835563",
+     "description": "",
+     "ingredients": "pinto beans, onions, garlic, canola oil, extra virgin olive oil, cumin, coriander, cilantro, salt",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
       "vegan"
      ],
-     "order": 5
+     "order": 6
+    },
+    {
+     "name": "Spanish Rice",
+     "recipe_id": "5298653",
+     "description": "",
+     "ingredients": "white rice, vegetable soup base (contains mushrooms, celery), onions, bell peppers, garlic, jalapeno peppers, canola/olive oil blend, tomato juice, salt, coriander, cumin, pepper, cilantro",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
+     "order": 7
+    },
+    {
+     "name": "Taco Bar",
+     "recipe_id": "4641316",
+     "description": "",
+     "ingredients": "",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [],
+     "order": 8
+    },
+    {
+     "name": "White Corn Tortilla",
+     "recipe_id": "TORFP_CASE",
+     "description": "",
+     "ingredients": "ground corn treated with lime, propionic acid, sodium phosphate, dextrose",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
+     "order": 9
     },
     {
      "name": "Panini Station",
@@ -1362,7 +1411,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 6
+     "order": 10
     },
     {
      "name": "Soup of the Day",
@@ -1372,7 +1421,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 7
+     "order": 11
     },
     {
      "name": "Assorted Dinner Rolls",
@@ -1391,7 +1440,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 8
+     "order": 12
     },
     {
      "name": "Composed Salad",
@@ -1401,7 +1450,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 9
+     "order": 13
     },
     {
      "name": "Performance Bar",
@@ -1411,7 +1460,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 10
+     "order": 14
     },
     {
      "name": "Craveable Grains",
@@ -1424,7 +1473,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 11
+     "order": 15
     },
     {
      "name": "Flavor Forward Legumes",
@@ -1437,7 +1486,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 12
+     "order": 16
     },
     {
      "name": "Creamy Pesto",
@@ -1453,7 +1502,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 13
+     "order": 17
     },
     {
      "name": "Pasta Marinara",
@@ -1470,7 +1519,7 @@
      "tags": [
       "vegan"
      ],
-     "order": 14
+     "order": 18
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -1483,7 +1532,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 15
+     "order": 19
     }
    ]
   },
@@ -3550,27 +3599,48 @@
      "order": 2
     },
     {
-     "name": "Hard Boiled Eggs",
-     "recipe_id": "2612705",
+     "name": "Breakfast Taco Bar",
+     "recipe_id": "3200778",
      "description": "",
-     "ingredients": "eggs",
+     "ingredients": "corn tortilla, green avocado salsa, pork chorizo, black beans toppings: queso fresco, sour cream, cheese (milk)",
      "allergens": [
-      "EGG"
+      "EGG",
+      "MILK"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "COCONUT",
+      "FISH",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "SOY",
+      "TREENUTS",
+      "WHEAT"
+     ],
      "tags": [
-      "gluten-free",
       "vegetarian"
      ],
      "order": 3
     },
     {
-     "name": "Chef's Choice Egg Special",
-     "recipe_id": "ChefsChoiceEgg",
+     "name": "Breakfast Burrito",
+     "recipe_id": "3163201",
      "description": "",
-     "ingredients": "Please refer to dining hall chef or manager for ingredient and allergen information",
-     "allergens": [],
-     "trace_allergens": [],
+     "ingredients": "tortilla (wheat), eggs, cheese (milk), black beans, seasonal vegetables, canola/olive oil blend, salt, pepper",
+     "allergens": [
+      "EGG",
+      "MILK",
+      "SOY",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "COCONUT",
+      "FISH",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "TREENUTS"
+     ],
      "tags": [
       "vegetarian"
      ],
@@ -3616,13 +3686,27 @@
      "order": 7
     },
     {
-     "name": "Chef's Choice Breakfast Special",
-     "recipe_id": "ChefsChoiceBkfstSpec",
+     "name": "Banana Pancakes",
+     "recipe_id": "5782064",
      "description": "",
-     "ingredients": "Please refer to dining hall chef or manager for ingredient and allergen information",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [],
+     "ingredients": "multigrain pancake mix, banana, canola/olive oil blend",
+     "allergens": [
+      "EGG",
+      "MILK",
+      "SOY",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "COCONUT",
+      "FISH",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "TREENUTS"
+     ],
+     "tags": [
+      "vegetarian"
+     ],
      "order": 8
     },
     {
