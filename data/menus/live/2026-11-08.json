@@ -1,6 +1,6 @@
 {
  "date": "2026-11-08",
- "scraped_at": "2026-11-07T15:39:20-08:00",
+ "scraped_at": "2026-11-08T02:29:52-08:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -3842,76 +3842,103 @@
      "order": 2
     },
     {
-     "name": "Hard Boiled Eggs",
-     "recipe_id": "2612705",
+     "name": "Breakfast Taco Bar",
+     "recipe_id": "3200778",
      "description": "",
-     "ingredients": "eggs",
+     "ingredients": "corn tortilla, green avocado salsa, pork chorizo, black beans toppings: queso fresco, sour cream, cheese (milk)",
      "allergens": [
-      "EGG"
+      "EGG",
+      "MILK"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "COCONUT",
+      "FISH",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "SOY",
+      "TREENUTS",
+      "WHEAT"
+     ],
      "tags": [
-      "gluten-free",
       "vegetarian"
      ],
      "order": 3
     },
     {
-     "name": "Chef's Choice Egg Special",
-     "recipe_id": "ChefsChoiceEgg",
+     "name": "Chilaquiles with Roasted Tomato Salsa",
+     "recipe_id": "4199856",
      "description": "",
-     "ingredients": "Please refer to dining hall chef or manager for ingredient and allergen information",
-     "allergens": [],
-     "trace_allergens": [],
+     "ingredients": "flour tortilla (wheat), eggs, onion, cilantro, cojita cheese (milk), sour cream (milk), roasted tomato salsa (tomatoes, chipotle peppers, adobo sauce, garlic, canola/olive oil blend, salt), radish, garlic, canola/olive oil blend, salt",
+     "allergens": [
+      "EGG",
+      "MILK",
+      "SOY",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "COCONUT",
+      "FISH",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "TREENUTS"
+     ],
      "tags": [
       "vegetarian"
      ],
      "order": 4
     },
     {
-     "name": "Pork Sausage Link",
-     "recipe_id": "4899163",
+     "name": "Bacon Power Scramble",
+     "recipe_id": "5742144",
      "description": "",
-     "ingredients": "pork, sea salt, spices, turbinado sugar, sage oil, sage extract, rosemary extract",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free"
-     ],
-     "order": 5
-    },
-    {
-     "name": "Tater Tots",
-     "recipe_id": "6105956",
-     "description": "",
-     "ingredients": "potatoes, oil (canola oil, soybean oil, cottonseed oil, sunflower oil, or corn oil), dextrose, natural flavor, salt, sodium acid pyrophosphate, fried in canola oil",
+     "ingredients": "eggs, (non-halal) bacon, cheese, seasonal vegetables, canola/olive oil blend, herbs, salt, pepper",
      "allergens": [
-      "SOY"
+      "EGG",
+      "MILK"
      ],
      "trace_allergens": [
       "COCONUT",
-      "EGG",
       "FISH",
-      "MILK",
       "PEANUTS",
       "SESAME",
       "SHELLFISH",
+      "SOY",
       "TREENUTS",
       "WHEAT"
      ],
+     "tags": [],
+     "order": 5
+    },
+    {
+     "name": "Breakfast Potatoes",
+     "recipe_id": "3829817",
+     "description": "",
+     "ingredients": "potatoes, onions, oil (canola oil, sunflower seed oil, cotton seed oil, palm oil, corn oil, or soybean oil), salt, disodium dihydrogen pyrophosphate, dextrose",
+     "allergens": [
+      "SOY"
+     ],
+     "trace_allergens": [],
      "tags": [
+      "gluten-free",
       "vegan"
      ],
      "order": 6
     },
     {
-     "name": "Chef's Choice Vegan Breakfast",
-     "recipe_id": "ChefsChoiceVGNBkfst",
+     "name": "Plant Powered \"Eggs”",
+     "recipe_id": "4433739",
      "description": "",
-     "ingredients": "Please refer to dining hall chef or manager for ingredient and allergen information",
-     "allergens": [],
-     "trace_allergens": [],
+     "ingredients": "mung bean protein, canola oil, onion, gellan gum, carrot extractives, natural flavors, turmeric extractives, potassium citrate, salt, soy lecithin, sugar, tapioca syrup, tetrasodium pyrophosphate, transglutaminase, nisin",
+     "allergens": [
+      "SOY"
+     ],
+     "trace_allergens": [
+      "EGG"
+     ],
      "tags": [
+      "gluten-free",
       "vegan"
      ],
      "order": 7
@@ -4204,29 +4231,33 @@
    ],
    "Dinner": [
     {
-     "name": "Braised Beef Brisket",
-     "recipe_id": "4487387",
+     "name": "Beef Bolognese Lasagna",
+     "recipe_id": "3791182",
      "description": "",
-     "ingredients": "beef, brisket sauce (carrots, onions, celery, garlic, beef soup base, thyme, bay leaf, parsley, salt, pepper)",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free"
-     ],
-     "order": 0
-    },
-    {
-     "name": "Blackened BBQ Tofu Steak",
-     "recipe_id": "02231979",
-     "description": "",
-     "ingredients": "Tofu (soy), maple syrup, rosemary, Worcestershire sauce (fish), salt , pepper, cayenne pepper",
+     "ingredients": "lasagna noodles, beef bolognese sauce (beef and mushroom blend, marinara sauce, tomato paste, vegetable soup base, carrots, celery, onions, italian seasoning, parsley, garlic, canola/olive oil blend, bay leaf, pepper, salt), white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, parmesan cheese, basil, parsley, olive oil, pepper, salt",
      "allergens": [
-      "FISH",
+      "EGG",
+      "MILK",
       "SOY",
       "WHEAT"
      ],
      "trace_allergens": [],
      "tags": [],
+     "order": 0
+    },
+    {
+     "name": "Herb-Marinated Lemon Tofu",
+     "recipe_id": "8327042",
+     "description": "",
+     "ingredients": "lemon herb tofu (tofu [soy], lemon juice, canola/olive oil, garlic, oregano, rosemary, thyme, parsley, salt, pepper), squash, zucchini",
+     "allergens": [
+      "SOY"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
      "order": 1
     },
     {
@@ -4256,10 +4287,10 @@
      "order": 3
     },
     {
-     "name": "Buttered Green Beans with Shallots",
-     "recipe_id": "ButterGrnBeanShal1",
+     "name": "Roasted Corn on the Cob",
+     "recipe_id": "4458661",
      "description": "",
-     "ingredients": "green beans, butter (milk), shallots, garlic, parsley, lemon juice, olive/canola oil blend, salt, black pepper",
+     "ingredients": "corn, butter (milk), salt",
      "allergens": [
       "MILK"
      ],
