@@ -1,6 +1,6 @@
 {
  "date": "2026-11-08",
- "scraped_at": "2026-11-08T11:43:52-08:00",
+ "scraped_at": "2026-11-08T15:46:38-08:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -1393,16 +1393,22 @@
      "order": 7
     },
     {
-     "name": "Fire Cornbread",
-     "recipe_id": "4493130",
+     "name": "Cornbread",
+     "recipe_id": "cornbread.lakeside",
      "description": "",
-     "ingredients": "cornmeal, flour, buttermilk, milk, eggs, maple syrup, baking powder, baking soda, sugar, salt",
+     "ingredients": "butter, sugar, eggs, wheat flour, yellow cornmeal, cream corn, baking powder, sea salt, vanilla extract",
      "allergens": [
       "EGG",
       "MILK",
       "WHEAT"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "COCONUT",
+      "PEANUTS",
+      "SESAME",
+      "SOY",
+      "TREENUTS"
+     ],
      "tags": [
       "vegetarian"
      ],
@@ -1432,33 +1438,20 @@
      "order": 10
     },
     {
-     "name": "Assorted Dinner Rolls",
-     "recipe_id": "5344600",
+     "name": "Macaroni Salad",
+     "recipe_id": "5143221",
      "description": "",
-     "ingredients": "unbleached wheat flour, malted barley flour, sour culture, salt, yeast, sesame seeds, amaranth, poppy seeds, whole wheat flour, dark rye flour, malt powder (milk), honey, extra virgin olive oil, semolina (wheat), wheat germ",
+     "ingredients": "macaroni pasta, carrots, mayonnaise, green onions, rice vinegar, sugar",
      "allergens": [
-      "MILK",
-      "SESAME",
+      "EGG",
+      "SOY",
       "WHEAT"
      ],
-     "trace_allergens": [
-      "SOY",
-      "TREENUTS"
-     ],
+     "trace_allergens": [],
      "tags": [
       "vegetarian"
      ],
      "order": 11
-    },
-    {
-     "name": "Composed Salad",
-     "recipe_id": "123116546",
-     "description": "",
-     "ingredients": "chef's choice composed salad",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [],
-     "order": 12
     },
     {
      "name": "Performance Bar",
@@ -1468,7 +1461,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 13
+     "order": 12
     },
     {
      "name": "Craveable Grains",
@@ -1481,7 +1474,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 14
+     "order": 13
     },
     {
      "name": "Flavor Forward Legumes",
@@ -1494,21 +1487,19 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 15
+     "order": 14
     },
     {
-     "name": "Tri Color Cheese Tortellini",
-     "recipe_id": "6188353",
+     "name": "Bolognese Sauce",
+     "recipe_id": "5504877",
      "description": "",
-     "ingredients": "enriched semolina flour (wheat), romano cheese (cow's milk, sheep's milk), ricotta cheese (milk), wheat flour, parmesan cheese (milk), pasteurized eggs, corn starch, salt, paprika oleoresin, asiago cheese (milk), spinach powder, garlic powder, spices, onion powder, fontina cheese (milk), xanthan gum, locust bean gum, guar gum, beta carotene",
-     "allergens": [
-      "EGG",
-      "MILK",
-      "WHEAT"
-     ],
+     "ingredients": "beef, tomato sauce, onions, carrots, celery, garlic, balsamic vinegar, beef soup base, parsley, salt, italian seasoning, black pepper",
+     "allergens": [],
      "trace_allergens": [],
-     "tags": [],
-     "order": 16
+     "tags": [
+      "gluten-free"
+     ],
+     "order": 15
     },
     {
      "name": "Pasta Marinara",
@@ -1525,7 +1516,7 @@
      "tags": [
       "vegan"
      ],
-     "order": 17
+     "order": 16
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -1538,7 +1529,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 18
+     "order": 17
     }
    ]
   },
@@ -4190,10 +4181,10 @@
      "order": 3
     },
     {
-     "name": "Roasted Corn on the Cob",
-     "recipe_id": "4458661",
+     "name": "Smashed Red Potatoes",
+     "recipe_id": "7202663",
      "description": "",
-     "ingredients": "corn, butter (milk), salt",
+     "ingredients": "potatoes, cream, butter, whole milk, onion, pepper, salt",
      "allergens": [
       "MILK"
      ],
@@ -4205,73 +4196,51 @@
      "order": 4
     },
     {
-     "name": "Garlic Mashed Potatoes",
-     "recipe_id": "5280474",
+     "name": "Creamy Mac & Cheese",
+     "recipe_id": "4233582",
      "description": "",
-     "ingredients": "potatoes, cream, butter (milk), canola/olive oil blend, garlic, salt, pepper",
+     "ingredients": "macaroni (wheat), cheese sauce (parmesan cheese, white cheddar cheese, fontina cheese, whole milk, butter, flour, Dijon mustard, onions, salt, nutmeg, bay leaf [milk, wheat])",
      "allergens": [
-      "MILK"
+      "MILK",
+      "WHEAT"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "vegetarian"
+     ],
+     "order": 5
+    },
+    {
+     "name": "Assorted Bread",
+     "recipe_id": "AssortSlicBread1",
+     "description": "",
+     "ingredients": "",
+     "allergens": [
+      "SESAME",
+      "SOY",
+      "WHEAT"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "vegan"
+     ],
+     "order": 6
+    },
+    {
+     "name": "Greek Salad",
+     "recipe_id": "5401459",
+     "description": "",
+     "ingredients": "romaine lettuce, garbanzo beans, cucumber, cherry tomatoes, bell peppers, feta cheese, red onion, kalamata olives, oregano, salt, pepper, italian dressing (soybean oil, distilled vinegar, high fructose corn syrup, corn syrup, salt, garlic, corn syrup solids, xanthan gum, lemon juice concentrate, spice, red bell pepper, paprika, fd&c yellow no.5, fd&c yellow No.6)",
+     "allergens": [
+      "MILK",
+      "SOY"
      ],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
       "vegetarian"
      ],
-     "order": 5
-    },
-    {
-     "name": "Garlic Bread",
-     "recipe_id": "3192879",
-     "description": "",
-     "ingredients": "french baguette (wheat flour, malted barley flour, sour culture, salt, yeast, cornmeal), garlic paste (olive oil, garlic, unsalted butter, parsley),",
-     "allergens": [
-      "MILK",
-      "WHEAT"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "vegetarian"
-     ],
-     "order": 6
-    },
-    {
-     "name": "Soup of the Day",
-     "recipe_id": "SoupoftheDay",
-     "description": "",
-     "ingredients": "chef's choice soup of the day",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [],
      "order": 7
-    },
-    {
-     "name": "Assorted Dinner Rolls",
-     "recipe_id": "5344600",
-     "description": "",
-     "ingredients": "unbleached wheat flour, malted barley flour, sour culture, salt, yeast, sesame seeds, amaranth, poppy seeds, whole wheat flour, dark rye flour, malt powder (milk), honey, extra virgin olive oil, semolina (wheat), wheat germ",
-     "allergens": [
-      "MILK",
-      "SESAME",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "SOY",
-      "TREENUTS"
-     ],
-     "tags": [
-      "vegetarian"
-     ],
-     "order": 8
-    },
-    {
-     "name": "Composed Salad",
-     "recipe_id": "123116546",
-     "description": "",
-     "ingredients": "chef's choice composed salad",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [],
-     "order": 9
     },
     {
      "name": "Performance Bar",
@@ -4281,7 +4250,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 10
+     "order": 8
     },
     {
      "name": "Craveable Grains",
@@ -4294,7 +4263,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 11
+     "order": 9
     },
     {
      "name": "Flavor Forward Legumes",
@@ -4307,21 +4276,24 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 12
+     "order": 10
     },
     {
-     "name": "Tri Color Cheese Tortellini",
-     "recipe_id": "6188353",
+     "name": "Pasta Marinara",
+     "recipe_id": "5095708",
      "description": "",
-     "ingredients": "enriched semolina flour (wheat), romano cheese (cow's milk, sheep's milk), ricotta cheese (milk), wheat flour, parmesan cheese (milk), pasteurized eggs, corn starch, salt, paprika oleoresin, asiago cheese (milk), spinach powder, garlic powder, spices, onion powder, fontina cheese (milk), xanthan gum, locust bean gum, guar gum, beta carotene",
+     "ingredients": "pasta (wheat), marinara sauce (soy), canola/olive oil blend",
      "allergens": [
-      "EGG",
-      "MILK",
+      "SOY",
       "WHEAT"
      ],
-     "trace_allergens": [],
-     "tags": [],
-     "order": 13
+     "trace_allergens": [
+      "EGG"
+     ],
+     "tags": [
+      "vegan"
+     ],
+     "order": 11
     }
    ]
   },
