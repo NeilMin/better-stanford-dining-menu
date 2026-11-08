@@ -29595,6 +29595,41 @@
   "vessel": "plate",
   "written_at": "2026-09-27T04:46:15+00:00"
  },
+ "ca64eebe31c9": {
+  "avoid": [
+   "whole bread rolls",
+   "whole loaves",
+   "turkey",
+   "roast chicken",
+   "sausage",
+   "meat",
+   "pork",
+   "cranberry sauce",
+   "gravy"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a mound of baked bread stuffing or dressing?",
+    "yes": true
+   },
+   {
+    "q": "Does the dish feature whole intact rolls or sliced sandwich bread?",
+    "yes": false
+   },
+   {
+    "q": "Is there poultry, turkey, or meat visible in or beside the dish?",
+    "yes": false
+   }
+  ],
+  "dish": "brioche stuffing",
+  "look": "a hearty mound of baked brioche stuffing, golden-brown toasted bread cubes with crisp edges, tender centers, sliced sauteed brown mushrooms, finely diced celery, softened translucent leeks, caramelized onion bits, flecks of fresh green thyme leaves",
+  "model": "gemini-flash-latest",
+  "name": "Brioche Stuffing",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-08T19:51:31+00:00"
+ },
  "cb302502718a": {
   "avoid": [
    "meat",
