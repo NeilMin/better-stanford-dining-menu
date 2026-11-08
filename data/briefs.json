@@ -10294,6 +10294,42 @@
   "vessel": "bowl",
   "written_at": "2026-10-25T18:32:18+00:00"
  },
+ "47031bd226da": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "burger",
+   "cheese sauce",
+   "loaded fries",
+   "ketchup cup"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item french fries?",
+    "yes": true
+   },
+   {
+    "q": "Are the fries topped with melted cheese, meat, or chili?",
+    "yes": false
+   },
+   {
+    "q": "Is there a burger or sandwich served with the fries?",
+    "yes": false
+   }
+  ],
+  "dish": "french fries",
+  "look": "a pile of golden-yellow french fries, straight-cut potato batons, crispy fried exterior with light brown edges, dusting of fine salt crystals, fluffy potato texture",
+  "model": "gemini-flash-latest",
+  "name": "Fried French Fries",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-08T10:35:09+00:00"
+ },
  "471abbe0153c": {
   "avoid": [
    "meat",
@@ -10713,6 +10749,39 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-19T20:40:49+00:00"
+ },
+ "490adde64e14": {
+  "avoid": [
+   "omelet",
+   "breakfast burrito",
+   "sandwich",
+   "toast",
+   "pancakes",
+   "sausage",
+   "raw eggs"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item scrambled eggs?",
+    "yes": true
+   },
+   {
+    "q": "Is the dish wrapped in a tortilla or served as a sandwich?",
+    "yes": false
+   },
+   {
+    "q": "Are the eggs cooked as a folded omelet or flat frittata?",
+    "yes": false
+   }
+  ],
+  "dish": "bacon and vegetable scrambled eggs",
+  "look": "a mound of fluffy yellow scrambled eggs, folded soft curds, crispy crumbled dark brown bacon pieces, melted yellow cheddar cheese, tender sautéed diced red bell peppers, flecks of fresh minced herbs",
+  "model": "gemini-flash-latest",
+  "name": "Bacon Power Scramble",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-08T10:35:09+00:00"
  },
  "4928bd35dae8": {
   "avoid": [
@@ -11917,6 +11986,41 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-26T23:11:26+00:00"
+ },
+ "511482e54699": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "raw white tofu block",
+   "soup",
+   "noodles"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cooked tofu cubes?",
+    "yes": true
+   },
+   {
+    "q": "Is there meat, poultry, or seafood in the dish?",
+    "yes": false
+   },
+   {
+    "q": "Is the tofu served in a soup or broth?",
+    "yes": false
+   }
+  ],
+  "dish": "sesame soy glazed tofu",
+  "look": "cubes of firm golden-brown pan-seared tofu, glossy dark brown tamari glaze coating every surface, toasted white sesame seeds, finely sliced green scallions, fine matchsticks of fresh apple",
+  "model": "gemini-flash-latest",
+  "name": "Sesame Soy Tofu",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-08T10:35:09+00:00"
  },
  "519cfa5b0ccb": {
   "avoid": [
