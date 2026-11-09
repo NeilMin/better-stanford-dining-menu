@@ -22874,6 +22874,42 @@
   "vessel": "plate",
   "written_at": "2026-10-15T23:11:09+00:00"
  },
+ "a120f59312df": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "tuna",
+   "ham",
+   "hard-boiled eggs",
+   "tomato sauce"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a cold macaroni pasta salad?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat, ham, or seafood mixed into the pasta?",
+    "yes": false
+   },
+   {
+    "q": "Is the pasta served hot in red tomato sauce?",
+    "yes": false
+   }
+  ],
+  "dish": "macaroni salad",
+  "look": "a mound of curved elbow macaroni pasta, thick creamy off-white mayonnaise dressing coating each noodle, finely shredded bright orange carrots, sliced green onions, glossy chilled texture",
+  "model": "gemini-flash-latest",
+  "name": "Macaroni Salad",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-08T23:51:47+00:00"
+ },
  "a15f4b832811": {
   "avoid": [
    "dry pork",
@@ -27779,6 +27815,41 @@
   "vessel": "plate",
   "written_at": "2026-09-27T04:50:08+00:00"
  },
+ "bedd274d2220": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "brown gravy",
+   "french fries",
+   "uncut whole potatoes"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food smashed or mashed potatoes?",
+    "yes": true
+   },
+   {
+    "q": "Is there meat, poultry, or seafood in the dish?",
+    "yes": false
+   },
+   {
+    "q": "Are the potatoes cut into french fries or wedges?",
+    "yes": false
+   }
+  ],
+  "dish": "smashed red potatoes",
+  "look": "a mound of chunky smashed red potatoes, rustic skin-on texture with patches of visible red skin, creamy off-white potato mash, pool of melted golden butter, scattered bits of translucent cooked onion, uneven scoop",
+  "model": "gemini-flash-latest",
+  "name": "Smashed Red Potatoes",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-08T23:51:47+00:00"
+ },
  "bee76dfbf2d2": {
   "avoid": [
    "raw meat",
@@ -28395,6 +28466,40 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T09:50:49+00:00"
+ },
+ "c3cb7f99d822": {
+  "avoid": [
+   "taco toppings",
+   "ground beef",
+   "shredded lettuce",
+   "cheese",
+   "powdered sugar",
+   "tortilla",
+   "sliced sandwich bread",
+   "doughnut"
+  ],
+  "checks": [
+   {
+    "q": "Is the food a puffy, fried flatbread?",
+    "yes": true
+   },
+   {
+    "q": "Is the bread covered with taco meat, lettuce, or savory toppings?",
+    "yes": false
+   },
+   {
+    "q": "Is the bread a sliced loaf?",
+    "yes": false
+   }
+  ],
+  "dish": "fry bread",
+  "look": "a single round disc of golden-brown fried dough, puffy uneven surface with crispy fried blisters, soft tender crevices, golden edges, flat irregular disc shape",
+  "model": "gemini-flash-latest",
+  "name": "Fry Bread",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-08T23:51:47+00:00"
  },
  "c3d4691b2e6c": {
   "avoid": [
