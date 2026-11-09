@@ -1,6 +1,6 @@
 {
  "date": "2026-11-12",
- "scraped_at": "2026-11-09T03:42:18-08:00",
+ "scraped_at": "2026-11-09T15:47:41-08:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -3091,22 +3091,24 @@
    ],
    "Lunch": [
     {
-     "name": "Cajun Blackened Chicken",
-     "recipe_id": "BlknChx17",
+     "name": "Pork Carnitas Burrito Bowl",
+     "recipe_id": "3855817",
      "description": "",
-     "ingredients": "[HALAL] chicken, onion, bell pepper, smoked paprika, cayenne pepper, onion powder, garlic powder, salt, black pepper, dried thyme, dried oregano",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free"
+     "ingredients": "pork carnitas (pork, onions, garlic, bay leaf, salt), flour tortilla, spanish rice (brown rice, vegetable soup base, onions, bell peppers, garlic, jalapeno peppers, canola/olive oil blend, tomato juice, coriander, cumin, black pepper, cilantro, salt), seasoned pinto beans (pinto beans, onions, garlic salt), avocado salsa, roasted tomato salsa, queso fresco, chipotle crema (cream, milk, chipotle peppers, salt)",
+     "allergens": [
+      "MILK",
+      "SOY",
+      "WHEAT"
      ],
+     "trace_allergens": [],
+     "tags": [],
      "order": 0
     },
     {
-     "name": "Cajun Blackened Tofu",
-     "recipe_id": "BlknT17",
+     "name": "Tofu Sofritas Taco Bowl",
+     "recipe_id": "5736102",
      "description": "",
-     "ingredients": "Firm Tofu (soy), Smoked Paprika, Garlic Powder, Onion Powder, Cayenne Pepper, Dried Thyme, Dried Oregano, Salt, Black Pepper, Bell pepper, Onion, Zucchini, Garlic, Neutral Oil.",
+     "ingredients": "tofu sofritas ( tofu, salt, pepper, canola/olive oil blend, fire roasted tomatoes, anaheim chili, tomato puree, garlic, paprika, onions, pasilla chili), corn tortilla, avocado salsa, roasted tomato salsa, cardinal sage pico de gallo, spanish rice, seasoned pinto beans",
      "allergens": [
       "SOY"
      ],
@@ -3118,14 +3120,24 @@
      "order": 1
     },
     {
-     "name": "Cajun Roasted Cauliflower",
-     "recipe_id": "CCauli17",
+     "name": "Charred Fajitas Vegetables",
+     "recipe_id": "6493302",
      "description": "",
-     "ingredients": "Cauliflower, Cajun Seasoning, Parsley, Neutral Oil, Salt, Black Pepper.",
+     "ingredients": "bell peppers, onions, mushrooms, squash, canola/olive oil blend, cumin, garlic, salt, pepper",
      "allergens": [],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "SOY",
+      "TREENUTS",
+      "WHEAT"
+     ],
      "tags": [
-      "gluten-free",
       "vegan"
      ],
      "order": 2
@@ -3144,28 +3156,28 @@
      "order": 3
     },
     {
-     "name": "Bacon Creole Corn Maque Choux",
-     "recipe_id": "CCMChoux17",
+     "name": "Pico De Gallo",
+     "recipe_id": "3122814",
      "description": "",
-     "ingredients": "Corn, Bacon, Bell Pepper, Sweet Onion, Jalapeno, Garlic, AP Flour (wheat), Heavy Cream (milk), Creole Seasoning, Sugar, Butter (milk), Green Onion, Salt, Black Pepper.",
-     "allergens": [
-      "MILK",
-      "WHEAT"
-     ],
-     "trace_allergens": [],
-     "tags": [],
-     "order": 4
-    },
-    {
-     "name": "Louisiana Red Beans and Rice",
-     "recipe_id": "LouB&R17",
-     "description": "",
-     "ingredients": "Red Kidney Beans, Onion, Bell Pepper, Celery, Garlic, Bay leaves, Dried Thyme, Fresh Parsley, Cayenne Pepper, Long grain rice, Water, Vegetable Base, Salt, Black Pepper.",
+     "ingredients": "tomatoes, onions, cilantro, jalapeno peppers, lime juice, salt",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
-      "vegetarian"
+      "vegan"
+     ],
+     "order": 4
+    },
+    {
+     "name": "Spanish Rice",
+     "recipe_id": "5298653",
+     "description": "",
+     "ingredients": "white rice, vegetable soup base (contains mushrooms, celery), onions, bell peppers, garlic, jalapeno peppers, canola/olive oil blend, tomato juice, salt, coriander, cumin, pepper, cilantro",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
      ],
      "order": 5
     },
@@ -3360,17 +3372,26 @@
    ],
    "Dinner": [
     {
-     "name": "Lemongrass Chicken",
-     "recipe_id": "3796121",
+     "name": "Grilled Lemongrass Chicken",
+     "recipe_id": "GLC99",
      "description": "",
-     "ingredients": "chicken, lemongrass ginger marinade (tamari [soy], ginger root, chili, onion, lime, lemongrass, garlic, shallot, sugar), vietnamese spice rub (garlic powder, peppercorn, chinese five spice, espresso powder, salt)",
+     "ingredients": "lemongrass, garlic, soy, ginger, cilantro, fish sauce, oyster sauce, white pepper, sugar, red chili flake",
      "allergens": [
-      "SOY"
+      "FISH",
+      "SHELLFISH",
+      "TRACEALLERGENS"
      ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free"
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SOY",
+      "TREENUTS",
+      "WHEAT"
      ],
+     "tags": [],
      "order": 0
     },
     {
@@ -3428,6 +3449,23 @@
      "order": 4
     },
     {
+     "name": "Tamarind Noodle (FloMo)",
+     "recipe_id": "1192645",
+     "description": "",
+     "ingredients": "tamarind paste, brown sugar, tamari, lime juice keep this sauce vegetarian",
+     "allergens": [
+      "SOY",
+      "TREENUTS",
+      "WHEAT",
+      "TRACEALLERGENS"
+     ],
+     "trace_allergens": [
+      "COCONUT"
+     ],
+     "tags": [],
+     "order": 5
+    },
+    {
      "name": "Nuoc Cham",
      "recipe_id": "NuocCham1",
      "description": "",
@@ -3440,7 +3478,7 @@
      "tags": [
       "gluten-free"
      ],
-     "order": 5
+     "order": 6
     },
     {
      "name": "Grilled Chicken",
@@ -3461,7 +3499,7 @@
       "WHEAT"
      ],
      "tags": [],
-     "order": 6
+     "order": 7
     },
     {
      "name": "Grilled Vegan/Vegetarian",
@@ -3482,7 +3520,7 @@
       "WHEAT"
      ],
      "tags": [],
-     "order": 7
+     "order": 8
     },
     {
      "name": "Panini Station",
@@ -3500,7 +3538,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 8
+     "order": 9
     },
     {
      "name": "Soup of the Day",
@@ -3510,7 +3548,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 9
+     "order": 10
     },
     {
      "name": "Assorted Dinner Rolls",
@@ -3529,7 +3567,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 10
+     "order": 11
     },
     {
      "name": "Composed Salad",
@@ -3539,7 +3577,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 11
+     "order": 12
     },
     {
      "name": "Performance Bar",
@@ -3549,7 +3587,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 12
+     "order": 13
     },
     {
      "name": "Craveable Grains",
@@ -3562,7 +3600,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 13
+     "order": 14
     },
     {
      "name": "Flavor Forward Legumes",
@@ -3575,7 +3613,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 14
+     "order": 15
     },
     {
      "name": "Pasta Marinara",
@@ -3592,7 +3630,7 @@
      "tags": [
       "vegan"
      ],
-     "order": 15
+     "order": 16
     },
     {
      "name": "Pasta Alfredo",
@@ -3609,7 +3647,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 16
+     "order": 17
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -3622,7 +3660,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 17
+     "order": 18
     }
    ]
   },

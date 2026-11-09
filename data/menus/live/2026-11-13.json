@@ -1,6 +1,6 @@
 {
  "date": "2026-11-13",
- "scraped_at": "2026-11-09T03:42:18-08:00",
+ "scraped_at": "2026-11-09T15:47:41-08:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -3138,37 +3138,54 @@
    ],
    "Lunch": [
     {
-     "name": "Seared Salmon",
-     "recipe_id": "SalH&T17",
+     "name": "Philly Cheesesteak",
+     "recipe_id": "3138970",
      "description": "",
-     "ingredients": "Salmon, Lemon, Parsley, Thyme, Cherry Tomatoes, Salt, Black Pepper, Paprika,",
+     "ingredients": "banh mi roll (wheat flour, yeast, sea salt, all purpose flour), sliced beef, peppers, onions, mushrooms, cheese, garlic, salt, pepper, canola/olive oil blend",
      "allergens": [
-      "FISH"
+      "MILK",
+      "WHEAT"
      ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free"
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "PEANUTS",
+      "SESAME",
+      "SOY",
+      "TREENUTS"
      ],
+     "tags": [],
      "order": 0
     },
     {
-     "name": "Seared King Oyster Mushroom",
-     "recipe_id": "MushL&H17",
+     "name": "Plant-Forward Philly Cheesesteak",
+     "recipe_id": "3138970-1",
      "description": "",
-     "ingredients": "King Oyster mushroom, Lemon, Olive Oil, Thyme, Parsley, Garlic, Salt, Black Pepper.",
-     "allergens": [],
-     "trace_allergens": [],
+     "ingredients": "sourdough roll, sliced plant-forward \"beef\" (wheat gluten, soy protein isolate, yeast extract, barley malt extract, garlic powder, canola oil, onion powder, sugar, salt, natural flavors, spices), peppers, onions, mushrooms, cheese, garlic, salt, pepper, canola/olive oil blend",
+     "allergens": [
+      "MILK",
+      "SOY",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "TREENUTS"
+     ],
      "tags": [
-      "gluten-free",
-      "vegan"
+      "vegetarian"
      ],
      "order": 1
     },
     {
-     "name": "Roasted Summer Squash with Herbs",
-     "recipe_id": "SSquash17",
+     "name": "Roasted Broccoli",
+     "recipe_id": "5808050",
      "description": "",
-     "ingredients": "Summer Squash, Parsley, Mint, Salt, Black Pepper, Neutral Oil.",
+     "ingredients": "broccoli, olive oil, salt, pepper",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -3191,29 +3208,42 @@
      "order": 3
     },
     {
-     "name": "Balsamic Glazed Pearl Onions",
-     "recipe_id": "BalOnion17",
+     "name": "Breaded Onion Rings",
+     "recipe_id": "4891999",
      "description": "",
-     "ingredients": "Pearl Onion, Olive oil, Balsamic Vinegar, Salt, Black Pepper, Rosemary.",
-     "allergens": [],
+     "ingredients": "sweet spanish onions, wheat flour, yellow corn flour, modified food starch, onion powder, soy flour, spice, dried whey (milk), salt, sugar, dextrose, yeast, natural flavor, leavening, guar gum",
+     "allergens": [
+      "MILK",
+      "SOY",
+      "WHEAT"
+     ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
-      "vegan"
+      "vegetarian"
      ],
      "order": 4
     },
     {
-     "name": "Lemon Parmesan Orzo",
-     "recipe_id": "LPOrzo17",
+     "name": "Garlic Fries",
+     "recipe_id": "6417374",
      "description": "",
-     "ingredients": "Orzo (wheat), Lemon Juice, Parsley, Parmesan Cheese (milk), Vegetable Base, Garlic, Olive oil, Salt, Black Pepper.",
-     "allergens": [
+     "ingredients": "french fries, garlic, parsley, canola/olive oil blend, canola shortening",
+     "allergens": [],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
       "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "SOY",
+      "TREENUTS",
       "WHEAT"
      ],
-     "trace_allergens": [],
-     "tags": [],
+     "tags": [
+      "vegan"
+     ],
      "order": 5
     },
     {
@@ -3422,14 +3452,25 @@
      "order": 0
     },
     {
-     "name": "Lentil Tostadas",
-     "recipe_id": "4019507",
+     "name": "Tostadas with Refried Beans",
+     "recipe_id": "3319978",
      "description": "",
-     "ingredients": "lentil, cauliflower, corn, avocado, corn tortilla, canola/olive oil blend, cilantro, lime juice, taco seasoning",
-     "allergens": [],
-     "trace_allergens": [],
+     "ingredients": "tostada, refried beans, avocado, enchilada sauce, onions, tomatoes, cabbage, bell pepper, tomatillo salsa (tomatillos, onion, serrano chile, garlic, cilantro, salt), roasted red salsa (tomatoes, onion, garlic, chipotle peppers)",
+     "allergens": [
+      "SOY",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "TREENUTS"
+     ],
      "tags": [
-      "gluten-free",
       "vegan"
      ],
      "order": 1
@@ -3461,10 +3502,10 @@
      "order": 3
     },
     {
-     "name": "Lemon Herb Asparagus",
-     "recipe_id": "LemonAsp1",
+     "name": "Spicy Cabbage Coleslaw",
+     "recipe_id": "3836896",
      "description": "",
-     "ingredients": "asparagus, lemon juice, lemon zest, dill, parsley, chives, salt, and pepper",
+     "ingredients": "cabbage, lime juice, dill, jalapeno, sugar",
      "allergens": [],
      "trace_allergens": [],
      "tags": [

@@ -1,6 +1,6 @@
 {
  "date": "2026-11-14",
- "scraped_at": "2026-11-09T03:42:18-08:00",
+ "scraped_at": "2026-11-09T15:47:41-08:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -1132,32 +1132,26 @@
      "order": 9
     },
     {
-     "name": "Panini Station",
-     "recipe_id": "4532805",
+     "name": "Omelet Station",
+     "recipe_id": "3565117",
      "description": "",
-     "ingredients": "(assorted) breads (egg, soy, wheat), cheeses (milk), deli meats, lettuce, tomatoes, and onions",
+     "ingredients": "eggs, canola/olive oil blend, mushrooms, tomatoes, bacon, ham, pork sausage, cheddar cheese, onions, bell peppers, spinach, zucchini, olives",
      "allergens": [
       "EGG",
-      "MILK",
-      "SOY",
-      "WHEAT"
+      "MILK"
      ],
      "trace_allergens": [
       "COCONUT",
-      "TREENUTS"
+      "FISH",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "SOY",
+      "TREENUTS",
+      "WHEAT"
      ],
      "tags": [],
      "order": 10
-    },
-    {
-     "name": "Soup of the Day",
-     "recipe_id": "SoupoftheDay",
-     "description": "",
-     "ingredients": "chef's choice soup of the day",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [],
-     "order": 11
     },
     {
      "name": "Composed Salad",
@@ -1167,7 +1161,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 12
+     "order": 11
     },
     {
      "name": "Performance Bar",
@@ -1177,7 +1171,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 13
+     "order": 12
     },
     {
      "name": "Craveable Grains",
@@ -1190,7 +1184,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 14
+     "order": 13
     },
     {
      "name": "Flavor Forward Legumes",
@@ -1203,7 +1197,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 15
+     "order": 14
     },
     {
      "name": "Creamy Pesto",
@@ -1219,7 +1213,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 16
+     "order": 15
     },
     {
      "name": "Pasta Marinara",
@@ -1236,7 +1230,7 @@
      "tags": [
       "vegan"
      ],
-     "order": 17
+     "order": 16
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -1249,7 +1243,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 18
+     "order": 17
     }
    ],
    "Dinner": [
@@ -3033,33 +3027,36 @@
    ],
    "Lunch": [
     {
-     "name": "Beef Bulgogi FloMo",
-     "recipe_id": "115526",
+     "name": "Chicken Pad Thai (FloMo)",
+     "recipe_id": "1192632",
      "description": "",
-     "ingredients": "soy sauce, sugar, sesame oil, garlic, onion, ginger, green onions, beef strips.",
+     "ingredients": "pad thai noodles, canola/olive oil blend, tamarind sauce, fish sauce, brown sugar. oyster sauce, garlic, bean sprouts, tofu, green onions, lime wedges",
      "allergens": [
-      "SESAME",
+      "COCONUT",
+      "FISH",
       "SOY",
-      "WHEAT"
+      "TREENUTS",
+      "WHEAT",
+      "TRACEALLERGENS"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "SHELLFISH"
+     ],
      "tags": [],
      "order": 0
     },
     {
-     "name": "Gochujang-Glazed Tofu",
-     "recipe_id": "Gochutofu90",
+     "name": "Vegetable Pad Thai with Tofu",
+     "recipe_id": "sesame, soy",
      "description": "",
-     "ingredients": "tofu (soy), cornstarch, canola oil, gochujang (soy, wheat), ketchup, alcohol-free mirin, tamari (soy), brown sugar, garlic, ginger, rice vinegar, sesame oil, water, green onion, sesame seeds",
+     "ingredients": "rice noodles, tofu, green onions, snap peas, shiitake mushrooms, sesame oil, pad thai sauce (ketchup, tamari, garlic, chili garlic sauce, tamarind puree, brown sugar)",
      "allergens": [
       "SESAME",
       "SOY",
-      "WHEAT"
+      "TRACEALLERGENS"
      ],
      "trace_allergens": [],
-     "tags": [
-      "vegan"
-     ],
+     "tags": [],
      "order": 1
     },
     {
@@ -3105,18 +3102,26 @@
      "order": 4
     },
     {
-     "name": "Ginger Scallion Fried Rice",
-     "recipe_id": "5394552",
+     "name": "Vegetable Spring Rolls",
+     "recipe_id": "8981533",
      "description": "",
-     "ingredients": "broken jasmine rice, ginger, green onions, peas, carrots, eggs, salt, mushroom seasoning, sesame oil, garlic",
+     "ingredients": "cabbage, wheat flour, bean sprout, carrot, water chestnut, sugar, mung bean vermicelli, modified corn starch, salt, soy sauce (water, soybean, salt, wheat flour), yeast extract, sesame oil, white pepper powder",
      "allergens": [
-      "EGG",
-      "SESAME"
+      "SESAME",
+      "SOY",
+      "WHEAT"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SHELLFISH",
+      "TREENUTS"
+     ],
      "tags": [
-      "gluten-free",
-      "vegetarian"
+      "vegan"
      ],
      "order": 5
     },

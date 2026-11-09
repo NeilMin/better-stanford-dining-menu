@@ -1,6 +1,6 @@
 {
  "date": "2026-11-09",
- "scraped_at": "2026-11-09T03:42:18-08:00",
+ "scraped_at": "2026-11-09T15:47:41-08:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -1314,19 +1314,17 @@
      "order": 15
     },
     {
-     "name": "Marinara Cheese Ravioli",
-     "recipe_id": "3581918",
+     "name": "Marinara Sauce",
+     "recipe_id": "3612835",
      "description": "",
-     "ingredients": "ravioli (egg, wheat), marinara sauce (soy), parmesan cheese (milk)",
+     "ingredients": "italian tomatoes, diced tomatoes, fresh onions, extra virgin olive oil, garlic, sea salt, oregano, black pepper",
      "allergens": [
-      "EGG",
-      "MILK",
-      "SOY",
-      "WHEAT"
+      "SOY"
      ],
      "trace_allergens": [],
      "tags": [
-      "vegetarian"
+      "gluten-free",
+      "vegan"
      ],
      "order": 16
     },
@@ -3800,13 +3798,17 @@
      "order": 5
     },
     {
-     "name": "Soup of the Day",
-     "recipe_id": "SoupoftheDay",
+     "name": "Moroccan Lentil Soup",
+     "recipe_id": "404363",
      "description": "",
-     "ingredients": "chef's choice soup of the day",
+     "ingredients": "lentils, diced tomatoes, tomato juice, tomato puree, onions, carrots, green peppers, red peppers, celery, modified food starch, salt, sugar, cabbage, garlic, cilantro, celery leaves, cumin, coriander, dehydrated parsley, ginger, dehydrated onions, lemon juice concentrate, dehhydrated garlic, maltodextrin, black pepper, parsley, cinnamon, canola oil, spice, cornstarch, citric acid, flavoring",
      "allergens": [],
-     "trace_allergens": [],
-     "tags": [],
+     "trace_allergens": [
+      "WHEAT"
+     ],
+     "tags": [
+      "vegan"
+     ],
      "order": 6
     },
     {
@@ -3843,6 +3845,19 @@
      "order": 9
     },
     {
+     "name": "Flavor Forward Legumes",
+     "recipe_id": "FlavForLegumes1",
+     "description": "",
+     "ingredients": "** No Alliums: this includes garlic, onion, shallots, leeks, chives, scallions/ green onions, and any similar wild varieties, such as ramps. ** No Root vegetables/Tubers: this includes potatoes of any variety, beets, carrots, radishes, turnips, ginger, and fresh turmeric root. ** No Mushrooms/Fungi of any kind.",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
+     "order": 10
+    },
+    {
      "name": "Pasta Marinara",
      "recipe_id": "5095708",
      "description": "",
@@ -3856,23 +3871,6 @@
      ],
      "tags": [
       "vegan"
-     ],
-     "order": 10
-    },
-    {
-     "name": "Marinara Cheese Ravioli",
-     "recipe_id": "3581918",
-     "description": "",
-     "ingredients": "ravioli (egg, wheat), marinara sauce (soy), parmesan cheese (milk)",
-     "allergens": [
-      "EGG",
-      "MILK",
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "vegetarian"
      ],
      "order": 11
     }
