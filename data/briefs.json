@@ -9370,6 +9370,39 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T06:30:47+00:00"
  },
+ "3fa53c2ce7a5": {
+  "avoid": [
+   "tacos",
+   "burrito",
+   "corn tortilla",
+   "hamburger patty",
+   "french fries",
+   "wrap",
+   "quesadilla"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a sandwich on a crusty roll?",
+    "yes": true
+   },
+   {
+    "q": "Is the filling wrapped in a thin tortilla like a taco or burrito?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken served as a ground burger patty?",
+    "yes": false
+   }
+  ],
+  "dish": "chicken torta",
+  "look": "a toasted golden Mexican telera roll sandwich sliced in half, shredded chicken tossed in bright red salsa roja, sliced fresh avocado, spread of brown pinto beans, shredded iceberg lettuce, crumbled white cotija cheese, sliced red onions",
+  "model": "gemini-flash-latest",
+  "name": "Rojo Chicken Torta",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-09T11:47:05+00:00"
+ },
  "3fec1dd8d6eb": {
   "avoid": [
    "meat",
@@ -15616,6 +15649,40 @@
   "vessel": "plate",
   "written_at": "2026-09-27T08:12:49+00:00"
  },
+ "6cdbaff45c55": {
+  "avoid": [
+   "seafood",
+   "shrimp",
+   "crab",
+   "crawfish",
+   "dry jambalaya",
+   "pasta",
+   "clear broth soup",
+   "skewers"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a dark, thick stew?",
+    "yes": true
+   },
+   {
+    "q": "Does the dish contain seafood or shellfish?",
+    "yes": false
+   },
+   {
+    "q": "Is the food a dry rice dish instead of a stew?",
+    "yes": false
+   }
+  ],
+  "dish": "chicken and sausage gumbo",
+  "look": "thick dark brown roux stew, tender shredded chicken pieces, browned sliced sausage rounds, cut green okra rounds, diced green bell peppers, celery pieces, minced onions",
+  "model": "gemini-flash-latest",
+  "name": "Chicken & Sausage Gumbo",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-09T11:47:05+00:00"
+ },
  "6d650962671b": {
   "avoid": [
    "meat",
@@ -20676,6 +20743,39 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T06:30:47+00:00"
+ },
+ "917bb8ccace7": {
+  "avoid": [
+   "sandwich",
+   "burger bun",
+   "tacos",
+   "tortilla",
+   "ribs",
+   "raw pork",
+   "bone"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a bowl of rice topped with shredded or pulled meat?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat served inside a sandwich, bun, or wrap?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat on the bone like ribs?",
+    "yes": false
+   }
+  ],
+  "dish": "pulled pork rice bowl",
+  "look": "shredded slow-cooked pulled pork, glossy dark reddish-brown barbecue sauce coating, bed of fluffy white Carolina rice, tender black-eyed peas, crisp sliced fresh green cucumbers, slivered onions",
+  "model": "gemini-flash-latest",
+  "name": "Pulled Pork Rice Bowl",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-09T11:47:05+00:00"
  },
  "91d3e24ff544": {
   "avoid": [
@@ -36014,6 +36114,41 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-29T16:28:29+00:00"
+ },
+ "f4331a402970": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "tofu",
+   "raw spinach salad",
+   "rice"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a thick green curry with white cheese cubes?",
+    "yes": true
+   },
+   {
+    "q": "Does the dish contain visible pieces of meat or poultry?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a bowl of raw leafy salad greens?",
+    "yes": false
+   }
+  ],
+  "dish": "saag paneer",
+  "look": "seared golden-edged cubes of white paneer cheese, rich thick dark green pureed spinach sauce, drizzle of white cream, sprinkled toasted cumin seeds",
+  "model": "gemini-flash-latest",
+  "name": "Saag Paneer",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-09T11:47:05+00:00"
  },
  "f459ceae3e6c": {
   "avoid": [
