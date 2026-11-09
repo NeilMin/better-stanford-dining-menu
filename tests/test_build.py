@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import json
 import re
+import struct
 from datetime import date
 
 import pytest
@@ -377,6 +378,21 @@ class TestRender:
         names = re.findall(r'<meta property="og:(?:image|url)" content="([^"]+)"', html)
         assert names == [f"https://{buildlib.DOMAIN}/", f"https://{buildlib.DOMAIN}/og.jpg"]
         assert (out / "og.jpg").read_bytes()[:2] == b"\xff\xd8", "a JPEG, as the name says"
+
+    def test_the_favicon_is_a_file_google_can_fetch(self, site, tmp_path):
+        """Google Search shows a globe for a site whose icon it cannot crawl. A
+        data: URI draws in every browser tab and is no use to Googlebot-Image, and
+        SVG is not among the formats Search lists. The path is absolute so the
+        hall pages, one directory down, name the same file."""
+        site.with_web()
+        out = tmp_path / "site"
+        buildlib.build(site.root, out)
+        for page in (out / "index.html", out / "wilbur" / "index.html"):
+            assert re.findall(r'<link rel="icon"[^>]* href="([^"]+)"', page.read_text()) == ["/favicon.png"]
+        png = (out / "favicon.png").read_bytes()
+        assert png[:8] == b"\x89PNG\r\n\x1a\n", "a PNG, as the name says"
+        width, height = struct.unpack(">II", png[16:24])
+        assert width == height and width % 48 == 0, "square, and a multiple of 48px"
 
     def test_crawlers_are_pointed_at_every_page_on_this_host(self, site, tmp_path):
         """robots.txt is per host, so the personal site's does not cover this

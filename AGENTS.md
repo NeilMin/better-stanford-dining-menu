@@ -476,6 +476,10 @@ JSON block so a dish name cannot close the script tag early.
   in config, serving or not, so a break does not drop them from the index. The footer links
   every one of them for crawlers, written into the HTML by the build, inside a `<details>` that
   stays shut: a crawler follows a link whether or not it is open, and a reader never used them.
+- **`web/favicon.png` is a real file because Google Search needs one.** The icon was once a
+  `data:` SVG in the `<link>`: every browser tab drew it, and search results showed a grey globe,
+  because Googlebot-Image has nothing to fetch and SVG is not among the formats Search lists. Keep
+  the file square and its URL stable, and the `href` root-absolute so the hall pages share it.
 - **`web/og.jpg` is the link-preview card, composed once by hand** from the logos and a few
   dish pictures. The page is static, so every link unfurls with the same one; the line the
   button sends with the link is what says which view it is. `og:image` is an absolute URL on
