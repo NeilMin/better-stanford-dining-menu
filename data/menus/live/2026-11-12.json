@@ -1,6 +1,6 @@
 {
  "date": "2026-11-12",
- "scraped_at": "2026-11-08T15:46:38-08:00",
+ "scraped_at": "2026-11-09T03:42:18-08:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -2705,12 +2705,20 @@
      "order": 6
     },
     {
-     "name": "Burger Bar",
-     "recipe_id": "5964436",
+     "name": "Rojo Chicken Torta",
+     "recipe_id": "3895622",
      "description": "",
-     "ingredients": "",
-     "allergens": [],
-     "trace_allergens": [],
+     "ingredients": "chicken, telera roll, chipotle peppers, cotija cheese, lettuce, butter, garlic, avocado, pinto beans, onions, salt, pepper, salsa roja(tomatoes, jalapeno chilis, de arbol chili pepper, puya chili pepper, red onion, garlic, cilantro, lime juice, salt, sugar)",
+     "allergens": [
+      "MILK",
+      "SOY",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "TREENUTS"
+     ],
      "tags": [],
      "order": 7
     },
@@ -3008,30 +3016,6 @@
      "order": 1
     },
     {
-     "name": "Scrambled Eggs",
-     "recipe_id": "3975106",
-     "description": "",
-     "ingredients": "eggs, canola/olive oil blend, salt",
-     "allergens": [
-      "EGG"
-     ],
-     "trace_allergens": [
-      "COCONUT",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
-     ],
-     "tags": [
-      "vegetarian"
-     ],
-     "order": 2
-    },
-    {
      "name": "Hard Boiled Eggs",
      "recipe_id": "2612705",
      "description": "",
@@ -3044,99 +3028,7 @@
       "gluten-free",
       "vegetarian"
      ],
-     "order": 3
-    },
-    {
-     "name": "Open Faced Breakfast Sandwich",
-     "recipe_id": "4887015",
-     "description": "",
-     "ingredients": "english muffin (wheat, milk, soy), eggs, spinach, tomato, roasted red salsa (tomatoes, chipotle peppers, adobo sauce, garlic, canola/olive oil blend, salt), salt, pepper",
-     "allergens": [
-      "EGG",
-      "MILK",
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "COCONUT",
-      "FISH",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "TREENUTS"
-     ],
-     "tags": [
-      "vegetarian"
-     ],
-     "order": 4
-    },
-    {
-     "name": "Pork Sausage Link",
-     "recipe_id": "4899163",
-     "description": "",
-     "ingredients": "pork, sea salt, spices, turbinado sugar, sage oil, sage extract, rosemary extract",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free"
-     ],
-     "order": 5
-    },
-    {
-     "name": "Hash Brown Patty",
-     "recipe_id": "6350846",
-     "description": "",
-     "ingredients": "potatoes, oil (canola oil, corn oil, cottonseed oil, palm oil, soybean oil, or sunflower oil), salt, onion powder, natural flavor, dextrose, disodium dihydrogen pyrophosphate",
-     "allergens": [
-      "SOY"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan"
-     ],
-     "order": 6
-    },
-    {
-     "name": "Plant Powered \"Eggs”",
-     "recipe_id": "4433739",
-     "description": "",
-     "ingredients": "mung bean protein, canola oil, onion, gellan gum, carrot extractives, natural flavors, turmeric extractives, potassium citrate, salt, soy lecithin, sugar, tapioca syrup, tetrasodium pyrophosphate, transglutaminase, nisin",
-     "allergens": [
-      "SOY"
-     ],
-     "trace_allergens": [
-      "EGG"
-     ],
-     "tags": [
-      "gluten-free",
-      "vegan"
-     ],
-     "order": 7
-    },
-    {
-     "name": "French Toast",
-     "recipe_id": "3508602",
-     "description": "",
-     "ingredients": "chala bread (wheat), eggs, canola/olive oil blend, powdered sugar, cinnamon",
-     "allergens": [
-      "EGG",
-      "MILK",
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "COCONUT",
-      "FISH",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "TREENUTS"
-     ],
-     "tags": [
-      "vegetarian"
-     ],
-     "order": 8
+     "order": 2
     },
     {
      "name": "Waffles",
@@ -3153,7 +3045,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 9
+     "order": 3
     },
     {
      "name": "Gluten-Free Waffles",
@@ -3168,7 +3060,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 10
+     "order": 4
     },
     {
      "name": "Seasonal Fruit",
@@ -3181,7 +3073,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 11
+     "order": 5
     },
     {
      "name": "Assorted Allergy-Friendly Items",
@@ -3194,7 +3086,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 12
+     "order": 6
     }
    ],
    "Lunch": [
