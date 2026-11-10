@@ -2275,20 +2275,30 @@
   ]
  },
  "1143edcfa423": {
+  "brief_rev": 6,
   "category": "other",
   "first_seen": "2026-11-12",
+  "generated_at": "2026-11-10T00:55:44+00:00",
   "icon": "pasta",
-  "image": null,
+  "image": "1143edcfa423.webp",
   "ingredients": "tamarind paste, brown sugar, tamari, lime juice keep this sauce vegetarian",
   "is_station": false,
+  "judge": {
+   "at": "2026-11-10T00:55:44+00:00",
+   "judge": "gemma-4-26b-a4b-it",
+   "seen": "A plate of brown noodles topped with green pea pods, microgreens, and a lime wedge."
+  },
   "last_seen": "2026-11-12",
   "min_order": 5,
+  "model": "sdxl",
   "name": "Tamarind Noodle (FloMo)",
   "needs_image": true,
   "negative": "text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
   "placeholder": false,
   "priority": 2,
   "prompt": "Tamarind Noodle (FloMo), made with tamarind paste, tamari, lime juice keep this sauce vegetarian, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "prompt_rev": 9,
+  "seed": 289664463,
   "station_only": false,
   "tags": []
  },
@@ -2794,20 +2804,30 @@
   ]
  },
  "1507ef43ecf7": {
+  "brief_rev": 6,
   "category": "vegan",
   "first_seen": "2026-11-13",
+  "generated_at": "2026-11-10T01:59:17+00:00",
   "icon": "plate",
-  "image": null,
+  "image": "1507ef43ecf7.webp",
   "ingredients": "tostada, refried beans, avocado, enchilada sauce, onions, tomatoes, cabbage, bell pepper, tomatillo salsa (tomatillos, onion, serrano chile, garlic, cilantro, salt), roasted red salsa (tomatoes, onion, garlic, chipotle peppers)",
   "is_station": false,
+  "judge": {
+   "at": "2026-11-10T01:59:17+00:00",
+   "judge": "gemma-4-26b-a4b-it",
+   "seen": "A tostada topped with black beans, corn, cherry tomatoes, avocado slices, and cilantro leaves."
+  },
   "last_seen": "2026-11-13",
   "min_order": 1,
+  "model": "sdxl",
   "name": "Tostadas with Refried Beans",
   "needs_image": true,
   "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, meat, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
   "placeholder": false,
   "priority": 1,
   "prompt": "Tostadas with Refried Beans, made with tostada, refried beans, avocado, enchilada sauce, onions, tomatoes, cabbage, bell pepper, plant-based, no meat, no dairy, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "prompt_rev": 9,
+  "seed": 352841539,
   "station_only": false,
   "tags": [
    "vegan"
@@ -11024,6 +11044,18 @@
   "placeholder": false,
   "priority": 1,
   "prompt": "Tofu Sofritas Taco Bowl, crispy golden pan-seared firm tofu cubes with tender curd interior, made with tofu sofritas, corn tortilla, avocado salsa, roasted tomato salsa, cardinal sage pico de gallo, spanish rice, seasoned pinto beans, plant-based, no meat, no dairy, appetizing food photography, served in a simple white ceramic bowl, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "rejected": {
+   "at": "2026-11-10T00:40:31+00:00",
+   "brief_rev": 6,
+   "failed": [
+    "Is the dish a grain bowl with crumbled tofu and beans?",
+    "Is there cheese or sour cream in the bowl?",
+    "Would someone who ordered tofu sofritas burrito bowl recognise this as that dish?"
+   ],
+   "pictures": 2,
+   "seen": "Two bowls filled with various ingredients like avocado, corn, beans, tomatoes, and cilantro.",
+   "tries": 1
+  },
   "station_only": false,
   "tags": [
    "gluten-free",
@@ -11482,6 +11514,17 @@
   "placeholder": false,
   "priority": 0,
   "prompt": "Chicken Pad Thai (FloMo), tender cooked chicken, succulent poultry texture, made with pad thai noodles, tamarind sauce, garlic, bean sprouts, tofu, green onions, lime wedges, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "rejected": {
+   "at": "2026-11-10T01:37:45+00:00",
+   "brief_rev": 6,
+   "failed": [
+    "Is the main dish stir-fried noodles with chicken?",
+    "Would someone who ordered chicken pad Thai recognise this as that dish?"
+   ],
+   "pictures": 4,
+   "seen": "A mound of shredded, brownish noodles topped with cubes of tofu and sliced green onions on a white plate.",
+   "tries": 1
+  },
   "station_only": false,
   "tags": []
  },

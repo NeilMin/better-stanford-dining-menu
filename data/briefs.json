@@ -1915,6 +1915,41 @@
   "vessel": "plate",
   "written_at": "2026-10-01T19:05:42+00:00"
  },
+ "1143edcfa423": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "shrimp",
+   "fish",
+   "soup",
+   "broth",
+   "egg"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a plate of stir-fried noodles?",
+    "yes": true
+   },
+   {
+    "q": "Are the noodles in a broth or soup?",
+    "yes": false
+   },
+   {
+    "q": "Are there pieces of meat or seafood on the noodles?",
+    "yes": false
+   }
+  ],
+  "dish": "stir-fried tamarind noodles",
+  "look": "stir-fried flat rice noodles, glossy dark-amber tamarind and tamari glaze, translucent bean sprouts, tender green scallion ribbons, juicy lime wedges resting on the side",
+  "model": "gemini-flash-latest",
+  "name": "Tamarind Noodle (FloMo)",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-09T23:53:02+00:00"
+ },
  "119fe7a4a3ae": {
   "avoid": [
    "meat",
@@ -2396,6 +2431,42 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-26T20:19:32+00:00"
+ },
+ "1507ef43ecf7": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "cheese",
+   "sour cream",
+   "taco wrap",
+   "folded tortilla"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish served on flat crisp tostada shells?",
+    "yes": true
+   },
+   {
+    "q": "Are the tortillas folded or rolled like tacos or burritos?",
+    "yes": false
+   },
+   {
+    "q": "Does the dish contain meat or poultry?",
+    "yes": false
+   }
+  ],
+  "dish": "refried bean tostadas",
+  "look": "crisp flat golden fried corn tostadas, layer of warm creamy brown refried beans, shredded crisp green cabbage, sliced creamy avocado, diced ripe tomatoes, chopped white onions, sliced bell peppers, drizzle of green tomatillo salsa and roasted red salsa",
+  "model": "gemini-flash-latest",
+  "name": "Tostadas with Refried Beans",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-09T23:53:02+00:00"
  },
  "158a0e86079f": {
   "avoid": [
@@ -10327,6 +10398,42 @@
   "vessel": "bowl",
   "written_at": "2026-10-25T18:32:18+00:00"
  },
+ "46eff04532ef": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "shrimp",
+   "fish",
+   "cheese",
+   "sour cream",
+   "dairy",
+   "hard taco shell"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a grain bowl with crumbled tofu and beans?",
+    "yes": true
+   },
+   {
+    "q": "Does the bowl contain shredded or ground meat?",
+    "yes": false
+   },
+   {
+    "q": "Is there cheese or sour cream in the bowl?",
+    "yes": false
+   }
+  ],
+  "dish": "tofu sofritas burrito bowl",
+  "look": "crumbled spiced tofu sofritas in rich red chili sauce, reddish Spanish rice, tender whole pinto beans, fresh diced tomato pico de gallo, creamy green avocado salsa, charred tomato salsa, warm corn tortilla wedges tucked into the side",
+  "model": "gemini-flash-latest",
+  "name": "Tofu Sofritas Taco Bowl",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-09T23:53:02+00:00"
+ },
  "47031bd226da": {
   "avoid": [
    "meat",
@@ -10815,6 +10922,40 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-11-08T10:35:09+00:00"
+ },
+ "4917645e23d6": {
+  "avoid": [
+   "soup",
+   "broth",
+   "beef",
+   "pork",
+   "shrimp",
+   "seafood",
+   "chopsticks",
+   "uncooked noodles"
+  ],
+  "checks": [
+   {
+    "q": "Is the main dish stir-fried noodles with chicken?",
+    "yes": true
+   },
+   {
+    "q": "Are the noodles served in a broth or soup?",
+    "yes": false
+   },
+   {
+    "q": "Is there shrimp or seafood in the dish?",
+    "yes": false
+   }
+  ],
+  "dish": "chicken pad Thai",
+  "look": "stir-fried flat rice noodles coated in amber-red tamarind sauce, sliced chicken breast strips, golden-brown fried tofu cubes, crisp bean sprouts, chopped green onions, lime wedge on the rim",
+  "model": "gemini-flash-latest",
+  "name": "Chicken Pad Thai (FloMo)",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-09T23:53:02+00:00"
  },
  "4928bd35dae8": {
   "avoid": [
