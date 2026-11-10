@@ -662,6 +662,42 @@
   "vessel": "bowl",
   "written_at": "2026-10-07T12:50:41+00:00"
  },
+ "05f91c62f0af": {
+  "avoid": [
+   "tofu",
+   "beef",
+   "pork",
+   "brown cubes",
+   "raw chicken",
+   "chicken wings",
+   "drumsticks",
+   "skewers",
+   "noodle soup",
+   "curry broth"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food cooked chicken?",
+    "yes": true
+   },
+   {
+    "q": "Is the dish a liquid soup or curry broth?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken raw or uncooked?",
+    "yes": false
+   }
+  ],
+  "dish": "Thai Basil Chicken",
+  "look": "seared chunks of white meat chicken, glossy dark brown savory glaze, cut green beans, wilted dark green basil leaves, minced garlic, sliced red thai chilies",
+  "model": "gemma-4-31b-it",
+  "name": "Thai Basil Chicken",
+  "rev": 6,
+  "revisions": 1,
+  "vessel": "bowl",
+  "written_at": "2026-11-10T12:50:22+00:00"
+ },
  "0641992994cb": {
   "avoid": [
    "meat",
@@ -10407,9 +10443,11 @@
    "shrimp",
    "fish",
    "cheese",
+   "cotija",
+   "feta",
+   "white crumbles",
    "sour cream",
-   "dairy",
-   "hard taco shell"
+   "dairy"
   ],
   "checks": [
    {
@@ -10426,13 +10464,13 @@
    }
   ],
   "dish": "tofu sofritas burrito bowl",
-  "look": "crumbled spiced tofu sofritas in rich red chili sauce, reddish Spanish rice, tender whole pinto beans, fresh diced tomato pico de gallo, creamy green avocado salsa, charred tomato salsa, warm corn tortilla wedges tucked into the side",
-  "model": "gemini-flash-latest",
+  "look": "a single bowl filled with dark reddish-brown braised crumbled tofu sofritas in rich chili sauce as the main topping, beside reddish Spanish rice, dark whole pinto beans, smooth green avocado salsa, red tomato pico de gallo, and corn tortilla wedges tucked into the edge",
+  "model": "gemini-3.5-flash",
   "name": "Tofu Sofritas Taco Bowl",
   "rev": 6,
-  "revisions": 0,
+  "revisions": 1,
   "vessel": "bowl",
-  "written_at": "2026-11-09T23:53:02+00:00"
+  "written_at": "2026-11-10T13:13:14+00:00"
  },
  "47031bd226da": {
   "avoid": [
@@ -30884,6 +30922,41 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-12T22:42:49+00:00"
+ },
+ "cedd744dd3b4": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "bacon",
+   "cheese",
+   "cream sauce"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food cooked green beans?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat or seafood in the dish?",
+    "yes": false
+   },
+   {
+    "q": "Do the green beans look raw and unheated?",
+    "yes": false
+   }
+  ],
+  "dish": "garlic green beans",
+  "look": "fresh whole sautéed green beans, vibrant emerald green, tender-crisp texture with lightly blistered skins, tossed with abundant crisp golden fried minced garlic bits, glossy sheen",
+  "model": "gemini-3.6-flash",
+  "name": "Garlicy Green Beans",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-10T11:38:47+00:00"
  },
  "cfbec1603e6f": {
   "avoid": [
