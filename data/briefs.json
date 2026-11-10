@@ -10963,12 +10963,13 @@
  },
  "4917645e23d6": {
   "avoid": [
-   "soup",
-   "broth",
+   "shrimp",
    "beef",
    "pork",
-   "shrimp",
    "seafood",
+   "soup",
+   "broth",
+   "fried shallots",
    "chopsticks",
    "uncooked noodles"
   ],
@@ -10986,14 +10987,14 @@
     "yes": false
    }
   ],
-  "dish": "chicken pad Thai",
-  "look": "stir-fried flat rice noodles coated in amber-red tamarind sauce, sliced chicken breast strips, golden-brown fried tofu cubes, crisp bean sprouts, chopped green onions, lime wedge on the rim",
-  "model": "gemini-flash-latest",
+  "dish": "Chicken Pad Thai",
+  "look": "stir-fried flat rice noodles, large chunks of cooked chicken breast, amber-red tamarind sauce, golden-brown fried tofu cubes, crisp bean sprouts, chopped green onions, lime wedge on the side",
+  "model": "gemma-4-31b-it",
   "name": "Chicken Pad Thai (FloMo)",
   "rev": 6,
-  "revisions": 0,
+  "revisions": 1,
   "vessel": "plate",
-  "written_at": "2026-11-09T23:53:02+00:00"
+  "written_at": "2026-11-10T22:25:36+00:00"
  },
  "4928bd35dae8": {
   "avoid": [
@@ -13448,6 +13449,42 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T04:50:49+00:00"
+ },
+ "599c0fe87711": {
+  "avoid": [
+   "beef",
+   "chicken",
+   "pork",
+   "fish",
+   "shrimp",
+   "ground meat",
+   "steak",
+   "raw mushrooms",
+   "broccoli",
+   "carrots"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item sliced protein?",
+    "yes": true
+   },
+   {
+    "q": "Is the protein ground or crumbled like mince?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a soup or broth?",
+    "yes": false
+   }
+  ],
+  "dish": "Vegan Teriyaki Beef",
+  "look": "strips of plant-based beef, sliced shiitake mushrooms, thick glossy dark brown teriyaki glaze, caramelized edges, glistening texture, tender chunks, rich brown sauce",
+  "model": "gemma-4-31b-it",
+  "name": "Plant-Forward \"Beef\" Teriyaki",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-10T23:10:56+00:00"
  },
  "5a926099bc93": {
   "avoid": [
