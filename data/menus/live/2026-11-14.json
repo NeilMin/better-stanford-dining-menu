@@ -1,6 +1,6 @@
 {
  "date": "2026-11-14",
- "scraped_at": "2026-11-10T13:19:50-08:00",
+ "scraped_at": "2026-11-11T03:06:07-08:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -2459,30 +2459,46 @@
    ],
    "Lunch": [
     {
-     "name": "Korean-Style Galbi Short Ribs",
-     "recipe_id": "GalbRibs90",
+     "name": "Chicken & Waffles with Apple Syrup",
+     "recipe_id": "3229585",
      "description": "",
-     "ingredients": "[HALAL] Beef short ribs, Asian pear, tamari (soy), brown sugar, honey, green onions, garlic, ginger, sesame oil, black pepper, rice wine vinegar, sesame seeds, gochujang (soy, wheat), onion",
+     "ingredients": "[HALAL] Fried Chicken (chicken, buttermilk [milk], flour, thyme, oregano, pepper, garlic powder, cayenne pepper, salt, onion powder, tarragon, parsley), Belgian Waffles (wheat flour, eggs, sugar, soybean oil, canola oil, leavening, malted barley flour, salt, soy lecithin, glycerides, natural flavor, artificial flavors [milk]), Apple Cider Syrup (apple cider vinegar, apple cider, cinnamon, butter, brown sugar), deep fried in canola oil",
      "allergens": [
-      "SESAME",
+      "EGG",
+      "MILK",
       "SOY",
       "WHEAT"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "COCONUT",
+      "FISH",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "TREENUTS"
+     ],
      "tags": [],
      "order": 0
     },
     {
-     "name": "Gochujang-Glazed Tofu",
-     "recipe_id": "Gochutofu90",
+     "name": "Plant-Forward Tenders",
+     "recipe_id": "ChicknTenders1",
      "description": "",
-     "ingredients": "tofu (soy), cornstarch, canola oil, gochujang (soy, wheat), ketchup, alcohol-free mirin, tamari (soy), brown sugar, garlic, ginger, rice vinegar, sesame oil, water, green onion, sesame seeds",
+     "ingredients": "wheat flour, soy protein isolate, wheat gluten, vegetable oil, potato starch, corn flour, maltodextrin, salt, yeast extract, spices, garlic powder, onion powder, tapioca starch, cornstarch, tricalcium phosphate, natural flavors, leavening agent, paprika extract color, xanthan gum",
      "allergens": [
-      "SESAME",
       "SOY",
       "WHEAT"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "TREENUTS"
+     ],
      "tags": [
       "vegan"
      ],
@@ -2515,52 +2531,34 @@
      "order": 3
     },
     {
-     "name": "Sesame Cucumber Salad",
-     "recipe_id": "SesCucSalad1",
+     "name": "Waffles",
+     "recipe_id": "3144806",
      "description": "",
-     "ingredients": "cucumbers, rice vinegar, tamari (soy), sesame oil, garlic, ginger, green onions, sesame seeds, sugar, chili crisp (soy, wheat)",
+     "ingredients": "enriched wheat flour, sugar, soybean oil, leavings, buckwheat flour, buttermilk (milk), natural flavors, artificial flavors, wheat bran, rice flour, yellow corn flour, whole oat flour, whey (milk), whole egg, salt, dextrose, wheat starch, natural flavors, artificial flavor, malted barley flour, lactic acid",
      "allergens": [
-      "SESAME",
+      "EGG",
+      "MILK",
       "SOY",
       "WHEAT"
      ],
      "trace_allergens": [],
      "tags": [
-      "vegan"
+      "vegetarian"
      ],
      "order": 4
     },
     {
-     "name": "Japchae Glass Noodles",
-     "recipe_id": "4806374",
+     "name": "Southern Dirty Rice",
+     "recipe_id": "3501149",
      "description": "",
-     "ingredients": "sweet potato noodles, carrots, cabbage, onions, bell peppers, tamari (soy), sesame oil, canola/olive oil blend, salt, sugar, garlic, pepper",
-     "allergens": [
-      "SESAME",
-      "SOY"
-     ],
+     "ingredients": "plant-forward \"beef\" crumbles (pea protein, sunflower oil, spices, caramel color), rice, bell peppers, garlic, onion, tomato, vegetable soup base, canola/olive oil blend",
+     "allergens": [],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
       "vegan"
      ],
      "order": 5
-    },
-    {
-     "name": "Ginger Scallion Fried Rice",
-     "recipe_id": "5394552",
-     "description": "",
-     "ingredients": "broken jasmine rice, ginger, green onions, peas, carrots, eggs, salt, mushroom seasoning, sesame oil, garlic",
-     "allergens": [
-      "EGG",
-      "SESAME"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegetarian"
-     ],
-     "order": 6
     },
     {
      "name": "Panini Station",
@@ -2578,7 +2576,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 7
+     "order": 6
     },
     {
      "name": "Soup of the Day",
@@ -2588,7 +2586,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 8
+     "order": 7
     },
     {
      "name": "Composed Salad",
@@ -2598,7 +2596,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 9
+     "order": 8
     },
     {
      "name": "Performance Bar",
@@ -2608,7 +2606,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 10
+     "order": 9
     },
     {
      "name": "Creamy Pesto",
@@ -2624,7 +2622,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 11
+     "order": 10
     },
     {
      "name": "Pasta Marinara",
@@ -2641,7 +2639,7 @@
      "tags": [
       "vegan"
      ],
-     "order": 12
+     "order": 11
     }
    ],
    "Dinner": [
