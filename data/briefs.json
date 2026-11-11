@@ -10056,6 +10056,41 @@
   "vessel": "bowl",
   "written_at": "2026-10-14T20:54:13+00:00"
  },
+ "4571a02937df": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "sausage links",
+   "chicken livers",
+   "soupy broth"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food a seasoned cooked rice dish?",
+    "yes": true
+   },
+   {
+    "q": "Are there whole cuts of meat, sausage links, or shrimp?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a liquid soup or stew?",
+    "yes": false
+   }
+  ],
+  "dish": "vegan dirty rice",
+  "look": "steaming long-grain rice tinted savory brown, tossed with dark browned plant-based crumbles, finely diced green bell peppers, diced red bell peppers, soft translucent onions, small bits of cooked red tomato, chopped green scallions on top",
+  "model": "gemini-flash-latest",
+  "name": "Southern Dirty Rice",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-11T11:11:12+00:00"
+ },
  "458e1f275ab4": {
   "avoid": [
    "beef",
