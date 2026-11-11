@@ -106,6 +106,15 @@ class TestPureHelpers:
                    prelude="const state = { lang: 'zh' };", tmp_path=tmp_path)
         assert got == ["7:30", "17:00"]
 
+    def test_timing_buckets_break_where_google_grades_lcp(self, tmp_path):
+        """2.5 s is the edge of good and 4 s the edge of poor, so a report split
+        by bucket reads as Google's grades without a calculation."""
+        got = call(["timingBucket"], "return INPUT.map((ms) => timingBucket(ms));",
+                   payload=[None, 0, 999, 1000, 2499, 2500, 3999, 4000, 5999, 6000, 30000],
+                   tmp_path=tmp_path)
+        assert got == ["n/a", "<1s", "<1s", "1-2.5s", "1-2.5s", "2.5-4s", "2.5-4s",
+                       "4-6s", "4-6s", "6s+", "6s+"]
+
     def test_a_wordmark_gives_up_height_where_a_roundel_does_not(self, tmp_path):
         """The logos run from Branner's roundel to Lakeside's 5:1 wordmark. One
         height for all of them makes the wordmarks run long."""
@@ -363,6 +372,19 @@ def test_the_stored_preferences_key_is_versioned(tmp_path):
 
     match = re.search(r'const STORE = "bsdm\.prefs\.v(\d+)"', APP_JS.read_text())
     assert match and int(match.group(1)) >= 1
+
+
+def test_page_timing_keeps_the_names_ga_has_registered():
+    """GA reads an event parameter only under the name it was registered with.
+    Renaming one in app.js empties its report and raises no error anywhere."""
+    import re
+
+    from jsbridge import APP_JS
+
+    src = APP_JS.read_text()
+    assert 'trackEvent("page_timing", params)' in src
+    for name in ("lcp_ms", "fcp_ms", "photo_ms", "lcp_bucket", "photo_bucket"):
+        assert re.search(rf"\b{name}\b", src), name
 
 
 def test_tour_stops_and_translations(tmp_path):

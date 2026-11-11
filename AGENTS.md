@@ -462,6 +462,16 @@ JSON block so a dish name cannot close the script tag early.
   in `web/app.js`, an `entry.` id that belongs to that one question: remake the question and
   the page info arrives empty, without an error. After editing the form, read the ids back
   off `FB_PUBLIC_LOAD_DATA_` in its public `viewform` page.
+- **GA reads an event parameter only under the name registered for it** (Admin → Custom
+  definitions). Rename one in `web/app.js` and its report goes empty, again without an error;
+  a new parameter needs registering before it shows anywhere. `page_timing` is the one most
+  likely to be touched: `lcp_ms`, `fcp_ms` and `photo_ms` are custom metrics in milliseconds,
+  and `lcp_bucket` and `photo_bucket` are dimensions, cut at 2.5 s and 4 s, where Google grades LCP.
+  `photo_ms` is the first dish picture loaded and drawn. It exists because Search Console has too
+  little traffic to report Core Web Vitals, and it is measured in every browser, LCP or not.
+  On localhost `trackEvent()` writes each event to the console instead of sending it, which is
+  how a new one is checked on :8777. The automation browser's tab counts as hidden,
+  and `watchPageTiming()` deliberately sends nothing for a page that opened hidden.
 - **Every active hall also has its own page, `/<hallId>/`,** written by `build.page_html()`
   from the same template: its own title, description, canonical and `og:url`, a
   `FoodEstablishment` JSON-LD block, and the week written out as plain HTML (`#prerender`) for

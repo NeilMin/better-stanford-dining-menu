@@ -384,8 +384,13 @@
     return host === "localhost" || host === "127.0.0.1" || host === "0.0.0.0" || host === "";
   };
 
+  // On a laptop the event goes to the console instead of GA, so a new one can
+  // be checked on :8777 without counting the developer as a visitor.
   const trackEvent = (name, params = {}) => {
-    if (isLocalhost()) return;
+    if (isLocalhost()) {
+      console.debug("[bsdm] event " + name, params);
+      return;
+    }
     window.gtag?.("event", name, params);
   };
 
@@ -393,6 +398,69 @@
     if (isLocalhost()) return;
     window.gtag?.("set", "user_properties", { [name]: value });
   };
+
+  // How long the first screen takes, sent once a page as `page_timing`. GA
+  // showed engagement on phones falling four weeks running (Nov 2026) and had
+  // nothing to say whether the page had got slower, and Search Console has too
+  // little traffic to report Core Web Vitals. `lcp_ms` is the browser's own
+  // Largest Contentful Paint, where it has one. `photo_ms` is ours -- the
+  // first dish picture loaded and a frame drawn after it -- and is measured in
+  // every browser, so the ones that report both say how far to trust it in
+  // the ones that report only ours. Both come with a bucket, cut where Google
+  // cuts LCP (2.5 s good, 4 s poor), because GA's reports sum a number and a
+  // bucket is what a report can split by device. The five names are registered
+  // in GA as custom definitions: rename one and its report goes empty without
+  // an error, as with FEEDBACK_VIEW.
+  const timingBucket = (ms) =>
+    ms == null ? "n/a"
+      : ms < 1000 ? "<1s"
+      : ms < 2500 ? "1-2.5s"
+      : ms < 4000 ? "2.5-4s"
+      : ms < 6000 ? "4-6s"
+      : "6s+";
+
+  function watchPageTiming() {
+    // A page opened in a background tab paints when it is looked at, which
+    // times the viewer rather than the page.
+    if (document.visibilityState !== "visible") return;
+    let lcp = null;
+    let photo = null;
+    let sent = false;
+    try {
+      new PerformanceObserver((list) => {
+        const entries = list.getEntries();
+        if (entries.length) lcp = entries[entries.length - 1].startTime;
+      }).observe({ type: "largest-contentful-paint", buffered: true });
+    } catch {
+      // No LCP in this browser; photo_ms still says something.
+    }
+    const send = () => {
+      if (sent) return;
+      sent = true;
+      const fcp = performance.getEntriesByName("first-contentful-paint")[0]?.startTime;
+      const params = { lcp_bucket: timingBucket(lcp), photo_bucket: timingBucket(photo) };
+      if (lcp != null) params.lcp_ms = Math.round(lcp);
+      if (photo != null) params.photo_ms = Math.round(photo);
+      if (fcp != null) params.fcp_ms = Math.round(fcp);
+      trackEvent("page_timing", params);
+    };
+    // Whichever comes first: the picture is up, the viewer leaves, or 20 s.
+    // A slow load cut short by leaving is still sent, with what it had.
+    document.addEventListener("visibilitychange", () => {
+      if (document.visibilityState === "hidden") send();
+    });
+    setTimeout(send, 20000);
+    // The picture the build marked as the likely LCP; none with photos off.
+    const img = document.querySelector('img.thumb[fetchpriority="high"]');
+    if (!img) return;
+    const painted = () => requestAnimationFrame(() => setTimeout(() => {
+      photo = performance.now();
+      // The browser's LCP entry for that frame is queued just after it.
+      setTimeout(send, 1000);
+    }));
+    if (img.complete && img.naturalWidth) painted();
+    else img.addEventListener("load", painted, { once: true });
+  }
 
   setUserProperty("app_lang", state.lang);
   trackEvent("filter_snapshot", {
@@ -1938,6 +2006,7 @@
   document.addEventListener("touchstart", () => {}, { passive: true });
 
   render();
+  watchPageTiming();
   // A beat after the page appears, so the ring reads as something happening.
   setTimeout(startTour, 450);
 })();
