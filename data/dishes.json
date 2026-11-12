@@ -990,7 +990,7 @@
   "image": "07cf5c9850b1.webp",
   "ingredients": "Meat Pizza of the Day Vegetable Pizza of the Day",
   "is_station": false,
-  "last_seen": "2026-11-13",
+  "last_seen": "2026-11-18",
   "min_order": 4,
   "model": "sdxl",
   "name": "Allergen Friendly Pizza Station",
@@ -1043,14 +1043,14 @@
   "generated_at": "2026-10-23T10:29:57+00:00",
   "icon": "plate",
   "image": "0834c532ff54.webp",
-  "ingredients": "tomato puree, cream (milk), roasted red peppers, butter (milk), sugar, onions, canola oil, salt, modified food starch, garlic, spices, smoked paprika, enriched wheat flour, onions, paprika extract, flavoring",
+  "ingredients": "tomato puree, cream, roasted red peppers, butter, sugar, onions, canola oil, salt, modified food starch, garlic, spices, smoked paprika, enriched wheat flour, onions, paprika extract, flavoring",
   "is_station": false,
   "judge": {
    "at": "2026-10-23T10:29:57+00:00",
    "judge": "gemma-4-26b-a4b-it",
    "seen": "A bowl of creamy orange soup topped with a swirl of white cream and a basil leaf, served with a spoon, a fork, and three cherry tomatoes on the side."
   },
-  "last_seen": "2026-11-12",
+  "last_seen": "2026-10-29",
   "min_order": 8,
   "model": "sdxl",
   "name": "Tomato Bisque",
@@ -1275,7 +1275,7 @@
   "image": "0961d17c8176.webp",
   "ingredients": "french fries, garlic, parsley, canola/olive oil blend, canola shortening",
   "is_station": false,
-  "last_seen": "2026-11-13",
+  "last_seen": "2026-11-18",
   "min_order": 3,
   "model": "sdxl",
   "name": "Garlic Fries",
@@ -1569,7 +1569,7 @@
   "image": "0ac058eb4ac1.webp",
   "ingredients": "tofu, bbq sauce, seasonal vegetables, canola/olive oil blend, garlic",
   "is_station": false,
-  "last_seen": "2026-11-14",
+  "last_seen": "2026-11-16",
   "min_order": 1,
   "model": "cf-flux",
   "name": "BBQ Tofu with Vegetables",
@@ -1900,7 +1900,7 @@
   "image": null,
   "ingredients": "",
   "is_station": true,
-  "last_seen": "2026-10-12",
+  "last_seen": "2026-11-16",
   "min_order": 0,
   "name": "Sausage Bar",
   "needs_image": false,
@@ -2159,6 +2159,26 @@
    "vegan"
   ]
  },
+ "106ba1f1b019": {
+  "category": "poultry",
+  "first_seen": "2026-11-18",
+  "icon": "plate",
+  "image": null,
+  "ingredients": "chicken, canola oil, olive oil, spice rub (coriander, cumin, garlic, turmeric, paprika, cloves, cinnamon, ground ginger, salt, black pepper)",
+  "is_station": false,
+  "last_seen": "2026-11-18",
+  "min_order": 0,
+  "name": "Spice Roasted Chicken",
+  "needs_image": true,
+  "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
+  "placeholder": false,
+  "priority": 0,
+  "prompt": "Spice Roasted Chicken, juicy grilled or roasted chicken, golden skin, tender meat texture, made with chicken, spice rub, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "station_only": false,
+  "tags": [
+   "gluten-free"
+  ]
+ },
  "109f3387d78e": {
   "category": "vegan",
   "first_seen": "2026-09-24",
@@ -2337,7 +2357,7 @@
   "image": "115480ef54d7.webp",
   "ingredients": "macaroni (wheat), cheese sauce (parmesan cheese, white cheddar cheese, fontina cheese, whole milk, butter, flour, Dijon mustard, onions, salt, nutmeg, bay leaf [milk, wheat])",
   "is_station": false,
-  "last_seen": "2026-11-14",
+  "last_seen": "2026-11-16",
   "min_order": 4,
   "model": "sdxl",
   "name": "Creamy Mac & Cheese",
@@ -2700,7 +2720,7 @@
   "image": "141b4bd856e6.webp",
   "ingredients": "ravioli (egg, wheat), marinara sauce (soy), parmesan cheese (milk)",
   "is_station": false,
-  "last_seen": "2026-11-16",
+  "last_seen": "2026-11-17",
   "min_order": 10,
   "model": "sdxl",
   "name": "Marinara Cheese Ravioli",
@@ -2746,6 +2766,26 @@
    "gluten-free",
    "vegan",
    "halal"
+  ]
+ },
+ "14381fe2fcd1": {
+  "category": "pork",
+  "first_seen": "2026-11-17",
+  "icon": "plate",
+  "image": null,
+  "ingredients": "pork, creole spice (herb de provence, cumin seeds, cayenne pepper, paprika, salt, pepper), honey, dijon mustard, salt, pepper",
+  "is_station": false,
+  "last_seen": "2026-11-17",
+  "min_order": 0,
+  "name": "Roasted Honey Mustard Pork",
+  "needs_image": true,
+  "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
+  "placeholder": false,
+  "priority": 0,
+  "prompt": "Roasted Honey Mustard Pork, tender cooked pork cuts, succulent meat texture, browned edges, made with pork, creole spice, honey, dijon mustard, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "station_only": false,
+  "tags": [
+   "gluten-free"
   ]
  },
  "1473088ca909": {
@@ -3612,7 +3652,7 @@
   "image": "19e19e8874a7.webp",
   "ingredients": "brown rice, onion, canola/olive oil blend, lime, cilantro, garlic, salt",
   "is_station": false,
-  "last_seen": "2026-11-13",
+  "last_seen": "2026-11-17",
   "min_order": 4,
   "model": "sdxl",
   "name": "Cilantro Lime Rice",
@@ -3637,22 +3677,21 @@
   "image": "19e6e7085fc5.webp",
   "ingredients": "white beans, vegetarian soup base (contains celery, mushrooms), onion, celery, garlic, tomato, canola/olive oil blend, cumin, coriander seeds, cilantro, chili powder, salt",
   "is_station": false,
-  "last_seen": "2026-09-18",
-  "min_order": 5,
+  "last_seen": "2026-11-16",
+  "min_order": 1,
   "model": "sdxl",
   "name": "White Bean Ragout",
   "needs_image": true,
   "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, meat, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
   "placeholder": false,
-  "priority": 2,
+  "priority": 1,
   "prompt": "White Bean Ragout, made with white beans, vegetarian soup base, onion, celery, garlic, tomato, cumin, coriander seeds, plant-based, no meat, no dairy, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
   "prompt_rev": 2,
   "seed": 434562824,
   "station_only": false,
   "tags": [
    "gluten-free",
-   "vegan",
-   "halal"
+   "vegan"
   ]
  },
  "1a01a282e892": {
@@ -3925,7 +3964,7 @@
   "image": "1aff80ce09f1.webp",
   "ingredients": "Gluten Free Bread Sliced Turkey Sliced Ham Roasted Vegetables (Eggplant, Squash, Bell Pepper) Sliced Daiya Cheese Guacamole Spread",
   "is_station": false,
-  "last_seen": "2026-11-13",
+  "last_seen": "2026-11-18",
   "min_order": 4,
   "model": "sdxl",
   "name": "Panini Station (Branner)",
@@ -4329,7 +4368,7 @@
   "image": "1ce691fd4b98.webp",
   "ingredients": "long-grain white rice, water, onions, garlic, vegetable soup base, olive/canola oil blend, salt",
   "is_station": false,
-  "last_seen": "2026-11-15",
+  "last_seen": "2026-11-16",
   "min_order": 4,
   "model": "sdxl",
   "name": "Arroz Blanco",
@@ -4618,7 +4657,7 @@
    "judge": "claude-sonnet",
    "seen": "A round pizza topped with pieces of chicken in a dark, sticky barbecue-style sauce, drizzled white sauce, thin slices of red onion and fresh cilantro leaves, on a thick golden crust."
   },
-  "last_seen": "2026-10-30",
+  "last_seen": "2026-11-17",
   "min_order": 7,
   "model": "sdxl",
   "name": "BBQ Chicken Pizza",
@@ -4671,7 +4710,7 @@
   "image": "1fba0bc0c38e.webp",
   "ingredients": "french baguette (wheat), unsalted butter (milk), garlic, parsley",
   "is_station": false,
-  "last_seen": "2026-11-13",
+  "last_seen": "2026-11-16",
   "min_order": 3,
   "model": "sdxl",
   "name": "Garlic Bread",
@@ -4902,7 +4941,7 @@
   "image": null,
   "ingredients": "",
   "is_station": true,
-  "last_seen": "2026-11-12",
+  "last_seen": "2026-11-17",
   "min_order": 5,
   "name": "Baked Potato Bar",
   "needs_image": false,
@@ -5267,7 +5306,7 @@
   "image": "22dcb0996000.webp",
   "ingredients": "bulgur wheat, parsley, tomatoes, cucumbers, lemon juice, onions, mint, olive/canola oil blend, salt, black pepper",
   "is_station": false,
-  "last_seen": "2026-11-02",
+  "last_seen": "2026-11-18",
   "min_order": 6,
   "model": "sdxl",
   "name": "Tabouli",
@@ -5434,7 +5473,7 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "Cubed, glazed tofu and squash topped with sesame seeds and green onions."
   },
-  "last_seen": "2026-11-09",
+  "last_seen": "2026-11-18",
   "min_order": 1,
   "model": "sdxl",
   "name": "Miso Sesame Tofu & Squash",
@@ -5554,6 +5593,24 @@
   "prompt_rev": 9,
   "seed": 622229202,
   "special": true,
+  "station_only": false,
+  "tags": []
+ },
+ "2537e93b1b46": {
+  "category": "poultry",
+  "first_seen": "2026-11-16",
+  "icon": "plate",
+  "image": null,
+  "ingredients": "chicken, corn tortilla, crema, avocado, tomatillo, onions, lettuce, chili serrano, queso fresco, salt, fried in canola oil",
+  "is_station": false,
+  "last_seen": "2026-11-16",
+  "min_order": 0,
+  "name": "Tacos Dorados de Pollo",
+  "needs_image": true,
+  "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
+  "placeholder": false,
+  "priority": 0,
+  "prompt": "Tacos Dorados de Pollo, tender cooked chicken, succulent poultry texture, made with chicken, corn tortilla, crema, avocado, tomatillo, onions, lettuce, chili serrano, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
   "station_only": false,
   "tags": []
  },
@@ -6049,7 +6106,7 @@
    "seen": "A creamy corn soup with red pepper pieces and green herbs in a white bowl."
   },
   "last_seen": "2026-11-13",
-  "min_order": 10,
+  "min_order": 9,
   "model": "sdxl",
   "name": "Corn Chowder",
   "needs_image": true,
@@ -6357,7 +6414,7 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "A bowl of yellow rice mixed with green peas and orange carrot pieces, garnished with a sprig of cilantro."
   },
-  "last_seen": "2026-11-12",
+  "last_seen": "2026-11-18",
   "min_order": 2,
   "model": "sdxl",
   "name": "Biriyani",
@@ -6724,15 +6781,15 @@
   "generated_at": "2026-10-09T20:36:02+00:00",
   "icon": "salad",
   "image": "2ca2347381d8.webp",
-  "ingredients": "romaine lettuce, eggs, ham, bacon, turkey, cucumber, cherry tomatoes, cheddar cheese, ranch dressing (soybean oil, vinegar, buttermilk, sugar, egg yolks, salt, food starch, whey, xanthan gum, garlic, onions, spice)",
+  "ingredients": "romaine lettuce, eggs, (non-halal) ham, (non-halal) bacon, turkey, cucumber, cherry tomatoes, cheddar cheese, ranch dressing (soybean oil, vinegar, buttermilk, sugar, egg yolks, salt, food starch, whey, xanthan gum, garlic, onions, spice)",
   "is_station": false,
   "judge": {
    "at": "2026-10-09T20:36:02+00:00",
    "judge": "gemma-4-26b-a4b-it",
    "seen": "A salad with lettuce, sliced ham, cucumber, cherry tomatoes, and a soft-boiled egg."
   },
-  "last_seen": "2026-10-13",
-  "min_order": 11,
+  "last_seen": "2026-11-17",
+  "min_order": 10,
   "model": "sdxl",
   "name": "Chef's Salad",
   "needs_image": true,
@@ -7235,7 +7292,7 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "A sliced beef steak with a browned exterior and a pink interior, garnished with a sprig of rosemary on a white plate."
   },
-  "last_seen": "2026-11-10",
+  "last_seen": "2026-11-17",
   "min_order": 0,
   "model": "sdxl",
   "name": "Grilled Tri Tip",
@@ -7434,19 +7491,19 @@
  },
  "3102ecc52224": {
   "brief_rev": 6,
-  "category": "vegan",
+  "category": "vegetarian",
   "first_seen": "2026-09-16",
   "generated_at": "2026-09-16T19:29:14+00:00",
   "icon": "plate",
   "image": "3102ecc52224.webp",
-  "ingredients": "corn, canola/olive oil blend, salt",
+  "ingredients": "corn, butter (milk), salt",
   "is_station": false,
   "judge": {
    "at": "2026-09-27T08:24:40+00:00",
    "judge": "gemma-4-26b-a4b-it",
    "seen": "Two whole ears of yellow corn on the cob on a white plate."
   },
-  "last_seen": "2026-11-13",
+  "last_seen": "2026-11-18",
   "min_order": 2,
   "model": "sdxl",
   "name": "Roasted Corn on the Cob",
@@ -7454,13 +7511,13 @@
   "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, meat, meat, pork, steak, beef, poultry, chicken, ribs, bacon, ham, sausage, barbecue meat, meat cuts, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
   "placeholder": false,
   "priority": 1,
-  "prompt": "Roasted Corn on the Cob, made with corn, plant-based, no meat, no dairy, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "prompt": "Roasted Corn on the Cob, made with corn, butter, vegetarian, no meat, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
   "prompt_rev": 2,
   "seed": 822275269,
   "station_only": false,
   "tags": [
    "gluten-free",
-   "vegan"
+   "vegetarian"
   ]
  },
  "31378ddfb8a0": {
@@ -8227,6 +8284,26 @@
   "station_only": false,
   "tags": []
  },
+ "356d32b8f0b9": {
+  "category": "vegetarian",
+  "first_seen": "2026-11-16",
+  "icon": "plate",
+  "image": null,
+  "ingredients": "flour, corn meal, cheddar cheese, eggs, buttermilk, milk, baking powder, baking soda, sugar, salt",
+  "is_station": false,
+  "last_seen": "2026-11-16",
+  "min_order": 5,
+  "name": "Cheddar Cheese Cornbread",
+  "needs_image": true,
+  "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, meat, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
+  "placeholder": false,
+  "priority": 2,
+  "prompt": "Cheddar Cheese Cornbread, made with corn meal, cheddar cheese, eggs, buttermilk, milk, vegetarian, no meat, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "station_only": false,
+  "tags": [
+   "vegetarian"
+  ]
+ },
  "35864ebf6b64": {
   "brief_rev": 6,
   "category": "vegetarian",
@@ -8932,7 +9009,7 @@
   "image": "394737c4ec01.webp",
   "ingredients": "basmati rice, onion, fava beans, carrots, dill, lemon juice, canola/olive oil blend, cumin",
   "is_station": false,
-  "last_seen": "2026-11-02",
+  "last_seen": "2026-11-18",
   "min_order": 2,
   "model": "sdxl",
   "name": "Fava Bean Basmati Rice",
@@ -9151,6 +9228,27 @@
    "gluten-free"
   ]
  },
+ "3a0456f3896e": {
+  "category": "vegan",
+  "first_seen": "2026-11-18",
+  "icon": "plate",
+  "image": null,
+  "ingredients": "yukon gold potatoes, garlic cloves, oil, kosher salt, black pepper, fresh rosemary, fresh thyme, crushed red pepper flakes, lemon zest",
+  "is_station": false,
+  "last_seen": "2026-11-18",
+  "min_order": 5,
+  "name": "Garlic Confit Roasted Potatoes",
+  "needs_image": true,
+  "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, meat, meat, pork, steak, beef, poultry, chicken, ribs, bacon, ham, sausage, barbecue meat, meat cuts, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
+  "placeholder": false,
+  "priority": 2,
+  "prompt": "Garlic Confit Roasted Potatoes, made with yukon gold potatoes, garlic cloves, fresh rosemary, fresh thyme, crushed red pepper flakes, lemon zest, plant-based, no meat, no dairy, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "station_only": false,
+  "tags": [
+   "gluten-free",
+   "vegan"
+  ]
+ },
  "3a3529c12804": {
   "category": "vegan",
   "first_seen": "2026-09-17",
@@ -9175,6 +9273,24 @@
    "gluten-free",
    "vegan"
   ]
+ },
+ "3a428b253316": {
+  "category": "poultry",
+  "first_seen": "2026-11-17",
+  "icon": "plate",
+  "image": null,
+  "ingredients": "Lemongrass Chicken (chicken, canola/olive oil blend, salt, pepper, cpk>lemongrass ginger marinade [canola oil, tamari sauce, garlic, ginger, kaffir leaves, sugar, onions, shallots, thai chile pepper, lemongrass]), Pickled Vegetables (carrot, daikon radish, sugar, rice vinegar, white wine vinegar, salt), Banh Mi Baguette, cilantro, jalapeno chili, cucumber, sriracha aioli sauce (sriracha sauce, lime juice, mayonnaise)",
+  "is_station": false,
+  "last_seen": "2026-11-17",
+  "min_order": 0,
+  "name": "Lemongrass Chicken Banh Mi",
+  "needs_image": true,
+  "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
+  "placeholder": false,
+  "priority": 0,
+  "prompt": "Lemongrass Chicken Banh Mi, tender cooked chicken, succulent poultry texture, made with Lemongrass Chicken, Pickled Vegetables, Banh Mi Baguette, cilantro, jalapeno chili, cucumber, sriracha aioli sauce, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "station_only": false,
+  "tags": []
  },
  "3ab47431ab15": {
   "brief_rev": 6,
@@ -10020,7 +10136,7 @@
   "image": "3f3ce26b4643.webp",
   "ingredients": "build your own fried rice bar",
   "is_station": false,
-  "last_seen": "2026-11-13",
+  "last_seen": "2026-11-17",
   "min_order": 6,
   "model": "sdxl",
   "name": "Fried Rice Bar",
@@ -10042,7 +10158,7 @@
   "image": "3f6bff644b6f.webp",
   "ingredients": "romaine lettuce, garbanzo beans, cucumber, cherry tomatoes, bell peppers, feta cheese, red onion, kalamata olives, oregano, salt, pepper, italian dressing (soybean oil, distilled vinegar, high fructose corn syrup, corn syrup, salt, garlic, corn syrup solids, xanthan gum, lemon juice concentrate, spice, red bell pepper, paprika, fd&c yellow no.5, fd&c yellow No.6)",
   "is_station": false,
-  "last_seen": "2026-11-08",
+  "last_seen": "2026-11-18",
   "min_order": 7,
   "model": "sdxl",
   "name": "Greek Salad",
@@ -10698,7 +10814,7 @@
   "image": "45f09e61f4ea.webp",
   "ingredients": "lettuce, tomatoes, caesar dressing (mayonnaise, parmesan cheese, garlic, lemon juice, anchovy, red wine vinegar, dijon mustard, worcestershire sauce [vinegar, molasses, corn syrup, anchovies, salt, garlic, tamarind concentrate, cloves, natural flavorings, chili pepper extract], hot sauce, salt, pepper), parmesan cheese, croutons (wheat flour, canola and/or sunflower oil, whey, salt, yeast, corn syrup, sugar, onion powder, parsley, paprika, turmeric)",
   "is_station": false,
-  "last_seen": "2026-11-09",
+  "last_seen": "2026-11-16",
   "min_order": 6,
   "model": "sdxl",
   "name": "Caesar Salad",
@@ -11154,7 +11270,7 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "A plate of crispy, deep-fried rolls filled with shredded cabbage and orange vegetable pieces."
   },
-  "last_seen": "2026-11-08",
+  "last_seen": "2026-11-16",
   "min_order": 4,
   "model": "sdxl",
   "name": "Egg Roll",
@@ -11354,7 +11470,7 @@
   "image": "47bd40b331b0.webp",
   "ingredients": "flour tortilla, cheese, salt, pepper, canola/olive oil blend",
   "is_station": false,
-  "last_seen": "2026-11-03",
+  "last_seen": "2026-11-18",
   "min_order": 6,
   "model": "sdxl",
   "name": "Cheese Quesadilla",
@@ -12210,7 +12326,7 @@
   "image": "4c04a6733f8e.webp",
   "ingredients": "enriched flour, sugar, liquid sugar, butter, eggs, potato flour, yeast, whey, nonfat milk, soy flour, salt, degerminated yellow corn flour, wheat gluten, sodium stearoyl lactylate, datem, monocalcium phosphate, wheat flour, calcium sulfate, sodium silicoaluminate, ascorbic acid, ammonium sulfate, wheat starch, sorbitan monostearate, enzymes, microcrystalline cellulose, calcium silicate",
   "is_station": false,
-  "last_seen": "2026-10-27",
+  "last_seen": "2026-11-12",
   "min_order": 3,
   "model": "sdxl",
   "name": "Hawaiian Roll",
@@ -13567,7 +13683,7 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "A single round, thick, light brown bread topped with a small sprig of green basil on a white plate."
   },
-  "last_seen": "2026-11-07",
+  "last_seen": "2026-11-18",
   "min_order": 3,
   "model": "sdxl",
   "name": "Warm Pita",
@@ -13824,7 +13940,7 @@
    "seen": "A bowl of rice mixed with green peas and diced carrots."
   },
   "last_seen": "2026-11-16",
-  "min_order": 4,
+  "min_order": 3,
   "model": "sdxl",
   "name": "Vegetable Fried Rice",
   "needs_image": true,
@@ -14449,8 +14565,8 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "A plate of pasta with shrimp, meat, and tomato sauce topped with chopped green onions."
   },
-  "last_seen": "2026-11-01",
-  "min_order": 6,
+  "last_seen": "2026-11-16",
+  "min_order": 5,
   "model": "sdxl",
   "name": "Jambalaya Pasta",
   "needs_image": true,
@@ -16422,19 +16538,19 @@
  },
  "6bf6fcc2d89c": {
   "brief_rev": 6,
-  "category": "station",
+  "category": "other",
   "first_seen": "2026-09-15",
   "generated_at": "2026-09-16T21:42:41+00:00",
   "icon": "plate",
   "image": "6bf6fcc2d89c.webp",
-  "ingredients": "",
+  "ingredients": "fried corn tortilla, toppings variety (meat protein, black beans, salsa, allergen free cheese sauce, jalapenos, cilantro, black olives, green onions, pickled onions)",
   "is_station": false,
   "judge": {
    "at": "2026-09-27T05:36:12+00:00",
    "judge": "gemma-4-26b-a4b-it",
    "seen": "A large tortilla topped with corn, ground meat, white cream, diced tomatoes, cilantro, and black olives."
   },
-  "last_seen": "2026-11-13",
+  "last_seen": "2026-11-17",
   "min_order": 6,
   "model": "sdxl",
   "name": "Nacho Bar",
@@ -16442,12 +16558,14 @@
   "negative": "text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
   "placeholder": false,
   "priority": 0,
-  "prompt": "Nacho Bar, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "prompt": "Nacho Bar, made with fried corn tortilla, toppings variety, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
   "prompt_rev": 2,
   "seed": 1811348674,
   "special": true,
   "station_only": false,
-  "tags": []
+  "tags": [
+   "gluten-free"
+  ]
  },
  "6c0669477f4f": {
   "brief_rev": 6,
@@ -16709,6 +16827,26 @@
    "gluten-free",
    "vegan",
    "halal"
+  ]
+ },
+ "6d9ef63190f4": {
+  "category": "vegan",
+  "first_seen": "2026-11-18",
+  "icon": "plate",
+  "image": null,
+  "ingredients": "green beans, olive oil, garlic, salt",
+  "is_station": false,
+  "last_seen": "2026-11-18",
+  "min_order": 8,
+  "name": "Stir Fry Green Beans",
+  "needs_image": true,
+  "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, meat, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
+  "placeholder": false,
+  "priority": 2,
+  "prompt": "Stir Fry Green Beans, made with green beans, garlic, plant-based, no meat, no dairy, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "station_only": false,
+  "tags": [
+   "vegan"
   ]
  },
  "6dad564a51d7": {
@@ -17908,8 +18046,8 @@
   "image": "76b5b53a9f9c.webp",
   "ingredients": "white rice, onions, canola/olive oil blend, poblano chili, cilantro, garlic, salt",
   "is_station": false,
-  "last_seen": "2026-10-06",
-  "min_order": 19,
+  "last_seen": "2026-11-16",
+  "min_order": 6,
   "model": "sdxl",
   "name": "Poblano Rice",
   "needs_image": true,
@@ -17921,8 +18059,7 @@
   "seed": 1991619898,
   "station_only": false,
   "tags": [
-   "vegan",
-   "halal"
+   "vegan"
   ]
  },
  "76bcbd5fdd9f": {
@@ -18302,7 +18439,7 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "Five dark, glazed sausage links on a white plate next to a small bowl of brown seasoning."
   },
-  "last_seen": "2026-10-12",
+  "last_seen": "2026-11-16",
   "min_order": 1,
   "model": "sdxl",
   "name": "Beyond Italian Hot Link",
@@ -18554,7 +18691,7 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "A pan-seared chicken breast served on a bed of greens with lemon slices and a light sauce."
   },
-  "last_seen": "2026-10-13",
+  "last_seen": "2026-11-17",
   "min_order": 0,
   "model": "sdxl",
   "name": "Chicken Meuniere",
@@ -18567,8 +18704,7 @@
   "seed": 2075845140,
   "station_only": false,
   "tags": [
-   "gluten-free",
-   "halal"
+   "gluten-free"
   ]
  },
  "7c115d186f95": {
@@ -18977,7 +19113,7 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "A hot dog with mustard in a bun on a white plate."
   },
-  "last_seen": "2026-10-12",
+  "last_seen": "2026-11-16",
   "min_order": 2,
   "model": "sdxl",
   "name": "Schar Gluten-Free Hot Dog Bun",
@@ -19698,7 +19834,7 @@
   "image": "847a07758965.webp",
   "ingredients": "texas toast, tomato soup, american cheese, cheddar cheese, unsalted butter, onions, canola/olive oil blend",
   "is_station": false,
-  "last_seen": "2026-11-12",
+  "last_seen": "2026-11-17",
   "min_order": 7,
   "model": "sdxl",
   "name": "Tomato Soup with Grilled Cheese",
@@ -20034,7 +20170,7 @@
   "image": "862d651b2688.webp",
   "ingredients": "bell peppers, onions, mushrooms, squash, canola/olive oil blend, cumin, garlic, salt, pepper",
   "is_station": false,
-  "last_seen": "2026-11-12",
+  "last_seen": "2026-11-16",
   "min_order": 2,
   "model": "sdxl",
   "name": "Charred Fajitas Vegetables",
@@ -20329,7 +20465,7 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "A bowl of crumbled ground meat mixed with diced orange vegetables, served with a piece of bread on the side."
   },
-  "last_seen": "2026-11-14",
+  "last_seen": "2026-11-05",
   "min_order": 0,
   "model": "sdxl",
   "name": "Chipotle Beef Picadillo",
@@ -21745,7 +21881,7 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "A white bowl of thick, creamy white soup containing diced potatoes and dark pieces, garnished with a fresh green leaf."
   },
-  "last_seen": "2026-11-05",
+  "last_seen": "2026-11-18",
   "min_order": 7,
   "model": "sdxl",
   "name": "Boston Clam Chowder",
@@ -21767,7 +21903,7 @@
   "image": "8ebbffcc1ac9.webp",
   "ingredients": "Gluten-Free Penne Pasta (brown rice, rice bran, water) Sauce of the Day: Marinara Sauce (tomatoes, tomato paste, oil, sugar, salt, onion, garlic, spices, citric acid, natural flavor) Pesto Sauce (olive oil, basil, spinach, kale, nutritional yeast, sunflower seeds) Alfredo Sauce (allergen free vegan butter, garbanzo flour, oat milk, nutritional yeast, lemon juice, salt)",
   "is_station": false,
-  "last_seen": "2026-11-13",
+  "last_seen": "2026-11-18",
   "min_order": 2,
   "model": "sdxl",
   "name": "Allergen-Friendly Pasta Station",
@@ -22266,14 +22402,14 @@
   "image": "90ff6645d8a7.webp",
   "ingredients": "cauliflower, lime juice, garlic, onions, cilantro, cumin, smoked paprika, dried oregano, olive/canola oil blend, salt, black pepper",
   "is_station": false,
-  "last_seen": "2026-10-22",
-  "min_order": 4,
+  "last_seen": "2026-11-18",
+  "min_order": 1,
   "model": "sdxl",
   "name": "Peruvian-Style Roasted Cauliflower",
   "needs_image": true,
   "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, meat, meat, pork, steak, beef, poultry, chicken, ribs, bacon, ham, sausage, barbecue meat, meat cuts, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
   "placeholder": false,
-  "priority": 2,
+  "priority": 1,
   "prompt": "Peruvian-Style Roasted Cauliflower, made with cauliflower, garlic, onions, cilantro, cumin, smoked paprika, dried oregano, plant-based, no meat, no dairy, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
   "prompt_rev": 2,
   "seed": 2432656965,
@@ -22718,7 +22854,7 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "A white bowl filled with crispy, triangular corn tortilla chips."
   },
-  "last_seen": "2026-11-13",
+  "last_seen": "2026-11-16",
   "min_order": 6,
   "model": "sdxl",
   "name": "Tortilla Chips",
@@ -24448,6 +24584,27 @@
    "halal"
   ]
  },
+ "9f7d83df12e8": {
+  "category": "vegetarian",
+  "first_seen": "2026-11-16",
+  "icon": "plate",
+  "image": null,
+  "ingredients": "cultured cream (milk), enzymes",
+  "is_station": false,
+  "last_seen": "2026-11-16",
+  "min_order": 7,
+  "name": "Sour Cream",
+  "needs_image": true,
+  "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, meat, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
+  "placeholder": false,
+  "priority": 2,
+  "prompt": "Sour Cream, made with cultured cream, enzymes, vegetarian, no meat, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "station_only": false,
+  "tags": [
+   "gluten-free",
+   "vegetarian"
+  ]
+ },
  "9f89c4239fd7": {
   "brief_rev": 6,
   "category": "seafood",
@@ -24523,7 +24680,7 @@
    "seen": "A bowl of white rice mixed with green herbs and dark grains, garnished with fresh parsley leaves."
   },
   "last_seen": "2026-11-18",
-  "min_order": 5,
+  "min_order": 4,
   "model": "sdxl",
   "name": "Jeera Rice",
   "needs_image": true,
@@ -24607,7 +24764,7 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "Pan-seared tofu blocks served with sliced zucchini and fresh herbs."
   },
-  "last_seen": "2026-11-08",
+  "last_seen": "2026-11-17",
   "min_order": 1,
   "model": "sdxl",
   "name": "Herb-Marinated Lemon Tofu",
@@ -24693,7 +24850,7 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "A slice of pizza with tomato sauce, topped with fresh green arugula and a dark balsamic glaze."
   },
-  "last_seen": "2026-11-03",
+  "last_seen": "2026-11-16",
   "min_order": 8,
   "model": "sdxl",
   "name": "Balsamic Glazed Cheese Pizza",
@@ -25306,14 +25463,14 @@
   "image": "a44a9171eec0.webp",
   "ingredients": "squash, canola/olive oil blend, garlic, salt, pepper",
   "is_station": false,
-  "last_seen": "2026-10-21",
-  "min_order": 4,
+  "last_seen": "2026-11-18",
+  "min_order": 2,
   "model": "sdxl",
   "name": "Roasted Chayote Squash",
   "needs_image": true,
   "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, meat, meat, pork, steak, beef, poultry, chicken, ribs, bacon, ham, sausage, barbecue meat, meat cuts, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
   "placeholder": false,
-  "priority": 2,
+  "priority": 1,
   "prompt": "Roasted Chayote Squash, made with squash, garlic, plant-based, no meat, no dairy, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
   "prompt_rev": 2,
   "seed": 2756350321,
@@ -25616,8 +25773,8 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "A sandwich with shredded meat, purple cabbage, and white shredded cabbage on a bun."
   },
-  "last_seen": "2026-10-02",
-  "min_order": 6,
+  "last_seen": "2026-11-18",
+  "min_order": 5,
   "model": "sdxl",
   "name": "BBQ Chicken Sandwich",
   "needs_image": true,
@@ -25628,9 +25785,7 @@
   "prompt_rev": 9,
   "seed": 2784138284,
   "station_only": false,
-  "tags": [
-   "halal"
-  ]
+  "tags": []
  },
  "a623e0ed01d8": {
   "category": "vegetarian",
@@ -26017,6 +26172,26 @@
    "vegan"
   ]
  },
+ "a8b36d596335": {
+  "category": "vegetarian",
+  "first_seen": "2026-11-16",
+  "icon": "plate",
+  "image": null,
+  "ingredients": "potatoes, white corn tortilla, avocado, crema, queso fresco cheese, tomatillo, chili serrano, onions, parsley, cilantro, salt, fried in canola oil",
+  "is_station": false,
+  "last_seen": "2026-11-16",
+  "min_order": 1,
+  "name": "Tacos Dorados de Papa",
+  "needs_image": true,
+  "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, meat, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
+  "placeholder": false,
+  "priority": 1,
+  "prompt": "Tacos Dorados de Papa, made with potatoes, white corn tortilla, avocado, crema, queso fresco cheese, tomatillo, chili serrano, onions, vegetarian, no meat, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "station_only": false,
+  "tags": [
+   "vegetarian"
+  ]
+ },
  "a8b9b1a7939d": {
   "brief_rev": 6,
   "category": "pork",
@@ -26245,7 +26420,7 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "Four dumplings topped with sesame seeds and chopped green onions on a plate."
   },
-  "last_seen": "2026-10-14",
+  "last_seen": "2026-11-18",
   "min_order": 4,
   "model": "sdxl",
   "name": "Pan Seared Pot Stickers",
@@ -26513,7 +26688,7 @@
   "image": "abd4d61b7f28.webp",
   "ingredients": "pinto beans, onions, garlic, canola oil, extra virgin olive oil, cumin, coriander, cilantro, salt",
   "is_station": false,
-  "last_seen": "2026-11-14",
+  "last_seen": "2026-11-17",
   "min_order": 4,
   "model": "sdxl",
   "name": "Refried Beans",
@@ -26895,7 +27070,7 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "A stir-fry of glazed strips, sliced red and green peppers, and onions served over white rice and topped with sesame seeds."
   },
-  "last_seen": "2026-11-04",
+  "last_seen": "2026-11-14",
   "min_order": 1,
   "model": "sdxl",
   "name": "Teriyaki Glazed Chick'n Strips",
@@ -27410,6 +27585,26 @@
    "vegan"
   ]
  },
+ "af83b5e9f7df": {
+  "category": "beef",
+  "first_seen": "2026-11-16",
+  "icon": "plate",
+  "image": null,
+  "ingredients": "beef, onion, salt, chili powder, cumin, canola oil, vegetable soup base (contains mushrooms, celery, carrots), chili seasoning, tomato, Guajillo chili powder, garlic",
+  "is_station": false,
+  "last_seen": "2026-11-16",
+  "min_order": 0,
+  "name": "Beef Chili Colorado",
+  "needs_image": true,
+  "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, lamb, mutton, chicken, chicken breast, turkey, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
+  "placeholder": false,
+  "priority": 0,
+  "prompt": "Beef Chili Colorado, tender cooked beef, succulent meat texture, rich caramelized sear, made with beef, onion, chili powder, cumin, vegetable soup base, chili seasoning, tomato, Guajillo chili powder, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "station_only": false,
+  "tags": [
+   "gluten-free"
+  ]
+ },
  "afb12ba934d3": {
   "brief_rev": 6,
   "category": "vegan",
@@ -27424,7 +27619,7 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "A white bowl containing white rice topped with sliced mushrooms in a dark glossy sauce and chopped green herbs."
   },
-  "last_seen": "2026-10-21",
+  "last_seen": "2026-11-17",
   "min_order": 1,
   "model": "sdxl",
   "name": "Mushroom Teriyaki",
@@ -27610,6 +27805,27 @@
   "seed": 2961295470,
   "station_only": false,
   "tags": [
+   "vegan"
+  ]
+ },
+ "b0a3cf2bd482": {
+  "category": "vegan",
+  "first_seen": "2026-11-17",
+  "icon": "plate",
+  "image": null,
+  "ingredients": "Braised Cabbage & Potato Stew (potatoes, garlic, ginger root, canola/olive oil blend, cabbage, carrots, thyme, turmeric, cinnamon, cardamom, cumin seed, pepper, salt), Braised Greens (seasonal greens, vegetable soup base, onion, canola/olive oil blend, red wine vinegar, red pepper flakes, garlic, salt, pepper)",
+  "is_station": false,
+  "last_seen": "2026-11-17",
+  "min_order": 3,
+  "name": "Braised Cabbage & Potato Stew",
+  "needs_image": true,
+  "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, meat, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
+  "placeholder": false,
+  "priority": 1,
+  "prompt": "Braised Cabbage & Potato Stew, made with Braised Cabbage & Potato Stew, Braised Greens, plant-based, no meat, no dairy, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "station_only": false,
+  "tags": [
+   "gluten-free",
    "vegan"
   ]
  },
@@ -27964,7 +28180,7 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "A bowl of golden-brown fried nuggets topped with sesame seeds and chopped green onions."
   },
-  "last_seen": "2026-11-07",
+  "last_seen": "2026-11-14",
   "min_order": 0,
   "model": "sdxl",
   "name": "Orange Chicken",
@@ -28071,21 +28287,22 @@
   "generated_at": "2026-09-18T17:51:11+00:00",
   "icon": "plate",
   "image": "b370ac27bf0c.webp",
-  "ingredients": "carnitas (pork, onions, garlic, bay leaf, salt), nacho cheese sauce (skim milk, vegetable acetate, canola oil, soybean oil, and/or sunflower oil, modified food starch, cheddar cheese, bell peppers, sodium phosphate, lactic acid, sodium citrate, annatto, datem, monoglycerides, diglycerdies, acetic acid, spices), jalapenos, tomatoes, sour cream, salsa roja, guacamole, carrots, onions, cilantro, tortilla chips fried in canola oil",
+  "ingredients": "carnitas (pork, onions, garlic, bay leaf, salt), nacho cheese sauce (skim milk, vegetable acetate, canola oil, soybean oil, and/or sunflower oil, modified food starch, cheddar cheese, bell peppers, sodium phosphate, lactic acid, sodium citrate, annatto, datem, monoglycerides, diglycerides, acetic acid, spices), jalapenos, tomatoes, sour cream, salsa roja, guacamole, carrots, onions, cilantro, tortilla chips fried in canola oil",
+  "is_station": false,
   "judge": {
    "at": "2026-09-27T05:38:54+00:00",
    "judge": "gemma-4-26b-a4b-it",
    "seen": "A plate of tortilla chips topped with guacamole, sliced cherry tomatoes, white cream, and shredded meat."
   },
-  "last_seen": "2026-09-23",
-  "min_order": 7,
+  "last_seen": "2026-11-17",
+  "min_order": 6,
   "model": "sdxl",
   "name": "Supreme Carnitas Nachos",
   "needs_image": true,
-  "negative": "fish fillet, shrimp, prawns, shellfish, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates",
+  "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, breaded, batter, fried balls, beef, steak, pot roast, dark meat, taco, taco shell, tortilla, wrap, chips, rice, noodles, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
   "placeholder": false,
   "priority": 0,
-  "prompt": "Supreme Carnitas Nachos, a dining hall dish, made with carnitas, nacho cheese sauce, jalapenos, tomatoes, sour cream, salsa roja, guacamole, carrots, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "prompt": "Supreme Carnitas Nachos, Mexican pork carnitas, juicy tender shredded and bite-sized pieces of slow-cooked pork shoulder, crispy golden-brown caramelized edges, glistening with natural savory juices, authentic Mexican carnitas, garnished with fresh chopped cilantro and a fresh lime wedge, made with carnitas, nacho cheese sauce, jalapenos, tomatoes, sour cream, salsa roja, guacamole, carrots, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
   "prompt_rev": 2,
   "seed": 3010505767,
   "station_only": false,
@@ -28678,14 +28895,14 @@
   "generated_at": "2026-09-22T13:33:19+00:00",
   "icon": "plate",
   "image": "b6e8be899245.webp",
-  "ingredients": "garbanzo beans, parsley, white flour, wheat flour, spices, sesame, onions, fried in canola oil",
+  "ingredients": "garbanzo beans, parsley, white flour (wheat), wheat flour, spices, sesame, onions, fried in canola oil",
   "is_station": false,
   "judge": {
    "at": "2026-09-27T06:32:04+00:00",
    "judge": "gemma-4-26b-a4b-it",
    "seen": "A plate of golden-brown fried balls garnished with sesame seeds and fresh green herbs."
   },
-  "last_seen": "2026-11-02",
+  "last_seen": "2026-11-18",
   "min_order": 1,
   "model": "cf-flux",
   "name": "Crispy Falafel",
@@ -29286,7 +29503,7 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "A bowl of creamy pale soup garnished with small green pieces and a sprig of rosemary."
   },
-  "last_seen": "2026-10-21",
+  "last_seen": "2026-11-12",
   "min_order": 8,
   "model": "sdxl",
   "name": "Potato Leek Soup",
@@ -30144,7 +30361,7 @@
   "image": "bf1974689202.webp",
   "ingredients": "tofu, canola oil, salt, and pepper",
   "is_station": false,
-  "last_seen": "2026-11-13",
+  "last_seen": "2026-11-16",
   "min_order": 6,
   "model": "sdxl",
   "name": "Grilled Tofu Patty",
@@ -30342,7 +30559,7 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "A bowl of steamed broccoli and sliced carrots."
   },
-  "last_seen": "2026-11-10",
+  "last_seen": "2026-11-14",
   "min_order": 1,
   "model": "sdxl",
   "name": "Vegetable Stir-Fry",
@@ -30393,9 +30610,9 @@
   "generated_at": "2026-09-20T09:48:43+00:00",
   "icon": "plate",
   "image": "c0f4af1d2c60.webp",
-  "ingredients": "butter, sugar, eggs, wheat flour, yellow cornmeal, cream corn, baking powder, sea salt, vanilla extract",
+  "ingredients": "corn bread muffin (enriched wheat flour, malted barley flour), corn, sugar, nonfat dry milk powder, canola oil, eggs, corn meal, baking powder, salt, vanilla",
   "is_station": false,
-  "last_seen": "2026-11-08",
+  "last_seen": "2026-11-16",
   "min_order": 4,
   "model": "sdxl",
   "name": "Cornbread",
@@ -30403,7 +30620,7 @@
   "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, meat, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
   "placeholder": false,
   "priority": 2,
-  "prompt": "Cornbread, made with butter, eggs, yellow cornmeal, cream corn, vanilla extract, vegetarian, no meat, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "prompt": "Cornbread, made with corn bread muffin, corn, nonfat dry milk powder, eggs, corn meal, vanilla, vegetarian, no meat, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
   "prompt_rev": 3,
   "seed": 3237261085,
   "station_only": false,
@@ -30513,7 +30730,7 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "A bowl containing sliced glazed chicken, white rice, sliced cucumbers, and bell peppers."
   },
-  "last_seen": "2026-11-04",
+  "last_seen": "2026-11-18",
   "min_order": 5,
   "model": "sdxl",
   "name": "Grilled Teriyaki Chicken Protein Bowl",
@@ -30711,7 +30928,7 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "A stir-fry of meat chunks, red peppers, carrots, peas, and leafy greens served over white rice in a bowl."
   },
-  "last_seen": "2026-10-13",
+  "last_seen": "2026-11-17",
   "min_order": 0,
   "model": "sdxl",
   "name": "Chicken Stir-Fry",
@@ -30756,6 +30973,24 @@
   "tags": [
    "vegan"
   ]
+ },
+ "c3ca3e9658c5": {
+  "category": "poultry",
+  "first_seen": "2026-11-17",
+  "icon": "plate",
+  "image": null,
+  "ingredients": "filling: chicken, corn, onions fried in canola oil, scallion, lemongrass, fish sauce (anchovy extract, salt, fructose, hydrolyzed wheat protein), canola oil, salt, garlic, sugar, black pepper, chili pepper, dough: wheat flour, modified tapioca starch, wheat gluten, canola oil, salt",
+  "is_station": false,
+  "last_seen": "2026-11-17",
+  "min_order": 5,
+  "name": "Lemongrass Chicken Potsticker",
+  "needs_image": true,
+  "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
+  "placeholder": false,
+  "priority": 0,
+  "prompt": "Lemongrass Chicken Potsticker, tender cooked chicken, succulent poultry texture, made with filling: chicken, corn, scallion, lemongrass, garlic, chili pepper, dough: wheat flour, modified tapioca starch, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "station_only": false,
+  "tags": []
  },
  "c3cb7f99d822": {
   "brief_rev": 6,
@@ -31327,9 +31562,9 @@
   "generated_at": "2026-09-20T09:23:22+00:00",
   "icon": "plate",
   "image": "c5e6dd7e354d.webp",
-  "ingredients": "rice, garlic, canola/olive oil blend",
+  "ingredients": "rice, canola/olive oil blend, garlic, salt",
   "is_station": false,
-  "last_seen": "2026-11-12",
+  "last_seen": "2026-11-18",
   "min_order": 2,
   "model": "sdxl",
   "name": "Garlic Rice",
@@ -31415,7 +31650,7 @@
   "image": "c659130e602e.webp",
   "ingredients": "tomato puree, diced tomatoes in tomato juice, potatoes, kidney beans, carrots, green beans, celery, garbanzo beans, zucchini, peas, spinach, pasta, modified food starch, salt, parmesan cheese, gelatin, yeast extract, flour, flavoring, beef stock, spices, corn oil, canola oil, garlic, disodium inosinate, disodium guanylate, dextrose",
   "is_station": false,
-  "last_seen": "2026-11-11",
+  "last_seen": "2026-11-16",
   "min_order": 6,
   "model": "sdxl",
   "name": "Hearty Minestrone",
@@ -31587,7 +31822,7 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "A plate of roasted red, yellow, and green peppers mixed with onions and dark olives."
   },
-  "last_seen": "2026-11-04",
+  "last_seen": "2026-11-18",
   "min_order": 2,
   "model": "cf-flux",
   "name": "Balsamic Roasted Peppers & Onions",
@@ -31618,7 +31853,7 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "This is a plate of fettuccine pasta with white sauce, sliced chicken, and sliced mushrooms topped with fresh herbs."
   },
-  "last_seen": "2026-11-10",
+  "last_seen": "2026-11-17",
   "min_order": 0,
   "model": "sdxl",
   "name": "Creamy Chicken Alfredo Pasta",
@@ -32026,7 +32261,7 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "A dark vegetable stew containing mushrooms, carrots, and peas garnished with fresh herbs."
   },
-  "last_seen": "2026-10-13",
+  "last_seen": "2026-11-17",
   "min_order": 1,
   "model": "sdxl",
   "name": "Mushroom Bourguignon",
@@ -32040,8 +32275,7 @@
   "station_only": false,
   "tags": [
    "gluten-free",
-   "vegan",
-   "halal"
+   "vegan"
   ]
  },
  "cb4cc6a75ef2": {
@@ -32222,7 +32456,7 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "A piece of white fish topped with fresh cilantro and served on a bed of red chili sauce."
   },
-  "last_seen": "2026-10-29",
+  "last_seen": "2026-11-17",
   "min_order": 0,
   "model": "sdxl",
   "name": "Cilantro Lime Cod",
@@ -32300,8 +32534,8 @@
   "image": "cc24323d1acf.webp",
   "ingredients": "beans, brown sugar, salt, vinegar, mustard seed, salt, paprika, turmeric, modified corn starch, onion powder, caramel color, spice, garlic powder, natural flavor, canola/olive oil blend",
   "is_station": false,
-  "last_seen": "2026-10-25",
-  "min_order": 4,
+  "last_seen": "2026-11-16",
+  "min_order": 3,
   "model": "sdxl",
   "name": "Baked Beans",
   "needs_image": true,
@@ -33135,7 +33369,7 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "A white bowl filled with ground meat, chunks of carrots, and fresh parsley garnish."
   },
-  "last_seen": "2026-11-08",
+  "last_seen": "2026-11-12",
   "min_order": 11,
   "model": "sdxl",
   "name": "Bolognese Sauce",
@@ -33391,9 +33625,9 @@
   "generated_at": "2026-09-16T21:56:43+00:00",
   "icon": "grill",
   "image": "d359eb7b8ba4.webp",
-  "ingredients": "textured wheat protein, coconut oil, potato protein, natural flavors, leghemoglobin, yeast extract, salt, konjac gum, xanthan gum, soy protein isolate, vitamin e, vitamin c, thiamin, zinc, niacin, riboflavin",
+  "ingredients": "textured wheat protein, coconut oil, potato protein, natural flavors, soy, yeast extract, salt, konjac gum, xanthan gum, soy protein isolate",
   "is_station": false,
-  "last_seen": "2026-11-10",
+  "last_seen": "2026-11-18",
   "min_order": 6,
   "model": "sdxl",
   "name": "Impossible Burger",
@@ -33401,7 +33635,7 @@
   "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, meat, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
   "placeholder": false,
   "priority": 2,
-  "prompt": "Impossible Burger, made with textured wheat protein, potato protein, leghemoglobin, yeast extract, vitamin e, vitamin c, thiamin, zinc, plant-based, no meat, no dairy, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "prompt": "Impossible Burger, made with textured wheat protein, potato protein, soy, yeast extract, plant-based, no meat, no dairy, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
   "prompt_rev": 2,
   "seed": 3545885563,
   "station_only": false,
@@ -34272,7 +34506,7 @@
   "image": "d9196af0a77a.webp",
   "ingredients": "enriched wheat flour, malted barley flour, salt, sugar, datem, enzymes, l-cysteine, calcium sulfate, dextrose, yeast, calcium propionate, monoglycerides, diglycerides, citric acid, cornmeal, soybean oil, palm oil, dehydrated garlic, salt, natural flavors, artificial flavors, citric acid, whey (milk), parmesan (milk), parsley",
   "is_station": false,
-  "last_seen": "2026-11-10",
+  "last_seen": "2026-11-17",
   "min_order": 3,
   "model": "sdxl",
   "name": "Garlic Breadstick",
@@ -34295,14 +34529,14 @@
   "generated_at": "2026-10-08T22:09:28+00:00",
   "icon": "plate",
   "image": "d9520ffeae92.webp",
-  "ingredients": "mushroom, Just Egg, oil, onions, coconut liquid aminos, mushroom seasoning, kombu, mirin, rice vinegar, brown sugar",
+  "ingredients": "mushroom, Just Egg, oil, onions, coconut liquid aminos, mushroom seasoning, kombu, alcohol-free mirin, rice vinegar, brown sugar",
   "is_station": false,
   "judge": {
    "at": "2026-10-08T22:09:28+00:00",
    "judge": "gemma-4-26b-a4b-it",
    "seen": "A bowl containing white rice topped with sliced mushrooms in a dark sauce, a hard-boiled egg slice, and yellow pieces."
   },
-  "last_seen": "2026-10-12",
+  "last_seen": "2026-11-16",
   "min_order": 1,
   "model": "sdxl",
   "name": "Mushroom & Just Egg Gyudon",
@@ -34310,14 +34544,13 @@
   "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, meat, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
   "placeholder": false,
   "priority": 1,
-  "prompt": "Mushroom & Just Egg Gyudon, made with mushroom, Just Egg, onions, coconut liquid aminos, mushroom seasoning, kombu, mirin, plant-based, no meat, no dairy, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "prompt": "Mushroom & Just Egg Gyudon, made with mushroom, Just Egg, onions, coconut liquid aminos, mushroom seasoning, kombu, alcohol-free mirin, plant-based, no meat, no dairy, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
   "prompt_rev": 9,
   "seed": 3646049756,
   "station_only": false,
   "tags": [
    "gluten-free",
-   "vegan",
-   "halal"
+   "vegan"
   ]
  },
  "d96bd4c63a09": {
@@ -34334,7 +34567,7 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "A bowl of okra pieces in a red tomato-based sauce."
   },
-  "last_seen": "2026-10-22",
+  "last_seen": "2026-11-16",
   "min_order": 7,
   "model": "sdxl",
   "name": "Creole Okra Ratatouille",
@@ -34348,8 +34581,7 @@
   "station_only": false,
   "tags": [
    "gluten-free",
-   "vegan",
-   "halal"
+   "vegan"
   ]
  },
  "d9a0c85e05b2": {
@@ -34499,7 +34731,7 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "Two ears of grilled corn on the cob topped with white sauce, crumbled cheese, and cilantro, served with lime wedges on a plate."
   },
-  "last_seen": "2026-10-23",
+  "last_seen": "2026-11-16",
   "min_order": 3,
   "model": "sdxl",
   "name": "Elote",
@@ -34700,7 +34932,7 @@
   "image": "dc4d570a41e1.webp",
   "ingredients": "black bean patty (onions, black beans, brown rice, corn, soy protein concentrate, tomatoes, gluten, vegetable oil [corn, canola, sunflower oil], green chiles, starch, bell peppers, spices, cilantro, salt, chipotle, methylcellulose, carrot juice, jalapeno, carrageenan, garlic, natural flavor, paprika, soy sauce powder, vinegar, turmeric, lime juice), telera roll (wheat flour, sour culture, canola oil, sugar, salt, yeast, white corn meal, enzymes, soybean oil)",
   "is_station": false,
-  "last_seen": "2026-11-03",
+  "last_seen": "2026-11-17",
   "min_order": 8,
   "model": "sdxl",
   "name": "Black Bean Burger with Bun",
@@ -35015,6 +35247,26 @@
   "station_only": false,
   "tags": []
  },
+ "ddb06a05e2f5": {
+  "category": "pork",
+  "first_seen": "2026-11-12",
+  "icon": "pizza",
+  "image": null,
+  "ingredients": "Ingredients: cauliflower crust, marinara, butternut cheese sauce (butternut squash, oat milk, nutritional yeast), daiya cheese, pepperoni",
+  "is_station": false,
+  "last_seen": "2026-11-12",
+  "min_order": 9,
+  "name": "Pepperoni Pizza (Branner)",
+  "needs_image": true,
+  "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
+  "placeholder": false,
+  "priority": 0,
+  "prompt": "Pepperoni Pizza (Branner), tender cooked pork cuts, succulent meat texture, browned edges, made with Ingredients: cauliflower crust, marinara, butternut cheese sauce, daiya cheese, pepperoni, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "station_only": false,
+  "tags": [
+   "gluten-free"
+  ]
+ },
  "de146e293600": {
   "category": "vegetarian",
   "first_seen": "2026-09-15",
@@ -35308,14 +35560,14 @@
   "generated_at": "2026-09-16T17:54:30+00:00",
   "icon": "plate",
   "image": "df4ae881f436.webp",
-  "ingredients": "chicken, bbq sauce, honey, hot sauce",
+  "ingredients": "[HALAL] chicken, bbq sauce, honey, hot sauce",
   "is_station": false,
   "judge": {
    "at": "2026-09-27T04:40:23+00:00",
    "judge": "gemma-4-26b-a4b-it",
    "seen": "A plate of glazed chicken drumsticks in a dark sauce."
   },
-  "last_seen": "2026-10-21",
+  "last_seen": "2026-11-16",
   "min_order": 0,
   "model": "sdxl",
   "name": "Hot Honey BBQ Chicken",
@@ -35735,7 +35987,7 @@
   "image": null,
   "ingredients": "",
   "is_station": true,
-  "last_seen": "2026-11-13",
+  "last_seen": "2026-11-18",
   "min_order": 3,
   "name": "Allergy Friendly Burger Bar",
   "needs_image": false,
@@ -35997,7 +36249,7 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "Roasted broccoli florets seasoned with small crumbs on a white plate."
   },
-  "last_seen": "2026-11-13",
+  "last_seen": "2026-11-17",
   "min_order": 2,
   "model": "sdxl",
   "name": "Roasted Broccoli",
@@ -36327,7 +36579,7 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "A pile of shredded, light brown meat garnished with a sprig of green parsley on a white plate."
   },
-  "last_seen": "2026-11-02",
+  "last_seen": "2026-11-18",
   "min_order": 0,
   "model": "sdxl",
   "name": "Kahlua Pork",
@@ -37127,7 +37379,7 @@
   "image": "ed130a4cf5ea.webp",
   "ingredients": "spinach, flour (wheat), sour cream (milk), butter (milk), onions, nutmeg, salt",
   "is_station": false,
-  "last_seen": "2026-11-09",
+  "last_seen": "2026-11-17",
   "min_order": 3,
   "model": "sdxl",
   "name": "Creamed Spinach",
@@ -37378,7 +37630,7 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "Two golden fried corn dogs on sticks served on a white plate."
   },
-  "last_seen": "2026-11-13",
+  "last_seen": "2026-10-30",
   "min_order": 5,
   "model": "sdxl",
   "name": "Corn Dogs",
@@ -37488,7 +37740,7 @@
   "image": "eecde495ccdd.webp",
   "ingredients": "seasonal vegetables, oil blend, salt, pepper",
   "is_station": false,
-  "last_seen": "2026-11-13",
+  "last_seen": "2026-11-18",
   "min_order": 0,
   "model": "sdxl",
   "name": "Seasonal Roasted Vegetables",
@@ -38015,7 +38267,7 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "A plate of shredded jackfruit and vegetables in a dark glaze, garnished with green and red peppers."
   },
-  "last_seen": "2026-10-14",
+  "last_seen": "2026-11-18",
   "min_order": 1,
   "model": "sdxl",
   "name": "Huli Huli Jackfruit (Branner)",
@@ -38029,8 +38281,7 @@
   "station_only": false,
   "tags": [
    "gluten-free",
-   "vegan",
-   "halal"
+   "vegan"
   ]
  },
  "f05ddad1b1af": {
@@ -38077,7 +38328,7 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "Four tacos with fried pieces, fresh cilantro, and white crumbles in corn tortillas."
   },
-  "last_seen": "2026-10-25",
+  "last_seen": "2026-11-14",
   "min_order": 0,
   "model": "sdxl",
   "name": "Crispy Cod Fish Tacos",
@@ -38511,7 +38762,7 @@
   "image": "f34b8e50e4dd.webp",
   "ingredients": "Chicken, beef, tofu, tomato, onion, cilantro, tortilla,",
   "is_station": false,
-  "last_seen": "2026-09-23",
+  "last_seen": "2026-11-18",
   "min_order": 9,
   "model": "sdxl",
   "name": "Build Your Own Chipotle Bar (Mag)",
@@ -38524,8 +38775,7 @@
   "seed": 4081815120,
   "station_only": false,
   "tags": [
-   "gluten-free",
-   "halal"
+   "gluten-free"
   ]
  },
  "f3ffbdb5a529": {
@@ -38815,7 +39065,7 @@
   "image": "f5ae57e18c42.webp",
   "ingredients": "white rice, salt",
   "is_station": false,
-  "last_seen": "2026-11-12",
+  "last_seen": "2026-11-14",
   "min_order": 2,
   "model": "sdxl",
   "name": "Steamed Rice",
@@ -39482,7 +39732,7 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "A plate containing sliced grilled meat, white rice with green bits, sliced cucumbers, cherry tomatoes, and red onion slices."
   },
-  "last_seen": "2026-10-27",
+  "last_seen": "2026-11-18",
   "min_order": 0,
   "model": "sdxl",
   "name": "Chicken Shawarma with Pita",
@@ -39737,7 +39987,7 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "A bowl of chicken noodle soup with peas and sliced carrots in a clear broth."
   },
-  "last_seen": "2026-11-11",
+  "last_seen": "2026-11-17",
   "min_order": 5,
   "model": "sdxl",
   "name": "Chicken Noodle Soup",
@@ -40152,8 +40402,8 @@
   "image": null,
   "ingredients": "",
   "is_station": true,
-  "last_seen": "2026-10-26",
-  "min_order": 6,
+  "last_seen": "2026-11-18",
+  "min_order": 3,
   "name": "Mediterranean Bar",
   "needs_image": false,
   "negative": null,
@@ -40263,14 +40513,14 @@
   "generated_at": "2026-09-18T17:43:40+00:00",
   "icon": "plate",
   "image": "fde4c2b19b59.webp",
-  "ingredients": "chicken, teriyaki sauce (soy sauce [soybeans, wheat, salt], sugar, modified corn starch, onion juice, vinegar, natural flavor, garlic powder, malic acid, spices, sodium benzoate, disodium inosinate, disodium guanylate)",
+  "ingredients": "chicken, allergen free teriyaki sauce (coconut aminos, brown sugar, water, rice vinegar, fresh grated ginger, fresh minced garlic, cornstarch)",
   "is_station": false,
   "judge": {
    "at": "2026-09-27T04:57:15+00:00",
    "judge": "gemma-4-26b-a4b-it",
    "seen": "Pieces of glazed chicken with sesame seeds and green onions served over white rice."
   },
-  "last_seen": "2026-11-10",
+  "last_seen": "2026-11-16",
   "min_order": 0,
   "model": "sdxl",
   "name": "Teriyaki Chicken",
@@ -40278,11 +40528,13 @@
   "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
   "placeholder": false,
   "priority": 0,
-  "prompt": "Teriyaki Chicken, tender cooked chicken, succulent poultry texture, made with chicken, teriyaki sauce, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "prompt": "Teriyaki Chicken, tender cooked chicken, succulent poultry texture, made with chicken, allergen free teriyaki sauce, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
   "prompt_rev": 2,
   "seed": 4259627697,
   "station_only": false,
-  "tags": []
+  "tags": [
+   "gluten-free"
+  ]
  },
  "fdeefb326415": {
   "brief_rev": 6,
@@ -40328,7 +40580,7 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "A hot dog in a bun with mustard on a white plate."
   },
-  "last_seen": "2026-10-22",
+  "last_seen": "2026-11-16",
   "min_order": 0,
   "model": "sdxl",
   "name": "Hot Dog",
@@ -40417,7 +40669,7 @@
    "judge": "gemma-4-26b-a4b-it",
    "seen": "A burger with a green patty, melted orange cheese, and lettuce on a sesame seed bun."
   },
-  "last_seen": "2026-11-12",
+  "last_seen": "2026-11-18",
   "min_order": 5,
   "model": "sdxl",
   "name": "Turkey Burger with Bun",

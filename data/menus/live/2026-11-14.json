@@ -1,6 +1,6 @@
 {
  "date": "2026-11-14",
- "scraped_at": "2026-11-12T03:25:02-08:00",
+ "scraped_at": "2026-11-12T13:51:21-08:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -1248,30 +1248,28 @@
    ],
    "Dinner": [
     {
-     "name": "Soy-Vinegar Braised Chicken Adobo",
-     "recipe_id": "SoyVinChxAdobo1",
+     "name": "Orange Chicken",
+     "recipe_id": "1234123455",
      "description": "",
-     "ingredients": "[HALAL] chicken thighs, vinegar, tamari (soy), garlic, onions, water, bay leaves, black peppercorns, sugar, olive/canola oil blend, salt",
+     "ingredients": "chicken, cornstarch, minced garlic, orange juice, coconut liquid aminos, chicken base, rice vinegar, brown sugar, red pepper flakes",
      "allergens": [
-      "SOY"
+      "COCONUT"
      ],
      "trace_allergens": [],
-     "tags": [
-      "gluten-free"
-     ],
+     "tags": [],
      "order": 0
     },
     {
-     "name": "Tofu Sinigang",
-     "recipe_id": "TofuSinigang1",
+     "name": "Teriyaki Glazed Chick'n Strips",
+     "recipe_id": "4863539",
      "description": "",
-     "ingredients": "tofu (soy), water, tomatoes, onions, daikon radish, green beans, okra, eggplant, tamarind paste, green onions, garlic, mushroom powder, calamansi, olive/canola oil blend, salt, black pepper",
+     "ingredients": "plant-based chick'n, bell peppers, onions, canola oil, garlic, salt, black pepper, teriyaki glaze (beet sugar, no soy sauce, cornstarch, canola oil)",
      "allergens": [
-      "SOY"
+      "SOY",
+      "WHEAT"
      ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
       "vegan"
      ],
      "order": 1
@@ -1290,53 +1288,52 @@
      "order": 2
     },
     {
-     "name": "Garlic Fried Rice",
-     "recipe_id": "5847314",
+     "name": "Vegetable Stir-Fry",
+     "recipe_id": "2312311",
      "description": "",
-     "ingredients": "jasmine rice, peas, carrots, celery, onion, garlic, tamari (soy), canola oil, olive oil, salt",
+     "ingredients": "seasonal vegetables, oil, garlic, coconut liquid aminos, mushroom seasoning, vegetarian stir fry sauce, corn starch",
      "allergens": [
-      "SOY"
+      "COCONUT"
      ],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "TREENUTS",
-      "WHEAT"
-     ],
+     "trace_allergens": [],
      "tags": [
+      "gluten-free",
       "vegan"
      ],
      "order": 3
     },
     {
-     "name": "Pancit Bihon",
-     "recipe_id": "3459347",
+     "name": "Steamed Rice",
+     "recipe_id": "5121297",
      "description": "",
-     "ingredients": "rice noodles, cabbage, carrots, celery, garlic, ginger, green onions, tamari sauce, achiote paste, lemon juice, fried shallots (onions, vegetable oil, salt), canola/olive oil blend",
-     "allergens": [
-      "SOY"
-     ],
+     "ingredients": "white rice, salt",
+     "allergens": [],
      "trace_allergens": [],
      "tags": [
+      "gluten-free",
       "vegan"
      ],
      "order": 4
     },
     {
-     "name": "Chipotle Beef Picadillo",
-     "recipe_id": "4015136",
+     "name": "Crispy Cod Fish Tacos",
+     "recipe_id": "5515269",
      "description": "",
-     "ingredients": "ground beef with mushroom, canola oil, potato, butternut squash, onion, bell pepper, marinara sauce, jalapeno chili, tomato, garlic, cumin, black pepper, salt",
+     "ingredients": "battered cod (cod, wheat flour, canola oil, corn flour, whey (milk), sugar, turmeric, paprika, salt, white pepper, black pepper)",
      "allergens": [
+      "FISH",
       "MILK",
+      "SOY",
       "WHEAT"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "TREENUTS"
+     ],
      "tags": [],
      "order": 5
     },
@@ -4339,37 +4336,6 @@
       "vegan"
      ],
      "order": 12
-    }
-   ],
-   "Dinner": [
-    {
-     "name": "Creamy Pesto",
-     "recipe_id": "7728050",
-     "description": "",
-     "ingredients": "basil, canola oil, parmesan cheese (milk), olive oil, garlic, salt, lemon juice concentrate, natural flavor, xanthan gum, soy lecithin, chamomile extract, rosemary extract, white sauce (flour [wheat], butter, cream, milk powder, onion powder, white pepper, garlic, nutmeg, salt), parsley",
-     "allergens": [
-      "MILK",
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "vegetarian"
-     ],
-     "order": 0
-    },
-    {
-     "name": "Penne Pasta (Gluten-Free)",
-     "recipe_id": "3189216",
-     "description": "",
-     "ingredients": "brown rice, rice bran, water",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan"
-     ],
-     "order": 1
     }
    ]
   }
