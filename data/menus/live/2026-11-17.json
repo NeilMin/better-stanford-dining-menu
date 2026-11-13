@@ -1,6 +1,6 @@
 {
  "date": "2026-11-17",
- "scraped_at": "2026-11-12T13:51:21-08:00",
+ "scraped_at": "2026-11-13T03:07:56-08:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -686,10 +686,11 @@
     },
     {
      "name": "Thai Basil Chicken",
-     "recipe_id": "5441066",
+     "recipe_id": "ThaiBasilChx1",
      "description": "",
-     "ingredients": "chicken, green beans, basil, canola/olive oil blend, garlic, tamari sauce, mushroom seasoning, rice vinegar, thai chili",
+     "ingredients": "ground chicken, hoisin sauce, fish sauce, vegetarian oyster sauce, soy sauce, Thai chili, Thai basil, cornstarch, salt, pepper",
      "allergens": [
+      "FISH",
       "SOY"
      ],
      "trace_allergens": [],
@@ -4496,18 +4497,17 @@
    ],
    "Dinner": [
     {
-     "name": "Salmon Meunière",
-     "recipe_id": "404915",
+     "name": "Parmesan Crusted Cod",
+     "recipe_id": "ParmesanCod1",
      "description": "",
-     "ingredients": "salmon, cornstarch, butter (milk), parsley, dill, chive, capers, lemon, canola oil blend, salt, pepper, lemon zest",
+     "ingredients": "cod, parmesan (milk), panko (wheat), paprika, garlic powder, parsley, canola oil, salt, and pepper",
      "allergens": [
       "FISH",
-      "MILK"
+      "MILK",
+      "WHEAT"
      ],
      "trace_allergens": [],
-     "tags": [
-      "gluten-free"
-     ],
+     "tags": [],
      "order": 0
     },
     {
@@ -4610,19 +4610,6 @@
      "order": 7
     },
     {
-     "name": "Sauce Meunière",
-     "recipe_id": "MeuniereSauce1",
-     "description": "",
-     "ingredients": "vegetable stock, lemon juice, shallots, garlic, capers, cornstarch, oil, salt, black pepper, lemon zest, parsley",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan"
-     ],
-     "order": 8
-    },
-    {
      "name": "Burger Bar",
      "recipe_id": "5964436",
      "description": "",
@@ -4630,7 +4617,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 9
+     "order": 8
     },
     {
      "name": "Grilled Chicken",
@@ -4651,7 +4638,7 @@
       "WHEAT"
      ],
      "tags": [],
-     "order": 10
+     "order": 9
     },
     {
      "name": "Grilled Vegan/Vegetarian",
@@ -4672,7 +4659,7 @@
       "WHEAT"
      ],
      "tags": [],
-     "order": 11
+     "order": 10
     },
     {
      "name": "Panini Station",
@@ -4690,7 +4677,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 12
+     "order": 11
     },
     {
      "name": "Soup of the Day",
@@ -4700,7 +4687,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 13
+     "order": 12
     },
     {
      "name": "Assorted Dinner Rolls",
@@ -4719,7 +4706,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 14
+     "order": 13
     },
     {
      "name": "Composed Salad",
@@ -4729,7 +4716,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 15
+     "order": 14
     },
     {
      "name": "Performance Bar",
@@ -4739,7 +4726,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 16
+     "order": 15
     },
     {
      "name": "Craveable Grains",
@@ -4752,7 +4739,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 17
+     "order": 16
     },
     {
      "name": "Flavor Forward Legumes",
@@ -4765,7 +4752,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 18
+     "order": 17
     },
     {
      "name": "Pasta Marinara",
@@ -4782,7 +4769,7 @@
      "tags": [
       "vegan"
      ],
-     "order": 19
+     "order": 18
     },
     {
      "name": "Pasta Pesto",
@@ -4800,7 +4787,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 20
+     "order": 19
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -4813,7 +4800,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 21
+     "order": 20
     }
    ]
   },
@@ -5037,18 +5024,21 @@
    ],
    "Lunch": [
     {
-     "name": "Vietnamese Bún Chả with Lemongrass Pork",
-     "recipe_id": "VietBunPork17",
+     "name": "Vietnamese Lemongrass Beef",
+     "recipe_id": "VietLemonBeef1",
      "description": "",
-     "ingredients": "pork, lemongrass marinade (lemongrass, shallot, garlic, green onion, honey, tamari [soy], fish sauce, oyster sauce [soy, wheat], salt, black pepper), vermicelli noodles, lettuce, cilantro, mint, cucumber.",
+     "ingredients": "[HALAL] beef, onions, bell peppers, lemongrass, garlic, ginger, tamari (soy), lime juice, sugar, fish sauce, olive/canola oil blend, salt, black pepper",
      "allergens": [
       "FISH",
-      "SHELLFISH",
       "SOY",
-      "WHEAT"
+      "TRACEALLERGENS"
      ],
-     "trace_allergens": [],
-     "tags": [],
+     "trace_allergens": [
+      "SHELLFISH"
+     ],
+     "tags": [
+      "gluten-free"
+     ],
      "order": 0
     },
     {
@@ -5537,7 +5527,7 @@
      "name": "Chicken Stir-Fry",
      "recipe_id": "1002010",
      "description": "",
-     "ingredients": "Chicken, onion, garlic, bell peppers, peas & carrots, seasonal greens, stir-fry sauce (chicken base, honey, coconut liquid aminos, balsamic vinegar, molasses, orange juice, minced garlic, minced ginger, pepper, water, cornstarch)",
+     "ingredients": "HALAL chicken, onion, garlic, bell peppers, peas & carrots, seasonal greens, stir-fry sauce (chicken base, honey, coconut liquid aminos, balsamic vinegar, molasses, orange juice, minced garlic, minced ginger, pepper, water, cornstarch)",
      "allergens": [
       "COCONUT"
      ],
@@ -5654,7 +5644,7 @@
      "name": "Chicken Meuniere",
      "recipe_id": "1210101123",
      "description": "",
-     "ingredients": "chicken, non allergen vegan butter, garbanzo flour, chicken seasoning, chicken base, lemon juice, parsley, oil",
+     "ingredients": "HALAL chicken, non allergen vegan butter, garbanzo flour, chicken seasoning, chicken base, lemon juice, parsley, oil",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -5676,6 +5666,109 @@
       "vegan"
      ],
      "order": 1
+    },
+    {
+     "name": "Mashed Sweet Potatoes (Branner)",
+     "recipe_id": "MashSwePot1",
+     "description": "",
+     "ingredients": "sweet potatoes, oat milk, vegan butter, cinnamon",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
+     "order": 2
+    },
+    {
+     "name": "Wild Rice & Beyond Sausage Stuffed Peppers",
+     "recipe_id": "234523",
+     "description": "",
+     "ingredients": "beyond sausage, wild rice, oil, onion, garlic, fire roasted tomatoes, Italian seasoning, veg base, grape juice, red pepper flakes, Daiya cheese",
+     "allergens": [
+      "COCONUT"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
+     "order": 3
+    },
+    {
+     "name": "Seasonal Roasted Vegetables",
+     "recipe_id": "5643782",
+     "description": "",
+     "ingredients": "seasonal vegetables, oil blend, salt, pepper",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
+     "order": 4
+    },
+    {
+     "name": "Seasonal Steamed Vegetables",
+     "recipe_id": "5561366",
+     "description": "",
+     "ingredients": "seasonal vegetables, salt",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
+     "order": 5
+    },
+    {
+     "name": "Allergen-Friendly Pasta Station",
+     "recipe_id": "AlFrPasStat1",
+     "description": "",
+     "ingredients": "Gluten-Free Penne Pasta (brown rice, rice bran, water) Sauce of the Day: Marinara Sauce (tomatoes, tomato paste, oil, sugar, salt, onion, garlic, spices, citric acid, natural flavor) Pesto Sauce (olive oil, basil, spinach, kale, nutritional yeast, sunflower seeds) Alfredo Sauce (allergen free vegan butter, garbanzo flour, oat milk, nutritional yeast, lemon juice, salt)",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
+     "order": 6
+    },
+    {
+     "name": "Allergen Friendly Pizza Station",
+     "recipe_id": "10100011110",
+     "description": "",
+     "ingredients": "Meat Pizza of the Day Vegetable Pizza of the Day",
+     "allergens": [
+      "COCONUT"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free"
+     ],
+     "order": 7
+    },
+    {
+     "name": "Panini Station (Branner)",
+     "recipe_id": "100100001",
+     "description": "",
+     "ingredients": "Gluten Free Bread Sliced Turkey Sliced Ham Roasted Vegetables (Eggplant, Squash, Bell Pepper) Sliced Daiya Cheese Guacamole Spread",
+     "allergens": [
+      "COCONUT"
+     ],
+     "trace_allergens": [],
+     "tags": [],
+     "order": 8
+    },
+    {
+     "name": "Composed Salad",
+     "recipe_id": "123116546",
+     "description": "",
+     "ingredients": "chef's choice composed salad",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [],
+     "order": 9
     }
    ]
   }
