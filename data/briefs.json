@@ -5096,12 +5096,14 @@
  "2537e93b1b46": {
   "avoid": [
    "soft tacos",
+   "folded tacos",
+   "street tacos",
+   "flat open tortillas",
+   "hard taco shells",
    "flour tortilla",
    "beef",
    "pork",
-   "burrito",
-   "nachos",
-   "taco shell"
+   "burrito"
   ],
   "checks": [
    {
@@ -5118,13 +5120,13 @@
    }
   ],
   "dish": "Chicken tacos dorados",
-  "look": "crispy fried rolled corn tortillas filled with shredded chicken, topped with shredded lettuce, drizzle of white crema, crumbled queso fresco, green tomatillo salsa, sliced fresh avocado",
-  "model": "gemini-3.6-flash",
+  "look": "golden-brown crispy fried cylindrical rolled corn taquitos, tightly rolled corn tortillas stuffed with chicken, layered on top with finely shredded green lettuce, sliced fresh avocado, zigzag drizzle of white crema, crumbled queso fresco, spoonfuls of green tomatillo salsa",
+  "model": "gemini-3.7-flash",
   "name": "Tacos Dorados de Pollo",
   "rev": 6,
-  "revisions": 0,
+  "revisions": 1,
   "vessel": "plate",
-  "written_at": "2026-11-12T22:03:01+00:00"
+  "written_at": "2026-11-13T12:24:27+00:00"
  },
  "2666d3b7effb": {
   "avoid": [
@@ -5685,6 +5687,41 @@
   "vessel": "bowl",
   "written_at": "2026-11-02T11:25:41+00:00"
  },
+ "2985e2d195ea": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "rice",
+   "tortilla",
+   "soup broth"
+  ],
+  "checks": [
+   {
+    "q": "Is the main dish cooked black beans with vegetables?",
+    "yes": true
+   },
+   {
+    "q": "Is the dish served over a bed of rice?",
+    "yes": false
+   },
+   {
+    "q": "Are the beans raw or dried?",
+    "yes": false
+   }
+  ],
+  "dish": "seasoned black beans with bell peppers",
+  "look": "whole tender black beans, cooked diced red bell peppers, diced yellow onions, thick savory bean liquor, flecks of black pepper",
+  "model": "gemini-3.6-flash",
+  "name": "Black Beans with Pepper",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-13T11:35:45+00:00"
+ },
  "29c9e78d37fd": {
   "avoid": [
    "chicken",
@@ -5750,6 +5787,40 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-27T09:37:08+00:00"
+ },
+ "2a050dad00b1": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "bacon",
+   "raw sprouts"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food roasted halved brussels sprouts?",
+    "yes": true
+   },
+   {
+    "q": "Are there bits of bacon or meat mixed in?",
+    "yes": false
+   },
+   {
+    "q": "Are the brussels sprouts raw and whole?",
+    "yes": false
+   }
+  ],
+  "dish": "roasted balsamic brussels sprouts",
+  "look": "halved brussels sprouts, dark caramelized outer leaves, glossy dark brown balsamic glaze coating, tender green hearts, charred crisp edges",
+  "model": "gemini-3.6-flash",
+  "name": "Balsamic Roasted Brussels Sprouts",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-13T11:35:45+00:00"
  },
  "2ac8b92f32df": {
   "avoid": [
@@ -11513,6 +11584,38 @@
   "vessel": "plate",
   "written_at": "2026-09-27T04:50:49+00:00"
  },
+ "4a739a2386eb": {
+  "avoid": [
+   "raw brussels sprouts",
+   "whole sprouts",
+   "salad",
+   "bacon strips",
+   "soup",
+   "cheese"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food roasted Brussels sprouts?",
+    "yes": true
+   },
+   {
+    "q": "Are the vegetables raw and uncooked?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a green leafy salad?",
+    "yes": false
+   }
+  ],
+  "dish": "roasted Brussels sprouts with pancetta",
+  "look": "halved roasted Brussels sprouts with charred golden-brown edges, crispy diced dark-pink pancetta lardons, glistening caramelized outer leaves, tender pale-green centers",
+  "model": "gemini-3.6-flash",
+  "name": "Roasted Brussel Sprouts & Pancetta",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-13T11:31:51+00:00"
+ },
  "4a9ae48d07f1": {
   "avoid": [
    "meat",
@@ -11654,6 +11757,41 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-10-25T08:50:46+00:00"
+ },
+ "4ae3bc3f6236": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "real sausage",
+   "raw peppers",
+   "soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a stuffed bell pepper half?",
+    "yes": true
+   },
+   {
+    "q": "Is the pepper served cut up or raw?",
+    "yes": false
+   },
+   {
+    "q": "Is the filling served separately from the pepper?",
+    "yes": false
+   }
+  ],
+  "dish": "sausage and wild rice stuffed bell peppers",
+  "look": "a large halved roasted red bell pepper, filled with wild rice, diced vegan sausage chunks, fire roasted tomato bits, melted white vegan cheese on top",
+  "model": "gemini-3.6-flash",
+  "name": "Wild Rice & Beyond Sausage Stuffed Peppers",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-13T11:35:45+00:00"
  },
  "4b539c52617d": {
   "avoid": [
@@ -12790,6 +12928,40 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-10-12T22:42:49+00:00"
+ },
+ "538f17cd8c8f": {
+  "avoid": [
+   "roasted turkey",
+   "turkey slice",
+   "turkey drumstick",
+   "mashed potatoes",
+   "stuffing",
+   "cranberry sauce",
+   "clear soup broth",
+   "raw onions"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food a thick brown gravy or sauce?",
+    "yes": true
+   },
+   {
+    "q": "Are there large slices or chunks of roasted turkey meat?",
+    "yes": false
+   },
+   {
+    "q": "Is it a thin clear soup broth?",
+    "yes": false
+   }
+  ],
+  "dish": "turkey gravy",
+  "look": "a bowl filled with smooth rich golden-brown turkey gravy, glossy creamy texture, soft translucent minced onion flecks, tiny specks of fresh green thyme",
+  "model": "gemini-3.6-flash",
+  "name": "Turkey Gravy",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-13T11:31:56+00:00"
  },
  "539ff0721ca5": {
   "avoid": [
@@ -15998,6 +16170,41 @@
   "vessel": "plate",
   "written_at": "2026-09-26T23:04:25+00:00"
  },
+ "6c35486ae0ad": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "gravy",
+   "bacon",
+   "french fries"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item mashed potatoes?",
+    "yes": true
+   },
+   {
+    "q": "Are the potatoes sliced into French fries?",
+    "yes": false
+   },
+   {
+    "q": "Is brown gravy poured over the potatoes?",
+    "yes": false
+   }
+  ],
+  "dish": "mashed potatoes with chives",
+  "look": "a scoop of smooth creamy yellow Yukon Gold mashed potatoes, a pool of melted golden butter in a center well, sprinkled with chopped green chives",
+  "model": "gemini-3.6-flash",
+  "name": "Yukon Gold Mashed Potatoes",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-13T11:35:45+00:00"
+ },
  "6c36763c2fb7": {
   "avoid": [
    "long grain white rice",
@@ -17549,6 +17756,41 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-26T23:08:02+00:00"
+ },
+ "78a18bad9bae": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "cheese",
+   "feta",
+   "croutons"
+  ],
+  "checks": [
+   {
+    "q": "Is the main dish a salad of leafy green kale?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat or poultry in the salad?",
+    "yes": false
+   },
+   {
+    "q": "Is there cheese or dairy in the salad?",
+    "yes": false
+   }
+  ],
+  "dish": "cranberry kale salad",
+  "look": "chopped dark green curly kale leaves tossed together, wrinkled dark red dried cranberries, thin julienned orange carrot strips, slivered purple red onions, light sheen of dark balsamic dressing",
+  "model": "gemini-3.6-flash",
+  "name": "Cranberry Kale Salad",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-13T11:36:10+00:00"
  },
  "7929159068c7": {
   "avoid": [
@@ -21232,6 +21474,42 @@
   "vessel": "bowl",
   "written_at": "2026-10-21T23:38:11+00:00"
  },
+ "91194c4c2e94": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "steak patties",
+   "hamburger patties",
+   "pasta",
+   "creamy white soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a thick chunky brown ragout or stew?",
+    "yes": true
+   },
+   {
+    "q": "Is the food formed into solid steak patties?",
+    "yes": false
+   },
+   {
+    "q": "Are there pieces of real animal meat visible?",
+    "yes": false
+   }
+  ],
+  "dish": "Vegetarian mushroom ragout",
+  "look": "thick brown ragout, textured plant-based protein crumbles, sliced wild mushrooms, diced tender onions, rich dark mushroom gravy, fine specks of fresh green thyme",
+  "model": "gemini-3.6-flash",
+  "name": "Savory Salisbury \"Steak\" Ragout",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-13T11:35:29+00:00"
+ },
  "911ebf6f19cd": {
   "avoid": [
    "meat",
@@ -22640,6 +22918,41 @@
   "vessel": "plate",
   "written_at": "2026-10-12T22:40:49+00:00"
  },
+ "9bd75eeebd27": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "bacon",
+   "chili",
+   "corn on the cob"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food a square or slice of cornbread?",
+    "yes": true
+   },
+   {
+    "q": "Is there meat or bacon in or on the cornbread?",
+    "yes": false
+   },
+   {
+    "q": "Is the food a bowl of loose corn kernels?",
+    "yes": false
+   }
+  ],
+  "dish": "jalapeño cornbread",
+  "look": "thick square slice of baked golden yellow cornbread, thin green jalapeño pepper rounds embedded in top crust, golden brown baked edges, moist crumbly corn cake texture, light honey glaze",
+  "model": "gemini-3.6-flash",
+  "name": "Southern Jalapeño Cornbread",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-13T11:36:10+00:00"
+ },
  "9bed9f3e67d7": {
   "avoid": [
    "Brussels sprouts",
@@ -22780,6 +23093,41 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T05:33:17+00:00"
+ },
+ "9c964ebaa493": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "turkey",
+   "smooth jelly",
+   "whole apples"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a textured red cranberry fruit relish?",
+    "yes": true
+   },
+   {
+    "q": "Is there roasted turkey or meat served with it?",
+    "yes": false
+   },
+   {
+    "q": "Is it a smooth clear gelatin mold?",
+    "yes": false
+   }
+  ],
+  "dish": "cranberry orange relish",
+  "look": "textured ruby red cranberry relish, crushed whole red cranberries, finely grated orange zest flecks, thick glossy fruit sauce, glistening preserves texture",
+  "model": "gemini-3.6-flash",
+  "name": "Cranberry Orange Relish",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-13T11:35:45+00:00"
  },
  "9ccb683a9c46": {
   "avoid": [
@@ -23156,11 +23504,14 @@
    "shrimp",
    "baked potato",
    "ice cream",
+   "yogurt",
+   "mayonnaise",
+   "whipped cream",
    "berries"
   ],
   "checks": [
    {
-    "q": "Is the food a scoop or bowl of sour cream?",
+    "q": "Is the main item a white condiment cream served in a bowl?",
     "yes": true
    },
    {
@@ -23173,13 +23524,13 @@
    }
   ],
   "dish": "sour cream",
-  "look": "a scoop of smooth thick white sour cream, dense silky dollop with soft peaks, rich opaque cream texture, slight sheen on the surface",
+  "look": "thick white sour cream in a small condiment bowl, dense dollop with soft peaks, glossy surface, light sprinkle of finely minced green chives, rich creamy dairy texture",
   "model": "gemini-3.6-flash",
   "name": "Sour Cream",
   "rev": 6,
-  "revisions": 0,
+  "revisions": 1,
   "vessel": "bowl",
-  "written_at": "2026-11-12T22:03:33+00:00"
+  "written_at": "2026-11-13T12:54:56+00:00"
  },
  "9f89c4239fd7": {
   "avoid": [
@@ -23741,6 +24092,40 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T06:30:47+00:00"
  },
+ "a1c53200fcbc": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "white potatoes",
+   "raw yams"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food orange sweet potatoes topped with toasted marshmallows?",
+    "yes": true
+   },
+   {
+    "q": "Are the potatoes white mashed potatoes?",
+    "yes": false
+   },
+   {
+    "q": "Are the marshmallows untoasted white candies?",
+    "yes": false
+   }
+  ],
+  "dish": "candied sweet potato casserole with marshmallows",
+  "look": "roasted sweet potato cubes, deep orange colour, glossy maple syrup coating, topped with toasted gooey white marshmallows with golden brown tops",
+  "model": "gemini-3.6-flash",
+  "name": "Maple Glazed Yams with Marshmallows",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-13T11:35:45+00:00"
+ },
  "a2332a8c4ed2": {
   "avoid": [
    "meat",
@@ -24208,6 +24593,40 @@
   "revisions": 1,
   "vessel": "plate",
   "written_at": "2026-09-27T07:04:09+00:00"
+ },
+ "a54254eb0507": {
+  "avoid": [
+   "whole turkey",
+   "ground turkey",
+   "raw meat",
+   "chicken drumsticks",
+   "stuffing",
+   "gravy",
+   "mashed potatoes",
+   "cranberry sauce"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item sliced roasted meat?",
+    "yes": true
+   },
+   {
+    "q": "Is the poultry a whole uncarved bird?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat ground like mince?",
+    "yes": false
+   }
+  ],
+  "dish": "roast turkey breast",
+  "look": "thick carved slices of roasted turkey breast, glistening golden-brown skin, tender juicy white meat, light maple amber glaze, flecks of chopped green parsley, sprigs of fresh rosemary and thyme",
+  "model": "gemini-3.6-flash",
+  "name": "Citrus Brined Roasted Turkey",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-13T11:31:27+00:00"
  },
  "a55b578ffea6": {
   "avoid": [
@@ -25284,6 +25703,40 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-10-02T10:06:48+00:00"
+ },
+ "ac24f89d952f": {
+  "avoid": [
+   "bun",
+   "hot dog bun",
+   "bread",
+   "pasta",
+   "sauce",
+   "peppers and onions",
+   "raw sausage",
+   "meatballs"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food cooked sausage?",
+    "yes": true
+   },
+   {
+    "q": "Is the sausage inside a bread bun?",
+    "yes": false
+   },
+   {
+    "q": "Is the sausage served over pasta or in sauce?",
+    "yes": false
+   }
+  ],
+  "dish": "grilled Italian sausage links",
+  "look": "thick grilled Italian sausage links, golden-brown casing with dark sear marks, sliced on a slight bias to show juicy coarse-ground interior, glistening surface, specks of fennel seeds visible",
+  "model": "gemini-3.6-flash",
+  "name": "Italian Sausage",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-13T11:31:45+00:00"
  },
  "ac3eb85383d6": {
   "avoid": [
@@ -28917,6 +29370,42 @@
   "vessel": "bowl",
   "written_at": "2026-10-29T20:33:50+00:00"
  },
+ "c0884894ab43": {
+  "avoid": [
+   "beef",
+   "meat",
+   "chicken",
+   "pork",
+   "fish",
+   "shrimp",
+   "beef tenderloin",
+   "whole raw jackfruit",
+   "sweet fruit",
+   "burger"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a slice of pastry loaf with a savory filling?",
+    "yes": true
+   },
+   {
+    "q": "Is the filling made of red beef or animal meat?",
+    "yes": false
+   },
+   {
+    "q": "Does the main food look like a round sweet pie?",
+    "yes": false
+   }
+  ],
+  "dish": "jackfruit Wellington",
+  "look": "a thick slice of golden-brown puff pastry loaf, flaky crisp layered crust, dark savory filling of shredded jackfruit, chopped sautéed mushrooms, wilted dark spinach, scored pattern on top pastry",
+  "model": "gemini-3.6-flash",
+  "name": "Jackfruit Wellington",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-13T11:35:24+00:00"
+ },
  "c0ba05e5dca5": {
   "avoid": [
    "meat",
@@ -29122,6 +29611,41 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T05:33:17+00:00"
+ },
+ "c2d23ec7b146": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "marshmallows",
+   "white potatoes",
+   "raw yams"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food roasted orange sweet potato pieces?",
+    "yes": true
+   },
+   {
+    "q": "Are there marshmallows on top of the potatoes?",
+    "yes": false
+   },
+   {
+    "q": "Are the potatoes white mashed potatoes?",
+    "yes": false
+   }
+  ],
+  "dish": "maple glazed sweet potatoes",
+  "look": "chunky roasted sweet potato wedges, vibrant deep orange color, glossy sticky amber maple syrup glaze, caramelized roasted edges",
+  "model": "gemini-3.6-flash",
+  "name": "Maple Glazed Yams",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-13T11:35:45+00:00"
  },
  "c344d1f6c95c": {
   "avoid": [
@@ -29916,6 +30440,40 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-10-29T10:15:53+00:00"
+ },
+ "c5c51b5fd710": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "bacon",
+   "salad greens"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food roasted brussels sprouts?",
+    "yes": true
+   },
+   {
+    "q": "Is there bacon or meat scattered on top?",
+    "yes": false
+   },
+   {
+    "q": "Are the brussels sprouts raw leafy greens?",
+    "yes": false
+   }
+  ],
+  "dish": "balsamic glazed brussels sprouts",
+  "look": "roasted brussels sprout halves, charred outer leaves, rich dark brown balsamic glaze drizzle, tender bright green insides, glistening surface",
+  "model": "gemini-3.6-flash",
+  "name": "Balsamic Brussels Sprouts",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-13T11:35:45+00:00"
  },
  "c5c527846fb2": {
   "avoid": [
@@ -32981,6 +33539,39 @@
   "revisions": 1,
   "vessel": "bowl",
   "written_at": "2026-09-27T06:13:25+00:00"
+ },
+ "d898c33f40e9": {
+  "avoid": [
+   "roasted chicken breast",
+   "dry chicken",
+   "skewers",
+   "raw chicken",
+   "noodles",
+   "flatbread",
+   "curry paste"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish meat chunks in curry sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat a dry roasted chicken breast?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a noodle soup?",
+    "yes": false
+   }
+  ],
+  "dish": "Coconut chicken curry",
+  "look": "tender bite-sized chicken chunks simmered in a smooth creamy coconut curry sauce, garnished with thin red chili slices, fresh green basil leaves, chopped cilantro, fine kaffir lime leaf ribbons",
+  "model": "gemini-3.6-flash",
+  "name": "Coconut & Lime Chicken Curry",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-13T11:31:40+00:00"
  },
  "d9520ffeae92": {
   "avoid": [
@@ -37177,6 +37768,42 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-10-21T09:04:04+00:00"
+ },
+ "f56cf6339e5c": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "fruit pie",
+   "sweet pie",
+   "quiche",
+   "tart"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a slice of savory pie?",
+    "yes": true
+   },
+   {
+    "q": "Is the pie filled with sweet fruit?",
+    "yes": false
+   },
+   {
+    "q": "Is the pie an egg quiche?",
+    "yes": false
+   }
+  ],
+  "dish": "vegan tourtière",
+  "look": "a generous slice of double-crust savory pie, golden-brown flaky baked crust, rich dark brown filling of ground plant protein and shredded jackfruit, visible green peas, finely diced orange carrots",
+  "model": "gemini-3.6-flash",
+  "name": "Beyond Jackfruit Tourtiere",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-13T11:32:04+00:00"
  },
  "f585929bbc39": {
   "avoid": [
