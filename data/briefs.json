@@ -1848,6 +1848,39 @@
   "vessel": "plate",
   "written_at": "2026-09-26T20:13:57+00:00"
  },
+ "106ba1f1b019": {
+  "avoid": [
+   "fried chicken",
+   "raw chicken",
+   "chicken wings",
+   "beef",
+   "pork",
+   "chicken stew",
+   "shredded chicken"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food roasted chicken with crispy seasoned skin?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken deep-fried in thick batter?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat shredded or diced?",
+    "yes": false
+   }
+  ],
+  "dish": "Spice-roasted chicken",
+  "look": "roasted chicken leg quarter, crispy golden-brown skin, visible reddish chili spice rub seasoning, glistening baked skin, tender chicken meat",
+  "model": "gemini-3.6-flash",
+  "name": "Spice Roasted Chicken",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-12T22:03:01+00:00"
+ },
  "10c2fdd01e6c": {
   "avoid": [
    "chicken",
@@ -2360,6 +2393,38 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-10T19:47:12+00:00"
+ },
+ "14381fe2fcd1": {
+  "avoid": [
+   "pulled pork",
+   "pork chops",
+   "shredded meat",
+   "beef roast",
+   "roast chicken",
+   "bacon"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item sliced roasted pork?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat shredded or pulled?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat bone-in chops or ribs?",
+    "yes": false
+   }
+  ],
+  "dish": "Honey mustard roasted pork loin",
+  "look": "thick slices of roasted pork loin, glossy amber honey mustard glaze, crisp dark seasoned edges, drizzle of smooth mustard sauce",
+  "model": "gemini-3.6-flash",
+  "name": "Roasted Honey Mustard Pork",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-12T22:03:01+00:00"
  },
  "1473088ca909": {
   "avoid": [
@@ -5027,6 +5092,39 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-10-27T09:37:08+00:00"
+ },
+ "2537e93b1b46": {
+  "avoid": [
+   "soft tacos",
+   "flour tortilla",
+   "beef",
+   "pork",
+   "burrito",
+   "nachos",
+   "taco shell"
+  ],
+  "checks": [
+   {
+    "q": "Are the main items crispy fried rolled tacos?",
+    "yes": true
+   },
+   {
+    "q": "Are the tacos soft open flat tortillas?",
+    "yes": false
+   },
+   {
+    "q": "Is the protein beef or pork?",
+    "yes": false
+   }
+  ],
+  "dish": "Chicken tacos dorados",
+  "look": "crispy fried rolled corn tortillas filled with shredded chicken, topped with shredded lettuce, drizzle of white crema, crumbled queso fresco, green tomatillo salsa, sliced fresh avocado",
+  "model": "gemini-3.6-flash",
+  "name": "Tacos Dorados de Pollo",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-12T22:03:01+00:00"
  },
  "2666d3b7effb": {
   "avoid": [
@@ -7720,6 +7818,41 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T04:40:44+00:00"
  },
+ "356d32b8f0b9": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "bacon",
+   "sliced wheat bread",
+   "corn on the cob"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a piece of cornbread?",
+    "yes": true
+   },
+   {
+    "q": "Does the bread contain meat or bacon?",
+    "yes": false
+   },
+   {
+    "q": "Is the food an ear of corn?",
+    "yes": false
+   }
+  ],
+  "dish": "cheddar cornbread",
+  "look": "thick square slice of golden-yellow cornbread, melted orange cheddar cheese flecks, coarse crumbly meal texture, lightly toasted brown top crust",
+  "model": "gemini-3.6-flash",
+  "name": "Cheddar Cheese Cornbread",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-12T22:03:33+00:00"
+ },
  "35864ebf6b64": {
   "avoid": [
    "meat",
@@ -8677,6 +8810,74 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-26T23:15:33+00:00"
+ },
+ "3a0456f3896e": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "bacon",
+   "mashed potatoes",
+   "french fries"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item roasted potato pieces?",
+    "yes": true
+   },
+   {
+    "q": "Is the dish mashed potatoes or french fries?",
+    "yes": false
+   },
+   {
+    "q": "Does the dish contain meat or bacon?",
+    "yes": false
+   }
+  ],
+  "dish": "garlic roasted potatoes",
+  "look": "roasted yukon gold potato halves, crispy golden-brown edges, tender soft interior, whole confit garlic cloves, chopped fresh rosemary, thyme sprigs, red pepper flakes",
+  "model": "gemini-3.6-flash",
+  "name": "Garlic Confit Roasted Potatoes",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-12T22:03:33+00:00"
+ },
+ "3a428b253316": {
+  "avoid": [
+   "pork",
+   "beef",
+   "tortilla",
+   "rice bowl",
+   "noodle soup",
+   "taco",
+   "sliced sandwich bread"
+  ],
+  "checks": [
+   {
+    "q": "Is the food a sandwich in a crusty split baguette?",
+    "yes": true
+   },
+   {
+    "q": "Is the sandwich made with sliced sandwich bread?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish served as a noodle or rice bowl?",
+    "yes": false
+   }
+  ],
+  "dish": "Lemongrass chicken banh mi",
+  "look": "crusty French baguette sandwich split open, filled with charred lemongrass chicken strips, pickled julienned carrots and daikon, cucumber slices, fresh cilantro leaves, sliced green jalapenos, drizzled spicy mayonnaise sauce",
+  "model": "gemini-3.6-flash",
+  "name": "Lemongrass Chicken Banh Mi",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-12T22:03:01+00:00"
  },
  "3ab47431ab15": {
   "avoid": [
@@ -15969,6 +16170,41 @@
   "vessel": "plate",
   "written_at": "2026-10-11T23:45:48+00:00"
  },
+ "6d9ef63190f4": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "bacon",
+   "raw green beans",
+   "noodles"
+  ],
+  "checks": [
+   {
+    "q": "Is the main dish stir-fried green beans?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat or bacon with the beans?",
+    "yes": false
+   },
+   {
+    "q": "Are the green beans raw and uncooked?",
+    "yes": false
+   }
+  ],
+  "dish": "stir-fried green beans",
+  "look": "whole bright green beans, tender-crisp texture, charred blistered spots, minced aromatic garlic bits, light glossy stir-fry sheen",
+  "model": "gemini-3.6-flash",
+  "name": "Stir Fry Green Beans",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-12T22:03:33+00:00"
+ },
  "6dad564a51d7": {
   "avoid": [
    "noodles",
@@ -22910,6 +23146,41 @@
   "vessel": "plate",
   "written_at": "2026-10-16T08:21:02+00:00"
  },
+ "9f7d83df12e8": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "baked potato",
+   "ice cream",
+   "berries"
+  ],
+  "checks": [
+   {
+    "q": "Is the food a scoop or bowl of sour cream?",
+    "yes": true
+   },
+   {
+    "q": "Is the sour cream served as a topping on a baked potato?",
+    "yes": false
+   },
+   {
+    "q": "Does the food look like sweet ice cream with fruit or syrup?",
+    "yes": false
+   }
+  ],
+  "dish": "sour cream",
+  "look": "a scoop of smooth thick white sour cream, dense silky dollop with soft peaks, rich opaque cream texture, slight sheen on the surface",
+  "model": "gemini-3.6-flash",
+  "name": "Sour Cream",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-12T22:03:33+00:00"
+ },
  "9f89c4239fd7": {
   "avoid": [
    "black cod",
@@ -24424,6 +24695,41 @@
   "vessel": "plate",
   "written_at": "2026-11-07T10:27:36+00:00"
  },
+ "a8b36d596335": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "soft tacos",
+   "burrito",
+   "french fries"
+  ],
+  "checks": [
+   {
+    "q": "Are the main items crispy fried rolled tacos?",
+    "yes": true
+   },
+   {
+    "q": "Is there meat or poultry inside the tacos?",
+    "yes": false
+   },
+   {
+    "q": "Are these soft folded tacos?",
+    "yes": false
+   }
+  ],
+  "dish": "Potato tacos dorados",
+  "look": "crispy golden rolled fried corn tortillas filled with potato, topped with shredded lettuce, drizzled white crema, crumbled queso fresco, green salsa verde, avocado slices, chopped cilantro",
+  "model": "gemini-3.6-flash",
+  "name": "Tacos Dorados de Papa",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-12T22:03:01+00:00"
+ },
  "a8b9b1a7939d": {
   "avoid": [
    "tortillas",
@@ -25762,6 +26068,38 @@
   "vessel": "bowl",
   "written_at": "2026-11-06T11:14:49+00:00"
  },
+ "af83b5e9f7df": {
+  "avoid": [
+   "ground beef",
+   "beans",
+   "tacos",
+   "tortillas",
+   "shredded beef",
+   "cheese sauce"
+  ],
+  "checks": [
+   {
+    "q": "Is the main dish beef chunks in dark red chili stew?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat ground like chili con carne?",
+    "yes": false
+   },
+   {
+    "q": "Are there visible beans throughout the stew?",
+    "yes": false
+   }
+  ],
+  "dish": "Chili Colorado",
+  "look": "tender chunks of stewed beef, rich glossy dark red guajillo chili sauce, sprinkled with finely diced white onions, chopped fresh cilantro",
+  "model": "gemini-3.6-flash",
+  "name": "Beef Chili Colorado",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-12T22:03:01+00:00"
+ },
  "afb12ba934d3": {
   "avoid": [
    "chicken",
@@ -25937,6 +26275,41 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-19T09:03:51+00:00"
+ },
+ "b0a3cf2bd482": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "bacon",
+   "sausage",
+   "raw cabbage"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a stew of potatoes and cabbage?",
+    "yes": true
+   },
+   {
+    "q": "Does the dish contain pieces of meat or bacon?",
+    "yes": false
+   },
+   {
+    "q": "Is the cabbage raw or shredded into a coleslaw?",
+    "yes": false
+   }
+  ],
+  "dish": "cabbage and potato stew",
+  "look": "chunky tender potato pieces, wilted green cabbage leaves, dark braised leafy greens, simmered in a warm light broth, soft savory stew texture",
+  "model": "gemini-3.6-flash",
+  "name": "Braised Cabbage & Potato Stew",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-12T22:03:33+00:00"
  },
  "b0a4035eb216": {
   "avoid": [
@@ -28957,6 +29330,38 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T09:50:49+00:00"
+ },
+ "c3ca3e9658c5": {
+  "avoid": [
+   "steamed bao buns",
+   "soup",
+   "noodle bowl",
+   "spring rolls",
+   "wontons in broth",
+   "deep fried egg rolls"
+  ],
+  "checks": [
+   {
+    "q": "Are the main items pan-fried dumplings?",
+    "yes": true
+   },
+   {
+    "q": "Are the dumplings served in broth or soup?",
+    "yes": false
+   },
+   {
+    "q": "Are the items tubular deep-fried egg rolls?",
+    "yes": false
+   }
+  ],
+  "dish": "Lemongrass chicken potstickers",
+  "look": "pan-fried dumplings with pale pleated top dough, dark golden crisp fried bottom crust, sprinkle of sliced green scallions",
+  "model": "gemini-3.6-flash",
+  "name": "Lemongrass Chicken Potsticker",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-12T22:03:01+00:00"
  },
  "c3cb7f99d822": {
   "avoid": [
@@ -33249,6 +33654,38 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T05:20:07+00:00"
+ },
+ "ddb06a05e2f5": {
+  "avoid": [
+   "calzone",
+   "pasta",
+   "burrito",
+   "whole unbaked pizza",
+   "deep dish pizza",
+   "breadsticks"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a slice of baked pizza?",
+    "yes": true
+   },
+   {
+    "q": "Is the main dish a pasta meal?",
+    "yes": false
+   },
+   {
+    "q": "Is the pizza folded into a calzone?",
+    "yes": false
+   }
+  ],
+  "dish": "Pepperoni pizza",
+  "look": "slice of baked pizza, crisp thin cauliflower crust, rich red marinara sauce, melted cheesy topping, sliced round pepperoni pieces with charred crispy edges",
+  "model": "gemini-3.6-flash",
+  "name": "Pepperoni Pizza (Branner)",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-12T22:03:01+00:00"
  },
  "de365e9377c3": {
   "avoid": [
