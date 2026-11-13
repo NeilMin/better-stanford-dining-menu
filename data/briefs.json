@@ -24972,6 +24972,40 @@
   "vessel": "plate",
   "written_at": "2026-11-12T11:42:02+00:00"
  },
+ "a801901cf2e8": {
+  "avoid": [
+   "chicken cutlet",
+   "pork chop",
+   "salmon",
+   "raw fish",
+   "deep-fried fish sticks",
+   "fries",
+   "pasta",
+   "rice"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a white fish fillet?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat chicken, pork, or red meat?",
+    "yes": false
+   },
+   {
+    "q": "Is the fish pink or orange like salmon?",
+    "yes": false
+   }
+  ],
+  "dish": "parmesan-crusted tilapia",
+  "look": "a tender baked tilapia fillet, golden browned melted parmesan crust on top, dusting of reddish-orange paprika, finely chopped green parsley garnish, flaky white fish meat exposed along the edges",
+  "model": "gemini-flash-latest",
+  "name": "Parmesan Crusted Tilapia",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-13T21:34:42+00:00"
+ },
  "a832d0743861": {
   "avoid": [
    "meat",
@@ -27365,6 +27399,40 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T06:22:24+00:00"
+ },
+ "b428e75b3d6f": {
+  "avoid": [
+   "hot dog",
+   "french fries",
+   "tortilla chips",
+   "burger",
+   "rice",
+   "bread bowl",
+   "pasta",
+   "sour cream"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a bowl of thick ground beef chili?",
+    "yes": true
+   },
+   {
+    "q": "Is the chili served over a hot dog, burger, or french fries?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat in large whole steak chunks rather than ground?",
+    "yes": false
+   }
+  ],
+  "dish": "beef chili",
+  "look": "thick dark reddish-brown ground beef chili, rich textured meat sauce, melted shreds of orange cheddar cheese, finely diced raw white onions, sliced green scallions scattered over the top",
+  "model": "gemini-flash-latest",
+  "name": "Beef Chili",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-13T21:34:42+00:00"
  },
  "b4548565ca34": {
   "avoid": [
