@@ -1,6 +1,6 @@
 {
  "date": "2026-11-13",
- "scraped_at": "2026-11-13T03:07:56-08:00",
+ "scraped_at": "2026-11-13T13:26:47-08:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -1238,17 +1238,18 @@
      "order": 8
     },
     {
-     "name": "Rasta Pasta",
-     "recipe_id": "RastaPasta1",
+     "name": "Baked Pasta Marinara",
+     "recipe_id": "4662005",
      "description": "",
-     "ingredients": "pasta (wheat), bell peppers, spinach, red onion, scallions, garlic, thyme, jerk seasoning, scotch bonnet pepper, heavy cream & cheddar cheese (milk), blended oil, salt, pepper",
+     "ingredients": "pasta, vegetable soup base, garlic, tomato, basil, zucchini, mushroom, salt, canola/olive oil blend",
      "allergens": [
-      "MILK",
       "WHEAT"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "EGG"
+     ],
      "tags": [
-      "vegetarian"
+      "vegan"
      ],
      "order": 9
     },
@@ -1271,16 +1272,6 @@
      "order": 10
     },
     {
-     "name": "Soup of the Day",
-     "recipe_id": "SoupoftheDay",
-     "description": "",
-     "ingredients": "chef's choice soup of the day",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [],
-     "order": 11
-    },
-    {
      "name": "Composed Salad",
      "recipe_id": "123116546",
      "description": "",
@@ -1288,7 +1279,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 12
+     "order": 11
     },
     {
      "name": "Performance Bar",
@@ -1298,7 +1289,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 13
+     "order": 12
     },
     {
      "name": "Craveable Grains",
@@ -1311,7 +1302,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 14
+     "order": 13
     },
     {
      "name": "Flavor Forward Legumes",
@@ -1324,7 +1315,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 15
+     "order": 14
     },
     {
      "name": "Pasta Alfredo",
@@ -1341,7 +1332,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 16
+     "order": 15
     },
     {
      "name": "Pasta Marinara",
@@ -1358,7 +1349,7 @@
      "tags": [
       "vegan"
      ],
-     "order": 17
+     "order": 16
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -1371,7 +1362,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 18
+     "order": 17
     }
    ],
    "Dinner": [
@@ -2653,17 +2644,16 @@
    ],
    "Lunch": [
     {
-     "name": "Seared Salmon",
-     "recipe_id": "SalH&T17",
+     "name": "Parmesan Crusted Tilapia",
+     "recipe_id": "ParmTilapia1",
      "description": "",
-     "ingredients": "Salmon, Lemon, Parsley, Thyme, Cherry Tomatoes, Salt, Black Pepper, Paprika,",
+     "ingredients": "tilapia, parmesan, panko, paprika, garlic powder, parsley, canola oil, salt, and pepper",
      "allergens": [
-      "FISH"
+      "MILK",
+      "WHEAT"
      ],
      "trace_allergens": [],
-     "tags": [
-      "gluten-free"
-     ],
+     "tags": [],
      "order": 0
     },
     {
@@ -3839,12 +3829,12 @@
    ],
    "Lunch": [
     {
-     "name": "Seared Salmon",
-     "recipe_id": "SalH&T17",
+     "name": "Japanese Chicken Teriyaki",
+     "recipe_id": "JapChxTeriyaki1",
      "description": "",
-     "ingredients": "Salmon, Lemon, Parsley, Thyme, Cherry Tomatoes, Salt, Black Pepper, Paprika,",
+     "ingredients": "[HALAL] chicken, tamari (soy), alcohol-free mirin, sugar, ginger, green onions, olive/canola oil blend, salt",
      "allergens": [
-      "FISH"
+      "SOY"
      ],
      "trace_allergens": [],
      "tags": [
@@ -4431,25 +4421,15 @@
    ],
    "Lunch": [
     {
-     "name": "Crispy Cod",
-     "recipe_id": "CrispyCod1",
+     "name": "Lemon Oregano Chicken",
+     "recipe_id": "4448464",
      "description": "",
-     "ingredients": "battered cod (cod, wheat flour, canola oil, corn flour, whey (milk), sugar, turmeric, paprika, salt, white pepper, black pepper)",
-     "allergens": [
-      "FISH",
-      "MILK",
-      "WHEAT"
+     "ingredients": "chicken, lemon juice, lime juice, canola/olive oil blend, garlic, parsley, oregano, salt, pepper",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free"
      ],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS"
-     ],
-     "tags": [],
      "order": 0
     },
     {
@@ -4590,10 +4570,10 @@
      "order": 9
     },
     {
-     "name": "Corn Potato Chowder",
-     "recipe_id": "6043147",
+     "name": "Butternut Squash Bisque",
+     "recipe_id": "3085330",
      "description": "",
-     "ingredients": "potato, onion, butter, celery, garlic, lemon juice, corn, flour, vegetable soup base, cream, milk, pepper, sugar, salt, rice vinegar",
+     "ingredients": "butternut squash, vegetable soup base, carrots, onions, celery, butter, rice vinegar, cream, whole milk, flour, lemon, garlic, pepper, cinnamon, beet sugar, salt",
      "allergens": [
       "MILK",
       "WHEAT"
