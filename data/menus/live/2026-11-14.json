@@ -1,6 +1,6 @@
 {
  "date": "2026-11-14",
- "scraped_at": "2026-11-14T02:35:10-08:00",
+ "scraped_at": "2026-11-14T11:57:18-08:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -260,18 +260,18 @@
      "order": 4
     },
     {
-     "name": "Japchae Glass Noodles",
-     "recipe_id": "4806374",
+     "name": "Vegetable Chow Mein Noodles",
+     "recipe_id": "4856200",
      "description": "",
-     "ingredients": "sweet potato noodles, carrots, cabbage, onions, bell peppers, tamari (soy), sesame oil, canola/olive oil blend, salt, sugar, garlic, pepper",
+     "ingredients": "chow mein noodles, carrots, canola/olive oil blend, celery, white pepper, cabbage, green onions, stir fry sauce (tamari sauce, canola oil, green onion, fried shallots, red pepper, onion, vegetarian oyster sauce [sugar, soy sauce, salt, corn starch, yeast extract, caramel color, mushroom flavor, salt], brown sugar)",
      "allergens": [
-      "SESAME",
-      "SOY"
+      "EGG",
+      "SOY",
+      "WHEAT"
      ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
-      "vegan"
+      "vegetarian"
      ],
      "order": 5
     },
@@ -1084,10 +1084,10 @@
      "order": 6
     },
     {
-     "name": "French Toast",
-     "recipe_id": "3508602",
+     "name": "Buttermilk Pancakes",
+     "recipe_id": "3958551",
      "description": "",
-     "ingredients": "chala bread (wheat), eggs, canola/olive oil blend, powdered sugar, cinnamon",
+     "ingredients": "wheat flour, malted barley flour, enzymes, ascorbic acid, sugar, soy flour, sodium bicarbonate, sodium aluminum phosphate, aluminum sulfate, monocalcium phosphate, canola or soybean oil, dextrose, salt, buttermilk (milk), mono-diglycerides, soy lecithin, eggs",
      "allergens": [
       "EGG",
       "MILK",
@@ -1108,10 +1108,10 @@
      "order": 7
     },
     {
-     "name": "Double Smoked Bacon",
-     "recipe_id": "5781155",
+     "name": "Pork Sausage Patty",
+     "recipe_id": "3942305",
      "description": "",
-     "ingredients": "bacon, salt, sugar, sodium phosphate, sodium erythorbate, sodium nitrite",
+     "ingredients": "pork, salt, potassium chloride, dextrose, spices, monosodium glutamate, sodium phosphates, bht, citric acid, caramel color",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -1120,14 +1120,23 @@
      "order": 8
     },
     {
-     "name": "Turkey Bacon",
-     "recipe_id": "4328766",
+     "name": "Bread Pudding",
+     "recipe_id": "5310908",
      "description": "",
-     "ingredients": "turkey thigh meat, sea salt, beet powder, paprika, brown sugar, onion, garlic",
-     "allergens": [],
-     "trace_allergens": [],
+     "ingredients": "white bread, egg, butter, sugar, whole milk, cinnamon, vanilla flavoring, nutmeg",
+     "allergens": [
+      "EGG",
+      "MILK",
+      "SOY",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "PEANUTS",
+      "SESAME",
+      "TREENUTS"
+     ],
      "tags": [
-      "gluten-free"
+      "vegetarian"
      ],
      "order": 9
     },
@@ -1154,12 +1163,20 @@
      "order": 10
     },
     {
-     "name": "Composed Salad",
-     "recipe_id": "123116546",
+     "name": "Caesar Salad",
+     "recipe_id": "5834444",
      "description": "",
-     "ingredients": "chef's choice composed salad",
-     "allergens": [],
-     "trace_allergens": [],
+     "ingredients": "lettuce, tomatoes, caesar dressing (mayonnaise, parmesan cheese, garlic, lemon juice, anchovy, red wine vinegar, dijon mustard, worcestershire sauce [vinegar, molasses, corn syrup, anchovies, salt, garlic, tamarind concentrate, cloves, natural flavorings, chili pepper extract], hot sauce, salt, pepper), parmesan cheese, croutons (wheat flour, canola and/or sunflower oil, whey, salt, yeast, corn syrup, sugar, onion powder, parsley, paprika, turmeric)",
+     "allergens": [
+      "EGG",
+      "FISH",
+      "MILK",
+      "SOY",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "TREENUTS"
+     ],
      "tags": [],
      "order": 11
     },
