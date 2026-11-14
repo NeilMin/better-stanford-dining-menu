@@ -272,6 +272,42 @@
   "vessel": "bowl",
   "written_at": "2026-09-26T20:19:28+00:00"
  },
+ "019744f4f695": {
+  "avoid": [
+   "tacos",
+   "burritos",
+   "tortillas",
+   "shrimp cocktail",
+   "raw shrimp",
+   "chicken",
+   "beef",
+   "pork",
+   "skewers",
+   "rice"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food shrimp in a red sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the dish served inside tacos or wrapped in tortillas?",
+    "yes": false
+   },
+   {
+    "q": "Are the shrimp served raw in a cocktail glass?",
+    "yes": false
+   }
+  ],
+  "dish": "Camarones a la diabla",
+  "look": "plump cooked tail-on shrimp, tossed in a thick glossy deep red guajillo chili and tomato sauce, diced cooked onions, sprinkled with fine chopped fresh parsley",
+  "model": "gemini-3.6-flash",
+  "name": "Camarones a la Diabla",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-14T11:18:31+00:00"
+ },
  "01e7ac859af1": {
   "avoid": [
    "meat",
@@ -4845,6 +4881,39 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-10-19T09:03:51+00:00"
+ },
+ "23be74ca1e14": {
+  "avoid": [
+   "chicken",
+   "red sauce",
+   "tomato marinara",
+   "raw shrimp",
+   "breaded shrimp",
+   "soup",
+   "rice"
+  ],
+  "checks": [
+   {
+    "q": "Is the main dish pasta with shrimp in a white cream sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the sauce red or tomato-based?",
+    "yes": false
+   },
+   {
+    "q": "Is the main protein chicken?",
+    "yes": false
+   }
+  ],
+  "dish": "Shrimp Fettuccine Alfredo",
+  "look": "fettuccine pasta ribbons, coated in thick creamy white garlic Alfredo sauce, topped with plump seared pink shrimp, dusted with shredded parmesan cheese, flecks of chopped fresh parsley",
+  "model": "gemini-3.6-flash",
+  "name": "Shrimp Alfredo",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-14T11:06:26+00:00"
  },
  "24042a7e6508": {
   "avoid": [
@@ -10223,6 +10292,41 @@
   "vessel": "plate",
   "written_at": "2026-10-09T10:52:01+00:00"
  },
+ "44b25d226bcf": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "round pickle chips",
+   "whole pickles",
+   "cucumber salad"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food pickled cucumber spears?",
+    "yes": true
+   },
+   {
+    "q": "Are the cucumbers cut into flat round chips?",
+    "yes": false
+   },
+   {
+    "q": "Is there meat, chicken, or seafood present?",
+    "yes": false
+   }
+  ],
+  "dish": "dill pickle spears",
+  "look": "elongated dill pickle spears, vertical cucumber wedges, bumpy dark olive-green skin on outer edge, pale translucent greenish-yellow seed-studded interior pulp, glistening wet brine, small flecks of crushed garlic",
+  "model": "gemini-3.6-flash",
+  "name": "Pickle Spears",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-14T11:06:43+00:00"
+ },
  "44e750bff8d1": {
   "avoid": [
    "chicken sandwich",
@@ -12221,6 +12325,43 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-10T10:02:59+00:00"
+ },
+ "4ecc976232a4": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "sausage",
+   "bratwurst",
+   "hot dog",
+   "coleslaw",
+   "mayonnaise"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a pile of finely shredded fermented cabbage?",
+    "yes": true
+   },
+   {
+    "q": "Is there sausage, hot dog, or meat served with it?",
+    "yes": false
+   },
+   {
+    "q": "Does the cabbage look like a creamy raw coleslaw?",
+    "yes": false
+   }
+  ],
+  "dish": "sauerkraut",
+  "look": "a heap of finely shredded fermented cabbage, translucent pale-yellow and off-white ribbons, glistening wet texture, tangled soft strands, occasional tiny dark caraway seeds",
+  "model": "gemini-3.6-flash",
+  "name": "Sauerkraut",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-14T11:06:37+00:00"
  },
  "4f2e322f6094": {
   "avoid": [
@@ -14411,6 +14552,40 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-10-10T19:35:36+00:00"
+ },
+ "5ff0170039eb": {
+  "avoid": [
+   "burger",
+   "hamburger bun",
+   "wrap",
+   "flatbread",
+   "ground beef",
+   "raw meat",
+   "buffet tray",
+   "catering containers"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a toasted sandwich?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat ground or formed into a burger patty?",
+    "yes": false
+   },
+   {
+    "q": "Is the food served as a wrap or in a tortilla?",
+    "yes": false
+   }
+  ],
+  "dish": "pastrami Reuben sandwich",
+  "look": "a classic Reuben sandwich cut in half, toasted seeded rye bread, melted Swiss cheese, thick layers of warm dark red sliced pastrami beef, creamy Thousand Island dressing, tangy shredded sauerkraut, crisp dill pickle spear on the side",
+  "model": "gemini-3.6-flash",
+  "name": "Reuben Pastrami Sandwich Bar (FloMo)",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-14T11:06:19+00:00"
  },
  "600e9af40dc5": {
   "avoid": [
@@ -28767,6 +28942,41 @@
   "vessel": "plate",
   "written_at": "2026-10-09T10:51:35+00:00"
  },
+ "bbaf9abff639": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "seafood",
+   "cooked hot food",
+   "soup",
+   "wrap",
+   "sandwich",
+   "whole unchopped vegetables"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food a fresh leafy green salad?",
+    "yes": true
+   },
+   {
+    "q": "Is the dish a cooked warm meal or soup?",
+    "yes": false
+   },
+   {
+    "q": "Is the salad wrapped in a tortilla or flatbread?",
+    "yes": false
+   }
+  ],
+  "dish": "mixed green garden salad",
+  "look": "a heap of fresh mixed salad greens, crisp romaine, red leaf lettuce, bright red cherry tomato halves, thin cucumber rounds, julienned orange carrots, sliced radishes, golden bread croutons, light glistening vinaigrette dressing",
+  "model": "gemini-3.6-flash",
+  "name": "Chef's Choice Salad",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-14T11:06:47+00:00"
+ },
  "bbb5c1c6718a": {
   "avoid": [
    "loose salad in a bowl",
@@ -32740,6 +32950,40 @@
   "vessel": "bowl",
   "written_at": "2026-11-05T11:20:34+00:00"
  },
+ "d37896097b34": {
+  "avoid": [
+   "french fries",
+   "burger bun",
+   "sandwich",
+   "dipping sauce",
+   "chicken wings",
+   "chicken leg",
+   "bone-in chicken",
+   "raw chicken"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food fried breaded tenders or strips?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken bone-in like drumsticks or wings?",
+    "yes": false
+   },
+   {
+    "q": "Is the food served inside a sandwich, burger bun, or wrap?",
+    "yes": false
+   }
+  ],
+  "dish": "fried chicken tenders",
+  "look": "three golden-brown fried chicken tenders, craggy crunchy breadcrumb coating, elongated irregular shapes, glistening crispy texture, juicy white meat visible at a broken edge",
+  "model": "gemini-3.6-flash",
+  "name": "Chicken Tender",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-14T11:06:12+00:00"
+ },
  "d3ad2fe14444": {
   "avoid": [
    "tortillas",
@@ -35887,6 +36131,42 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T04:46:15+00:00"
+ },
+ "e9eab263bba4": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "burger bun",
+   "raw mushrooms",
+   "wrap",
+   "open-faced sandwich"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a pressed toasted sandwich?",
+    "yes": true
+   },
+   {
+    "q": "Does the sandwich contain meat, poultry, or seafood?",
+    "yes": false
+   },
+   {
+    "q": "Is the sandwich served in a round burger bun or tortilla wrap?",
+    "yes": false
+   }
+  ],
+  "dish": "portobello mushroom panini",
+  "look": "a pressed toasted panini sandwich cut in half, golden-brown flatbread with visible dark grill marks, melted white cheese oozing from the side, thick slice of grilled dark portobello mushroom, sliced green avocado, red sundried tomatoes, fresh green arugula",
+  "model": "gemini-3.6-flash",
+  "name": "Grilled Portobello Panini",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-14T11:06:31+00:00"
  },
  "ea9d407fd68d": {
   "avoid": [
