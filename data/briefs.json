@@ -12338,7 +12338,8 @@
    "bratwurst",
    "hot dog",
    "coleslaw",
-   "mayonnaise"
+   "mayonnaise",
+   "raw shredded cabbage"
   ],
   "checks": [
    {
@@ -12355,13 +12356,13 @@
    }
   ],
   "dish": "sauerkraut",
-  "look": "a heap of finely shredded fermented cabbage, translucent pale-yellow and off-white ribbons, glistening wet texture, tangled soft strands, occasional tiny dark caraway seeds",
+  "look": "German sauerkraut, a mound of limp, finely shredded fermented cabbage ribbons, translucent pale yellow-amber hue, wet briny gloss, soft tangled strands submerged slightly in clear juices, sprinkled with dark brown caraway seeds",
   "model": "gemini-3.6-flash",
   "name": "Sauerkraut",
   "rev": 6,
-  "revisions": 0,
+  "revisions": 1,
   "vessel": "bowl",
-  "written_at": "2026-11-14T11:06:37+00:00"
+  "written_at": "2026-11-14T21:09:43+00:00"
  },
  "4f2e322f6094": {
   "avoid": [
@@ -25637,6 +25638,42 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-08T10:50:06+00:00"
+ },
+ "a9f1df9e799f": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "sponge cake",
+   "powdered sugar",
+   "fruit pieces",
+   "berries"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item baked bread pudding?",
+    "yes": true
+   },
+   {
+    "q": "Does the dish contain meat, chicken, or seafood?",
+    "yes": false
+   },
+   {
+    "q": "Is the food a plain sliced loaf or a sandwich?",
+    "yes": false
+   }
+  ],
+  "dish": "bread pudding",
+  "look": "a square portion of golden-baked bread pudding, visible chunky custard-soaked white bread cubes, toasted brown top surface, light dusting of ground cinnamon and nutmeg, moist custardy texture throughout",
+  "model": "gemini-3.6-flash",
+  "name": "Bread Pudding",
+  "rev": 6,
+  "revisions": 1,
+  "vessel": "plate",
+  "written_at": "2026-11-14T22:49:58+00:00"
  },
  "aa09d16ef65c": {
   "avoid": [
