@@ -34,7 +34,10 @@ def schedule_for(hall: dict, day: date) -> dict:
         if sched.get("to") and sched["to"] < iso:
             continue
         if weekday in sched.get("days", []):
-            return sched.get("meals", {})
+            meals = dict(sched.get("meals", {}))
+            if hall.get("late_night") and weekday in hall["late_night"].get("days", []):
+                meals["Late Night"] = hall["late_night"]["hours"]
+            return meals
     return {}
 
 
@@ -188,6 +191,21 @@ def build_payload(root: Path) -> dict:
                     "daily": [to_ref(d) for d in daily if item_id(d) not in led],
                     "stations": [to_ref(d) for d in standing if item_id(d) not in led],
                 }
+            h = halls_by_id.get(hall_id)
+            if h and h.get("late_night") and as_date.weekday() in h["late_night"].get("days", []):
+                shake_dish = {
+                    "name": "Shake Smart Shakes",
+                    "ingredients": "organic protein shakes, fresh fruits, vegetables, peanut butter, and plant-based milks",
+                    "tags": ["gluten-free", "vegetarian"],
+                    "allergens": ["MILK", "PEANUTS", "SOY", "TREE NUTS"],
+                    "trace_allergens": [],
+                }
+                shake_ref = variant_ref(make_id("Shake Smart Shakes"), shake_dish)
+                per_meal["Late Night"] = {
+                    "specials": [],
+                    "daily": [shake_ref],
+                    "stations": [],
+                }
             menus[iso][hall_id] = per_meal
         hours[iso] = {
             h["id"]: schedule_for(h, as_date)
@@ -217,7 +235,16 @@ def build_payload(root: Path) -> dict:
         entry = logo_index.get(h["id"])
         if entry and (logo_dir / entry["file"]).exists():
             out["logo"] = entry
+        if h.get("late_night"):
+            out["late_night"] = dict(h["late_night"])
+            if ln_zh := zhlib.get(zh_table, "halls", f"{h['id']}_late_night"):
+                out["late_night"]["name_zh"] = ln_zh
+            ln_key = f"{h['id']}_late_night"
+            ln_entry = logo_index.get(ln_key)
+            if ln_entry and (logo_dir / ln_entry["file"]).exists():
+                out["late_night_logo"] = ln_entry
         return out
+
 
     now = datetime.now(TZ)
     return {
@@ -250,7 +277,7 @@ def build_payload(root: Path) -> dict:
 # JSON-LD. The page tells app.js which hall it is and how far down it sits
 # (`page` in the data block), because the pictures are relative paths.
 
-MEAL_ORDER = ("Breakfast", "Brunch", "Lunch", "Dinner")
+MEAL_ORDER = ("Breakfast", "Brunch", "Lunch", "Dinner", "Late Night")
 
 
 def _json_script(value) -> str:

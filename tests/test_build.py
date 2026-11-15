@@ -55,6 +55,24 @@ class TestScheduleFor:
         hall = self.hall({"from": "2026-09-01", "days": [5, 6], "meals": {"D": []}})
         assert buildlib.schedule_for(hall, date(2026, 9, 17)) == {}
 
+    def test_late_night_schedule_on_matching_weekday(self):
+        hall = {
+            "schedules": [{"from": "2026-09-16", "days": [0, 1, 2, 3, 4], "meals": {"Dinner": ["17:00", "20:00"]}}],
+            "late_night": {"name": "Arrillaga Nights", "days": [1, 2, 3, 4, 5], "hours": ["21:00", "02:00"]},
+        }
+        # 2026-09-17 is Thursday (weekday 3)
+        got = buildlib.schedule_for(hall, date(2026, 9, 17))
+        assert got == {"Dinner": ["17:00", "20:00"], "Late Night": ["21:00", "02:00"]}
+
+    def test_late_night_schedule_on_non_matching_weekday(self):
+        hall = {
+            "schedules": [{"from": "2026-09-16", "days": [0, 1, 2, 3, 4], "meals": {"Dinner": ["17:00", "20:00"]}}],
+            "late_night": {"name": "Arrillaga Nights", "days": [1, 2], "hours": ["21:00", "02:00"]},
+        }
+        # 2026-09-17 is Thursday (weekday 3), not in [1, 2]
+        got = buildlib.schedule_for(hall, date(2026, 9, 17))
+        assert got == {"Dinner": ["17:00", "20:00"]}
+
     def test_the_first_matching_schedule_wins(self):
         """Orientation-week exceptions are listed above the term's own hours."""
         hall = self.hall(
@@ -104,6 +122,30 @@ class TestWindow:
         payload = buildlib.build_payload(project.root)
         assert payload["window"] == ["2026-09-17"]
         assert payload["halls"] == [] and payload["menus"]["2026-09-17"] == {}
+
+    def test_late_night_menu_and_logo_included(self, project):
+        project.set_today("2026-09-17")  # Thursday (weekday 3)
+        project.add_hall("arrillaga")
+        project.halls[0]["late_night"] = {
+            "name": "Arrillaga Nights",
+            "days": [1, 2, 3, 4, 5],
+            "hours": ["21:00", "02:00"]
+        }
+        project.save_config()
+        project.write_catalog({dish_id("Shake Smart Shakes"): {"name": "Shake Smart Shakes", "category": "other"}})
+        project.write_menu("2026-09-17", {"arrillaga": {"Dinner": [dish("Roast Chicken")]}})
+
+        payload = buildlib.build_payload(project.root)
+        arr = next(h for h in payload["halls"] if h["id"] == "arrillaga")
+        assert "late_night" in arr
+        assert arr["late_night"]["name"] == "Arrillaga Nights"
+        menu_day = payload["menus"]["2026-09-17"]["arrillaga"]
+        assert "Late Night" in menu_day
+        assert len(menu_day["Late Night"]["daily"]) == 1
+        ref = menu_day["Late Night"]["daily"][0]
+        assert ref.startswith(f"{dish_id('Shake Smart Shakes')}.")
+        assert dish_id("Shake Smart Shakes") in payload["dishes"]
+
 
 
 class TestDishesAndVariants:
