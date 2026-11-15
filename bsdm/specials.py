@@ -81,11 +81,11 @@ TITLE_RE = re.compile(
     re.I)
 
 # Where the hours page keeps the poster: the red banner directly under the page
-# title, which is the first block of the page's content. Every copy of the page
-# the Wayback Machine holds from May 2025 on has it there, while the file name
-# is a new invention each time ("Calendar_Sept14-25", "Calendar_March_0",
-# "Calendar_5_11-_5_22_2026"). So the place is read and the name is not.
-BANNER = ".field--name-field-content > .field__item"
+# title. Every copy of the page from May 2025 on styles it with paragraph-bg-cardinal-red,
+# though other promotional blocks (such as Shake Smart in Nov 2026) can precede it in
+# .field--name-field-content.
+BANNER = ".field--name-field-content .paragraph-bg-cardinal-red"
+
 
 # "Hall: dish". The label is everything before the first colon, which is also
 # where a list of halls would be ("Stern & Wilbur: ...").
@@ -142,7 +142,8 @@ def find_link(html: str, base: str = HOURS_URL) -> str | None:
     between editions ("Learn about special events at our Dining Halls",
     October 2025), or when the page has no banner at all.
     """
-    banner = BeautifulSoup(html, "html.parser").select_one(BANNER)
+    soup = BeautifulSoup(html, "html.parser")
+    banner = soup.select_one(BANNER) or soup.select_one(".field--name-field-content > .field__item")
     link = banner.find("a", href=True) if banner else None
     return urljoin(base, link["href"]) if link else None
 

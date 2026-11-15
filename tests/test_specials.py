@@ -141,6 +141,26 @@ class TestFindLink:
         assert specialslib.find_link(html) == ("https://rde.stanford.edu/sites/default/files/"
                                                "2026-09/Dining_Hall_Specials_Calendar_Sept28-Oct9.pdf")
 
+    def test_find_link_when_another_promo_precedes_specials_banner(self):
+        """November 2026: A 'Shake Smart Shakes' promo was added above the cardinal red banner."""
+        html = (
+            '<div class="field field--name-field-content field--type-entity-reference-revisions '
+            'field--label-hidden field__items">'
+            '<div class="field__item"><div class="paragraph paragraph--type--image-text-section">'
+            '<p>Shake Smart Shakes</p></div></div>'
+            '<div class="field__item"><div class="paragraph paragraph--type--boxed-gray-section '
+            'paragraph--view-mode--full paragraph-boxed-gray-section paragraph-spacing paragraph-bg-cardinal-red">'
+            '<div class="paragraph-boxed-gray-section--content paragraph-container">'
+            '<div class="paragraph-boxed-gray-section--body"><p class="text-align-center">'
+            '<a href="/sites/default/files/2026-10/Dining_Hall_Specials_Calendar_Oct26_Nov6.pdf">'
+            'View Monday - Friday Dinner Specials at our Dining Halls</a></p></div></div></div></div>'
+            '</div>'
+        )
+        assert specialslib.find_link(html) == (
+            "https://rde.stanford.edu/sites/default/files/2026-10/Dining_Hall_Specials_Calendar_Oct26_Nov6.pdf"
+        )
+
+
 
 class TestArchiveName:
     def test_filed_under_the_fortnight_it_covers(self):
