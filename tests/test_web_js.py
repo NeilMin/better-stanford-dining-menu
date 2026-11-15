@@ -456,6 +456,28 @@ def test_tour_stops_and_translations(tmp_path):
     assert keys[1] == expected
 
 
+def test_late_night_tip_translations(tmp_path):
+    """The Late Night feature notice has translated titles and actions in both UI.en and UI.zh."""
+    res = call(
+        ["UI"],
+        "return [UI.en.lateNightTip, UI.zh.lateNightTip, UI.en.lateNightTipAction, UI.zh.lateNightTipAction];",
+        tmp_path=tmp_path,
+    )
+    en_tip, zh_tip, en_act, zh_act = res
+    assert len(en_tip) == 2 and en_tip[0] and en_tip[1]
+    assert len(zh_tip) == 2 and zh_tip[0] and zh_tip[1]
+    assert en_act and zh_act
+
+
+def test_late_night_tip_seen_storage():
+    from jsbridge import APP_JS
+    src = APP_JS.read_text()
+    assert 'const LATE_NIGHT_TIP_SEEN = "bsdm.tip.late_night.v1";' in src
+    assert 'localStorage.getItem(LATE_NIGHT_TIP_SEEN)' in src
+    assert 'localStorage.setItem(LATE_NIGHT_TIP_SEEN, "1")' in src
+    assert 'id: m === "Late Night" ? "meal-late-night" : undefined' in src
+
+
 def test_tool_lang_on_phone_zeros_gap():
     """On phone, .tool-lang hides the text node (font-size: 0) and shows ::after.
     It must set gap: 0 so flex gap doesn't insert an asymmetrical 8px space on the left."""

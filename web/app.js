@@ -132,6 +132,11 @@
       tourLang: ["Language · 语言", "Switch to another language here."],
       tourTheme: ["Theme", "Switch between auto, light, and dark mode here."],
       tourNext: "Next", tourDone: "Got it", tourSkip: "Skip",
+      lateNightTip: [
+        "New: Late Night Dining",
+        "Arrillaga Nights and Lakeside Late Night are now available! Tap here to see late-night hours, menus, and Shake Smart Shakes.",
+      ],
+      lateNightTipAction: "View Late Night",
       footerFeedback: (a) => ["Something wrong? ", a("Tell me here"), "."],
       reportDish: "Something wrong with this dish? Tell me here",
       footerSrc: (a, built) => [
@@ -213,6 +218,11 @@
       tourLang: ["语言 · Language", "在这里可以切换成其他语言。"],
       tourTheme: ["换主题", "在这里可以在自动、浅色和深色模式之间切换。"],
       tourNext: "下一步", tourDone: "知道了", tourSkip: "跳过",
+      lateNightTip: [
+        "全新上线：夜宵",
+        "Arrillaga Nights 与 Lakeside 夜宵现已加入！点此查看夜宵时间、菜单及特供 Shake Smart 奶昔。",
+      ],
+      lateNightTipAction: "查看夜宵",
       footerFeedback: (a) => ["有问题就", a("点这里告诉我"), "。"],
       reportDish: "这道菜有问题？点这里告诉我",
       footerSrc: (a, built) => [
@@ -1180,6 +1190,7 @@
     renderNotices(spread, servingHalls.length);
     // A render can switch the language under the tip or resize the row it points at.
     if (tour) drawTour(false);
+    if (lateNightTip) drawLateNightTip();
     save();
     observeColumns(board);
   }
@@ -1629,12 +1640,19 @@
     const meals = availableMeals(state.date);
     document.getElementById("meals").replaceChildren(...MEALS.map((m) =>
       chip(t("meal", m), m === state.meal, () => {
+        if (lateNightTip) endLateNightTip();
         if (state.meal !== m) {
           state.meal = m;
           trackEvent("select_meal", { meal: m });
           render();
         }
-      }, { className: "chip-seg", props: { disabled: !meals.includes(m) } })));
+      }, {
+        className: "chip-seg",
+        props: {
+          id: m === "Late Night" ? "meal-late-night" : undefined,
+          disabled: !meals.includes(m),
+        },
+      })));
 
     document.getElementById("halls").replaceChildren(...DATA.halls.map((h) =>
       chip(h.short, state.halls.includes(h.id), () => {
@@ -1768,7 +1786,10 @@
 
   function startTour() {
     try {
-      if (localStorage.getItem(TOUR_SEEN)) return;
+      if (localStorage.getItem(TOUR_SEEN)) {
+        startLateNightTip();
+        return;
+      }
       // Written up front, as on neilmin.github.io: leaving mid-tour counts as seen.
       localStorage.setItem(TOUR_SEEN, "1");
     } catch {
@@ -1818,6 +1839,7 @@
     tour = null;
     removeEventListener("resize", placeTour);
     document.removeEventListener("scroll", placeTour, true);
+    setTimeout(startLateNightTip, 300);
   }
 
   /** Fill the tip for the current stop. `arriving` is false when a render
@@ -1885,6 +1907,120 @@
     tour.tip.style.left = `${x}px`;
     tour.tip.style.top = `${r.bottom + pad + 10}px`;
     tour.tip.style.setProperty("--arrow", `${Math.min(Math.max(mid - x, 18), w - 18)}px`);
+  }
+
+  // ---------- feature notice: Late Night ----------
+  //
+  // One-time announcement popup highlighting the "Late Night" tab for visitors
+  // who haven't seen it yet. Uses the same overlay classes as the tour (.tour-ring, .tour-tip).
+  const LATE_NIGHT_TIP_SEEN = "bsdm.tip.late_night.v1";
+  let lateNightTip = null;
+
+  function startLateNightTip() {
+    try {
+      if (localStorage.getItem(LATE_NIGHT_TIP_SEEN)) return;
+      localStorage.setItem(LATE_NIGHT_TIP_SEEN, "1");
+    } catch {
+      return;
+    }
+    const target = document.getElementById("meal-late-night");
+    if (!target || !target.getClientRects().length) return;
+
+    target.scrollIntoView({ block: "nearest", inline: "nearest" });
+
+    const ring = el("div", { className: "tour-ring" });
+    const tip = el("div", { className: "tour-tip", role: "dialog" });
+    lateNightTip = { target, ring, tip };
+
+    document.body.append(ring, tip);
+    addEventListener("resize", placeLateNightTip);
+    document.addEventListener("scroll", placeLateNightTip, true);
+
+    const onDocClick = (e) => {
+      if (tip.contains(e.target) || target.contains(e.target)) return;
+      endLateNightTip();
+    };
+    lateNightTip.onDocClick = onDocClick;
+    setTimeout(() => {
+      if (lateNightTip) document.addEventListener("click", onDocClick, true);
+    }, 50);
+
+    drawLateNightTip();
+    requestAnimationFrame(() => lateNightTip && ring.classList.add("tour-glide"));
+  }
+
+  function drawLateNightTip() {
+    if (!lateNightTip) return;
+    const [title, body] = t("lateNightTip");
+    const dismiss = el("button", {
+      type: "button",
+      className: "tour-next",
+      textContent: t("tourDone"),
+    });
+    dismiss.addEventListener("click", endLateNightTip);
+
+    const tryBtn = el("button", {
+      type: "button",
+      className: "tour-skip",
+      textContent: t("lateNightTipAction"),
+    });
+    tryBtn.addEventListener("click", () => {
+      endLateNightTip();
+      if (state.meal !== "Late Night") {
+        state.meal = "Late Night";
+        trackEvent("select_meal", { meal: "Late Night" });
+        render();
+      }
+    });
+
+    const actions = el("div", {
+      className: "tour-actions",
+      style: "justify-content: flex-end; gap: 8px;",
+    }, [tryBtn, dismiss]);
+
+    lateNightTip.tip.setAttribute("aria-label", title);
+    lateNightTip.tip.replaceChildren(
+      el("p", { className: "tour-title", textContent: title }),
+      el("p", { className: "tour-body", textContent: body }),
+      actions,
+    );
+    placeLateNightTip();
+  }
+
+  function placeLateNightTip() {
+    if (!lateNightTip) return;
+    const target = lateNightTip.target;
+    const r = target.getBoundingClientRect();
+    const row = target.closest(".controls");
+    const clip = row ? row.getBoundingClientRect() : { left: 0, right: innerWidth };
+    const left = Math.max(r.left, clip.left, 8);
+    const right = Math.min(r.right, clip.right, innerWidth - 8);
+    const pad = 5;
+    Object.assign(lateNightTip.ring.style, {
+      left: `${left - pad}px`,
+      top: `${r.top - pad}px`,
+      width: `${right - left + 2 * pad}px`,
+      height: `${r.height + 2 * pad}px`,
+    });
+
+    const w = lateNightTip.tip.offsetWidth;
+    const mid = (left + right) / 2;
+    const x = Math.min(Math.max(mid - w / 2, 12), innerWidth - w - 12);
+    lateNightTip.tip.style.left = `${x}px`;
+    lateNightTip.tip.style.top = `${r.bottom + pad + 10}px`;
+    lateNightTip.tip.style.setProperty("--arrow", `${Math.min(Math.max(mid - x, 18), w - 18)}px`);
+  }
+
+  function endLateNightTip() {
+    if (!lateNightTip) return;
+    if (lateNightTip.onDocClick) {
+      document.removeEventListener("click", lateNightTip.onDocClick, true);
+    }
+    lateNightTip.ring.remove();
+    lateNightTip.tip.remove();
+    lateNightTip = null;
+    removeEventListener("resize", placeLateNightTip);
+    document.removeEventListener("scroll", placeLateNightTip, true);
   }
 
   // ---------- sharing ----------
@@ -2004,9 +2140,15 @@
   // A modifier is left alone -- Cmd/Alt+arrow is the browser's back and forward.
   document.addEventListener("keydown", (e) => {
     if (e.target.matches("input, textarea, select")) return;
-    if (e.key === "Escape" && tour) {
-      endTour();
-      return;
+    if (e.key === "Escape") {
+      if (tour) {
+        endTour();
+        return;
+      }
+      if (lateNightTip) {
+        endLateNightTip();
+        return;
+      }
     }
     if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
     if (e.altKey || e.ctrlKey || e.metaKey) return;
