@@ -244,6 +244,55 @@ class TestPureHelpers:
                    prelude=prelude, tmp_path=tmp_path)
         assert got == ["open", "soon", "shut", None, None]
 
+    def test_service_status_midnight_crossing(self, tmp_path):
+        """Late night services run across midnight (e.g. 21:00 to 02:00)."""
+        prelude_open = ("const TODAY = '2026-09-17';\n"
+                        "Date = class extends Date { constructor() { super('2026-09-17T22:30'); } };")
+        got_open = call(["serviceStatus"], "return serviceStatus('2026-09-17', ['21:00', '02:00']);",
+                        prelude=prelude_open, tmp_path=tmp_path)
+        assert got_open == "open"
+
+        prelude_late = ("const TODAY = '2026-09-17';\n"
+                        "Date = class extends Date { constructor() { super('2026-09-17T01:30'); } };")
+        got_late = call(["serviceStatus"], "return serviceStatus('2026-09-17', ['21:00', '02:00']);",
+                        prelude=prelude_late, tmp_path=tmp_path)
+        assert got_late == "open"
+
+        prelude_soon = ("const TODAY = '2026-09-17';\n"
+                        "Date = class extends Date { constructor() { super('2026-09-17T20:00'); } };")
+        got_soon = call(["serviceStatus"], "return serviceStatus('2026-09-17', ['21:00', '02:00']);",
+                        prelude=prelude_soon, tmp_path=tmp_path)
+        assert got_soon == "soon"
+
+        prelude_shut = ("const TODAY = '2026-09-17';\n"
+                        "Date = class extends Date { constructor() { super('2026-09-17T15:00'); } };")
+        got_shut = call(["serviceStatus"], "return serviceStatus('2026-09-17', ['21:00', '02:00']);",
+                        prelude=prelude_shut, tmp_path=tmp_path)
+        assert got_shut == "shut"
+
+    def test_hall_logo_dynamic_late_night(self, tmp_path):
+        prelude = """
+        const PAGE = { root: '/' };
+        let state = { meal: 'Dinner' };
+        function el(tag, attrs, children) {
+          const e = { tag, attrs: attrs || {}, children: children || [], style: { setProperty: (k,v) => e[k]=v }, append: (c) => e.children.push(c) };
+          return e;
+        }
+        """
+        got = call(["LOGO", "hallLogo", "logoSize"], """
+        const arrillaga = {
+            logo: { file: 'arrillaga.webp', w: 102, h: 36 },
+            late_night_logo: { file: 'arrillaga_late_night.webp', w: 78, h: 36 }
+        };
+        state.meal = 'Dinner';
+        const dinnerImg = hallLogo(arrillaga).children[0].attrs.src;
+        state.meal = 'Late Night';
+        const lateNightImg = hallLogo(arrillaga).children[0].attrs.src;
+        return [dinnerImg, lateNightImg];
+        """, prelude=prelude, tmp_path=tmp_path)
+        assert got == ['/logo/arrillaga.webp', '/logo/arrillaga_late_night.webp']
+
+
     def test_empty_reason_distinguishes_closed_unserved_and_unreleased(self, tmp_path):
         """A hall with no menu items can be:
         1. Closed for the entire day (no scheduled hours at all on that date).
@@ -699,3 +748,25 @@ class TestOpeningMeal:
         """A break is for the board to explain, not a reason to skip ahead."""
         got = self._at(tmp_path, [["2026-10-15T12:00", ["stern"]]])
         assert got == [{"date": "2026-10-15", "meal": "Dinner"}]
+
+    def test_upcoming_picks_late_night_when_available(self, tmp_path):
+        prelude = """
+        const MEALS = ['Breakfast', 'Lunch', 'Dinner', 'Late Night'];
+        const TODAY = '2026-10-15'; const TOMORROW = '2026-10-16';
+        let NOW;
+        Date = class extends Date { constructor() { super(NOW); } };
+        const all = { Breakfast: {}, Lunch: {}, Dinner: {}, "Late Night": {} };
+        const DATA = {
+          window: ['2026-10-15', '2026-10-16'],
+          menus: { '2026-10-15': { arrillaga: all },
+                   '2026-10-16': { arrillaga: all } },
+          hours: { '2026-10-15': { arrillaga: { Breakfast: ['07:30', '10:00'], Lunch: ['11:00', '14:30'], Dinner: ['17:00', '20:30'], 'Late Night': ['21:00', '02:00'] } } }
+        };
+        """
+        got = call(["hoursFor", "upcoming"],
+                   "return INPUT.map(([now, halls]) => { NOW = now; return upcoming(halls); });",
+                   payload=[["2026-10-15T20:45", ["arrillaga"]],
+                            ["2026-10-15T01:30", ["arrillaga"]]],
+                   prelude=prelude, tmp_path=tmp_path)
+        assert got == [{"date": "2026-10-15", "meal": "Late Night"},
+                       {"date": "2026-10-15", "meal": "Late Night"}]

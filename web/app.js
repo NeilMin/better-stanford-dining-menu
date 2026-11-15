@@ -6,7 +6,7 @@
   // down (bsdm/build.py, page_html). `root` is how to get from here back to
   // the site's top, which every picture and logo path starts from.
   const PAGE = DATA.page || { hall: null, root: "" };
-  const MEALS = ["Breakfast", "Lunch", "Dinner"];
+  const MEALS = ["Breakfast", "Lunch", "Dinner", "Late Night"];
   // v4 added `lang` to the persisted shape; v5 stopped keeping `meal`.
   const STORE = "bsdm.prefs.v5";
 
@@ -25,7 +25,7 @@
     beef: "牛肉", pork: "猪肉", poultry: "禽肉", seafood: "海鲜", lamb: "羊肉",
   };
 
-  const MEAL_ZH = { Breakfast: "早餐", Lunch: "午餐", Dinner: "晚餐", Brunch: "早午餐" };
+  const MEAL_ZH = { Breakfast: "早餐", Lunch: "午餐", Dinner: "晚餐", Brunch: "早午餐", "Late Night": "夜宵" };
 
   // R&DE's allergen codes, spelt the way R&DE spells them: the nuts are plural.
   // Anything not listed shows as it came, which is how PEANUTS and TREENUTS went
@@ -294,7 +294,7 @@
     const now = new Date();
     const clock = [now.getHours(), now.getMinutes()]
       .map((n) => String(n).padStart(2, "0")).join(":");
-    const usual = { Breakfast: "10:00", Lunch: "14:00", Dinner: "20:00" };
+    const usual = { Breakfast: "10:00", Lunch: "14:00", Dinner: "20:00", "Late Night": "02:00" };
     const offered = (date) => MEALS.filter((meal) =>
       halls.some((id) => meal in ((DATA.menus[date] || {})[id] || {})));
 
@@ -303,9 +303,16 @@
       return { date: first, meal: offered(first)[0] || "Dinner" };
     }
     const today = offered(TODAY);
+    if (clock <= "02:00" && today.includes("Late Night")) {
+      return { date: TODAY, meal: "Late Night" };
+    }
     for (const meal of today) {
+      if (meal === "Late Night") continue;
       const closes = halls.map((id) => hoursFor(TODAY, id, meal)?.[1]).filter(Boolean);
       if (clock <= (closes.length ? closes.sort().at(-1) : usual[meal])) return { date: TODAY, meal };
+    }
+    if (today.includes("Late Night")) {
+      return { date: TODAY, meal: "Late Night" };
     }
     // Nobody serving today is a break, and the board says so; jumping to
     // tomorrow is only for a day whose meals have all been served.
@@ -772,6 +779,11 @@
       return h * 60 + m;
     };
     const [open, close] = [toMin(span[0]), toMin(span[1])];
+    if (close < open) {
+      if (minutes >= open || minutes <= close) return "open";
+      if (open - minutes > 0 && open - minutes <= 90) return "soon";
+      return "shut";
+    }
     if (minutes >= open && minutes <= close) return "open";
     if (open - minutes > 0 && open - minutes <= 90) return "soon";
     return "shut";
@@ -1229,11 +1241,14 @@
    *  until someone reads its box off that map. */
   function hallLogo(hall) {
     const slot = el("div", { className: "col-logo" });
-    if (!hall.logo) return slot;
+    const logoData = (state.meal === "Late Night" && hall.late_night_logo)
+      ? hall.late_night_logo
+      : hall.logo;
+    if (!logoData) return slot;
 
-    const [w, h] = logoSize(hall.logo.w / hall.logo.h);
+    const [w, h] = logoSize(logoData.w / logoData.h);
     const img = el("img", {
-      src: PAGE.root + "logo/" + hall.logo.file,
+      src: PAGE.root + "logo/" + logoData.file,
       // Decorative: the hall's name is right beside it, and reading the logo
       // out as well would just say it twice.
       alt: "",
@@ -1279,7 +1294,10 @@
     const title = el("div", { className: "col-title" }, [
       el("h2", { className: "col-name" }, [el("span", { textContent: hall.short })]),
     ]);
-    const concept = (state.lang === "zh" && hall.concept_zh) || hall.concept;
+    let concept = (state.lang === "zh" && hall.concept_zh) || hall.concept;
+    if (state.meal === "Late Night" && hall.late_night) {
+      concept = (state.lang === "zh" && hall.late_night.name_zh) || hall.late_night.name;
+    }
     if (concept) {
       title.append(el("p", { className: "col-concept", textContent: concept }));
     }

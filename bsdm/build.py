@@ -197,7 +197,7 @@ def build_payload(root: Path) -> dict:
                     "name": "Shake Smart Shakes",
                     "ingredients": "organic protein shakes, fresh fruits, vegetables, peanut butter, and plant-based milks",
                     "tags": ["gluten-free", "vegetarian"],
-                    "allergens": ["MILK", "PEANUTS", "SOY", "TREE NUTS"],
+                    "allergens": ["MILK", "PEANUTS", "SOY", "TREENUTS"],
                     "trace_allergens": [],
                 }
                 shake_ref = variant_ref(make_id("Shake Smart Shakes"), shake_dish)
