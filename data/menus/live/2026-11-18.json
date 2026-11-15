@@ -1,6 +1,6 @@
 {
  "date": "2026-11-18",
- "scraped_at": "2026-11-15T03:05:01-08:00",
+ "scraped_at": "2026-11-15T12:25:15-08:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -2259,30 +2259,38 @@
    ],
    "Dinner": [
     {
-     "name": "Cantonese-Style Char Siu Pork",
-     "recipe_id": "7847263",
+     "name": "Caramelized Herb Roasted Turkey",
+     "recipe_id": "5550211",
      "description": "",
-     "ingredients": "Pork, hoisin sauce (sesame, soy, wheat), garlic, natural beet coloring, ginger, brown sugar, tamari (soy), garlic chili sauce, char siu sauce (hoisin sauce, plum sauce, tamari, chinese five spice powder)",
+     "ingredients": "turkey, canola/olive oil blend, salt, granulated garlic, parsley, garlic, rosemary, thyme, pepper, caramelized onion gravy(onions, vegetable soup base, canola/olive oil blend, thyme, bay leaf, butter, flour, salt, pepper)",
      "allergens": [
-      "SESAME",
-      "SOY",
+      "MILK",
       "WHEAT"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "SOY",
+      "TREENUTS"
+     ],
      "tags": [],
      "order": 0
     },
     {
-     "name": "Daikon Radish Stew",
-     "recipe_id": "DaikRadStew1",
+     "name": "Jackfruit Wellington",
+     "recipe_id": "JackfruitWellington1",
      "description": "",
-     "ingredients": "daikon radish, carrots, mushrooms, onions, garlic, tamari (soy), sugar, vegetable soup base, star anise, 5-spice powder, ginger, rice vinegar, mushroom seasoning, olive/canola oil blend, salt, black pepper",
+     "ingredients": "vegan puff pastry, jackfruit, vegetable broth, mushrooms, onion, spinach, olive oil blend, tomato paste, soy sauce, mushroom powder, all-purpose flour, Dijon mustard, garlic, smoked paprika, thyme, rosemary, pepper, salt, soy milk, salt",
      "allergens": [
-      "SOY"
+      "SOY",
+      "WHEAT"
      ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
       "vegan"
      ],
      "order": 1
@@ -2314,85 +2322,77 @@
      "order": 3
     },
     {
-     "name": "Fiery Chili Garlic Green Beans",
-     "recipe_id": "5844547",
+     "name": "Roasted Brussel Sprouts & Pancetta",
+     "recipe_id": "5744835",
      "description": "",
-     "ingredients": "green beans, chili garlic sauce, garlic, canola/olive oil blend, tamari (soy)",
-     "allergens": [
-      "SOY"
-     ],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "TREENUTS",
-      "WHEAT"
-     ],
+     "ingredients": "brussel sprouts, pancetta bacon (pork belly, salt, sugar, spices, sodium erythorbate, sodium nitrite, garlic), balsamic vinegar, brown sugar, canola/olive oil blend, salt, pepper",
+     "allergens": [],
+     "trace_allergens": [],
      "tags": [
-      "vegan"
+      "gluten-free"
      ],
      "order": 4
     },
     {
-     "name": "Stir-Fried Bok Choy with Sesame",
-     "recipe_id": "StirFryBokChoySes1",
+     "name": "Lemon Garlic Green Beans",
+     "recipe_id": "5933002",
      "description": "",
-     "ingredients": "bok choy, sesame oil, toasted sesame seeds, mushroom seasoning, sugar, olive/canola oil blend, salt, pepper",
-     "allergens": [
-      "SESAME"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan"
-     ],
-     "order": 5
-    },
-    {
-     "name": "Vegetable Chow Mein",
-     "recipe_id": "5488787",
-     "description": "",
-     "ingredients": "chow mein noodles (wheat flour, wheat gluten, salt, fdc yellow 5, 6, soybean oil), red onions, canola/olive oil blend, carrots, celery, mushroom seasoning (mushroom powder, shiitake mushroom extract, vegetable extract, salt, sodium 5 guanylate), garlic",
-     "allergens": [
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "vegan"
-     ],
-     "order": 6
-    },
-    {
-     "name": "Steamed Jasmine Rice",
-     "recipe_id": "5134594",
-     "description": "",
-     "ingredients": "jasmine rice, water, salt",
+     "ingredients": "green beans, canola/olive oil blend, garlic, lemon",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
-      "vegan"
+      "vegan",
+      "kosher"
+     ],
+     "order": 5
+    },
+    {
+     "name": "Garlic Mashed Potatoes",
+     "recipe_id": "5280474",
+     "description": "",
+     "ingredients": "potatoes, cream, butter (milk), canola/olive oil blend, garlic, salt, pepper",
+     "allergens": [
+      "MILK"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegetarian"
+     ],
+     "order": 6
+    },
+    {
+     "name": "Maple Glazed Yams with Marshmallows",
+     "recipe_id": "6878846",
+     "description": "",
+     "ingredients": "yams, unsalted butter, maple flavored syrup (corn syrup, sugar, salt, natural flavor, artificial flavor, sodium hexametaphosphate, sodium benzoate, sorbic acid, caramel color, phosphoric acid), white pepper",
+     "allergens": [
+      "MILK"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegetarian"
      ],
      "order": 7
     },
     {
-     "name": "Char Siu Sauce",
-     "recipe_id": "6075512",
+     "name": "Assorted Dinner Rolls",
+     "recipe_id": "5344600",
      "description": "",
-     "ingredients": "hoisin sauce (soy, sesame, wheat), plum sauce, tamari sauce (soy), chinese five spice powder",
+     "ingredients": "unbleached wheat flour, malted barley flour, sour culture, salt, yeast, sesame seeds, amaranth, poppy seeds, whole wheat flour, dark rye flour, malt powder (milk), honey, extra virgin olive oil, semolina (wheat), wheat germ",
      "allergens": [
+      "MILK",
       "SESAME",
-      "SOY",
       "WHEAT"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "SOY",
+      "TREENUTS"
+     ],
      "tags": [
-      "vegan"
+      "vegetarian"
      ],
      "order": 8
     },
