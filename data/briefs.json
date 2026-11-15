@@ -415,6 +415,39 @@
   "vessel": "bowl",
   "written_at": "2026-10-01T19:05:42+00:00"
  },
+ "02a80dbf2fec": {
+  "avoid": [
+   "hot dog bun",
+   "pork sausage",
+   "bacon",
+   "scrambled eggs",
+   "skewers",
+   "ground meat",
+   "raw meat"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item sausage links?",
+    "yes": true
+   },
+   {
+    "q": "Is the sausage served inside a bun?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat sliced into rounds or ground into crumbles?",
+    "yes": false
+   }
+  ],
+  "dish": "breakfast turkey sausage links",
+  "look": "two plump turkey sausage links, browned taut collagen casing, golden-brown sear marks, glistening surface, rounded ends, tiny red pepper flakes visible beneath skin",
+  "model": "gemini-flash-latest",
+  "name": "Turkey Sausage Link",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-15T20:32:51+00:00"
+ },
  "02ce58dc85d5": {
   "avoid": [
    "chicken",
@@ -28584,6 +28617,41 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-10T10:04:34+00:00"
+ },
+ "ba5bddb7fe05": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "bacon",
+   "cheese",
+   "cream sauce"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food green beans?",
+    "yes": true
+   },
+   {
+    "q": "Is there visible meat, bacon, or poultry mixed in?",
+    "yes": false
+   },
+   {
+    "q": "Are the green beans coated in a thick cream sauce or melted cheese?",
+    "yes": false
+   }
+  ],
+  "dish": "sautéed lemon garlic green beans",
+  "look": "whole tender-crisp green beans, bright emerald green, tossed with golden minced sautéed garlic, glistening surface, fine strands of yellow lemon zest, slight blistered edges on the green beans",
+  "model": "gemini-flash-latest",
+  "name": "Lemon Garlic Green Beans",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-15T20:32:51+00:00"
  },
  "ba6b3c3f7b15": {
   "avoid": [
