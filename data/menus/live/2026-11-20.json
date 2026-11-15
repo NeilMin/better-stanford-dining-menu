@@ -1,6 +1,6 @@
 {
  "date": "2026-11-20",
- "scraped_at": "2026-11-14T15:57:55-08:00",
+ "scraped_at": "2026-11-15T00:37:26-08:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -4302,38 +4302,43 @@
    ],
    "Dinner": [
     {
-     "name": "Herb Roasted Rotisserie Chicken",
-     "recipe_id": "4063733",
+     "name": "Cantonese-Style Char Siu Pork",
+     "recipe_id": "7847263",
      "description": "",
-     "ingredients": "[HALAL] chicken, canola/olive oil blend, garlic, paprika, thyme, oregano, rosemary, parsley, salt, pepper",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free"
+     "ingredients": "Pork, hoisin sauce (sesame, soy, wheat), garlic, natural beet coloring, ginger, brown sugar, tamari (soy), garlic chili sauce, char siu sauce (hoisin sauce, plum sauce, tamari, chinese five spice powder)",
+     "allergens": [
+      "SESAME",
+      "SOY",
+      "WHEAT"
      ],
+     "trace_allergens": [],
+     "tags": [],
      "order": 0
     },
     {
-     "name": "BBQ Tofu with Vegetables",
-     "recipe_id": "3334994",
+     "name": "Char Siu Tofu",
+     "recipe_id": "CCharT17",
      "description": "",
-     "ingredients": "tofu, bbq sauce, seasonal vegetables, canola/olive oil blend, garlic",
+     "ingredients": "[NON-HALAL] tofu (soy), shiitake mushrooms, hoisin sauce (soy, wheat), tamari (soy), brown sugar, garlic, ginger, Shaoxing wine (alcohol), Chinese 5-spice, sesame oil (sesame), salt, black pepper",
      "allergens": [
+      "SESAME",
       "SOY",
       "WHEAT"
      ],
      "trace_allergens": [],
      "tags": [
-      "vegan"
+      "vegetarian"
      ],
      "order": 1
     },
     {
-     "name": "Seasonal Steamed Vegetables",
-     "recipe_id": "5561366",
+     "name": "Stir-Fried Bok Choy with Sesame",
+     "recipe_id": "StirFryBokChoySes1",
      "description": "",
-     "ingredients": "seasonal vegetables, salt",
-     "allergens": [],
+     "ingredients": "bok choy, sesame oil, toasted sesame seeds, mushroom seasoning, sugar, olive/canola oil blend, salt, pepper",
+     "allergens": [
+      "SESAME"
+     ],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
@@ -4355,23 +4360,25 @@
      "order": 3
     },
     {
-     "name": "Braised Green Beans & Caramelized Onions",
-     "recipe_id": "GreenBeanCarmOn1",
+     "name": "Vegetable Chow Mein",
+     "recipe_id": "5488787",
      "description": "",
-     "ingredients": "green beans, onions, vegetable soup base, garlic, thyme, parsley, olive/canola oil blend, salt, black pepper",
-     "allergens": [],
+     "ingredients": "chow mein noodles (wheat flour, wheat gluten, salt, fdc yellow 5, 6, soybean oil), red onions, canola/olive oil blend, carrots, celery, mushroom seasoning (mushroom powder, shiitake mushroom extract, vegetable extract, salt, sodium 5 guanylate), garlic",
+     "allergens": [
+      "SOY",
+      "WHEAT"
+     ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
       "vegan"
      ],
      "order": 4
     },
     {
-     "name": "Citrus Roasted Root Vegetables",
-     "recipe_id": "5614724",
+     "name": "Steamed Jasmine Rice",
+     "recipe_id": "5134594",
      "description": "",
-     "ingredients": "seasonal root vegetables, canola/olive oil blend, orange juice, parsley, salt, pepper",
+     "ingredients": "jasmine rice, water, salt",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -4381,48 +4388,20 @@
      "order": 5
     },
     {
-     "name": "Buttered Egg Noodles",
-     "recipe_id": "ButterEggNood1",
+     "name": "Char Siu Sauce",
+     "recipe_id": "6075512",
      "description": "",
-     "ingredients": "semolina & durum flour (wheat), eggs, butter (milk)",
+     "ingredients": "hoisin sauce (soy, sesame, wheat), plum sauce, tamari sauce (soy), chinese five spice powder",
      "allergens": [
-      "EGG",
-      "MILK",
+      "SESAME",
+      "SOY",
       "WHEAT"
      ],
      "trace_allergens": [],
      "tags": [
-      "vegetarian"
-     ],
-     "order": 6
-    },
-    {
-     "name": "Garlic Mashed Potatoes",
-     "recipe_id": "5280474",
-     "description": "",
-     "ingredients": "potatoes, cream, butter (milk), canola/olive oil blend, garlic, salt, pepper",
-     "allergens": [
-      "MILK"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegetarian"
-     ],
-     "order": 7
-    },
-    {
-     "name": "Mushroom Gravy",
-     "recipe_id": "3104786",
-     "description": "",
-     "ingredients": "mushrooms, onions, garlic, canola/olive oil blend, balsamic vinegar, vegetarian soup base (contains celery, carrots), cornstarch, beet sugar, parsley, salt",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
       "vegan"
      ],
-     "order": 8
+     "order": 6
     },
     {
      "name": "Soup of the Day",
@@ -4432,7 +4411,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 9
+     "order": 7
     },
     {
      "name": "Assorted Dinner Rolls",
@@ -4451,7 +4430,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 10
+     "order": 8
     },
     {
      "name": "Composed Salad",
@@ -4461,7 +4440,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 11
+     "order": 9
     },
     {
      "name": "Performance Bar",
@@ -4471,7 +4450,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 12
+     "order": 10
     },
     {
      "name": "Craveable Grains",
@@ -4484,7 +4463,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 13
+     "order": 11
     },
     {
      "name": "Flavor Forward Legumes",
@@ -4497,7 +4476,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 14
+     "order": 12
     },
     {
      "name": "Pasta Marinara",
@@ -4514,7 +4493,7 @@
      "tags": [
       "vegan"
      ],
-     "order": 15
+     "order": 13
     }
    ]
   },
