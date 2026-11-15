@@ -598,3 +598,22 @@ class TestHallPages:
         buildlib.build(site.root, out)
         assert not (out / "branner").exists()
         assert (out / "wilbur" / "index.html").exists() and (out / "img").is_dir()
+
+    def test_late_night_logos_are_shipped_to_output(self, site, tmp_path):
+        site.halls[0]["late_night"] = {
+            "name": "Wilbur Late", "days": [3], "hours": ["21:00", "02:00"]
+        }
+        site.save_config()
+        (site.root / "data/logos/index.json").write_text(
+            json.dumps({
+                "wilbur": {"file": "wilbur.webp", "w": 40, "h": 20},
+                "wilbur_late_night": {"file": "wilbur_late_night.webp", "w": 40, "h": 20}
+            }))
+        (site.root / "data/logos/wilbur.webp").write_bytes(b"RIFF----WEBPVP8 ")
+        (site.root / "data/logos/wilbur_late_night.webp").write_bytes(b"RIFF----WEBPVP8 ")
+        site.write_menu("2026-09-17", {"wilbur": {"Dinner": [dish("Roast Chicken", "chicken")]}})
+        site.with_web()
+        out = tmp_path / "site_ln"
+        buildlib.build(site.root, out)
+        assert (out / "logo/wilbur.webp").exists()
+        assert (out / "logo/wilbur_late_night.webp").exists()

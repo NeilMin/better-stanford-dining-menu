@@ -552,6 +552,7 @@ def build(root: Path, out: Path) -> dict:
     logo_out = out / "logo"
     logo_out.mkdir(exist_ok=True)
     wanted_logos = {h["logo"]["file"] for h in payload["halls"] if h.get("logo")}
+    wanted_logos |= {h["late_night_logo"]["file"] for h in payload["halls"] if h.get("late_night_logo")}
     for name in wanted_logos:
         src = logolib.out_dir(root) / name
         dst = logo_out / name
