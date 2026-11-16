@@ -1,6 +1,6 @@
 {
  "date": "2026-11-17",
- "scraped_at": "2026-11-16T03:34:07-08:00",
+ "scraped_at": "2026-11-16T15:45:18-08:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -1436,7 +1436,7 @@
      "name": "Creamy Chicken Alfredo Pasta",
      "recipe_id": "Creamypasta(ricker)",
      "description": "",
-     "ingredients": "Pasta, Chicken, Mushroom, Cream, Flour, Butter, Salt, Pepper",
+     "ingredients": "[HALAL] Chicken, Pasta (wheat), Mushroom, Cream (milk), Flour (wheat), Butter (milk), Salt, Pepper",
      "allergens": [
       "MILK",
       "WHEAT"
@@ -3193,6 +3193,36 @@
       "vegetarian"
      ],
      "order": 14
+    },
+    {
+     "name": "Tacos De Carne Asada",
+     "recipe_id": "6891356",
+     "description": "",
+     "ingredients": "corn tortilla (whole grain corn, glycerin, xanthan gum), beef, onions, garlic, orange juice, lime juice, canola/olive oil blend, oregano, salt, pepper",
+     "allergens": [],
+     "trace_allergens": [
+      "WHEAT"
+     ],
+     "tags": [],
+     "order": 15
+    },
+    {
+     "name": "Cauliflower Tacos",
+     "recipe_id": "4537710",
+     "description": "",
+     "ingredients": "corn tortilla, cauliflower, sesame seeds, pumpkin seeds, tomatillo, onions, serrano chiles, garlic, lettuce, radish, hoja santa leaves, canola/olive oil blend, salt",
+     "allergens": [
+      "SESAME"
+     ],
+     "trace_allergens": [
+      "PEANUTS",
+      "TREENUTS"
+     ],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
+     "order": 16
     }
    ]
   },
@@ -4940,10 +4970,10 @@
      "order": 9
     },
     {
-     "name": "BBQ Chicken Pizza",
-     "recipe_id": "4739244",
+     "name": "Cheese Pizza",
+     "recipe_id": "5646522",
      "description": "",
-     "ingredients": "pizza dough, chicken, tomato sauce, mozzarella cheese, barbecue sauce, red onions, cilantro",
+     "ingredients": "pizza dough, tomato sauce, mozzarella cheese, parmesan cheese",
      "allergens": [
       "MILK",
       "SOY",
@@ -4953,7 +4983,9 @@
       "EGG",
       "SESAME"
      ],
-     "tags": [],
+     "tags": [
+      "vegetarian"
+     ],
      "order": 10
     },
     {

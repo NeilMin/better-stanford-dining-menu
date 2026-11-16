@@ -1,6 +1,6 @@
 {
  "date": "2026-11-16",
- "scraped_at": "2026-11-16T03:34:07-08:00",
+ "scraped_at": "2026-11-16T15:45:18-08:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -1211,25 +1211,27 @@
      "order": 4
     },
     {
-     "name": "Garlic Parmesan Fries",
-     "recipe_id": "6999923",
+     "name": "French Fries",
+     "recipe_id": "4363431",
      "description": "",
-     "ingredients": "french fries (potatoes, vegetable oil [canola, palm, soybean, sunflower oil], modified food starch [potato, corn], rice flour, salt, dextrin, sugar, leavening [disodium dihydrogen pyrophosphate, sodium bicarbonate], garlic powder, black pepper, natural flavor, onion powder, dextrose, xanthan gum), garlic, parmesan cheese blend (milk), parsley, canola/olive oil blend, salt, fried in canola oil",
+     "ingredients": "potatoes, canola oil, corn oil, cottonseed oil, palm oil, soybean oil, sunflower oil, modified food starch, rice flour, dextrin, dextrose, xanthan gum, sea salt, sugar, leavening, garlic powder, spices, natural flavors, onion powder",
      "allergens": [
-      "MILK",
       "SOY"
      ],
      "trace_allergens": [
       "COCONUT",
       "EGG",
       "FISH",
+      "MILK",
       "PEANUTS",
       "SESAME",
       "SHELLFISH",
       "TREENUTS",
       "WHEAT"
      ],
-     "tags": [],
+     "tags": [
+      "vegan"
+     ],
      "order": 5
     },
     {
@@ -1264,27 +1266,6 @@
      "order": 7
     },
     {
-     "name": "Grilled Vegan/Vegetarian",
-     "recipe_id": "13468741",
-     "description": "",
-     "ingredients": "chef's choice grilled vegan OR vegetarian option",
-     "allergens": [],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
-     ],
-     "tags": [],
-     "order": 8
-    },
-    {
      "name": "Handmade Pizza",
      "recipe_id": "afdcpizza2",
      "description": "",
@@ -1297,7 +1278,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 9
+     "order": 8
     },
     {
      "name": "Panini Station",
@@ -1315,7 +1296,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 10
+     "order": 9
     },
     {
      "name": "Soup of the Day",
@@ -1325,7 +1306,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 11
+     "order": 10
     },
     {
      "name": "Composed Salad",
@@ -1335,7 +1316,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 12
+     "order": 11
     },
     {
      "name": "Performance Bar",
@@ -1345,7 +1326,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 13
+     "order": 12
     },
     {
      "name": "Craveable Grains",
@@ -1358,7 +1339,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 14
+     "order": 13
     },
     {
      "name": "Flavor Forward Legumes",
@@ -1371,7 +1352,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 15
+     "order": 14
     },
     {
      "name": "Marinara Sauce",
@@ -1386,23 +1367,22 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 16
+     "order": 15
     },
     {
-     "name": "Pesto Sauce",
-     "recipe_id": "6128910",
+     "name": "Alfredo Sauce",
+     "recipe_id": "5681078",
      "description": "",
-     "ingredients": "basil, canola oil, parmesan cheese (milk, bacterial culture, salt, microbial enzymes, extra virgin olive oil, garlic, salt, lemon juice concentrate, natural flavor, ascorbic acid, xanthan gum, soy lecithin, chamomile extract, rosemary extract)",
+     "ingredients": "cream, onion, milk powder, butter, parmesan cheese, flour, garlic, nutmeg, onion powder, salt",
      "allergens": [
       "MILK",
-      "SOY"
+      "WHEAT"
      ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
       "vegetarian"
      ],
-     "order": 17
+     "order": 16
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -1415,7 +1395,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 18
+     "order": 17
     }
    ],
    "Dinner": [
@@ -3171,6 +3151,46 @@
       "vegetarian"
      ],
      "order": 12
+    },
+    {
+     "name": "Chicken Tinga Tostada",
+     "recipe_id": "3514990",
+     "description": "",
+     "ingredients": "[HALAL] chicken tinga (chicken, tinga sauce (onions, pasilla chili, tomatoes, garlic, chipotle, bell peppers), adobo mix (oregano, cumin seed, cloves, allspice, garlic, onions, ancho chili, guajillo chili, guajillo), tostada shell, refried beans (beans, salt, water [soy]), salsa roja (garlic, onions, jalapeno, puya chili, cilantro, lime juice, salt, beets, tomatoes), mexican crema (milk), avocado, canola/olive oil blend",
+     "allergens": [
+      "MILK",
+      "SOY",
+      "WHEAT"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "vegetarian"
+     ],
+     "order": 13
+    },
+    {
+     "name": "Tostada De Tinga De Hongos",
+     "recipe_id": "4389513",
+     "description": "",
+     "ingredients": "tostadas, mushrooms, refried beans, chipotle chiles, canola/olive oil blend, onions, garlic, tomatoes, apple cider vinegar, sugar, salt, avocados, crema mexicana, salt",
+     "allergens": [
+      "MILK",
+      "SOY"
+     ],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "TREENUTS",
+      "WHEAT"
+     ],
+     "tags": [
+      "vegetarian"
+     ],
+     "order": 14
     }
    ]
   },
@@ -4282,16 +4302,17 @@
      "order": 10
     },
     {
-     "name": "Creamy Pesto",
-     "recipe_id": "7728050",
+     "name": "Pasta Alfredo",
+     "recipe_id": "5683556",
      "description": "",
-     "ingredients": "basil, canola oil, parmesan cheese (milk), olive oil, garlic, salt, lemon juice concentrate, natural flavor, xanthan gum, soy lecithin, chamomile extract, rosemary extract, white sauce (flour [wheat], butter, cream, milk powder, onion powder, white pepper, garlic, nutmeg, salt), parsley",
+     "ingredients": "pasta (wheat), white sauce (cream, butter, milk powder, flour [wheat], garlic, nutmeg, onion powder, white pepper, salt), mozzarella & parmesan cheese (milk)",
      "allergens": [
       "MILK",
-      "SOY",
       "WHEAT"
      ],
-     "trace_allergens": [],
+     "trace_allergens": [
+      "EGG"
+     ],
      "tags": [
       "vegetarian"
      ],
