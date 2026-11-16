@@ -172,8 +172,19 @@ def build_payload(root: Path) -> dict:
         # that are there every day, so the board can lead with what changed.
         menus[iso] = {}
         for hall_id, meals in day["halls"].items():
+            # The menu site says what a service serves, the hours page whether
+            # there is one. The menu site attaches the campus-wide breakfast to
+            # every hall on every day -- Saturday at halls whose weekend opens
+            # with brunch, Casper which serves none, Wilbur through the
+            # Thanksgiving closure -- so a service the hall's hours do not give
+            # a time to is not put on the board. A hall config does not know
+            # keeps all of it; bsdm/source.py turns that run red anyway.
+            h = halls_by_id.get(hall_id)
+            open_for = schedule_for(h, as_date) if h else None
             per_meal = {}
             for meal, served in meals.items():
+                if open_for is not None and meal not in open_for:
+                    continue
                 grouped = group_service_stations(served)
                 daily, standing = split_service(station_table, hall_id, meal, grouped)
                 specials = []
@@ -224,14 +235,16 @@ def build_payload(root: Path) -> dict:
             # `closed` ranges), and the scrape shows the hall serving that day at
             # all. The second covers a hall shut outright -- a break, a day R&DE
             # has not published -- with nobody having to edit config for it.
-            h = halls_by_id.get(hall_id)
-            if h and per_meal and "Late Night" in schedule_for(h, as_date):
+            if h and per_meal and "Late Night" in open_for:
                 per_meal["Late Night"] = {
                     "specials": [],
                     "daily": [variant_ref(make_id(LATE_NIGHT_DISH["name"]), LATE_NIGHT_DISH)],
                     "stations": [],
                 }
-            menus[iso][hall_id] = per_meal
+            # A hall left with nothing is shut, and is left off for the board to
+            # say so from the hours, rather than drawn as an empty column.
+            if per_meal or not meals:
+                menus[iso][hall_id] = per_meal
         hours[iso] = {
             h["id"]: schedule_for(h, as_date)
             for h in config["halls"] if h["active"] and schedule_for(h, as_date)

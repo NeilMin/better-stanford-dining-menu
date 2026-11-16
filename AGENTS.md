@@ -310,6 +310,18 @@ is prose. `make hours-diff` / `make hours-accept` manage the baseline when it ch
 uses ("AFDC", "Casper", and "Wibur", which is a typo R&DE keeps re-making). Matching already
 ignores case and punctuation, so only genuinely different words belong there.
 
+**The hours page decides which services exist; the menu site only what they serve.** R&DE's menu
+site attaches the campus-wide breakfast to every hall on every day: Saturday and Sunday, where the
+halls open with a brunch it lists as Lunch; Casper and Branner, which serve no breakfast at all;
+Casper's weekends, when it is shut; and the whole Thanksgiving 2026 closure, when it still listed
+three meals a day at Wilbur. `build_payload()` therefore keeps a scraped service only if
+`schedule_for()` gives it a time that day, and leaves a hall with nothing left off the board, so
+the page says "closed" from the hours. `data/menus/` keeps everything as scraped, so the catalog
+and `make verify` are unaffected. This makes a stale config hide real food, which is why a break or
+a new term's hours must be transcribed before they start: a closure is a schedule entry with
+`"meals": {}` above the term's own, and `make hours-diff` is what says the page has moved. A hall
+config has never heard of keeps all its services; `bsdm/source.py` turns that run red anyway.
+
 **The Late Night meal is not scraped; it is written in from config, so a break has to be typed in.**
 R&DE's menu site has no late night, and the hours page names only the Shake Smart shakes, so
 `bsdm/build.py` adds a "Late Night" service with that one dish (`LATE_NIGHT_DISH`) on the weekdays

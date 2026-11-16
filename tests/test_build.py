@@ -200,6 +200,51 @@ class TestWindow:
         assert "Late Night" not in payload["hours"]["2026-11-17"].get("arrillaga", {})
 
 
+class TestHoursDecideWhatIsServed:
+    """R&DE's menu site says what a service serves; the hours page whether there
+    is one. The site attaches the campus-wide breakfast to every hall on every
+    day, closed or not, so the board keeps only the services the hours give a
+    time to."""
+
+    WEEK = {"from": "2026-09-18", "days": [0, 1, 2, 3, 4],
+            "meals": {"Breakfast": ["07:30", "10:00"], "Lunch": ["11:00", "14:00"],
+                      "Dinner": ["17:00", "20:00"]}}
+    WEEKEND = {"from": "2026-09-18", "days": [5, 6],
+               "meals": {"Lunch": ["09:30", "13:30"], "Dinner": ["17:00", "20:00"]}}
+    MEALS = {"Breakfast": [dish("Scrambled Eggs")], "Lunch": [dish("Frittata")],
+             "Dinner": [dish("Roast Chicken", "chicken")]}
+
+    def _payload(self, project, today, schedules, *, extra_hall=False):
+        project.set_today(today)
+        project.add_hall("wilbur", schedules=schedules)
+        project.write_catalog({})
+        halls = {"wilbur": self.MEALS}
+        if extra_hall:
+            halls["newhall"] = self.MEALS
+        project.write_menu(today, halls)
+        return buildlib.build_payload(project.root)["menus"][today]
+
+    def test_no_breakfast_on_a_day_whose_hours_open_with_brunch(self, project):
+        """Sunday's "Breakfast" is the campus-wide one; brunch is listed as Lunch."""
+        got = self._payload(project, "2026-11-15", [self.WEEK, self.WEEKEND])
+        assert list(got["wilbur"]) == ["Lunch", "Dinner"]
+
+    def test_a_closure_takes_the_hall_off_the_board(self, project):
+        """Thanksgiving 2026: Wilbur closed after Nov 20, R&DE still listed its menus."""
+        closure = {"from": "2026-11-21", "to": "2026-11-27", "days": [0, 1, 2, 3, 4, 5, 6], "meals": {}}
+        got = self._payload(project, "2026-11-23", [closure, self.WEEK, self.WEEKEND])
+        assert "wilbur" not in got
+
+    def test_a_weekday_keeps_every_service_it_has_hours_for(self, project):
+        got = self._payload(project, "2026-11-23", [self.WEEK, self.WEEKEND])
+        assert list(got["wilbur"]) == ["Breakfast", "Lunch", "Dinner"]
+
+    def test_a_hall_config_does_not_know_keeps_all_of_it(self, project):
+        """Nothing to judge it by; bsdm/source.py turns that run red anyway."""
+        got = self._payload(project, "2026-11-15", [self.WEEK, self.WEEKEND], extra_hall=True)
+        assert list(got["newhall"]) == ["Breakfast", "Lunch", "Dinner"]
+
+
 class TestDishesAndVariants:
     def test_a_menu_entry_references_a_dish_and_a_variant(self, site):
         payload = buildlib.build_payload(site.root)
