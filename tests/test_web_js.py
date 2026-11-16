@@ -232,7 +232,7 @@ class TestPureHelpers:
     def test_open_soon_and_shut_are_read_off_the_viewers_clock(self, tmp_path):
         """A tab left open overnight must not keep calling yesterday "Today",
         so the comparison is against the browser's own time, not build time."""
-        prelude = ("const TODAY = '2026-09-17';\n"
+        prelude = ("const TODAY = '2026-09-17'; const YESTERDAY = '2026-09-16';\n"
                    "Date = class extends Date { constructor() { super('2026-09-17T17:30'); } };")
         got = call(["serviceStatus"],
                    "return INPUT.map(([d, s]) => serviceStatus(d, s));",
@@ -244,31 +244,23 @@ class TestPureHelpers:
                    prelude=prelude, tmp_path=tmp_path)
         assert got == ["open", "soon", "shut", None, None]
 
-    def test_service_status_midnight_crossing(self, tmp_path):
-        """Late night services run across midnight (e.g. 21:00 to 02:00)."""
-        prelude_open = ("const TODAY = '2026-09-17';\n"
-                        "Date = class extends Date { constructor() { super('2026-09-17T22:30'); } };")
-        got_open = call(["serviceStatus"], "return serviceStatus('2026-09-17', ['21:00', '02:00']);",
-                        prelude=prelude_open, tmp_path=tmp_path)
-        assert got_open == "open"
-
-        prelude_late = ("const TODAY = '2026-09-17';\n"
-                        "Date = class extends Date { constructor() { super('2026-09-17T01:30'); } };")
-        got_late = call(["serviceStatus"], "return serviceStatus('2026-09-17', ['21:00', '02:00']);",
-                        prelude=prelude_late, tmp_path=tmp_path)
-        assert got_late == "open"
-
-        prelude_soon = ("const TODAY = '2026-09-17';\n"
-                        "Date = class extends Date { constructor() { super('2026-09-17T20:00'); } };")
-        got_soon = call(["serviceStatus"], "return serviceStatus('2026-09-17', ['21:00', '02:00']);",
-                        prelude=prelude_soon, tmp_path=tmp_path)
-        assert got_soon == "soon"
-
-        prelude_shut = ("const TODAY = '2026-09-17';\n"
-                        "Date = class extends Date { constructor() { super('2026-09-17T15:00'); } };")
-        got_shut = call(["serviceStatus"], "return serviceStatus('2026-09-17', ['21:00', '02:00']);",
-                        prelude=prelude_shut, tmp_path=tmp_path)
-        assert got_shut == "shut"
+    def test_a_late_night_is_open_past_midnight_only_as_last_nights(self, tmp_path):
+        """21:00-02:00 belongs to the evening it opens on. At 01:30 the service
+        that is open is yesterday's; today's has not started, and may not run
+        at all -- Arrillaga Nights does not open on a Monday."""
+        span = ["21:00", "02:00"]
+        cases = [["2026-09-17T22:30", "2026-09-17"], ["2026-09-17T20:00", "2026-09-17"],
+                 ["2026-09-17T15:00", "2026-09-17"], ["2026-09-17T01:30", "2026-09-17"],
+                 ["2026-09-17T01:30", "2026-09-16"], ["2026-09-17T03:00", "2026-09-16"],
+                 ["2026-09-17T22:30", "2026-09-16"]]
+        got = call(["serviceStatus"],
+                   "return INPUT.map(([now, d]) => { NOW = now; return serviceStatus(d, SPAN); });",
+                   payload=cases,
+                   prelude=("const TODAY = '2026-09-17'; const YESTERDAY = '2026-09-16';\n"
+                            f"const SPAN = {json.dumps(span)}; let NOW;\n"
+                            "Date = class extends Date { constructor() { super(NOW); } };"),
+                   tmp_path=tmp_path)
+        assert got == ["open", "soon", "shut", "shut", "open", None, None]
 
     def test_hall_logo_dynamic_late_night(self, tmp_path):
         prelude = """
@@ -475,7 +467,8 @@ def test_late_night_tip_seen_storage():
     assert 'const LATE_NIGHT_TIP_SEEN = "bsdm.tip.late_night.v1";' in src
     assert 'localStorage.getItem(LATE_NIGHT_TIP_SEEN)' in src
     assert 'localStorage.setItem(LATE_NIGHT_TIP_SEEN, "1")' in src
-    assert 'id: m === "Late Night" ? "meal-late-night" : undefined' in src
+    assert '...(m === "Late Night" && { id: "meal-late-night" })' in src
+    assert "target.disabled" in src, "no tip over a chip that cannot be pressed"
 
 
 def test_tool_lang_on_phone_zeros_gap():
@@ -639,7 +632,7 @@ class TestSharedLinks:
 
     def test_a_link_opens_on_the_view_it_was_sent_from(self, tmp_path):
         """And nothing else: filters, language and theme are the reader's own."""
-        link, view = call(["hallOrder", "readLink", "linkFor"],
+        link, view = call(["hallOrder", "mealSlug", "readLink", "linkFor"],
                           "const link = linkFor(INPUT); return [link, readLink(link)];",
                           payload={"date": "2026-09-25", "meal": "Lunch",
                                    "halls": ["arrillaga", "wilbur"],
@@ -648,10 +641,22 @@ class TestSharedLinks:
         assert link == "?d=2026-09-25&m=lunch&h=arrillaga,wilbur", "short enough to read in a chat"
         assert view == {"date": "2026-09-25", "meal": "Lunch", "halls": ["arrillaga", "wilbur"]}
 
+    def test_a_late_night_link_has_no_space_in_it(self, tmp_path):
+        """A chat app ends a link at the first space: `m=late night` arrived as
+        `m=late`, with the halls cut off after it."""
+        prelude = LINK_PRELUDE.replace("'Dinner']", "'Dinner', 'Late Night']")
+        link, views = call(["hallOrder", "mealSlug", "readLink", "linkFor"],
+                           "return [linkFor(INPUT), "
+                           "['?m=late-night', '?m=late%20night', '?m=Late+Night', '?m=late'].map(readLink)];",
+                           payload={"date": "2026-09-25", "meal": "Late Night", "halls": ["arrillaga"]},
+                           prelude=prelude, tmp_path=tmp_path)
+        assert link == "?d=2026-09-25&m=late-night&h=arrillaga"
+        assert views == [{"meal": "Late Night"}] * 3 + [{}]
+
     def test_what_the_page_cannot_show_is_dropped(self, tmp_path):
         """A day that has left the window falls back to today rather than to an
         empty board; a hall the build no longer publishes would crash render()."""
-        got = call(["hallOrder", "readLink"], "return INPUT.map((q) => readLink(q));",
+        got = call(["hallOrder", "mealSlug", "readLink"], "return INPUT.map((q) => readLink(q));",
                    payload=["?d=2026-09-01&m=dinner&h=wilbur",
                             "?d=2026-09-24&m=brunch&h=gone",
                             "?m=DINNER&h=wilbur,arrillaga,wilbur",
@@ -718,7 +723,7 @@ class TestSharedLinks:
 
 UPCOMING_PRELUDE = (
     "const MEALS = ['Breakfast', 'Lunch', 'Dinner'];\n"
-    "const TODAY = '2026-10-15'; const TOMORROW = '2026-10-16';\n"
+    "const TODAY = '2026-10-15'; const TOMORROW = '2026-10-16'; const YESTERDAY = '2026-10-14';\n"
     "let NOW;\n"
     "Date = class extends Date { constructor() { super(NOW); } };\n"
     "const all = { Breakfast: {}, Lunch: {}, Dinner: {} };\n"
@@ -771,24 +776,62 @@ class TestOpeningMeal:
         got = self._at(tmp_path, [["2026-10-15T12:00", ["stern"]]])
         assert got == [{"date": "2026-10-15", "meal": "Dinner"}]
 
-    def test_upcoming_picks_late_night_when_available(self, tmp_path):
+    def test_late_night_after_dinner_and_last_nights_past_midnight(self, tmp_path):
+        """After dinner it is tonight's late night. Past midnight it is last
+        night's, while that is still open -- and breakfast when last night had
+        none, never tonight's, which would show a hall as open that is shut."""
         prelude = """
         const MEALS = ['Breakfast', 'Lunch', 'Dinner', 'Late Night'];
-        const TODAY = '2026-10-15'; const TOMORROW = '2026-10-16';
+        const TODAY = '2026-10-15'; const TOMORROW = '2026-10-16'; const YESTERDAY = '2026-10-14';
         let NOW;
         Date = class extends Date { constructor() { super(NOW); } };
-        const all = { Breakfast: {}, Lunch: {}, Dinner: {}, "Late Night": {} };
+        const meals = { Breakfast: {}, Lunch: {}, Dinner: {} };
+        const late = { ...meals, 'Late Night': {} };
+        const hours = { Breakfast: ['07:30', '10:00'], Lunch: ['11:00', '14:30'], Dinner: ['17:00', '20:30'] };
+        const lateHours = { ...hours, 'Late Night': ['21:00', '02:00'] };
         const DATA = {
-          window: ['2026-10-15', '2026-10-16'],
-          menus: { '2026-10-15': { arrillaga: all },
-                   '2026-10-16': { arrillaga: all } },
-          hours: { '2026-10-15': { arrillaga: { Breakfast: ['07:30', '10:00'], Lunch: ['11:00', '14:30'], Dinner: ['17:00', '20:30'], 'Late Night': ['21:00', '02:00'] } } }
+          window: ['2026-10-14', '2026-10-15', '2026-10-16'],
+          menus: { '2026-10-14': { arrillaga: late, wilbur: meals },
+                   '2026-10-15': { arrillaga: late, wilbur: meals },
+                   '2026-10-16': { arrillaga: late, wilbur: meals } },
+          hours: { '2026-10-14': { arrillaga: lateHours, wilbur: hours },
+                   '2026-10-15': { arrillaga: lateHours, wilbur: hours } },
         };
         """
         got = call(["hoursFor", "upcoming"],
                    "return INPUT.map(([now, halls]) => { NOW = now; return upcoming(halls); });",
                    payload=[["2026-10-15T20:45", ["arrillaga"]],
-                            ["2026-10-15T01:30", ["arrillaga"]]],
+                            ["2026-10-15T23:30", ["arrillaga", "wilbur"]],
+                            ["2026-10-15T01:30", ["arrillaga"]],
+                            ["2026-10-15T02:30", ["arrillaga"]],
+                            ["2026-10-15T01:30", ["wilbur"]],
+                            ["2026-10-15T20:45", ["wilbur"]]],
                    prelude=prelude, tmp_path=tmp_path)
         assert got == [{"date": "2026-10-15", "meal": "Late Night"},
-                       {"date": "2026-10-15", "meal": "Late Night"}]
+                       {"date": "2026-10-15", "meal": "Late Night"},
+                       {"date": "2026-10-14", "meal": "Late Night"},
+                       {"date": "2026-10-15", "meal": "Breakfast"},
+                       {"date": "2026-10-15", "meal": "Breakfast"},
+                       {"date": "2026-10-16", "meal": "Breakfast"}]
+
+    def test_no_late_night_last_night_means_breakfast_past_midnight(self, tmp_path):
+        """Arrillaga Nights does not open on a Monday: at 1am on Tuesday the
+        page must not open on Tuesday's late night as if it were on."""
+        prelude = """
+        const MEALS = ['Breakfast', 'Lunch', 'Dinner', 'Late Night'];
+        const TODAY = '2026-10-13'; const TOMORROW = '2026-10-14'; const YESTERDAY = '2026-10-12';
+        let NOW;
+        Date = class extends Date { constructor() { super(NOW); } };
+        const meals = { Breakfast: {}, Lunch: {}, Dinner: {} };
+        const DATA = {
+          window: ['2026-10-12', '2026-10-13'],
+          menus: { '2026-10-12': { arrillaga: meals },
+                   '2026-10-13': { arrillaga: { ...meals, 'Late Night': {} } } },
+          hours: {},
+        };
+        """
+        got = call(["hoursFor", "upcoming"],
+                   "return INPUT.map(([now, halls]) => { NOW = now; return upcoming(halls); });",
+                   payload=[["2026-10-13T01:00", ["arrillaga"]]],
+                   prelude=prelude, tmp_path=tmp_path)
+        assert got == [{"date": "2026-10-13", "meal": "Breakfast"}]

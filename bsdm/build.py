@@ -35,10 +35,37 @@ def schedule_for(hall: dict, day: date) -> dict:
             continue
         if weekday in sched.get("days", []):
             meals = dict(sched.get("meals", {}))
-            if hall.get("late_night") and weekday in hall["late_night"].get("days", []):
+            if _late_night_on(hall, day):
                 meals["Late Night"] = hall["late_night"]["hours"]
             return meals
     return {}
+
+
+def _late_night_on(hall: dict, day: date) -> bool:
+    """Whether the hall's late-night service opens on the evening of `day`.
+
+    R&DE shuts it for a break on dates of its own -- Arrillaga Nights stopped
+    after Nov 19 and reopened Dec 1, a week either side of the halls' own
+    Thanksgiving closure -- so a weekday match is not enough.
+    """
+    late = hall.get("late_night")
+    if not late or day.weekday() not in late.get("days", []):
+        return False
+    iso = day.isoformat()
+    return not any(c["from"] <= iso <= c["to"] for c in late.get("closed", []))
+
+
+# The one late-night item there is: R&DE's menu site does not list the
+# late-night services at all, and the hours page names only the Shake Smart
+# shakes. Written in as a dish so it is drawn, filtered and translated like
+# one; its picture is R&DE's own artwork, not a drawing (data/dishes.json).
+LATE_NIGHT_DISH = {
+    "name": "Shake Smart Shakes",
+    "ingredients": "organic protein shakes, fresh fruits, vegetables, peanut butter, plant-based milks",
+    "tags": ["gluten-free", "vegetarian"],
+    "allergens": ["MILK", "PEANUTS", "SOY", "TREENUTS"],
+    "trace_allergens": [],
+}
 
 
 def build_payload(root: Path) -> dict:
@@ -191,19 +218,17 @@ def build_payload(root: Path) -> dict:
                     "daily": [to_ref(d) for d in daily if item_id(d) not in led],
                     "stations": [to_ref(d) for d in standing if item_id(d) not in led],
                 }
+            # R&DE's menu site has no late night, so it is written in here off
+            # config -- which cannot know the hall is shut. Two checks stand in
+            # for a source: the hall's hours have one (schedule_for, with its
+            # `closed` ranges), and the scrape shows the hall serving that day at
+            # all. The second covers a hall shut outright -- a break, a day R&DE
+            # has not published -- with nobody having to edit config for it.
             h = halls_by_id.get(hall_id)
-            if h and h.get("late_night") and as_date.weekday() in h["late_night"].get("days", []):
-                shake_dish = {
-                    "name": "Shake Smart Shakes",
-                    "ingredients": "organic protein shakes, fresh fruits, vegetables, peanut butter, and plant-based milks",
-                    "tags": ["gluten-free", "vegetarian"],
-                    "allergens": ["MILK", "PEANUTS", "SOY", "TREENUTS"],
-                    "trace_allergens": [],
-                }
-                shake_ref = variant_ref(make_id("Shake Smart Shakes"), shake_dish)
+            if h and per_meal and "Late Night" in schedule_for(h, as_date):
                 per_meal["Late Night"] = {
                     "specials": [],
-                    "daily": [shake_ref],
+                    "daily": [variant_ref(make_id(LATE_NIGHT_DISH["name"]), LATE_NIGHT_DISH)],
                     "stations": [],
                 }
             menus[iso][hall_id] = per_meal
@@ -211,6 +236,11 @@ def build_payload(root: Path) -> dict:
             h["id"]: schedule_for(h, as_date)
             for h in config["halls"] if h["active"] and schedule_for(h, as_date)
         }
+        # And the hours agree with the board: no late-night hours for a hall
+        # whose late night the checks above left off it.
+        for hid, table in hours[iso].items():
+            if "Late Night" in table and "Late Night" not in menus[iso].get(hid, {}):
+                del table["Late Night"]
         # What the calendar says to the whole campus at once stays a notice.
         if on_poster["notes"]:
             notices[iso] = {"meal": on_poster["meal"], "notes": on_poster["notes"]}
@@ -244,7 +274,6 @@ def build_payload(root: Path) -> dict:
             if ln_entry and (logo_dir / ln_entry["file"]).exists():
                 out["late_night_logo"] = ln_entry
         return out
-
 
     now = datetime.now(TZ)
     return {

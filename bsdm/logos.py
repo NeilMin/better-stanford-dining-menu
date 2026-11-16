@@ -123,17 +123,20 @@ def write(root: Path, cuts: dict[str, tuple[Image.Image, int, int]]) -> dict[str
     """Write data/logos/<hallId>.webp and return the index the site is built from."""
     directory = out_dir(root)
     directory.mkdir(parents=True, exist_ok=True)
-    index = {}
+    # Entries this cut did not make are kept: the late-night marks
+    # (`<hallId>_late_night`) come off R&DE's Shake Smart banner, not the map,
+    # and re-cutting the map must not drop them from what the build ships.
+    written = {key: entry for key, entry in index(root).items() if key not in cuts}
     for hall_id, (image, css_w, css_h) in cuts.items():
         name = f"{hall_id}.webp"
         # Lossless: these are flat-colour marks with type in them, and a lossy
         # pass at this size smears the small caps under the wordmark.
         image.save(directory / name, "WEBP", lossless=True, quality=100, method=6)
-        index[hall_id] = {"file": name, "w": css_w, "h": css_h}
+        written[hall_id] = {"file": name, "w": css_w, "h": css_h}
     (directory / "index.json").write_text(
-        json.dumps(index, indent=1, sort_keys=True) + "\n"
+        json.dumps(written, indent=1, sort_keys=True) + "\n"
     )
-    return index
+    return written
 
 
 def index(root: Path) -> dict[str, dict]:

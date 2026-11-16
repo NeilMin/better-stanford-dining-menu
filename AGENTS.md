@@ -310,6 +310,22 @@ is prose. `make hours-diff` / `make hours-accept` manage the baseline when it ch
 uses ("AFDC", "Casper", and "Wibur", which is a typo R&DE keeps re-making). Matching already
 ignores case and punctuation, so only genuinely different words belong there.
 
+**The Late Night meal is not scraped; it is written in from config, so a break has to be typed in.**
+R&DE's menu site has no late night, and the hours page names only the Shake Smart shakes, so
+`bsdm/build.py` adds a "Late Night" service with that one dish (`LATE_NIGHT_DISH`) on the weekdays
+`late_night.days` lists. Two checks stand in for a source: `schedule_for()` (the hall's own term
+schedule, minus `late_night.closed`), and the scrape showing the hall serving *something* that day.
+The second covers a hall shut outright. The first is the only thing that knows about a late night
+R&DE closes while the hall stays open -- Thanksgiving 2026 shut both late nights after Nov 19
+while the halls served through Nov 20 and Thanksgiving week, and for a release the board showed
+Shake Smart through all of it, because the closure sat on the hours page and nobody copied it into
+`closed`. Before each break, read the hours page for the late nights and add the range. The
+service belongs to the evening it opens on: at 1am the open one is *yesterday's*, which is what
+`upcoming()` and `serviceStatus()` in `web/app.js` read, and a link spells the meal `late-night`
+because a chat app ends a link at a space. Its logos come off R&DE's Shake Smart banner, not the
+map, which is why `logos.write()` keeps index entries it did not cut; its picture is R&DE's own
+artwork, held out of `gen_images.py` by `needs_image: false`.
+
 **`config/logos.json` is pixel coordinates into one specific JPEG**, which is why its sha256 sits
 next to them. R&DE publishes no per-hall logo files anywhere — the callouts on the dining halls
 map are the only place all eight exist — so the boxes are read off that map by hand. A redraw

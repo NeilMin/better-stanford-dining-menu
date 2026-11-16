@@ -130,6 +130,17 @@ class TestWrite:
         assert (logolib.out_dir(project.root) / "lakeside.webp").exists()
         assert json.loads((logolib.out_dir(project.root) / "index.json").read_text()) == index
 
+    def test_recutting_the_map_keeps_what_it_did_not_cut(self, project, config, map_blob):
+        """The late-night marks come off a different R&DE image; `make logos`
+        re-cutting the map must not drop them from what the build ships."""
+        directory = logolib.out_dir(project.root)
+        directory.mkdir(parents=True, exist_ok=True)
+        late = {"file": "lakeside_late_night.webp", "w": 83, "h": 36}
+        (directory / "index.json").write_text(json.dumps({"lakeside_late_night": late}))
+        index = logolib.write(project.root, logolib.cut(config, map_blob))
+        assert index["lakeside_late_night"] == late
+        assert index["lakeside"]["file"] == "lakeside.webp"
+
     def test_the_files_are_lossless(self, project, config, map_blob):
         """Flat-colour marks with type in them; a lossy pass at this size
         smears the small caps under the wordmark."""

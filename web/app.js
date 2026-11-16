@@ -265,6 +265,9 @@
   const isoLocal = (d) => d.toLocaleDateString("en-CA");
   const TODAY = isoLocal(new Date());
   const TOMORROW = isoLocal(new Date(Date.now() + 86400000));
+  // A late night belongs to the evening it opens on, so the one being served
+  // at 1am is yesterday's.
+  const YESTERDAY = isoLocal(new Date(Date.now() - 86400000));
 
   // ---------- preferences ----------
 
@@ -304,25 +307,29 @@
     const now = new Date();
     const clock = [now.getHours(), now.getMinutes()]
       .map((n) => String(n).padStart(2, "0")).join(":");
-    const usual = { Breakfast: "10:00", Lunch: "14:00", Dinner: "20:00", "Late Night": "02:00" };
+    const usual = { Breakfast: "10:00", Lunch: "14:00", Dinner: "20:00" };
     const offered = (date) => MEALS.filter((meal) =>
       halls.some((id) => meal in ((DATA.menus[date] || {})[id] || {})));
 
+    // Past midnight, last night's late night is still on until it closes.
+    // Only last night's: tonight's opens at 9pm and may not run at all --
+    // Arrillaga Nights does not open on a Monday, so 1am Tuesday is shut.
+    if (DATA.window.includes(YESTERDAY) && offered(YESTERDAY).includes("Late Night")) {
+      const closes = halls.map((id) => hoursFor(YESTERDAY, id, "Late Night")?.[1])
+        .filter((c) => c && c < "12:00");
+      if (closes.length && clock < closes.sort().at(-1)) return { date: YESTERDAY, meal: "Late Night" };
+    }
     if (!DATA.window.includes(TODAY)) {
       const first = DATA.window[0];
       return { date: first, meal: offered(first)[0] || "Dinner" };
     }
     const today = offered(TODAY);
-    if (clock <= "02:00" && today.includes("Late Night")) {
-      return { date: TODAY, meal: "Late Night" };
-    }
     for (const meal of today) {
-      if (meal === "Late Night") continue;
+      // The last of the day, and it runs past midnight: once the meals
+      // before it are over, it is the one coming up.
+      if (meal === "Late Night") return { date: TODAY, meal };
       const closes = halls.map((id) => hoursFor(TODAY, id, meal)?.[1]).filter(Boolean);
       if (clock <= (closes.length ? closes.sort().at(-1) : usual[meal])) return { date: TODAY, meal };
-    }
-    if (today.includes("Late Night")) {
-      return { date: TODAY, meal: "Late Night" };
     }
     // Nobody serving today is a break, and the board says so; jumping to
     // tomorrow is only for a day whose meals have all been served.
@@ -557,7 +564,8 @@
     const view = {};
     const date = params.get("d");
     if (DATA.window.includes(date)) view.date = date;
-    const meal = MEALS.find((m) => m.toLowerCase() === (params.get("m") || "").toLowerCase());
+    const asked = mealSlug(params.get("m") || "");
+    const meal = MEALS.find((m) => mealSlug(m) === asked);
     if (meal) view.meal = meal;
     const halls = hallOrder((params.get("h") || "").split(","));
     if (halls.length) view.halls = halls;
@@ -569,8 +577,15 @@
   // where a link opened from a chat app otherwise lands.
   const SHARE_UTM = "&utm_source=share&utm_medium=link";
 
+  // "Late Night" goes into a link as late-night: a chat app ends a link at the
+  // first space, which left a friend's link at ?d=...&m=late with no halls.
+  // readLink takes "late night" and "late%20night" as well.
+  function mealSlug(meal) {
+    return meal.trim().toLowerCase().replace(/[\s_-]+/g, "-");
+  }
+
   function linkFor(view) {
-    return `?d=${view.date}&m=${view.meal.toLowerCase()}` +
+    return `?d=${view.date}&m=${mealSlug(view.meal)}` +
       `&h=${view.halls.map(encodeURIComponent).join(",")}`;
   }
 
@@ -779,9 +794,12 @@
     return t("unreleased");
   }
 
-  /** open | soon | shut | null, compared against the viewer's clock. */
+  /** open | soon | shut | null, compared against the viewer's clock.
+   *  A span that closes before it opens (21:00-02:00) runs into the next
+   *  morning, where it is still `date`'s: open after midnight only when
+   *  `date` is yesterday, and not yet open after midnight when it is today. */
   function serviceStatus(date, span) {
-    if (!span || date !== TODAY) return null;
+    if (!span) return null;
     const now = new Date();
     const minutes = now.getHours() * 60 + now.getMinutes();
     const toMin = (s) => {
@@ -789,8 +807,11 @@
       return h * 60 + m;
     };
     const [open, close] = [toMin(span[0]), toMin(span[1])];
-    if (close < open) {
-      if (minutes >= open || minutes <= close) return "open";
+    const overnight = close < open;
+    if (overnight && date === YESTERDAY) return minutes <= close ? "open" : null;
+    if (date !== TODAY) return null;
+    if (overnight) {
+      if (minutes >= open) return "open";
       if (open - minutes > 0 && open - minutes <= 90) return "soon";
       return "shut";
     }
@@ -1227,7 +1248,10 @@
       if (zh) line.append(el("span", { className: "special-en", textContent: text }));
       return line;
     }));
-    const identical = servingCount >= 2 && spread.size > 0 &&
+    // Not said of a late night: its one listed item is the shakes, which is
+    // all R&DE publishes, not all that is served -- the two late nights cook
+    // different food, and "go to the nearest one" would be our invention.
+    const identical = state.meal !== "Late Night" && servingCount >= 2 && spread.size > 0 &&
       [...spread.values()].every((n) => n === servingCount);
     if (identical) node.append(el("p", { className: "notice", textContent: t("identical") }));
   }
@@ -1640,17 +1664,19 @@
     const meals = availableMeals(state.date);
     document.getElementById("meals").replaceChildren(...MEALS.map((m) =>
       chip(t("meal", m), m === state.meal, () => {
-        if (lateNightTip) endLateNightTip();
+        if (lateNightTip) endLateNightTip("chip");
         if (state.meal !== m) {
           state.meal = m;
-          trackEvent("select_meal", { meal: m });
+          trackEvent("select_meal", { meal: m, method: "chip" });
           render();
         }
       }, {
         className: "chip-seg",
+        // Spread rather than `id: undefined`, which el() would write out as
+        // id="undefined" on the other three.
         props: {
-          id: m === "Late Night" ? "meal-late-night" : undefined,
           disabled: !meals.includes(m),
+          ...(m === "Late Night" && { id: "meal-late-night" }),
         },
       })));
 
@@ -1917,14 +1943,17 @@
   let lateNightTip = null;
 
   function startLateNightTip() {
+    // Only where the tab can be opened. Halls with no late night among the
+    // chosen, a day it does not run, a break: the chip is disabled, "View Late
+    // Night" would open an empty board, and the one showing is kept for later.
+    const target = document.getElementById("meal-late-night");
+    if (!target || target.disabled || !target.getClientRects().length) return;
     try {
       if (localStorage.getItem(LATE_NIGHT_TIP_SEEN)) return;
       localStorage.setItem(LATE_NIGHT_TIP_SEEN, "1");
     } catch {
       return;
     }
-    const target = document.getElementById("meal-late-night");
-    if (!target || !target.getClientRects().length) return;
 
     target.scrollIntoView({ block: "nearest", inline: "nearest" });
 
@@ -1938,7 +1967,7 @@
 
     const onDocClick = (e) => {
       if (tip.contains(e.target) || target.contains(e.target)) return;
-      endLateNightTip();
+      endLateNightTip("dismissed");
     };
     lateNightTip.onDocClick = onDocClick;
     setTimeout(() => {
@@ -1946,6 +1975,7 @@
     }, 50);
 
     drawLateNightTip();
+    trackEvent("late_night_tip", { action: "shown" });
     requestAnimationFrame(() => lateNightTip && ring.classList.add("tour-glide"));
   }
 
@@ -1957,7 +1987,7 @@
       className: "tour-next",
       textContent: t("tourDone"),
     });
-    dismiss.addEventListener("click", endLateNightTip);
+    dismiss.addEventListener("click", () => endLateNightTip("dismissed"));
 
     const tryBtn = el("button", {
       type: "button",
@@ -1965,10 +1995,10 @@
       textContent: t("lateNightTipAction"),
     });
     tryBtn.addEventListener("click", () => {
-      endLateNightTip();
+      endLateNightTip("opened");
       if (state.meal !== "Late Night") {
         state.meal = "Late Night";
-        trackEvent("select_meal", { meal: "Late Night" });
+        trackEvent("select_meal", { meal: "Late Night", method: "tip" });
         render();
       }
     });
@@ -2011,8 +2041,13 @@
     lateNightTip.tip.style.setProperty("--arrow", `${Math.min(Math.max(mid - x, 18), w - 18)}px`);
   }
 
-  function endLateNightTip() {
+  // `late_night_tip` says how often the notice is seen and what is done with
+  // it: shown, opened (its button), chip (a meal chip pressed under it),
+  // dismissed. `action` and `method` are parameters GA already has custom
+  // dimensions for, so neither needs registering.
+  function endLateNightTip(action) {
     if (!lateNightTip) return;
+    if (action) trackEvent("late_night_tip", { action });
     if (lateNightTip.onDocClick) {
       document.removeEventListener("click", lateNightTip.onDocClick, true);
     }
@@ -2146,7 +2181,7 @@
         return;
       }
       if (lateNightTip) {
-        endLateNightTip();
+        endLateNightTip("dismissed");
         return;
       }
     }

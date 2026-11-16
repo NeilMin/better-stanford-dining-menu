@@ -73,6 +73,20 @@ class TestScheduleFor:
         got = buildlib.schedule_for(hall, date(2026, 9, 17))
         assert got == {"Dinner": ["17:00", "20:00"]}
 
+    def test_late_night_is_not_offered_inside_a_closed_range(self):
+        """R&DE shuts the late nights for a break on dates of their own:
+        Arrillaga Nights stopped after Nov 19, 2026 and reopened Dec 1."""
+        hall = {
+            "schedules": [{"from": "2026-09-18", "days": [0, 1, 2, 3, 4, 5, 6],
+                           "meals": {"Dinner": ["17:00", "20:00"]}}],
+            "late_night": {"name": "Arrillaga Nights", "days": [1, 2, 3, 4, 5], "hours": ["21:00", "02:00"],
+                           "closed": [{"from": "2026-11-20", "to": "2026-11-30"}]},
+        }
+        got = {iso: "Late Night" in buildlib.schedule_for(hall, date.fromisoformat(iso))
+               for iso in ("2026-11-19", "2026-11-20", "2026-11-24", "2026-11-30", "2026-12-01")}
+        assert got == {"2026-11-19": True, "2026-11-20": False, "2026-11-24": False,
+                       "2026-11-30": False, "2026-12-01": True}
+
     def test_the_first_matching_schedule_wins(self):
         """Orientation-week exceptions are listed above the term's own hours."""
         hall = self.hall(
@@ -146,6 +160,44 @@ class TestWindow:
         assert ref.startswith(f"{dish_id('Shake Smart Shakes')}.")
         assert dish_id("Shake Smart Shakes") in payload["dishes"]
 
+
+
+    def test_no_late_night_menu_where_the_hours_have_none(self, project):
+        """The menu is asked of schedule_for(), so a closure or a day outside the
+        hall's schedule cannot leave a late night on the board with no hours."""
+        project.set_today("2026-11-19")
+        project.add_hall("arrillaga")
+        project.halls[0]["late_night"] = {
+            "name": "Arrillaga Nights", "days": [1, 2, 3, 4, 5], "hours": ["21:00", "02:00"],
+            "closed": [{"from": "2026-11-20", "to": "2026-11-30"}],
+        }
+        project.save_config()
+        project.write_catalog({})
+        for iso in ("2026-11-19", "2026-11-20"):
+            project.write_menu(iso, {"arrillaga": {"Dinner": [dish("Roast Chicken")]}})
+
+        payload = buildlib.build_payload(project.root)
+        assert "Late Night" in payload["menus"]["2026-11-19"]["arrillaga"]
+        assert "Late Night" in payload["hours"]["2026-11-19"]["arrillaga"]
+        assert "Late Night" not in payload["menus"]["2026-11-20"]["arrillaga"]
+        assert "Late Night" not in payload["hours"]["2026-11-20"]["arrillaga"]
+
+
+    def test_no_late_night_at_a_hall_the_scrape_shows_shut(self, project):
+        """Nothing scrapes the late nights, so a hall closed outright -- winter
+        break, a day R&DE has not published -- must not keep one from config."""
+        project.set_today("2026-11-17")
+        project.add_hall("arrillaga")
+        project.add_hall("wilbur")
+        project.halls[0]["late_night"] = {
+            "name": "Arrillaga Nights", "days": [1, 2, 3, 4, 5], "hours": ["21:00", "02:00"]}
+        project.save_config()
+        project.write_catalog({})
+        project.write_menu("2026-11-17", {"wilbur": {"Dinner": [dish("Roast Chicken")]}})
+
+        payload = buildlib.build_payload(project.root)
+        assert "arrillaga" not in payload["menus"]["2026-11-17"]
+        assert "Late Night" not in payload["hours"]["2026-11-17"].get("arrillaga", {})
 
 
 class TestDishesAndVariants:
