@@ -44,6 +44,16 @@ class TestBuild:
         assert got["first_seen"] == got["last_seen"] == "2026-09-17"
         assert got["min_order"] == 2
 
+    def test_a_vegetarian_icon_on_a_chicken_dish_is_not_carried(self, project):
+        """brief.py reads the catalog's tags to tell the brief writer the dish
+        is vegetarian; the menus keep the icon as R&DE published it."""
+        catalog = build(project, {"2026-11-17": {"ricker": {"Dinner": [
+            dish("Chicken Tinga Tostada", "chicken tinga (chicken), tostada shell",
+                 tags=["vegetarian", "halal"])]}}})
+        got = entry_for(catalog, "Chicken Tinga Tostada")
+        assert got["tags"] == ["halal"]
+        assert got["category"] == "poultry"
+
     def test_one_dish_across_days_keeps_both_ends_of_its_run(self, project):
         catalog = build(project, {
             "2026-09-17": {"wilbur": {"Dinner": [dish("Roast Chicken", order=3)]}},

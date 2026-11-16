@@ -180,8 +180,65 @@ def _get(dish):
     return lambda k, d=None: getattr(dish, k, d)
 
 
+# Words that make a meat word stand for a substitute: "Plant-Forward Schnitzel",
+# "Gardein Chick'n strips", 'Vegan "Meatballs"', "beef-style vegetable soup base".
+_STAND_IN_RE = re.compile(
+    r"plant|vegan|vegetarian|veggie|meatless|beyond|impossible|gardein|soyrizo"
+    r"|seitan|-style|\"",
+    re.I,
+)
+# An animal's name at the head of something that is not that animal.
+_NOT_THE_ANIMAL_RE = re.compile(r"\b((king\s+)?oyster\s+mushrooms?|goat\s+cheese)\b", re.I)
+
+
+def _outright_animals(text: str) -> set[str]:
+    """The meat categories `text` names outright, comma-separated item by item.
+
+    Stricter than `_earliest_match()` on purpose: a whole word, in an item that
+    no substitute word qualifies, so "plant-forward \"chicken\"" and "king oyster
+    mushroom" name nothing.
+    """
+    found = set()
+    for item in text.split(","):
+        if _STAND_IN_RE.search(item):
+            continue
+        item = _NOT_THE_ANIMAL_RE.sub(" ", item)
+        for category, keywords in _PRIMARY.items():
+            if any(re.search(rf"\b{re.escape(kw)}s?\b", item) for kw in keywords):
+                found.add(category)
+    return found
+
+
+def diet_tags(dish) -> list[str]:
+    """The hall's dietary icons, less a vegetarian or vegan one the dish contradicts.
+
+    R&DE's icons are hand-set per recipe and are usually the best evidence
+    there is -- the reason `classify()` reads them first. They are not always
+    right: in November 2026 "Chicken Tinga Tostada", whose first ingredient is
+    "[HALAL] chicken tinga (chicken, ...)", carried the vegetarian icon at
+    seven halls, and the board showed it with a Veg badge and offered it to
+    the vegetarian filter. A diner reported it.
+
+    The icon goes only when the name *and* the top-level ingredients both name
+    the same animal outright. Either one alone is what every plant-forward
+    dish looks like ("Gardein Chick'n", "Seared King Oyster Mushroom",
+    "Ratsherrenpfanne" with its beef-style soup base), and dropping a true
+    icon hides a dish from exactly the people it is for. The scraped menus in
+    data/menus keep the icon as R&DE published it.
+    """
+    get = _get(dish)
+    tags = list(get("tags", []) or [])
+    if not {"vegetarian", "vegan"} & set(tags):
+        return tags
+    name = (get("name", "") or "").translate(_SMART_QUOTES).lower()
+    ing = _top_level_ingredients((get("ingredients", "") or "").translate(_SMART_QUOTES).lower())
+    if _outright_animals(name) & _outright_animals(ing):
+        return [t for t in tags if t not in ("vegetarian", "vegan")]
+    return tags
+
+
 def _tags(dish) -> list[str]:
-    return _get(dish)("tags", []) or []
+    return diet_tags(dish)
 
 
 def _top_level_ingredients(ingredients: str) -> str:

@@ -17,6 +17,7 @@ from bsdm import logos as logolib
 from bsdm import menus as menuslib
 from bsdm import specials as specialslib
 from bsdm import zh as zhlib
+from bsdm.dishes import diet_tags
 from bsdm.menus import TZ
 
 # The domain the site is served from. Written into the artifact as CNAME on
@@ -119,6 +120,9 @@ def build_payload(root: Path) -> dict:
     variant_index: dict[str, dict[tuple, int]] = {}
 
     def variant_ref(dish_id: str, d: dict) -> str:
+        # The menus keep R&DE's icons as published; the board shows them less
+        # any the dish itself contradicts (dishes.diet_tags).
+        d = {**d, "tags": diet_tags(d)}
         key = (d["ingredients"], tuple(d["tags"]),
                tuple(d["allergens"]), tuple(d["trace_allergens"]))
         table = variant_index.setdefault(dish_id, {})

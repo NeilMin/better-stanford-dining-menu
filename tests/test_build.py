@@ -269,6 +269,17 @@ class TestDishesAndVariants:
         assert payload["menus"]["2026-09-17"]["wilbur"]["Dinner"]["daily"] == [f"{did}.0"]
         assert payload["menus"]["2026-09-17"]["branner"]["Dinner"]["daily"] == [f"{did}.1"]
 
+    def test_the_board_drops_a_vegetarian_icon_the_dish_contradicts(self, project):
+        """The badge and the vegetarian filter both read the variant's tags."""
+        project.set_today("2026-11-17")
+        project.add_hall("ricker")
+        project.write_catalog({})
+        project.write_menu("2026-11-17", {"ricker": {"Dinner": [
+            dish("Chicken Tinga Tostada", "chicken tinga (chicken), tostada shell",
+                 tags=["vegetarian"])]}})
+        variant = buildlib.build_payload(project.root)["dishes"][dish_id("Chicken Tinga Tostada")]["v"][0]
+        assert variant["tags"] == []
+
     def test_the_same_dish_served_the_same_way_is_one_variant(self, project):
         project.set_today("2026-09-17")
         project.add_hall("wilbur")

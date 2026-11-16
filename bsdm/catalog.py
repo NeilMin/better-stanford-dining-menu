@@ -71,7 +71,7 @@ def build(menu_paths: Iterable[Path], station_table: dict, previous: dict | None
                     entry.update({
                         "name": d["name"],
                         "ingredients": d["ingredients"],
-                        "tags": d["tags"],
+                        "tags": dishlib.diet_tags(d),
                         "category": dishlib.classify(d),
                         "placeholder": dishlib.is_placeholder(d),
                         "icon": dishlib.station_icon(d),

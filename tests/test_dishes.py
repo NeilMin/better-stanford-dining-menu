@@ -53,6 +53,37 @@ class TestClassify:
         assert dishlib.classify(d("Chick'n Tenders", "soy protein", ["vegetarian"])) == "vegetarian"
         assert dishlib.classify(d("Beef-Style Seitan", "wheat gluten", ["vegan"])) == "vegan"
 
+    def test_unless_the_name_and_the_ingredients_both_name_the_animal(self):
+        """R&DE put the vegetarian icon on "Chicken Tinga Tostada" at seven
+        halls in autumn 2026; a diner reported it through the feedback form."""
+        tostada = d("Chicken Tinga Tostada",
+                    "[HALAL] chicken tinga (chicken, tinga sauce (onions, tomatoes)), "
+                    "tostada shell, refried beans (beans, salt, water [soy]), mexican crema (milk)",
+                    ["vegetarian"])
+        assert dishlib.diet_tags(tostada) == []
+        assert dishlib.classify(tostada) == "poultry"
+        assert "vegetarian" not in dishlib.image_prompt(tostada)
+
+    @pytest.mark.parametrize("name,ingredients,tags", [
+        # A substitute, said in the name, the ingredient, or both.
+        ("BBQ Glazed Gardein Chick'n", "plant-forward chicken strips, BBQ sauce", ["vegan"]),
+        ('Plant-Forward Bulgogi "Chicken"', 'plant-forward "chicken" (soy protein isolate), carrots', ["vegan"]),
+        ('Sizzlin\' "Beef" Fajita', 'plant-forward "beef" strips, bell peppers', ["vegan"]),
+        ("Plant-Forward Schnitzel", 'meatless breaded "chicken" cutlet, paprika', ["vegetarian"]),
+        # An animal's name on something else.
+        ("Seared King Oyster Mushroom", "King Oyster mushroom, Lemon, Olive Oil", ["vegan"]),
+        ("Barley, Arugula & Goat Cheese Salad", "arugula, barley, goat cheese", ["vegetarian"]),
+        ("Scalloped Potatoes", "sliced potatoes, whole milk, fontina", ["vegetarian"]),
+        # The animal in one place only: a flavouring, a seasoning, a dish form.
+        ("Ratsherrenpfanne", "potatoes, mushrooms, beef-style vegetable soup base", ["vegetarian"]),
+        ("Crispy Fried Mushrooms & Gravy", "mushrooms, oat milk, chicken seasoning", ["vegan"]),
+        ("Tempeh Salisbury Steak", "tempeh, mushrooms, onions", ["vegan"]),
+    ])
+    def test_a_substitute_keeps_its_icon(self, name, ingredients, tags):
+        """Dropping a true icon hides the dish from the people it is for, so
+        everything that merely looks like meat on one side keeps it."""
+        assert dishlib.diet_tags(d(name, ingredients, tags)) == tags
+
     def test_naming_an_animal_outranks_naming_a_dish_form(self):
         assert dishlib.classify(d("Turkey Burger")) == "poultry"
         assert dishlib.classify(d("Greek Chicken Gyro Meat")) == "poultry"

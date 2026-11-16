@@ -287,6 +287,17 @@ that names an animal it does not contain ("A-1 steak sauce", "vegetarian oyster 
 invisible to both. It was wired only into `classify()` once, and vegetable dishes came back
 plated with steak.
 
+**R&DE's vegetarian icon is trusted unless the dish contradicts it, and the board reads it only
+through `dishes.diet_tags()`.** The icon is what `classify()` checks first, so "Gardein Chick'n"
+is not poultry -- and in autumn 2026 R&DE put it on "Chicken Tinga Tostada" at seven halls, whose
+first ingredient is chicken. The board gave it a Veg badge and offered it to the vegetarian
+filter until a diner reported it. `diet_tags()` drops a vegetarian or vegan icon only when the
+name *and* the top-level ingredients both name the same animal outright, with no substitute word
+(plant-forward, Beyond, Gardein, quotes) in either: one side alone is what most plant-forward
+dishes and every king oyster mushroom look like, and a true icon dropped hides a dish from the
+people it is for. Over every menu stored it overrules that one dish. `catalog.build()` and
+`build_payload()` both go through it; `data/menus/` keeps the icon as R&DE published it.
+
 **A positive prompt cannot say "no meat".** SDXL conditions on CLIP, which has no negation, so
 "vegetarian, no meat" reads as a prompt *about* meat. Proteins are steered out from the negative
 side only — `dishes.negative_prompt()` derives the exclusions per dish.
