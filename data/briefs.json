@@ -1846,6 +1846,38 @@
   "vessel": "bowl",
   "written_at": "2026-11-01T19:50:30+00:00"
  },
+ "0f4505c9f590": {
+  "avoid": [
+   "pie crust",
+   "pumpkin pie slice",
+   "cake slice",
+   "raw pumpkin",
+   "savory soup",
+   "cookies"
+  ],
+  "checks": [
+   {
+    "q": "Is the food a baked pumpkin dessert with a cobbler crust top?",
+    "yes": true
+   },
+   {
+    "q": "Is it a triangular slice of pie with a pastry crust base?",
+    "yes": false
+   },
+   {
+    "q": "Is it a bowl of liquid soup?",
+    "yes": false
+   }
+  ],
+  "dish": "pumpkin cobbler",
+  "look": "warm spiced orange pumpkin filling beneath a golden brown biscuit crust, dusted with cinnamon sugar, light caramel drizzle",
+  "model": "gemini-3.6-flash",
+  "name": "Pumpkin Cobbler",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-17T00:17:39+00:00"
+ },
  "0f4cc9050c41": {
   "avoid": [
    "whole turkey",
@@ -4490,6 +4522,41 @@
   "rev": 6,
   "revisions": 0,
   "vessel": "plate"
+ },
+ "2069b961ed0d": {
+  "avoid": [
+   "iced tea",
+   "boba",
+   "tapioca pearls",
+   "coffee beans",
+   "full size cake",
+   "savory food",
+   "sandwiches",
+   "meat",
+   "tea bags"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item hot tea served alongside small sweet treats?",
+    "yes": true
+   },
+   {
+    "q": "Is the drink an iced beverage or boba tea?",
+    "yes": false
+   },
+   {
+    "q": "Are there savory food items like sandwiches or meat on the plate?",
+    "yes": false
+   }
+  ],
+  "dish": "spiced chai tea and pastries",
+  "look": "steaming mug of creamy tan spiced chai tea, light milk froth top sprinkled with fine ground cinnamon, paired with small golden butter cookies, mini powdered shortbread bites, glossy chocolate pastry squares",
+  "model": "gemini-3.6-flash",
+  "name": "Hot Spiced Chai Tea with Assorted Sweet Treats",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-17T00:17:17+00:00"
  },
  "206c2e7a1875": {
   "avoid": [
@@ -13284,6 +13351,40 @@
   "vessel": "plate",
   "written_at": "2026-10-10T10:04:34+00:00"
  },
+ "5508569383fa": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "tacos",
+   "marshmallows",
+   "whipped cream",
+   "ring donuts"
+  ],
+  "checks": [
+   {
+    "q": "Are the main food items long ridged fried dough sticks dusted in sugar?",
+    "yes": true
+   },
+   {
+    "q": "Are the churros shaped like round ring donuts?",
+    "yes": false
+   },
+   {
+    "q": "Is there savory food like meat or cheese in the dish?",
+    "yes": false
+   }
+  ],
+  "dish": "churros with Mexican hot chocolate",
+  "look": "golden-brown deep-fried churro sticks, distinct ridged star shape, dusted generously with granulated cinnamon sugar, paired with a small side cup of thick dark glossy hot chocolate dipping sauce",
+  "model": "gemini-3.6-flash",
+  "name": "Churro Bar with Mexican Hot Chocolate",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-17T00:14:43+00:00"
+ },
  "55092c8860c2": {
   "avoid": [
    "bacon",
@@ -14483,6 +14584,41 @@
   "vessel": "bowl",
   "written_at": "2026-10-27T09:37:08+00:00"
  },
+ "5e60b4b9d07b": {
+  "avoid": [
+   "doughnuts",
+   "french fries",
+   "breadsticks",
+   "tacos",
+   "savory food",
+   "meat",
+   "chicken",
+   "beef",
+   "pork"
+  ],
+  "checks": [
+   {
+    "q": "Are the main items fried pastry sticks?",
+    "yes": true
+   },
+   {
+    "q": "Are the pastries round glazed doughnuts?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a savory meal with meat?",
+    "yes": false
+   }
+  ],
+  "dish": "churros with Mexican hot chocolate",
+  "look": "long golden-brown churros, deep ridged star-shaped texture, generously dusted with fine cinnamon sugar granules, crispy fried exterior, served alongside a small cup of thick glossy dark brown hot chocolate sauce",
+  "model": "gemini-3.6-flash",
+  "name": "Churro Bar w/Mexican Hot Chocolate",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-17T00:14:20+00:00"
+ },
  "5e67d04e8728": {
   "avoid": [
    "meat",
@@ -14553,6 +14689,40 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-10-10T10:04:34+00:00"
+ },
+ "5fc16db65663": {
+  "avoid": [
+   "soup",
+   "ramen",
+   "noodles",
+   "hot coffee",
+   "hot tea mug",
+   "solid food",
+   "fruit salad",
+   "smoothie bowl"
+  ],
+  "checks": [
+   {
+    "q": "Is the item iced milk tea with tapioca pearls at the bottom?",
+    "yes": true
+   },
+   {
+    "q": "Is the dish a hot soup or noodle dish?",
+    "yes": false
+   },
+   {
+    "q": "Is the item a solid food like cake or bread?",
+    "yes": false
+   }
+  ],
+  "dish": "boba milk tea",
+  "look": "creamy tan milk tea liquid, glossy dark brown tapioca boba pearls settled at the bottom, floating clear ice cubes, rich brown sugar syrup ribbons coating the inner glass, thick straw inserted",
+  "model": "gemini-3.6-flash",
+  "name": "Boba Bar",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-17T00:13:48+00:00"
  },
  "5fc381ac4cd8": {
   "avoid": [
@@ -15550,6 +15720,42 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T04:40:44+00:00"
+ },
+ "668e216ba652": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "cheese",
+   "taco",
+   "burrito",
+   "tortilla wrap"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food a sandwich on a roll?",
+    "yes": true
+   },
+   {
+    "q": "Is the sandwich filled with meat like beef or chicken?",
+    "yes": false
+   },
+   {
+    "q": "Is the food wrapped in a thin flat tortilla?",
+    "yes": false
+   }
+  ],
+  "dish": "mushroom potato torta",
+  "look": "toasted Mexican bolillo sandwich roll, cut in half, filled with sautéed brown mushroom slices, roasted seasoned golden potato cubes, fresh red tomato slices, green shredded lettuce",
+  "model": "gemini-3.6-flash",
+  "name": "Mushroom Potato Torta",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-17T00:18:35+00:00"
  },
  "67c03c7cee92": {
   "avoid": [
@@ -19316,6 +19522,40 @@
   "vessel": "plate",
   "written_at": "2026-10-12T11:13:32+00:00"
  },
+ "830985bfd9e0": {
+  "avoid": [
+   "raw peppers",
+   "unbaked bell pepper",
+   "soup",
+   "stew",
+   "burrito",
+   "tacos",
+   "pasta",
+   "raw rice"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food item a cooked stuffed bell pepper?",
+    "yes": true
+   },
+   {
+    "q": "Is the pepper raw or un-stuffed?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a soup or stew?",
+    "yes": false
+   }
+  ],
+  "dish": "sausage and wild rice stuffed bell peppers",
+  "look": "a roasted red bell pepper half, stuffed with savory browned pork sausage crumbles, dark wild rice, tender diced onions, melted golden cheese topping, flecks of fresh chopped parsley",
+  "model": "gemini-3.6-flash",
+  "name": "Beyond Sausage & Wild Rice Stuffed Peppers",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-17T00:13:31+00:00"
+ },
  "83d194f65ad7": {
   "avoid": [
    "beef",
@@ -20555,6 +20795,38 @@
   "vessel": "bowl",
   "written_at": "2026-09-27T07:39:15+00:00"
  },
+ "8a8c02ea79b3": {
+  "avoid": [
+   "hard taco shell",
+   "flour tortilla wrap",
+   "corn tortilla taco",
+   "pita",
+   "burger",
+   "pizza"
+  ],
+  "checks": [
+   {
+    "q": "Is the food served on top of a thick puffy fried bread?",
+    "yes": true
+   },
+   {
+    "q": "Is it served inside a folded crispy hard corn shell?",
+    "yes": false
+   },
+   {
+    "q": "Is it a rolled flour tortilla burrito?",
+    "yes": false
+   }
+  ],
+  "dish": "Indian frybread taco",
+  "look": "golden puffy deep-fried flatbread topped with seasoned ground meat, pinto beans, shredded iceberg lettuce, diced tomatoes, shredded cheddar cheese, dollop of sour cream",
+  "model": "gemini-3.6-flash",
+  "name": "Native American Heritage Month Dinner",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-17T00:17:39+00:00"
+ },
  "8a9f46f4512c": {
   "avoid": [
    "hard taco shell",
@@ -20838,6 +21110,40 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-29T17:24:02+00:00"
+ },
+ "8b8a0096723e": {
+  "avoid": [
+   "iced tea",
+   "clear black tea",
+   "boba pearls",
+   "bubble tea",
+   "meat",
+   "savory food",
+   "soup",
+   "teabags"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a hot milky chai tea beverage?",
+    "yes": true
+   },
+   {
+    "q": "Is the drink cold or filled with ice cubes?",
+    "yes": false
+   },
+   {
+    "q": "Is the tea clear dark liquid without any milk or foam?",
+    "yes": false
+   }
+  ],
+  "dish": "masala chai tea with mini sweet pastries",
+  "look": "steaming frothy light-tan masala chai tea in a mug, creamy brown milky beverage, fine sprinkle of dark cinnamon powder on foam surface, paired with two buttery golden mini shortbread cookies on the side",
+  "model": "gemini-3.6-flash",
+  "name": "Hot Spiced Chai Tea w/Sweet Treats",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-17T00:17:10+00:00"
  },
  "8c1b4df69b6d": {
   "avoid": [
@@ -21440,6 +21746,39 @@
   "vessel": "plate",
   "written_at": "2026-09-27T10:05:32+00:00"
  },
+ "8f57498357f6": {
+  "avoid": [
+   "clear broth",
+   "noodle soup",
+   "beef",
+   "pork",
+   "raw chicken",
+   "fried chicken",
+   "dry stir-fry"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a soup in broth?",
+    "yes": true
+   },
+   {
+    "q": "Is the main dish a dry stir-fry without broth?",
+    "yes": false
+   },
+   {
+    "q": "Is the soup broth dark brown or clear?",
+    "yes": false
+   }
+  ],
+  "dish": "Tom Kha Gai",
+  "look": "creamy white coconut broth soup, tender sliced chicken breast pieces, cut white button mushrooms, floating red chili oil droplets, sliced lemongrass pieces, fresh green cilantro garnish",
+  "model": "gemini-3.6-flash",
+  "name": "Tom Ka Gai",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-17T00:18:35+00:00"
+ },
  "8fb04e81fcd6": {
   "avoid": [
    "dinner roll",
@@ -21925,6 +22264,39 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-10-23T08:44:54+00:00"
+ },
+ "9310285edc99": {
+  "avoid": [
+   "beef",
+   "pork",
+   "burger",
+   "raw potatoes",
+   "chicken wings",
+   "fried chicken drumsticks",
+   "pasta"
+  ],
+  "checks": [
+   {
+    "q": "Is the main component french fries topped with cheese curds and gravy?",
+    "yes": true
+   },
+   {
+    "q": "Is the main food bone-in fried chicken pieces?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish pasta noodles in sauce?",
+    "yes": false
+   }
+  ],
+  "dish": "chicken poutine",
+  "look": "crispy golden french fries piled high, topped with shredded pulled chicken, melted white cheese curds, smothered in hot rich brown gravy, chopped chives",
+  "model": "gemini-3.6-flash",
+  "name": "Smothered Chicken Poutine",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-17T00:17:39+00:00"
  },
  "93695a59d399": {
   "avoid": [
@@ -25743,6 +26115,39 @@
   "vessel": "plate",
   "written_at": "2026-10-08T10:52:45+00:00"
  },
+ "aa521edc539a": {
+  "avoid": [
+   "raw chicken",
+   "whole chicken breast",
+   "soup",
+   "curry paste",
+   "noodles",
+   "bread",
+   "fried egg"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item stir-fried meat?",
+    "yes": true
+   },
+   {
+    "q": "Is the food a liquid soup or curry broth?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken raw or breaded?",
+    "yes": false
+   }
+  ],
+  "dish": "Thai basil chicken",
+  "look": "stir-fried minced chicken chunks, glistening dark savory brown glaze, wilted dark green Thai basil leaves, thin red chili slices, served next to a mound of steamed white jasmine rice, blistered garlic green beans",
+  "model": "gemini-3.6-flash",
+  "name": "Thai Basil Chicken, Steamed Jasmine Rice and Garlic Green Beans",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-17T00:18:35+00:00"
+ },
  "aac111afd7e4": {
   "avoid": [
    "rice",
@@ -26865,6 +27270,38 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T07:17:51+00:00"
+ },
+ "afc01efd15e8": {
+  "avoid": [
+   "spaghetti",
+   "pasta",
+   "burger bun",
+   "raw meat",
+   "sliced deli meat",
+   "pizza"
+  ],
+  "checks": [
+   {
+    "q": "Are the meatballs served inside a long bread roll?",
+    "yes": true
+   },
+   {
+    "q": "Are the meatballs served over spaghetti pasta?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat sliced deli cold cuts?",
+    "yes": false
+   }
+  ],
+  "dish": "meatball sub sandwich",
+  "look": "long toasted Italian hoagie roll filled with large round beef meatballs, rich red marinara sauce, melted stringy white mozzarella cheese, chopped parsley garnish",
+  "model": "gemini-3.6-flash",
+  "name": "Meatball Sub",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-17T00:17:39+00:00"
  },
  "b0318fd4539a": {
   "avoid": [
@@ -28687,6 +29124,40 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-11-05T21:37:37+00:00"
+ },
+ "ba829a4a4dde": {
+  "avoid": [
+   "meat slices",
+   "radish slices",
+   "dry noodle block",
+   "plastic packaging",
+   "seasoning packet",
+   "stir-fried noodles",
+   "thick udon noodles",
+   "spaghetti"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food noodles in broth?",
+    "yes": true
+   },
+   {
+    "q": "Are the noodles dry or stir-fried without broth?",
+    "yes": false
+   },
+   {
+    "q": "Is the noodle block dry and uncooked?",
+    "yes": false
+   }
+  ],
+  "dish": "instant ramen noodle soup",
+  "look": "abundant wavy yellow instant ramen noodles prominently floating in hot clear yellow broth, topped with a soft-boiled egg half with jammy yolk, bright sweet corn kernels, thin sliced scallions, pink-swirled narutomaki fish cake",
+  "model": "gemini-3.6-flash",
+  "name": "BYO Cup O’ Noodles",
+  "rev": 6,
+  "revisions": 1,
+  "vessel": "bowl",
+  "written_at": "2026-11-17T01:13:27+00:00"
  },
  "ba95779a369a": {
   "avoid": [
@@ -33341,6 +33812,38 @@
   "vessel": "bowl",
   "written_at": "2026-09-30T20:17:23+00:00"
  },
+ "d4f714951021": {
+  "avoid": [
+   "chicken",
+   "pork chops",
+   "rice and peas",
+   "raw plantains",
+   "skewers",
+   "tacos"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish centered around sliced pork belly with pasta and plantains?",
+    "yes": true
+   },
+   {
+    "q": "Is the main protein shredded chicken?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish served as a broth soup?",
+    "yes": false
+   }
+  ],
+  "dish": "jerk pork belly with rasta pasta and fried plantains",
+  "look": "thick slices of roasted jerk pork belly, dark charred spice rub, creamy rasta pasta with colorful bell pepper strips, golden caramelized ripe fried plantain slices",
+  "model": "gemini-3.6-flash",
+  "name": "Jerked Pork Belly, Rasta Pasta, and Ripe Fried Plantains",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-17T00:17:39+00:00"
+ },
  "d4fdae20273f": {
   "avoid": [
    "shrimp",
@@ -34095,6 +34598,42 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T14:22:11+00:00"
+ },
+ "d9f7ce1410a9": {
+  "avoid": [
+   "rice",
+   "white rice",
+   "cooked rice",
+   "clear broth",
+   "ramen",
+   "pho",
+   "dry noodles",
+   "spaghetti",
+   "stir fry",
+   "lemon"
+  ],
+  "checks": [
+   {
+    "q": "Is the food noodles served in a rich orange curry broth?",
+    "yes": true
+   },
+   {
+    "q": "Is the broth clear like chicken noodle soup broth?",
+    "yes": false
+   },
+   {
+    "q": "Is it a dry stir-fried noodle dish without broth?",
+    "yes": false
+   }
+  ],
+  "dish": "Laksa",
+  "look": "thick white rice noodles submerged in rich steaming orange-red coconut curry broth, halved hard-boiled egg, deep-fried tofu puffs, fresh bean sprouts, thin sliced fish cakes, chopped fresh cilantro garnish",
+  "model": "gemini-3.6-flash",
+  "name": "Malaysian Inspired Laksa",
+  "rev": 6,
+  "revisions": 1,
+  "vessel": "bowl",
+  "written_at": "2026-11-17T00:54:07+00:00"
  },
  "da2b28adcc57": {
   "avoid": [
@@ -34986,6 +35525,38 @@
   "vessel": "plate",
   "written_at": "2026-09-27T04:27:22+00:00"
  },
+ "df8b3ae39ea8": {
+  "avoid": [
+   "tacos",
+   "tortilla chips",
+   "burrito",
+   "enchiladas",
+   "fried rice",
+   "yellow rice"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a base of white rice topped with beans and sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the food rolled in a flour tortilla?",
+    "yes": false
+   },
+   {
+    "q": "Is the rice brown fried rice?",
+    "yes": false
+   }
+  ],
+  "dish": "morisqueta",
+  "look": "steamed fluffy white rice topped with seasoned pinto beans, warm red tomato sauce, crumbled white cotija cheese, fresh chopped cilantro",
+  "model": "gemini-3.6-flash",
+  "name": "Morisqueta",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-17T00:17:39+00:00"
+ },
  "e0636d4775e1": {
   "avoid": [
    "rice",
@@ -35020,6 +35591,38 @@
   "revisions": 1,
   "vessel": "bowl",
   "written_at": "2026-10-09T11:38:11+00:00"
+ },
+ "e0d529a207bf": {
+  "avoid": [
+   "burrito",
+   "tacos",
+   "tortilla chips",
+   "enchiladas",
+   "quesadilla",
+   "raw corn"
+  ],
+  "checks": [
+   {
+    "q": "Are the items steamed corn masa wrapped or unwrapped from corn husks?",
+    "yes": true
+   },
+   {
+    "q": "Are they flat flour tortillas wrapped like burritos?",
+    "yes": false
+   },
+   {
+    "q": "Are they crispy fried corn chips?",
+    "yes": false
+   }
+  ],
+  "dish": "tamales",
+  "look": "steamed yellow corn masa tamales partially peeled from dry corn husks, topped with red chili salsa, crumbled white cheese, fresh cilantro sprigs",
+  "model": "gemini-3.6-flash",
+  "name": "Tamales",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-17T00:17:39+00:00"
  },
  "e1203d92de6c": {
   "avoid": [
@@ -39899,6 +40502,41 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-23T08:44:54+00:00"
+ },
+ "ff8905bca216": {
+  "avoid": [
+   "fried rice",
+   "dry rice",
+   "noodle soup",
+   "ramen",
+   "beef",
+   "pork",
+   "shrimp",
+   "raw rice",
+   "curry"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a bowl of thick rice porridge?",
+    "yes": true
+   },
+   {
+    "q": "Is the food a dry or fried rice dish?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a clear noodle soup?",
+    "yes": false
+   }
+  ],
+  "dish": "chicken and tofu congee",
+  "look": "thick creamy white rice porridge, topped with shredded cooked chicken breast, soft white tofu cubes, thin julienned yellow ginger, sliced green scallions, light drizzle of dark soy sauce",
+  "model": "gemini-3.6-flash",
+  "name": "Ginger Jook Bar with Chicken and Tofu",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-17T00:17:02+00:00"
  },
  "ffaa271f2b1f": {
   "avoid": [
