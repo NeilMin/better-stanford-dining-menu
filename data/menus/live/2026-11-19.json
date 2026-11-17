@@ -1,6 +1,6 @@
 {
  "date": "2026-11-19",
- "scraped_at": "2026-11-17T03:58:54-08:00",
+ "scraped_at": "2026-11-17T14:56:19-08:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -1913,24 +1913,10 @@
    ],
    "Lunch": [
     {
-     "name": "Chicken Katsu with Japanese Curry",
-     "recipe_id": "KatsuCCu17",
+     "name": "Teriyaki Chicken",
+     "recipe_id": "BOXLUNCH-chkn7",
      "description": "",
-     "ingredients": "[HALAL] chicken, panko (wheat), all-purpose flour (wheat), egg, olive/canola oil blend, butter (milk), sweet onion, ginger, potatoes, carrots, Japanese curry powder, paprika, vegetable soup base, water, sugar, salt",
-     "allergens": [
-      "EGG",
-      "MILK",
-      "WHEAT"
-     ],
-     "trace_allergens": [],
-     "tags": [],
-     "order": 0
-    },
-    {
-     "name": "Crispy Tofu Katsu with Japanese Curry",
-     "recipe_id": "TofuKC17",
-     "description": "",
-     "ingredients": "tofu (soy), potatoes, carrots, onions, mushrooms, panko (wheat), all-purpose flour (wheat), vegan butter (soy), vegan egg (soy), vegetable soup base, tamari (soy), Japanese curry powder, olive/canola oil blend, salt, black pepper",
+     "ingredients": "chicken, teriyaki sauce (soy sauce [soybeans, wheat, salt], sugar, modified corn starch, onion juice, vinegar, natural flavor, garlic powder, malic acid, spices, sodium benzoate, disodium inosinate, disodium guanylate)",
      "allergens": [
       "SOY",
       "WHEAT"
@@ -1945,8 +1931,30 @@
       "SHELLFISH",
       "TREENUTS"
      ],
+     "tags": [],
+     "order": 0
+    },
+    {
+     "name": "Teriyaki Tofu with Eggplant",
+     "recipe_id": "6338900",
+     "description": "",
+     "ingredients": "tofu, vegetable soup base, eggplants, red pepper flakes, ginger, garlic, honey, sesame oil, pineapple juice, rice wine vinegar, tamari, corn starch, bell pepper, onions, canola/olive oil blend, black bean sauce, basil, pasilla chili",
+     "allergens": [
+      "SESAME",
+      "SOY",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SHELLFISH",
+      "TREENUTS"
+     ],
      "tags": [
-      "vegan"
+      "vegetarian"
      ],
      "order": 1
     },
@@ -1992,33 +2000,22 @@
      "order": 4
     },
     {
-     "name": "Steamed Japanese Rice",
-     "recipe_id": "SteaJapanRice1",
+     "name": "Garlic Noodles",
+     "recipe_id": "5536509",
      "description": "",
-     "ingredients": "Japanese short-grain rice, water",
-     "allergens": [],
-     "trace_allergens": [],
+     "ingredients": "pasta (semolina flour), garlic, canola/olive oil blend, butter, tamari sauce, mushroom seasoning",
+     "allergens": [
+      "MILK",
+      "SOY",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "EGG"
+     ],
      "tags": [
-      "gluten-free",
-      "vegan"
+      "vegetarian"
      ],
      "order": 5
-    },
-    {
-     "name": "Miso Glazed Eggplant",
-     "recipe_id": "MisoEgg17",
-     "description": "",
-     "ingredients": "Japanese eggplant, miso (soy), alcohol-free mirin, sesame oil, sugar, salt",
-     "allergens": [
-      "SESAME",
-      "SOY"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free",
-      "vegan"
-     ],
-     "order": 6
     },
     {
      "name": "Grilled Chicken",
@@ -2039,7 +2036,7 @@
       "WHEAT"
      ],
      "tags": [],
-     "order": 7
+     "order": 6
     },
     {
      "name": "Grilled Vegan/Vegetarian",
@@ -2060,7 +2057,7 @@
       "WHEAT"
      ],
      "tags": [],
-     "order": 8
+     "order": 7
     },
     {
      "name": "Handmade Pizza",
@@ -2075,7 +2072,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 9
+     "order": 8
     },
     {
      "name": "Panini Station",
@@ -2093,7 +2090,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 10
+     "order": 9
     },
     {
      "name": "Soup of the Day",
@@ -2103,7 +2100,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 11
+     "order": 10
     },
     {
      "name": "Japanese Cabbage Slaw",
@@ -2119,7 +2116,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 12
+     "order": 11
     },
     {
      "name": "Performance Bar",
@@ -2129,7 +2126,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 13
+     "order": 12
     },
     {
      "name": "Craveable Grains",
@@ -2142,7 +2139,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 14
+     "order": 13
     },
     {
      "name": "Flavor Forward Legumes",
@@ -2155,7 +2152,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 15
+     "order": 14
     },
     {
      "name": "Pasta Marinara",
@@ -2172,7 +2169,7 @@
      "tags": [
       "vegan"
      ],
-     "order": 16
+     "order": 15
     },
     {
      "name": "Pasta Alfredo",
@@ -2189,7 +2186,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 17
+     "order": 16
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -2202,40 +2199,44 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 18
+     "order": 17
     }
    ],
    "Dinner": [
     {
-     "name": "Bibimbap Bowl",
-     "recipe_id": "3806743",
+     "name": "Caramelized Herb Roasted Turkey",
+     "recipe_id": "5550211",
      "description": "",
-     "ingredients": "beef, spinach, mushroom, carrots, bean sprouts, eggs, nori, bibimbap sauce (gochujang paste [sweet rice flour, brown rice syrup, red pepper powder, millet malt, salt], sugar, sesame oil, garlic, ginger, tamari sauce, orange juice, chili powder)",
+     "ingredients": "turkey, canola/olive oil blend, salt, granulated garlic, parsley, garlic, rosemary, thyme, pepper, caramelized onion gravy(onions, vegetable soup base, canola/olive oil blend, thyme, bay leaf, butter, flour, salt, pepper)",
      "allergens": [
+      "MILK",
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "COCONUT",
       "EGG",
+      "FISH",
+      "PEANUTS",
       "SESAME",
-      "SOY"
+      "SHELLFISH",
+      "SOY",
+      "TREENUTS"
      ],
-     "trace_allergens": [],
-     "tags": [
-      "gluten-free"
-     ],
+     "tags": [],
      "order": 0
     },
     {
-     "name": "vegetarian bibimbap",
-     "recipe_id": "911202629",
+     "name": "Jackfruit Wellington",
+     "recipe_id": "JackfruitWellington1",
      "description": "",
-     "ingredients": "rice, tempeh, sesame oil, bean sprouts, zucchini, carrots mushroom, spinach, onion",
+     "ingredients": "vegan puff pastry, jackfruit, vegetable broth, mushrooms, onion, spinach, olive oil blend, tomato paste, soy sauce, mushroom powder, all-purpose flour, Dijon mustard, garlic, smoked paprika, thyme, rosemary, pepper, salt, soy milk, salt",
      "allergens": [
-      "SESAME",
-      "SOY"
-     ],
-     "trace_allergens": [
+      "SOY",
       "WHEAT"
      ],
+     "trace_allergens": [],
      "tags": [
-      "vegetarian"
+      "vegan"
      ],
      "order": 1
     },
@@ -2266,15 +2267,14 @@
      "order": 3
     },
     {
-     "name": "Steamed Bok Choy",
-     "recipe_id": "4182774",
+     "name": "Roasted Brussel Sprouts & Pancetta",
+     "recipe_id": "5744835",
      "description": "",
-     "ingredients": "bok choy, salt",
+     "ingredients": "brussel sprouts, pancetta bacon (pork belly, salt, sugar, spices, sodium erythorbate, sodium nitrite, garlic), balsamic vinegar, brown sugar, canola/olive oil blend, salt, pepper",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
-      "vegan"
+      "gluten-free"
      ],
      "order": 4
     },
@@ -2293,33 +2293,53 @@
      "order": 5
     },
     {
-     "name": "Steamed Rice",
-     "recipe_id": "5121297",
+     "name": "Yukon Gold Mashed Potatoes",
+     "recipe_id": "4552724-2",
      "description": "",
-     "ingredients": "white rice, salt",
-     "allergens": [],
+     "ingredients": "yukon potatoes, cream, unsalted butter, chives, salt",
+     "allergens": [
+      "MILK"
+     ],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
-      "vegan"
+      "vegetarian"
      ],
      "order": 6
     },
     {
-     "name": "Japchae Glass Noodles",
-     "recipe_id": "4806374",
+     "name": "Maple Glazed Yams with Marshmallows",
+     "recipe_id": "6878846",
      "description": "",
-     "ingredients": "sweet potato noodles, carrots, cabbage, onions, bell peppers, tamari (soy), sesame oil, canola/olive oil blend, salt, sugar, garlic, pepper",
+     "ingredients": "yams, unsalted butter, maple flavored syrup (corn syrup, sugar, salt, natural flavor, artificial flavor, sodium hexametaphosphate, sodium benzoate, sorbic acid, caramel color, phosphoric acid), white pepper",
      "allergens": [
-      "SESAME",
-      "SOY"
+      "MILK"
      ],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
-      "vegan"
+      "vegetarian"
      ],
      "order": 7
+    },
+    {
+     "name": "Focaccia",
+     "recipe_id": "Focaccia1",
+     "description": "",
+     "ingredients": "unbleached enriched flour (wheat flour, malted barley flour, niacin, reduced iron, thiamine mononitrate, riboflavin, folic acid), water, sour culture, extra virgin olive oil, salt, semolina (wheat), yeast",
+     "allergens": [
+      "WHEAT"
+     ],
+     "trace_allergens": [
+      "MILK",
+      "SESAME",
+      "SOY",
+      "TREENUTS"
+     ],
+     "tags": [
+      "vegan"
+     ],
+     "order": 8
     },
     {
      "name": "Grilled Chicken",
@@ -2340,7 +2360,7 @@
       "WHEAT"
      ],
      "tags": [],
-     "order": 8
+     "order": 9
     },
     {
      "name": "Grilled Vegan/Vegetarian",
@@ -2361,7 +2381,7 @@
       "WHEAT"
      ],
      "tags": [],
-     "order": 9
+     "order": 10
     },
     {
      "name": "Panini Station",
@@ -2379,7 +2399,7 @@
       "TREENUTS"
      ],
      "tags": [],
-     "order": 10
+     "order": 11
     },
     {
      "name": "Soup of the Day",
@@ -2389,7 +2409,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 11
+     "order": 12
     },
     {
      "name": "Assorted Dinner Rolls",
@@ -2408,7 +2428,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 12
+     "order": 13
     },
     {
      "name": "Composed Salad",
@@ -2418,7 +2438,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 13
+     "order": 14
     },
     {
      "name": "Performance Bar",
@@ -2428,7 +2448,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 14
+     "order": 15
     },
     {
      "name": "Craveable Grains",
@@ -2441,7 +2461,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 15
+     "order": 16
     },
     {
      "name": "Flavor Forward Legumes",
@@ -2454,7 +2474,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 16
+     "order": 17
     },
     {
      "name": "Pasta Marinara",
@@ -2471,7 +2491,7 @@
      "tags": [
       "vegan"
      ],
-     "order": 17
+     "order": 18
     },
     {
      "name": "Pasta Alfredo",
@@ -2488,7 +2508,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 18
+     "order": 19
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -2501,7 +2521,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 19
+     "order": 20
     }
    ]
   },
@@ -4755,26 +4775,21 @@
      "order": 4
     },
     {
-     "name": "Spring Rolls",
-     "recipe_id": "5587308",
+     "name": "Potstickers",
+     "recipe_id": "4608906",
      "description": "",
-     "ingredients": "enriched flour, calcium propionate, malted barley flour, cabbage, celery, carrots, bok choy, enriched durum flour, ferrous sulfate, thiamine mononitrate, water chestnuts, bamboo shoots, salt, modified food starch, canola oil, sugar, spice, garlic, wheat gluten, toasted sesame oil, dried onion, maltodextrin, natural flavor, disodium inosinate, disodium guanylate, eggs, sesame oil, cornstarch, fried in soybean oil",
+     "ingredients": "wheat flour, cabbage, vermicelli green mung beans, carrots, spinach, shiitake mushroom, modified corn starch, yeast extract, garlic, rice flour, salt, sugar, soybean oil, spice, soy sauce, wheat, soybeans, salt, sesame seed oil",
      "allergens": [
-      "EGG",
       "SESAME",
       "SOY",
       "WHEAT"
      ],
      "trace_allergens": [
-      "COCONUT",
       "FISH",
-      "MILK",
-      "PEANUTS",
-      "SHELLFISH",
-      "TREENUTS"
+      "SHELLFISH"
      ],
      "tags": [
-      "vegetarian"
+      "vegan"
      ],
      "order": 5
     },
@@ -5248,7 +5263,7 @@
      "name": "Allergen-Friendly Pasta Station",
      "recipe_id": "AlFrPasStat1",
      "description": "",
-     "ingredients": "Gluten-Free Penne Pasta (brown rice, rice bran, water) Sauce of the Day: Marinara Sauce (tomatoes, tomato paste, oil, sugar, salt, onion, garlic, spices, citric acid, natural flavor) Pesto Sauce (olive oil, basil, spinach, kale, nutritional yeast, sunflower seeds) Alfredo Sauce (allergen free vegan butter, garbanzo flour, oat milk, nutritional yeast, lemon juice, salt)",
+     "ingredients": "Gluten-Free Penne Pasta (brown rice, rice bran, water) Sauce of the Day: Marinara Sauce (tomatoes, tomato paste, oil, sugar, salt, onion, garlic, spices, citric acid, natural flavor) Pesto Sauce (olive oil, basil, spinach, kale, nutritional yeast, sunflower seeds) Alfredo Sauce (allergen free vegan butter, garbanzo flour, oatmilk, nutritional yeast, lemon juice, salt)",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -5372,7 +5387,7 @@
      "name": "Allergen-Friendly Pasta Station",
      "recipe_id": "AlFrPasStat1",
      "description": "",
-     "ingredients": "Gluten-Free Penne Pasta (brown rice, rice bran, water) Sauce of the Day: Marinara Sauce (tomatoes, tomato paste, oil, sugar, salt, onion, garlic, spices, citric acid, natural flavor) Pesto Sauce (olive oil, basil, spinach, kale, nutritional yeast, sunflower seeds) Alfredo Sauce (allergen free vegan butter, garbanzo flour, oat milk, nutritional yeast, lemon juice, salt)",
+     "ingredients": "Gluten-Free Penne Pasta (brown rice, rice bran, water) Sauce of the Day: Marinara Sauce (tomatoes, tomato paste, oil, sugar, salt, onion, garlic, spices, citric acid, natural flavor) Pesto Sauce (olive oil, basil, spinach, kale, nutritional yeast, sunflower seeds) Alfredo Sauce (allergen free vegan butter, garbanzo flour, oatmilk, nutritional yeast, lemon juice, salt)",
      "allergens": [],
      "trace_allergens": [],
      "tags": [

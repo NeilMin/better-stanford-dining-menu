@@ -1,6 +1,6 @@
 {
  "date": "2026-11-21",
- "scraped_at": "2026-11-17T03:58:54-08:00",
+ "scraped_at": "2026-11-17T14:56:19-08:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -1164,6 +1164,25 @@
      "order": 11
     },
     {
+     "name": "Crepe Station",
+     "recipe_id": "crepestation(lake)",
+     "description": "",
+     "ingredients": "",
+     "allergens": [
+      "COCONUT",
+      "EGG",
+      "MILK",
+      "PEANUTS",
+      "SOY",
+      "TREENUTS"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "vegetarian"
+     ],
+     "order": 12
+    },
+    {
      "name": "Composed Salad",
      "recipe_id": "123116546",
      "description": "",
@@ -1171,7 +1190,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 12
+     "order": 13
     },
     {
      "name": "Performance Bar",
@@ -1181,7 +1200,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 13
+     "order": 14
     },
     {
      "name": "Craveable Grains",
@@ -1194,7 +1213,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 14
+     "order": 15
     },
     {
      "name": "Flavor Forward Legumes",
@@ -1207,7 +1226,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 15
+     "order": 16
     },
     {
      "name": "Creamy Pesto",
@@ -1223,7 +1242,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 16
+     "order": 17
     },
     {
      "name": "Pasta Marinara",
@@ -1240,7 +1259,7 @@
      "tags": [
       "vegan"
      ],
-     "order": 17
+     "order": 18
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -1253,7 +1272,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 18
+     "order": 19
     }
    ],
    "Dinner": [
@@ -2579,6 +2598,191 @@
    ]
   },
   "ricker": {
+   "Breakfast": [
+    {
+     "name": "Steel Cut Oatmeal",
+     "recipe_id": "3849426",
+     "description": "",
+     "ingredients": "steel cut oats",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
+     "order": 0
+    },
+    {
+     "name": "Chef's Choice Overnight Oats",
+     "recipe_id": "OvernightOats1",
+     "description": "",
+     "ingredients": "",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [],
+     "order": 1
+    },
+    {
+     "name": "Scrambled Eggs",
+     "recipe_id": "3975106",
+     "description": "",
+     "ingredients": "eggs, canola/olive oil blend, salt",
+     "allergens": [
+      "EGG"
+     ],
+     "trace_allergens": [
+      "COCONUT",
+      "FISH",
+      "MILK",
+      "PEANUTS",
+      "SESAME",
+      "SHELLFISH",
+      "SOY",
+      "TREENUTS",
+      "WHEAT"
+     ],
+     "tags": [
+      "vegetarian"
+     ],
+     "order": 2
+    },
+    {
+     "name": "Hard Boiled Eggs",
+     "recipe_id": "2612705",
+     "description": "",
+     "ingredients": "eggs",
+     "allergens": [
+      "EGG"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegetarian"
+     ],
+     "order": 3
+    },
+    {
+     "name": "Chef's Choice Egg Special",
+     "recipe_id": "ChefsChoiceEgg",
+     "description": "",
+     "ingredients": "Please refer to dining hall chef or manager for ingredient and allergen information",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "vegetarian"
+     ],
+     "order": 4
+    },
+    {
+     "name": "Double Smoked Bacon",
+     "recipe_id": "5781155",
+     "description": "",
+     "ingredients": "bacon, salt, sugar, sodium phosphate, sodium erythorbate, sodium nitrite",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free"
+     ],
+     "order": 5
+    },
+    {
+     "name": "Hash Brown Patty",
+     "recipe_id": "6350846",
+     "description": "",
+     "ingredients": "potatoes, oil (canola oil, corn oil, cottonseed oil, palm oil, soybean oil, or sunflower oil), salt, onion powder, natural flavor, dextrose, disodium dihydrogen pyrophosphate",
+     "allergens": [
+      "SOY"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
+     "order": 6
+    },
+    {
+     "name": "Chef's Choice Vegan Breakfast",
+     "recipe_id": "ChefsChoiceVGNBkfst",
+     "description": "",
+     "ingredients": "Please refer to dining hall chef or manager for ingredient and allergen information",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "vegan"
+     ],
+     "order": 7
+    },
+    {
+     "name": "Chef's Choice Breakfast Special",
+     "recipe_id": "ChefsChoiceBkfstSpec",
+     "description": "",
+     "ingredients": "Please refer to dining hall chef or manager for ingredient and allergen information",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [],
+     "order": 8
+    },
+    {
+     "name": "Waffles",
+     "recipe_id": "3144806",
+     "description": "",
+     "ingredients": "enriched wheat flour, sugar, soybean oil, leavings, buckwheat flour, buttermilk (milk), natural flavors, artificial flavors, wheat bran, rice flour, yellow corn flour, whole oat flour, whey (milk), whole egg, salt, dextrose, wheat starch, natural flavors, artificial flavor, malted barley flour, lactic acid",
+     "allergens": [
+      "EGG",
+      "MILK",
+      "SOY",
+      "WHEAT"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "vegetarian"
+     ],
+     "order": 9
+    },
+    {
+     "name": "Gluten-Free Waffles",
+     "recipe_id": "3800193",
+     "description": "",
+     "ingredients": "white rice flour, degerminated corn flour, cane sugar, soy flour, baking powder, canola oil, salt, natural flavor, xanthan gum",
+     "allergens": [
+      "SOY"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
+     "order": 10
+    },
+    {
+     "name": "Seasonal Fruit",
+     "recipe_id": "3810874",
+     "description": "",
+     "ingredients": "seasonal fresh fruit",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
+     "order": 11
+    },
+    {
+     "name": "Assorted Allergy-Friendly Items",
+     "recipe_id": "3907378",
+     "description": "",
+     "ingredients": "sliced bread, alternative milk, vegan yogurt, chia seed puddings, overnight oats, seed bars, granola, and/or condiments) Free from the top food allergens. Please refer to packaging for ingredient information",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
+     "order": 12
+    }
+   ]
+  },
+  "gerhardcasper": {
    "Breakfast": [
     {
      "name": "Steel Cut Oatmeal",

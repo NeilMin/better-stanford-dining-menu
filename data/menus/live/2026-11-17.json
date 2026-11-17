@@ -1,6 +1,6 @@
 {
  "date": "2026-11-17",
- "scraped_at": "2026-11-17T03:58:54-08:00",
+ "scraped_at": "2026-11-17T14:56:19-08:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -1204,14 +1204,16 @@
      "order": 3
     },
     {
-     "name": "Vermicelli Noodles",
-     "recipe_id": "VermNood17",
+     "name": "Vegetable Chow Mein",
+     "recipe_id": "5488787",
      "description": "",
-     "ingredients": "Vermicelli rice noodles, water",
-     "allergens": [],
+     "ingredients": "chow mein noodles (wheat flour, wheat gluten, salt, fdc yellow 5, 6, soybean oil), red onions, canola/olive oil blend, carrots, celery, mushroom seasoning (mushroom powder, shiitake mushroom extract, vegetable extract, salt, sodium 5 guanylate), garlic",
+     "allergens": [
+      "SOY",
+      "WHEAT"
+     ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free",
       "vegan"
      ],
      "order": 4
@@ -1230,28 +1232,6 @@
      "order": 5
     },
     {
-     "name": "Supreme Carnitas Nachos",
-     "recipe_id": "3850008",
-     "description": "",
-     "ingredients": "carnitas (pork, onions, garlic, bay leaf, salt), nacho cheese sauce (skim milk, vegetable acetate, canola oil, soybean oil, and/or sunflower oil, modified food starch, cheddar cheese, bell peppers, sodium phosphate, lactic acid, sodium citrate, annatto, datem, monoglycerides, diglycerides, acetic acid, spices), jalapenos, tomatoes, sour cream, salsa roja, guacamole, carrots, onions, cilantro, tortilla chips fried in canola oil",
-     "allergens": [
-      "MILK",
-      "SOY"
-     ],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "TREENUTS",
-      "WHEAT"
-     ],
-     "tags": [],
-     "order": 6
-    },
-    {
      "name": "Refried Beans",
      "recipe_id": "4835563",
      "description": "",
@@ -1262,30 +1242,20 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 7
+     "order": 6
     },
     {
-     "name": "Cilantro Lime Rice",
-     "recipe_id": "4960003",
+     "name": "Spanish Rice",
+     "recipe_id": "5298653",
      "description": "",
-     "ingredients": "brown rice, onion, canola/olive oil blend, lime, cilantro, garlic, salt",
+     "ingredients": "white rice, vegetable soup base (contains mushrooms, celery), onions, bell peppers, garlic, jalapeno peppers, canola/olive oil blend, tomato juice, salt, coriander, cumin, pepper, cilantro",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
       "gluten-free",
       "vegan"
      ],
-     "order": 8
-    },
-    {
-     "name": "Nacho Bar",
-     "recipe_id": "3506903",
-     "description": "",
-     "ingredients": "",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [],
-     "order": 9
+     "order": 7
     },
     {
      "name": "Tomato Soup with Grilled Cheese",
@@ -1306,45 +1276,25 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 10
+     "order": 8
     },
     {
-     "name": "Panini Station",
-     "recipe_id": "4532805",
+     "name": "Caesar Salad",
+     "recipe_id": "5834444",
      "description": "",
-     "ingredients": "(assorted) breads (egg, soy, wheat), cheeses (milk), deli meats, lettuce, tomatoes, and onions",
+     "ingredients": "lettuce, tomatoes, caesar dressing (mayonnaise, parmesan cheese, garlic, lemon juice, anchovy, red wine vinegar, dijon mustard, worcestershire sauce [vinegar, molasses, corn syrup, anchovies, salt, garlic, tamarind concentrate, cloves, natural flavorings, chili pepper extract], hot sauce, salt, pepper), parmesan cheese, croutons (wheat flour, canola and/or sunflower oil, whey, salt, yeast, corn syrup, sugar, onion powder, parsley, paprika, turmeric)",
      "allergens": [
       "EGG",
+      "FISH",
       "MILK",
       "SOY",
       "WHEAT"
      ],
      "trace_allergens": [
-      "COCONUT",
       "TREENUTS"
      ],
      "tags": [],
-     "order": 11
-    },
-    {
-     "name": "Soup of the Day",
-     "recipe_id": "SoupoftheDay",
-     "description": "",
-     "ingredients": "chef's choice soup of the day",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [],
-     "order": 12
-    },
-    {
-     "name": "Composed Salad",
-     "recipe_id": "123116546",
-     "description": "",
-     "ingredients": "chef's choice composed salad",
-     "allergens": [],
-     "trace_allergens": [],
-     "tags": [],
-     "order": 13
+     "order": 9
     },
     {
      "name": "Performance Bar",
@@ -1354,7 +1304,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 14
+     "order": 10
     },
     {
      "name": "Craveable Grains",
@@ -1367,7 +1317,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 15
+     "order": 11
     },
     {
      "name": "Flavor Forward Legumes",
@@ -1380,42 +1330,34 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 16
+     "order": 12
     },
     {
-     "name": "Pasta Marinara",
-     "recipe_id": "5095708",
+     "name": "Marinara Sauce",
+     "recipe_id": "4079962",
      "description": "",
-     "ingredients": "pasta (wheat), marinara sauce (soy), canola/olive oil blend",
+     "ingredients": "tomatoes, tomato paste, soybean oil, sugar, salt, onion, garlic, spices, citric acid, natural flavor",
      "allergens": [
-      "SOY",
-      "WHEAT"
+      "SOY"
      ],
-     "trace_allergens": [
-      "EGG"
-     ],
+     "trace_allergens": [],
      "tags": [
+      "gluten-free",
       "vegan"
      ],
-     "order": 17
+     "order": 13
     },
     {
-     "name": "Pasta Pesto",
-     "recipe_id": "3857040",
+     "name": "Bolognese Sauce",
+     "recipe_id": "5504877",
      "description": "",
-     "ingredients": "pasta (wheat), pesto sauce (basil, canola oil, parmesan cheese [milk], extra virgin olive oil, garlic, lemon juice concentrate, natural flavor, ascorbic acid, xanthan gum, soy lecithin, chamomile extract, rosemary extract, salt)",
-     "allergens": [
-      "MILK",
-      "SOY",
-      "WHEAT"
-     ],
-     "trace_allergens": [
-      "EGG"
-     ],
+     "ingredients": "beef, tomato sauce, onions, carrots, celery, garlic, balsamic vinegar, beef soup base, parsley, salt, italian seasoning, black pepper",
+     "allergens": [],
+     "trace_allergens": [],
      "tags": [
-      "vegetarian"
+      "gluten-free"
      ],
-     "order": 18
+     "order": 14
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -1428,7 +1370,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 19
+     "order": 15
     }
    ],
    "Dinner": [
@@ -4878,20 +4820,27 @@
      "order": 4
     },
     {
-     "name": "Lemongrass Chicken Potsticker",
-     "recipe_id": "7111730",
+     "name": "Vegetable Spring Rolls",
+     "recipe_id": "8981533",
      "description": "",
-     "ingredients": "filling: chicken, corn, onions fried in canola oil, scallion, lemongrass, fish sauce (anchovy extract, salt, fructose, hydrolyzed wheat protein), canola oil, salt, garlic, sugar, black pepper, chili pepper, dough: wheat flour, modified tapioca starch, wheat gluten, canola oil, salt",
+     "ingredients": "cabbage, wheat flour, bean sprout, carrot, water chestnut, sugar, mung bean vermicelli, modified corn starch, salt, soy sauce (water, soybean, salt, wheat flour), yeast extract, sesame oil, white pepper powder",
      "allergens": [
-      "FISH",
+      "SESAME",
+      "SOY",
       "WHEAT"
      ],
      "trace_allergens": [
-      "SESAME",
+      "COCONUT",
+      "EGG",
+      "FISH",
+      "MILK",
+      "PEANUTS",
       "SHELLFISH",
-      "SOY"
+      "TREENUTS"
      ],
-     "tags": [],
+     "tags": [
+      "vegan"
+     ],
      "order": 5
     },
     {
@@ -5367,7 +5316,7 @@
      "name": "Allergen-Friendly Pasta Station",
      "recipe_id": "AlFrPasStat1",
      "description": "",
-     "ingredients": "Gluten-Free Penne Pasta (brown rice, rice bran, water) Sauce of the Day: Marinara Sauce (tomatoes, tomato paste, oil, sugar, salt, onion, garlic, spices, citric acid, natural flavor) Pesto Sauce (olive oil, basil, spinach, kale, nutritional yeast, sunflower seeds) Alfredo Sauce (allergen free vegan butter, garbanzo flour, oat milk, nutritional yeast, lemon juice, salt)",
+     "ingredients": "Gluten-Free Penne Pasta (brown rice, rice bran, water) Sauce of the Day: Marinara Sauce (tomatoes, tomato paste, oil, sugar, salt, onion, garlic, spices, citric acid, natural flavor) Pesto Sauce (olive oil, basil, spinach, kale, nutritional yeast, sunflower seeds) Alfredo Sauce (allergen free vegan butter, garbanzo flour, oatmilk, nutritional yeast, lemon juice, salt)",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -5428,7 +5377,7 @@
      "name": "Mushroom Bourguignon",
      "recipe_id": "12311233",
      "description": "",
-     "ingredients": "mushroom, onion, garlic, carrots, peas, thyme, onion powder, thyme, paprika, mushroom seasoning, chicken seasoning, grape juice, liquid coconut aminos, veg base, oat milk, cornstarch",
+     "ingredients": "mushroom, onion, garlic, carrots, peas, thyme, onion powder, thyme, paprika, mushroom seasoning, chicken seasoning, grape juice, liquid coconut aminos, veg base, oatmilk, cornstarch",
      "allergens": [
       "COCONUT"
      ],
@@ -5443,7 +5392,7 @@
      "name": "Mashed Sweet Potatoes (Branner)",
      "recipe_id": "MashSwePot1",
      "description": "",
-     "ingredients": "sweet potatoes, oat milk, vegan butter, cinnamon",
+     "ingredients": "sweet potatoes, oatmilk, vegan butter, cinnamon",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
@@ -5497,7 +5446,7 @@
      "name": "Allergen-Friendly Pasta Station",
      "recipe_id": "AlFrPasStat1",
      "description": "",
-     "ingredients": "Gluten-Free Penne Pasta (brown rice, rice bran, water) Sauce of the Day: Marinara Sauce (tomatoes, tomato paste, oil, sugar, salt, onion, garlic, spices, citric acid, natural flavor) Pesto Sauce (olive oil, basil, spinach, kale, nutritional yeast, sunflower seeds) Alfredo Sauce (allergen free vegan butter, garbanzo flour, oat milk, nutritional yeast, lemon juice, salt)",
+     "ingredients": "Gluten-Free Penne Pasta (brown rice, rice bran, water) Sauce of the Day: Marinara Sauce (tomatoes, tomato paste, oil, sugar, salt, onion, garlic, spices, citric acid, natural flavor) Pesto Sauce (olive oil, basil, spinach, kale, nutritional yeast, sunflower seeds) Alfredo Sauce (allergen free vegan butter, garbanzo flour, oatmilk, nutritional yeast, lemon juice, salt)",
      "allergens": [],
      "trace_allergens": [],
      "tags": [
