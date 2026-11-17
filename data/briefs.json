@@ -3024,13 +3024,14 @@
  },
  "1893bff7acba": {
   "avoid": [
-   "tortillas",
+   "meatless dish",
+   "yuca-only dish",
+   "cabbage bed",
    "tacos",
-   "french fries",
-   "potato wedges",
+   "tortillas",
    "soup",
-   "bread",
-   "cheese"
+   "stew",
+   "bread"
   ],
   "checks": [
    {
@@ -3046,14 +3047,14 @@
     "yes": false
    }
   ],
-  "dish": "yuca con chicharrón",
-  "look": "crispy fried pork belly chicharrón pieces, golden fried yuca cassava chunks, shredded cabbage curtido slaw, pickled red onion ribbons, sliced red radish wheels, light drizzle of red salsa",
-  "model": "gemini-flash-latest",
+  "dish": "Yuca con chicharrón",
+  "look": "deep-fried dark brown pork chicharron bites piled on top of chunky golden fried yuca cassava roots, topped with pickled pink red onions and sliced radishes, accompanied by a side of pale cabbage curtido slaw and red salsa",
+  "model": "gemini-3.6-flash",
   "name": "Salvadoran Yuca con Chicharron",
   "rev": 6,
-  "revisions": 1,
+  "revisions": 2,
   "vessel": "plate",
-  "written_at": "2026-11-06T21:57:07+00:00"
+  "written_at": "2026-11-17T05:23:26+00:00"
  },
  "18a59428a79d": {
   "avoid": [
@@ -10504,10 +10505,12 @@
    "pork",
    "fish",
    "shrimp",
-   "parmesan cheese",
-   "grated cheese",
-   "soup broth",
-   "plain tomato sauce"
+   "soup",
+   "broth",
+   "dark leafy greens",
+   "kale",
+   "spinach",
+   "grated cheese"
   ],
   "checks": [
    {
@@ -10523,14 +10526,14 @@
     "yes": false
    }
   ],
-  "dish": "pasta with white beans and roasted vegetables",
-  "look": "plump creamy white cannellini beans scattered heavily through ridged penne pasta, roasted zucchini half-moons, charred red bell pepper strips, roasted red onion wedges, blistered cherry tomatoes, prominent white beans visible throughout, light olive oil sheen, chopped fresh parsley",
-  "model": "gemini-flash-latest",
+  "dish": "Pasta with white beans and roasted vegetables",
+  "look": "plump white cannellini beans prominent throughout short tubular pasta, mixed with roasted zucchini cubes, roasted red bell pepper, and yellow squash chunks, lightly tossed",
+  "model": "gemini-3.6-flash",
   "name": "Fagioli Pasta with Roasted Vegetables",
   "rev": 6,
-  "revisions": 2,
+  "revisions": 1,
   "vessel": "bowl",
-  "written_at": "2026-10-14T20:54:13+00:00"
+  "written_at": "2026-11-17T05:14:52+00:00"
  },
  "4571a02937df": {
   "avoid": [
@@ -11474,13 +11477,13 @@
  },
  "4917645e23d6": {
   "avoid": [
+   "plain shredded chicken",
+   "chicken without noodles",
    "shrimp",
    "beef",
    "pork",
-   "seafood",
    "soup",
    "broth",
-   "fried shallots",
    "chopsticks",
    "uncooked noodles"
   ],
@@ -11499,13 +11502,13 @@
    }
   ],
   "dish": "Chicken Pad Thai",
-  "look": "stir-fried flat rice noodles, large chunks of cooked chicken breast, amber-red tamarind sauce, golden-brown fried tofu cubes, crisp bean sprouts, chopped green onions, lime wedge on the side",
-  "model": "gemma-4-31b-it",
+  "look": "stir-fried flat rice noodles coated in glossy amber tamarind sauce, mixed with tender sliced chicken breast, bean sprouts, yellow tofu cubes, and scrambled egg ribbons, topped with chopped green onions and crushed peanuts, served with a lime wedge on the side",
+  "model": "gemini-3.6-flash",
   "name": "Chicken Pad Thai (FloMo)",
   "rev": 6,
   "revisions": 1,
   "vessel": "plate",
-  "written_at": "2026-11-10T22:25:36+00:00"
+  "written_at": "2026-11-16T22:44:56+00:00"
  },
  "4928bd35dae8": {
   "avoid": [
@@ -12959,11 +12962,11 @@
  },
  "52641c1a9d15": {
   "avoid": [
-   "green beans",
-   "soup",
-   "broth",
-   "liquid sauce",
-   "cherry tomatoes",
+   "leafy greens",
+   "spinach",
+   "kale",
+   "lettuce",
+   "green salad",
    "cream",
    "cheese",
    "meat",
@@ -12972,7 +12975,7 @@
   ],
   "checks": [
    {
-    "q": "Is the dish a warm mixture of corn kernels and green pepper strips?",
+    "q": "Is the dish a mixture of corn kernels and green pepper strips?",
     "yes": true
    },
    {
@@ -12985,13 +12988,13 @@
    }
   ],
   "dish": "rajas con elote",
-  "look": "thick roasted dark green poblano pepper strips, golden sweet corn kernels, tender translucent white onion slices, cooked diced red tomatoes, warm sautéed mexican vegetable mixture",
+  "look": "sautéed yellow corn kernels mixed with thick green roasted poblano chili pepper strips, translucent diced onions, cooked red tomato pieces, glossy warm vegetable mixture",
   "model": "gemini-3.6-flash",
   "name": "Rajas Y Elote Con Jitomate",
   "rev": 6,
-  "revisions": 2,
+  "revisions": 1,
   "vessel": "bowl",
-  "written_at": "2026-10-29T22:00:59+00:00"
+  "written_at": "2026-11-16T23:22:54+00:00"
  },
  "529902cdc508": {
   "avoid": [
@@ -14372,6 +14375,39 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-10T00:10:11+00:00"
+ },
+ "5d4da710f507": {
+  "avoid": [
+   "raw beef",
+   "steak",
+   "ground beef",
+   "thin clear broth",
+   "bread bowl",
+   "skewers",
+   "grill marks"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item chunks of meat in a rich gravy?",
+    "yes": true
+   },
+   {
+    "q": "Is the beef a solid intact steak?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat ground or crumbled like mince?",
+    "yes": false
+   }
+  ],
+  "dish": "Beef stew",
+  "look": "tender bite-sized chunks of seared dark brown beef, rich thick glossy brown gravy, soft cooked orange carrot rounds, yellow potato cubes, sprinkled chopped fresh parsley",
+  "model": "gemini-3.6-flash",
+  "name": "Stewed Beef",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-17T19:15:58+00:00"
  },
  "5d7637cbc1aa": {
   "avoid": [
@@ -20277,10 +20313,11 @@
    "beef",
    "pork",
    "cheese",
-   "crema",
    "sour cream",
-   "avocado",
-   "mango"
+   "beans",
+   "pineapple",
+   "mango",
+   "crispy taco shells"
   ],
   "checks": [
    {
@@ -20297,13 +20334,13 @@
    }
   ],
   "dish": "cauliflower tacos",
-  "look": "prominent roasted cauliflower florets with reddish-orange al pastor marinade, visible bumpy cauliflower heads filling warm folded soft yellow corn tortillas, whole cooked pinto beans, diced charred yellow pineapple cubes, minced raw white onions, fresh green cilantro leaves, on a plate",
-  "model": "gemini-3.7-flash",
+  "look": "two soft corn tortillas each filled with roasted cauliflower florets, the white florets with reddish-orange chili al pastor glaze and charred edges, sprinkled with diced white onion and fresh cilantro",
+  "model": "hand",
   "name": "Cauliflower Taco with Chilies",
   "rev": 6,
-  "revisions": 3,
+  "revisions": 0,
   "vessel": "plate",
-  "written_at": "2026-10-15T01:13:52+00:00"
+  "written_at": "2026-11-16T22:27:51+00:00"
  },
  "87ce853fbb9f": {
   "avoid": [
@@ -21128,7 +21165,7 @@
   ],
   "checks": [
    {
-    "q": "Is the main item a hot milky tea beverage?",
+    "q": "Is the main item a milky tea drink?",
     "yes": true
    },
    {
@@ -28786,9 +28823,9 @@
    "pork",
    "fish",
    "shrimp",
-   "brown rice",
-   "dark grains",
-   "quinoa",
+   "soup",
+   "plain white rice",
+   "unmixed layers",
    "pita"
   ],
   "checks": [
@@ -28802,13 +28839,13 @@
    }
   ],
   "dish": "Mujadara",
-  "look": "mixture of distinct white basmati rice and small brown lentils, topped with a heaping pile of dark brown crispy fried onions, drizzle of pale white tahini yogurt sauce, chopped fresh parsley",
-  "model": "gemma-4-31b-it",
+  "look": "a mixed dish of brown lentils and fluffy basmati rice cooked together, topped with a generous pile of dark brown crispy fried onion strings, a small drizzle of pale tahini yogurt sauce on the side, garnished with chopped parsley",
+  "model": "gemini-3.6-flash",
   "name": "Mujadara with Tahini Yogurt Sauce: Spiced Lentil and Basmati Rice Dish",
   "rev": 6,
-  "revisions": 2,
+  "revisions": 1,
   "vessel": "bowl",
-  "written_at": "2026-10-28T01:30:06+00:00"
+  "written_at": "2026-11-16T22:53:02+00:00"
  },
  "b9171048e5a9": {
   "avoid": [
@@ -33752,14 +33789,14 @@
    "pork",
    "fish",
    "shrimp",
-   "yellow beans",
-   "cilantro sprig",
    "corn on the cob",
-   "edamame"
+   "green beans",
+   "cilantro",
+   "salad"
   ],
   "checks": [
    {
-    "q": "Is the dish a warm mixture of corn kernels and green beans?",
+    "q": "Is the dish a mixture of corn kernels and beans?",
     "yes": true
    },
    {
@@ -33772,13 +33809,13 @@
    }
   ],
   "dish": "Succotash",
-  "look": "sautéed mixture of bright yellow sweet corn kernels and plump pale green lima beans, with diced red bell peppers, translucent diced onions, red tomatoes, chopped green chili peppers, garnished with fine fresh parsley",
-  "model": "gemini-3.6-flash",
+  "look": "warm sautéed corn kernels and plump pale green lima beans in equal amounts, diced red bell pepper, diced onion, chopped tomato, a little parsley",
+  "model": "hand",
   "name": "Succotash",
   "rev": 6,
-  "revisions": 3,
+  "revisions": 0,
   "vessel": "bowl",
-  "written_at": "2026-11-03T22:21:56+00:00"
+  "written_at": "2026-11-16T22:27:51+00:00"
  },
  "d4e44082e4cf": {
   "avoid": [
@@ -36137,8 +36174,9 @@
    "dark brown sauce",
    "pineapple",
    "white rice",
-   "green onions",
-   "skewers"
+   "skewers",
+   "green beans",
+   "salad"
   ],
   "checks": [
    {
@@ -36155,13 +36193,13 @@
    }
   ],
   "dish": "sweet and sour chicken",
-  "look": "bite-sized chunks of tender chicken breast meat, glossy translucent reddish-orange sweet and sour glaze, large square chunks of red bell pepper, crisp green bell pepper pieces, sliced white onion wedges",
-  "model": "gemini-flash-latest",
+  "look": "plenty of bite-sized chunks of braised chicken breast coated in glossy reddish-orange sweet and sour sauce, a few pieces of red and green bell pepper and onion mixed in",
+  "model": "hand",
   "name": "Sweet & Sour Braised Chicken",
   "rev": 6,
-  "revisions": 1,
+  "revisions": 0,
   "vessel": "bowl",
-  "written_at": "2026-11-03T00:17:42+00:00"
+  "written_at": "2026-11-16T22:27:51+00:00"
  },
  "e3f94b0624ca": {
   "avoid": [
@@ -38308,20 +38346,20 @@
  },
  "f153a611a96e": {
   "avoid": [
-   "beef",
+   "real beef",
+   "meat",
    "chicken",
    "pork",
    "fish",
-   "mushroom sandwich",
-   "mushroom melt",
-   "fresh herbs",
-   "parsley",
+   "shredded meat",
+   "green peppers",
    "ground meat",
-   "burger"
+   "burger",
+   "lettuce"
   ],
   "checks": [
    {
-    "q": "Is the main item sliced plant-based meat in a roll?",
+    "q": "Is the main item a long roll filled with thin strips of browned steak-style filling?",
     "yes": true
    },
    {
@@ -38333,14 +38371,14 @@
     "yes": false
    }
   ],
-  "dish": "vegetarian cheesesteak",
-  "look": "abundant griddled thin strips of plant-based beef substitute, browned sliced faux steak strips, melted white provolone cheese drape, caramelized onion slices, scattered sautéed mushroom pieces, packed inside a split toasted sourdough hoagie roll",
-  "model": "gemini-flash-latest",
+  "dish": "Vegetarian Philly Cheesesteak",
+  "look": "toasted sourdough hoagie roll stuffed with plant-based seitan steak strips, sautéed sliced mushrooms, translucent caramelized onions, melted white provolone cheese sauce, roasted garlic butter sheen",
+  "model": "gemini-3.6-flash",
   "name": "Plant-Forward Philly Cheesesteak",
   "rev": 6,
-  "revisions": 3,
+  "revisions": 1,
   "vessel": "plate",
-  "written_at": "2026-10-16T09:13:42+00:00"
+  "written_at": "2026-11-16T23:14:57+00:00"
  },
  "f19ef3f4af91": {
   "avoid": [
