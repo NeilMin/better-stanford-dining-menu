@@ -21685,6 +21685,42 @@
   "vessel": "plate",
   "written_at": "2026-10-30T12:56:00+00:00"
  },
+ "8f1188bf5910": {
+  "avoid": [
+   "meat",
+   "pork",
+   "chicken",
+   "beef",
+   "shrimp",
+   "fish",
+   "spring rolls",
+   "egg rolls",
+   "soup",
+   "steamed buns"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food dumplings?",
+    "yes": true
+   },
+   {
+    "q": "Are the dumplings submerged in soup or broth?",
+    "yes": false
+   },
+   {
+    "q": "Are the items rolled cylindrical spring rolls or egg rolls?",
+    "yes": false
+   }
+  ],
+  "dish": "vegetable potstickers",
+  "look": "five crescent-shaped pan-fried dumplings, golden-brown crispy seared bottoms, pleated translucent steamed dough wrappers, savory green vegetable filling showing slightly through wrapper, glossy sheen, sprinkle of sliced green onions, small ramekin of dark soy dipping sauce",
+  "model": "gemini-flash-latest",
+  "name": "Potstickers",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-17T23:04:42+00:00"
+ },
  "8f132cc2192e": {
   "avoid": [
    "raw chicken",
