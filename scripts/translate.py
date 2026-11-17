@@ -147,6 +147,30 @@ def ask_cloudflare(items: list[str], section: str, client: CloudflareClient) -> 
     return client.translate(items, section, SYSTEM, RULES[section])
 
 
+def settle(items: list[str], ask_one) -> tuple[dict[str, str], list[tuple[str, str]]]:
+    """A batch's translations, halving it until the item that spoils a reply is alone.
+
+    One string can cost a whole reply. Asked for "Jackfruit Wellington", Gemma wrote
+    "波士顿式夹心波士顿肉派/" until it hit its output cap, the JSON never closed, and the
+    32 names batched with it went untranslated with it -- every night for two weeks,
+    because the batches are cut from the table in the same order every night. Halving
+    finds the culprit in a handful of calls and keeps everything else; the culprit is
+    returned as a failure, with why, and stays missing for the next run to try.
+    Running out of quota is not a bad reply, and is raised rather than split.
+    """
+    try:
+        return ask_one(items), []
+    except (CloudflareQuotaError, Unavailable):
+        raise
+    except (TranslateError, CloudflareError) as exc:
+        if len(items) == 1:
+            return {}, [(items[0], str(exc))]
+    half = (len(items) + 1) // 2
+    first, failed_first = settle(items[:half], ask_one)
+    second, failed_second = settle(items[half:], ask_one)
+    return {**first, **second}, failed_first + failed_second
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -230,28 +254,33 @@ def main(argv: list[str] | None = None) -> int:
         batches = [english_list[i: i + size] for i in range(0, len(english_list), size)]
         print(f"{section}: {len(items)} missing, {len(batches)} calls to {backend_name}")
 
+        if backend == "cloudflare":
+            def ask_one(batch, section=section):
+                return ask_cloudflare(batch, section, cf_client)
+        elif backend == "gemini":
+            def ask_one(batch, section=section):
+                return ask_gemini(batch, section, gemini)
+        else:
+            def ask_one(batch, section=section):
+                return ask(batch, section, args)
+
         with ThreadPoolExecutor(max_workers=max(1, args.jobs)) as pool:
-            if backend == "cloudflare":
-                futures = {pool.submit(ask_cloudflare, batch, section, cf_client): batch for batch in batches}
-            elif backend == "gemini":
-                futures = {pool.submit(ask_gemini, batch, section, gemini): batch for batch in batches}
-            else:
-                futures = {pool.submit(ask, batch, section, args): batch for batch in batches}
+            futures = {pool.submit(settle, batch, ask_one): batch for batch in batches}
 
             for n, future in enumerate(as_completed(futures), 1):
                 batch = futures[future]
                 try:
-                    answer = future.result()
+                    answer, spoilt = future.result()
                 except (CloudflareQuotaError, Unavailable) as exc:
                     print(f"  [{n}/{len(batches)}] out of quota: {exc}", file=sys.stderr)
                     for f in futures:
                         f.cancel()
                     quota_exceeded = True
                     break
-                except (TranslateError, CloudflareError) as exc:
+                for english, why in spoilt:
+                    print(f"  [{n}/{len(batches)}] FAILED {english!r}: {why[:160]}", file=sys.stderr)
+                if not answer:
                     failed += 1
-                    print(f"  [{n}/{len(batches)}] FAILED ({len(batch)} items): {exc}",
-                          file=sys.stderr)
                     continue
 
                 pairs = {

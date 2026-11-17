@@ -5,7 +5,8 @@ from unittest.mock import MagicMock, patch
 import pytest
 
 from bsdm.cloudflare import CloudflareError, CloudflareQuotaError
-from scripts.translate import SYSTEM, RULES, ask_cloudflare, main
+from bsdm.llm import Unavailable
+from scripts.translate import SYSTEM, RULES, TranslateError, ask_cloudflare, main
 
 
 def test_ask_cloudflare_translates():
@@ -211,3 +212,47 @@ def test_main_dry_run(mock_zh_project, monkeypatch, capsys):
     out = capsys.readouterr().out
     assert "dishes:" in out
     assert "Fried Rice" in out
+
+
+def test_one_spoilt_reply_costs_only_its_own_item(mock_zh_project, monkeypatch, capsys):
+    """Gemma looped on "Jackfruit Wellington" until its reply was cut off, and the
+    names batched with it went untranslated with it, night after night. Halving
+    the batch keeps every other name and leaves only that one for the next run."""
+    monkeypatch.setattr("scripts.translate.ROOT", mock_zh_project)
+    names = ["Fried Rice", "Spring Rolls", "Jackfruit Wellington", "Beef Chili", "Succotash"]
+    (mock_zh_project / "data" / "dishes.json").write_text(
+        json.dumps({f"d{i}": {"name": n} for i, n in enumerate(names)}))
+    monkeypatch.setattr("scripts.translate.Gemini", lambda *a, **kw: _NoGemini(available=True))
+    calls = []
+
+    def fake_ask_gemini(items, section, client):
+        calls.append(list(items))
+        if "Jackfruit Wellington" in items:
+            raise TranslateError("unparseable answer: Unterminated string")
+        return {item: f"译{item}" for item in items}
+
+    monkeypatch.setattr("scripts.translate.ask_gemini", fake_ask_gemini)
+
+    assert main(["--section", "dishes"]) == 0
+    done = json.loads((mock_zh_project / "data" / "zh.json").read_text())["dishes"]
+    translated = json.dumps(done, ensure_ascii=False)
+    for name in names:
+        assert (f"译{name}" in translated) == (name != "Jackfruit Wellington")
+    assert "'Jackfruit Wellington'" in capsys.readouterr().err
+    assert len(calls) <= 2 * len(names)
+
+
+def test_running_out_of_quota_while_halving_stops_rather_than_splits(mock_zh_project, monkeypatch):
+    monkeypatch.setattr("scripts.translate.ROOT", mock_zh_project)
+    monkeypatch.setattr("scripts.translate.Gemini", lambda *a, **kw: _NoGemini(available=True))
+    calls = []
+
+    def fake_ask_gemini(items, section, client):
+        calls.append(list(items))
+        if len(calls) == 1:
+            raise TranslateError("unparseable answer")
+        raise Unavailable("Gemini quota")
+
+    monkeypatch.setattr("scripts.translate.ask_gemini", fake_ask_gemini)
+    assert main(["--section", "dishes"]) == 0
+    assert len(calls) == 2

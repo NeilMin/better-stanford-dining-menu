@@ -164,7 +164,11 @@ some R&DE strings open a parenthesis they never close.
 for the same reason: a first run is a couple of dozen model calls over several minutes and has
 to survive a Ctrl-C, and a hand-corrected translation must not be undone by the next run. Use
 `--force` to redo one deliberately. A dropped batch is normal — it just stays missing and the
-next run picks it up.
+next run picks it up. A batch whose reply will not parse is halved until the string that spoils
+it is alone (`settle()`): batches are cut in the same order every night, so in November 2026 one
+name Gemma looped on ("Jackfruit Wellington") held 32 others back for two weeks with a red step
+nobody read. Because nothing overwrites, a wrong translation stays until a person fixes it in
+`data/zh.json` -- read what a big catch-up wrote before pushing it.
 
 **`data/zh.json` is generated but committed, and both CI and the laptop write it.** The nightly
 job translates what the scrape brought in with Gemma on the Gemini free tier, before it draws;
