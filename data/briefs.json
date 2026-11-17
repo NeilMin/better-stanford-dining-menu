@@ -15723,13 +15723,15 @@
  },
  "668e216ba652": {
   "avoid": [
+   "cheese",
+   "melted cheese",
+   "dairy",
    "meat",
    "chicken",
    "beef",
    "pork",
    "fish",
    "shrimp",
-   "cheese",
    "taco",
    "burrito",
    "tortilla wrap"
@@ -15749,13 +15751,13 @@
    }
   ],
   "dish": "mushroom potato torta",
-  "look": "toasted Mexican bolillo sandwich roll, cut in half, filled with sautéed brown mushroom slices, roasted seasoned golden potato cubes, fresh red tomato slices, green shredded lettuce",
+  "look": "Mexican torta sandwich made with a prominent toasted oval bolillo roll split in half, stuffed with dark sautéed mushroom slices, roasted golden potato cubes, ripe red tomato slices, shredded lettuce",
   "model": "gemini-3.6-flash",
   "name": "Mushroom Potato Torta",
   "rev": 6,
-  "revisions": 0,
+  "revisions": 1,
   "vessel": "plate",
-  "written_at": "2026-11-17T00:18:35+00:00"
+  "written_at": "2026-11-17T13:09:54+00:00"
  },
  "67c03c7cee92": {
   "avoid": [
@@ -21113,18 +21115,20 @@
  },
  "8b8a0096723e": {
   "avoid": [
+   "coffee",
+   "cappuccino",
+   "latte",
+   "espresso",
+   "latte art",
    "iced tea",
    "clear black tea",
    "boba pearls",
    "bubble tea",
-   "meat",
-   "savory food",
-   "soup",
-   "teabags"
+   "meat"
   ],
   "checks": [
    {
-    "q": "Is the main item a hot milky chai tea beverage?",
+    "q": "Is the main item a hot milky tea beverage?",
     "yes": true
    },
    {
@@ -21136,14 +21140,14 @@
     "yes": false
    }
   ],
-  "dish": "masala chai tea with mini sweet pastries",
-  "look": "steaming frothy light-tan masala chai tea in a mug, creamy brown milky beverage, fine sprinkle of dark cinnamon powder on foam surface, paired with two buttery golden mini shortbread cookies on the side",
+  "dish": "Masala chai with cookies",
+  "look": "steaming light-tan masala chai tea in a clear glass mug, topped with frothy milk foam and a whole cinnamon stick, fine cinnamon dusting on top, served with two golden buttery shortbread cookies on a small white saucer plate",
   "model": "gemini-3.6-flash",
   "name": "Hot Spiced Chai Tea w/Sweet Treats",
   "rev": 6,
-  "revisions": 0,
+  "revisions": 1,
   "vessel": "plate",
-  "written_at": "2026-11-17T00:17:10+00:00"
+  "written_at": "2026-11-17T13:08:39+00:00"
  },
  "8c1b4df69b6d": {
   "avoid": [
@@ -34601,16 +34605,15 @@
  },
  "d9f7ce1410a9": {
   "avoid": [
+   "dumplings",
+   "meatballs",
+   "fried balls",
    "rice",
-   "white rice",
-   "cooked rice",
    "clear broth",
-   "ramen",
    "pho",
+   "ramen",
    "dry noodles",
-   "spaghetti",
-   "stir fry",
-   "lemon"
+   "spaghetti"
   ],
   "checks": [
    {
@@ -34627,13 +34630,13 @@
    }
   ],
   "dish": "Laksa",
-  "look": "thick white rice noodles submerged in rich steaming orange-red coconut curry broth, halved hard-boiled egg, deep-fried tofu puffs, fresh bean sprouts, thin sliced fish cakes, chopped fresh cilantro garnish",
+  "look": "thick white rice noodles piled high and submerged in rich steaming orange-red coconut curry broth, topped with halved hard-boiled egg, golden deep-fried tofu puffs, thin sliced fish cakes, crisp bean sprouts, fresh cilantro garnish",
   "model": "gemini-3.6-flash",
   "name": "Malaysian Inspired Laksa",
   "rev": 6,
-  "revisions": 1,
+  "revisions": 2,
   "vessel": "bowl",
-  "written_at": "2026-11-17T00:54:07+00:00"
+  "written_at": "2026-11-17T13:33:25+00:00"
  },
  "da2b28adcc57": {
   "avoid": [
