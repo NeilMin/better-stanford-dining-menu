@@ -20660,6 +20660,41 @@
   "vessel": "plate",
   "written_at": "2026-09-29T17:11:14+00:00"
  },
+ "894b63e46344": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "eggs",
+   "fried rice",
+   "chopsticks"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food cooked rice?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat or seafood mixed into the dish?",
+    "yes": false
+   },
+   {
+    "q": "Is the rice submerged in soup or dark curry?",
+    "yes": false
+   }
+  ],
+  "dish": "sesame scallion rice",
+  "look": "steamed fluffy white rice, mixed with sliced bright green scallions, topped with toasted white and black sesame seeds, glistening grains",
+  "model": "gemini-3.6-flash",
+  "name": "Sesame Scallion Rice",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-18T12:05:30+00:00"
+ },
  "89be6958063f": {
   "avoid": [
    "whole peppers",
