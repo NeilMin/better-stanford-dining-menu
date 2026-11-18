@@ -3025,13 +3025,14 @@
  "1893bff7acba": {
   "avoid": [
    "meatless dish",
+   "pork-free dish",
    "yuca-only dish",
-   "cabbage bed",
    "tacos",
    "tortillas",
    "soup",
    "stew",
-   "bread"
+   "bread",
+   "large pile of pickled onions"
   ],
   "checks": [
    {
@@ -3048,13 +3049,14 @@
    }
   ],
   "dish": "Yuca con chicharrón",
-  "look": "deep-fried dark brown pork chicharron bites piled on top of chunky golden fried yuca cassava roots, topped with pickled pink red onions and sliced radishes, accompanied by a side of pale cabbage curtido slaw and red salsa",
-  "model": "gemini-3.6-flash",
+  "hand": true,
+  "look": "large chunks of crispy fried pork belly chicharron with puffed golden crackling skin and visible layers of meat and fat, piled on top of thick golden fried yuca wedges, a few slices of pink pickled red onion and radish, small side of shredded green cabbage curtido slaw and red salsa",
+  "model": "gemini-flash-latest",
   "name": "Salvadoran Yuca con Chicharron",
   "rev": 6,
-  "revisions": 2,
+  "revisions": 3,
   "vessel": "plate",
-  "written_at": "2026-11-17T05:23:26+00:00"
+  "written_at": "2026-11-18T07:35:55+00:00"
  },
  "18a59428a79d": {
   "avoid": [
@@ -10510,7 +10512,8 @@
    "dark leafy greens",
    "kale",
    "spinach",
-   "grated cheese"
+   "grated cheese",
+   "cherry tomatoes"
   ],
   "checks": [
    {
@@ -10527,7 +10530,8 @@
    }
   ],
   "dish": "Pasta with white beans and roasted vegetables",
-  "look": "plump white cannellini beans prominent throughout short tubular pasta, mixed with roasted zucchini cubes, roasted red bell pepper, and yellow squash chunks, lightly tossed",
+  "hand": true,
+  "look": "a bowl of penne pasta with a generous amount of plump white cannellini beans, about as many beans as pasta, chunks of browned roasted zucchini and roasted red bell pepper mixed through, light tomato sauce coating, chopped parsley",
   "model": "gemini-3.6-flash",
   "name": "Fagioli Pasta with Roasted Vegetables",
   "rev": 6,
@@ -21187,20 +21191,19 @@
  },
  "8b8a0096723e": {
   "avoid": [
+   "white hot chocolate",
+   "steamed milk",
+   "heavy whipped cream",
    "coffee",
    "cappuccino",
-   "latte",
-   "espresso",
    "latte art",
    "iced tea",
    "clear black tea",
-   "boba pearls",
-   "bubble tea",
    "meat"
   ],
   "checks": [
    {
-    "q": "Is the main item a milky tea drink?",
+    "q": "Is the main item a hot milky drink in a mug or glass?",
     "yes": true
    },
    {
@@ -21213,13 +21216,14 @@
    }
   ],
   "dish": "Masala chai with cookies",
-  "look": "steaming light-tan masala chai tea in a clear glass mug, topped with frothy milk foam and a whole cinnamon stick, fine cinnamon dusting on top, served with two golden buttery shortbread cookies on a small white saucer plate",
-  "model": "gemini-3.6-flash",
+  "hand": true,
+  "look": "a tall clear glass mug of hot masala chai, opaque caramel-tan milky tea with steam rising, a cinnamon stick and a star anise floating on a thin froth, whole cardamom pods, cinnamon sticks, star anise and loose black tea leaves scattered on the table beside the mug, two golden shortbread cookies on the white saucer",
+  "model": "gemini-flash-latest",
   "name": "Hot Spiced Chai Tea w/Sweet Treats",
   "rev": 6,
-  "revisions": 1,
+  "revisions": 2,
   "vessel": "plate",
-  "written_at": "2026-11-17T13:08:39+00:00"
+  "written_at": "2026-11-18T07:29:25+00:00"
  },
  "8c1b4df69b6d": {
   "avoid": [
