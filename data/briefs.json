@@ -13529,6 +13529,41 @@
   "vessel": "plate",
   "written_at": "2026-10-10T08:45:00+00:00"
  },
+ "55bab3ad55c3": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "sandwich",
+   "burger",
+   "sliced sandwich bread"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food baked bread rolls?",
+    "yes": true
+   },
+   {
+    "q": "Is there any meat, poultry, or fish present?",
+    "yes": false
+   },
+   {
+    "q": "Is the bread prepared as a sandwich or burger?",
+    "yes": false
+   }
+  ],
+  "dish": "dinner rolls with compound butter",
+  "look": "golden-brown baked dinner rolls with soft glossy crusts, paired with a small pat of pale yellow herb-flecked compound butter",
+  "model": "gemini-3.6-flash",
+  "name": "Assorted Rolls with Maitre d Butter",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-20T12:33:08+00:00"
+ },
  "55bdc297193d": {
   "avoid": [
    "chicken",
@@ -22852,6 +22887,41 @@
   "vessel": "plate",
   "written_at": "2026-10-21T09:04:04+00:00"
  },
+ "95a2c508c134": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "sweet pie",
+   "fruit",
+   "berries"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a savory pot pie topped with pastry crust?",
+    "yes": true
+   },
+   {
+    "q": "Does the filling contain real animal meat or poultry?",
+    "yes": false
+   },
+   {
+    "q": "Is it a sweet dessert or fruit pie?",
+    "yes": false
+   }
+  ],
+  "dish": "vegan vegetable pot pie",
+  "look": "golden-brown flaky puff pastry crust lid, rich creamy white sauce beneath, visible diced potatoes, orange carrot cubes, green peas, yellow corn kernels, sliced button mushrooms, tender chunks of plant-based chick'n",
+  "model": "gemini-3.6-flash",
+  "name": "Seasonal Vegetable Pot Pie",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-20T12:29:50+00:00"
+ },
  "95db273ed70f": {
   "avoid": [
    "meat",
@@ -23026,6 +23096,39 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-26T23:08:10+00:00"
+ },
+ "97c7564a87da": {
+  "avoid": [
+   "raw meat",
+   "sandwich",
+   "bread",
+   "turkey",
+   "bacon",
+   "whole roast pig",
+   "bone-in leg"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item sliced cooked ham?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat raw or uncooked?",
+    "yes": false
+   },
+   {
+    "q": "Is the ham served inside a sandwich or bun?",
+    "yes": false
+   }
+  ],
+  "dish": "honey glazed ham",
+  "look": "thick slices of smoked baked ham, glossy caramelized amber honey glaze along scored golden-brown edges, tender moist pinkish pork meat",
+  "model": "gemini-3.6-flash",
+  "name": "Honey Glazed Ham",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-20T12:33:08+00:00"
  },
  "9848ff4ccce7": {
   "avoid": [
