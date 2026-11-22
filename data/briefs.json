@@ -1745,6 +1745,41 @@
   "vessel": "bowl",
   "written_at": "2026-10-01T20:34:12+00:00"
  },
+ "0e0842b1553b": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "cheese",
+   "pasta",
+   "raw beans"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food white beans in a red tomato sauce?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat or seafood in the dish?",
+    "yes": false
+   },
+   {
+    "q": "Is the food served over pasta?",
+    "yes": false
+   }
+  ],
+  "dish": "white bean and tomato stew",
+  "look": "plump tender white navy beans cooked in a chunky stewed red tomato sauce, soft diced tomatoes, wilted dark green swiss chard leaves, minced garlic, sprinkled with freshly chopped green parsley",
+  "model": "gemini-3.6-flash",
+  "name": "White Beans & Stewed Tomatoes",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-22T12:02:42+00:00"
+ },
  "0e91bcd66bd1": {
   "avoid": [
    "meat",
@@ -15871,6 +15906,42 @@
   "revisions": 1,
   "vessel": "plate",
   "written_at": "2026-09-27T05:17:39+00:00"
+ },
+ "6814ebec2ce2": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "bun",
+   "sandwich",
+   "egg",
+   "bacon"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food item a cooked sausage patty?",
+    "yes": true
+   },
+   {
+    "q": "Is there real meat, pork, or bacon visible?",
+    "yes": false
+   },
+   {
+    "q": "Is the patty served inside a sandwich or bun?",
+    "yes": false
+   }
+  ],
+  "dish": "vegan sausage patty",
+  "look": "a thick round plant-based sausage patty, dark brown caramelized crust, seared surface texture, coarse dense interior, subtle flecks of green herbs",
+  "model": "gemini-3.6-flash",
+  "name": "Meatless Sausage Patty",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-22T12:02:47+00:00"
  },
  "68a8d7e3ef91": {
   "avoid": [
@@ -38559,6 +38630,42 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-11-17T19:56:41+00:00"
+ },
+ "f15b493ec5f1": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "quiche crust",
+   "pie crust",
+   "scrambled eggs",
+   "omelet"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food a thick slice of baked egg frittata?",
+    "yes": true
+   },
+   {
+    "q": "Is there a pastry or pie crust around the dish?",
+    "yes": false
+   },
+   {
+    "q": "Does the dish contain meat, poultry, or seafood?",
+    "yes": false
+   }
+  ],
+  "dish": "vegetable brie frittata",
+  "look": "thick wedge of baked golden-yellow egg frittata, lightly browned top, melted creamy brie cheese melted on top with visible rind, dark wilted spinach leaves, red cherry tomato halves, sliced brown button mushrooms",
+  "model": "gemini-3.6-flash",
+  "name": "Seasonal Vegetable & Brie Frittata",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-22T12:02:36+00:00"
  },
  "f19ef3f4af91": {
   "avoid": [
