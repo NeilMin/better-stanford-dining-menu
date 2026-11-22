@@ -16333,6 +16333,40 @@
   "vessel": "bowl",
   "written_at": "2026-10-07T20:53:43+00:00"
  },
+ "6a4e58cc9c76": {
+  "avoid": [
+   "salmon",
+   "pink fish",
+   "breaded fish",
+   "deep fried batter",
+   "fish nuggets",
+   "soup",
+   "stew",
+   "raw fish"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food a cooked fish fillet?",
+    "yes": true
+   },
+   {
+    "q": "Is the fish pink or orange like salmon?",
+    "yes": false
+   },
+   {
+    "q": "Is the fish deep-fried in thick golden batter?",
+    "yes": false
+   }
+  ],
+  "dish": "Blackened catfish",
+  "look": "a thick catfish fillet, seared dark reddish-black blackened spice crust, charred herb seasoning surface, tender flaky white fish flesh visible along the edges, fresh lemon wedge side",
+  "model": "gemini-3.6-flash",
+  "name": "Blackened Catfish",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-22T21:14:52+00:00"
+ },
  "6a9199e0c3d9": {
   "avoid": [
    "meat",
