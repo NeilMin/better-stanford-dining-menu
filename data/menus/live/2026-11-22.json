@@ -1,6 +1,6 @@
 {
  "date": "2026-11-22",
- "scraped_at": "2026-11-22T03:34:34-08:00",
+ "scraped_at": "2026-11-22T13:05:23-08:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -1075,23 +1075,23 @@
      "order": 3
     },
     {
-     "name": "Breakfast Burrito",
-     "recipe_id": "3163201",
+     "name": "Breakfast Fried Rice",
+     "recipe_id": "5134333",
      "description": "",
-     "ingredients": "tortilla (wheat), eggs, cheese (milk), black beans, seasonal vegetables, canola/olive oil blend, salt, pepper",
+     "ingredients": "brown rice, eggs, peas, spinach, garlic, ginger, green onions, carrot, celery, salt, canola/olive oil blend",
      "allergens": [
-      "EGG",
-      "MILK",
-      "SOY",
-      "WHEAT"
+      "EGG"
      ],
      "trace_allergens": [
       "COCONUT",
       "FISH",
+      "MILK",
       "PEANUTS",
       "SESAME",
       "SHELLFISH",
-      "TREENUTS"
+      "SOY",
+      "TREENUTS",
+      "WHEAT"
      ],
      "tags": [
       "vegetarian"
@@ -1123,42 +1123,6 @@
      "order": 5
     },
     {
-     "name": "Turkey Sausage Patty",
-     "recipe_id": "5961158",
-     "description": "",
-     "ingredients": "turkey, salt, dextrose, spice, spice extractives, hydrolyzed corn protein, citric acid, rosemary extract, calcium lactate",
-     "allergens": [],
-     "trace_allergens": [
-      "WHEAT"
-     ],
-     "tags": [],
-     "order": 6
-    },
-    {
-     "name": "Breakfast Taco Bar",
-     "recipe_id": "3200778",
-     "description": "",
-     "ingredients": "corn tortilla, green avocado salsa, pork chorizo, black beans toppings: queso fresco, sour cream, cheese (milk)",
-     "allergens": [
-      "EGG",
-      "MILK"
-     ],
-     "trace_allergens": [
-      "COCONUT",
-      "FISH",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
-     ],
-     "tags": [
-      "vegetarian"
-     ],
-     "order": 7
-    },
-    {
      "name": "Pork Sausage Patty",
      "recipe_id": "3942305",
      "description": "",
@@ -1168,7 +1132,7 @@
      "tags": [
       "gluten-free"
      ],
-     "order": 8
+     "order": 6
     },
     {
      "name": "Tater Tots",
@@ -1192,13 +1156,13 @@
      "tags": [
       "vegan"
      ],
-     "order": 9
+     "order": 7
     },
     {
-     "name": "Buttermilk Pancakes",
-     "recipe_id": "3958551",
+     "name": "Bread Pudding",
+     "recipe_id": "5310908",
      "description": "",
-     "ingredients": "wheat flour, malted barley flour, enzymes, ascorbic acid, sugar, soy flour, sodium bicarbonate, sodium aluminum phosphate, aluminum sulfate, monocalcium phosphate, canola or soybean oil, dextrose, salt, buttermilk (milk), mono-diglycerides, soy lecithin, eggs",
+     "ingredients": "white bread, egg, butter, sugar, whole milk, cinnamon, vanilla flavoring, nutmeg",
      "allergens": [
       "EGG",
       "MILK",
@@ -1206,17 +1170,14 @@
       "WHEAT"
      ],
      "trace_allergens": [
-      "COCONUT",
-      "FISH",
       "PEANUTS",
       "SESAME",
-      "SHELLFISH",
       "TREENUTS"
      ],
      "tags": [
       "vegetarian"
      ],
-     "order": 10
+     "order": 8
     },
     {
      "name": "Omelet Station",
@@ -1238,26 +1199,7 @@
       "WHEAT"
      ],
      "tags": [],
-     "order": 11
-    },
-    {
-     "name": "Crepe Station",
-     "recipe_id": "crepestation(lake)",
-     "description": "",
-     "ingredients": "",
-     "allergens": [
-      "COCONUT",
-      "EGG",
-      "MILK",
-      "PEANUTS",
-      "SOY",
-      "TREENUTS"
-     ],
-     "trace_allergens": [],
-     "tags": [
-      "vegetarian"
-     ],
-     "order": 12
+     "order": 9
     },
     {
      "name": "Composed Salad",
@@ -1267,7 +1209,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 13
+     "order": 10
     },
     {
      "name": "Performance Bar",
@@ -1277,7 +1219,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 14
+     "order": 11
     },
     {
      "name": "Craveable Grains",
@@ -1290,7 +1232,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 15
+     "order": 12
     },
     {
      "name": "Flavor Forward Legumes",
@@ -1303,7 +1245,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 16
+     "order": 13
     },
     {
      "name": "Marinara Sauce",
@@ -1318,24 +1260,23 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 17
+     "order": 14
     },
     {
-     "name": "Pasta Alfredo",
-     "recipe_id": "5683556",
+     "name": "Creamy Marinara",
+     "recipe_id": "CreamyMar(lakeside)",
      "description": "",
-     "ingredients": "pasta (wheat), white sauce (cream, butter, milk powder, flour [wheat], garlic, nutmeg, onion powder, white pepper, salt), mozzarella & parmesan cheese (milk)",
+     "ingredients": "tomatoes, tomato paste, cream, milk powder, butter, parmesan cheese, flour, soybean oil, sugar, salt, onion, garlic, spices, citric acid, natural flavor",
      "allergens": [
       "MILK",
+      "SOY",
       "WHEAT"
      ],
-     "trace_allergens": [
-      "EGG"
-     ],
+     "trace_allergens": [],
      "tags": [
       "vegetarian"
      ],
-     "order": 18
+     "order": 15
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -1348,7 +1289,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 19
+     "order": 16
     }
    ],
    "Dinner": [
@@ -1367,15 +1308,16 @@
      "order": 0
     },
     {
-     "name": "Veggies in Adobo Sauce",
-     "recipe_id": "6314209",
+     "name": "Vegetable Stir-Fry",
+     "recipe_id": "2312311",
      "description": "",
-     "ingredients": "seasonal vegetables, garlic, canola/olive oil blend, rice vinegar, tamari, brown sugar, pepper, bay leaf, salt",
+     "ingredients": "seasonal vegetables, oil, garlic, coconut liquid aminos, mushroom seasoning, vegetarian stir fry sauce, corn starch",
      "allergens": [
-      "SOY"
+      "COCONUT"
      ],
      "trace_allergens": [],
      "tags": [
+      "gluten-free",
       "vegan"
      ],
      "order": 1
@@ -1407,27 +1349,31 @@
      "order": 3
     },
     {
-     "name": "Crunchy Veggie Lumpia",
-     "recipe_id": "4342286",
+     "name": "Blackened Catfish",
+     "recipe_id": "5657871",
      "description": "",
-     "ingredients": "green pea, cabbage, plant-forward \"beef\" crumbles (pea protein, sunflower oil, spices, caramel color), bay leaf, rice roll, salt, pepper, fried in canola oil",
-     "allergens": [],
-     "trace_allergens": [
-      "COCONUT",
-      "EGG",
-      "FISH",
-      "MILK",
-      "PEANUTS",
-      "SESAME",
-      "SHELLFISH",
-      "SOY",
-      "TREENUTS",
-      "WHEAT"
+     "ingredients": "catfish, blackening spice (paprika, onion powder, garlic powder, kosher salt, oregano, black pepper, cayenne pepper, thyme), canola/olive oil blend",
+     "allergens": [
+      "FISH"
      ],
+     "trace_allergens": [],
      "tags": [
-      "vegan"
+      "gluten-free"
      ],
      "order": 4
+    },
+    {
+     "name": "Seasonal Steamed Vegetables",
+     "recipe_id": "5561366",
+     "description": "",
+     "ingredients": "seasonal vegetables, salt",
+     "allergens": [],
+     "trace_allergens": [],
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
+     "order": 5
     },
     {
      "name": "Fried Rice Bar",
@@ -1448,17 +1394,22 @@
       "WHEAT"
      ],
      "tags": [],
-     "order": 5
+     "order": 6
     },
     {
-     "name": "Soup of the Day",
-     "recipe_id": "SoupoftheDay",
+     "name": "Chicken Noodle Soup",
+     "recipe_id": "MollyChxNoodleSoup1",
      "description": "",
-     "ingredients": "chef's choice soup of the day",
-     "allergens": [],
+     "ingredients": "chicken stock, chicken meat, carrots, celery, enriched egg noodles, peas, onions, modified food starch, bleached enriched flour, salt, chicken fat, yeast extract, sugar, chicken meat including chicken juices, maltodextrin, water, vegetables (celery, onions, carrots), dehydrated whey (milk), garlic, soy protein isolate, spices, turmeric, cornstarch, beta carotene, dehydrated chicken, citric acid",
+     "allergens": [
+      "EGG",
+      "MILK",
+      "SOY",
+      "WHEAT"
+     ],
      "trace_allergens": [],
      "tags": [],
-     "order": 6
+     "order": 7
     },
     {
      "name": "Composed Salad",
@@ -1468,7 +1419,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 7
+     "order": 8
     },
     {
      "name": "Performance Bar",
@@ -1478,7 +1429,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 8
+     "order": 9
     },
     {
      "name": "Craveable Grains",
@@ -1491,7 +1442,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 9
+     "order": 10
     },
     {
      "name": "Flavor Forward Legumes",
@@ -1504,21 +1455,22 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 10
+     "order": 11
     },
     {
-     "name": "Tri Color Cheese Tortellini",
-     "recipe_id": "6188353",
+     "name": "Marinara Sauce",
+     "recipe_id": "4079962",
      "description": "",
-     "ingredients": "enriched semolina flour (wheat), romano cheese (cow's milk, sheep's milk), ricotta cheese (milk), wheat flour, parmesan cheese (milk), pasteurized eggs, corn starch, salt, paprika oleoresin, asiago cheese (milk), spinach powder, garlic powder, spices, onion powder, fontina cheese (milk), xanthan gum, locust bean gum, guar gum, beta carotene",
+     "ingredients": "tomatoes, tomato paste, soybean oil, sugar, salt, onion, garlic, spices, citric acid, natural flavor",
      "allergens": [
-      "EGG",
-      "MILK",
-      "WHEAT"
+      "SOY"
      ],
      "trace_allergens": [],
-     "tags": [],
-     "order": 11
+     "tags": [
+      "gluten-free",
+      "vegan"
+     ],
+     "order": 12
     },
     {
      "name": "Pasta Alfredo",
@@ -1535,7 +1487,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 12
+     "order": 13
     },
     {
      "name": "Penne Pasta (Gluten-Free)",
@@ -1548,7 +1500,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 13
+     "order": 14
     }
    ]
   },
