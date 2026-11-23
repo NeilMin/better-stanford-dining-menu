@@ -8244,6 +8244,41 @@
   "vessel": "plate",
   "written_at": "2026-10-01T07:25:00+00:00"
  },
+ "3649efb563ad": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "whole sweet potato",
+   "roasted wedges",
+   "raw sweet potato"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item mashed sweet potatoes?",
+    "yes": true
+   },
+   {
+    "q": "Is the main item whole roasted sweet potato wedges?",
+    "yes": false
+   },
+   {
+    "q": "Is there meat or poultry mixed into the potatoes?",
+    "yes": false
+   }
+  ],
+  "dish": "mashed sweet potatoes",
+  "look": "creamy orange mashed sweet potatoes, smooth texture, soft lumps, dusting of brown cinnamon",
+  "model": "gemma-4-26b-a4b-it",
+  "name": "Mashed Sweet Potatoes",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-23T13:22:45+00:00"
+ },
  "36b5ebcac89a": {
   "avoid": [
    "chicken wings",
@@ -34929,6 +34964,41 @@
   "vessel": "plate",
   "written_at": "2026-09-27T14:22:11+00:00"
  },
+ "d9f617f657fc": {
+  "avoid": [
+   "ground meat",
+   "turkey drumstick",
+   "whole turkey",
+   "sandwich",
+   "wrap",
+   "raw vegetables",
+   "pork",
+   "beef",
+   "chicken"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item sliced poultry?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat ground or minced?",
+    "yes": false
+   },
+   {
+    "q": "Is the main item a whole turkey leg or drumstick?",
+    "yes": false
+   }
+  ],
+  "dish": "maple glazed turkey",
+  "look": "sliced turkey breast, glossy amber maple glaze, tender cooked meat, roasted orange sweet potato chunks, steamed green broccoli and carrots",
+  "model": "gemma-4-26b-a4b-it",
+  "name": "Maple Glazed Turkey Plate",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-23T13:22:45+00:00"
+ },
  "d9f7ce1410a9": {
   "avoid": [
    "dumplings",
@@ -37761,6 +37831,42 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-29T16:49:13+00:00"
+ },
+ "ee515471e589": {
+  "avoid": [
+   "grilled chicken",
+   "boiled chicken",
+   "chicken nuggets",
+   "chicken wings",
+   "raw chicken",
+   "sandwich",
+   "wrap",
+   "pork",
+   "beef",
+   "fish"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item fried poultry?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken grilled or skinless?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken shaped like small nuggets?",
+    "yes": false
+   }
+  ],
+  "dish": "southern fried chicken",
+  "look": "crispy golden-brown fried chicken pieces, craggy textured breading, juicy white meat, flecks of dried herbs",
+  "model": "gemma-4-26b-a4b-it",
+  "name": "Southern Fried Chicken",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-23T13:22:45+00:00"
  },
  "eeacd36d0fe8": {
   "avoid": [
