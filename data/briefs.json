@@ -10569,6 +10569,39 @@
   "vessel": "bowl",
   "written_at": "2026-11-03T00:38:06+00:00"
  },
+ "450d746479a8": {
+  "avoid": [
+   "chicken",
+   "beef",
+   "tofu",
+   "skewers",
+   "noodle soup",
+   "raw meat",
+   "rice bowl"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cooked glazed meat?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat ground or crumbled like mince?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat served on a skewer?",
+    "yes": false
+   }
+  ],
+  "dish": "honey garlic pork belly",
+  "look": "thick cut pork belly bites, rich caramel brown honey garlic glaze, glossy rendered fat layer, tender juicy meat, sprinkled with sesame seeds and chopped green scallion slices",
+  "model": "gemini-3.6-flash",
+  "name": "Honey Garlic Pork Belly",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-24T14:03:40+00:00"
+ },
  "4517bb7c1d28": {
   "avoid": [
    "meat",
@@ -15597,6 +15630,41 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-30T20:15:31+00:00"
+ },
+ "63cbf7cbddcd": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "pepperoni",
+   "sausage",
+   "ham"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food a baked cheese pizza?",
+    "yes": true
+   },
+   {
+    "q": "Are there meat toppings like pepperoni on the pizza?",
+    "yes": false
+   },
+   {
+    "q": "Is the food a folded calzone or flatbread wrap?",
+    "yes": false
+   }
+  ],
+  "dish": "margherita pizza",
+  "look": "a slice of baked pizza, golden brown charred crust edges, rich red tomato sauce base, melted white mozzarella cheese patches, fresh green basil leaves on top",
+  "model": "gemini-3.6-flash",
+  "name": "Margherita Pizza",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-24T14:03:40+00:00"
  },
  "63f1d980586b": {
   "avoid": [
@@ -36968,6 +37036,41 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T05:30:31+00:00"
+ },
+ "e60eac5a3ff5": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "melted cheese sauce",
+   "salsa",
+   "burrito"
+  ],
+  "checks": [
+   {
+    "q": "Is the food fried tortilla chips?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat or seafood on the chips?",
+    "yes": false
+   },
+   {
+    "q": "Is the food a soft wrapped tortilla or burrito?",
+    "yes": false
+   }
+  ],
+  "dish": "fried tortilla chips",
+  "look": "a mound of crispy fried triangular tortilla chips, golden brown color, lightly dusted with sea salt, blistered crunchy texture",
+  "model": "gemini-3.6-flash",
+  "name": "Totopos (Fried Tortilla Chips)",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-24T14:03:40+00:00"
  },
  "e6394ffa4195": {
   "avoid": [
