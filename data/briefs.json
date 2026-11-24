@@ -12719,6 +12719,40 @@
   "vessel": "bowl",
   "written_at": "2026-10-27T21:04:29+00:00"
  },
+ "5000b43bde19": {
+  "avoid": [
+   "beef",
+   "pork ribs",
+   "tacos",
+   "tortilla chips",
+   "enchilada",
+   "rice",
+   "noodles",
+   "clear broth"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a red broth soup with hominy and shredded meat?",
+    "yes": true
+   },
+   {
+    "q": "Is the broth clear or yellow chicken noodle soup?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a dry taco or burrito?",
+    "yes": false
+   }
+  ],
+  "dish": "chicken pozole rojo",
+  "look": "vibrant deep-red chile broth, tender shredded chicken meat, plump swollen white hominy kernels, crisp thinly sliced red radishes, finely shredded green cabbage, fresh lime wedge on the side",
+  "model": "gemini-flash-latest",
+  "name": "Pozole Rojo De Pollo",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-24T02:22:33+00:00"
+ },
  "502c39671734": {
   "avoid": [
    "burger patty",
@@ -13803,6 +13837,41 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-25T18:32:18+00:00"
+ },
+ "561ddd581615": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "bacon",
+   "fish",
+   "shrimp",
+   "red tomato soup",
+   "clear broth"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a bowl of creamy off-white soup?",
+    "yes": true
+   },
+   {
+    "q": "Is the soup a clear broth?",
+    "yes": false
+   },
+   {
+    "q": "Are there pieces of meat or bacon visible in the soup?",
+    "yes": false
+   }
+  ],
+  "dish": "creamy cauliflower soup",
+  "look": "smooth velvety off-white cauliflower purée soup, roasted golden cauliflower florets, swirl of extra virgin olive oil, crisp golden croutons, finely sliced green chives, cracked black pepper",
+  "model": "gemini-flash-latest",
+  "name": "Creamy Cauliflower Soup Bar",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-24T02:22:33+00:00"
  },
  "5651751b2c1d": {
   "avoid": [
@@ -23476,6 +23545,42 @@
   "vessel": "bowl",
   "written_at": "2026-10-10T10:02:59+00:00"
  },
+ "98dfb8dcbccc": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "ice cubes",
+   "cocktail umbrella",
+   "milk",
+   "tea bag",
+   "coffee"
+  ],
+  "checks": [
+   {
+    "q": "Is the item a warm amber-colored spiced cider beverage?",
+    "yes": true
+   },
+   {
+    "q": "Does the drink contain ice cubes?",
+    "yes": false
+   },
+   {
+    "q": "Is there food or meat in the drink?",
+    "yes": false
+   }
+  ],
+  "dish": "hot spiced apple cider",
+  "look": "steaming translucent amber-brown spiced apple cider, floating whole cinnamon stick, dried orange wheel slice, whole star anise pods, studded whole cloves",
+  "model": "gemini-flash-latest",
+  "name": "Spiced Cider",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-24T02:22:33+00:00"
+ },
  "98eef9154b9b": {
   "avoid": [
    "meat",
@@ -23898,6 +24003,39 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-11-13T11:36:10+00:00"
+ },
+ "9be84111137c": {
+  "avoid": [
+   "ground meat",
+   "hamburger patty",
+   "whole steak",
+   "pastry crust",
+   "bread bowl",
+   "rice",
+   "raw vegetables"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item chunks of meat in dark gravy or sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat ground or formed into a patty?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish enclosed in a pastry crust like a pot pie?",
+    "yes": false
+   }
+  ],
+  "dish": "beef stew with mashed potatoes",
+  "look": "tender chunks of stewed beef, thick glossy dark brown gravy, creamy scoop of mashed potatoes, roasted orange carrot rounds, charred zucchini slices, blistered red bell peppers, minced fresh parsley",
+  "model": "gemini-flash-latest",
+  "name": "Stewed Beef, Garlic Mashed Potatoes, Roasted Seasonal Vegetables",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-24T02:22:49+00:00"
  },
  "9bed9f3e67d7": {
   "avoid": [
@@ -24932,6 +25070,39 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T06:34:15+00:00"
+ },
+ "a1641ebaa39c": {
+  "avoid": [
+   "raw chicken",
+   "burger",
+   "pizza",
+   "nachos",
+   "salad",
+   "tacos",
+   "pasta"
+  ],
+  "checks": [
+   {
+    "q": "Are there chicken wings and french fries on the plate?",
+    "yes": true
+   },
+   {
+    "q": "Is the main food a burger or sandwich?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat a whole roasted bird?",
+    "yes": false
+   }
+  ],
+  "dish": "chicken wings and french fries",
+  "look": "crispy fried chicken drumettes and flats, glossy red buffalo sauce, golden crisp french fries, white ranch dressing in a small ramekin, minced green parsley",
+  "model": "gemini-flash-latest",
+  "name": "Assorted Wings and Fries",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-24T02:22:33+00:00"
  },
  "a1774e128d54": {
   "avoid": [
@@ -30058,6 +30229,40 @@
   "vessel": "plate",
   "written_at": "2026-10-18T08:10:17+00:00"
  },
+ "bd38b15afa09": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "round ring donuts with holes",
+   "churros",
+   "croissants",
+   "pancakes"
+  ],
+  "checks": [
+   {
+    "q": "Are the pastries golden-brown puffed squares covered in powdered sugar?",
+    "yes": true
+   },
+   {
+    "q": "Do the pastries have holes in the center like ring donuts?",
+    "yes": false
+   },
+   {
+    "q": "Is there meat on the plate?",
+    "yes": false
+   }
+  ],
+  "dish": "beignets",
+  "look": "three golden-brown square fried beignets, puffed pillow shape, generous dusting of white powdered sugar, warm flaky pastry surface, small cup of dark chocolate dipping sauce",
+  "model": "gemini-flash-latest",
+  "name": "Beignet Bar",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-24T02:22:33+00:00"
+ },
  "bd819332c3bf": {
   "avoid": [
    "meat",
@@ -33822,6 +34027,38 @@
   "vessel": "plate",
   "written_at": "2026-10-02T10:14:36+00:00"
  },
+ "d3119ad31c85": {
+  "avoid": [
+   "raw pork",
+   "bone-in pork chops",
+   "skewers",
+   "noodles",
+   "fried rice",
+   "salad leaves"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item glazed sliced pork belly served with rice?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat a bone-in pork chop?",
+    "yes": false
+   },
+   {
+    "q": "Is the pork ground or minced?",
+    "yes": false
+   }
+  ],
+  "dish": "honey garlic pork belly with rice and vegetables",
+  "look": "thick slices of braised pork belly, glossy dark-amber honey garlic glaze, charred browned edges, mound of fluffy steamed white jasmine rice, tender steamed green broccoli florets, sliced orange carrots",
+  "model": "gemini-flash-latest",
+  "name": "Honey Garlic Pork Belly, Steamed Jasmine Rice, Seasonal Steamed Vegetables",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-24T02:22:33+00:00"
+ },
  "d344ff05e453": {
   "avoid": [
    "meat",
@@ -36595,6 +36832,38 @@
   "vessel": "plate",
   "written_at": "2026-10-02T10:04:59+00:00"
  },
+ "e43164b1eed6": {
+  "avoid": [
+   "raw chicken",
+   "french fries",
+   "burger",
+   "pizza",
+   "whole roast chicken",
+   "chicken nuggets"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cooked chicken wings?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken processed into nuggets or tenders?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a whole roasted bird?",
+    "yes": false
+   }
+  ],
+  "dish": "chicken wings",
+  "look": "pile of crispy fried chicken drumettes and flats, glossy bright orange buffalo glaze, browned fried skin, crisp green celery sticks, sliced orange carrot sticks, creamy white blue cheese dip in a small cup",
+  "model": "gemini-flash-latest",
+  "name": "Chicken Wing Bar",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-24T02:22:33+00:00"
+ },
  "e506cf52d5ef": {
   "avoid": [
    "rice",
@@ -36768,6 +37037,39 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-10-10T19:43:28+00:00"
+ },
+ "e68397e4c346": {
+  "avoid": [
+   "soft taco",
+   "folded tortilla",
+   "burrito",
+   "tortilla chips in a basket",
+   "enchilada",
+   "raw meat",
+   "quesadilla"
+  ],
+  "checks": [
+   {
+    "q": "Is the base a flat, crisp round corn tostada shell topped with ingredients?",
+    "yes": true
+   },
+   {
+    "q": "Is the tortilla folded or rolled like a taco or burrito?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat in patty or whole cut form?",
+    "yes": false
+   }
+  ],
+  "dish": "chorizo tostada",
+  "look": "crisp flat golden corn tostada, layer of warm refried black beans, crumbled cooked reddish-brown chorizo sausage, finely shredded green cabbage, crumbled white cotija cheese, diced red tomatoes, drizzle of white crema",
+  "model": "gemini-flash-latest",
+  "name": "Chorizo Tostada",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-24T02:22:33+00:00"
  },
  "e6876edfcd5a": {
   "avoid": [
