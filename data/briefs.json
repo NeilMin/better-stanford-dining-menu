@@ -7606,6 +7606,40 @@
   "vessel": "plate",
   "written_at": "2026-09-27T07:39:15+00:00"
  },
+ "337c830c0acb": {
+  "avoid": [
+   "corn tortilla shell",
+   "hard taco shell",
+   "flour tortilla",
+   "beef",
+   "chicken",
+   "pork",
+   "raw fish",
+   "burrito"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cooked fish served inside folded flatbread?",
+    "yes": true
+   },
+   {
+    "q": "Is the protein beef, chicken, or pork?",
+    "yes": false
+   },
+   {
+    "q": "Is the food served in a hard corn taco shell?",
+    "yes": false
+   }
+  ],
+  "dish": "Caribbean fish tacos",
+  "look": "flaky seared cajun-seasoned cod chunks tucked into folded soft roti flatbread, topped with vibrant diced pineapple and mango salsa, chopped red onions, diced bell peppers, flecks of fresh cilantro",
+  "model": "gemini-3.6-flash",
+  "name": "Caribbean Cod Taco",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-25T13:23:06+00:00"
+ },
  "33950c2cc43a": {
   "avoid": [
    "meat",
@@ -14796,6 +14830,41 @@
   "vessel": "plate",
   "written_at": "2026-10-22T00:48:55+00:00"
  },
+ "5e273f42da30": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "chicharron",
+   "fish",
+   "shrimp",
+   "raw plantains",
+   "mortar and pestle"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a mound of mashed plantains?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat, pork chicharron, or seafood in the dish?",
+    "yes": false
+   },
+   {
+    "q": "Are the plantains raw or sliced whole fruit instead of mashed?",
+    "yes": false
+   }
+  ],
+  "dish": "Puerto Rican mofongo",
+  "look": "a compact dome-shaped mound of mashed golden-brown plantains mixed with garlic, set in a glossy red tomato sofrito sauce with tender diced bell peppers and onions",
+  "model": "gemini-3.6-flash",
+  "name": "Vegan Mofongo",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-25T13:23:19+00:00"
+ },
  "5e5f9a352123": {
   "avoid": [
    "meat",
@@ -21010,6 +21079,39 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-11-18T12:05:30+00:00"
+ },
+ "89b8c82af171": {
+  "avoid": [
+   "soup",
+   "noodles",
+   "raw shrimp",
+   "unpeeled shrimp",
+   "white rice",
+   "broth",
+   "spring rolls"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food stir-fried rice mixed with seafood and diced meat?",
+    "yes": true
+   },
+   {
+    "q": "Is the rice plain white and un-fried?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a soup or noodle dish?",
+    "yes": false
+   }
+  ],
+  "dish": "Char Siu and Shrimp Fried Rice",
+  "look": "stir-fried jasmine rice with amber soy glaze, plump pink curled cooked shrimp, diced reddish-brown char siu pork, scrambled egg curds, sliced scallions",
+  "model": "gemini-3.6-flash",
+  "name": "Char Siu & Shrimp Fried Rice",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-25T13:23:12+00:00"
  },
  "89be6958063f": {
   "avoid": [
@@ -33453,6 +33555,41 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-10-16T08:21:02+00:00"
+ },
+ "ce6bad264945": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "tortilla chips",
+   "tacos",
+   "skewers"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a salad or salsa of diced mango, beans, and grains?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat, chicken, or seafood in the dish?",
+    "yes": false
+   },
+   {
+    "q": "Is the salsa blended smooth into a puree or sauce?",
+    "yes": false
+   }
+  ],
+  "dish": "Jerk mango black bean salsa",
+  "look": "a vibrant salad of fresh diced yellow mango, fluffy cooked quinoa, plump dark black beans, finely diced red onion, bright red bell pepper, chopped fresh cilantro, tossed in a light dark jerk spice glaze",
+  "model": "gemini-3.6-flash",
+  "name": "Jamaican Jerk Mango Salsa",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-25T13:23:25+00:00"
  },
  "ce961d55a090": {
   "avoid": [
