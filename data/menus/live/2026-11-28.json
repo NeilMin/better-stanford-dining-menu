@@ -1,6 +1,6 @@
 {
  "date": "2026-11-28",
- "scraped_at": "2026-11-25T05:04:52-08:00",
+ "scraped_at": "2026-11-25T15:39:58-08:00",
  "halls": {
   "arrillaga": {
    "Breakfast": [
@@ -4084,16 +4084,35 @@
    ],
    "Dinner": [
     {
-     "name": "Kahlua Pork",
-     "recipe_id": "5937192",
+     "name": "Beef Bolognese Lasagna",
+     "recipe_id": "3791182",
      "description": "",
-     "ingredients": "pork, liquid smoke, ginger, garlic, salt, pepper",
-     "allergens": [],
+     "ingredients": "lasagna noodles, beef bolognese sauce (beef and mushroom blend, marinara sauce, tomato paste, vegetable soup base, carrots, celery, onions, italian seasoning, parsley, garlic, canola/olive oil blend, bay leaf, pepper, salt), white sauce (cream, butter, milk powder, flour, garlic, nutmeg, onion powder, white pepper, salt), mozzarella cheese, parmesan cheese, basil, parsley, olive oil, pepper, salt",
+     "allergens": [
+      "EGG",
+      "MILK",
+      "SOY",
+      "WHEAT"
+     ],
+     "trace_allergens": [],
+     "tags": [],
+     "order": 0
+    },
+    {
+     "name": "Eggplant Parmesan",
+     "recipe_id": "4464496",
+     "description": "",
+     "ingredients": "eggplant, mushrooms, onions, marinara sauce (soy), bread crumbs (wheat), mozzarella cheese & parmesan cheese (milk), canola/olive oil blend, oregano, pepper",
+     "allergens": [
+      "MILK",
+      "SOY",
+      "WHEAT"
+     ],
      "trace_allergens": [],
      "tags": [
-      "gluten-free"
+      "vegetarian"
      ],
-     "order": 0
+     "order": 1
     },
     {
      "name": "Seasonal Steamed Vegetables",
@@ -4106,7 +4125,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 1
+     "order": 2
     },
     {
      "name": "Seasonal Vegetable Board",
@@ -4119,7 +4138,22 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 2
+     "order": 3
+    },
+    {
+     "name": "Scalloped Potatoes",
+     "recipe_id": "6621610",
+     "description": "",
+     "ingredients": "sliced potatoes, whole milk, fontina, parmesan, monterey jack cheese (milk), nutmeg, thyme, bay leaf, white sauce (cream, butter, milk powder, flour [wheat], garlic, nutmeg, onion powder, white pepper, salt)",
+     "allergens": [
+      "MILK",
+      "WHEAT"
+     ],
+     "trace_allergens": [],
+     "tags": [
+      "vegetarian"
+     ],
+     "order": 4
     },
     {
      "name": "Soup of the Day",
@@ -4129,7 +4163,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 3
+     "order": 5
     },
     {
      "name": "Assorted Bread",
@@ -4145,7 +4179,7 @@
      "tags": [
       "vegan"
      ],
-     "order": 4
+     "order": 6
     },
     {
      "name": "Composed Salad",
@@ -4155,7 +4189,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 5
+     "order": 7
     },
     {
      "name": "Performance Bar",
@@ -4165,7 +4199,7 @@
      "allergens": [],
      "trace_allergens": [],
      "tags": [],
-     "order": 6
+     "order": 8
     },
     {
      "name": "Craveable Grains",
@@ -4178,7 +4212,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 7
+     "order": 9
     },
     {
      "name": "Flavor Forward Legumes",
@@ -4191,7 +4225,7 @@
       "gluten-free",
       "vegan"
      ],
-     "order": 8
+     "order": 10
     },
     {
      "name": "Pasta Pesto",
@@ -4209,7 +4243,7 @@
      "tags": [
       "vegetarian"
      ],
-     "order": 9
+     "order": 11
     }
    ]
   },
