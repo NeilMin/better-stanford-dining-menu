@@ -7615,7 +7615,8 @@
    "chicken",
    "pork",
    "raw fish",
-   "burrito"
+   "burrito",
+   "fruit-only filling"
   ],
   "checks": [
    {
@@ -7632,13 +7633,13 @@
    }
   ],
   "dish": "Caribbean fish tacos",
-  "look": "flaky seared cajun-seasoned cod chunks tucked into folded soft roti flatbread, topped with vibrant diced pineapple and mango salsa, chopped red onions, diced bell peppers, flecks of fresh cilantro",
+  "look": "large chunks of seared white cod fish seasoned with red cajun spices, nestled inside folded soft roti flatbread, topped with colorful diced mango and pineapple salsa, diced red onions, bell peppers, fresh cilantro flecks",
   "model": "gemini-3.6-flash",
   "name": "Caribbean Cod Taco",
   "rev": 6,
-  "revisions": 0,
+  "revisions": 1,
   "vessel": "plate",
-  "written_at": "2026-11-25T13:23:06+00:00"
+  "written_at": "2026-11-26T00:41:38+00:00"
  },
  "33950c2cc43a": {
   "avoid": [
@@ -8670,6 +8671,41 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-10-10T21:35:00+00:00"
+ },
+ "389a67c5bcca": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "pork belly",
+   "fish",
+   "shrimp",
+   "rice bowl",
+   "noodles"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item glazed sliced tofu?",
+    "yes": true
+   },
+   {
+    "q": "Does the food appear to be real pork or meat slices?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a soup or noodle bowl?",
+    "yes": false
+   }
+  ],
+  "dish": "char siu tofu",
+  "look": "thick rectangular slices of firm tofu, charred caramelized edges, glossy vibrant red-brown barbecue glaze, sprinkled with toasted white sesame seeds, sliced green scallions, fresh cilantro leaves",
+  "model": "gemini-flash-latest",
+  "name": "Tofu Char Siu",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-25T23:44:44+00:00"
  },
  "38ab2d878190": {
   "avoid": [
@@ -13135,6 +13171,42 @@
   "vessel": "plate",
   "written_at": "2026-09-28T18:08:01+00:00"
  },
+ "5259b1d9d95b": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "bacon",
+   "fish",
+   "shrimp",
+   "green bean casserole",
+   "creamy sauce",
+   "cheese"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item whole green beans?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat or bacon mixed into the green beans?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish baked in a thick creamy casserole sauce?",
+    "yes": false
+   }
+  ],
+  "dish": "sauteed green beans with crispy shallots",
+  "look": "tender-crisp whole bright green string beans, blistered skin, topped with a generous pile of golden-brown fried crispy shallot rings, minced cooked garlic bits",
+  "model": "gemini-flash-latest",
+  "name": "Sauteed Green Beans with Crispy Shallots",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-25T23:44:44+00:00"
+ },
  "52641c1a9d15": {
   "avoid": [
    "leafy greens",
@@ -16109,6 +16181,40 @@
   "revisions": 1,
   "vessel": "plate",
   "written_at": "2026-11-17T13:09:54+00:00"
+ },
+ "66952111e091": {
+  "avoid": [
+   "raw shrimp",
+   "bread",
+   "toast",
+   "pasta",
+   "noodles",
+   "rice",
+   "fried chicken",
+   "bacon strips"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish shrimp served over creamy grits or porridge?",
+    "yes": true
+   },
+   {
+    "q": "Is the shrimp served over pasta or rice?",
+    "yes": false
+   },
+   {
+    "q": "Is the shrimp breaded and deep-fried?",
+    "yes": false
+   }
+  ],
+  "dish": "shrimp and grits",
+  "look": "a bed of thick creamy pale yellow cheese grits, topped with seared pink curled tail-on shrimp, rich reddish-brown Creole tomato pan sauce, finely chopped green scallions",
+  "model": "gemini-flash-latest",
+  "name": "Creole Shrimp & Grits",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-25T23:44:44+00:00"
  },
  "67c03c7cee92": {
   "avoid": [
@@ -26920,6 +27026,42 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-29T00:31:05+00:00"
+ },
+ "aaf7dd647531": {
+  "avoid": [
+   "meat",
+   "bacon",
+   "sausage",
+   "chicken",
+   "pork",
+   "beef",
+   "fish",
+   "shrimp",
+   "pancakes",
+   "waffles"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item slices of golden-brown French toast?",
+    "yes": true
+   },
+   {
+    "q": "Is the food pancakes or waffles instead of French toast?",
+    "yes": false
+   },
+   {
+    "q": "Are there breakfast meats like bacon or sausage on the plate?",
+    "yes": false
+   }
+  ],
+  "dish": "French toast with berry compote",
+  "look": "thick slices of golden-brown custard-soaked French toast, diagonal cut, browned edges, topped with a glossy deep purple-red stewed berry compote with visible blackberries and blueberries, light dusting of white powdered sugar",
+  "model": "gemini-flash-latest",
+  "name": "French Toast with Berry Compote",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-25T23:44:44+00:00"
  },
  "ab5c8b097ae4": {
   "avoid": [
