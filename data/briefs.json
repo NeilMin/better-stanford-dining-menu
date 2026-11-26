@@ -5788,6 +5788,41 @@
   "vessel": "plate",
   "written_at": "2026-10-27T09:35:42+00:00"
  },
+ "28b37fdad071": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "pulled pork",
+   "leafy green salad",
+   "whole cabbage head"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish shredded cabbage slaw in creamy dressing?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat or seafood in the dish?",
+    "yes": false
+   },
+   {
+    "q": "Is the main ingredient a leafy green lettuce salad?",
+    "yes": false
+   }
+  ],
+  "dish": "creamy coleslaw",
+  "look": "shredded green cabbage strands, thin julienne orange carrot strips, rich creamy white mayonnaise dressing coating the vegetables, flecks of dark cracked black pepper",
+  "model": "gemini-3.6-flash",
+  "name": "Cole Slaw",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-26T13:17:21+00:00"
+ },
  "28d26f02e26f": {
   "avoid": [
    "clear broth",
@@ -7608,6 +7643,8 @@
  },
  "337c830c0acb": {
   "avoid": [
+   "fruit-only filling",
+   "salsa-only filling",
    "corn tortilla shell",
    "hard taco shell",
    "flour tortilla",
@@ -7615,8 +7652,7 @@
    "chicken",
    "pork",
    "raw fish",
-   "burrito",
-   "fruit-only filling"
+   "burrito"
   ],
   "checks": [
    {
@@ -7633,13 +7669,13 @@
    }
   ],
   "dish": "Caribbean fish tacos",
-  "look": "large chunks of seared white cod fish seasoned with red cajun spices, nestled inside folded soft roti flatbread, topped with colorful diced mango and pineapple salsa, diced red onions, bell peppers, fresh cilantro flecks",
+  "look": "golden seared white cod fish fillet chunks with reddish cajun seasoning, prominent cooked fish pieces visible inside folded soft warm roti flatbread, garnished with vibrant diced mango pineapple salsa, red onions, bell peppers, fresh green cilantro",
   "model": "gemini-3.6-flash",
   "name": "Caribbean Cod Taco",
   "rev": 6,
-  "revisions": 1,
+  "revisions": 2,
   "vessel": "plate",
-  "written_at": "2026-11-26T00:41:38+00:00"
+  "written_at": "2026-11-26T13:59:53+00:00"
  },
  "33950c2cc43a": {
   "avoid": [
@@ -14832,6 +14868,41 @@
   "vessel": "bowl",
   "written_at": "2026-10-30T10:23:00+00:00"
  },
+ "5db773a236d6": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "tofu",
+   "soup",
+   "smooth puree"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a vegetable stew?",
+    "yes": true
+   },
+   {
+    "q": "Is there meat or fish in the dish?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a smooth liquid soup?",
+    "yes": false
+   }
+  ],
+  "dish": "vegetable ratatouille",
+  "look": "chunks of cooked eggplant, okra, zucchini, and squash, soft texture, simmered in a chunky tomato sauce, flecks of fresh basil and parsley, bits of bell pepper and onion",
+  "model": "gemma-4-26b-a4b-it",
+  "name": "Okra Ratatouille",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-26T13:17:24+00:00"
+ },
  "5dc6dacce93e": {
   "avoid": [
    "rice",
@@ -14908,9 +14979,10 @@
    "chicken",
    "beef",
    "pork",
-   "chicharron",
    "fish",
    "shrimp",
+   "white rice",
+   "brown patty",
    "raw plantains",
    "mortar and pestle"
   ],
@@ -14928,14 +15000,14 @@
     "yes": false
    }
   ],
-  "dish": "Puerto Rican mofongo",
-  "look": "a compact dome-shaped mound of mashed golden-brown plantains mixed with garlic, set in a glossy red tomato sofrito sauce with tender diced bell peppers and onions",
-  "model": "gemini-3.6-flash",
+  "dish": "Mofongo",
+  "look": "coarse mound of mashed golden-brown fried plantains, compact dome shape, glossy red tomato sofrito sauce, diced red and green bell peppers, sautéed onions",
+  "model": "gemma-4-31b-it",
   "name": "Vegan Mofongo",
   "rev": 6,
-  "revisions": 0,
+  "revisions": 1,
   "vessel": "plate",
-  "written_at": "2026-11-25T13:23:19+00:00"
+  "written_at": "2026-11-26T13:51:25+00:00"
  },
  "5e5f9a352123": {
   "avoid": [
@@ -15178,6 +15250,41 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-11-14T11:06:19+00:00"
+ },
+ "5ff5031c46fd": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "soup",
+   "noodles",
+   "rice"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item mushrooms?",
+    "yes": true
+   },
+   {
+    "q": "Is the dish a soup or stew?",
+    "yes": false
+   },
+   {
+    "q": "Is there meat mixed in with the mushrooms?",
+    "yes": false
+   }
+  ],
+  "dish": "Korean mushroom gangjeong",
+  "look": "crispy fried mushrooms, glossy dark soy-based glaze, sliced lotus root rounds, golden-brown texture, bits of red pepper, sticky coating",
+  "model": "gemma-4-26b-a4b-it",
+  "name": "Korean Mushroom Gangjeong w/ lotus root and pepper",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-26T13:18:14+00:00"
  },
  "600e9af40dc5": {
   "avoid": [
@@ -22103,6 +22210,39 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-10-05T22:15:46+00:00"
+ },
+ "8e11c6e1e4ce": {
+  "avoid": [
+   "drumsticks",
+   "chicken nuggets",
+   "flatbread",
+   "ground meat",
+   "skewers",
+   "raw chicken",
+   "ribs"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item chicken wings?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken ground or shaped like nuggets?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken served on a skewer?",
+    "yes": false
+   }
+  ],
+  "dish": "soy garlic chicken wings",
+  "look": "glossy fried chicken wings, dark amber soy garlic glaze, sticky texture, sprinkle of white sesame seeds, chopped green onion garnishes",
+  "model": "gemma-4-26b-a4b-it",
+  "name": "Soy Garlic Chicken Wings",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-26T13:17:24+00:00"
  },
  "8ec3caf344e0": {
   "avoid": [
@@ -33060,6 +33200,40 @@
   "vessel": "bowl",
   "written_at": "2026-10-25T08:51:14+00:00"
  },
+ "cb617e69f862": {
+  "avoid": [
+   "drumsticks",
+   "chicken nuggets",
+   "flatbread",
+   "skewers",
+   "ground meat",
+   "pork",
+   "beef",
+   "shrimp"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item chicken wings?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken ground like mince?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken served on a skewer?",
+    "yes": false
+   }
+  ],
+  "dish": "gochujang chicken wings",
+  "look": "fried chicken wings, thick glossy red gochujang glaze, sticky sauce coating, toasted sesame seeds, sliced green onions",
+  "model": "gemma-4-26b-a4b-it",
+  "name": "Spicy Gochujang Korean Chicken Wings",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-26T13:19:44+00:00"
+ },
  "cb6fd035fd15": {
   "avoid": [
    "meat",
@@ -34102,6 +34276,73 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T05:20:07+00:00"
+ },
+ "d0a26b5028a2": {
+  "avoid": [
+   "red spicy sauce",
+   "soup",
+   "noodles",
+   "pasta",
+   "tofu",
+   "shrimp",
+   "fish",
+   "pork"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item chewy rice cakes?",
+    "yes": true
+   },
+   {
+    "q": "Is the sauce bright red and spicy?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a liquid soup?",
+    "yes": false
+   }
+  ],
+  "dish": "gungjung tteokbokki",
+  "look": "cylindrical chewy rice cakes, savory dark soy-based sauce, sliced beef strips, sautéed bell peppers, sliced onions, sliced carrots",
+  "model": "gemma-4-26b-a4b-it",
+  "name": "Gungjung Tteokbokki",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-26T13:19:44+00:00"
+ },
+ "d0c4ce297934": {
+  "avoid": [
+   "wrap",
+   "sliced loaf bread",
+   "bagel",
+   "croissant",
+   "bacon",
+   "french fries",
+   "hamburger bun"
+  ],
+  "checks": [
+   {
+    "q": "Is the food a breakfast sandwich?",
+    "yes": true
+   },
+   {
+    "q": "Is the sandwich wrapped in a tortilla or flatbread?",
+    "yes": false
+   },
+   {
+    "q": "Is the sandwich served on sliced loaf bread?",
+    "yes": false
+   }
+  ],
+  "dish": "sausage egg and cheese breakfast sandwich",
+  "look": "toasted split English muffin sandwich, golden fried pork sausage patty, fluffy cooked egg patty, melted yellow cheddar cheese, thick layer of bright green smashed avocado",
+  "model": "gemini-3.6-flash",
+  "name": "Egg, Sausage, Cheese & Avo Sandwich",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-26T13:17:21+00:00"
  },
  "d0cf6dc33730": {
   "avoid": [
@@ -36795,6 +37036,43 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T05:36:06+00:00"
+ },
+ "e1e5e0a6c187": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "tortilla",
+   "wrap",
+   "taco",
+   "burrito",
+   "ground meat"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item chunks of plant-based protein?",
+    "yes": true
+   },
+   {
+    "q": "Is the protein ground or crumbled like mince?",
+    "yes": false
+   },
+   {
+    "q": "Is the food served inside a tortilla or wrap?",
+    "yes": false
+   }
+  ],
+  "dish": "vegan chicken al pastor",
+  "look": "chunks of plant-based chicken, bright reddish-orange achiote marinade, charred edges, pieces of yellow pineapple, diced white onions, fresh green cilantro",
+  "model": "gemma-4-26b-a4b-it",
+  "name": "Plant-Forward Chick'n Al Pastor",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-26T13:18:14+00:00"
  },
  "e1eb5b16e7f8": {
   "avoid": [
