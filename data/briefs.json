@@ -1846,6 +1846,41 @@
   "vessel": "plate",
   "written_at": "2026-09-27T14:22:11+00:00"
  },
+ "0ecf1f3fb2a5": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "tortilla wrap",
+   "burrito",
+   "tacos"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food a pile of cooked sliced vegetables and beans?",
+    "yes": true
+   },
+   {
+    "q": "Is the food wrapped inside a tortilla or burrito?",
+    "yes": false
+   },
+   {
+    "q": "Does the dish contain meat, poultry, or seafood?",
+    "yes": false
+   }
+  ],
+  "dish": "vegetable fajitas",
+  "look": "a colorful pile of sautéed sliced red bell peppers, yellow bell peppers, charred sliced onions, cut zucchini, browned mushroom slices, sweet corn kernels, large white gigandes beans, dusted with dark reddish-brown taco seasoning",
+  "model": "gemini-3.6-flash",
+  "name": "Vegan Fajitas",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-27T12:55:12+00:00"
+ },
  "0ef2f8b208ea": {
   "avoid": [
    "meat",
@@ -3866,6 +3901,40 @@
   "vessel": "plate",
   "written_at": "2026-09-26T23:09:57+00:00"
  },
+ "1c002468b278": {
+  "avoid": [
+   "raw chicken",
+   "rotisserie spit machine",
+   "fried chicken",
+   "breaded chicken",
+   "pulled chicken",
+   "shredded chicken",
+   "beef",
+   "pork"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a portion of roasted chicken?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken fried or breaded?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken shredded or pulled into strands?",
+    "yes": false
+   }
+  ],
+  "dish": "rotisserie chicken",
+  "look": "a roasted rotisserie chicken quarter, glossy golden-brown crispy skin rubbed with reddish paprika seasoning, tender juicy white and dark meat, light sprinkle of finely chopped parsley",
+  "model": "gemini-3.6-flash",
+  "name": "Smoked Rotisserie Chicken",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-27T12:54:22+00:00"
+ },
  "1c54506537c3": {
   "avoid": [
    "meat",
@@ -4269,6 +4338,40 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-26T20:19:36+00:00"
+ },
+ "1e6b104d560b": {
+  "avoid": [
+   "red broth",
+   "pozole rojo",
+   "pork",
+   "beef",
+   "tacos",
+   "burrito",
+   "enchiladas",
+   "dry chicken"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food a green soup with hominy kernels?",
+    "yes": true
+   },
+   {
+    "q": "Is the broth red?",
+    "yes": false
+   },
+   {
+    "q": "Is the food a dry dish like a taco or wrap?",
+    "yes": false
+   }
+  ],
+  "dish": "chicken pozole verde",
+  "look": "shredded tender chicken, large puffy white hominy kernels, rich green tomatillo broth, chopped fresh cilantro garnish, diced raw white onions, sliced green serrano chilies",
+  "model": "gemini-3.6-flash",
+  "name": "Cardinal Sage Chicken Pozole Verde",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-27T12:55:05+00:00"
  },
  "1e721d735295": {
   "avoid": [
@@ -19611,6 +19714,41 @@
   "vessel": "plate",
   "written_at": "2026-10-08T10:50:06+00:00"
  },
+ "7d56afb6dd1c": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "bacon",
+   "gravy",
+   "sandwich"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a baked biscuit?",
+    "yes": true
+   },
+   {
+    "q": "Is there meat, bacon, or sausage served with the biscuit?",
+    "yes": false
+   },
+   {
+    "q": "Is the biscuit split open and filled like a sandwich?",
+    "yes": false
+   }
+  ],
+  "dish": "cheddar chive biscuit",
+  "look": "golden-brown flaky buttermilk biscuit, melted shredded cheddar cheese baked on top, flecks of chopped fresh green chives visible throughout flaky layers, craggy buttery crust, soft warm interior",
+  "model": "gemini-3.6-flash",
+  "name": "Cheesy Chive Biscuit",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-27T12:55:18+00:00"
+ },
  "7d73d641d8dd": {
   "avoid": [
    "meat",
@@ -23858,6 +23996,41 @@
   "vessel": "bowl",
   "written_at": "2026-10-15T19:30:40+00:00"
  },
+ "98643d4c9883": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "raw broccoli",
+   "liquid soup",
+   "raw rice"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food a cheesy rice and vegetable casserole?",
+    "yes": true
+   },
+   {
+    "q": "Does the dish contain meat, poultry, or seafood?",
+    "yes": false
+   },
+   {
+    "q": "Is the food a watery liquid soup?",
+    "yes": false
+   }
+  ],
+  "dish": "broccoli cheddar rice casserole",
+  "look": "a scoop of baked broccoli cheddar casserole, tender bright green broccoli florets, creamy white rice base, wilted dark spinach flecks, melted yellow cheddar sauce, golden browned cheese crust on top",
+  "model": "gemini-3.6-flash",
+  "name": "Broccoli Cheddar Casserole",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-27T12:55:31+00:00"
+ },
  "987d80c24c73": {
   "avoid": [
    "sausage links",
@@ -24030,6 +24203,39 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-11-24T02:22:33+00:00"
+ },
+ "98ec7f6b62d6": {
+  "avoid": [
+   "burger patty",
+   "sliced ham",
+   "pork chop",
+   "french fries",
+   "wrap",
+   "ground meat",
+   "hot dog"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food item a sandwich filled with shredded meat?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat a ground burger patty?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat sliced like ham or pork chops?",
+    "yes": false
+   }
+  ],
+  "dish": "pulled pork sandwich",
+  "look": "a pulled pork sandwich, split toasted golden brioche bun, filled with tender shreds of dark smoked pork, glossy reddish-brown barbecue sauce, topped with creamy pale green spicy coleslaw spilling from the edges",
+  "model": "gemini-3.6-flash",
+  "name": "Smoked Pulled Pork Sandwich",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-27T12:54:46+00:00"
  },
  "98eef9154b9b": {
   "avoid": [
@@ -24919,6 +25125,42 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T05:30:31+00:00"
+ },
+ "9e47a9ff9557": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "raw salad",
+   "salad dressing",
+   "raw kale",
+   "soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item wilted cooked leafy greens?",
+    "yes": true
+   },
+   {
+    "q": "Is there meat, chicken, or seafood visible?",
+    "yes": false
+   },
+   {
+    "q": "Does the dish look like a raw uncooked salad?",
+    "yes": false
+   }
+  ],
+  "dish": "sautéed kale and swiss chard",
+  "look": "a mound of dark green wilted kale leaves, tender sautéed swiss chard with visible red and yellow stems, thin slivers of soft golden garlic, flecks of chopped thyme, glistening wilted texture",
+  "model": "gemini-3.6-flash",
+  "name": "Sauteed Swiss Chard & Kale",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-27T12:55:39+00:00"
  },
  "9e75f45dfcfa": {
   "avoid": [
@@ -29447,6 +29689,42 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-10-17T07:55:50+00:00"
+ },
+ "b66036face1c": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "cheese",
+   "tortilla wrap",
+   "taco",
+   "tortilla chips"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a green salad mixed with vegetables and beans?",
+    "yes": true
+   },
+   {
+    "q": "Does the dish contain meat, poultry, or seafood?",
+    "yes": false
+   },
+   {
+    "q": "Is the salad served inside a tortilla wrap or taco shell?",
+    "yes": false
+   }
+  ],
+  "dish": "Southwestern chopped salad",
+  "look": "chopped crisp romaine lettuce, plump black beans, sweet golden corn kernels, halved red cherry tomatoes, diced red and green bell peppers, fresh green cilantro leaves, lightly tossed in a glossy translucent herb Italian dressing",
+  "model": "gemini-3.6-flash",
+  "name": "Italian Southwestern Salad",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-27T12:57:39+00:00"
  },
  "b675336aab22": {
   "avoid": [
@@ -34416,14 +34694,14 @@
  },
  "d0a26b5028a2": {
   "avoid": [
-   "red spicy sauce",
-   "soup",
+   "steamed white rice",
+   "red spicy gochujang sauce",
+   "green sprouts",
+   "fresh herbs",
+   "soup broth",
    "noodles",
-   "pasta",
-   "tofu",
-   "shrimp",
-   "fish",
-   "pork"
+   "hands",
+   "person"
   ],
   "checks": [
    {
@@ -34440,13 +34718,13 @@
    }
   ],
   "dish": "gungjung tteokbokki",
-  "look": "cylindrical chewy rice cakes, savory dark soy-based sauce, sliced beef strips, sautéed bell peppers, sliced onions, sliced carrots",
-  "model": "gemma-4-26b-a4b-it",
+  "look": "prominent thick cylindrical white rice cakes, coated in glossy dark brown soy sauce glaze, thin tender beef slices, stir-fried red bell peppers, sliced onions, cooked carrots, served in a shallow bowl",
+  "model": "gemini-3.6-flash",
   "name": "Gungjung Tteokbokki",
   "rev": 6,
-  "revisions": 0,
+  "revisions": 1,
   "vessel": "bowl",
-  "written_at": "2026-11-26T13:19:44+00:00"
+  "written_at": "2026-11-27T14:42:02+00:00"
  },
  "d0c4ce297934": {
   "avoid": [
@@ -40633,6 +40911,40 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T06:53:41+00:00"
+ },
+ "f72e95e3573a": {
+  "avoid": [
+   "ground beef",
+   "whole steak",
+   "skewers",
+   "tacos",
+   "burrito",
+   "fajitas",
+   "soup",
+   "raw potatoes"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item sliced beef stir-fried with french fries?",
+    "yes": true
+   },
+   {
+    "q": "Is the beef ground like mince?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat served as a whole intact steak?",
+    "yes": false
+   }
+  ],
+  "dish": "lomo saltado",
+  "look": "seared strips of beef, thick golden french fries tossed throughout, thick red onion wedges, seared tomato wedges, red bell pepper slices, dark glossy brown sauce coating the beef, scattered fresh green cilantro leaves",
+  "model": "gemini-3.6-flash",
+  "name": "Lomo Saltado",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-27T12:53:55+00:00"
  },
  "f74a40c6915f": {
   "avoid": [
