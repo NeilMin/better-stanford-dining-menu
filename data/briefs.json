@@ -4986,6 +4986,40 @@
   "vessel": "bowl",
   "written_at": "2026-09-29T00:31:05+00:00"
  },
+ "2355f071dc91": {
+  "avoid": [
+   "tortillas",
+   "tacos",
+   "pineapple",
+   "skewers",
+   "ground meat",
+   "raw pork",
+   "burrito",
+   "flatbread"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item sliced roasted meat?",
+    "yes": true
+   },
+   {
+    "q": "Is the meat served inside tacos or wrapped in tortillas?",
+    "yes": false
+   },
+   {
+    "q": "Is the meat ground or crumbled like mince?",
+    "yes": false
+   }
+  ],
+  "dish": "pork al pastor",
+  "look": "thinly sliced grilled pork, glossy reddish-orange pastor achiote marinade glaze, charred crisp edges, juicy tender meat strips, sprinkle of fresh chopped green cilantro",
+  "model": "gemini-3.6-flash",
+  "name": "Pork Pastor",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-26T23:58:27+00:00"
+ },
  "235d699c7e1b": {
   "avoid": [
    "burger bun",
@@ -7656,7 +7690,7 @@
   ],
   "checks": [
    {
-    "q": "Is the main item cooked fish served inside folded flatbread?",
+    "q": "Is the main item cooked protein served inside folded flatbread?",
     "yes": true
    },
    {
@@ -7669,13 +7703,13 @@
    }
   ],
   "dish": "Caribbean fish tacos",
-  "look": "golden seared white cod fish fillet chunks with reddish cajun seasoning, prominent cooked fish pieces visible inside folded soft warm roti flatbread, garnished with vibrant diced mango pineapple salsa, red onions, bell peppers, fresh green cilantro",
-  "model": "gemini-3.6-flash",
+  "look": "flaky white cod fish fillets with seared golden crust, visible fish flakes, inside warm folded roti flatbread, topped with diced mango and pineapple salsa, red onions, bell peppers, fresh cilantro, parsley",
+  "model": "gemini-flash-latest",
   "name": "Caribbean Cod Taco",
   "rev": 6,
-  "revisions": 2,
+  "revisions": 3,
   "vessel": "plate",
-  "written_at": "2026-11-26T13:59:53+00:00"
+  "written_at": "2026-11-27T00:53:40+00:00"
  },
  "33950c2cc43a": {
   "avoid": [
@@ -28929,6 +28963,41 @@
   "vessel": "plate",
   "written_at": "2026-09-27T05:36:06+00:00"
  },
+ "b37dde070267": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "cheese",
+   "feta",
+   "raw squash"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food a salad with fresh greens and orange squash?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat or poultry in the salad?",
+    "yes": false
+   },
+   {
+    "q": "Is there white cheese crumbled over the salad?",
+    "yes": false
+   }
+  ],
+  "dish": "roasted butternut squash arugula salad",
+  "look": "fresh green arugula leaves, roasted orange butternut squash cubes, halved red cherry tomatoes, scattered roasted green pumpkin seeds, drizzle of dark balsamic vinaigrette",
+  "model": "gemini-3.6-flash",
+  "name": "Butternut Squash & Arugula Salad",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-26T23:58:27+00:00"
+ },
  "b3aed1999d84": {
   "avoid": [
    "meat",
@@ -33026,6 +33095,40 @@
   "vessel": "plate",
   "written_at": "2026-10-15T23:11:09+00:00"
  },
+ "c8d8fcd93726": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "whole chicken breast",
+   "raw vegetables"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a stew with shredded protein and vegetables in sauce?",
+    "yes": true
+   },
+   {
+    "q": "Is the protein a whole intact chicken breast?",
+    "yes": false
+   },
+   {
+    "q": "Does the dish contain real meat like beef or pork?",
+    "yes": false
+   }
+  ],
+  "dish": "plant-based chicken ropa vieja",
+  "look": "shredded plant-based chicken strips, rich thick tomato sauce, sliced red bell peppers, soft yellow onion strands, tender cubed potatoes, green olives, chopped celery",
+  "model": "gemini-3.6-flash",
+  "name": "Plant-Forward \"Chick'n\" Ropa Vieja",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-26T23:58:27+00:00"
+ },
  "c8dd8ea4d1f0": {
   "avoid": [
    "chicken wings",
@@ -33333,6 +33436,40 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-29T17:11:14+00:00"
+ },
+ "cbcf9fa63dfc": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "raw brussels sprouts",
+   "whole cabbage heads"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food cooked roasted brussels sprouts?",
+    "yes": true
+   },
+   {
+    "q": "Are the brussels sprouts raw and whole?",
+    "yes": false
+   },
+   {
+    "q": "Are there pieces of meat mixed into the dish?",
+    "yes": false
+   }
+  ],
+  "dish": "Cajun roasted Brussels sprouts",
+  "look": "halved roasted brussels sprouts, deeply charred caramelized outer leaves, vibrant green interiors, golden-brown edges, reddish-brown cajun paprika spice coating",
+  "model": "gemini-3.6-flash",
+  "name": "Cajun Spiced Brussels",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-26T23:58:27+00:00"
  },
  "cbeaa895acd5": {
   "avoid": [
@@ -37049,7 +37186,8 @@
    "wrap",
    "taco",
    "burrito",
-   "ground meat"
+   "ground meat",
+   "minced protein"
   ],
   "checks": [
    {
@@ -37065,14 +37203,14 @@
     "yes": false
    }
   ],
-  "dish": "vegan chicken al pastor",
-  "look": "chunks of plant-based chicken, bright reddish-orange achiote marinade, charred edges, pieces of yellow pineapple, diced white onions, fresh green cilantro",
+  "dish": "Vegan Al Pastor",
+  "look": "cubed plant-based protein chunks, bright reddish-orange achiote glaze, charred edges, chunks of yellow pineapple, diced white onions, fresh green cilantro leaves",
   "model": "gemma-4-26b-a4b-it",
   "name": "Plant-Forward Chick'n Al Pastor",
   "rev": 6,
-  "revisions": 0,
+  "revisions": 1,
   "vessel": "plate",
-  "written_at": "2026-11-26T13:18:14+00:00"
+  "written_at": "2026-11-27T00:59:33+00:00"
  },
  "e1eb5b16e7f8": {
   "avoid": [
