@@ -1846,6 +1846,41 @@
   "vessel": "plate",
   "written_at": "2026-09-27T14:22:11+00:00"
  },
+ "0eac334f3886": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "skewers",
+   "white rice",
+   "soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item glazed tofu with pineapple and peppers?",
+    "yes": true
+   },
+   {
+    "q": "Is there meat, poultry, or seafood on the plate?",
+    "yes": false
+   },
+   {
+    "q": "Is the food served on wooden skewers or kebabs?",
+    "yes": false
+   }
+  ],
+  "dish": "Hawaiian Huli Huli tofu",
+  "look": "seared firm tofu cutlets coated in a thick caramelized mahogany glaze, grilled yellow pineapple chunks with char marks, charred red bell pepper pieces, tender grilled onion wedges",
+  "model": "gemini-flash-latest",
+  "name": "Huli Huli Tofu",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-27T23:34:11+00:00"
+ },
  "0ecf1f3fb2a5": {
   "avoid": [
    "meat",
@@ -1856,7 +1891,8 @@
    "shrimp",
    "tortilla wrap",
    "burrito",
-   "tacos"
+   "tacos",
+   "black-eyed peas"
   ],
   "checks": [
    {
@@ -1873,13 +1909,13 @@
    }
   ],
   "dish": "vegetable fajitas",
-  "look": "a colorful pile of sautéed sliced red bell peppers, yellow bell peppers, charred sliced onions, cut zucchini, browned mushroom slices, sweet corn kernels, large white gigandes beans, dusted with dark reddish-brown taco seasoning",
-  "model": "gemini-3.6-flash",
+  "look": "fajita-style charred red bell pepper strips, green bell pepper strips, blackened sliced onions, browned sliced button mushrooms, grilled zucchini half-moons, roasted sweet corn kernels, large white gigandes beans, glistening reddish-brown chili spice coating, grill marks",
+  "model": "gemini-flash-latest",
   "name": "Vegan Fajitas",
   "rev": 6,
-  "revisions": 0,
+  "revisions": 1,
   "vessel": "plate",
-  "written_at": "2026-11-27T12:55:12+00:00"
+  "written_at": "2026-11-28T00:36:13+00:00"
  },
  "0ef2f8b208ea": {
   "avoid": [
@@ -5089,6 +5125,41 @@
   "vessel": "bowl",
   "written_at": "2026-09-29T00:31:05+00:00"
  },
+ "22dbda843eae": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "soup",
+   "broth",
+   "ramen"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item stir-fried noodles with mixed vegetables?",
+    "yes": true
+   },
+   {
+    "q": "Is there meat, chicken, or seafood mixed into the noodles?",
+    "yes": false
+   },
+   {
+    "q": "Are the noodles swimming in soup broth?",
+    "yes": false
+   }
+  ],
+  "dish": "vegetable chow mein",
+  "look": "stir-fried golden yellow egg-style wheat noodles, tender green broccoli florets, vibrant snow peas, sliced orange carrots, crisp bean sprouts, red bell pepper slivers, sliced white water chestnuts, glossy light sesame glaze",
+  "model": "gemini-flash-latest",
+  "name": "Chow Mein Noodles with Vegetables",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-27T23:34:11+00:00"
+ },
  "2355f071dc91": {
   "avoid": [
    "tortillas",
@@ -8155,6 +8226,41 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-10-01T00:08:26+00:00"
+ },
+ "3441e3644791": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "skewers",
+   "white uncooked tofu",
+   "soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item grilled pieces of tofu?",
+    "yes": true
+   },
+   {
+    "q": "Is there meat, chicken, or seafood on the plate?",
+    "yes": false
+   },
+   {
+    "q": "Is the tofu served in a soup or broth?",
+    "yes": false
+   }
+  ],
+  "dish": "honey-glazed grilled tofu",
+  "look": "thick rectangular slabs of firm tofu, charred dark grill marks, shiny amber honey glaze, finely chopped fresh green parsley sprinkled across the top",
+  "model": "gemini-flash-latest",
+  "name": "Honey Grilled Tofu",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-27T23:34:11+00:00"
  },
  "348bec54f2b0": {
   "avoid": [
@@ -15040,6 +15146,39 @@
   "vessel": "bowl",
   "written_at": "2026-11-26T13:17:24+00:00"
  },
+ "5dc624387e8b": {
+  "avoid": [
+   "chicken wings",
+   "ribs",
+   "meat",
+   "rice",
+   "noodles",
+   "vegetables",
+   "skewers"
+  ],
+  "checks": [
+   {
+    "q": "Is the photo focused on a bowl of sauce?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat or poultry in the bowl?",
+    "yes": false
+   },
+   {
+    "q": "Is the sauce poured over rice or noodles?",
+    "yes": false
+   }
+  ],
+  "dish": "Huli Huli barbecue sauce",
+  "look": "smooth glossy dark reddish-brown barbecue sauce filling a ceramic dipping bowl, thick consistency, flecks of grated ginger and minced garlic suspended in the glaze, reflective surface sheen",
+  "model": "gemini-flash-latest",
+  "name": "Huli Huli Sauce",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-27T23:34:11+00:00"
+ },
  "5dc6dacce93e": {
   "avoid": [
    "rice",
@@ -19499,6 +19638,41 @@
   "vessel": "bowl",
   "written_at": "2026-10-01T00:09:14+00:00"
  },
+ "7ced14a5dd5c": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "noodles",
+   "white rice",
+   "raw vegetables"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a stir-fry of tofu and mixed vegetables?",
+    "yes": true
+   },
+   {
+    "q": "Is there meat, chicken, or seafood in the dish?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish served as a noodle soup?",
+    "yes": false
+   }
+  ],
+  "dish": "sesame ginger tofu vegetable stir-fry",
+  "look": "golden browned tofu cubes, sautéed green cabbage strips, sliced brown mushrooms, tender carrot coins, red bell pepper strips, green onion segments, coated in a dark glistening savory brown sauce, toasted white sesame seeds",
+  "model": "gemini-flash-latest",
+  "name": "Sesame Ginger Tofu Stir Fry",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-27T23:34:11+00:00"
+ },
  "7cedd476fb44": {
   "avoid": [
    "meat",
@@ -22556,6 +22730,39 @@
   "vessel": "plate",
   "written_at": "2026-10-30T12:56:00+00:00"
  },
+ "8f0329f6beea": {
+  "avoid": [
+   "raw fish",
+   "tacos",
+   "tortilla chips",
+   "french fries",
+   "burger bun",
+   "soup",
+   "skewers"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item fried pieces of fish?",
+    "yes": true
+   },
+   {
+    "q": "Is the fish wrapped inside tacos or a burrito?",
+    "yes": false
+   },
+   {
+    "q": "Is the fish served inside a sandwich bun or burger?",
+    "yes": false
+   }
+  ],
+  "dish": "Mexican fried fish plate",
+  "look": "golden brown crispy battered fish fillets, fluffy seasoned red Mexican rice, shredded cabbage coleslaw tossed with cilantro, small stack of warm yellow corn tortillas on the side, fresh lime wedge",
+  "model": "gemini-flash-latest",
+  "name": "Fried Fish Plate",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-27T23:34:11+00:00"
+ },
  "8f1188bf5910": {
   "avoid": [
    "meat",
@@ -24004,9 +24211,10 @@
    "pork",
    "fish",
    "shrimp",
-   "raw broccoli",
-   "liquid soup",
-   "raw rice"
+   "eggs",
+   "frittata",
+   "quiche",
+   "liquid soup"
   ],
   "checks": [
    {
@@ -24023,13 +24231,13 @@
    }
   ],
   "dish": "broccoli cheddar rice casserole",
-  "look": "a scoop of baked broccoli cheddar casserole, tender bright green broccoli florets, creamy white rice base, wilted dark spinach flecks, melted yellow cheddar sauce, golden browned cheese crust on top",
+  "look": "a scoop of baked broccoli cheddar rice casserole, visible cooked white rice grains mixed with bright green broccoli florets and wilted spinach flecks, bound in thick melted yellow cheddar cheese sauce, golden browned cheese crust on top",
   "model": "gemini-3.6-flash",
   "name": "Broccoli Cheddar Casserole",
   "rev": 6,
-  "revisions": 0,
+  "revisions": 1,
   "vessel": "bowl",
-  "written_at": "2026-11-27T12:55:31+00:00"
+  "written_at": "2026-11-28T01:21:33+00:00"
  },
  "987d80c24c73": {
   "avoid": [
@@ -35380,6 +35588,39 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-11-16T22:27:51+00:00"
+ },
+ "d4888b7e9416": {
+  "avoid": [
+   "chicken wings",
+   "drumsticks",
+   "bone-in chicken",
+   "sandwich bun",
+   "sliders",
+   "french fries",
+   "raw chicken"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item shredded or pulled chicken?",
+    "yes": true
+   },
+   {
+    "q": "Is the chicken whole wings or drumsticks with bones?",
+    "yes": false
+   },
+   {
+    "q": "Is the chicken served between burger buns or bread slices?",
+    "yes": false
+   }
+  ],
+  "dish": "pulled Buffalo chicken",
+  "look": "a generous mound of shredded chicken breast and thigh meat, coated in bright orange-red glossy Buffalo hot sauce, flecks of cracked black pepper, moist and juicy pulled meat strands",
+  "model": "gemini-flash-latest",
+  "name": "Pulled Buffalo Chicken",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-27T23:34:11+00:00"
  },
  "d4e44082e4cf": {
   "avoid": [
