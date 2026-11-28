@@ -1889,10 +1889,12 @@
    "pork",
    "fish",
    "shrimp",
-   "tortilla wrap",
+   "tortilla",
+   "wrap",
    "burrito",
-   "tacos",
-   "black-eyed peas"
+   "eggplant",
+   "whole peppers",
+   "sauce bowl"
   ],
   "checks": [
    {
@@ -1908,14 +1910,14 @@
     "yes": false
    }
   ],
-  "dish": "vegetable fajitas",
-  "look": "fajita-style charred red bell pepper strips, green bell pepper strips, blackened sliced onions, browned sliced button mushrooms, grilled zucchini half-moons, roasted sweet corn kernels, large white gigandes beans, glistening reddish-brown chili spice coating, grill marks",
-  "model": "gemini-flash-latest",
+  "dish": "Vegetable Fajitas",
+  "look": "pile of large white gigandes beans, sliced red bell peppers, sliced green bell peppers, sliced onions, sliced zucchini, sliced button mushrooms, yellow corn kernels, reddish-brown spice coating",
+  "model": "gemma-4-31b-it",
   "name": "Vegan Fajitas",
   "rev": 6,
-  "revisions": 1,
+  "revisions": 2,
   "vessel": "plate",
-  "written_at": "2026-11-28T00:36:13+00:00"
+  "written_at": "2026-11-28T13:32:36+00:00"
  },
  "0ef2f8b208ea": {
   "avoid": [
@@ -2087,6 +2089,42 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-11-12T22:03:01+00:00"
+ },
+ "10bb493b0083": {
+  "avoid": [
+   "shrimp",
+   "dried shrimp",
+   "peanuts",
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "noodles",
+   "broth"
+  ],
+  "checks": [
+   {
+    "q": "Is the dish a salad of shredded green papaya?",
+    "yes": true
+   },
+   {
+    "q": "Does the dish contain noodles or soup broth?",
+    "yes": false
+   },
+   {
+    "q": "Are there pieces of meat, chicken, or shrimp visible?",
+    "yes": false
+   }
+  ],
+  "dish": "Thai green papaya salad",
+  "look": "mound of crisp julienned pale green papaya threads, thin orange shredded carrots, short pieces of bright green beans, finely chopped red chilis, flecks of minced garlic, lightly glistening translucent dressing",
+  "model": "gemini-3.6-flash",
+  "name": "Thai Green Papaya Salad (Som Tum)",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-28T12:13:49+00:00"
  },
  "10c2fdd01e6c": {
   "avoid": [
@@ -4299,6 +4337,42 @@
   "vessel": "bowl",
   "written_at": "2026-10-17T07:55:50+00:00"
  },
+ "1dfe7a1ca53c": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "bacon",
+   "fish",
+   "shrimp",
+   "raw cabbage",
+   "coleslaw",
+   "soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cooked cabbage?",
+    "yes": true
+   },
+   {
+    "q": "Are there pieces of meat or bacon with the cabbage?",
+    "yes": false
+   },
+   {
+    "q": "Is the cabbage raw like coleslaw?",
+    "yes": false
+   }
+  ],
+  "dish": "Southern fried cabbage",
+  "look": "a pile of tender wilted ribbon-cut green cabbage, translucent caramelized onion strips, glossy reddish-amber spice glisten, scattered specks of crushed red pepper flakes",
+  "model": "gemini-3.6-flash",
+  "name": "Southern Style Fried Cabbage",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-28T12:14:25+00:00"
+ },
  "1e22485bd04e": {
   "avoid": [
    "skewers",
@@ -4983,6 +5057,42 @@
   "revisions": 2,
   "vessel": "plate",
   "written_at": "2026-09-29T02:06:47+00:00"
+ },
+ "22471bfc3a20": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "bones",
+   "poultry wings",
+   "naan bread",
+   "raw onions"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item chunks of protein simmered in a creamy yellow sauce?",
+    "yes": true
+   },
+   {
+    "q": "Are there real meat bones or poultry pieces visible?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a dry stir-fry without sauce?",
+    "yes": false
+   }
+  ],
+  "dish": "vegan coconut yellow curry",
+  "look": "tender bite-sized chunks of plant-based chick'n, simmered in a rich golden yellow coconut curry sauce, softened diced onions, lightly speckled with red curry paste oils, sprinkled with chopped fresh coriander",
+  "model": "gemini-3.6-flash",
+  "name": "Plant-Based Coconut Curry Chick'n",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-28T12:13:26+00:00"
  },
  "2264c08eede4": {
   "avoid": [
@@ -6449,6 +6559,41 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-09-27T07:54:50+00:00"
+ },
+ "2b2c10817703": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "raw eggplant",
+   "soup",
+   "broth"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item cooked eggplant with tofu?",
+    "yes": true
+   },
+   {
+    "q": "Does the dish contain meat, chicken, or seafood?",
+    "yes": false
+   },
+   {
+    "q": "Is the dish a liquid soup or broth?",
+    "yes": false
+   }
+  ],
+  "dish": "Stir-fried eggplant and tofu with basil",
+  "look": "glittering dark purple eggplant wedges with caramelized edges, crispy golden brown cubed tofu, glossy dark tamari glaze, tender sliced onions, minced garlic, red chili slices, wilted dark green basil leaves",
+  "model": "gemini-3.6-flash",
+  "name": "Twice Cooked Basil Eggplant",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-28T12:13:32+00:00"
  },
  "2b6632be0f8e": {
   "avoid": [
@@ -24272,6 +24417,41 @@
   "vessel": "plate",
   "written_at": "2026-10-27T09:33:08+00:00"
  },
+ "987fa8524cae": {
+  "avoid": [
+   "white fish",
+   "chicken",
+   "beef",
+   "tofu",
+   "raw salmon",
+   "sushi",
+   "salmon burger",
+   "pasta",
+   "rice"
+  ],
+  "checks": [
+   {
+    "q": "Is the main item a piece of pink-fleshed fish?",
+    "yes": true
+   },
+   {
+    "q": "Is the fish white-fleshed like cod?",
+    "yes": false
+   },
+   {
+    "q": "Is the food raw like sushi?",
+    "yes": false
+   }
+  ],
+  "dish": "Cajun salmon",
+  "look": "a seared salmon fillet, dark reddish-brown cajun spice crust, flaky coral-pink flesh, dollop of creamy pale yellow garlic lemon aioli, fresh lemon wedge on the side",
+  "model": "gemini-3.6-flash",
+  "name": "Cajun Salmon with Garlic Lemon Aioli",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-28T12:13:06+00:00"
+ },
  "987ff0dcef9a": {
   "avoid": [
    "meat",
@@ -30959,6 +31139,41 @@
   "vessel": "bowl",
   "written_at": "2026-09-26T20:20:20+00:00"
  },
+ "bb33e25438b2": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "soup",
+   "broth",
+   "spring rolls"
+  ],
+  "checks": [
+   {
+    "q": "Are the main items crescent dumplings?",
+    "yes": true
+   },
+   {
+    "q": "Is there meat, poultry, or seafood visible in the dish?",
+    "yes": false
+   },
+   {
+    "q": "Are the dumplings floating in a bowl of soup broth?",
+    "yes": false
+   }
+  ],
+  "dish": "vegetable dumplings",
+  "look": "a serving of six steamed Asian vegetable dumplings, pleated crescent-shaped translucent wrappers, visible green spinach and orange carrot filling inside, lightly seared golden bottoms, topped with chopped cilantro, paired with a small dish of dark soy vinegar dipping sauce",
+  "model": "gemini-3.6-flash",
+  "name": "Vegetable Dumplings",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-28T12:14:19+00:00"
+ },
  "bb4b84784e8e": {
   "avoid": [
    "hot dog bun",
@@ -35442,6 +35657,40 @@
   "revisions": 0,
   "vessel": "bowl",
   "written_at": "2026-10-12T11:13:26+00:00"
+ },
+ "d3de4894eeff": {
+  "avoid": [
+   "burger patty",
+   "cold sandwich",
+   "panini ridges",
+   "bacon",
+   "turkey",
+   "french fries",
+   "potato chips",
+   "tomato soup"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food a grilled sandwich with melted cheese?",
+    "yes": true
+   },
+   {
+    "q": "Is the sandwich a burger with a ground meat patty?",
+    "yes": false
+   },
+   {
+    "q": "Is the bread plain, soft, and un-toasted?",
+    "yes": false
+   }
+  ],
+  "dish": "grilled ham and cheese sandwich",
+  "look": "thick golden-brown toasted Texas toast slices, melted gooey yellow cheddar cheese oozing from the edges, warm folded thin slices of pink ham inside, cut diagonally to show layered cross-section",
+  "model": "gemini-3.6-flash",
+  "name": "Grilled Ham & Cheese Sandwich",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "plate",
+  "written_at": "2026-11-28T12:13:20+00:00"
  },
  "d3f4a7203ca2": {
   "avoid": [
@@ -42588,6 +42837,42 @@
   "revisions": 0,
   "vessel": "plate",
   "written_at": "2026-09-27T05:30:31+00:00"
+ },
+ "ff086d5c5974": {
+  "avoid": [
+   "meat",
+   "chicken",
+   "beef",
+   "pork",
+   "fish",
+   "shrimp",
+   "noodle soup",
+   "broth",
+   "thick udon noodles",
+   "pasta"
+  ],
+  "checks": [
+   {
+    "q": "Is the main food stir-fried noodles?",
+    "yes": true
+   },
+   {
+    "q": "Are the noodles served in a liquid broth or soup?",
+    "yes": false
+   },
+   {
+    "q": "Is there meat, chicken, or seafood visible with the noodles?",
+    "yes": false
+   }
+  ],
+  "dish": "Hong Kong stir-fried noodles",
+  "look": "tangled thin pan-fried wheat noodles, glossy dark tamari glaze, tender shredded green cabbage, vibrant sliced green onions, light sprinkle of toasted white sesame seeds",
+  "model": "gemini-3.6-flash",
+  "name": "Hong Kong Noodles",
+  "rev": 6,
+  "revisions": 0,
+  "vessel": "bowl",
+  "written_at": "2026-11-28T12:13:41+00:00"
  },
  "ff852043fefe": {
   "avoid": [

@@ -2154,14 +2154,14 @@
   "priority": 1,
   "prompt": "Vegan Fajitas, tender seasoned grilled meat strips with appetizing charred edges, tossed with sautéed sliced red and green bell peppers and caramelized onions, made with bell peppers, onions, zucchini, mushroom, corn, gigandes beans, taco seasoning, plant-based, no meat, no dairy, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
   "rejected": {
-   "at": "2026-11-28T01:12:41+00:00",
+   "at": "2026-11-28T14:08:58+00:00",
    "brief_rev": 6,
    "failed": [
-    "Is the main food a pile of cooked sliced vegetables and beans?"
+    "Would someone who ordered Vegetable Fajitas recognise this as that dish?"
    ],
    "pictures": 4,
-   "seen": "A plate of grilled sliced vegetables including zucchini, red peppers, mushrooms, and corn kernels served with toasted bread.",
-   "tries": 1
+   "seen": "A salad of sliced cucumbers, tomatoes, corn, and beans.",
+   "tries": 2
   },
   "station_only": false,
   "tags": [
@@ -2409,6 +2409,16 @@
   "placeholder": false,
   "priority": 2,
   "prompt": "Thai Green Papaya Salad (Som Tum), made with shred green papaya, shred carrots, green beans blanched thai chili, minced garlic, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "rejected": {
+   "at": "2026-11-28T13:45:15+00:00",
+   "brief_rev": 6,
+   "failed": [
+    "Is the dish a salad of shredded green papaya?"
+   ],
+   "pictures": 2,
+   "seen": "A bowl containing shredded pale vegetables, orange carrot slivers, green beans, fresh herbs, and small red chilies.",
+   "tries": 1
+  },
   "station_only": false,
   "tags": []
  },
@@ -4725,20 +4735,30 @@
   ]
  },
  "1dfe7a1ca53c": {
+  "brief_rev": 6,
   "category": "vegetarian",
   "first_seen": "2026-12-04",
+  "generated_at": "2026-11-28T13:08:12+00:00",
   "icon": "plate",
-  "image": null,
+  "image": "1dfe7a1ca53c.webp",
   "ingredients": "cabbage, onion, canola olive oil, butter, curry paste, salt, cajun spice, red pepper flakes",
   "is_station": false,
+  "judge": {
+   "at": "2026-11-28T13:08:12+00:00",
+   "judge": "gemma-4-26b-a4b-it",
+   "seen": "A white bowl filled with cooked, translucent green cabbage topped with red pepper flakes."
+  },
   "last_seen": "2026-12-04",
   "min_order": 8,
+  "model": "sdxl",
   "name": "Southern Style Fried Cabbage",
   "needs_image": true,
   "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, meat, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
   "placeholder": false,
   "priority": 2,
   "prompt": "Southern Style Fried Cabbage, made with cabbage, onion, butter, curry paste, cajun spice, red pepper flakes, vegetarian, no meat, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "prompt_rev": 9,
+  "seed": 503216668,
   "station_only": false,
   "tags": [
    "gluten-free",
@@ -5452,20 +5472,30 @@
   ]
  },
  "22471bfc3a20": {
+  "brief_rev": 6,
   "category": "vegan",
   "first_seen": "2026-12-04",
+  "generated_at": "2026-11-28T12:43:37+00:00",
   "icon": "plate",
-  "image": null,
+  "image": "22471bfc3a20.webp",
   "ingredients": "plant-based chick'n, canola/olive oil blend, salt, curry powder, thai yellow curry paste, onion, coconut milk, curry sauce (onion, tomato puree, tomato sauce, tomato paste, ketchup, garam masala, garlic, ginger, salt, cumin, chili powder, turmeric, coriander, curry powder, whole cumin seed)",
   "is_station": false,
+  "judge": {
+   "at": "2026-11-28T12:43:37+00:00",
+   "judge": "gemma-4-26b-a4b-it",
+   "seen": "A bowl of yellow curry with chunks of protein and cilantro garnish, served with a side of fresh cilantro and lime wedges."
+  },
   "last_seen": "2026-12-04",
   "min_order": 1,
+  "model": "sdxl",
   "name": "Plant-Based Coconut Curry Chick'n",
   "needs_image": true,
   "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, meat, clear water, clear broth, watery soup, plain boiled vegetables, dry un-sauced vegetables, clear water, clear broth, plain boiled vegetables, dry vegetables, dry cubes, dry vegetables sitting on paste, watery liquid, soup without curry, salad, raw vegetables, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
   "placeholder": false,
   "priority": 1,
   "prompt": "Plant-Based Coconut Curry Chick'n, thoroughly simmered in rich thick golden-yellow turmeric curry gravy coating all vegetables and ingredients, made with plant-based chick'n, curry powder, thai yellow curry paste, onion, coconut milk, curry sauce, plant-based, no meat, no dairy, appetizing food photography, served in a simple white ceramic bowl, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "prompt_rev": 9,
+  "seed": 575085564,
   "station_only": false,
   "tags": [
    "gluten-free",
@@ -7006,20 +7036,30 @@
   ]
  },
  "2b2c10817703": {
+  "brief_rev": 6,
   "category": "vegan",
   "first_seen": "2026-12-04",
+  "generated_at": "2026-11-28T12:44:10+00:00",
   "icon": "plate",
-  "image": null,
+  "image": "2b2c10817703.webp",
   "ingredients": "eggplant, tofu, olive oil, garlic, onion, chili, basil, tamari",
   "is_station": false,
+  "judge": {
+   "at": "2026-11-28T12:44:10+00:00",
+   "judge": "gemma-4-26b-a4b-it",
+   "seen": "A bowl of stir-fried eggplant and tofu cubes garnished with fresh basil leaves."
+  },
   "last_seen": "2026-12-04",
   "min_order": 1,
+  "model": "sdxl",
   "name": "Twice Cooked Basil Eggplant",
   "needs_image": true,
   "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, meat, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
   "placeholder": false,
   "priority": 1,
   "prompt": "Twice Cooked Basil Eggplant, stir-fried tender purple Chinese eggplant slices with vibrant glossy skin, savory garlic Thai basil sauce, fresh green basil leaves, and sliced red bell peppers, made with eggplant, tofu, garlic, onion, chili, basil, tamari, plant-based, no meat, no dairy, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "prompt_rev": 9,
+  "seed": 724308097,
   "station_only": false,
   "tags": [
    "gluten-free",
@@ -20366,20 +20406,30 @@
   ]
  },
  "7ced14a5dd5c": {
+  "brief_rev": 6,
   "category": "vegan",
   "first_seen": "2026-12-03",
+  "generated_at": "2026-11-28T12:38:20+00:00",
   "icon": "plate",
-  "image": null,
+  "image": "7ced14a5dd5c.webp",
   "ingredients": "tofu, cabbage, mushrooms, onions, carrots, daikon, bell peppers, green onions, red pepper flakes, garlic, ginger, mongolian stir fry sauce (tamari, hoisin sauce, sugar, vegetarian oyster sauce)",
   "is_station": false,
+  "judge": {
+   "at": "2026-11-28T12:38:20+00:00",
+   "judge": "gemma-4-26b-a4b-it",
+   "seen": "A stir-fry of tofu cubes, red bell peppers, mushrooms, and dark leafy greens topped with sesame seeds."
+  },
   "last_seen": "2026-12-03",
   "min_order": 1,
+  "model": "sdxl",
   "name": "Sesame Ginger Tofu Stir Fry",
   "needs_image": true,
   "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, meat, potato, potatoes, sweet potato, sweet potato cubes, potato cubes, potato chunks, french fries, cheese cubes, yellow cheddar, noodles, pasta, shredded cabbage bed, white sauce base, puree, mash, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
   "placeholder": false,
   "priority": 1,
   "prompt": "Sesame Ginger Tofu Stir Fry, crispy golden pan-seared firm tofu cubes with tender curd interior, made with tofu, cabbage, mushrooms, onions, carrots, daikon, bell peppers, green onions, plant-based, no meat, no dairy, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "prompt_rev": 9,
+  "seed": 2095912101,
   "station_only": false,
   "tags": [
    "vegan"
@@ -25395,20 +25445,30 @@
   "tags": []
  },
  "987fa8524cae": {
+  "brief_rev": 6,
   "category": "seafood",
   "first_seen": "2026-12-04",
+  "generated_at": "2026-11-28T12:39:05+00:00",
   "icon": "plate",
-  "image": null,
+  "image": "987fa8524cae.webp",
   "ingredients": "salmon, canola/olive oil blend, cajun spice, salt, pepper, lemon aioli (mayonnaise, lemon juice, canola oil, garlic, capers)",
   "is_station": false,
+  "judge": {
+   "at": "2026-11-28T12:39:04+00:00",
+   "judge": "gemma-4-26b-a4b-it",
+   "seen": "Two pieces of seared pink fish topped with a creamy sauce and served with lemon wedges."
+  },
   "last_seen": "2026-12-04",
   "min_order": 0,
+  "model": "sdxl",
   "name": "Cajun Salmon with Garlic Lemon Aioli",
   "needs_image": true,
   "negative": "pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
   "placeholder": false,
   "priority": 0,
   "prompt": "Cajun Salmon with Garlic Lemon Aioli, delicate flaky fish fillet or fresh seafood, glistening glaze, made with salmon, cajun spice, lemon aioli, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "prompt_rev": 9,
+  "seed": 2558502994,
   "station_only": false,
   "tags": [
    "gluten-free"
@@ -32320,20 +32380,30 @@
   ]
  },
  "bb33e25438b2": {
+  "brief_rev": 6,
   "category": "vegan",
   "first_seen": "2026-12-04",
+  "generated_at": "2026-11-28T12:56:28+00:00",
   "icon": "plate",
-  "image": null,
+  "image": "bb33e25438b2.webp",
   "ingredients": "spinach, carrots, cabbage, corn, vermicelli, mushroom, soy bean oil, sesame oil, cilantro, salt, textured soy flour, ginger, modified corn starch, disodium 5-inosinate, disodium 5-guanylate, soy sauce, white pepper, enriched wheat flour, tapioca starch, wheat, gluten, soybean oil, salt, soy sauce, sugar, distilled vinegar, chili, ginger, garlic, sesame oil, garlic, citric acid",
   "is_station": false,
+  "judge": {
+   "at": "2026-11-28T12:56:28+00:00",
+   "judge": "gemma-4-26b-a4b-it",
+   "seen": "A plate of crescent-shaped dumplings filled with green vegetables, served with a side of dark sauce and fresh greens in the center."
+  },
   "last_seen": "2026-12-04",
   "min_order": 7,
+  "model": "sdxl",
   "name": "Vegetable Dumplings",
   "needs_image": true,
   "negative": "fish fillet, shrimp, prawns, shellfish, crawfish, crayfish, crab, lobster, pork, bacon, ham, pork belly, beef, sliced steak, ground beef, lamb, mutton, chicken, chicken breast, turkey, meat, text, words, letters, watermark, signature, logo, menu, label, hands, people, person, fingers, cutlery clutter, extra chopsticks, three chopsticks, duplicate spoons, extra spoons, deformed spoons, messy, blurry, lowres, deformed, distorted, oversaturated, cartoon, illustration, 3d render, plastic, fake looking, duplicate plates, multiple dishes, table spread, feast",
   "placeholder": false,
   "priority": 2,
   "prompt": "Vegetable Dumplings, made with spinach, carrots, cabbage, corn, vermicelli, mushroom, cilantro, ginger, plant-based, no meat, no dairy, appetizing food photography, plated on a simple white ceramic plate, overhead three-quarter view, centered composition with generous empty margin around the plate, soft natural window light, shallow depth of field, clean neutral background, sharp focus, high detail",
+  "prompt_rev": 9,
+  "seed": 3140739668,
   "station_only": false,
   "tags": [
    "vegan"
